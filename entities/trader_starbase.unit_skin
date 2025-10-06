@@ -6,8 +6,8 @@
     },
     "skin_stages": [
     {
-        "is_main_view_icon_visible_camera_distance": 147936.649259,
-        "min_camera_distance": 2364.816047,
+        "is_main_view_icon_visible_camera_distance": 147953.397351,
+        "min_camera_distance": 2365.083771,
         "gui":
         {
             "hud_icon": "trader_starbase_hud_icon",
@@ -15,7 +15,7 @@
             "hud_picture": "trader_starbase_hud_picture",
             "tooltip_picture": "trader_starbase_tooltip_picture",
             "name": "trader_starbase_name",
-            "description": "trader_starbase_desc"
+            "description": ""
         },
         "unit_mesh":
         {
@@ -176,7 +176,8 @@
             "group": "starbase",
             "icon": "trader_starbase_main_view_icon",
             "selected_icon": "trader_starbase_main_view_icon_selected",
-            "sub_selected_icon": "trader_starbase_main_view_icon_sub_selected"
+            "sub_selected_icon": "trader_starbase_main_view_icon_sub_selected",
+            "has_rotation": false
         },
         "effects":
         {
@@ -195,7 +196,7 @@
                     "max_count": 5,
                     "weight": 10.0,
                     "hull_percentage_threshold": 0.99,
-                    "particle_effect": "damage_smoke_2"
+                    "particle_effect": "tec_damage_plasma_sparks"
                 },
                 {
                     "max_count": 10,
@@ -225,20 +226,20 @@
                     "sound": "ambient_loop_electrical_damage_01"
                 },
                 {
-                    "max_count": 10,
+                    "max_count": 25,
                     "weight": 10.0,
                     "hull_percentage_threshold": 0.99,
                     "particle_effect": "tec_damage_embers"
                 },
                 {
-                    "max_count": 25,
+                    "max_count": 15,
                     "weight": 25.0,
                     "hull_percentage_threshold": 0.75,
                     "particle_effect": "damage_fire",
                     "sound": "ambient_loop_firedamage"
                 },
                 {
-                    "max_count": 15,
+                    "max_count": 5,
                     "weight": 15.0,
                     "hull_percentage_threshold": 0.75,
                     "particle_effect": "damage_fire_pillar",
@@ -253,8 +254,6 @@
                 "constraint": "is_unit_factory_busy"
             }],
             "shield_effect": "trader_starbase",
-            "level_up_effect": "titan_levelup",
-            "level_up_sound": "capitalship_levelup",
             "effect_alias_bindings": [
             {
                 "alias_name": "trader_battle_capital_ship_light_autocannon_weapon_hit_hull",

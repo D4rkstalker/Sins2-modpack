@@ -1,0 +1,188 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Exhaust",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-2.0, -2.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 17,
+            "name": "NewNode17",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-12.0, -12.0],
+            "yaw": [3.141593, 3.141593],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 20,
+            "name": "Flare",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [1.0, 1.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 8,
+            "name": "ExhaustOutter",
+            "is_visible": false,
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "color": "ffffffff",
+                "fade_in_time": [0.250, 0.250],
+                "fade_out_time": [0.250, 0.250],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [10.0, 10.0],
+                    "height": [175.0, 175.0],
+                    "texture_0": "t_edgemask_vasari_fade_outter",
+                    "gradient_texture": "t_gradient_74",
+                    "erosion_texture": "smoke_noise2",
+                    "initial_erosion_noise_offset_u": [0.0, 10.0],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.0,
+                            "depth_fade_opacity": 3.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 1.0,
+                                "global_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 1.0,
+                                "global_scale": 0.50
+                            },
+                            "erosion_softness": 2.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 15,
+            "name": "ExhaustCore",
+            "is_visible": false,
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "external_color": "primary",
+                "color": "ffffffff",
+                "fade_in_time": [0.250, 0.250],
+                "fade_out_time": [0.250, 0.250],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [5.0, 5.0],
+                    "height": [175.0, 175.0],
+                    "texture_0": "t_edgemask_vasari_fade",
+                    "gradient_texture": "t_gradient_76",
+                    "erosion_texture": "smoke_noise2",
+                    "initial_erosion_noise_offset_u": [0.0, 10.0],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.250,
+                            "depth_fade_opacity": 25.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 2.0
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 3.50
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 18,
+            "name": "ExhaustFlare",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [10.0, 10.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.250, 0.250],
+                "color": "ffffffff",
+                "fade_in_time": [0.1250, 0.1250],
+                "fade_out_time": [0.1250, 0.1250],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "width": [75.0, 90.0],
+                    "texture_0": "flare_2",
+                    "gradient_texture": "t_gradient_74",
+                    "erosion_texture": "planet_cloud_noise_volcanic_baw",
+                    "initial_erosion_noise_offset_u": [0.0, 10.0],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.250,
+                            "depth_fade_opacity": 5.0
+                        },
+                        "erosion_constants": {
+                            "erosion_test": 0.250
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 15,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 8,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 18,
+            "attachee_id": 20
+        }
+    ],
+    "modifier_to_emitter_attachments": [],
+    "max_effect_radius_scalar": 2.0
+}

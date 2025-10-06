@@ -1,0 +1,236 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [-1.570796, -1.570796],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 2,
+            "name": "Glitter",
+            "type": "ring",
+            "emit_rate": {
+                "primary_emit_rate": [2.50, 2.50]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [4.0, 4.0],
+                "color": "ffc0c0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [30.0, 60.0],
+                    "height": [300.0, 400.0],
+                    "texture_0": "falling_bullets",
+                    "gradient_texture": "t_gradient_61",
+                    "erosion_texture": "vertical_lines",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 1.0,
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_opacity": 1.50,
+                            "depth_fade_distance": 10.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.050,
+                                "v_pan_speed": 0.150,
+                                "global_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": -0.10,
+                                "v_pan_speed": 0.20
+                            },
+                            "erosion_softness": 0.660
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_edge": false,
+            "radius_x": [60.0, 90.0],
+            "radius_y": [60.0, 90.0],
+            "normal_offset": [0.0, 0.0],
+            "normal_velocity": [0.0, 0.0],
+            "radial_velocity": [0.0, 0.0],
+            "tangential_velocity": [0.0, 0.0],
+            "angle_range": [0.0, 6.283185],
+            "angle_range_behavior": "random"
+        },
+        {
+            "id": 5,
+            "name": "FallingAmmo",
+            "type": "sphere",
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 25.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [4.0, 4.0],
+                "color": "ffe0e0e0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [200.0, 200.0],
+                    "height": [100.0, 100.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "falling_bullets_solid",
+                    "gradient_texture": "t_gradient_61",
+                    "erosion_texture": "vertical_lines",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 1.0,
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.250,
+                            "depth_fade_opacity": 10.0,
+                            "depth_fade_distance": 10.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.050,
+                                "v_pan_speed": 0.150,
+                                "global_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": -0.10,
+                                "v_pan_speed": 0.20
+                            },
+                            "erosion_softness": 0.660
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [0.0, 150.0],
+            "radius_y": [0.0, 150.0],
+            "radius_z": [0.0, 150.0],
+            "radial_velocity": [10.0, 75.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [0.0, 6.283185],
+            "longitude_angle_range": [0.0, 6.283185]
+        },
+        {
+            "id": 8,
+            "name": "Rerfaction",
+            "is_visible": false,
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [2.0, 2.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "fff0ffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "shader_type": "uber_multiply_color",
+                    "width": [1400.0, 1600.0],
+                    "rotation": [0.0, 6.283185],
+                    "refraction_texture": "heat_refraction",
+                    "refraction_mask_texture": "heat_refraction_falloff",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "initial_refraction_scalar": [0.0, 0.0]
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 6.283185]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 3,
+            "name": "alpha",
+            "type": "float_property",
+            "particle_time_duration": [3.0, 3.0],
+            "property_type": "alpha",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_quad",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 9,
+            "name": "Grow2",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.250, 1.0]
+            }
+        },
+        {
+            "id": 10,
+            "name": "Refraction",
+            "type": "float_property",
+            "property_type": "refraction_scalar",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_sine",
+                "easing_values": [0.0, 0.50]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 8,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 3,
+            "attachee_id": 2
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 5
+        },
+        {
+            "attacher_id": 9,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 10,
+            "attachee_id": 8
+        }
+    ]
+}

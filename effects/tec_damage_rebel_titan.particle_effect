@@ -1,0 +1,328 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1000,
+            "name": "RefractionNode",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 16,
+            "name": "AfterLight",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0],
+            "start_delay": [3.0, 3.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "EscapeGas",
+            "type": "sphere",
+            "emit_rate": {
+                "primary_emit_rate": [2.50, 2.50]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 3.0],
+                "color": "ffffffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [20.0, 30.0],
+                    "height": [50.0, 65.0],
+                    "texture_0": "smoke_pillar",
+                    "gradient_texture": "t_gradient_76",
+                    "erosion_texture": "smoke_noise",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 5.0,
+                            "depth_fade_opacity": 3.0,
+                            "depth_fade_distance": 10.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 2.0
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 1.0
+                            },
+                            "erosion_test": 0.20,
+                            "erosion_softness": 1.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [180.0, 180.0],
+            "radius_y": [180.0, 180.0],
+            "radius_z": [1500.0, 1500.0],
+            "radial_velocity": [0.0, 0.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [0.0, 6.283185],
+            "longitude_angle_range": [0.0, 6.283185]
+        },
+        {
+            "id": 3,
+            "name": "Clouds",
+            "is_visible": false,
+            "type": "sphere",
+            "emit_start_delay": [0.50, 0.50],
+            "emit_rate": {
+                "primary_emit_rate": [7.0, 7.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [5.0, 9.0],
+                "color": "ff646464",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [700.0, 900.0],
+                    "height": [800.0, 1200.0],
+                    "gradient_texture": "t_gradient_56",
+                    "distortion_texture": "t_uvdist_003",
+                    "erosion_texture": "smoke_noise",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "texture_animation": "cloud_2x2",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.50,
+                            "depth_fade_opacity": 12.50,
+                            "depth_fade_distance": 100.0,
+                            "alpha_ramp_growth_delay": 0.50
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.0450
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.01250,
+                                "global_scale": 1.50
+                            },
+                            "erosion_softness": 1.1250
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "global_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "global_scale": 0.30
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [160.0, 160.0],
+            "radius_y": [160.0, 160.0],
+            "radius_z": [1500.0, 1500.0],
+            "radial_velocity": [0.0, 0.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [0.0, 6.283185],
+            "longitude_angle_range": [0.0, 6.283185]
+        },
+        {
+            "id": 8,
+            "name": "PlasmaSparking",
+            "is_visible": false,
+            "type": "sphere",
+            "emit_start_delay": [1.50, 1.50],
+            "emit_rate": {
+                "primary_emit_rate": [50.0, 50.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffffff",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [200.0, 300.0],
+                    "gradient_texture": "t_gradient_63",
+                    "distortion_texture": "t_uvdist_003",
+                    "erosion_texture": "fire_seamless_texture",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "texture_animation": "cloud_2x2",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_distance": 100.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.50
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.250,
+                                "global_scale": 2.0
+                            }
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "global_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "global_scale": 0.30
+                            }
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffc080",
+                    "intensity": 60.0,
+                    "surface_radius": 0.0
+                }
+            },
+            "use_surface": false,
+            "radius_x": [150.0, 150.0],
+            "radius_y": [150.0, 150.0],
+            "radius_z": [1500.0, 1500.0],
+            "radial_velocity": [0.0, 300.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [100.0, 300.0],
+            "latitude_angle_range": [0.0, 6.283185],
+            "longitude_angle_range": [0.0, 6.283185]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 2,
+            "name": "EaseIntoSquare",
+            "type": "float_property",
+            "particle_time_duration": [0.20, 0.50],
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_quad",
+                "easing_values": [0.10, 3.0]
+            }
+        },
+        {
+            "id": 4,
+            "name": "Grow",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 5,
+            "name": "Distort",
+            "type": "float_property",
+            "property_type": "distortion_scalar",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_sine",
+                "easing_values": [0.0250, 0.10]
+            }
+        },
+        {
+            "id": 6,
+            "name": "Erosion",
+            "type": "float_property",
+            "property_type": "erosion_test_base",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 1.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 3,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 8,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 0,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 6,
+            "attachee_id": 3
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 3
+        },
+        {
+            "attacher_id": 4,
+            "attachee_id": 3
+        },
+        {
+            "attacher_id": 4,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 6,
+            "attachee_id": 8
+        }
+    ],
+    "max_effect_radius_scalar": 1.0
+}

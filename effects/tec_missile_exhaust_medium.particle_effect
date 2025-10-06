@@ -1,0 +1,258 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 100,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [1.0, 1.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 102,
+            "name": "NewNode102",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-7.250, -7.250],
+            "yaw": [0.0, 0.0],
+            "pitch": [3.141593, 3.141593],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 105,
+            "name": "Root2",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [1.20, 1.20],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Flare",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [25.0, 25.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.250, 0.250],
+                "color": "ffffc080",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.10, 0.10],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [25.0, 50.0],
+                    "height": [100.0, 150.0],
+                    "rotation": [1.570796, 1.570796],
+                    "texture_0": "t_lenseflare",
+                    "gradient_texture": "t_gradient_78",
+                    "distortion_texture": "t_uvdist_003",
+                    "erosion_texture": "smoke_noise2",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 0.50,
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 0.050,
+                            "alpha_ramp_growth_delay": 3.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.040,
+                                "v_pan_speed": -1.20,
+                                "global_scale": 0.250
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": 0.10,
+                                "v_pan_speed": -1.0,
+                                "global_scale": 0.150
+                            },
+                            "erosion_test": 0.20,
+                            "erosion_softness": 0.40
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": -0.30,
+                                "global_scale": 0.20
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": -0.50,
+                                "global_scale": 0.10
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 4,
+            "name": "Smoke",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [100.0, 100.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": -1,
+                "max_duration": [1.50, 1.50],
+                "color": "ffffc080",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.0, 0.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "height": [5.0, 5.0],
+                    "gradient_texture": "t_gradient_46",
+                    "distortion_texture": "t_uvdist_002",
+                    "erosion_texture": "t_cloud_noise",
+                    "initial_erosion_noise_offset_u": [0.0, 10.0],
+                    "texture_animation": "cloud_2x2",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 3.0,
+                            "depth_fade_opacity": 10.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0,
+                            "alpha_ramp_max_alpha_scalar": 2.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.040,
+                                "v_pan_speed": 0.10
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": 0.10,
+                                "v_pan_speed": 0.040
+                            },
+                            "erosion_test": 0.050,
+                            "erosion_softness": 0.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [5.0, 5.0]
+        },
+        {
+            "id": 103,
+            "name": "Flare2",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [25.0, 25.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.250, 0.250],
+                "color": "ffffc080",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.10, 0.10],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "facing_type": "face_particle_direction",
+                    "width": [2.50, 2.50],
+                    "texture_0": "super_soft_glow",
+                    "gradient_texture": "gradient_gauss",
+                    "distortion_texture": "t_uvdist_003",
+                    "erosion_texture": "smoke_noise2",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 25.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.040,
+                                "v_pan_speed": -1.20,
+                                "global_scale": 0.250
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": 0.10,
+                                "v_pan_speed": -1.0,
+                                "global_scale": 0.150
+                            },
+                            "erosion_test": 0.20,
+                            "erosion_softness": 0.40
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": -0.30,
+                                "global_scale": 0.20
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": -0.50,
+                                "global_scale": 0.10
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 3,
+            "name": "Erosion",
+            "type": "float_property",
+            "property_type": "erosion_test_base",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_out_expo",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 7,
+            "name": "ShrinkSmoke",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [1.0, 0.10]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 103,
+            "attachee_id": 100
+        },
+        {
+            "attacher_id": 0,
+            "attachee_id": 105
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 3,
+            "attachee_id": 4
+        },
+        {
+            "attacher_id": 7,
+            "attachee_id": 4
+        }
+    ],
+    "max_effect_radius_scalar": 2.0
+}

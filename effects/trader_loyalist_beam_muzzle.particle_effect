@@ -1,0 +1,113 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 155,
+            "name": "LenseFlare",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [10.0, 10.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 152,
+            "name": "Lense_Flare",
+            "type": "point",
+            "emit_start_delay": [0.130, 0.130],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [15.0, 15.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "color": "ffffc080",
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_only_gradient",
+                    "width": [1.0, 2.0],
+                    "texture_0": "t_lenseflare",
+                    "gradient_texture": "t_gradient_78",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 2.0,
+                            "alpha_ramp_steepness": 1.0
+                        },
+                        "gradient_constants": {
+                            "gradient_pan_start": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 153,
+            "name": "LenseFlare_height",
+            "type": "float_property",
+            "property_type": "height",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [1000.0, 0.0]
+            }
+        },
+        {
+            "id": 154,
+            "name": "LenseFlare_Width",
+            "type": "float_property",
+            "property_type": "width",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [10000.0, 0.0]
+            }
+        },
+        {
+            "id": 156,
+            "name": "LenseFlare_alpha",
+            "type": "float_property",
+            "particle_time_offset": [0.330, 0.330],
+            "particle_time_duration": [0.30, 0.50],
+            "property_type": "alpha",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_quart",
+                "easing_values": [0.0, 0.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 152,
+            "attachee_id": 155
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 153,
+            "attachee_id": 152
+        },
+        {
+            "attacher_id": 154,
+            "attachee_id": 152
+        },
+        {
+            "attacher_id": 156,
+            "attachee_id": 152
+        }
+    ]
+}

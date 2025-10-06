@@ -1,0 +1,955 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 22,
+            "name": "lightningLines",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-90.0, -90.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 26,
+            "name": "root2",
+            "x": [0.0, 0.0],
+            "y": [-45.0, -45.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 30,
+            "name": "RightLight",
+            "x": [490.0, 490.0],
+            "y": [-10.0, -10.0],
+            "z": [-85.0, -85.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [1.570796, 1.570796]
+        },
+        {
+            "id": 32,
+            "name": "LeftLight",
+            "x": [-490.0, -490.0],
+            "y": [-10.0, -10.0],
+            "z": [-85.0, -85.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [1.570796, 1.570796]
+        },
+        {
+            "id": 34,
+            "name": "TopAntenna",
+            "x": [0.0, 0.0],
+            "y": [365.0, 365.0],
+            "z": [65.0, 65.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 36,
+            "name": "root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 40,
+            "name": "BottomAntenna",
+            "x": [0.0, 0.0],
+            "y": [-385.0, -385.0],
+            "z": [65.0, 65.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 10,
+            "name": "litDust",
+            "type": "ring",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [10.0, 10.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [5.0, 5.0],
+                "color": "ff300512",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [3.0, 3.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [10.0, 10.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "flare_2",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 0.750,
+                            "alpha_ramp_steepness": 1.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ff300512",
+                    "intensity": 1000.0,
+                    "surface_radius": 0.10
+                }
+            },
+            "use_edge": true,
+            "radius_x": [450.0, 450.0],
+            "radius_y": [700.0, 700.0],
+            "normal_offset": [0.0, 0.0],
+            "normal_velocity": [180.0, 180.0],
+            "radial_velocity": [0.0, 0.0],
+            "tangential_velocity": [0.0, 0.0],
+            "angle_range": [0.0, 6.283185],
+            "angle_range_behavior": "random",
+            "angle_range_sequence_size": 90
+        },
+        {
+            "id": 16,
+            "name": "overchargeDust",
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.330, 0.750],
+                "color": "ffff8080",
+                "fade_in_time": [0.20, 0.20],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [50.0, 250.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_animation": "lightning_04",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 1.570796]
+        },
+        {
+            "id": 18,
+            "name": "overchargeRing",
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "ffff8080",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [20000.0, 20000.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.017453, 0.017453],
+                    "texture_0": "radial_warp_circle",
+                    "gradient_texture": "t_gradient_42",
+                    "distortion_texture": "water_uv",
+                    "erosion_texture": "white_square",
+                    "initial_erosion_noise_offset_u": [0.0, 10.0],
+                    "initial_distortion_scalar": [0.050, 0.050],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 0.50,
+                    "texture_animation_first_frame": "sequential",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 0.10,
+                            "depth_fade_distance": 100.0
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.10,
+                                "v_pan_speed": 0.0750,
+                                "global_scale": 3.0
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": -0.050,
+                                "v_pan_speed": -0.1050,
+                                "global_scale": 2.0
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 6.283185]
+        },
+        {
+            "id": 21,
+            "name": "overchargeLightning",
+            "is_visible": false,
+            "type": "ring",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [35.0, 35.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.350, 0.60],
+                "color": "ffffc0c0",
+                "fade_in_time": [3.0, 3.0],
+                "fade_out_time": [2.0, 2.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "width": [50.0, 100.0],
+                    "height": [525.0, 525.0],
+                    "rotation": [1.570796, 1.570796],
+                    "texture_animation": "lightning_03",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_edge": false,
+            "radius_x": [500.0, 500.0],
+            "radius_y": [500.0, 500.0],
+            "normal_offset": [0.0, 0.0],
+            "normal_velocity": [0.0, 0.0],
+            "radial_velocity": [0.0, 0.0],
+            "tangential_velocity": [1.0, 1.0],
+            "angle_range": [-0.349066, 0.349066],
+            "angle_range_behavior": "random",
+            "angle_range_sequence_size": 30
+        },
+        {
+            "id": 31,
+            "name": "overchargeLightRight",
+            "is_visible": false,
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [5.0, 10.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "width": [50.0, 50.0],
+                    "height": [300.0, 300.0],
+                    "texture_animation": "lightning_05",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_opacity": 500.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffc0c0",
+                    "intensity": 5.0,
+                    "surface_radius": 300.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 33,
+            "name": "overchargeLightLeft",
+            "is_visible": false,
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [5.0, 10.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "width": [50.0, 50.0],
+                    "height": [300.0, 300.0],
+                    "texture_animation": "lightning_05",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_opacity": 500.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffc0c0",
+                    "intensity": 5.0,
+                    "surface_radius": 300.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 35,
+            "name": "overchargeTop",
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [5.0, 10.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [25.0, 25.0],
+                    "texture_animation": "lightning_04",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 1000.0,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffc0c0",
+                    "intensity": 5.0,
+                    "surface_radius": 250.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 41,
+            "name": "overchargeDust2",
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.330, 0.750],
+                "color": "ffff8080",
+                "fade_in_time": [0.20, 0.20],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [50.0, 250.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_animation": "lightning_04",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 1.570796]
+        },
+        {
+            "id": 42,
+            "name": "overchargeBottom",
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [5.0, 10.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [25.0, 25.0],
+                    "texture_animation": "lightning_04",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 1000.0,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffc0c0",
+                    "intensity": 5.0,
+                    "surface_radius": 250.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 43,
+            "name": "overchargeLightning2",
+            "is_visible": false,
+            "type": "ring",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [35.0, 35.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.350, 0.60],
+                "color": "ffffc0c0",
+                "fade_in_time": [3.0, 3.0],
+                "fade_out_time": [2.0, 2.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "width": [50.0, 100.0],
+                    "height": [525.0, 525.0],
+                    "rotation": [1.570796, 1.570796],
+                    "texture_animation": "lightning_03",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_edge": false,
+            "radius_x": [500.0, 500.0],
+            "radius_y": [500.0, 500.0],
+            "normal_offset": [0.0, 0.0],
+            "normal_velocity": [0.0, 0.0],
+            "radial_velocity": [0.0, 0.0],
+            "tangential_velocity": [1.0, 1.0],
+            "angle_range": [2.792527, 3.490659],
+            "angle_range_behavior": "random",
+            "angle_range_sequence_size": 30
+        },
+        {
+            "id": 44,
+            "name": "overchargeTop2",
+            "is_visible": false,
+            "type": "sphere",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "anchor": "top",
+                    "width": [100.0, 100.0],
+                    "height": [500.0, 600.0],
+                    "texture_animation": "lightning_03",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [0.0, 0.0],
+            "radius_y": [0.0, 0.0],
+            "radius_z": [0.0, 0.0],
+            "radial_velocity": [1.0, 1.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [5.672320, 5.934120],
+            "longitude_angle_range": [-0.174533, 0.785398]
+        },
+        {
+            "id": 45,
+            "name": "overchargeTop3",
+            "is_visible": false,
+            "type": "sphere",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "anchor": "top",
+                    "width": [100.0, 100.0],
+                    "height": [500.0, 600.0],
+                    "texture_animation": "lightning_03",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [0.0, 0.0],
+            "radius_y": [0.0, 0.0],
+            "radius_z": [0.0, 0.0],
+            "radial_velocity": [1.0, 1.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [5.672320, 5.934120],
+            "longitude_angle_range": [2.356195, 3.403392]
+        },
+        {
+            "id": 46,
+            "name": "overchargeBottom2",
+            "is_visible": false,
+            "type": "sphere",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "anchor": "bottom",
+                    "width": [100.0, 100.0],
+                    "height": [500.0, 600.0],
+                    "texture_animation": "lightning_03",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [0.0, 0.0],
+            "radius_y": [0.0, 0.0],
+            "radius_z": [0.0, 0.0],
+            "radial_velocity": [1.0, 1.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [5.672320, 5.934120],
+            "longitude_angle_range": [-0.785398, 0.174533]
+        },
+        {
+            "id": 47,
+            "name": "overchargeBottom3",
+            "is_visible": false,
+            "type": "sphere",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ffffc0c0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_particle_direction",
+                    "anchor": "bottom",
+                    "width": [100.0, 100.0],
+                    "height": [500.0, 600.0],
+                    "texture_animation": "lightning_03",
+                    "texture_animation_fps": [20.0, 20.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": false,
+            "radius_x": [0.0, 0.0],
+            "radius_y": [0.0, 0.0],
+            "radius_z": [0.0, 0.0],
+            "radial_velocity": [1.0, 1.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [5.672320, 5.934120],
+            "longitude_angle_range": [2.967060, 4.014257]
+        },
+        {
+            "id": 48,
+            "name": "overchargeRingInner",
+            "type": "point",
+            "emit_duration": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "ffff8080",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [2500.0, 14000.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.261799, 0.261799],
+                    "texture_0": "soft_circle_large",
+                    "gradient_texture": "t_gradient_42",
+                    "distortion_texture": "warping_energy_distort",
+                    "erosion_texture": "white_square",
+                    "initial_erosion_noise_offset_u": [0.0, 10.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 0.50,
+                    "texture_animation_first_frame": "sequential",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 0.50,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "modColor",
+            "type": "color",
+            "particle_time_duration": [0.0, 0.0],
+            "change_duration_context": "particle_time_elapsed",
+            "change_duration": [0.250, 0.250],
+            "begin_color": "ffffc0ff",
+            "end_color": "ff400040"
+        },
+        {
+            "id": 8,
+            "name": "modPullTowardsCenter",
+            "type": "push",
+            "force": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 100.0]
+            },
+            "op": "to_point_in_emitter_space",
+            "is_random_jitter_shared": true
+        },
+        {
+            "id": 15,
+            "name": "modShrinkSlow",
+            "type": "size",
+            "width_change_rate": [-20.0, -20.0],
+            "width_stop": [0.50, 0.50],
+            "height_change_rate": [50.0, 50.0]
+        },
+        {
+            "id": 19,
+            "name": "modPushBehind",
+            "type": "push",
+            "force": {
+                "type": "constant",
+                "range": [250.0, 250.0]
+            },
+            "op": "to_point_in_emitter_space",
+            "point": [0.0, 0.0, 10000.0]
+        },
+        {
+            "id": 24,
+            "name": "modLigthningColor",
+            "type": "color",
+            "change_duration_context": "particle_time_elapsed",
+            "change_duration": [0.10, 0.10],
+            "begin_color": "ffffffff",
+            "end_color": "ffff8080"
+        },
+        {
+            "id": 27,
+            "name": "Grow",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.10, 1.0]
+            }
+        },
+        {
+            "id": 28,
+            "name": "Distort",
+            "type": "float_property",
+            "property_type": "distortion_scalar",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 0.10]
+            }
+        },
+        {
+            "id": 29,
+            "name": "Erosion",
+            "type": "float_property",
+            "property_type": "erosion_test_base",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 38,
+            "name": "modGrow",
+            "type": "size",
+            "width_change_rate": [10.0, 10.0]
+        },
+        {
+            "id": 49,
+            "name": "Grow2",
+            "type": "size",
+            "width_change_rate": [10000.0, 10000.0],
+            "width_stop": [20000.0, 20000.0],
+            "height_change_rate": [10000.0, 10000.0],
+            "height_stop": [20000.0, 20000.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 21,
+            "attachee_id": 22
+        },
+        {
+            "attacher_id": 18,
+            "attachee_id": 26
+        },
+        {
+            "attacher_id": 31,
+            "attachee_id": 30
+        },
+        {
+            "attacher_id": 33,
+            "attachee_id": 32
+        },
+        {
+            "attacher_id": 35,
+            "attachee_id": 34
+        },
+        {
+            "attacher_id": 16,
+            "attachee_id": 34
+        },
+        {
+            "attacher_id": 41,
+            "attachee_id": 40
+        },
+        {
+            "attacher_id": 42,
+            "attachee_id": 40
+        },
+        {
+            "attacher_id": 43,
+            "attachee_id": 22
+        },
+        {
+            "attacher_id": 44,
+            "attachee_id": 34
+        },
+        {
+            "attacher_id": 45,
+            "attachee_id": 34
+        },
+        {
+            "attacher_id": 46,
+            "attachee_id": 40
+        },
+        {
+            "attacher_id": 47,
+            "attachee_id": 40
+        },
+        {
+            "attacher_id": 48,
+            "attachee_id": 26
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 19,
+            "attachee_id": 10
+        },
+        {
+            "attacher_id": 19,
+            "attachee_id": 21
+        },
+        {
+            "attacher_id": 8,
+            "attachee_id": 10
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 21
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 10
+        },
+        {
+            "attacher_id": 29,
+            "attachee_id": 18
+        },
+        {
+            "attacher_id": 19,
+            "attachee_id": 43
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 43
+        },
+        {
+            "attacher_id": 38,
+            "attachee_id": 21
+        },
+        {
+            "attacher_id": 38,
+            "attachee_id": 43
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 44
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 45
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 46
+        },
+        {
+            "attacher_id": 24,
+            "attachee_id": 47
+        },
+        {
+            "attacher_id": 29,
+            "attachee_id": 48
+        },
+        {
+            "attacher_id": 27,
+            "attachee_id": 18
+        }
+    ]
+}

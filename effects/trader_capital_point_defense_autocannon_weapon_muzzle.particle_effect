@@ -1,0 +1,87 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "Point",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-1.0, -1.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Point",
+            "type": "point",
+            "emit_duration": [0.30, 0.30],
+            "emit_rate": {
+                "primary_emit_rate": [100.0, 100.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.050, 0.10],
+                "color": "ffff5000",
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_particle_direction",
+                    "anchor": "bottom",
+                    "width": [15.0, 30.0],
+                    "height": [25.0, 50.0],
+                    "erosion_texture": "white_square",
+                    "random_flip_texture_vertical_chance": 0.50,
+                    "texture_animation": "pointdefense_muzzleflash",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.40,
+                            "depth_fade_opacity": 5.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffffff",
+                    "intensity": 25.0,
+                    "surface_radius": 0.0
+                },
+                "pitch": [-1.570796, -1.570796],
+                "roll": [0.0, 6.283185]
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "Grow",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_expo",
+                "easing_values": [0.0, 1.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 1,
+            "attachee_id": 0
+        }
+    ]
+}

@@ -1,0 +1,192 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root1",
+            "x": [-100.0, -100.0],
+            "y": [120.0, 120.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 4,
+            "name": "Root2",
+            "x": [100.0, 100.0],
+            "y": [120.0, 120.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Buff1",
+            "is_visible": false,
+            "type": "point",
+            "emit_max_particle_count": [15.0, 15.0],
+            "emit_rate": {
+                "primary_emit_rate": [700.0, 700.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ff000000",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "top",
+                    "width": [30.0, 90.0],
+                    "height": [300.0, 300.0],
+                    "texture_0": "soft_circle_large",
+                    "gradient_texture": "gradient_gauss",
+                    "erosion_texture": "vertical_bolts",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 1.0,
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 2.0,
+                            "depth_fade_distance": 3.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0,
+                            "alpha_ramp_max_alpha_scalar": 4.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.20
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.40
+                            },
+                            "erosion_test": 0.10
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [-50.0, -20.0],
+            "angle_variance": [0.0, 0.261799]
+        },
+        {
+            "id": 5,
+            "name": "Buff2",
+            "is_visible": false,
+            "type": "point",
+            "emit_max_particle_count": [15.0, 15.0],
+            "emit_rate": {
+                "primary_emit_rate": [700.0, 700.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 1.0],
+                "color": "ff000000",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "top",
+                    "width": [30.0, 90.0],
+                    "height": [300.0, 300.0],
+                    "texture_0": "soft_circle_large",
+                    "gradient_texture": "gradient_gauss",
+                    "erosion_texture": "vertical_bolts",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 1.0,
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 2.0,
+                            "depth_fade_distance": 3.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0,
+                            "alpha_ramp_max_alpha_scalar": 4.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.20
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.40
+                            },
+                            "erosion_test": 0.10
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [-50.0, -20.0],
+            "angle_variance": [0.0, 0.261799]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 2,
+            "name": "HeightGrow",
+            "type": "float_property",
+            "property_type": "height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [1.0, 3.0]
+            }
+        },
+        {
+            "id": 3,
+            "name": "WidthGrow",
+            "type": "float_property",
+            "property_type": "width_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.50, 2.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 4
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 5
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 5
+        }
+    ],
+    "max_effect_radius_scalar": 1.0
+}

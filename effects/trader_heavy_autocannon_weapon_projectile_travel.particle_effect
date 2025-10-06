@@ -1,85 +1,78 @@
 {
     "version": 2,
     "nodes": [
-    {
-        "id": 0,
-        "name": "(new) Ring-1",
-        "x": [0.0, 0.0],
-        "y": [0.0, 0.0],
-        "z": [0.0, 0.0],
-        "yaw": [-0.0, -0.0],
-        "pitch": [-0.0, -0.0],
-        "roll": [0.0, 0.0]
-    }],
+        {
+            "id": 0,
+            "name": "(new) Ring-1",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
     "emitters": [
-    {
-        "id": 0,
-        "name": "(new) Ring-1",
-        "type": "point",
-        "emit_max_particle_count": [1.0, 1.0],
-        "emit_rate":
         {
-            "primary_emit_rate": [100.0, 100.0]
-        },
-        "particle":
-        {
-            "type": "billboard",
-            "render_layer": 0,
-            "color": "ffffffff",
-            "fade_out_time": [1.0, 1.0],
-            "billboard":
-            {
-                "render_with_additive_blending": true,
-                "shader_type": "uber_only_gradient",
-                "facing_type": "face_camera_by_rotating_on_particle_direction",
-                "anchor": "top",
-                "width": [15.0, 15.0],
-                "height": [55.0, 55.0],
-                "texture_0": "heavy_autocannon_bolt",
-                "gradient_texture": "t_gradient_heavy_autocannon",
-                "uber_constants":
-                {
-                    "basic_constants":
-                    {
-                        "emissive_factor": 0.9,
-                        "alpha_ramp_steepness": 1.0,
-                        "alpha_ramp_growth_delay": 0.9,
-                        "alpha_ramp_max_alpha_scalar": 2.0
+            "id": 0,
+            "name": "(new) Ring-1",
+            "type": "point",
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "primary_emit_rate": [100.0, 100.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "color": "ffffffff",
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_only_gradient",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "top",
+                    "width": [12.50, 12.50],
+                    "texture_0": "heavy_autocannon_bolt",
+                    "gradient_texture": "t_gradient_heavy_autocannon",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 5.0
+                        }
                     }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffff8080",
+                    "intensity": 800.0,
+                    "surface_radius": 0.0
                 }
             },
-            "mesh":
-            {},
-            "light":
-            {
-                "type": "point_finite",
-                "color": "ffff8080",
-                "intensity": 16000.0,
-                "surface_radius": 0.0
-            }
-        },
-        "forward_velocity": [0.0, 0.0]
-    }],
-    "modifiers": [
-    {
-        "id": 1,
-        "name": "FlickerWidth",
-        "type": "float_property",
-        "property_type": "width_scale",
-        "property_value":
-        {
-            "type": "random",
-            "range": [0.9, 1.1]
+            "forward_velocity": [0.0, 0.0]
         }
-    }],
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "FlickerWidth",
+            "type": "float_property",
+            "property_type": "width_scale",
+            "property_value": {
+                "type": "random",
+                "range": [0.90, 1.10]
+            }
+        }
+    ],
     "emitter_to_node_attachments": [
-    {
-        "attacher_id": 0,
-        "attachee_id": 0
-    }],
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        }
+    ],
     "modifier_to_emitter_attachments": [
-    {
-        "attacher_id": 1,
-        "attachee_id": 0
-    }]
+        {
+            "attacher_id": 1,
+            "attachee_id": 0
+        }
+    ]
 }

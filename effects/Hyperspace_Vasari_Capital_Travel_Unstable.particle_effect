@@ -1,0 +1,503 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 0,
+        "name": "Snow",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [1000.0, 1000.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [-0.0, -0.0],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 1,
+        "name": "lines",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [350.0, 350.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [-0.0, -0.0],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 2,
+        "name": "spiral1",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [1200.0, 1200.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [3.141593, 3.141593],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 3,
+        "name": "spiral2",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [1200.0, 1200.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [3.141593, 3.141593],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 4,
+        "name": "(copy) spiral1-2",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [1200.0, 1200.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [3.141593, 3.141593],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 5,
+        "name": "(copy) (copy) spiral2-1-1",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [1200.0, 1200.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [-0.0, -0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 0,
+        "name": "Snow",
+        "type": "point",
+        "emit_rate":
+        {
+            "primary_emit_rate": [65.0, 65.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [2.0, 2.0],
+            "color": "ffffa815",
+            "fade_in_time": [0.4, 0.4],
+            "fade_out_time": [1.5, 1.5],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "width": [80.0, 80.0],
+                "height": [80.0, 80.0],
+                "rotation": [0.0, 6.283185],
+                "texture_0": "sparkles_clr",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {}
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffeccc",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [20.0, 100.0],
+        "angle_variance": [0.349066, 0.349066]
+    },
+    {
+        "id": 1,
+        "name": "lines",
+        "type": "ring",
+        "emit_rate":
+        {
+            "primary_emit_rate": [10.0, 10.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [2.5, 2.5],
+            "mass": [5.0, 5.0],
+            "color": "ffff450f",
+            "fade_in_time": [0.4, 0.4],
+            "fade_out_time": [1.5, 1.5],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [300.0, 300.0],
+                "height": [2000.0, 2000.0],
+                "texture_0": "hyperspacelines_orange_clr",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {}
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffd7cc",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "use_edge": false,
+        "radius_x": [100.0, 120.0],
+        "radius_y": [100.0, 120.0],
+        "normal_offset": [0.0, 0.0],
+        "normal_velocity": [-1000.0, -1000.0],
+        "radial_velocity": [50.0, 50.0],
+        "tangential_velocity": [0.0, 0.0],
+        "angle_range": [0.0, 6.283185],
+        "angle_range_behavior": "random"
+    },
+    {
+        "id": 2,
+        "name": "spiral1",
+        "type": "point",
+        "emit_rate":
+        {
+            "behavior": "square_wave",
+            "primary_emit_rate": [0.0, 0.0],
+            "primary_time": [0.4, 0.4],
+            "secondary_emit_rate": [10.0, 10.0],
+            "secondary_time": [1.4, 1.4]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [6.3, 6.3],
+            "color": "ffff450f",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [4.0, 4.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_particle_direction",
+                "width": [150.0, 150.0],
+                "height": [150.0, 150.0],
+                "rotation_speed": [5.235988, 5.235988],
+                "texture_0": "kay_halfphasegate_clr",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {}
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffd7cc",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [600.0, 600.0]
+    },
+    {
+        "id": 3,
+        "name": "spiral2",
+        "type": "point",
+        "emit_rate":
+        {
+            "behavior": "square_wave",
+            "primary_emit_rate": [0.0, 0.0],
+            "primary_time": [0.5, 0.5],
+            "secondary_emit_rate": [10.0, 10.0],
+            "secondary_time": [2.0, 2.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [6.1, 6.1],
+            "color": "ffff450f",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [4.0, 4.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_particle_direction",
+                "width": [150.0, 150.0],
+                "height": [150.0, 150.0],
+                "rotation_speed": [5.235988, 5.235988],
+                "texture_0": "kay_halfphasegate_clr",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {}
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffd7cc",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [400.0, 400.0]
+    },
+    {
+        "id": 4,
+        "name": "(copy) spiral1-2",
+        "type": "point",
+        "emit_rate":
+        {
+            "behavior": "square_wave",
+            "primary_emit_rate": [0.0, 0.0],
+            "primary_time": [0.4, 0.4],
+            "secondary_emit_rate": [10.0, 10.0],
+            "secondary_time": [1.4, 1.4]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [6.3, 6.3],
+            "color": "ffff450f",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [4.0, 4.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [250.0, 250.0],
+                "height": [250.0, 250.0],
+                "rotation_speed": [5.235988, 5.235988],
+                "texture_0": "kay_halfphasegate_clr",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {}
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffd7cc",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [600.0, 600.0]
+    },
+    {
+        "id": 5,
+        "name": "(copy) (copy) spiral2-1-1",
+        "type": "point",
+        "emit_rate":
+        {
+            "behavior": "square_wave",
+            "primary_emit_rate": [0.0, 0.0],
+            "primary_time": [0.5, 0.5],
+            "secondary_emit_rate": [10.0, 10.0],
+            "secondary_time": [2.0, 2.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [6.1, 6.1],
+            "color": "ffff450f",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [4.0, 4.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [170.0, 170.0],
+                "height": [170.0, 170.0],
+                "rotation_speed": [5.235988, 5.235988],
+                "texture_0": "kay_halfphasegate_clr",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {}
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffd7cc",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [-400.0, -400.0]
+    }],
+    "modifiers": [
+    {
+        "id": 0,
+        "name": "SnowBackPull",
+        "type": "push",
+        "particle_time_offset": [0.25, 0.25],
+        "force":
+        {
+            "type": "random",
+            "range": [500.0, 500.0]
+        },
+        "op": "fixed_in_effect_space",
+        "direction": [0.0, 0.0, -1.0]
+    },
+    {
+        "id": 2,
+        "name": "SnowRotate",
+        "type": "rotate",
+        "op": "around_axis",
+        "angular_velocity": [6.0, 6.0],
+        "radius": [2000.0, 2000.0],
+        "axis_of_rotation": [0.0, 0.0, 1.0],
+        "axis_origin": [0.0, 0.0, 700.0]
+    },
+    {
+        "id": 3,
+        "name": "SnowBackPull",
+        "type": "push",
+        "particle_time_offset": [0.75, 0.75],
+        "particle_time_duration": [2.25, 2.25],
+        "force":
+        {
+            "type": "random",
+            "range": [5000.0, 5000.0]
+        },
+        "op": "fixed_in_effect_space",
+        "direction": [0.0, 0.0, -1.0]
+    },
+    {
+        "id": 4,
+        "name": "Repulsor",
+        "type": "push",
+        "particle_time_duration": [1.0, 1.0],
+        "force":
+        {
+            "type": "random",
+            "range": [-2000.0, -2000.0]
+        },
+        "op": "to_point_in_effect_space",
+        "point": [0.0, 0.0, 1010.0]
+    },
+    {
+        "id": 6,
+        "name": "(new) LinearInflate-1",
+        "type": "size",
+        "width_change_rate": [100.0, 100.0],
+        "height_change_rate": [100.0, 100.0]
+    },
+    {
+        "id": 7,
+        "name": "(new) Jitter-1",
+        "type": "push",
+        "force":
+        {
+            "type": "random",
+            "range": [20.0, 20.0]
+        },
+        "op": "random_jitter"
+    },
+    {
+        "id": 8,
+        "name": "(new) LinearInflate-2",
+        "type": "size",
+        "width_change_rate": [100.0, 100.0],
+        "height_change_rate": [100.0, 100.0]
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 0,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 1,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 2,
+        "attachee_id": 2
+    },
+    {
+        "attacher_id": 3,
+        "attachee_id": 3
+    },
+    {
+        "attacher_id": 4,
+        "attachee_id": 4
+    },
+    {
+        "attacher_id": 5,
+        "attachee_id": 5
+    }],
+    "modifier_to_emitter_attachments": [
+    {
+        "attacher_id": 0,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 0,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 2,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 3,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 3,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 4,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 4,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 6,
+        "attachee_id": 2
+    },
+    {
+        "attacher_id": 6,
+        "attachee_id": 3
+    },
+    {
+        "attacher_id": 7,
+        "attachee_id": 2
+    },
+    {
+        "attacher_id": 7,
+        "attachee_id": 3
+    },
+    {
+        "attacher_id": 7,
+        "attachee_id": 4
+    },
+    {
+        "attacher_id": 7,
+        "attachee_id": 5
+    },
+    {
+        "attacher_id": 8,
+        "attachee_id": 4
+    },
+    {
+        "attacher_id": 8,
+        "attachee_id": 5
+    }]
+}

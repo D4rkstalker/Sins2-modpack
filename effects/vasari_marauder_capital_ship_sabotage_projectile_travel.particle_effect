@@ -1,0 +1,238 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "Smoke",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 1,
+            "name": "Sphere",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 2,
+            "name": "Electricity",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 3,
+            "name": "White sphere",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Smoke",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [1.50, 1.50],
+                "color": "ffffc0ff",
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [100.0, 100.0],
+                    "height": [100.0, 100.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.174533, 0.174533],
+                    "texture_0": "smoke1_clr"
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [10.0, 10.0],
+            "angle_variance": [3.141593, 3.141593]
+        },
+        {
+            "id": 1,
+            "name": "Sphere",
+            "is_visible": false,
+            "type": "point",
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "color": "ff9d33a6",
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [100.0, 100.0],
+                    "height": [100.0, 100.0],
+                    "texture_0": "gravitybomb_orb_clr"
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "fffbccff",
+                    "intensity": 800.0,
+                    "surface_radius": 0.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [3.141593, 3.141593]
+        },
+        {
+            "id": 2,
+            "name": "Electricity",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [10.0, 10.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [1.0, 1.0],
+                "color": "ffff80ff",
+                "fade_in_time": [0.50, 0.50],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [90.0, 90.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.785398, 0.785398],
+                    "texture_0": "electrical_circle_vasari",
+                    "distortion_texture": "water_uv",
+                    "erosion_texture": "white_square",
+                    "initial_distortion_scalar": [0.050, 0.050],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "random_flip_texture_vertical_chance": 0.50,
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 10.0
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.150,
+                                "v_pan_speed": -0.50
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": 0.110,
+                                "v_pan_speed": -0.230
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [6.283185, 6.283185]
+        },
+        {
+            "id": 3,
+            "name": "White sphere",
+            "type": "point",
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "color": "ffff8080",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [10.0, 10.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [55.0, 55.0],
+                    "height": [55.0, 55.0],
+                    "texture_0": "gravitybomb_orb_clr",
+                    "distortion_texture": "water_uv",
+                    "erosion_texture": "white_square",
+                    "initial_distortion_scalar": [0.0250, 0.0250],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 10.0
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.170,
+                                "v_pan_speed": 0.30,
+                                "global_scale": 2.0
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": -0.250,
+                                "v_pan_speed": -0.150,
+                                "global_scale": 2.0
+                            }
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffffff",
+                    "intensity": 800.0,
+                    "surface_radius": 0.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [3.141593, 3.141593]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "Shrink",
+            "type": "size",
+            "width_change_rate": [2.0, 2.0],
+            "width_stop": [60.0, 60.0],
+            "height_stop": [60.0, 60.0],
+            "oscillate_duration": [0.50, 0.50]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 1,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 2
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 3
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 1,
+            "attachee_id": 3
+        }
+    ]
+}

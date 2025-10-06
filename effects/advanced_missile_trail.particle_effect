@@ -1,0 +1,172 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-8.0, -8.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 3,
+            "name": "Glow",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 5,
+            "name": "NewNode5",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-40.0, -40.0],
+            "yaw": [3.141593, 3.141593],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Trail",
+            "is_visible": false,
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [25.0, 25.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "color": "ff000000",
+                "fade_in_time": [0.20, 0.20],
+                "fade_out_time": [0.20, 0.20],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [19.0, 25.0],
+                    "height": [100.0, 120.0],
+                    "texture_0": "advanced_missile_exhaust",
+                    "gradient_texture": "advanced_missile_grad",
+                    "distortion_texture": "fire_uv",
+                    "erosion_texture": "t_noise_001",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "initial_distortion_scalar": [0.10, 0.10],
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_opacity": 100.0,
+                            "depth_fade_distance": 3.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": -0.0360,
+                                "v_pan_speed": 0.70,
+                                "global_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": 0.050,
+                                "v_pan_speed": 0.40,
+                                "u_scale": 0.10,
+                                "global_scale": 0.30
+                            },
+                            "erosion_test": 0.20
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 2.0
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 1.0
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [33.0, 33.0]
+        },
+        {
+            "id": 2,
+            "name": "Glow",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [20.0, 20.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.20, 0.20],
+                "color": "ff000000",
+                "fade_in_time": [0.10, 0.10],
+                "fade_out_time": [0.10, 0.10],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "width": [250.0, 500.0],
+                    "height": [20.0, 25.0],
+                    "texture_0": "t_lenseflare",
+                    "gradient_texture": "advanced_missile_grad",
+                    "distortion_texture": "vasari_signal_image_distort",
+                    "erosion_texture": "white_square",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 4.0,
+                            "depth_fade_opacity": 3.0,
+                            "depth_fade_distance": 9.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_scale": 0.50,
+                                "global_scale": 0.10
+                            },
+                            "noise_constants_1": {
+                                "v_scale": 0.50
+                            }
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": -0.050,
+                                "v_pan_speed": 0.0250,
+                                "global_scale": 0.350
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": 0.030,
+                                "v_pan_speed": -0.030
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 3
+        }
+    ],
+    "modifier_to_emitter_attachments": [],
+    "max_effect_radius_scalar": 1.0
+}

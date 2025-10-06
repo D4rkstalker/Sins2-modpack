@@ -1,0 +1,189 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 167,
+            "name": "Motes",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 165,
+            "name": "Embers",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [3.0, 9.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 6,
+                "max_duration": [0.50, 4.0],
+                "color": "ffffffc0",
+                "fade_out_time": [0.20, 0.20],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_only_gradient",
+                    "width": [3.0, 10.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.261799, 0.261799],
+                    "gradient_texture": "t_gradient_69",
+                    "texture_animation": "embers_03",
+                    "texture_animation_fps": [25.0, 25.0],
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.50,
+                            "depth_fade_opacity": 5.0,
+                            "alpha_ramp_steepness": 0.40
+                        },
+                        "gradient_constants": {
+                            "gradient_pan_start": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [15.0, 150.0],
+            "angle_variance": [0.0, 1.308997]
+        },
+        {
+            "id": 183,
+            "name": "Flare",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 10.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 6,
+                "max_duration": [0.250, 0.50],
+                "camera_offset": [-20.0, -10.0],
+                "color": "ffffffc0",
+                "fade_out_time": [0.20, 0.20],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_only_gradient",
+                    "width": [3.0, 7.50],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.261799, 0.261799],
+                    "gradient_texture": "t_gradient_69",
+                    "texture_animation": "advent_nuke_clouds_2x2",
+                    "texture_animation_fps": [25.0, 25.0],
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 10.0,
+                            "alpha_ramp_steepness": 0.40
+                        },
+                        "gradient_constants": {
+                            "gradient_pan_start": 1.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ff00e100",
+                    "intensity": 350.0,
+                    "surface_radius": 0.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 1.570796]
+        },
+        {
+            "id": 184,
+            "name": "Wave",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [3.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 6,
+                "max_duration": [0.250, 0.50],
+                "camera_offset": [-10.0, 0.0],
+                "color": "ff80ff80",
+                "fade_out_time": [0.20, 0.20],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [35.0, 65.0],
+                    "rotation": [4.712389, 4.712389],
+                    "texture_0": "t_lightning_shockwave_02",
+                    "gradient_texture": "t_gradient_69",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 0.50,
+                            "alpha_ramp_steepness": 0.40
+                        },
+                        "gradient_constants": {
+                            "gradient_pan_start": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 0.261799]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 181,
+            "name": "Shrink",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [1.0, 0.0]
+            }
+        },
+        {
+            "id": 182,
+            "name": "Grow",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.0, 1.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 165,
+            "attachee_id": 167
+        },
+        {
+            "attacher_id": 183,
+            "attachee_id": 167
+        },
+        {
+            "attacher_id": 184,
+            "attachee_id": 167
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 181,
+            "attachee_id": 165
+        },
+        {
+            "attacher_id": 182,
+            "attachee_id": 184
+        }
+    ],
+    "max_effect_radius_scalar": 1.0
+}

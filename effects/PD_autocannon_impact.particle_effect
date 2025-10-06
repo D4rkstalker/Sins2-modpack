@@ -1,0 +1,266 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 44,
+            "name": "ExplosionSparkCore",
+            "type": "point",
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [100.0, 200.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 1,
+                "max_duration": [0.50, 0.50],
+                "color": "ffff8080",
+                "initial_alpha": [0.149020, 0.149020],
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [30.0, 30.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-1.745329, 1.745329],
+                    "texture_0": "soft_circle",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.0,
+                            "alpha_ramp_steepness": -0.50
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 3.141593]
+        },
+        {
+            "id": 45,
+            "name": "embers",
+            "type": "point",
+            "emit_max_particle_count": [1.0, 3.0],
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [100.0, 200.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.1250, 0.350],
+                "color": "ffff8000",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.10, 0.10],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_only_gradient",
+                    "width": [1.0, 2.0],
+                    "rotation": [0.0, 6.283185],
+                    "gradient_texture": "t_gradient_61",
+                    "texture_animation": "embers_anim",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 1.20,
+                            "depth_fade_opacity": 5.0,
+                            "depth_fade_distance": 10.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [25.0, 45.0],
+            "angle_variance": [0.0, 1.396263]
+        },
+        {
+            "id": 48,
+            "name": "StrikeCenter",
+            "type": "ring",
+            "emit_max_particle_count": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [1000.0, 1000.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.350, 0.350],
+                "color": "ffff8080",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_multiply_color",
+                    "width": [50.0, 100.0],
+                    "rotation": [0.0, 6.283185],
+                    "gradient_texture": "t_gradient_42",
+                    "erosion_texture": "smoke_noise2",
+                    "texture_animation": "embers_anim",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 10.0,
+                            "alpha_ramp_curvature": 0.10,
+                            "alpha_ramp_steepness": 0.70,
+                            "alpha_ramp_growth_delay": 0.60
+                        },
+                        "erosion_constants": {
+                            "erosion_test": 0.770,
+                            "erosion_softness": 0.050
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_edge": false,
+            "radius_x": [0.0, 0.0],
+            "radius_y": [0.0, 0.0],
+            "normal_offset": [0.0, 0.0],
+            "normal_velocity": [0.0, 0.0],
+            "radial_velocity": [0.0, 0.0],
+            "tangential_velocity": [0.0, 0.0],
+            "angle_range": [0.0, 6.283185],
+            "angle_range_behavior": "random"
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 21,
+            "name": "",
+            "type": "size",
+            "width_change_rate": [0.0, 0.0]
+        },
+        {
+            "id": 22,
+            "name": "Grad",
+            "type": "float_property",
+            "property_type": "gradient_pan_offset",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 23,
+            "name": "Erosion",
+            "type": "float_property",
+            "property_type": "erosion_test_base",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_sine",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 24,
+            "name": "Distort",
+            "type": "float_property",
+            "property_type": "distortion_scalar",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_sine",
+                "easing_values": [0.0, 0.10]
+            }
+        },
+        {
+            "id": 43,
+            "name": "Grow",
+            "type": "size",
+            "width_change_rate": [15.0, 15.0]
+        },
+        {
+            "id": 46,
+            "name": "Drag",
+            "type": "drag",
+            "coefficient_generator": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_sine",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 47,
+            "name": "Shrink",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 53,
+            "name": "EmberGrad",
+            "type": "float_property",
+            "property_type": "gradient_pan_offset",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.0, 0.50]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 44,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 48,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 46,
+            "attachee_id": 45
+        },
+        {
+            "attacher_id": 47,
+            "attachee_id": 45
+        },
+        {
+            "attacher_id": 47,
+            "attachee_id": 48
+        },
+        {
+            "attacher_id": 22,
+            "attachee_id": 48
+        },
+        {
+            "attacher_id": 46,
+            "attachee_id": 48
+        },
+        {
+            "attacher_id": 23,
+            "attachee_id": 48
+        },
+        {
+            "attacher_id": 53,
+            "attachee_id": 45
+        }
+    ]
+}
