@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "action_data_source": "nilari_euphoric_sacrifice",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+	            {
+					"operator_type": "apply_buff",
+                    "buff": "nilari_euphoric_sacrifice_on_origin_fixture"
+				}]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "euphoric_sacrifice_planet_target_filter"]
+    },
+    "gui":
+    {
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.charge_delay",
+                "value_id": "altar_of_sacrifice_action_delay_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_per_planet_population",
+                "value_id": "altar_of_sacrifice_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.population_killed",
+                "value_id": "euphoric_sacrifice_population_damage_value",
+				"value_float_format": "percentage_one_decimal_place",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

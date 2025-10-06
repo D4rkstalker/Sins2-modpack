@@ -1,0 +1,106 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+		"execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_space_offset_from_unit",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"offset_position": [-6000.0, 0.0, 6000.0],
+					"offset_rotation": [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0]
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "neutral_metal_asteroid",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "neutral_metal_extractor"
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_space_offset_from_unit",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"offset_position": [4000.0, 0.0, 4000.0],
+					"offset_rotation": [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0]
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "neutral_crystal_asteroid",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "neutral_crystal_extractor"
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+				"constraint":
+				{
+					"constraint_type": "random_chance",
+					"chance_value": "uncolonizable_planet_extra_spawn_chance"
+				},
+                "position":
+                {
+                    "position_type": "unit_space_offset_from_unit",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"offset_position": [2000.0, 0.0, -4000.0],
+					"offset_rotation": [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0]
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "neutral_crystal_asteroid",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "neutral_crystal_extractor"
+                }]
+            }]
+        }
+    }]
+}

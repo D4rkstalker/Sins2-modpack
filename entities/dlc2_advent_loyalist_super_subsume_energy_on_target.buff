@@ -1,0 +1,82 @@
+{
+    "version": 0,
+    "active_duration": "subsume_energy_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc2_advent_loyalist_super_subsume_energy_buff_on_target_small",
+                        "medium_unit": "dlc2_advent_loyalist_super_subsume_energy_buff_on_target_medium",
+                        "large_unit": "dlc2_advent_loyalist_super_subsume_energy_buff_on_target_large"
+                    }
+                }
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_antimatter",
+                    "antimatter_remove_value": "subsume_energy_antimatter_remove_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_antimatter_removed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "previous_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "restore_antimatter",
+                    "antimatter_restore_value": "subsume_energy_antimatter_restore_value"
+                }]
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "subsume_energy_weapon_cooldown_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_loyalist_super_subsume_energy_hud_icon",
+        "name": "dlc2_advent_loyalist_super_subsume_energy_ability_name",
+        "visibility_scope": "negative",       
+		"tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "subsume_energy_weapon_cooldown_modifier"
+            }]
+        }]
+    }
+}

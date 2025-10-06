@@ -1,0 +1,105 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 21,
+            "name": "VaporWaveUp",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 39,
+            "name": "BottomBeam",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 40,
+            "name": "Glow",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [0.30, 0.30]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.20, 0.20],
+                "color": "ffffffff",
+                "fade_in_time": [0.10, 0.10],
+                "fade_out_time": [0.10, 0.10],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "texture_0": "soft_circle_large",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.30,
+                            "depth_fade_distance": 1000.0,
+                            "alpha_ramp_max_alpha_scalar": 0.40
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 3.141593]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 2,
+            "name": "Grow",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_sine",
+                "easing_values": [0.90, 1.0]
+            }
+        },
+        {
+            "id": 19,
+            "name": "VaporWaveUpShrink",
+            "type": "float_property",
+            "start_delay": [0.50, 0.50],
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [1.0, 0.90]
+            }
+        },
+        {
+            "id": 20,
+            "name": "VaporWaveErosion",
+            "type": "float_property",
+            "property_type": "erosion_test_base",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_quad",
+                "easing_values": [1.0, 0.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 40,
+            "attachee_id": 21
+        }
+    ],
+    "modifier_to_emitter_attachments": []
+}

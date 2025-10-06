@@ -1,0 +1,157 @@
+{
+    "version": 0,
+    "level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "recharge_shields_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_missing_shields"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_temple_of_renewal_recharge_shields",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "recharge_shields_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_missing_shields"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_temple_of_renewal_recharge_shields",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "recharge_shields_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_missing_shields"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "recharge_shields_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "recharge_shields_auto_cast_shields_threshold_value",
+        "action_value":
+        {
+            "values": [150.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "recharge_shields_cooldown_time_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "recharge_shields_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "recharge_shields_range_value",
+        "action_value":
+        {
+            "values": [15000.0, 15000.0]
+        }
+    },
+    {
+        "action_value_id": "recharge_shields_restore_rate_value",
+        "action_value":
+        {
+            "values": [45.0, 67.5]
+        }
+    },
+    {
+        "action_value_id": "recharge_shields_target_missing_shields_value",
+        "action_value":
+        {
+            "transform_type": "per_missing_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0, 1.0]
+        }
+    }]
+}

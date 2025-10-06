@@ -1,0 +1,61 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ship_graveyard_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "loot"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "ship_loot_ship_graveyard"
+            },
+			{
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "ship_graveyard_planet_bonus_on_loot",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "current_wreckages"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "ship_graveyard_timer",
+        "action_value":
+        {
+            "values": [480.0]
+        }
+    },
+    {
+        "action_value_id": "ship_graveyard_current_wreckages",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "current_wreckages",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "ship_graveyard_max_wreckages",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    }]
+}

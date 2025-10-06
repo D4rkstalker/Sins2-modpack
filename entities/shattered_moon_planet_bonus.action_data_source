@@ -1,0 +1,64 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "shattered_moon_planet_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+				"strikecraft",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "shattered_moon_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "shattered_moon_armor_strength_value",
+        "action_value":
+        {
+            "values": [-30.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "shattered_moon_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "shattered_moon_damage_taken_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "shattered_moon_armor_strength_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "shattered_moon_armor_strength_value"
+        }
+    }]
+}

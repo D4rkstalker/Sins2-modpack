@@ -1,0 +1,134 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "warpath_large_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    },
+    {
+        "target_filter_id": "warpath_small_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "last_stack_changed_time",
+            "stack_count",
+            "time_since_last_stack"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "warpath_large_kill_stack_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "warpath_last_stack_changed_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "last_stack_changed_time",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "warpath_max_stack_count",
+        "action_value":
+        {
+            "values": [10.0, 15.0, 20.0, 25.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "warpath_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "warpath_stack_duration_value",
+        "action_value":
+        {
+            "values": [10.0, 15.0, 20.0, 25.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "warpath_time_since_last_stack_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "time_since_last_stack",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "warpath_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.02, 0.02, 0.02, 0.02, 0.02]
+        }
+    },
+    {
+        "action_value_id": "warpath_angular_speed_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.02, 0.02, 0.02, 0.02, 0.02]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "warpath_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "warpath_weapon_damage_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "warpath_max_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "warpath_angular_speed_bonus_value"
+        }
+    }]
+}

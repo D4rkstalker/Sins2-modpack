@@ -1,0 +1,73 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "naibor_tacticians_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+				"super_capital_ship"
+			],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+				"constraint_type": "has_recently_fired_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "naibor_tacticians_cancel_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+				"super_capital_ship"
+			],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_recently_fired_weapon"
+				}
+            }]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "passive_experience"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "naibor_tacticians_passive_experience_rate",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "naibor_tacticians_experience_rate",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "naibor_tacticians_passive_experience_tooltip_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "passive_experience",
+            "values": [1.0]
+        }
+    }]
+}

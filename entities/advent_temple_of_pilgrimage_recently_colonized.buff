@@ -1,0 +1,30 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_planet_track_queue_increased",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "temple_of_pilgrimage_future_planet_level_value",
+                "comparison_type": "greater_than_equal_to",
+                "value_b": "fixed_one"
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

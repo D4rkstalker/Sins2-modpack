@@ -1,0 +1,58 @@
+{
+    "version": 0,
+	"target_filters": [
+    {
+        "target_filter_id": "counter_deployment_factory_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+			{
+                "constraint_type": "is_unit_factory",
+                "must_be_functional": true
+			}]
+        }
+    },
+    {
+        "target_filter_id": "counter_deployment_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"super_capital_ship",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "build_time_scalar",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    }],
+    "buff_unit_factory_modifiers": [
+    {
+        "buff_unit_factory_modifier_id": "counter_deployment_factory_build_time_modifier",
+        "buff_unit_factory_modifier":
+        {
+            "modifier_type": "build_time",
+            "value_behavior": "scalar",
+            "value_id": "build_time_scalar"
+        }
+    }]
+}

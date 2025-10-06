@@ -1,0 +1,31 @@
+{
+    "version": 0,
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+	{
+		"execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "has_enemy_units_in_gravity_well",
+                "gravity_well_reference_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+				"target_filter_id": "advent_reimagine_explusion_enemy_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

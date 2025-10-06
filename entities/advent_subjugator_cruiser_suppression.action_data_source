@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "suppression_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_subjugator_cruiser_suppression",
+                    "include_pending_buffs": true
+                }
+            },
+			{
+				"constraint_type": "composite_or",
+                "constraints": [
+				{
+					"constraint_type": "is_always_a_threat"
+				},
+				{
+					"constraint_type": "is_structure_builder"
+				}]
+			}]
+        }
+    },
+    {
+        "target_filter_id": "suppression_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "suppression_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [200.0]
+        }
+    },
+    {
+        "action_value_id": "suppression_cooldown_time_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "suppression_duration_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "suppression_range_value",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    }]
+}

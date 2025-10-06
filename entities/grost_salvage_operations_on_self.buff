@@ -1,0 +1,85 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+	"make_dead_on_source_ability_released": true,
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "salvage_operations_radius",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "salvage_operations_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "grost_salvage_operations_on_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "secret_target"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "secret_2"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "grost_salvage_operations_hud_icon",
+        "name": "npc_reward.grost_salvage_operations.name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "salvage_operations_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_restore_value_per_max_hull_points",
+                "value_id": "hull_restore_value",
+                "value_float_format": "one_decimal_place",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "active_duration": "resurrection_execution_count_value",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "resurrect_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "dead_units_player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "first_spawner"
+                    }
+                },
+                "unit_types_to_resurrect": [
+                    "corvette",
+                    "cruiser",
+                    "frigate"
+                ],
+                "resurrection_sort":
+                {
+                    "sort_steps": [
+                    {
+                        "sort_type": "build_or_virtual_supply",
+                        "sort_order": "descending"
+                    }]
+                },
+                "max_supply_value": "resurrection_max_supply_value",
+                "buff_on_resurrected_units": "advent_unity_resurrection_on_target"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_unity_resurrection_on_planet_buff_small",
+                        "medium_unit": "advent_unity_resurrection_on_planet_buff_medium",
+                        "large_unit": "advent_unity_resurrection_on_planet_buff_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unity_resurrection_ability_hud_icon",
+        "name": "advent_unity_resurrection_ability_name",
+        "is_visible_within_unit_tooltip": true
+    }
+}

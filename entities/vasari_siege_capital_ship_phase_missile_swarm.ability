@@ -1,0 +1,219 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_siege_capital_ship_phase_missile_swarm",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "phase_missile_swarm_cooldown_time_value",
+        "antimatter_cost": "phase_missile_swarm_antimatter_cost_value",
+        "actions":
+        {
+            "constraint":
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "plasma_storm_fixture_bonus_on_target"
+					}
+				}
+            },
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "phase_missile_swarm_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_siege_capital_ship_phase_missile_swarm_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "phase_missile_swarm_target_filter"
+        ],
+        "range": "phase_missile_swarm_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 30.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "phase_missile_swarm_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "phase_missile_swarm_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_siege_capital_ship_phase_missile_swarm_ability_hud_icon",
+        "tooltip_picture": "vasari_siege_capital_ship_phase_missile_swarm_ability_tooltip_picture",
+        "name": "vasari_siege_capital_ship_phase_missile_swarm_ability_name",
+        "description": "vasari_siege_capital_ship_phase_missile_swarm_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "phase_missile_swarm_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.salvo_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_count",
+                "value_id": "phase_missile_swarm_torpedo_count_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.missile_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "phase_missile_swarm_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "phase_missile_swarm_armor_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.bypass_shields_chance",
+                "value_id": "phase_missile_swarm_bypass_shields_chance_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_speed",
+                "value_id": "phase_missile_swarm_torpedo_speed_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_hull",
+                "value_id": "phase_missile_swarm_torpedo_hull_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor",
+                "value_id": "phase_missile_swarm_torpedo_armor_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor_strength",
+                "value_id": "phase_missile_swarm_torpedo_armor_strength_value"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [-112.396019, 38.887363, -21.968153]
+    },
+    {
+        "position": [-121.479362, 24.50124, -17.002174]
+    },
+    {
+        "position": [-131.005844, 7.85002, -8.991478]
+    },
+    {
+        "position": [-157.477997, 4.389578, -21.239004]
+    },
+    {
+        "position": [-148.007904, 20.700518, -32.677143]
+    },
+    {
+        "position": [-141.161743, 34.264286, -39.183594]
+    },
+    {
+        "position": [-168.249207, 26.872181, -48.523758]
+    },
+    {
+        "position": [-176.938614, 13.468964, -43.130775]
+    },
+    {
+        "position": [-199.030777, 21.622093, -58.504719]
+    },
+    {
+        "position": [-200.75029, -6.246894, -45.623718]
+    },
+    {
+        "position": [113.210037, 38.887363, -21.968153]
+    },
+    {
+        "position": [121.928062, 24.50124, -17.002174]
+    },
+    {
+        "position": [131.304245, 7.85002, -8.991478]
+    },
+    {
+        "position": [140.912613, 34.264286, -39.183594]
+    },
+    {
+        "position": [148.25679, 20.700518, -32.677143]
+    },
+    {
+        "position": [157.434402, 4.389578, -21.239004]
+    },
+    {
+        "position": [168.464935, 26.872181, -48.523758]
+    },
+    {
+        "position": [177.015549, 13.468964, -43.130775]
+    },
+    {
+        "position": [198.781754, 21.622093, -58.504719]
+    },
+    {
+        "position": [200.927307, -6.246894, -45.623718]
+    }]
+}

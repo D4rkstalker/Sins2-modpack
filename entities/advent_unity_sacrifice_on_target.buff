@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "fixed_one",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+	                "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "sacrifice_cull_population_target_filter"
+                    },
+                    "operator_type": "cull_allegiance_population",
+                    "damage_source": "ability",
+                    "population_reduction_type": "owner_only",
+                    "population_culled_value": "sacrifice_population_culled_value",
+                    "population_reduction_modifier_type": "scalar"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_unity_sacrifice_buff_small",
+                        "medium_unit": "advent_unity_sacrifice_buff_medium",
+                        "large_unit": "advent_unity_sacrifice_buff_large"
+                    }
+                }
+            },
+            {
+                "action_type": "use_unit_operators_on_gravity_wells",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "max_jump_distance_value": "sacrifice_phase_lane_distance_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_sacrifice_on_fixture",
+                    "destination_unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    }
+                }]
+            }]
+        }
+    }]
+}

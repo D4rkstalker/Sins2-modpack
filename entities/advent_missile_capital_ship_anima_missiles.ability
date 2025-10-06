@@ -1,0 +1,216 @@
+{
+    "version": 0,
+    "action_data_source": "advent_missile_capital_ship_anima_missiles",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "anima_missiles_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "anima_missiles_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_missile_capital_ship_anima_missiles_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "advent_missile_capital_ship_anima_missiles_target_filter"
+        ],
+        "range": "anima_missiles_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 90.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "advent_missile_capital_ship_anima_missiles_auto_cast_target_filter"
+            }]
+        },
+        "watched_buff": "advent_missile_capital_ship_anima_missiles_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "anima_swarm_missile_hud_icon",
+        "tooltip_picture": "anima_swarm_missile_tooltip_picture",
+        "name": "ability.advent_missile_capital_ship_anima_missiles_name",
+        "description": "ability.advent_missile_capital_ship_anima_missiles_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "anima_missiles_range_value",
+                "radius": "anima_missiles_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "anima_missiles_damage_value"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "anima_missiles_penetration_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_volleys",
+                "value_id": "anima_missiles_execution_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "anima_missiles_radius_value"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [18.008886, 19.473948, 265.08078],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-17.509876, 19.473948, 265.08078],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [18.008886, 19.473948, 247.785233],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-20.360506, 19.473948, 249.153488],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.144451, 19.473948, 227.518188],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [21.322388, 19.473948, 227.889618],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-24.762644, 20.847185, 208.760635],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 20.847185, 208.539719],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 21.2612, 189.659958],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 21.2612, 189.659958],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 21.2612, 167.08136],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 21.2612, 167.08136],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 21.2612, 143.98938],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 21.2612, 143.98938],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 21.2612, 121.798431],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 21.2612, 121.798431],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 23.223078, 97.880409],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 23.223078, 97.880409],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 23.223078, 74.622589],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 23.223078, 74.622589],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 23.223078, 48.338989],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 23.223078, 48.338989],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-23.281345, 23.223078, 23.358385],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [24.038591, 23.223078, 23.358385],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [19.473396, 26.444967, 1.060081],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-20.176201, 26.444967, 0.889799],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [17.948559, 26.444967, -19.867155],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    },
+    {
+        "position": [-18.384016, 26.444967, -20.050596],
+            "rotation": [1.0, 0.0, 0.0, 0.0, -0.0, -1.0, 0.0, 1.0, -0.0]
+    }]
+}

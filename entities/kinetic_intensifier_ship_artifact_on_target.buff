@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "kinetic_intensifier_weapon_damage_modifier"
+    },
+    {
+        "buff_weapon_modifier_id": "kinetic_intensifier_weapon_range_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "kinetic_intensifier_ship_artifact_hud_icon",
+        "name": "ship_artifact.kinetic_intensifier.name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "kinetic_intensifier_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "kinetic_intensifier_weapon_range_modifier"
+            }]
+        }]
+    }
+}

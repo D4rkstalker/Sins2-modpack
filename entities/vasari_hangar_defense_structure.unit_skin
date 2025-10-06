@@ -1,0 +1,117 @@
+{
+    "version": 0,
+    "skin_stages": [
+        {
+            "is_main_view_icon_visible_camera_distance": 11118.22176,
+            "min_camera_distance": 800.333433,
+            "gui": {
+                "hud_icon": "vasari_hangar_defense_structure_hud_icon",
+                "hud_monochrome_icon": "vasari_hangar_defense_structure_main_view_icon",
+                "hud_picture": "vasari_hangar_defense_structure_hud_picture",
+                "name": "advent_hangar_defense_structure_name",
+                "description": "advent_hangar_defense_structure_description"
+            },
+            "unit_mesh": {
+                "mesh": "vasari_hangar_defense_structure",
+                "shader": "ship",
+                "is_shadow_blocker": true
+            },
+            "main_view_icon": {
+                "group": "structure",
+                "icon": "vasari_hangar_defense_structure_main_view_icon",
+                "has_rotation": false
+            },
+            "effects": {
+                "damage_effects": {
+                    "max_damage_effect_count": 30,
+                    "damage_effects": [
+                        {
+                            "max_count": 5,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.50,
+                            "particle_effect": "vasari_damage_clouds"
+                        },
+                        {
+                            "max_count": 5,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.50,
+                            "particle_effect": "vasari_damage_plasma_sparks"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.450,
+                            "particle_effect": "damage_smoke_1"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 3.0,
+                            "hull_percentage_threshold": 0.450,
+                            "particle_effect": "damage_smoke_2"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 3.0,
+                            "hull_percentage_threshold": 0.450,
+                            "particle_effect": "damage_smoke_3"
+                        },
+                        {
+                            "max_count": 3,
+                            "weight": 3.0,
+                            "hull_percentage_threshold": 0.420,
+							"particle_effect": "vasari_damage_escaping_gas",
+							"sound": "ambient_loop_tech_escaping_gas"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.40,
+                            "particle_effect": "damage_electricity",
+                            "sound": "ambient_loop_electrical_damage"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.40,
+                            "particle_effect": "damage_electricity_2",
+                            "sound": "ambient_loop_electrical_damage_01"
+                        },
+                        {
+                            "max_count": 7,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.380,
+                            "particle_effect": "vasari_damage_embers"
+                        },
+                        {
+                            "max_count": 7,
+                            "weight": 6.0,
+                            "hull_percentage_threshold": 0.350,
+                            "particle_effect": "vasari_damage_fire",
+                            "sound": "ambient_loop_firedamage"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.30,
+                            "particle_effect": "vasari_damage_fire_pillar",
+                            "sound": "ambient_loop_firepillar_damage"
+                        }
+                    ]
+                }
+            },
+            "sounds": {
+                "dialogue": {
+                    "selected": {
+                        "neutral": [
+                            "PlanetModule_PhaseOrbitalHangarDefense_OnSelection_0"
+                        ],
+                        "scared": [
+                            "PlanetModule_PhaseOrbitalHangarDefense_OnSelection_0"
+                        ]
+                    }
+                }
+            },
+            "death_sequence_group": "vasari_planetmodulesmall"
+        }
+    ]
+}

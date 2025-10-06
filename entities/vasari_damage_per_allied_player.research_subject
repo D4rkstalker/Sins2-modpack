@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 3,
+    "field": "civilian_oppression",
+    "field_coord": [7, 1],
+    "research_time": 600.0,
+    "price":
+    {
+        "metal": 630.0,
+        "crystal": 720.0,
+        "credits": 0.0
+    },
+    "prerequisites": [
+        ["vasari_upgrade_npc_ability_cooldown"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "normal"
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "minor_faction_raid",
+					"include_pending_buffs": true
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "minor_faction_raid_strikecraft",
+					"include_pending_buffs": true
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "nilari_relentless_evangelists_on_ship",
+					"include_pending_buffs": true
+				}
+            }]
+        },
+        "action_data_source": "vasari_damage_per_allied_player",
+        "buff": "vasari_damage_per_allied_player",
+        "tooltip_sub_header_label": "vasari_damage_per_allied_player_tooltip_sub_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "buff_weapon_modifier",
+            "weapon_modifier_id": "damage_per_allied_player_damage_modifier"
+        }]
+    }],
+    "name": "vasari_damage_per_allied_player_research_subject_name",
+    "name_uppercase": "vasari_damage_per_allied_player_research_subject_name_uppercase",
+    "description": "vasari_damage_per_allied_player_research_subject_description",
+    "hud_icon": "vasari_damage_per_allied_player_research_subject_hud_icon"
+}

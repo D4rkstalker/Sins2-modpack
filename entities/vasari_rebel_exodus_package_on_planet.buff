@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_planet_colonized",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "logistics",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": true
+                },
+                {
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "defense",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": true
+                },
+                {
+                    "operator_type": "add_unit_item",
+                    "unit_item": "vasari_alliance_consulate"
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "unit_to_create": "player_buffs"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "first_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_unit_item",
+                    "unit_item": "vasari_rebel_exodus_package"
+                }]
+            }]
+        }
+    }]
+}

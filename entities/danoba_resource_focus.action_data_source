@@ -1,0 +1,49 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "resource_focus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "resource_focus_crystal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "resource_focus_metal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "resource_focus_orbital_metal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "resource_focus_metal_income_rate_bonus_value"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "resource_focus_orbital_crystal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "resource_focus_crystal_income_rate_bonus_value"
+        }
+	}]
+}

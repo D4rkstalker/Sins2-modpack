@@ -1,0 +1,344 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 22,
+        "name": "Travel",
+        "type": "ring",
+        "emit_rate":
+        {
+            "primary_emit_rate": [20.0, 20.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [4.0, 6.0],
+            "color": "ff00dd00",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_only_gradient",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "anchor": "bottom",
+                "width": [35.0, 70.0],
+                "height": [2000.0, 2500.0],
+                "texture_0": "vasari_exhaust2",
+                "gradient_texture": "vasari_orange",
+                "random_flip_texture_horizontal_chance": 0.5,
+                "random_flip_texture_vertical_chance": 0.5,
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 1.5,
+                        "depth_fade_opacity": 3.0,
+    		        "alpha_ramp_curvature": 1.0,
+       		        "alpha_ramp_steepness": 1.0,
+   		        "alpha_ramp_growth_delay": 1.0,
+   		        "alpha_ramp_max_alpha_scalar": 3.0
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "use_edge": false,
+        "radius_x": [370.0, 370.0],
+        "radius_y": [370.0, 370.0],
+        "normal_offset": [0.0, 0.0],
+        "normal_velocity": [-2000.0, -2000.0],
+        "radial_velocity": [1.0, 2.0],
+        "tangential_velocity": [0.0, 0.0],
+        "angle_range": [0.0, 6.283185],
+        "angle_range_behavior": "random"
+    },
+    {
+        "id": 23,
+        "name": "TravelBody",
+        "type": "ring",
+        "emit_rate":
+        {
+            "primary_emit_rate": [20.0, 20.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [3.0, 6.0],
+            "color": "fff0ffff",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_only_gradient",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [35.0, 70.0],
+                "height": [1000.0, 1500.0],
+                "texture_0": "t_phasespace_streaks_02",
+                "gradient_texture": "vasari_orange",
+                "random_flip_texture_horizontal_chance": 0.5,
+                "random_flip_texture_vertical_chance": 0.5,
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+    		        "alpha_ramp_curvature": 1.0,
+       		        "alpha_ramp_steepness": 1.0,
+   		        "alpha_ramp_growth_delay": 1.0,
+   		        "alpha_ramp_max_alpha_scalar": 3.0
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "use_edge": false,
+        "radius_x": [0.0, 350.0],
+        "radius_y": [0.0, 350.0],
+        "normal_offset": [0.0, 0.0],
+        "normal_velocity": [-1500.0, -1500.0],
+        "radial_velocity": [1.0, 2.0],
+        "tangential_velocity": [0.0, 0.0],
+        "angle_range": [0.0, 6.283185],
+        "angle_range_behavior": "random"
+    },
+    {
+        "id": 24,
+        "name": "TravelDots",
+        "type": "ring",
+        "emit_rate":
+        {
+            "primary_emit_rate": [40.0, 40.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [6.0, 7.0],
+            "color": "ff00dd00",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_only_gradient",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [10.0, 20.0],
+                "texture_0": "soft_circle",
+                "gradient_texture": "vasari_orange",
+                "random_flip_texture_horizontal_chance": 0.5,
+                "random_flip_texture_vertical_chance": 0.5,
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+    		        "alpha_ramp_curvature": 1.0,
+       		        "alpha_ramp_steepness": 1.0,
+   		        "alpha_ramp_growth_delay": 1.0,
+   		        "alpha_ramp_max_alpha_scalar": 3.0
+                    }
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffff8c00",
+                "intensity": 5000.0,
+                "surface_radius": 1.0
+            }
+        },
+        "use_edge": false,
+        "radius_x": [0.0, 350.0],
+        "radius_y": [0.0, 350.0],
+        "normal_offset": [0.0, 0.0],
+        "normal_velocity": [-1500.0, -1500.0],
+        "radial_velocity": [1.0, 2.0],
+        "tangential_velocity": [0.0, 0.0],
+        "angle_range": [0.0, 6.283185],
+        "angle_range_behavior": "random"
+    },
+    {
+        "id": 25,
+        "name": "TravelDark",
+        "type": "ring",
+        "emit_rate":
+        {
+            "primary_emit_rate": [5.0, 5.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [3.0, 6.0],
+            "color": "ff000000",
+            "initial_alpha": [0.5, 1.0],
+            "fade_in_time": [2.0, 2.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [100.0, 200.0],
+                "height": [2000.0, 3000.0],
+                "texture_0": "t_soft_glow_04",
+                "gradient_texture": "vasari_orange",
+                "random_flip_texture_horizontal_chance": 0.5,
+                "random_flip_texture_vertical_chance": 0.5,
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+    		        "alpha_ramp_curvature": 1.0,
+       		        "alpha_ramp_steepness": 1.0,
+   		        "alpha_ramp_growth_delay": 1.0,
+   		        "alpha_ramp_max_alpha_scalar": 3.0
+                    }
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffff8c00",
+                "intensity": 1000.0,
+                "surface_radius": 1.0
+            }
+        },
+        "use_edge": false,
+        "radius_x": [0.0, 350.0],
+        "radius_y": [0.0, 350.0],
+        "normal_offset": [0.0, 0.0],
+        "normal_velocity": [-1500.0, -1500.0],
+        "radial_velocity": [1.0, 2.0],
+        "tangential_velocity": [0.0, 0.0],
+        "angle_range": [0.0, 6.283185],
+        "angle_range_behavior": "random"
+    },
+    {
+        "id": 26,
+        "name": "TravelFill",
+        "type": "ring",
+        "emit_rate":
+        {
+            "primary_emit_rate": [4.0, 4.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [2.0, 4.0],
+            "color": "ff8080ff",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_only_gradient",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [50.0, 150.0],
+                "height": [4000.0, 4000.0],
+                "texture_0": "abstract_fire_shape",
+                "gradient_texture": "vasari_orange",
+                "random_flip_texture_horizontal_chance": 0.5,
+                "random_flip_texture_vertical_chance": 0.5,
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 2.0,
+                        "depth_fade_opacity": 0.5,
+                        "alpha_ramp_steepness": 1.0,
+                        "alpha_ramp_growth_delay": 1.0,
+    		        "alpha_ramp_curvature": 1.0,
+   		        "alpha_ramp_max_alpha_scalar": 3.0
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "use_edge": false,
+        "radius_x": [0.0, 350.0],
+        "radius_y": [0.0, 350.0],
+        "normal_offset": [0.0, 0.0],
+        "normal_velocity": [-2500.0, -2500.0],
+        "radial_velocity": [1.0, 2.0],
+        "tangential_velocity": [0.0, 0.0],
+        "angle_range": [0.0, 6.283185],
+        "angle_range_behavior": "random"
+    }],
+    "modifiers": [
+    {
+        "id": 6,
+        "name": "Grow",
+        "type": "float_property",
+        "property_type": "width_and_height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "out_cubic",
+            "easing_values": [1.0, 1.5]
+        }
+    },
+    {
+        "id": 18,
+        "name": "Shrink",
+        "type": "float_property",
+        "property_type": "width_and_height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "linear",
+            "easing_values": [1.0, 0.0]
+        }
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 22,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 23,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 24,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 25,
+        "attachee_id": 1
+    },
+    {
+        "attacher_id": 26,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": [
+    {
+        "attacher_id": 6,
+        "attachee_id": 22
+    },
+    {
+        "attacher_id": 18,
+        "attachee_id": 24
+    }]
+}

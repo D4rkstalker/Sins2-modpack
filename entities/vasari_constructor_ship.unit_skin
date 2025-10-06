@@ -1,0 +1,115 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 4727.311225,
+        "min_camera_distance": 179.517155,
+        "gui":
+        {
+            "hud_icon": "vasari_constructor_ship_hud_icon",
+            "hud_monochrome_icon": "vasari_constructor_ship_main_view_icon",
+            "hud_picture": "vasari_constructor_ship_hud_picture",
+            "tooltip_picture": "vasari_constructor_ship_tooltip_picture",
+            "name": "vasari_constructor_ship_name",
+            "description": "vasari_constructor_ship_description",
+            "show_description_in_unit_tooltip": true
+        },
+        "unit_mesh":
+        {
+            "mesh": "vasari_construction_ship",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "ship",
+            "icon": "vasari_constructor_ship_main_view_icon",
+            "selected_icon": "vasari_constructor_ship_main_view_icon_selected",
+            "sub_selected_icon": "vasari_constructor_ship_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "exhaust_effects":
+            {
+                "particle_effects": [
+                {
+                    "particle_effect": "vasari_exhaust"
+                }]
+            },
+            "damage_effects":
+            {
+                "max_damage_effect_count": 4,
+                "damage_effects": [
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "vasari_damage_embers"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "vasari_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "vasari_damage_clouds"
+                }]
+            },
+            "effect_alias_bindings": [
+            {
+                "alias_name": "vasari_constructor_ship_build_structure_on_self",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_construction",
+                    "sounds": [
+                        "ability_loop_phase_constructionfrigate"]
+                }
+			}]
+        },
+        "sounds":
+        {
+            "move_sounds":
+            {
+                "engine": "engine_phasesupportship",
+                "hyperspace_travel": "hyperspace_travel"
+            },
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_phase_constructor"
+                    ],
+                    "scared": [
+                        "ui_onselection_phase_constructor"]
+                },
+                "order_issued":
+                {
+                    "neutral": [
+                        "ui_onselection_phase_constructor"
+                    ],
+                    "scared": [
+                        "ui_onselection_phase_constructor"]
+                }
+            }
+        },
+        "death_sequence_group": "vasari_frigate0"
+    }]
+}

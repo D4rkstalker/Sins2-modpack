@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": false,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+					"unit_to_create": "buff_agent_phase_gate",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "dlc2_vasari_rebel_super_capital_ship_phase_gate_active_on_phase_gate"
+                }]
+            }]
+        }
+    }]
+}

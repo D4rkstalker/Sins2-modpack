@@ -1,0 +1,64 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "planet"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 1118624.793175,
+        "min_camera_distance": 12095.166719,
+        "gui":
+        {
+            "hud_icon": "ship_graveyard_hud_icon",
+            "hud_picture": "ship_graveyard_hud_picture",
+            "tooltip_icon": "ship_graveyard_tooltip_icon",
+            "name": "ship_graveyard_planet_name",
+            "description": ""
+        },
+        "unit_mesh":
+        {
+            "mesh": "planet_ship_graveyard"
+        },
+        "main_view_icon":
+        {
+            "group": "fixture",
+            "icon": "ship_graveyard_main_view_icon",
+            "has_rotation": false,
+            "use_owner_player_color": false
+        },
+        "effects":
+        {
+			"shield_effect": "pirate_base_shield",
+            "flair_effects": [
+            {
+                "mesh_point_name": "aura",
+                "particle_effect": "planet_ship_graveyard_underglow"
+            },
+			{
+                "mesh_point_name": "aura",
+                "particle_effect": "planet_ship_graveyard_debris"
+            }],
+            "effect_alias_bindings": [
+            {
+                "alias_name": "destroy_planet",
+                "alias_binding":
+                {
+                    "particle_effect": "asteroid_explosion",
+                    "sounds": [
+                        "effect_strippedtothecore"]
+                }
+            }]
+        },
+        "light":
+        {
+            "type": "point_infinite",
+            "color": "00ffcccc",
+            "intensity": 0.37
+        }
+    }],
+    "gravity_well_props": [
+        "dense_debris",
+        "sparse_asteroids",
+        "sparse_clouds"]
+}

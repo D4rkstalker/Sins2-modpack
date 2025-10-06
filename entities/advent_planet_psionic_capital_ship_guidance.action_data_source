@@ -1,0 +1,160 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+            {
+        "target_filter_id": "guidance_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "weapon_has_target"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_planet_psionic_capital_ship_guidance",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "guidance_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "weapon_has_target"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_planet_psionic_capital_ship_guidance",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "guidance_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "guidance_ability_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.1, -0.2, -0.3, -0.4, -0.5],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.001, -0.0015, -0.002, -0.0025, -0.003]
+            }
+        }
+    },
+    {
+        "action_value_id": "guidance_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [120.0, 112.5, 105.0, 97.5, 90.0]
+        }
+    },
+    {
+        "action_value_id": "guidance_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 55.0, 50.0, 45.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "guidance_duration_value",
+        "action_value":
+        {
+            "values": [30.0, 45.0, 60.0, 75.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "guidance_range_value",
+        "action_value":
+        {
+            "values": [8000.0, 8000.0, 8000.0, 8000.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "guidance_spell_power_bonus_value",
+        "action_value":
+        {
+            "values": [30.0, 60.0, 90.0, 120.0, 150.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "ability_cooldown_duration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "guidance_ability_cooldown_duration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "guidance_spell_power_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "guidance_spell_power_bonus_value"
+        }
+    }]
+}

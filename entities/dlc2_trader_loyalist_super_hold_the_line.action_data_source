@@ -1,0 +1,160 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "hold_the_line_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "hold_the_line_structure_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "hold_the_line_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_trader_loyalist_super_hold_the_line_on_target_ship",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_trader_loyalist_super_hold_the_line_on_target_structure",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "hold_the_line_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 85.0, 95.0, 105.0, 125.0]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 85.0, 80.0, 75.0, 65.0]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_radius_value",
+        "action_value":
+        {
+            "values": [10000.0, 11000.0, 12000.0, 13000.0, 15000.0]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_damage_taken_ship_bonus_value",
+        "action_value":
+        {
+            "values": [-0.1, -0.15, -0.2, -0.25, -0.35]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_damage_taken_structure_bonus_value",
+        "action_value":
+        {
+            "values": [-0.2, -0.25, -0.3, -0.35, -0.45]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0, 15.0, 15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "hold_the_line_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [8000.0, 9000.0, 10000.0, 11000.0, 13000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "hold_the_line_damage_taken_ship_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "hold_the_line_damage_taken_ship_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "hold_the_line_damage_taken_structure_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "hold_the_line_damage_taken_structure_bonus_value"
+        }
+    }]
+}

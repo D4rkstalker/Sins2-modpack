@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "damage_has_damage_source",
+                        "damage_source": "weapon"
+                    },
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "trigger_event_destination"
+                        },
+                        "target_filter_id": "defense_aoe_target_filter"
+                    }
+                ]
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "defense_aoe_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "defense_aoe_target_filter"
+                },
+                "operators": [
+                    {
+                        "operator_type": "apply_damage",
+                        "damage_source": "ability",
+                        "damage_affect_type": "hull_and_armor_and_shields",
+                        "damage_value": "defense_aoe_damage_value",
+                        "penetration_value": "defense_aoe_pierce_value"
+                    }
+                ]
+            }]
+        }
+    }]
+}

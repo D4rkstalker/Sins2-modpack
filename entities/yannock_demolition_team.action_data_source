@@ -1,0 +1,133 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "demolition_team_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "frigate",
+                "cruiser",
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "demolition_team_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_missing_hull",
+				"percentage_missing_threshold": 0.25
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "weapon_has_target"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "demolition_team_damage_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"corvette",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "secret_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+			],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "trader_transport_capital_ship"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "demolition_team_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_current_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "demolition_team_pierce_value",
+        "action_value":
+        {
+            "values": [200.0]
+        }
+    },
+    {
+        "action_value_id": "demolition_team_max_target_count_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "demolition_team_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "demolition_team_range_value",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "demolition_team_radius_value",
+        "action_value":
+        {
+            "values": [3000.0]
+        }
+    },
+    {
+        "action_value_id": "demolition_team_cooldown_value",
+        "action_value":
+        {
+            "values": [80.0]
+        }
+    }]
+}

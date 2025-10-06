@@ -1,0 +1,138 @@
+{
+    "version": 0,
+    "action_data_source": "advent_guardian_cruiser_renewal",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_guardian_cruiser_renewal_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "renewal_cooldown_time_value",
+        "antimatter_cost": "renewal_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_and_armor_only",
+                    "repair_value": "renewal_hull_restore_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_guardian_cruiser_renewal_activate_on_target_small",
+                            "medium_unit": "advent_guardian_cruiser_renewal_activate_on_target_medium",
+                            "large_unit": "advent_guardian_cruiser_renewal_activate_on_target_large"
+                        }
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_guardian_cruiser_renewal_activate_on_self"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "renewal_target_filter"
+        ],
+        "range": "renewal_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "renewal_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            },
+            {
+                "target_filter": "renewal_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_guardian_cruiser_renewal_ability_hud_icon",
+        "tooltip_picture": "advent_guardian_cruiser_renewal_ability_tooltip_picture",
+        "name": "advent_guardian_cruiser_renewal_ability_name",
+        "description": "advent_guardian_cruiser_renewal_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "renewal_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore",
+                "value_id": "renewal_hull_restore_value",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

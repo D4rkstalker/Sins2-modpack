@@ -1,0 +1,41 @@
+{
+    "version": 0,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+						{
+							"small_unit": "advent_altar_of_sacrifice_activate_other_small",
+							"medium_unit": "advent_altar_of_sacrifice_activate_other_medium",
+							"large_unit": "advent_altar_of_sacrifice_activate_other_medium"
+						}
+                    }
+                }]
+            }]
+		}
+    }]
+}

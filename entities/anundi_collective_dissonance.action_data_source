@@ -1,0 +1,153 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "collective_dissonance_watch_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy",
+				"none"
+            ],
+            "exemptions": [
+                "is_not_explored"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "collective_dissonance_enemy_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_not_explored"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "collective_dissonance_neutral_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "exemptions": [
+                "is_not_explored"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "collective_dissonance_friendly_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "collective_dissonance_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"super_capital_ship",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"
+			]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "collective_dissonance_owner_allied_population_points_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_owner_allied_population_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "collective_dissonance_max_allied_population_factor_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "collective_dissonance_enemy_population_assimilation_rate_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "collective_dissonance_bombing_damage_value",
+        "action_value":
+        {
+            "values": [1000000.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "collective_dissonance_max_allied_population_factor_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_allied_population_factor",
+            "value_behavior": "additive",
+            "value_id": "collective_dissonance_max_allied_population_factor_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "collective_dissonance_enemy_population_assimilation_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "enemy_population_assimilation_rate",
+            "value_behavior": "scalar",
+            "value_id": "collective_dissonance_enemy_population_assimilation_rate_value"
+        }
+    }]
+}

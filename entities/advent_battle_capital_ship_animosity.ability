@@ -1,0 +1,122 @@
+{
+    "version": 0,
+    "action_data_source": "advent_battle_capital_ship_animosity",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "animosity_cooldown_time_value",
+        "antimatter_cost": "animosity_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "radius_value": "animosity_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "animosity_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_capital_ship_animosity_on_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_battle_capital_ship_animosity_activate"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "animosity_target_filter"
+        ],
+        "range": "animosity_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 360.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "animosity_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_battle_capital_ship_animosity_ability_hud_icon",
+        "tooltip_picture": "advent_battle_capital_ship_animosity_ability_tooltip_picture",
+        "name": "advent_battle_capital_ship_animosity_ability_name",
+        "description": "advent_battle_capital_ship_animosity_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "animosity_range_value",
+                "radius": "animosity_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.is_force_attacking",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_taken_from_source",
+                "value_id": "animosity_damage_dealt_value",
+                "value_float_format": "percentage_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_dealt_to_source",
+                "value_id": "animosity_damage_taken_value",
+                "value_float_format": "percentage_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "animosity_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

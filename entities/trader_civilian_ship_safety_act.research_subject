@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 1,
+    "field": "civilian_industry",
+    "field_coord": [2, 3],
+    "research_time": 120.0,
+    "price":
+    {
+        "credits": 700.0,
+        "metal": 100.0,
+        "crystal": 125.0
+    },
+    "prerequisites": [
+        ["trader_unlock_trade_port"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_structure_builder"
+                },
+                {
+                    "constraint_type": "has_definition",
+					"unit_definition": "trader_trade_ship"
+                }]
+            }]
+        },
+        "action_data_source": "trader_civilian_ship_safety_act",
+        "buff": "trader_civilian_ship_safety_act",
+		"tooltip_lines": [
+        {
+            "rendering_type": "buff_unit_modifier",
+            "unit_modifier_id": "trader_civilian_ship_safety_act_armor_points_modifier"
+        },
+		{
+            "rendering_type": "buff_unit_modifier",
+            "unit_modifier_id": "trader_civilian_ship_safety_act_armor_strength_modifier"
+		}]
+	}],
+    "name": "trader_civilian_ship_safety_act_research_subject_name",
+    "name_uppercase": "trader_civilian_ship_safety_act_research_subject_name_uppercase",
+    "description": "trader_civilian_ship_safety_act_research_subject_description",
+    "hud_icon": "trader_civilian_ship_safety_act_research_subject_hud_icon"
+}

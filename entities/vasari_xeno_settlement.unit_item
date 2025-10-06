@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "item_type": "planet_component",
+    "build_group_id": "utility",
+    "hud_icon": "vasari_xeno_settlement_unit_item_hud_icon",
+    "tooltip_picture": "vasari_xeno_settlement_unit_item_tooltip_picture",
+    "name": "vasari_xeno_settlement_unit_item_name",
+    "description": "vasari_xeno_settlement_unit_item_description",
+    "build_time": 60.0,
+    "price":
+    {
+        "metal": 180.0,
+        "crystal": 90.0
+    },
+    "max_count_on_unit": 1,
+    "planet_type_groups": [
+    {
+        "planet_types": [
+			"ferrous",
+			"ferrous_home",
+			"volcanic"
+        ],
+        "build_prerequisites": [
+			["vasari_unlock_xeno_settlement_unit_item"]
+        ]
+    }],
+    "player_modifiers":
+    {
+        "empire_modifiers": [
+        {
+			"value_behavior": "scalar",
+			"modifier_type": "influence_points_recharge_rate",
+			"value": 0.12
+        }]
+    },
+    "planet_modifiers": [
+    {
+        "modifier_type": "max_influence_points",
+        "value_behavior": "additive",
+        "values": [1.0]
+    },
+    {
+        "modifier_type": "max_population_points",
+        "value_behavior": "additive",
+        "values": [60.0]
+    }]
+}

@@ -1,0 +1,199 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_vasari_rebel_super_subversion_grid",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "subversion_grid_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "subversion_grid_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_rebel_super_subversion_grid_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_vasari_rebel_super_subversion_grid_activate"
+                    }
+                }]
+            }]
+        },
+        "watched_buff": "dlc2_vasari_rebel_super_subversion_grid_on_self",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "subversion_grid_auto_cast_target_filter",
+                    "radius_value": "subversion_grid_auto_cast_radius_value",
+                    "target_count_value": "subversion_grid_auto_cast_target_count_value"
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_missing_hull",
+                            "percentage_missing_threshold": 0.1
+                        }
+                    }
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_vasari_rebel_super_subversion_grid_hud_icon",
+        "tooltip_picture": "dlc2_vasari_rebel_super_subversion_grid_tooltip_picture",
+        "name": "dlc2_vasari_rebel_super_subversion_grid_ability_name",
+        "description": "dlc2_vasari_rebel_super_subversion_grid_ability_description",
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.channeled_ability",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "subversion_grid_execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.all_enemy_units_at_planet",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.final_value_duration",
+                "value_id": "subversion_grid_modifier_execution_interval_count_value",
+                "value_suffix": "seconds",
+                "value_modifiers": [
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "subversion_grid_modifier_execution_interval_value"
+                }]
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_initial_max_ability_range",
+                "value_id": "subversion_grid_base_range_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_final_max_ability_range",
+                "value_id": "subversion_grid_per_interval_range_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative",
+                "value_modifiers": [
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "subversion_grid_modifier_execution_interval_count_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "subversion_grid_base_range_bonus_value"
+                }]
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_initial_max_weapon_range",
+                "value_id": "subversion_grid_base_range_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_final_max_weapon_range",
+                "value_id": "subversion_grid_per_interval_range_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative",
+                "value_modifiers": [
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "subversion_grid_modifier_execution_interval_count_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "subversion_grid_base_range_bonus_value"
+                }]
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_initial_max_ability_cooldown",
+                "value_id": "subversion_grid_base_cooldown_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_final_max_ability_cooldown",
+                "value_id": "subversion_grid_per_interval_cooldown_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative",
+                "value_modifiers": [
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "subversion_grid_modifier_execution_interval_count_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "subversion_grid_base_cooldown_bonus_value"
+                }]
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_initial_max_weapon_cooldown",
+                "value_id": "subversion_grid_base_cooldown_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_subversion_grid_final_max_weapon_cooldown",
+                "value_id": "subversion_grid_per_interval_cooldown_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative",
+                "value_modifiers": [
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "subversion_grid_modifier_execution_interval_count_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "subversion_grid_base_cooldown_bonus_value"
+                }]
+            }]
+        }]
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "suppression_aura_radius"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "suppression_aura_max_linear_speed_modifier"
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "suppression_aura_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_loyalist_titan_suppression_aura_ability_hud_icon",
+        "name": "advent_loyalist_titan_suppression_aura_ability_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "suppression_aura_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "suppression_aura_weapon_damage_modifier"
+            }]
+        }]
+    }
+}

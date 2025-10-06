@@ -1,0 +1,61 @@
+{
+    "version": 0,
+    "action_data_source": "alutar_shield_boost",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "buff_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "alutar_shield_boost"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "ability_targets"]
+    },
+    "gui":
+    {
+        "hud_icon": "alutar_shield_boost_hud_icon",
+        "name": "npc_reward.alutar_shield_boost.name",
+        "description": "npc_reward.alutar_shield_boost.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "shield_points_restore_rate_bonus"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "shield_point_restore_cooldown_duration_after_damage_taken_bonus"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "buff_duration",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,191 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "home_front_advantage_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+				"starbase",
+				"structure",
+				"frigate",
+				"cruiser",
+				"super_capital_ship",
+				"corvette"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "is_in_dominant_culture",
+					"dominant_culture_player_relationship": "self"
+                },
+                {
+					"constraint_type": "is_in_dominant_culture",
+					"dominant_culture_player_relationship": "ally"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "home_front_advantage_debuff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+				"starbase",
+				"structure",
+				"frigate",
+				"cruiser",
+				"super_capital_ship",
+				"corvette"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+				"constraint_type": "is_in_dominant_culture",
+				"dominant_culture_player_relationship": "enemy"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "home_front_advantage_weapon_reload_buff_scalar",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_weapon_reload_debuff_scalar",
+        "action_value":
+        {
+            "values": [0.075]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_damage_reduction_buff_scalar",
+        "action_value":
+        {
+            "values": [-0.10]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_damage_reduction_debuff_scalar",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_linear_speed_buff_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_linear_speed_debuff_scalar",
+        "action_value":
+        {
+            "values": [-0.075]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_linear_acceleration_buff_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "home_front_advantage_linear_acceleration_debuff_scalar",
+        "action_value":
+        {
+            "values": [-0.075]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "home_front_advantage_weapon_reload_buff_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_weapon_reload_buff_scalar"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "home_front_advantage_weapon_reload_debuff_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_weapon_reload_debuff_scalar"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "home_front_advantage_damage_reduction_buff_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_damage_reduction_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_damage_reduction_debuff_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_damage_reduction_debuff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_linear_speed_buff_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_linear_speed_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_linear_speed_debuff_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_linear_speed_debuff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_linear_acceleration_buff_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_linear_acceleration_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_linear_acceleration_debuff_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "home_front_advantage_linear_acceleration_debuff_scalar"
+        }
+    }]
+}

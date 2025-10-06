@@ -1,0 +1,28 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "naibor_naibor_tacticians_hud_icon",
+    "name": "npc_reward.naibor_naibor_tacticians.name",
+    "description": "npc_reward.naibor_naibor_tacticians.desc",
+    "always_show_in_shop": true,
+    "is_finite": true,
+    "required_unit_tags": [
+        "capital_ship",
+		"super_capital_ship",
+        "titan"
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "utility",
+    "unit_modifiers": [
+    {
+        "modifier_type": "experience_gained_from_unit_death",
+        "value_behavior": "scalar",
+        "values": [0.25]
+    },
+    {
+        "modifier_type": "experience_gained_from_planet_bombing",
+        "value_behavior": "scalar",
+        "values": [0.25]
+    }],
+	"ability": "naibor_naibor_tacticians"
+}

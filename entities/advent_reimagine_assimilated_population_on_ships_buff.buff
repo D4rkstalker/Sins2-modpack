@@ -1,0 +1,41 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+	"make_dead_on_parent_buff_made_dead": true,
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "assimilated_population_weapon_damage_modifier"
+    }],
+    "trigger_event_actions": [
+	{
+		"trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+		"action_group":
+		{
+			"actions": [
+			{
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_reimagine_assimilated_population_research_subject_hud_icon",
+        "name": "advent_reimagine_assimilated_population_research_subject_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "assimilated_population_weapon_damage_modifier"
+			}]
+        }]
+	}
+}

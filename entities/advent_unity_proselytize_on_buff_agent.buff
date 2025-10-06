@@ -1,0 +1,45 @@
+{
+    "version": 0,
+    "active_duration": "proselytize_duration_value",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+				"operators_constraint":
+				{
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+						"unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "proselytize_planet_target_filter"
+				},
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_proselytize_on_planet"
+                }],
+				"constraint_not_satisified_operators": [
+				{
+			        "operator_type": "apply_buff",
+                    "buff": "advent_unity_proselytize_on_uncolonizable_planet"
+				}]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "proselytize_culture_rate_modifier"
+    }]
+}

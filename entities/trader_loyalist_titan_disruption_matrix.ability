@@ -1,0 +1,175 @@
+{
+    "version": 0,
+    "action_data_source": "trader_loyalist_titan_disruption_matrix",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "disruption_matrix_cooldown_time_value",
+        "antimatter_cost": "disruption_matrix_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_loyalist_titan_disruption_matrix_on_spawner"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner",
+                            "redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "uniforms_friendly_planets"
+                    },
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "disruption_matrix_auto_cast_target_filter",
+                        "radius_value": "disruption_matrix_bonus_radius_value",
+                        "target_count_value": "disruption_matrix_auto_cast_target_count_value"
+                    }]
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner",
+                                "redirection": "current_gravity_well_primary_fixture"
+                            },
+                            "target_filter_id": "uniforms_friendly_planets"
+                        }
+                    },
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "disruption_matrix_auto_cast_target_filter",
+                        "radius_value": "disruption_matrix_normal_radius_value",
+                        "target_count_value": "disruption_matrix_auto_cast_target_count_value"
+                    }]
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_loyalist_titan_disruption_matrix_ability_hud_icon",
+        "name": "trader_loyalist_titan_disruption_matrix_ability_name",
+        "description": "trader_loyalist_titan_disruption_matrix_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "disruption_matrix_normal_radius_value"
+            },
+            "constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "uniforms_friendly_planets"
+            },
+            "constraint_passed_values":
+            {
+                "radius": "disruption_matrix_bonus_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "disruption_matrix_execution_count_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "tooltip.in_non_friendly_gravity_well_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "disruption_matrix_normal_damage_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+				"visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "disruption_matrix_normal_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.in_friendly_gravity_well_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "disruption_matrix_bonus_damage_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+				"visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "disruption_matrix_bonus_radius_value"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,153 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_out_hull_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+			},
+			{
+				"constraint_type": "composite_or",
+				"constraints": [
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_siege_capital_ship_missile_barrage_on_self"
+				},
+				{
+					"constraint_type": "has_buff",
+					"buff": "advent_colony_capital_ship_shield_regeneration_on_self"
+				},
+				{
+					"constraint_type": "has_buff",
+					"buff": "advent_battle_psionic_capital_ship_vengeance"
+				}]
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_out_hull_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"capital_ship",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+            {
+                "constraint_type": "has_ability"
+			},
+            {
+                "constraint_type": "is_always_a_threat"
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.5
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_out_hull_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "phase_out_hull_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [120.0, 97.5, 75.0, 52.5, 30.0]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_cooldown_time_value",
+        "action_value":
+        {
+            "values": [27.0, 22.5, 18.0, 13.5, 9.0]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_duration_value",
+        "action_value":
+        {
+            "values": [4.0, 8.0, 12.0, 16.0, 20.0]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_invuln_duration_value",
+        "action_value":
+        {
+            "values": [2.0, 2.25, 2.5, 2.75, 3.0]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_damage_taken_value",
+        "action_value":
+        {
+            "values": [-0.5, -0.5, -0.5, -0.5, -0.5]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "damage_taken",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "phase_out_hull_damage_taken_value"
+        }
+    }]
+}

@@ -1,0 +1,69 @@
+{
+    "version": 0,
+	"level_count": 4,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_loyalist_homeworld_home_guard_command_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "trader_loyalist_homeworld_home_guard_command_unit_item_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [-0.2, -0.2, -0.2, -0.2]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_homeworld_home_guard_command_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [2.0, 2.0, 2.0, 2.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "trader_loyalist_homeworld_home_guard_command_unit_item_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "trader_loyalist_homeworld_home_guard_command_unit_item_damage_taken_scalar"
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "trader_loyalist_homeworld_home_guard_command_apply_on_fixture_buffs",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "trader_loyalist_homeworld_home_guard_command_phase_lane_distance_value",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "trader_loyalist_homeworld_home_guard_command_on_target_gravity_well"
+            }]
+        }
+    }]
+}

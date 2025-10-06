@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "active_duration": "gravity_warhead_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"execution_interval_count_value": "fixed_one",
+        "first_action_delay_time_value": "gravity_warhead_first_action_delay",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+		}
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_brake_to_stop"
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "vasari_colony_capital_ship_gravity_warhead_on_target_small",
+                        "medium_unit": "vasari_colony_capital_ship_gravity_warhead_on_target_medium",
+                        "large_unit": "vasari_colony_capital_ship_gravity_warhead_on_target_large"
+                    }
+                }
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "vasari_colony_capital_ship_gravity_warhead_detonate_on_target_sound"
+                    }
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "gravity_warhead_linear_speed_modifier"
+    }],
+    "unit_mutations": [
+        "disable_can_hyperspace",
+        "gravity_effect_active"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_colony_capital_ship_gravity_warhead_ability_hud_icon",
+        "name": "vasari_colony_capital_ship_gravity_warhead_ability_name",
+        "visibility_scope": "negative",
+		"is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "gravity_warhead_linear_speed_modifier"
+            }]
+        }]
+    }
+}

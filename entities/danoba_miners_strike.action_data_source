@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "miners_strike_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [300.0]
+        }
+    },
+    {
+        "action_value_id": "miners_strike_surface_mining_rate_scalar",
+        "action_value":
+        {
+            "values": [-10.0]
+        }
+    },
+    {
+        "action_value_id": "miners_strike_orbital_mining_rate_scalar",
+        "action_value":
+        {
+            "values": [-10.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "miners_strike_surface_metal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "miners_strike_surface_mining_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "miners_strike_surface_crystal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "miners_strike_surface_mining_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "miners_strike_orbital_metal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "miners_strike_orbital_mining_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "miners_strike_orbital_crystal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "miners_strike_orbital_mining_rate_scalar"
+        }
+	}]
+}

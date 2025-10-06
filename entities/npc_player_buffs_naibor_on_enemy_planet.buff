@@ -1,0 +1,110 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"make_dead_on_parent_buff_made_dead": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "insurgency_interval_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators_constraint":
+                {
+					"constraint_type": "random_chance",
+					"chance_value": "insurgency_chance_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+					{
+						"random_units": [
+						{
+							"unit": "trader_light_frigate",
+							"weight": 20.0
+						},
+						{
+							"unit": "trader_skirmisher_corvette_frigate",
+							"weight": 20.0
+						},
+						{
+							"unit": "trader_missile_corvette",
+							"weight": 20.0
+						},
+						{
+							"unit": "trader_long_range_cruiser",
+							"weight": 20.0
+						},
+						{
+							"unit": "trader_heavy_cruiser",
+							"weight": 20.0
+						},
+						{
+							"unit": "trader_carrier_cruiser",
+							"weight": 20.0
+						},
+						{
+							"unit": "trader_antifighter_frigate",
+							"weight": 10.0
+						},
+						{
+							"unit": "trader_siege_frigate",
+							"weight": 10.0
+						}]
+                    },
+                    "special_operation_unit_kind": "insurgent",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "fixed_one",
+                    "owner_player":
+                    {
+                        "player_type": "buff_owner_player"
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "is_in_dominant_culture",
+						"dominant_culture_player_relationship": "self"
+					}
+				}
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

@@ -1,0 +1,53 @@
+{
+    "version": 0,
+    "action_values": [
+    {
+        "action_value_id": "phase_lane_distance",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_well_distance",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "apply_child_buff_to_phase_lanes",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_phase_lanes",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "phase_lane_distance",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "jiskun_scouting_report_on_phase_lane"
+            }]
+        }
+    },
+    {
+        "action_id": "apply_child_buff_to_gravity_wells",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "gravity_well_distance",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "jiskun_scouting_report_on_phase_lane"
+            }]
+        }
+    }]
+}

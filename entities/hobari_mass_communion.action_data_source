@@ -1,0 +1,52 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "hobari_mass_communion_auto_cast_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+				"friendly",
+				"enemy",
+				"none"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "enemy"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "mass_communion_culture_rate_value",
+        "action_value":
+        {	
+            "values": [0.2]
+        }
+    },
+    {
+        "action_value_id": "mass_communion_duration_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "mass_communion_cooldown_time_value",
+        "action_value":
+        {
+            "values": [300.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "mass_communion_culture_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "culture_rate",
+            "value_behavior": "additive",
+            "value_id": "mass_communion_culture_rate_value"
+        }
+    }]
+}

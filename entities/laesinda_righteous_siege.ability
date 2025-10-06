@@ -1,0 +1,57 @@
+{
+    "version": 0,
+    "action_data_source": "laesinda_righteous_siege",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "buff_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "laesinda_righteous_siege"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "ability_targets"]
+    },
+    "gui":
+    {
+        "hud_icon": "laesinda_righteous_siege_hud_icon",
+        "name": "npc_reward.laesinda_righteous_siege.name",
+        "description": "npc_reward.laesinda_righteous_siege.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "buff_duration",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

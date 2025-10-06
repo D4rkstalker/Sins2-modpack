@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 4,
+    "field": "civilian_trader_rebel_repeatables",
+    "field_coord": [9, 0],
+    "research_time": 717.5,
+    "price":
+    {
+        "credits": 5500.0,
+        "metal": 2062.5,
+        "crystal": 2062.5
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        },
+        "action_data_source": "trader_rebel_pirate_looting_crew",
+        "buff": "trader_rebel_pirate_looting_crew_on_self",
+        "tooltip_sub_header_label": "research_subject.trader_rebel_pirate_economy_name",
+        "tooltip_lines": [
+        {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.credits_salvaged",
+                "value_id": "looting_crew_credit_value",
+		"value_color": "positive",
+                "value_float_format": "percentage_one_decimal_place"
+        }]
+    }],
+    "name": "research_subject.trader_rebel_pirate_economy_name",
+    "name_uppercase": "research_subject.trader_rebel_pirate_economy_name_upper",
+    "description": "research_subject.trader_rebel_pirate_economy_description",
+    "hud_icon": "pirate_looting_crew_hud_icon",
+    "tooltip_picture": "pirate_looting_crew_tooltip_picture"
+}

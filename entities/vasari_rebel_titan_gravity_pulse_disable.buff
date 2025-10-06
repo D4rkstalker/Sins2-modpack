@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "active_duration": "gravity_pulse_disable_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "can_ever_move"
+                    }
+                },
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_hyperspace",
+		"disable_engines",
+		"gravity_effect_active"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_rebel_titan_gravity_pulse_ability_hud_icon",
+        "name": "vasari_rebel_titan_gravity_pulse_ability_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative"
+    }
+}

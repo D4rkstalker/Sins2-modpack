@@ -1,0 +1,129 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "repair_ships_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.15
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "percentage_missing_threshold": 0.15
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_ships_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.15
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "percentage_missing_threshold": 0.15
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_ships_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "repair_ships_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "repair_ships_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "repair_ships_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "repair_ships_radius_value",
+        "action_value":
+        {
+            "values": [300000.0]
+        }
+    },
+    {
+        "action_value_id": "repair_ships_hull_armor_restore_rate_value",
+        "action_value":
+        {
+            "values": [35.0]
+        }
+    }]
+}

@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "focusing_lens_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "focusing_lens_cannon_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"untargetable"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+				    "constraint_type": "has_definition",
+					"unit_definition": "advent_deliverance_engine_structure"
+				},
+                {
+				    "constraint_type": "has_definition",
+					"unit_definition": "trader_orbital_cannon_structure"
+				},
+                {
+				    "constraint_type": "has_definition",
+					"unit_definition": "vasari_kostura_cannon_structure"
+				},
+                {
+				    "constraint_type": "has_definition",
+					"unit_definition": "vasari_dark_fleet_tower_buff_agent"
+				}]
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "focusing_lens_ability_range_scalar",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "focusing_lens_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "focusing_lens_ability_range_scalar"
+        }
+    }]
+}

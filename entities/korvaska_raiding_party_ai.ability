@@ -1,0 +1,95 @@
+{
+    "version": 0,
+    "action_data_source": "korvaska_raiding_party",
+    "active_actions":
+    {
+		"required_available_supply": "available_supply_value",
+        "cooldown_time": "cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "required_units": [
+                        {
+                            "unit": "vasari_fabricator_cruiser",
+                            "count": [2, 2]
+                        }],
+						"random_units": [
+						{
+							"unit": "vasari_raider_corvette",
+							"weight": 10.0
+						}]
+                    },
+					"special_operation_unit_kind": "korvaska_raiding_party_auction_reward",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": true,
+                    "check_research_prerequisites": false
+                },
+                {
+                    "operator_type": "remove_unit_item",
+                    "unit_item": "korvaska_raiding_party"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead"
+                }]
+            }]
+        },
+        "auto_cast":{}
+    },
+    "gui":
+    {
+		"hud_icon": "korvaska_raiding_party_hud_icon",
+		"name": "npc_reward.korvaska_raiding_party.name",
+		"description": "npc_reward.korvaska_raiding_party.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.supply_value_label",
+                "value_id": "available_supply_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.spawned_ships_list_header",
+            "lines": [
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_fabricator_cruiser"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_raider_corvette"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "Point",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Point",
+            "type": "point",
+            "emit_duration": [0.10, 0.10],
+            "emit_rate": {
+                "primary_emit_rate": [300.0, 300.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "color": "ffffc0ff",
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [20.0, 20.0],
+                    "height": [20.0, 20.0],
+                    "texture_0": "cloud_clr"
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ffffd3cc",
+                    "intensity": 800.0,
+                    "surface_radius": 0.0
+                }
+            },
+            "forward_velocity": [30.0, 30.0],
+            "angle_variance": [0.523599, 0.523599]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "LinearInflate",
+            "type": "size",
+            "width_change_rate": [-50.0, -50.0],
+            "height_change_rate": [-50.0, -50.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 1,
+            "attachee_id": 0
+        }
+    ]
+}

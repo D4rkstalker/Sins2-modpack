@@ -1,0 +1,148 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_trader_loyalist_super_reserves",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "reserves_cooldown_time_value",
+        "antimatter_cost": "reserves_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "trader_heavy_cruiser",
+                            "weight": 5.0
+                        },
+                        {
+                            "unit": "trader_antiarmor_frigate",
+                            "weight": 4.0
+                        },
+                        {
+                            "unit": "trader_robotics_cruiser",
+                            "weight": 3.0
+                        }]
+                    },
+                    "special_operation_unit_kind": "reserves",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "reserves_arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "reserves_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_trader_loyalist_super_reserves_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "never",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_missing_armor",
+                        "percentage_missing_threshold": 0.75
+                    }
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_recently_been_damaged"
+                    }
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_loyalist_super_reserves_hud_icon",
+        "tooltip_picture": "dlc2_trader_loyalist_super_reserves_tooltip_picture",
+        "name": "dlc2_trader_loyalist_super_reserves_ability_name",
+        "description": "dlc2_trader_loyalist_super_reserves_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.supply_value_label",
+                "value_id": "reserves_supply_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.arrival_delay",
+                "value_id": "reserves_arrival_delay_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.spawned_ships_list_header",
+            "lines": [
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_heavy_cruiser"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_antiarmor_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_robotics_cruiser"
+            }]
+        }]
+    }
+}

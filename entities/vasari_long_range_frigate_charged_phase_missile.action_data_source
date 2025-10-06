@@ -1,0 +1,173 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "charged_phase_missile_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "charged_phase_missile_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "charged_phase_missile_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "charged_phase_missile_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_armor_penetration_value",
+        "action_value":
+        {
+            "values": [510.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_bypass_shields_chance_value",
+        "action_value":
+        {
+            "values": [0.9]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_cooldown_time_value",
+        "action_value":
+        {
+            "values": [45.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_charge_value",
+        "action_value":
+        {
+            "values": [6.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_damage_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_range_value",
+        "action_value":
+        {
+            "values": [18000.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_count_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_interval_value",
+        "action_value":
+        {
+            "values": [1.2]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_lifetime_value",
+        "action_value":
+        {
+            "values": [47.25]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_speed_value",
+        "action_value":
+        {
+            "values": [1800.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_hull_value",
+        "action_value":
+        {
+            "values": [9.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_armor_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_armor_strength_value",
+        "action_value":
+        {
+            "values": [18.0]
+        }
+    },
+    {
+        "action_value_id": "charged_phase_missile_torpedo_steering_distance_radius_scalar_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "charged_phase_missile_chargeup",
+        "alias_binding":
+        {
+            "particle_effect": "charged_phase_missile_ability_charge"
+        }
+    }]
+}

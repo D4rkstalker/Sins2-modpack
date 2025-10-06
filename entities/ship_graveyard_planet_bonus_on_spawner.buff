@@ -1,0 +1,113 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"first_action_delay_time_value": "ship_graveyard_timer",
+        "execution_interval_value": "ship_graveyard_timer",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "ship_graveyard_current_wreckages",
+                "comparison_type": "less_than_equal_to",
+                "value_b": "ship_graveyard_max_wreckages"
+            },
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_space_offset_from_unit",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"offset_position": [3000.0, 3000.0, 3000.0],
+					"offset_rotation": [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0]
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "ship_loot_ship_graveyard_spawner",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "ship_graveyard_planet_bonus_on_target"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "current_wreckages",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "ship_graveyard_current_wreckages"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    },
+    {
+		"first_action_delay_time_value": "ship_graveyard_timer",
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+				{
+					"unit_type": "current_spawner"
+				},
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "ship_graveyard_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "ship_graveyard_planet_bonus_on_loot"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "current_wreckages",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    }]
+}

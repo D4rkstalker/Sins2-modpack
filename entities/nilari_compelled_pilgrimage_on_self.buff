@@ -1,0 +1,72 @@
+{
+    "version": 0,
+	"active_duration": "compelled_pilgrimage_execution_count_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "compelled_pilgrimage_execution_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_gravity_wells",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "max_jump_distance_value": "fixed_one",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination",
+							"redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "compelled_pilgrimage_adjacent_planet_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "nilari_compelled_pilgrimage_on_adjacent_planet",
+					"destination_target_filter_id": "compelled_pilgrimage_adjacent_planet_target_filter",
+                    "destination_unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    }
+                }]
+            }]
+        }
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "compelled_pilgrimage_add_population_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "nilari_compelled_pilgrimage_hud_icon",
+        "name": "npc_reward.nilari_compelled_pilgrimage.name",
+		"is_visible_within_unit_tooltip": true,
+		"is_expire_time_suppressed": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.adjacent_population_stolen",
+				"value_id": "compelled_pilgrimage_steal_population_value",
+                "value_float_format": "percentage_one_decimal_place",
+				"value_suffix": "per_second",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

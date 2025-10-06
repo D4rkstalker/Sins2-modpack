@@ -1,0 +1,165 @@
+{
+    "version": 0,
+	"level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "auto_cast_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "weapon_has_target"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [180.0, 240.0]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_shield_point_restore_after_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [0.7, 1.0]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_range_value",
+        "action_value":
+        {
+            "values": [5000.0, 5000.0]
+        }
+    },
+    {
+        "action_value_id": "boarding_party_travel_speed_value",
+        "action_value":
+        {
+            "values": [1000.0, 1000.0]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_cooldown_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_max_linear_speed_scalar",
+        "action_value":
+        {
+            "values": [0.25, 0.5]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_max_linear_acceleration_scalar",
+        "action_value":
+        {
+            "values": [0.25, 0.5]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.33, 0.66]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "elite_crews_shield_point_restore_after_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "elite_crews_shield_point_restore_after_damage_taken_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_max_linear_speed_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_acceleration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_max_linear_acceleration_scalar"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "elite_crews_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_weapon_damage_scalar"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "trader_transport_capital_ship_scout_muzzle",
+        "alias_binding":
+        {
+            "particle_effect": "tec_missile_frigate_missile_muzzle",
+            "sounds": [
+                "trader_transport_capital_ship_scout_launch"]
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_travel",
+        "alias_binding":
+        {
+            "particle_effect": "tec_transport_capital_ship_scout"
+        }
+    }]
+}

@@ -1,0 +1,111 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_hyperspace_started",
+        "action_group":
+        {
+            "actions": [
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "neutron_star_bonus_on_target_after_hyperspace"
+                }]
+			},
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "neutron_star_early_remove_target_filter"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "neutron_phase_jump_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "neutron_phase_jump_charge_time_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "neutron_ability_cooldown_time_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "neutron_ability_range_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "neutron_star_bonus_hud_icon",
+        "name": "planet_bonus.neutron_star.name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "neutron_phase_jump_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "neutron_phase_jump_charge_time_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "neutron_ability_cooldown_time_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "neutron_ability_range_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_removed",
+                "value_id": "neutron_antimatter_removed_scalar",
+				"value_float_format": "percentage",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_damage_rate",
+                "value_id": "neutron_hull_damage_scalar",
+				"value_float_format": "percentage",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "neutron_pierce"
+            }]
+        }]
+    }
+}

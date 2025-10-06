@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+	"restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "communal_labor_planet_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_constructor_ship_communal_labor_on_planet"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unlock_communal_labor_research_subject_hud_icon",
+        "name": "advent_unlock_communal_labor_research_subject_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "communal_labor_structure_build_time_modifier"
+            }]
+        }]
+    }
+}

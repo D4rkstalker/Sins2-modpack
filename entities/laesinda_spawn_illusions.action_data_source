@@ -1,0 +1,112 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "spawn_illusions_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+				"corvette"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "weapon_has_target"
+			},
+            {
+                "constraint_type": "is_always_a_threat"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "spawn_illusions_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+				"corvette"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+			"constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "spawn_illusions_clone_count_value",
+        "action_value":
+        {
+            "values": [6.0]
+        }
+    },
+    {
+        "action_value_id": "spawn_illusions_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "spawn_illusions_damage_dealt_value",
+        "action_value":
+        {
+            "values": [-100000000.0]
+        }
+    },
+    {
+        "action_value_id": "spawn_illusions_duration_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "spawn_illusions_range_value",
+        "action_value":
+        {
+            "values": [6000.0]
+        }
+    },
+    {
+        "action_value_id": "spawn_illusions_spawn_range_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "spawn_illusions_damage_dealt_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+			"weapon_type": "normal",
+            "value_behavior": "scalar",
+            "value_id": "spawn_illusions_damage_dealt_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "spawn_illusions_bombing_damage_dealt_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+			"weapon_type": "planet_bombing",
+            "value_behavior": "scalar",
+            "value_id": "spawn_illusions_damage_dealt_value"
+        }
+    }]
+}

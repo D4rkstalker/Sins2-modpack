@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "assault_beam_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"capital_ship",
+				"super_capital_ship",
+				"titan",
+				"starbase"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "assault_beam_strength_modifier_value",
+        "action_value":
+        {
+            "values": [-50.0]
+        }
+    },
+    {
+        "action_value_id": "assault_beam_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "assault_beam_strength_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "assault_beam_strength_modifier_value"
+        }
+    }]
+}

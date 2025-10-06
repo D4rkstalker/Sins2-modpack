@@ -1,0 +1,264 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "harvest_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    },
+    {
+        "target_filter_id": "harvest_malefic_damage_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "harvest_mind_restore_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_missing_antimatter",
+                "amount_missing_threshold": 25
+            }]
+        }
+    },
+    {
+        "target_filter_id": "harvest_savior_repair_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_shields",
+                    "amount_missing_threshold": 100
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "amount_missing_threshold": 100
+                },
+                {
+                    "constraint_type": "has_missing_hull",
+                    "amount_missing_threshold": 100
+                }]
+            }]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "stack_count",
+            "stacks_expiry_time"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "harvest_max_stack_count_value",
+        "action_value":
+        {
+            "values": [50.0, 50.0, 50.0, 50.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_radius_value",
+        "action_value":
+        {
+            "values": [5500.0, 6000.0, 6500.0, 7000.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_restore_value",
+        "action_value":
+        {
+            "values": [5.0, 6.0, 7.0, 8.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_malefic_damage_radius_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_malefic_damage_max_target_count_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.02, 0.02, 0.02, 0.02, 0.02]
+            }
+        }
+    },
+    {
+        "action_value_id": "harvest_malefic_damage_value",
+        "action_value":
+        {
+            "values": [250.0, 250.0, 250.0, 250.0, 250.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_malefic_penetration_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_mind_restore_value",
+        "action_value":
+        {
+            "values": [25.0, 25.0, 25.0, 25.0, 25.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_mind_restore_radius_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_mind_restore_max_target_count_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.02, 0.02, 0.02, 0.02, 0.02]
+            }
+        }
+    },
+    {
+        "action_value_id": "harvest_savior_repair_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_savior_repair_radius_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_savior_repair_max_target_count_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.02, 0.02, 0.02, 0.02, 0.02]
+            }
+        }
+    },
+    {
+        "action_value_id": "harvest_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_stack_duration_value",
+        "action_value":
+        {
+            "values": [150.0, 150.0, 150.0, 150.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_stacks_expiry_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stacks_expiry_time",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "harvest_antimatter_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [5.0, 6.0, 7.0, 8.0, 10.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "harvest_antimatter_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_antimatter",
+            "value_behavior": "additive",
+            "value_id": "harvest_antimatter_bonus_value"
+        }
+    }]
+}

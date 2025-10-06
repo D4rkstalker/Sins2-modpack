@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "suppression_aura_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "suppression_aura_max_linear_speed_scalar_value",
+        "action_value":
+        {
+            "values": [-0.1, -0.2, -0.3, -0.4, -0.5],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.0005, -0.0005, -0.0005, -0.005, -0.005]
+            }
+        }
+    },
+    {
+        "action_value_id": "suppression_aura_radius",
+        "action_value":
+        {
+            "values": [3000.0, 4000.0, 5000.0, 6000.0, 7000.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [10.0, 10.0, 10.0, 10.0, 10.0]
+            }
+        }
+    },
+    {
+        "action_value_id": "suppression_aura_weapon_damage_scalar_value",
+        "action_value":
+        {
+            "values": [-0.1, -0.2, -0.3, -0.4, -0.5],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.0005, -0.0005, -0.0005, -0.0005, -0.0005]
+            }
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "suppression_aura_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "suppression_aura_max_linear_speed_scalar_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "suppression_aura_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "suppression_aura_weapon_damage_scalar_value"
+        }
+    }]
+}

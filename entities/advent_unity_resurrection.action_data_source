@@ -1,0 +1,120 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "resurrection_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+                "star",
+                "uncolonizable"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "resurrection_unity_mana_cost_value",
+        "action_value":
+        {
+            "values": [1000.0, 1000.0, 1000.0]
+        }
+    },
+    {
+        "action_value_id": "resurrection_cooldown_time_value",
+        "action_value":
+        {
+            "values": [480.0, 300.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "resurrection_min_supply_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "resurrection_range_distance",
+        "action_value":
+        {
+            "values": [100000.0, 100000.0, 100000.0]
+        }
+    },
+    {
+        "action_value_id": "resurrection_max_supply_value",
+        "action_value":
+        {
+            "values": [20.0, 30.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "resurrection_execution_count_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0, 15.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_resurrection_on_planet_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_resurrection_duration_gas_giant_var"
+        }
+    },
+    {
+        "alias_name": "advent_unity_resurrection_on_planet_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_resurrection_duration"
+        }
+    },
+    {
+        "alias_name": "advent_unity_resurrection_on_planet_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_resurrection_duration"
+        }
+    },
+    {
+        "alias_name": "advent_unity_resurrection_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_resurrection_large"
+        }
+    },
+    {
+        "alias_name": "advent_unity_resurrection_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_resurrection_medium"
+        }
+    },
+    {
+        "alias_name": "advent_unity_resurrection_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_resurrection_small"
+        }
+    }]
+}

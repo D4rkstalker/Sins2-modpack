@@ -1,0 +1,237 @@
+{
+    "version": 0,
+	"level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "school_of_evangelists_watch_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "self"
+            },
+            {
+                "constraint_type": "has_permission",
+                "permission_type": "can_planet_be_damaged"
+            }],
+            "exemptions": [
+                "is_not_explored"]
+        }
+    },
+    {
+        "target_filter_id": "school_of_evangelists_bombing_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "school_of_evangelists_neutral_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_colonizable_planet"
+            },
+            {
+                "constraint_type": "is_detected"
+            },
+            {
+                "constraint_type": "is_in_dominant_culture",
+                "dominant_culture_player_relationship": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "assimilated_population_ships_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+				"strikecraft",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "assimilated_population_self_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+				"self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "school_of_evangelists_bombing_damage_value",
+        "action_value":
+        {
+            "values": [20.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "school_of_evangelists_bombing_population_damage_value",
+        "action_value":
+        {
+            "values": [0.2, 0.4]
+        }
+    },
+    {
+        "action_value_id": "school_of_evangelists_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.15, 0.15]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_development_speed_scalar",
+        "action_value":
+        {
+            "values": [-0.25, -0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_development_cost_scalar",
+        "action_value":
+        {
+            "values": [-0.25, -0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_duration_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "school_of_evangelists_apply_on_target_planet_buffs",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner",
+                "redirection": "current_gravity_well_primary_fixture"
+            },
+            "max_jump_distance_value": "school_of_evangelists_phase_lane_distance_value",
+            "operators": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "school_of_evangelists_watch_target_filter"
+                },
+                "operator_type": "apply_buff",
+                "buff": "advent_school_of_evangelists_on_target_planet",
+                "destination_unit":
+                {
+                    "unit_type": "operand_destination",
+                    "redirection": "current_gravity_well_primary_fixture"
+                }
+            }]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_conversion_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion_gas_giant"
+        }
+    },
+    {
+        "alias_name": "advent_unity_conversion_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion"
+        }
+    },
+    {
+        "alias_name": "advent_unity_conversion_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion_asteroid"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "assimilated_population_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_weapon_damage_scalar"
+        }
+	}],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "assimilated_population_development_speed_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_time",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_development_speed_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "assimilated_population_development_cost_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_price",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_development_cost_scalar"
+        }
+	}]
+}

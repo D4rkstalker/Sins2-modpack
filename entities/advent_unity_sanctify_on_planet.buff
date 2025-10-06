@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "sanctify_execution_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "restore_planet_health",
+                    "restore_amount_value": "sanctify_planet_health_restore_amount_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_unity_sanctify_buff_small",
+                        "medium_unit": "advent_unity_sanctify_buff_medium",
+                        "large_unit": "advent_unity_sanctify_buff_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "invulnerable"
+    ],
+    "gui":
+    {
+        "hud_icon": "advent_unity_sanctify_ability_hud_icon",
+        "name": "advent_unity_sanctify_ability_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_health_restore_rate",
+                "value_id": "sanctify_planet_health_restore_amount_value",
+				"value_float_format": "percentage",
+                "value_suffix": "per_second",
+				"value_color": "positive"
+            }]
+        }]
+    }
+}

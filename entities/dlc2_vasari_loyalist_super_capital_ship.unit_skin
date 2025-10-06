@@ -1,0 +1,601 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "capital_ship"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 70302.320381,
+        "min_camera_distance": 1800.701441,
+        "gui":
+        {
+            "hud_icon": "vasari_loyalist_super_capital_hud_icon",
+            "hud_monochrome_icon": "dlc2_vasari_loyalist_super_capital_ship_main_view_icon",
+            "hud_picture": "vasari_loyalist_super_capital_hud_picture",
+            "tooltip_picture": "vasari_loyalist_super_capital_tooltip_picture",
+            "name": "dlc2_vasari_loyalist_super_capital_ship_name",
+            "description": "dlc2_vasari_loyalist_super_capital_ship_description",
+            "hud_selection_window_icon_offet": [-10, 0]
+        },
+        "unit_mesh":
+        {
+            "mesh": "dlc2_vasari_loyalist_super_capital_ship",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "child_mesh_alias_bindings":
+        {
+            "map": [
+            {
+                "mesh_alias_name": "dlc2_vasari_rebel_super_capital_ship_hvywave_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "dlc2_vasari_rebel_super_capital_ship_hvywave_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "vasari_asset_pdpulse_cap_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "vasari_asset_pdpulse_cap_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "vasari_asset_starbase_heavybeam_0",
+                "mesh_definition":
+                {
+                    "mesh": "vasari_asset_starbase_heavybeam_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            }]
+        },
+        "main_view_icon":
+        {
+            "group": "capital_ship",
+            "icon": "dlc2_vasari_loyalist_super_capital_ship_main_view_icon",
+            "selected_icon": "dlc2_vasari_loyalist_super_capital_ship_main_view_icon_selected",
+            "sub_selected_icon": "dlc2_vasari_loyalist_super_capital_ship_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "exhaust_effects":
+            {
+                "particle_effects": [
+                {
+                    "particle_effect": "vasari_capital_exhaust"
+                }]
+            },
+            "hyperspace_effects":
+            {
+                "charge_effect": "vasari_portal_start_titan",
+                "charge_effect_between_stars": "hyperspace_vasari_titan_chargeup_interstellar",
+                "charge_effect_destabilized": "hyperspace_vasari_titan_chargeup_unstable",
+                "travel_effect": "vasari_titan_portal_travel",
+                "travel_effect_between_stars": "hyperspace_vasari_titan_travel_interstellar",
+                "travel_effect_destabilized": "hyperspace_vasari_titan_travel_unstable",
+                "exit_effect": "vasari_titan_portal_exit",
+                "charge_sound": "hyperspace_chargeup",
+                "enter_sound": "hyperspace_entry",
+                "exit_sound": "hyperspace_exit"
+            },
+            "damage_effects":
+            {
+                "max_damage_effect_count": 100,
+                "damage_effects": [
+                {
+                    "max_count": 10,
+                    "weight": 5.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "vasari_damage_clouds"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 10.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "vasari_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 5.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 5.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_smoke_2"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 5.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_smoke_3"
+                },
+                {
+                    "max_count": 20,
+                    "weight": 15.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "vasari_damage_escaping_gas",
+                    "sound": "ambient_loop_tech_escaping_gas"
+                },
+                {
+                    "max_count": 10,
+                    "weight": 10.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 10,
+                    "weight": 10.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 10,
+                    "weight": 5.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "vasari_damage_embers"
+                },
+                {
+                    "max_count": 25,
+                    "weight": 25.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "vasari_damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 15,
+                    "weight": 15.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "vasari_damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "vasari_loyalist_super_cap_ambient"
+            },
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "vasari_damage_capital_1",
+                "constraint": "is_crippled"
+            }],
+            "level_up_effect": "capitalship_levelup",
+            "level_up_sound": "capitalship_levelup",
+            "shield_effect": "dlc2_vasari_loyalist_super_capital_ship",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_beam_weapon_beam",
+                "alias_binding":
+                {
+                    "beam": "vasari_heavy_beam",
+                    "sounds": [
+                        "weapon_loop_phase_heavy_beam"]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_beam_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_heavy_beam_impact",
+                    "sounds": [
+                        "weapon_impact_energy_medium_hithull",
+                        "weapon_impact_energy_medium_hithull_01",
+                        "weapon_impact_energy_medium_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_beam_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_heavy_beam_impact",
+                    "sounds": [
+                        "weapon_impact_generic_heavy_hitshields",
+                        "weapon_impact_generic_heavy_hitshields_01",
+                        "weapon_impact_generic_heavy_hitshields_02",
+                        "weapon_impact_generic_heavy_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_beam_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_heavy_beam_muzzle"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_planet_bombing_weapon_beam",
+                "alias_binding":
+                {
+                    "beam": "vasari_planet_bomb_beam",
+                    "sounds": [
+                        "weapon_loop_phase_energy_planetbomb"]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_planet_bombing_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_planet_bomb_beam_impact",
+                    "sounds": [
+                        "weapon_impact_phase_energy_planetbomb_hithull"]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_planet_bombing_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_planet_bomb_beam_impact",
+                    "sounds": [
+                        "weapon_impact_generic_heavy_hitshields",
+                        "weapon_impact_generic_heavy_hitshields_01",
+                        "weapon_impact_generic_heavy_hitshields_02",
+                        "weapon_impact_generic_heavy_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_planet_bombing_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "vasari_planet_bomb_beam_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_phase_energy_planetbomb"]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_point_defense_pulse_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "pulse_gun_impact_pd",
+                    "sounds": [
+                        "weapon_impact_energy_pointdefense_hithull",
+                        "weapon_impact_energy_pointdefense_hithull_01",
+                        "weapon_impact_energy_pointdefense_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_point_defense_pulse_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "pulse_gun_impact_pd",
+                    "sounds": [
+                        "weapon_impact_generic_pointdefense_hitshields",
+                        "weapon_impact_generic_pointdefense_hitshields_01",
+                        "weapon_impact_generic_pointdefense_hitshields_02",
+                        "weapon_impact_generic_pointdefense_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_point_defense_pulse_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "pulse_gun_muzzle_pd",
+                    "sounds": [
+                        "weapon_muzzle_phase_pointdefense_pulsegun",
+                        "weapon_muzzle_phase_pointdefense_pulsegun_01",
+                        "weapon_muzzle_phase_pointdefense_pulsegun_02",
+                        "weapon_muzzle_phase_pointdefense_pulsegun_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_point_defense_pulse_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "pulse_gun_travel_pd"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_wave_weapon_charge",
+                "alias_binding":
+                {
+                    "particle_effect": "wave_charge_up",
+                    "sounds": [
+                        "weapon_muzzle_phase_medium_wavecannon_charge",
+                        "weapon_muzzle_phase_medium_wavecannon_charge_01"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_wave_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "wave_impact",
+                    "sounds": [
+                        "weapon_impact_energy_medium_hithull",
+                        "weapon_impact_energy_medium_hithull_01",
+                        "weapon_impact_energy_medium_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_wave_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "wave_impact",
+                    "sounds": [
+                        "weapon_impact_generic_medium_hitshields",
+                        "weapon_impact_generic_medium_hitshields_01",
+                        "weapon_impact_generic_medium_hitshields_02",
+                        "weapon_impact_generic_medium_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_wave_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "wave_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_phase_medium_wavecannon",
+                        "weapon_muzzle_phase_medium_wavecannon_01"
+                    ]
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_capital_ship_wave_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "wave_blast"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_countermeasure_pulse_activate",
+                "alias_binding":
+                {
+                    "particle_effect": "subspace_countermeasures_effect"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_self",
+                "alias_binding":
+                {
+                    "particle_effect": "subspace_countermeasures_self"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_target_large",
+                "alias_binding":
+                {
+                    "particle_effect": "subspace_countermeasures_large"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_target_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "subspace_countermeasures_medium"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_target_small",
+                "alias_binding":
+                {
+                    "particle_effect": "subspace_countermeasures_small"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_empowered_strike_craft_ambient",
+                "alias_binding":
+                {
+                    "particle_effect": "super_empowered_strike_craft_ambient"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_nano_devourer_buff_on_target_large",
+                "alias_binding":
+                {
+                    "particle_effect": "nano_devourer_infestation_on_large"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_nano_devourer_buff_on_target_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "nano_devourer_infestation_on_medium"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_nano_devourer_buff_on_target_small",
+                "alias_binding":
+                {
+                    "particle_effect": "nano_devourer_infestation_on_small"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_nano_devourer_impact",
+                "alias_binding":
+                {
+                    "particle_effect": "nano_devourer_infestation"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_nano_devourer_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "nano_devourer_infestation_muzzle"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_nano_devourer_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "nano_devourer_infestation_travel"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_phase_escape_buff_active",
+                "alias_binding":
+                {
+                    "particle_effect": "phase_escape"
+                }
+            },
+            {
+                "alias_name": "dlc2_vasari_loyalist_super_phase_escape_buff_start",
+                "alias_binding":
+                {
+                    "particle_effect": "phase_escape_start"
+                }
+            }]
+        },
+        "sounds":
+        {
+            "move_sounds":
+            {
+                "engine": "engine_phasecapitalship",
+                "hyperspace_travel": "hyperspace_travel"
+            },
+            "dialogue":
+            {
+                "spawned":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_spawned_neutral_0"]
+                },
+                "selected":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_selected_neutral_0",
+                        "vasari_loyalist_super_selected_neutral_1",
+                        "vasari_loyalist_super_selected_neutral_2",
+                        "vasari_loyalist_super_selected_neutral_3"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_selected_scared_0",
+                        "vasari_loyalist_super_selected_scared_1",
+                        "vasari_loyalist_super_selected_scared_2",
+                        "vasari_loyalist_super_selected_scared_3"
+                    ]
+                },
+                "order_issued":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_order_issued_neutral_0",
+                        "vasari_loyalist_super_order_issued_neutral_1",
+                        "vasari_loyalist_super_order_issued_neutral_2",
+                        "vasari_loyalist_super_order_issued_neutral_3"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_order_issued_scared_0",
+                        "vasari_loyalist_super_order_issued_scared_1",
+                        "vasari_loyalist_super_order_issued_scared_2",
+                        "vasari_loyalist_super_order_issued_scared_3"
+                    ]
+                },
+                "attack_order_issued":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_attack_order_issued_neutral_0",
+                        "vasari_loyalist_super_attack_order_issued_neutral_1",
+                        "vasari_loyalist_super_attack_order_issued_neutral_2",
+                        "vasari_loyalist_super_attack_order_issued_neutral_3"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_attack_order_issued_scared_0",
+                        "vasari_loyalist_super_attack_order_issued_scared_1",
+                        "vasari_loyalist_super_attack_order_issued_scared_2",
+                        "vasari_loyalist_super_attack_order_issued_scared_3"
+                    ],
+                    "smug": [
+                        "vasari_loyalist_super_attack_order_issued_smug_0",
+                        "vasari_loyalist_super_attack_order_issued_smug_1",
+                        "vasari_loyalist_super_attack_order_issued_smug_2",
+                        "vasari_loyalist_super_attack_order_issued_smug_3"
+                    ]
+                },
+                "retreat":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_retreat_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_retreat_scared_0"]
+                },
+                "hyperspace_charge_started":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_hyperspace_charge_started_neutral_0"]
+                },
+                "cannot_hyperspace":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_cannot_hyperspace_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_cannot_hyperspace_scared_0"]
+                },
+                "shields_down":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_shields_down_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_shields_down_scared_0"]
+                },
+                "armor_down":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_armor_down_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_armor_down_scared_0"]
+                },
+                "became_crippled":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_became_crippled_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_became_crippled_scared_0"]
+                },
+                "destroyed":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_destroyed_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_destroyed_scared_0"]
+                },
+                "ship_component_finished_building":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_ship_component_finished_building_neutral_0"
+                    ]
+                },
+                "ability_cooldown_is_not_completed":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_ability_cooldown_is_not_completed_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_ability_cooldown_is_not_completed_scared_0"
+                    ]
+                },
+                "insufficient_antimatter":
+                {
+                    "neutral": [
+                        "vasari_loyalist_super_insufficient_antimatter_neutral_0"
+                    ],
+                    "scared": [
+                        "vasari_loyalist_super_insufficient_antimatter_scared_0"]
+                }
+            }
+        },
+        "death_sequence_group": "vasari_titan0"
+    }]
+}

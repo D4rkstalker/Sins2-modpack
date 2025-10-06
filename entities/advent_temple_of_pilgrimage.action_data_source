@@ -1,0 +1,188 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "temple_of_pilgrimage_watch_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "exemptions": [
+                "is_not_explored"]
+        }
+    },
+    {
+        "target_filter_id": "temple_of_pilgrimage_colonize_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_colonizable_planet"
+            },
+            {
+                "constraint_type": "is_detected"
+            },
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "has_buff",
+						"buff": "anundi_collective_dissonance_on_fixture",
+						"include_pending_buffs": true
+					},
+					{
+						"constraint_type": "is_in_dominant_culture",
+						"dominant_culture_player_relationship": "enemy"
+					}]
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "temple_of_pilgrimage_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"super_capital_ship",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    },
+    {
+        "target_filter_id": "temple_of_pilgrimage_replace_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_buff",
+				"buff": "advent_loyalist_homeworld_temple_of_pilgrimage_on_target"
+				
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "temple_of_pilgrimage_future_planet_level_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_future_level",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "temple_of_pilgrimage_max_planet_level_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "temple_of_pilgrimage_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "temple_of_pilgrimage_execution_interval_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "temple_of_pilgrimage_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "temple_of_pilgrimage_planet_track_build_price_scalar_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "temple_of_pilgrimage_planet_track_price_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_price",
+            "value_behavior": "scalar",
+            "value_id": "temple_of_pilgrimage_planet_track_build_price_scalar_value"
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "temple_of_pilgrimage_apply_on_fixture_buffs",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner",
+                "redirection": "current_gravity_well_primary_fixture"
+            },
+            "max_jump_distance_value": "temple_of_pilgrimage_phase_lane_distance_value",
+            "operators": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "temple_of_pilgrimage_watch_target_filter"
+                },
+                "operator_type": "apply_buff",
+                "buff": "advent_temple_of_pilgrimage_on_fixture",
+                "destination_unit":
+                {
+                    "unit_type": "operand_destination",
+                    "redirection": "current_gravity_well_primary_fixture"
+                }
+            }]
+        }
+    }]
+}

@@ -1,0 +1,106 @@
+{
+    "version": 0,
+    "action_data_source": "trader_rebel_titan_orbital_cannon",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "ability_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_rebel_titan_orbital_cannon_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "trader_rebel_titan_orbital_cannon_target_filter"
+        ],
+        "between_gravity_well_range": "range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 2.0,
+        "auto_cast":
+        {
+            "type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_filter": "trader_rebel_titan_orbital_cannon_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "trader_rebel_titan_orbital_cannon_auto_cast_low_priority_target_filter"
+            },
+            {
+                "target_filter": "trader_rebel_titan_orbital_cannon_target_filter"
+            }],
+            "gravity_well_distance_range": "range_value"
+        },
+        "watched_buff": "trader_rebel_titan_orbital_cannon_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "trader_rebel_titan_orbital_cannon_ability_hud_icon",
+        "name": "trader_rebel_titan_orbital_cannon_ability_name",
+        "description": "trader_rebel_titan_orbital_cannon_ability_description",
+        "targeting":
+        {
+            "targeting_type": "between_gravity_well_range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_damage",
+                "value_id": "planet_bombing_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.population_damage",
+                "value_id": "planet_bombing_population_damage_value",
+				"value_color": "negative"
+            }]
+		},
+		{
+			"header_text": "trader_orbital_cannon_on_structures_and_starbases_header",
+			"lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "trader_rebel_titan_orbital_cannon_disable_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [0.0, 0.0, 0.0]
+    }]
+}

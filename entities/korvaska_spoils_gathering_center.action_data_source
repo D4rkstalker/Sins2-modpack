@@ -1,0 +1,61 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "spoils_gathering_center_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "titan",
+				"starbase",
+				"super_capital_ship",
+				"structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "spoils_gathering_center_credits_gained_value",
+        "action_value":
+        {
+			"transform_type": "per_build_or_virtual_supply",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "spoils_gathering_center_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "korvaska_spoils_gathering_center_apply_on_fixture_buffs",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "spoils_gathering_center_phase_lane_distance_value",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "korvaska_spoils_gathering_center_on_target_gravity_well"
+            }]
+        }
+    }]
+}

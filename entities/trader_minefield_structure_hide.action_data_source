@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "clone_prevent_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"structure"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "trader_minefield_structure_clone_on_clones"
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "minefield_hide_arming_time_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "spawn_range_value",
+        "action_value":
+        {
+            "values": [1500.0]
+        }
+    },
+    {
+        "action_value_id": "interval_count",
+        "action_value":
+        {
+            "values": [9.0]
+        }
+    }]
+}

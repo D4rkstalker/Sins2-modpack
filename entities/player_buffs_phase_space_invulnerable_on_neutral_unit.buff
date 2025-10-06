@@ -1,0 +1,86 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "phase_space_invulnerable_advent_harassment_battle_capital_ship_target_filter"
+                },
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+					"unit_to_create": "advent_harassment_battle_capital_ship",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+					"buff_on_created_unit": "player_buffs_phase_space_invulnerable_on_captured_unit"
+                }]
+			},
+            {
+                "constraint":
+                {
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "phase_space_invulnerable_vasari_nanite_battle_capital_ship_target_filter"
+                },
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+					"unit_to_create": "vasari_nanite_battle_capital_ship",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+					"buff_on_created_unit": "player_buffs_phase_space_invulnerable_on_captured_unit"
+                }]
+			}]
+        }
+    }]
+}

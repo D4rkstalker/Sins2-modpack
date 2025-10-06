@@ -1,0 +1,30 @@
+{
+    "version": 0,
+    "gui":
+    {
+        "hud_icon": "crystal_market_monopolization_npc_reward_hud_icon",
+        "tooltip_icon": "crystal_market_monopolization_npc_reward_tooltip_icon",
+        "name": "npc_reward.crystal_market_monopolization.name",
+        "description": "npc_reward.crystal_market_monopolization.description"
+    },
+    "type": "asset_market_exclusive_use",
+    "exclusive_market":
+    {
+        "asset_type": "crystal",
+        "duration": 600.0,
+        "modifiers":
+        {
+            "npc_modifiers": [
+            {
+                "modifier_type": "buy_crystal_credits_cost",
+                "value_behavior": "scalar",
+                "value": -0.2
+            },
+            {
+                "modifier_type": "sell_crystal_credits_received",
+                "value_behavior": "scalar",
+                "value": 0.2
+            }]
+        }
+    }
+}

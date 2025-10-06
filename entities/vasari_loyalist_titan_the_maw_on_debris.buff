@@ -1,0 +1,49 @@
+{
+    "version": 0,
+	"active_duration": "the_maw_debris_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_attract_to_unit",
+                "attractor_unit":
+                {
+                    "unit_type": "previous_spawner"
+                },
+                "max_linear_speed_value": "the_maw_attraction_max_linear_speed_value",
+                "time_to_max_linear_speed_value": "the_maw_attraction_time_to_max_linear_speed_value"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_attract_to_unit"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+					"operator_type": "make_dead"
+				}]
+			}]
+        }
+    }]
+}

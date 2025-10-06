@@ -1,0 +1,35 @@
+{
+    "version": 0,
+    "action_data_source": "advent_missile_boost_unit_item",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "advent_missile_boost_unit_item_on_self"
+    },
+    "gui":
+    {
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage",
+                "value_id": "missile_boost_splash_damage_percent",
+                "value_float_format": "percentage",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage_radius",
+                "value_id": "missile_boost_splash_radius_value"
+            }]
+        }]
+    }
+}

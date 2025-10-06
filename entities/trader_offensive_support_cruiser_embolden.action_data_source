@@ -1,0 +1,254 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "embolden_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "starbase",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_offensive_support_cruiser_embolden",
+                    "include_pending_buffs": true
+                }
+            },
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_shields"
+                },
+                {
+                    "constraint_type": "has_weapon"
+                }]
+			}]
+        }
+    },
+    {
+        "target_filter_id": "embolden_auto_cast_high_priority_recently_fired_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "starbase",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_recently_fired_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "embolden_auto_cast_low_priority_recently_fired_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_recently_fired_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "embolden_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_offensive_support_cruiser_embolden",
+                    "include_pending_buffs": true
+                }
+            },
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_shields"
+                },
+                {
+                    "constraint_type": "has_weapon"
+                }]
+			}]
+        }
+    },
+    {
+        "target_filter_id": "embolden_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_shields"
+                },
+                {
+                    "constraint_type": "has_weapon"
+                }]
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_shields_threshold_value",
+        "action_value":
+        {
+            "values": [75.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    },
+    {
+        "action_value_id": "execution_interval_count_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "regen_rate_value",
+        "action_value":
+        {
+            "values": [2.5]
+        }
+    },
+    {
+        "action_value_id": "embolden_weapon_cooldown_scalar",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [4000.0]
+        }
+    },
+    {
+        "action_value_id": "target_missing_shields_value",
+        "action_value":
+        {
+            "transform_type": "per_missing_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "embolden_weapon_cooldown_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "embolden_weapon_cooldown_scalar"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "embolden_small",
+        "alias_binding":
+        {
+            "particle_effect": "trader_offensive_support_cruiser_embolden_small"
+        }
+    },
+    {
+        "alias_name": "embolden_medium",
+        "alias_binding":
+        {
+            "particle_effect": "trader_offensive_support_cruiser_embolden_medium"
+        }
+    },
+    {
+        "alias_name": "embolden_large",
+        "alias_binding":
+        {
+            "particle_effect": "trader_offensive_support_cruiser_embolden_large"
+        }
+    }]
+}

@@ -1,0 +1,205 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "fury_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_unity_fury_on_target",
+					"include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "fury_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "corvette",
+				"structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_unity_fury_on_target",
+					"include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "fury_prevent_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_unity_follower"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "fury_prevent_timer_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "player_buffs_advent_loyalist"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "fury_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_unity_fury_on_target"
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "fury_unity_mana_cost_value",
+        "action_value":
+        {
+            "values": [900.0, 900.0, 900.0]
+        }
+    },
+    {
+        "action_value_id": "fury_cooldown_time_value",
+        "action_value":
+        {
+            "values": [420.0, 240.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "fury_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [45.0, 45.0, 45.0]
+        }
+    },
+    {
+        "action_value_id": "fury_damage_rate_value",
+        "action_value":
+        {
+            "values": [20.0, 30.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "fury_auto_cast_target_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "fury_armor_penetration_value",
+        "action_value":
+        {
+            "values": [1000.0, 1000.0, 1000.0]
+        }
+    },
+    {
+        "action_value_id": "fury_radius_value",
+        "action_value":
+        {
+            "values": [4500.0, 4500.0, 4500.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_fury_area_effect",
+        "alias_binding":
+        {
+            "particle_effect": "advent_unit_ability_fury"
+        }
+    },
+    {
+        "alias_name": "advent_unity_fury_detonate",
+        "alias_binding":
+        {
+            "particle_effect": "advent_unit_ability_fury_activation"
+        }
+    },
+    {
+        "alias_name": "advent_unity_fury_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_unit_ability_fury_status_large"
+        }
+    },
+    {
+        "alias_name": "advent_unity_fury_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_unit_ability_fury_status_medium"
+        }
+    },
+    {
+        "alias_name": "advent_unity_fury_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_unit_ability_fury_status_small"
+        }
+    }]
+}

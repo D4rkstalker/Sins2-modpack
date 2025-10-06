@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_transcendence",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [1, 3, 6],
+    "active_actions":
+    {
+        "cooldown_time": "transcendence_cooldown_time_value",
+        "unity_mana_cost": "transcendence_unity_mana_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "give_experience",
+                    "experience_value": "transcendence_experience_value",
+                    "level_cap_value": "transcendence_level_cap_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_unity_transcendence_activate_small",
+                            "medium_unit": "advent_unity_transcendence_activate_medium",
+                            "large_unit": "advent_unity_transcendence_activate_large"
+                        }
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "transcendence_target_filter"]
+    },
+    "unit_constraint_params":
+    {
+        "unit_level_for_has_unit_level_constraint_value": "transcendence_level_cap_value"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_transcendence_ability_hud_icon",
+        "tooltip_picture": "advent_unity_transcendence_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_transcendence_ability_tooltip_picture",
+        "name": "advent_unity_transcendence_ability_name",
+        "description": "advent_unity_transcendence_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.experience_given_level_cap",
+                "value_id": "transcendence_level_cap_value",
+                "value_modifiers": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }]
+    }
+}

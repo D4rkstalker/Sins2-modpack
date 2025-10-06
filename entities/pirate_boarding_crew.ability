@@ -1,0 +1,110 @@
+{
+    "version": 0,
+    "action_data_source": "pirate_boarding_crew",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "boarding_crew_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "first_spawner"
+                        }
+                    }
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_psionic_capital_ship_domination_prevent"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "pirate_boarding_crew_activate_on_target_small",
+                            "medium_unit": "pirate_boarding_crew_activate_on_target_medium",
+                            "large_unit": "pirate_boarding_crew_activate_on_target_large"
+                        }
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "pirate_boarding_crew_activate_on_self_small",
+                            "medium_unit": "pirate_boarding_crew_activate_on_self_medium",
+                            "large_unit": "pirate_boarding_crew_activate_on_self_large"
+                        }
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "boarding_crew_target_filter"
+        ],
+        "range": "boarding_crew_range_value",
+        "auto_cast":
+        {
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "boarding_crew_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "pirate_boarding_crew_hud_icon",
+        "name": "npc_reward.pirate_boarding_crew_name",
+        "description": "npc_reward.pirate_boarding_crew_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "boarding_crew_range_value"
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "planet_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "population_structure_planet_buffs_asteroid"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "neutral_metal_extractor_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_population_structure_planet_buffs_on_metal_extractor"
+                }]
+			}]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "population_structure_planet_buffs_hud_icon",
+        "name": "population_structure_planet_buffs_name",
+        "description": "population_structure_planet_buffs_asteroid_description",
+		"is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+			"header_text": "population_structure_planet_buffs_on_all_planets_tooltip_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "asteroid_orbital_extraction_metal_income_rate_bonus_modifier"
+            }]
+        }]
+    }
+}

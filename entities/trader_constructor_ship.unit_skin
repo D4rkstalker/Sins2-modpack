@@ -1,0 +1,116 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 6978.742537,
+        "min_camera_distance": 266.399288,
+        "gui":
+        {
+            "hud_icon": "trader_constructor_ship_hud_icon",
+            "hud_monochrome_icon": "trader_constructor_ship_main_view_icon",
+            "hud_picture": "trader_constructor_ship_hud_picture",
+            "tooltip_picture": "trader_constructor_ship_tooltip_picture",
+            "name": "trader_constructor_ship_name",
+            "description": "trader_constructor_ship_description",
+            "show_description_in_unit_tooltip": true
+        },
+        "unit_mesh":
+        {
+            "mesh": "trader_constructor_ship",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "ship",
+            "icon": "trader_constructor_ship_main_view_icon",
+            "selected_icon": "trader_constructor_ship_main_view_icon_selected",
+            "sub_selected_icon": "trader_constructor_ship_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "exhaust_effects":
+            {
+                "particle_effects": [
+                {
+                    "particle_effect": "exhaust_tech_medium_01"
+                }]
+            },
+            "damage_effects":
+            {
+                "max_damage_effect_count": 4,
+                "damage_effects": [
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "tec_damage_embers"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "tec_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_air_decompression",
+                    "sound": "ambient_loop_airdecompression"
+                }]
+            },
+            "effect_alias_bindings": [
+            {
+                "alias_name": "trader_constructor_ship_build_structure_on_self",
+                "alias_binding":
+                {
+                    "particle_effect": "tech_construction_frigate_construct",
+                    "sounds": [
+                        "ability_loop_tech_constructionfrigate"]
+                }
+			}]
+        },
+        "sounds":
+        {
+            "move_sounds":
+            {
+                "engine": "engine_techsupportship",
+                "hyperspace_travel": "hyperspace_travel"
+            },
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "frigate_techconstruction_ongeneralorderissued_0"
+                    ],
+                    "scared": [
+                        "frigate_techconstruction_ongeneralorderissued_0"]
+                },
+                "order_issued":
+                {
+                    "neutral": [
+                        "frigate_techconstruction_ongeneralorderissued_0"
+                    ],
+                    "scared": [
+                        "frigate_techconstruction_ongeneralorderissued_0"]
+                }
+            }
+        },
+        "death_sequence_group": "frigate1"
+    }]
+}

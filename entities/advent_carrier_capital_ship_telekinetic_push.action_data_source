@@ -1,0 +1,184 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "telekinetic_push_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "telekinetic_push_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "telekinetic_push_physics_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "telekinetic_push_angular_speed_bonus_value",
+        "action_value":
+        {
+            "values": [-0.3, -0.4, -0.5, -0.6, -0.7],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.003, -0.004, -0.005, -0.006, -0.007]
+            }
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [6.0, 6.0, 6.0, 6.0, 6.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_buff_duration_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0, 15.0, 15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_cooldown_time_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_damage_value",
+        "action_value":
+        {
+            "values": [10.0, 20.0, 30.0, 40.0, 50.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.1, 0.2, 0.3, 0.4, 0.5]
+            }
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [-0.3, -0.4, -0.5, -0.6, -0.7],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.003, -0.004, -0.005, -0.006, -0.007]
+            }
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_physics_duration_value",
+        "action_value":
+        {
+            "values": [3.0, 3.0, 3.0, 3.0, 3.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_physics_starting_linear_speed_value",
+        "action_value":
+        {
+            "values": [1600.0, 1600.0, 1600.0, 1600.0, 1600.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_physics_terminal_linear_speed_value",
+        "action_value":
+        {
+            "values": [1000.0, 1000.0, 1000.0, 1000.0, 1000.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_physics_time_to_terminal_linear_speed_value",
+        "action_value":
+        {
+            "values": [0.75, 0.75, 0.75, 0.75, 0.75]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_radius_value",
+        "action_value":
+        {
+            "values": [4200.0, 4450.0, 4700.0, 4950.0, 5200.0]
+        }
+    },
+    {
+        "action_value_id": "telekinetic_push_travel_speed",
+        "action_value":
+        {
+            "values": [7500.0, 7500.0, 7500.0, 7500.0, 7500.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "telekinetic_push_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "telekinetic_push_angular_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "telekinetic_push_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "telekinetic_push_linear_speed_bonus_value"
+        }
+    }]
+}

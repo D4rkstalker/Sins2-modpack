@@ -1,0 +1,49 @@
+{
+    "version": 0,
+    "action_data_source": "renzo_deploy_trader_minefield_structure",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position": 
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "trader_minefield_structure",
+					"buff_on_created_unit": "renzo_deploy_trader_minefield_structure",
+                    "special_operation_unit_kind": "renzo_trader_minefield_structure",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "is_self_building": true
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted",
+        "spawned_unit":
+        {
+            "unit": "trader_minefield_structure",
+            "special_operation_unit_kind": "renzo_trader_minefield_structure",
+            "max_count_in_gravity_well": "max_count_in_gravity_well",
+            "max_count_in_empire": "max_count_in_empire",
+            "gravity_well_primary_planet_target_filter": "friendly_planet"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_minefield_structure_hud_icon",
+        "name": "npc_reward.renzo_deploy_minefield.name",
+        "description": "npc_reward.renzo_deploy_minefield.description"
+    }
+}

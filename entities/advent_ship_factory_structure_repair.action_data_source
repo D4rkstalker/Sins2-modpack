@@ -1,0 +1,146 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "repair_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_ship_factory_structure_repair",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_armor_threshold_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_hull_threshold_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [6.0]
+        }
+    },
+    {
+        "action_value_id": "execution_interval_count_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "hull_restore_rate_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [6000.0]
+        }
+    },
+    {
+        "action_value_id": "target_missing_armor_value",
+        "action_value":
+        {
+            "transform_type": "per_missing_armor_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "target_missing_hull_value",
+        "action_value":
+        {
+            "transform_type": "per_missing_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "travel_speed_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    }]
+}

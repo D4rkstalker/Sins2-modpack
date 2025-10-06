@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 3,
+    "field": "military_trader_rebel_repeatables",
+    "field_coord": [6, 0],
+    "research_time": 650,
+    "price":
+    {
+        "credits": 4000.0,
+        "metal": 1500.0,
+        "crystal": 1500.0
+    },
+    "weapon_modifiers": [
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "cooldown_duration",
+        "value": -0.25,
+        "tags": ["missile"]
+    },
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "damage",
+        "value": 0.45,
+        "tags": ["missile"]
+    },
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "range",
+        "value": 0.4,
+        "tags": ["missile"]
+    },
+    {
+        "weapon_type": "planet_bombing",
+        "value_behavior": "scalar",
+        "modifier_type": "cooldown_duration",
+        "value": -0.3
+    }],
+    "unit_modifiers": [
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "max_armor_points",
+        "value": 0.25,
+        "tags": ["torpedo"]
+    }],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+		"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "tag": "missile"
+            }]
+        },
+        "action_data_source": "trader_rebel_missile_weapon_targeting",
+        "buff": "trader_rebel_missile_weapon_targeting"
+    }],
+    "name": "research_subject.trader_rebel_missile_focus_name",
+    "name_uppercase": "research_subject.trader_rebel_missile_focus_name_upper",
+    "description": "research_subject.trader_rebel_missile_focus_description",
+    "hud_icon": "trader_missile_weapon_damage_2_research_subject_hud_icon",
+    "tooltip_picture": "trader_missile_weapon_damage_2_research_subject_tooltip_picture"
+}

@@ -1,0 +1,52 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "assault_specialization_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "assault_specialization_bombing_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.24, -0.48, -0.72, -0.96, -1.2]
+        }
+    },
+    {
+        "action_value_id": "assault_specialization_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [0.24, 0.48, 0.72, 0.96, 1.2]
+        }
+    },
+    {
+        "action_value_id": "assault_specialization_torpedo_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [0.24, 0.48, 0.72, 0.96, 1.2]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "planet_bombing_cooldown_duration",
+        "buff_weapon_modifier":
+        {
+            "weapon_type": "planet_bombing",
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "assault_specialization_bombing_cooldown_duration_bonus_value"
+        }
+    }]
+}

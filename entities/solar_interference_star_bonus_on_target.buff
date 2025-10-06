@@ -1,0 +1,46 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "solar_interference_weapon_range_modifier"
+    },
+    {
+        "buff_weapon_modifier_id": "solar_interference_weapon_cooldown_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "solar_interferance_star_bonus_hud_icon",
+        "name": "planet_bonus.solar_interference.name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "solar_interference_weapon_cooldown_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "solar_interference_weapon_range_modifier"
+            }]
+        }]
+    }
+}

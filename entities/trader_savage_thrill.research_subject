@@ -1,0 +1,62 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 2,
+    "field": "military_armament",
+    "field_coord": [5, 7],
+    "research_time": 360.0,
+    "price":
+    {
+        "credits": 1250.0,
+        "metal": 225.0,
+        "crystal": 350.0
+    },
+    "prerequisites": [
+        ["trader_planet_bombing_damage_0"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "planet_bombing"
+            }]
+        },
+        "action_data_source": "trader_savage_thrill_research_subject",
+        "buff": "trader_savage_thrill_research_subject_bootstrap",
+        "tooltip_lines": [
+        {
+            "rendering_type": "buff_weapon_modifier",
+            "weapon_modifier_id": "savage_thrill_weapon_damage_modifier"
+        },
+        {
+            "rendering_type": "buff_weapon_modifier",
+            "weapon_modifier_id": "savage_thrill_weapon_cooldown_modifier"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.duration",
+            "value_id": "modifier_buff_duration",
+            "value_suffix": "seconds"
+        }]
+    }],
+    "name": "trader_savage_thrill_research_subject_name",
+    "name_uppercase": "trader_savage_thrill_research_subject_name_uppercase",
+    "description": "trader_savage_thrill_research_subject_description",
+    "hud_icon": "trader_savage_thrill_research_subject_hud_icon",
+    "tooltip_picture": "trader_savage_thrill_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_faction",
+        "research_text_filter_rebel"
+    ],
+    "arbitary_research_line":
+    {
+        "heading": "tooltip.research_subject.arbitary_planet_bomb_heading"
+    }
+}

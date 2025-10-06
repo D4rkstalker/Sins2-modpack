@@ -1,0 +1,134 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 0,
+        "name": "Point",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [32.0, 32.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [-0.0, -0.0],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 1,
+        "name": "front",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [-12.0, -12.0],
+        "yaw": [-0.0, -0.0],
+        "pitch": [-0.0, -0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 0,
+        "name": "Point",
+        "type": "point",
+        "emit_max_particle_count": [1.0, 1.0],
+        "emit_rate":
+        {
+            "primary_emit_rate": [1.0, 1.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "color": "ffffffff",
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_only_gradient",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "anchor": "top",
+                "width": [22.5, 22.5],
+                "height": [117.5, 117.5],
+                "texture_0": "t_gauss_projecile",
+                "gradient_texture": "t_gradient_32",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 0.7
+                    },
+                    "gradient_constants":
+                    {
+                        "gradient_pan_start": 1.0
+                    }
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffffff",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [0.0, 0.0]
+    },
+    {
+        "id": 1,
+        "name": "front",
+        "type": "point",
+        "emit_max_particle_count": [1.0, 1.0],
+        "emit_rate":
+        {
+            "primary_emit_rate": [1.0, 1.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "color": "ffffffff",
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_only_gradient",
+                "width": [90.0, 90.0],
+                "height": [25.0, 25.0],
+                "texture_0": "t_lenseflare",
+                "gradient_texture": "t_gradient_30",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 2.0,
+                        "depth_fade_opacity": 0.5,
+                        "alpha_ramp_steepness": 0.5
+                    },
+                    "gradient_constants":
+                    {
+                        "gradient_pan_start": 1.0
+                    }
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ffffffff",
+                "intensity": 800.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [0.0, 0.0]
+    }],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 0,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 1,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": []
+}

@@ -1,0 +1,39 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_attract_to_unit",
+                "attractor_unit":
+                {
+                    "unit_type": "previous_spawner"
+                },
+                "max_linear_speed_value": "treasure_magnet_max_linear_speed_value",
+                "time_to_max_linear_speed_value": "fixed_one"
+            }]
+        }
+    }],
+	"trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_attract_to_unit"
+            }]
+        }
+    }]
+}

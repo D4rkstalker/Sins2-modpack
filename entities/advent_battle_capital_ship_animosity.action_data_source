@@ -1,0 +1,117 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "animosity_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_weapon"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_battle_capital_ship_animosity_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "animosity_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "animosity_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 78.75, 67.5, 56.25, 45.0]
+        }
+    },
+    {
+        "action_value_id": "animosity_cooldown_time_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "animosity_damage_dealt_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [0.1, 0.2, 0.3, 0.4, 0.5],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.001, 0.001, 0.001, 0.001]
+            }
+        }
+    },
+    {
+        "action_value_id": "animosity_damage_taken_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [-0.1, -0.2, -0.3, -0.4, -0.5],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.001, -0.001, -0.001, -0.001, -0.001]
+            }
+        }
+    },
+    {
+        "action_value_id": "animosity_duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "animosity_radius_value",
+        "action_value":
+        {
+            "values": [1500.0, 2000.0, 2500.0, 3000.0, 3500.0]
+        }
+    },
+    {
+        "action_value_id": "animosity_range_value",
+        "action_value":
+        {
+            "values": [6500.0, 6500.0, 6500.0, 6500.0, 6500.0]
+        }
+    }]
+}

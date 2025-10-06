@@ -1,0 +1,53 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "solar_interference_star_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "solar_interference_weapon_range_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    },
+    {
+        "action_value_id": "solar_interference_weapon_cooldown_value",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "solar_interference_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "solar_interference_weapon_range_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "solar_interference_weapon_cooldown_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "solar_interference_weapon_cooldown_value"
+        }
+    }]
+}

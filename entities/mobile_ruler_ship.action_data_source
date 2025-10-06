@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "titan",
+				"super_capital_ship"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_buff",
+				"buff": "player_buffs_is_ai_on_titan"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "max_armor_points_scalar",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "armor_strength_bonus_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "max_armor_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "max_armor_points_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "armor_strength_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "armor_strength_bonus_value"
+        }
+    }]
+}

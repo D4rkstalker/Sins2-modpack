@@ -1,0 +1,41 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 3,
+    "field": "civilian_phase_mastery",
+    "field_coord": [6, 5],
+    "research_time": 540.0,
+    "price":
+    {
+        "metal": 600.0,
+        "crystal": 660.0,
+        "credits": 0.0
+    },
+    "prerequisites": [
+        ["vasari_unlock_phase_jump_inhibitor"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "vasari_trade_ship"
+            }]
+        },
+        "action_data_source": "vasari_scout_corvette_unstoppable_phase_jump",
+        "buff": "vasari_trade_ship_unstoppable_phase_jump"
+	}],
+    "name": "vasari_unstoppable_phase_jump_research_subject_name",
+    "name_uppercase": "vasari_unstoppable_phase_jump_research_subject_name_uppercase",
+    "description": "vasari_unstoppable_phase_jump_research_subject_description",
+    "hud_icon": "vasari_unstoppable_phase_jump_research_subject_hud_icon",
+    "tooltip_picture": "vasari_unstoppable_phase_jump_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_scout"]
+}

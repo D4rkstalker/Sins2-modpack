@@ -1,0 +1,100 @@
+{
+    "version": 0,
+    "active_duration": "mag_shield_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect": "dlc2_trader_loyalist_super_mag_shield_active"
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "uniforms_current_spawner_current_antimatter",
+                "comparison_type": "less_than_equal_to",
+                "value_b": "fixed_zero"
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_try_prevent_damage",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "damage_can_be_propagated"
+            },
+            "actions": [
+            {
+                "action_type": "prevent_damage",
+                "damage_prevented_value": "mag_shield_damage_prevented_value"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_antimatter",
+                    "antimatter_remove_value": "mag_shield_antimatter_conversion_value"
+                }]
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "adaptive_force_field_active"
+    ],
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_loyalist_super_mag_shield_hud_icon",
+        "name": "dlc2_trader_loyalist_super_mag_shield_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_prevented",
+                "value_id": "mag_shield_damage_prevented_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_trader_loyalist_super_mag_shield_cost_per_damage",
+                "value_id": "mag_shield_antimatter_conversion_value",
+                "value_float_format": "two_decimal_place",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

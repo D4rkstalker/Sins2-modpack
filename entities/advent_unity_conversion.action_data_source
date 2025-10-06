@@ -1,0 +1,223 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "conversion_auto_cast_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "titan",
+				"capital_ship",
+				"frigate",
+				"super_capital_ship",
+				"cruiser"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "planet_bombing"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "conversion_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_colonizable_planet"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "has_allied_population_amount",
+                "percentage_of_current_pop": 0.5
+            },
+			{
+                "constraint_type": "has_adjacent_planet_with_ownership",
+                "max_jump_distance": 2,
+				"targeter_relationship_type": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "conversion_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "has_allied_population_amount",
+                "percentage_of_current_pop": 0.5
+            },
+			{
+                "constraint_type": "has_adjacent_planet_with_ownership",
+                "max_jump_distance": 3,
+				"targeter_relationship_type": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "conversion_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "has_allied_population_amount",
+                "percentage_of_current_pop": 0.5
+            }]
+        }
+    },
+    {
+        "target_filter_id": "conversion_neutral_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_colonizable_planet"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "has_allied_population_amount",
+                "percentage_of_current_pop": 0.5
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "conversion_unity_mana_cost_value",
+        "action_value":
+        {
+            "values": [1000.0, 1000.0, 1000.0]
+        }
+    },
+    {
+        "action_value_id": "conversion_cooldown_time_value",
+        "action_value":
+        {
+            "values": [480.0, 300.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "conversion_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [60.0, 90.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "conversion_range_value",
+        "action_value":
+        {
+            "values": [100000.0, 100000.0, 100000.0]
+        }
+    },
+    {
+        "action_value_id": "conversion_bombing_damage_value",
+        "action_value":
+        {
+            "values": [50.0, 100.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "conversion_bombing_population_damage_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, 0.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_conversion_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion_gas_giant"
+        }
+    },
+    {
+        "alias_name": "advent_unity_conversion_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion"
+        }
+    },
+    {
+        "alias_name": "advent_unity_conversion_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion_asteroid"
+        }
+    }]
+}

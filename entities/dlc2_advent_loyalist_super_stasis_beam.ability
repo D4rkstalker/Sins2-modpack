@@ -1,0 +1,145 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_advent_loyalist_super_stasis_beam",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "stasis_beam_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "stasis_beam_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_advent_loyalist_super_stasis_beam_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "stasis_beam_target_filter"
+        ],
+        "range": "stasis_beam_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "watched_buff": "dlc2_advent_loyalist_super_stasis_beam_on_self",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "stasis_beam_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "stasis_beam_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_loyalist_super_stasis_beam_hud_icon",
+        "tooltip_picture": "dlc2_advent_loyalist_super_stasis_beam_tooltip_picture",
+        "name": "dlc2_advent_loyalist_super_stasis_beam_ability_name",
+        "description": "dlc2_advent_loyalist_super_stasis_beam_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "stasis_beam_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.charge_delay",
+                "value_id": "stasis_beam_channel_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "stasis_beam_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.on_target_tooltip_lines_sub_header_label",
+            "lines": [
+			{
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_launch_or_dock_strikecraft",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_production",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },			
+			{
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "stasis_beam_damage_taken_modifier"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "version": 0,
+    "action_data_source": "trader_transport_capital_ship_elite_crews",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9],
+    "active_actions":
+    {
+        "cooldown_time": "elite_crews_cooldown_value",
+		"antimatter_cost": "elite_crews_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "buff_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_transport_capital_ship_elite_crews_on_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "boarding_party_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "action_data_source",
+                    "mesh_point": "hangar",
+                    "effects":
+                    {
+                        "muzzle_effect": "trader_transport_capital_ship_scout_muzzle",
+                        "projectile_travel_effect": "trader_transport_capital_ship_scout_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "buff_targets"],
+        "range": "elite_crews_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "auto_cast_targets"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "arankul_elite_crews_hud_icon",
+        "name": "npc_reward.arankul_elite_crews.name",
+        "description": "trader_transport_capital_ship_elite_crews_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_shield_point_restore_after_damage_taken_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "elite_crews_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "buff_duration",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

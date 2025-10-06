@@ -1,0 +1,85 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "solar_storms_star_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "solar_storms_shields_regeneration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    },
+    {
+        "action_value_id": "solar_storms_armor_regeneration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    },
+    {
+        "action_value_id": "solar_storms_hull_regeneration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    },
+    {
+        "action_value_id": "solar_storms_shield_burst_restore_points_bonus_value",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "solar_storms_shields_regeneration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "solar_storms_shields_regeneration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "solar_storms_armor_regeneration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "solar_storms_armor_regeneration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "solar_storms_hull_regeneration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "solar_storms_hull_regeneration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "solar_storms_shield_burst_restore_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_burst_restore_points",
+            "value_behavior": "scalar",
+            "value_id": "solar_storms_shield_burst_restore_points_bonus_value"
+        }
+    }]
+}

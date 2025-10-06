@@ -1,0 +1,105 @@
+{
+    "version": 0,
+    "action_data_source": "advent_carrier_capital_ship_telekinetic_push",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "telekinetic_push_cooldown_time_value",
+        "antimatter_cost": "telekinetic_push_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_carrier_capital_ship_telekinetic_push"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_carrier_capital_ship_telekinetic_push_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "telekinetic_push_auto_cast_target_filter",
+                "radius_value": "telekinetic_push_radius_value",
+                "target_count_value": "telekinetic_push_auto_cast_target_count_value"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_carrier_capital_ship_telekinetic_push_ability_hud_icon",
+        "tooltip_picture": "advent_carrier_capital_ship_telekinetic_push_ability_tooltip_picture",
+        "name": "advent_carrier_capital_ship_telekinetic_push_ability_name",
+        "description": "advent_carrier_capital_ship_telekinetic_push_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "telekinetic_push_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "telekinetic_push_damage_value",
+				"ratio_float_format": "two_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "telekinetic_push_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "telekinetic_push_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "telekinetic_push_buff_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

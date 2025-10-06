@@ -1,0 +1,45 @@
+{
+    "version": 0,
+    "active_duration": "buff_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+        }
+    }],
+    "unit_mutations": [
+		"cannot_be_disabled"
+	],
+    "gui":
+    {
+        "hud_icon": "anundi_collective_consciousness_hud_icon",
+        "name": "npc_reward.anundi_collective_consciousness.name",
+        "description": "npc_reward.anundi_collective_consciousness.description",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive"
+    }
+}

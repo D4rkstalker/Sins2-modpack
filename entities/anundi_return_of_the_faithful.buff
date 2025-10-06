@@ -1,0 +1,49 @@
+{
+    "version": 0,
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "resurrect_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "dead_units_player":
+                {
+                    "player_type": "buff_owner_player"
+                },
+                "unit_types_to_resurrect": [
+                    "corvette",
+                    "cruiser",
+                    "frigate"
+                ],
+                "resurrection_sort":
+                {
+                    "sort_steps": [
+                    {
+                        "sort_type": "build_or_virtual_supply",
+                        "sort_order": "descending"
+                    },
+                    {
+                        "sort_type": "distance_to_unit",
+                        "sort_order": "ascending",
+                        "distance_reference_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }]
+                },
+                "max_supply_value": "return_of_the_faithful_max_supply_value"
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

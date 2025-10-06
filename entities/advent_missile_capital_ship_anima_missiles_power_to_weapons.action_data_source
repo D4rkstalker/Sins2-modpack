@@ -1,0 +1,76 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "action_values": [
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0125, 0.015, 0.0175, 0.02, 0.0225]
+            }
+        }
+    },
+    {
+        "action_value_id": "weapon_damage",
+        "action_value":
+        {
+            "values": [0.05, 0.1, 0.15, 0.2, 0.25]
+        }
+    },
+    {
+        "action_value_id": "weapon_cooldown",
+        "action_value":
+        {
+            "values": [-0.3, -0.45, -0.6, -0.75, -0.9]
+        }
+    },
+    {
+        "action_value_id": "debuff_time_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.01, -0.0125, -0.015, -0.0175, -0.02]
+            }
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "weapon_damage",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "weapon_damage"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "weapon_cooldown",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "weapon_cooldown"
+        }
+    }]
+}

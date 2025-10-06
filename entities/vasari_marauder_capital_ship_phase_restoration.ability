@@ -1,0 +1,106 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_marauder_capital_ship_phase_restoration",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "phase_restoration_cooldown_time_value",
+        "antimatter_cost": "phase_restoration_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_restoration_trigger"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "phase_restoration_target_filter"
+        ],
+        "range": "phase_restoration_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "phase_restoration_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_marauder_capital_ship_phase_restoration_ability_hud_icon",
+        "tooltip_picture": "vasari_marauder_capital_ship_phase_restoration_ability_tooltip_picture",
+        "name": "vasari_marauder_capital_ship_phase_restoration_ability_name",
+        "description": "vasari_marauder_capital_ship_phase_restoration_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "phase_restoration_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "phase_restoration_trigger_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "phase_restoration_shield_restore_value",
+                "value_float_format": "percentage",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_restore",
+                "value_id": "phase_restoration_armor_restore_value",
+                "value_float_format": "percentage",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_restore",
+                "value_id": "phase_restoration_hull_restore_value",
+                "value_float_format": "percentage",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_restore",
+                "value_id": "phase_restoration_antimatter_restore_value",
+                "value_float_format": "percentage",
+				"value_color": "positive"
+            }]
+        }]
+    }
+}

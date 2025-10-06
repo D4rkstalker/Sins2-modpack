@@ -1,0 +1,115 @@
+{
+    "version": 0,
+    "level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "deliverance_engine_culture_spread_loyalist_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "is_in_dominant_culture",
+						"dominant_culture_player_relationship": "self"
+					},
+					{
+						"constraint_type": "is_in_dominant_culture",
+						"dominant_culture_player_relationship": "ally"
+					}]
+				}
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_cooldown_time_value",
+        "action_value":
+        {
+            "values": [300.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_duration_on_target_value",
+        "action_value":
+        {
+            "values": [180.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_duration_on_self_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_angular_speed_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_create_shell_time_value",
+        "action_value":
+        {
+            "values": [6.0, 6.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_range_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_planet_surface_radius",
+        "action_value":
+        {
+            "transform_type": "surface_radius",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "deliverance_engine_culture_spread_loyalist_culture_rate_value",
+        "action_value":
+        {
+            "values": [0.04, 0.04]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "deliverance_engine_culture_spread_loyalist_culture_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "culture_rate",
+            "value_behavior": "additive",
+            "value_id": "deliverance_engine_culture_spread_loyalist_culture_rate_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "deliverance_engine_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "additive",
+            "value_id": "deliverance_engine_angular_speed_value"
+        }
+	}]
+}

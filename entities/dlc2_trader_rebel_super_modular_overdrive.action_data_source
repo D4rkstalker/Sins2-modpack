@@ -1,0 +1,280 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "modular_overdrive_no_module_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "modular_railgun_equipped"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "modular_missile_equipped"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "modular_launch_bay_equipped"
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "modular_overdrive_missile_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "modular_overdrive_missile_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "modular_overdrive_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 90.0, 105.0, 120.0, 135.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 85.0, 80.0, 75.0, 65.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_railgun_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_railgun_impact_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_railgun_linear_speed_value",
+        "action_value":
+        {
+            "values": [-0.25, -0.3, -0.35, -0.4, -0.5]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_railgun_max_angular_speed_value",
+        "action_value":
+        {
+            "values": [-0.25, -0.3, -0.35, -0.4, -0.5]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_railgun_antimatter_removed_value",
+        "action_value":
+        {
+            "values": [25.0, 30.0, 35.0, 40.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_launch_bay_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_launch_bay_damage_taken_value",
+        "action_value":
+        {
+            "values": [-0.25, -0.3, -0.35, -0.4, -0.5]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_launch_bay_weapon_damage_value",
+        "action_value":
+        {
+            "values": [0.5, 0.6, 0.7, 0.8, 1.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_radius_value",
+        "action_value":
+        {
+            "values": [8000.0, 8000.0, 8000.0, 8000.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_max_target_count_value",
+        "action_value":
+        {
+            "values": [16.0, 20.0, 24.0, 28.0, 36.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_execution_interval_value",
+        "action_value":
+        {
+            "values": [1.5, 1.5, 1.5, 1.5, 1.5]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_execution_count_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_torpedo_steering_distance_radius_scalar_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_damage_value",
+        "action_value":
+        {
+            "values": [200.0, 200.0, 200.0, 200.0, 200.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_penetration_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0, 600.0, 600.0, 600.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_missile_torpedo_lifetime_value",
+        "action_value":
+        {
+            "values": [25.0, 25.0, 25.0, 25.0, 25.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_no_module_execution_count_value",
+        "action_value":
+        {
+            "values": [25.0, 30.0, 35.0, 40.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "modular_overdrive_no_module_shield_restore_rate_value",
+        "action_value":
+        {
+            "values": [40.0, 50.0, 60.0, 70.0, 90.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "modular_overdrive_railgun_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "modular_overdrive_railgun_linear_speed_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "modular_overdrive_railgun_max_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "modular_overdrive_railgun_max_angular_speed_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "modular_overdrive_launch_bay_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "modular_overdrive_launch_bay_damage_taken_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "modular_overdrive_launch_bay_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "modular_overdrive_launch_bay_weapon_damage_value"
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "try_make_buff_dead_if_no_child_buffs",
+        "action":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "common_child_buff_count_value",
+                "comparison_type": "less_than_equal_to",
+                "value_b": "fixed_zero"
+            },
+            "action_type": "make_buff_dead"
+        }
+    }]
+}

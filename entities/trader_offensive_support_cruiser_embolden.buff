@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "execution_interval_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "regen_rate_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "embolden_small",
+                        "medium_unit": "embolden_medium",
+                        "large_unit": "embolden_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "embolden_weapon_cooldown_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_offensive_support_cruiser_embolden_hud_icon",
+        "name": "trader_offensive_support_cruiser_embolden_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_rate",
+                "value_id": "regen_rate_value",
+				"value_float_format": "one_decimal_place",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "embolden_weapon_cooldown_modifier"
+            }]
+        }]
+    }
+}

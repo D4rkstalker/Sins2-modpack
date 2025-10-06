@@ -1,0 +1,89 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_antifighter_frigate_discharging_missiles",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["vasari_unlock_antifighter_frigate_discharging_missiles_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_antifighter_frigate_discharging_missiles_on_self"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_antifighter_frigate_discharging_missiles_hud_icon",
+        "name": "vasari_antifighter_frigate_discharging_missiles_name",
+        "description": "vasari_antifighter_frigate_discharging_missiles_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.on_missile_destruction_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "target_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "radius_value"
+            }]
+        }]
+    }
+}

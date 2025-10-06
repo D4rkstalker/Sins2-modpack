@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "action_data_source": "trader_minefield_structure_detonate",
+    "active_actions":
+    {
+        "cooldown_time": "fixed_one",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "detonate_damage_radius",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "detonate_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "detonate_damage_value",
+                    "penetration_value": "detonate_penetration_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "detonate_target_filter"
+        ],
+        "range": "detonate_trigger_radius",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "detonate_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_explosive_minefield_structure_detonate_hud_icon",
+        "name": "vasari_explosive_minefield_structure_detonate_name",
+        "description": "vasari_explosive_minefield_structure_detonate_desc",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "detonate_trigger_radius"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "detonate_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "detonate_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "detonate_damage_radius"
+            }]
+        }]
+    }
+}

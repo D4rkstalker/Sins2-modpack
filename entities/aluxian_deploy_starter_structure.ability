@@ -1,0 +1,55 @@
+{
+    "version": 0,
+    "action_data_source": "deploy_exotic_structure",
+    "active_actions":
+    {
+        "cooldown_time": "deploy_cooldown",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "aluxian_capital_ship_factory_structure",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "is_self_building": true
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted",
+        "range": "deploy_range",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "never",
+            "target_definitions": [
+            {
+                "target_filter": "uniforms_owned_planets"
+            }]
+        },
+        "spawned_unit":
+        {
+            "unit": "aluxian_capital_ship_factory_structure",
+            "max_count_in_gravity_well": "max_count_in_gravity_well",
+            "gravity_well_primary_planet_target_filter": "friendly_planet"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "aluxian_military_observers_hud_icon",
+        "name": "trader_capital_ship_factory_structure_name",
+        "description": "trader_capital_ship_factory_structure_description"
+    }
+}

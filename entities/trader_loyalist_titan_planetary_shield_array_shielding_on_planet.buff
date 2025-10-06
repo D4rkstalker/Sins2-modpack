@@ -1,0 +1,84 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "trader_starbase_planetary_shield_array_unit_item_on_planet_small",
+                        "medium_unit": "trader_starbase_planetary_shield_array_unit_item_on_planet_medium",
+                        "large_unit": "trader_starbase_planetary_shield_array_unit_item_on_planet_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "enable_can_have_shields_burst_restored"
+    ],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "trader_starbase_planetary_shield_array_max_planet_shield_points"
+    },
+    {
+        "buff_planet_modifier_id": "trader_starbase_planetary_shield_array_shield_restore"
+    },
+    {
+        "buff_planet_modifier_id": "trader_starbase_planetary_shield_array_shield_burst_restore"
+    },
+    {
+        "buff_planet_modifier_id": "trader_starbase_planetary_shield_array_shield_burst_cooldown"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_starbase_planetary_shield_array_unit_item_hud_icon",
+        "name": "trader_loyalist_titan_planetary_shield_array_unit_item_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "trader_starbase_planetary_shield_array_max_planet_shield_points"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "trader_starbase_planetary_shield_array_shield_restore"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.unit.shield_burst_restore_points_label",
+                "value_id": "starbase_planetary_shield_array_shield_burst_restore_percentage_tooltip",
+				"value_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.unit.shield_burst_restore_cooldown_time_remaining_label",
+                "value_id": "starbase_planetary_shield_array_shield_burst_cooldown_time",
+				"value_float_format": "no_decimal_place",
+				"value_color": "positive",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

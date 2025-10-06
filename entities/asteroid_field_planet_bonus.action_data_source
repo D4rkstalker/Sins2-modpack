@@ -1,0 +1,55 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "asteroid_field_planet_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"super_capital_ship",
+				"torpedo",
+                "titan"
+			],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+				"constraint_type": "has_weapon",
+				"weapon_type": "normal"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "asteroid_field_miss_chance",
+        "action_value":
+        {
+            "values": [0.166667]
+        }
+    },
+    {
+        "action_value_id": "asteroid_field_miss_chance_tooltip",
+        "action_value":
+        {
+            "values": [-0.20]
+        }
+    },
+    {
+        "action_value_id": "asteroid_field_prevent_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0]
+        }
+    }]
+}

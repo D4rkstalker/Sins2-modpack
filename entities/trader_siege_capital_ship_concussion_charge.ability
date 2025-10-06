@@ -1,0 +1,166 @@
+{
+    "version": 0,
+    "action_data_source": "trader_siege_capital_ship_concussion_charge",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "concussion_charge_cooldown_time_value",
+        "antimatter_cost": "concussion_charge_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "concussion_charge_impact_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "concussion_charge_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_siege_capital_ship_concussion_charge_on_spawner"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.3",
+                    "effects":
+                    {
+                        "muzzle_effect": "trader_siege_capital_ship_concussion_charge_muzzle",
+                        "projectile_travel_effect": "trader_siege_capital_ship_concussion_charge_weapon_projectile_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "concussion_charge_impact_target_filter"
+        ],
+        "range": "concussion_charge_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 5.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "concussion_charge_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "concussion_charge_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_siege_capital_ship_concussion_charge_ability_hud_icon",
+        "name": "trader_siege_capital_ship_concussion_charge_ability_name",
+        "description": "trader_siege_capital_ship_concussion_charge_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "concussion_charge_range_value",
+                "radius": "concussion_charge_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius_damage",
+                "value_id": "concussion_charge_spread_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "concussion_charge_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "concussion_charge_radius_value"
+            }]
+		},
+		{
+			"header_text": "tooltip.trader_siege_capital_ship_concussion_charge_on_primary_target_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_launch_or_dock_strikecraft",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_production",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+			{
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.disable_duration",
+                "value_id": "concussion_charge_disable_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+			],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "auto_cast_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+			],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_mutation",
+				"mutation": "invulnerable"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "laesinda_parting_the_way",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "max_shield_points_value",
+        "action_value":
+        {
+            "values": [-500000.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_duration",
+        "action_value":
+        {
+            "values": [300.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "max_planet_shield_points_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "max_shield_points_value"
+        }
+    }]
+}

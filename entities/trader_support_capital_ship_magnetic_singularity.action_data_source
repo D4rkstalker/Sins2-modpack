@@ -1,0 +1,144 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "magnetic_singularity_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "titan",
+                "super_capital_ship",
+		"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+			{
+				"constraint_type": "can_ever_move"
+			},
+			{
+				"constraint_type": "is_always_a_threat"
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_support_capital_ship_magnetic_singularity_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "magnetic_singularity_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "super_capital_ship",
+                "titan",
+                "torpedo",
+		"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+			{
+				"constraint_type": "can_ever_move"
+			}]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "slow_magnitude"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "empowered_slow_value",
+        "action_value":
+        {
+            "values": [-0.75, -1.5, -2.25, -3.0, -3.75]
+        }
+    },
+    {
+        "action_value_id": "linear_speed_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "slow_magnitude",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "non_empowered_slow_value",
+        "action_value":
+        {
+            "values": [-0.25, -0.5, -0.75, -1.0, -1.25]
+        }
+    },
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [3000.0, 3000.0, 3000.0, 3000.0, 3000.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_target_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [15000.0, 15000.0, 15000.0, 15000.0, 15000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "magnetic_singularity_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "linear_speed_bonus_value"
+        }
+    }]
+}

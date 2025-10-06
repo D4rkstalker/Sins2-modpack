@@ -1,0 +1,62 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_try_prevent_damage",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "random_chance",
+					"chance_value": "asteroid_field_miss_chance"
+				},
+				{
+					"constraint_type": "damage_has_damage_source",
+					"damage_source": "weapon"
+				}]
+            },
+            "actions": [
+            {
+                "action_type": "prevent_damage",
+                "damage_prevented_value": "asteroid_field_prevent_damage_value"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "asteroid_field_planet_bonus_hud_icon",
+        "name": "planet_bonus.asteroid_field.name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.weapon_accuracy",
+                "value_id": "asteroid_field_miss_chance_tooltip",
+				"value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

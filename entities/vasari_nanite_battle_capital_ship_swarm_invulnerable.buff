@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_use_active_abilities",
+		"disable_can_update_ability_cooldown_progress",
+        "disable_can_use_weapons",
+		"disable_can_passively_regenerate_hull",
+		"disable_can_passively_regenerate_armor",
+		"disable_can_passively_regenerate_shields",
+		"disable_can_have_shields_burst_restored",
+        "invulnerable",
+		"disable_can_be_targeted_by_enemies",
+		"disable_can_be_targeted_by_allies"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_upgrade_hyperspace_charge_time_research_subject_hud_icon",
+        "name": "unit_mutation.disable_can_be_targeted_by_allies",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive"
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_starbase_debris_vortex",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_starbase_debris_vortex_on_starbase"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+			"enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints":[
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+					"target_filter_id": "vortex_auto_cast_target_filter"
+                },
+				{
+					"constraint_type": "has_valid_targets_in_radius",
+					"radius_origin_unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "vortex_auto_cast_target",
+					"radius_value": "vortex_radius",
+					"target_count_value": "target_count"
+				}]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_starbase_debris_vortex_unit_item_hud_icon",
+        "name": "vasari_starbase_debris_vortex_unit_item_name",
+        "description": "vasari_starbase_debris_vortex_unit_item_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "vortex_radius"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "vortex_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_restore_value_per_max_hull_points",
+                "value_id": "hull_restore_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.damage",
+                "value_id": "weapon_damage_bonus_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "buff_duration"
+            }]
+        }]
+    }
+}

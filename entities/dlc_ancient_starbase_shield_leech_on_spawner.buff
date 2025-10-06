@@ -1,0 +1,77 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "shield_leech_execution_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "shield_leech_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "shield_leech_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "dlc_ancient_starbase_shield_leech_on_target"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect": "dlc_ancient_starbase_shield_leech_on_spawner"
+                }
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc_ancient_starbase_shield_leech_unit_item_hud_icon",
+        "name": "dlc_ancient_starbase_shield_leech_unit_item_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shields_stolen",
+                "value_id": "shield_leech_total_shield_regen_value",
+                "value_color": "positive",
+                "value_suffix": "per_second",
+				"is_resolved_value": true
+            }]
+        }]
+    }
+}

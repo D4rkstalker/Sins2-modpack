@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "shielded_warheads_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal",
+                "tag": "missile"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "shielded_warheads_max_shield_points_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "shielded_warheads_radius_value",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "shielded_warheads_max_shield_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "shielded_warheads_max_shield_points_value"
+        }
+    }]
+}

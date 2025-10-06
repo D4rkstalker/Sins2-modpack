@@ -1,0 +1,139 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets_general",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+			]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+			"constraints": [
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "player_buffs_trader_on_planet"
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets_trader",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+			"constraints": [
+			{
+				"constraint_type": "has_buff",
+				"buff": "player_buffs_trader_on_planet"
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "culture_resistance_scalar",
+        "action_value":
+        {
+            "values": [0.015]
+        }
+    },
+    {
+        "action_value_id": "max_allied_population_factor_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "neutral_population_assimilation_rate_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "enemy_population_assimilation_rate_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "culture_resistance_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "culture_resistance_rate",
+            "value_behavior": "additive",
+            "value_id": "culture_resistance_scalar"
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "max_allied_population_factor_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_allied_population_factor",
+            "value_behavior": "additive",
+            "value_id": "max_allied_population_factor_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "neutral_population_assimilation_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "neutral_population_assimilation_rate",
+            "value_behavior": "scalar",
+            "value_id": "neutral_population_assimilation_rate_scalar"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "enemy_population_assimilation_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "enemy_population_assimilation_rate",
+            "value_behavior": "scalar",
+            "value_id": "enemy_population_assimilation_rate_scalar"
+        }
+    }]
+}

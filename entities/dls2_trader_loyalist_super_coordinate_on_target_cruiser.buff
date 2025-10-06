@@ -1,0 +1,64 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "coordinate_radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc2_trader_loyalist_super_coordinate_on_target_small",
+                        "medium_unit": "dlc2_trader_loyalist_super_coordinate_on_target_medium",
+                        "large_unit": "dlc2_trader_loyalist_super_coordinate_on_target_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "coordinate_cruiser_ability_cost_modifier"
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "coordinate_cruiser_cooldown_duration_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "dls2_trader_loyalist_super_coordinate_hud_icon",
+        "name": "dls2_trader_loyalist_super_coordinate_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "coordinate_cruiser_cooldown_duration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "coordinate_cruiser_ability_cost_modifier"
+            }]
+        }]
+    }
+}

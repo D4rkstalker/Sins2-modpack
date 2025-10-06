@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "action_data_source": "trader_carrier_capital_ship_rapid_manufacturing",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "passive_actions":
+    {
+        "persistant_buff": "trader_carrier_capital_strikecraft_modifier"
+    },
+    "active_actions":
+    {
+        "cooldown_time": "rapid_manufacturing_cooldown_time_value",
+        "antimatter_cost": "rapid_manufacturing_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_detached_strikecraft",
+                    "strikecraft_count_value": "rapid_manufacturing_strikecraft_count_value",
+                    "buff_on_strikecraft": "trader_carrier_capital_ship_rapid_manufacturing_on_strikecraft"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_carrier_capital_ship_rapid_manufacturing_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "trader_carrier_capital_ship_rapid_manufacturing_buff_start"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_recently_fired_weapon"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_carrier_capital_ship_rapid_manufacturing_ability_hud_icon",
+        "name": "trader_carrier_capital_ship_rapid_manufacturing_ability_name",
+        "description": "ability.trader_carrier_capital_ship_rapid_manufacturing_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.instant_build_strikecraft_count",
+                "value_id": "rapid_manufacturing_strikecraft_count_value",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "rapid_manufacturing_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "trader_carrier_capital_strikecraft_modifier"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,155 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 5,
+        "name": "Glow",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [1.0, 1.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 4,
+        "name": "Glow",
+        "type": "point",
+        "emit_rate":
+        {
+            "primary_emit_rate": [10.0, 10.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": -1,
+            "max_duration": [0.2, 0.2],
+            "color": "ff000000",
+            "fade_in_time": [0.1, 0.1],
+            "fade_out_time": [0.05, 0.05],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_add_color",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "anchor": "top",
+                "width": [7.5, 9.5],
+                "height": [90.0, 90.0],
+                "texture_0": "advent_bolt_pd_glow",
+                "gradient_texture": "advent_pd",
+                "erosion_texture": "white_square",
+                "initial_erosion_noise_offset_u": [0.0, 0.0],
+                "initial_erosion_noise_offset_v": [0.0, 0.0],
+                "random_flip_texture_horizontal_chance": 0.5,
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 0.8,
+                        "alpha_ramp_growth_delay": 1.0,
+     		        "alpha_ramp_max_alpha_scalar": 2.2
+                    }
+                }
+            },
+            "mesh":
+            {},
+            "light":
+            {
+                "type": "point_finite",
+                "color": "ff00f2d9",
+                "intensity": 900.0,
+                "surface_radius": 0.0
+            }
+        },
+        "forward_velocity": [0.0, 0.0]
+    },
+    {
+        "id": 6,
+        "name": "Core",
+        "type": "point",
+        "emit_rate":
+        {
+            "primary_emit_rate": [15.0, 15.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": -1,
+            "max_duration": [0.15, 0.15],
+            "color": "ff7fffff",
+            "fade_in_time": [0.0, 0.0],
+            "fade_out_time": [0.05, 0.05],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "anchor": "top",
+                "width": [3.5, 3.5],
+                "height": [15.0, 20.0],
+                "texture_0": "medium_autocannon_bolt",
+                "initial_erosion_noise_offset_u": [0.0, 0.0],
+                "initial_erosion_noise_offset_v": [0.0, 0.0],
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 0.8,
+                        "depth_fade_opacity": 0.5,
+		        "alpha_ramp_max_alpha_scalar": 2.2
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [0.0, 0.0]
+    }],
+    "modifiers": [
+    {
+        "id": 2,
+        "name": "Heighten",
+        "type": "float_property",
+        "property_type": "height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "in_out_quad",
+            "easing_values": [1.0, 3.0]
+        }
+    },
+    {
+        "id": 3,
+        "name": "ShrinkWidth",
+        "type": "float_property",
+        "property_type": "width_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "in_out_quad",
+            "easing_values": [1.0, 0.0]
+        }
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 4,
+        "attachee_id": 5
+    },
+    {
+        "attacher_id": 6,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": []
+}

@@ -1,0 +1,122 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 4,
+            "name": "flare",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "ffff8000",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [390.0, 390.0],
+                    "rotation_speed": [-0.087266, 0.087266],
+                    "texture_0": "flare_2",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 0.50,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 3.141593]
+        },
+        {
+            "id": 5,
+            "name": "flare_circle",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "ffff8000",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [400.0, 400.0],
+                    "texture_0": "designate_target",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 0.1250,
+                            "depth_fade_distance": 100.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 3.141593]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 2,
+            "name": "Shrink",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_out_sine",
+                "easing_values": [1.0, 0.0]
+            }
+        },
+        {
+            "id": 3,
+            "name": "ColorChange",
+            "type": "color",
+            "change_duration_context": "particle_time_elapsed",
+            "change_duration": [0.70, 0.70],
+            "begin_color": "ffff0000",
+            "end_color": "ffc0ffff"
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 4,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 5
+        }
+    ]
+}

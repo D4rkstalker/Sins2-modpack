@@ -1,0 +1,86 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "temple_of_purification_execution_interval_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_and_armor_only",
+                    "repair_value": "temple_of_purification_hull_restore_rate_value"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "temple_of_purification_shield_restore_rate_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_temple_of_purification_on_target_small",
+                        "medium_unit": "advent_temple_of_purification_on_target_medium",
+                        "large_unit": "advent_temple_of_purification_on_target_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_temple_of_purification_unit_item_hud_icon",
+        "name": "advent_temple_of_purification_unit_item_name",
+        "alert_type": "positive_buff",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_restore_rate",
+                "value_id": "temple_of_purification_hull_restore_rate_value",
+                "value_suffix": "per_second",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "temple_of_purification_shield_restore_rate_value",
+                "value_suffix": "per_second",
+				"value_color": "positive"
+            }]
+        }]
+    }
+}

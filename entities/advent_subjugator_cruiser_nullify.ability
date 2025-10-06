@@ -1,0 +1,118 @@
+{
+    "version": 0,
+    "action_data_source": "advent_subjugator_cruiser_nullify",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_subjugator_cruiser_nullify_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "nullify_cooldown_time_value",
+        "antimatter_cost": "nullify_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_antimatter",
+                    "antimatter_remove_value": "nullify_antimatter_remove_value"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "muzzle_effect": "advent_subjugator_cruiser_nullify_muzzle",
+                        "beam_effect": "advent_subjugator_cruiser_nullify_beam"
+                    },
+                    "beam_duration": "nullify_beam_duration_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_subjugator_cruiser_nullify_activate_on_target_small",
+                            "medium_unit": "advent_subjugator_cruiser_nullify_activate_on_target_medium",
+                            "large_unit": "advent_subjugator_cruiser_nullify_activate_on_target_large"
+                        }
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "nullify_target_filter"
+        ],
+        "range": "nullify_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 90.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "nullify_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "target_current_antimatter_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "auto_cast_antimatter_threshold_value"
+                }
+            },
+            {
+                "target_filter": "nullify_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "target_current_antimatter_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "auto_cast_antimatter_threshold_value"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_subjugator_cruiser_nullify_ability_hud_icon",
+        "tooltip_picture": "advent_subjugator_cruiser_nullify_ability_tooltip_picture",
+        "name": "advent_subjugator_cruiser_nullify_ability_name",
+        "description": "advent_subjugator_cruiser_nullify_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "nullify_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_removed",
+                "value_id": "nullify_antimatter_remove_value",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "active_duration": "scorn_duration_value",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "provides_detection": true,
+    "time_actions": [
+    {
+		"execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "scorn_debuff_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_scorn_on_gravity_well"
+                }]
+            }]
+		}
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_unity_scorn_buff_small",
+                        "medium_unit": "advent_unity_scorn_buff_medium",
+                        "large_unit": "advent_unity_scorn_buff_large"
+                    }
+                }
+            }]
+        }
+    }]
+}

@@ -1,0 +1,49 @@
+{
+    "version": 0,
+    "item_type": "planet_component",
+    "build_group_id": "economy",
+    "hud_icon": "advent_crystal_enricher_unit_item_hud_icon",
+    "tooltip_icon": "advent_crystal_enricher_unit_item_hud_icon",
+    "tooltip_picture": "advent_crystal_enricher_unit_item_tooltip_picture",
+    "name": "advent_crystal_enricher_unit_item_name",
+    "description": "advent_crystal_enricher_unit_item_description",
+    "build_time": 90.0,
+    "price":
+    {
+        "credits": 500.0,
+        "metal": 100.0,
+        "crystal": 150.0
+    },
+    "max_count_on_unit": 1,
+    "planet_type_groups": [
+    {
+        "planet_types": [
+			"barren",
+			"crystalline",
+			"desert",
+			"desert_home",
+			"greenhouse",
+			"ice",
+			"irradiated",
+			"magnetic",
+			"oceanic",
+			"swamp",
+			"terran",
+			"terran_home"
+        ],
+        "build_prerequisites": [
+			["advent_unlock_crystal_enricher_unit_item"]
+        ]
+    }],
+    "planet_modifiers": [
+    {
+        "modifier_type": "mining_track_crystal_income_rate",
+        "value_behavior": "additive",
+        "values": [0.9]
+    },
+    {
+        "modifier_type": "mining_track_crystal_income_rate_per_population",
+        "value_behavior": "additive",
+        "values": [0.003]
+    }]
+}

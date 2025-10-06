@@ -1,0 +1,67 @@
+{
+    "version": 0,
+    "action_data_source": "yannock_penetrating_warheads",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "buff_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "yannock_penetrating_warheads"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "ability_targets"]
+    },
+    "gui":
+    {
+        "hud_icon": "yannock_penetrating_warheads_hud_icon",
+        "name": "npc_reward.yannock_penetrating_warheads.name",
+        "description": "npc_reward.yannock_penetrating_warheads.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+			{
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.bonus_structure_damage",
+                "value_id": "extra_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+			{
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.bonus_starbase_damage",
+                "value_id": "extra_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "buff_duration",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

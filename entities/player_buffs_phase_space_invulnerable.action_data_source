@@ -1,0 +1,374 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "scuttle_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "titan",
+				"capital_ship",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "phase_space_invulnerable_neutral_unit_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_harassment_battle_capital_ship_capturable",
+				"vasari_nanite_battle_capital_ship_capturable"
+            ],
+            "ownerships": [
+                "none"
+			]
+        }
+    },
+    {
+        "target_filter_id": "phase_space_invulnerable_collector_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "phase_space_invulnerable_advent_harassment_battle_capital_ship_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_harassment_battle_capital_ship_capturable"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "phase_space_invulnerable_vasari_nanite_battle_capital_ship_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "vasari_nanite_battle_capital_ship_capturable"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "phase_space_invulnerable_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "corvette",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+			]
+        }
+    },
+    {
+        "target_filter_id": "phase_space_invulnerable_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "corvette",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "starbase_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_fully_built"
+                }
+            },
+			{
+				"constraint_type": "has_recently_been_damaged"
+			}],
+            "exemptions": [
+                "is_fully_unbuilt"]
+        }
+    },
+    {
+        "target_filter_id": "starbase_friendly_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+			]
+        }
+    },
+    {
+        "target_filter_id": "starbase_neutral_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"star",
+				"uncolonizable"
+            ],
+            "ownerships": [
+                "none"
+			]
+        }
+    },
+	{
+        "target_filter_id": "starbase_enemy_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+			]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "hull_minus_crippled_hull"
+		],
+        "unit_variable_ids": [
+            "previous_gravity_well"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "collecter_radius_value",
+        "action_value":
+        {
+            "values": [5600.0]
+        }
+    },
+    {
+        "action_value_id": "starbase_max_hull",
+        "action_value":
+        {
+			"transform_type": "per_max_hull_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "starbase_max_crippled_hull",
+        "action_value":
+        {
+			"transform_type": "per_max_crippled_hull_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "starbase_friendly_planet_hull_repair",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "hull_minus_crippled_hull",
+            "values": [0.005556]
+        }
+    },
+    {
+        "action_value_id": "starbase_friendly_planet_armor_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_armor_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.005556]
+        }
+    },
+    {
+        "action_value_id": "starbase_friendly_planet_shields_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_shield_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.005556]
+        }
+    },
+    {
+        "action_value_id": "starbase_neutral_planet_hull_repair",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "hull_minus_crippled_hull",
+            "values": [0.002778]
+        }
+    },
+    {
+        "action_value_id": "starbase_neutral_planet_armor_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_armor_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.002778]
+        }
+    },
+    {
+        "action_value_id": "starbase_neutral_planet_shields_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_shield_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.002778]
+        }
+    },
+    {
+        "action_value_id": "starbase_enemy_planet_hull_repair",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "hull_minus_crippled_hull",
+            "values": [0.001587]
+        }
+    },
+    {
+        "action_value_id": "starbase_enemy_planet_armor_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_armor_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.001587]
+        }
+    },
+    {
+        "action_value_id": "starbase_enemy_planet_shields_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_shield_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.001587]
+        }
+    },
+    {
+        "action_value_id": "starbase_enemy_research_planet_hull_repair",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "hull_minus_crippled_hull",
+            "values": [0.003704]
+        }
+    },
+    {
+        "action_value_id": "starbase_enemy_research_planet_armor_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_armor_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.003704]
+        }
+    },
+    {
+        "action_value_id": "starbase_enemy_research_planet_shields_repair",
+        "action_value":
+        {
+			"transform_type": "per_max_shield_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.003704]
+        }
+    },
+    {
+        "action_value_id": "scuttle_hyperspace_speed_scalar",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "scuttle_hyperspace_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "scuttle_hyperspace_speed_scalar"
+        }
+    }]
+}

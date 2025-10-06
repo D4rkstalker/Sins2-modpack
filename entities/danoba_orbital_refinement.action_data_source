@@ -1,0 +1,174 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "orbital_refinement_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"uncolonizable"
+            ],
+            "ownerships": [
+                "self",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_detected"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "orbital_refinement_exotic_factory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_exotic_factory_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_exotic_factory_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_exotic_factory_structure"
+                }]
+            },
+			{
+				"constraint_type": "is_fully_built"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "orbital_refinement_metal_extractor_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"asteroid"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_metal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_metal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_metal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "neutral_metal_asteroid"
+                }]
+            },
+			{
+				"constraint_type": "is_fully_built"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "orbital_refinement_crystal_extractor_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"asteroid"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_crystal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_crystal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_crystal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "neutral_crystal_asteroid"
+                }]
+            },
+			{
+				"constraint_type": "is_fully_built"
+			}]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "unit_variable_ids": [
+            "exotic_refinery"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "orbital_refinement_metal_income_rate_value",
+        "action_value":
+        {
+            "values": [0.06]
+        }
+    },
+    {
+        "action_value_id": "orbital_refinement_crystal_income_rate_value",
+        "action_value":
+        {
+            "values": [0.06]
+        }
+    },
+    {
+        "action_value_id": "orbital_refinement_extractor_max_count",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "orbital_refinement_metal_income_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "metal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "orbital_refinement_metal_income_rate_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "orbital_refinement_crystal_income_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "crystal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "orbital_refinement_crystal_income_rate_value"
+        }
+    }]
+}

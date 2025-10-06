@@ -1,0 +1,101 @@
+{
+    "version": 0,
+    "make_dead_when_no_child_buffs_exist": true,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "active_duration": "shield_projection_duration_value",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "uniforms_current_spawner_current_shields",
+                "comparison_type": "less_than_equal_to",
+                "value_b": "fixed_zero"
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "shield_projection_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_guardian_cruiser_shield_projection_on_target"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_ability_charges",
+                "ability":
+                {
+                    "ability_type": "source_ability"
+                },
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_guardian_cruiser_shield_projection_ability_hud_icon",
+        "name": "advent_guardian_cruiser_shield_projection_ability_name",
+        "visibility_scope": "positive",
+        "show_duplicate_buffs": false,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_redirected",
+                "value_id": "shield_projection_damage_prevented_value",
+				"value_color": "positive",
+                "value_float_format": "percentage"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "shield_bestowal_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly",
+				"self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+					"unit_definition": "trader_minefield_structure"
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "shield_bestowal_radius",
+        "action_value":
+        {
+            "values": [9000.0]
+        }
+    },
+    {
+        "action_value_id": "shield_bestowal_max_shield_points_value",
+        "action_value":
+        {
+            "values": [750.0]
+        }
+    },
+    {
+        "action_value_id": "shield_bestowal_shield_repair_rate_value",
+        "action_value":
+        {
+            "values": [4.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "shield_bestowal_max_shield_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "shield_bestowal_max_shield_points_value"
+        }
+    }]
+}

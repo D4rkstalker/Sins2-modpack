@@ -1,0 +1,170 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "conversion_execution_interval_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "is_colonizable_planet",
+                            "ignore_current_ownership": true
+                        }
+                    },
+                    "operator_type": "bomb_planet",
+                    "damage_source": "ability",
+                    "bombing_damage_value": "conversion_bombing_damage_value",
+                    "bombing_population_damage_value": "conversion_bombing_population_damage_value",
+                    "show_enemy_planet_made_dead_from_bombing_notification": false
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "is_colonizable_planet",
+                                "ignore_current_ownership": true
+                            }
+                        }
+                    },
+                    "operator_type": "bomb_planet",
+                    "damage_source": "ability",
+                    "bombing_damage_value": "conversion_bombing_damage_value",
+                    "bombing_population_damage_value": "conversion_bombing_population_damage_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_unity_conversion_buff_small",
+                        "medium_unit": "advent_unity_conversion_buff_medium",
+                        "large_unit": "advent_unity_conversion_buff_large"
+                    }
+                }
+            },
+            {
+                "action_type": "add_notification",
+                "notification_type": "planet_conversion_started",
+                "planet":
+                {
+                    "unit_type": "current_spawner"
+                }
+            },
+            {
+				"constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "first_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_definition",
+                        "unit_definition": "player_buffs_advent_loyalist"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+				"operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_conversion_on_planet_ai"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "conversion_neutral_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "colonize_planet",
+                    "show_planet_colonized_notification": true
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unity_conversion_ability_hud_icon",
+        "name": "advent_unity_conversion_ability_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_damage",
+                "value_id": "conversion_bombing_damage_value",
+                "value_suffix": "per_second",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

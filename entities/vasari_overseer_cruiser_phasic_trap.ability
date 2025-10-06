@@ -1,0 +1,82 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_overseer_cruiser_phasic_trap",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["vasari_unlock_overseer_cruiser_phasic_trap_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "phasic_trap_cooldown_time_value",
+		"stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "phasic_trap_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_overseer_cruiser_phasic_trap_on_self"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "phasic_trap_auto_cast_target_filter",
+                "radius_value": "phasic_trap_auto_cast_radius_value",
+                "target_count_value": "phasic_trap_auto_cast_target_count_value"
+            }
+        },
+		"watched_buff": "vasari_overseer_cruiser_phasic_trap_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_overseer_cruiser_phasic_trap_ability_hud_icon",
+        "name": "vasari_overseer_cruiser_phasic_trap_ability_name",
+        "description": "vasari_overseer_cruiser_phasic_trap_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "phasic_trap_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.in_phase_space",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "phasic_trap_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "phasic_trap_max_target_count_value"
+            }]
+        }]
+    }
+}

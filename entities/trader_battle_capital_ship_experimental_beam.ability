@@ -1,0 +1,208 @@
+{
+    "version": 0,
+    "action_data_source": "trader_battle_capital_ship_experimental_beam",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_battle_capital_ship_experimental_beam_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "experimental_beam_target_filter"
+        ],
+        "range": "range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "experimental_beam_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "experimental_beam_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_battle_capital_ship_experimental_beam_ability_hud_icon",
+        "name": "trader_battle_capital_ship_experimental_beam_ability_name",
+        "description": "trader_battle_capital_ship_experimental_beam_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"owned_unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"player_type": "unit_owner"
+					},
+					"prerequisites": [
+						["trader_beam_weapon_damage_0"]
+					]
+				}
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "damage_rate_value",
+                "value_suffix": "per_second",
+				"value_float_format": "two_decimal_place",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+		},
+		{
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"owned_unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"player_type": "unit_owner"
+					},
+					"prerequisites": [
+						["trader_beam_weapon_damage_0"]
+					]
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"owned_unit":
+							{
+								"unit_type": "current_spawner"
+							},
+							"player_type": "unit_owner"
+						},
+						"prerequisites": [
+							["trader_beam_weapon_damage_1"]
+						]
+					}
+				}]
+			},
+			"lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "damage_rate_value_research_one_value",
+				"value_float_format": "two_decimal_place",
+                "value_suffix": "per_second",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+		},
+		{
+			"is_visible_constraint": 
+			{
+				"constraint_type": "research_prerequisites_are_met",
+				"player":
+					{
+					"owned_unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"player_type": "unit_owner"
+				},
+				"prerequisites": [
+					["trader_beam_weapon_damage_1"]
+				]
+			},
+			"lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "damage_rate_value_research_two_value",
+				"value_float_format": "two_decimal_place",
+                "value_suffix": "per_second",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

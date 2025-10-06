@@ -1,0 +1,239 @@
+{
+    "version": 0,
+    "action_data_source": "trader_loyalist_titan_shield_surge",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "shield_surge_cooldown_time_value",
+        "antimatter_cost": "shield_surge_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner",
+                            "redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "uniforms_friendly_planets"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "shield_surge_titan_normal_shield_restore_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "trader_loyalist_titan_shield_surge_activate"
+                    }
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "uniforms_friendly_planets"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "shield_surge_titan_improved_shield_restore_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "trader_loyalist_titan_shield_surge_activate"
+                    }
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner",
+                            "redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "uniforms_friendly_planets"
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "shield_surge_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "shield_surge_target_filter"
+                    },
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "shield_surge_fleet_normal_shield_restore_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "uniforms_friendly_planets"
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "shield_surge_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "shield_surge_target_filter"
+                    },
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "shield_surge_fleet_improved_shield_restore_value"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_missing_shields",
+                        "percentage_missing_threshold": 0.15
+                    }
+                },
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "shield_surge_auto_cast_target_filter",
+                    "radius_value": "shield_surge_radius_value",
+                    "target_count_value": "shield_surge_auto_cast_target_count_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_loyalist_titan_shield_surge_ability_hud_icon",
+        "name": "trader_loyalist_titan_shield_surge_ability_name",
+        "description": "trader_loyalist_titan_shield_surge_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "shield_surge_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "shield_surge_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.in_non_friendly_gravity_well_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "shield_surge_titan_normal_shield_restore_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_allies",
+                "value_id": "shield_surge_fleet_normal_shield_restore_value",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "tooltip.in_friendly_gravity_well_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "shield_surge_titan_improved_shield_restore_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_allies",
+                "value_id": "shield_surge_fleet_improved_shield_restore_value",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

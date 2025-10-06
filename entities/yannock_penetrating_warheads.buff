@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "active_duration": "buff_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "damage_has_damage_source",
+							"damage_source": "weapon"
+						},
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "enemy_targets"
+						}]
+					},
+                    "operator_type": "apply_damage",
+					"can_damage_be_propagated": false,
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "extra_damage_value",
+					"penetration_value": "damage_penetration_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_torpedo",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+					"buff": "yannock_penetrating_warheads_on_missile"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "yannock_penetrating_warheads_hud_icon",
+        "name": "npc_reward.yannock_penetrating_warheads.name",
+        "description": "npc_reward.yannock_penetrating_warheads.description",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+			{
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.bonus_structure_damage",
+                "value_id": "extra_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+			{
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.bonus_starbase_damage",
+                "value_id": "extra_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,149 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "coil_shock_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_shields"
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "coil_shock_chain_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_shields"
+            },
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "coil_shock_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "coil_shock_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_beam_charge_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_beam_duration_value",
+        "action_value":
+        {
+            "values": [0.3]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_penetration_value",
+        "action_value":
+        {
+            "values": [500.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_damage_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_chain_range_value",
+        "action_value":
+        {
+            "values": [2000.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_range_value",
+        "action_value":
+        {
+            "values": [15000.0]
+        }
+    },
+    {
+        "action_value_id": "coil_shock_max_target_count_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    }]
+}

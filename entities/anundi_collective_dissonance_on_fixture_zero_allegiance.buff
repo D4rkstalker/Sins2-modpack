@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "collective_dissonance_enemy_planet_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "bomb_planet",
+                    "damage_source": "ability",
+                    "bombing_damage_value": "collective_dissonance_bombing_damage_value",
+                    "bombing_population_damage_value": "fixed_zero"
+                }]
+            },
+			{
+                "constraint":
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"target_filter_id": "collective_dissonance_friendly_planet_target_filter"
+					},
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "composite_not",
+							"constraint":
+							{
+								"constraint_type": "is_in_dominant_culture",
+								"dominant_culture_player_relationship": "self"
+							}
+						}
+					}]
+				},
+                "action_type": "make_buff_dead"
+			}]
+        }
+    }],
+    "unit_mutations": [
+        "suppress_invulnerable"
+    ]
+}

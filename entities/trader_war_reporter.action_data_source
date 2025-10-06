@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_war_reporter_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+				"strikecraft",
+				"frigate",
+				"cruiser",
+				"corvette",
+				"structure",
+				"super_capital_ship",
+				"torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "war_reporter_duration_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "war_reporter_influence_points_recharge_rate_value",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "war_reporter_influence_points_recharge_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "influence_points_recharge_rate",
+            "value_behavior": "scalar",
+            "value_id": "war_reporter_influence_points_recharge_rate_value"
+        }
+    }]
+}

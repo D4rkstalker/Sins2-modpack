@@ -1,0 +1,163 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "gravity_warhead_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_colony_capital_ship_gravity_warhead_on_target",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "disable_can_hyperspace"
+                }
+            },
+            {
+                "constraint_type": "has_missing_hull",
+				"percentage_missing_threshold": 0.80
+            }]
+        }
+    },
+    {
+        "target_filter_id": "gravity_warhead_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_colony_capital_ship_gravity_warhead_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "gravity_warhead_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "gravity_warhead_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [120.0, 97.5, 75.0, 52.5, 30.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_first_action_delay",
+        "action_value":
+        {
+            "values": [0.01, 0.01, 0.01, 0.01, 0.01]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_cooldown_time_value",
+        "action_value":
+        {
+            "values": [96.0, 90.0, 84.0, 78.0, 72.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_duration_value",
+        "action_value":
+        {
+            "values": [24.0, 36.0, 48.0, 60.0, 72.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_linear_speed_modifier_value",
+        "action_value":
+        {
+            "values": [-0.24, -0.48, -0.72, -0.96, -1.2]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_radius_value",
+        "action_value":
+        {
+            "values": [3000.0, 3000.0, 3000.0, 3000.0, 3000.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_auto_cast_target_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_range_value",
+        "action_value":
+        {
+            "values": [7800.0, 9000.0, 10200.0, 11400.0, 12600.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_warhead_travel_speed_value",
+        "action_value":
+        {
+            "values": [3900.0, 4500.0, 5100.0, 5700.0, 6300.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "gravity_warhead_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "gravity_warhead_linear_speed_modifier_value"
+        }
+    }]
+}

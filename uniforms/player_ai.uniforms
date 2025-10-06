@@ -1,0 +1,432 @@
+{
+    "difficulties":
+    {
+        "easy":
+        {
+            "icon": "ai_difficulty_easy",
+            "name": "ai_difficulty.name.easy_rrr",
+            "description": "ai_difficulty.description.easy_rrr", 
+            "update_interval": 0,
+            "will_attack_other_ai_before_human_players": true,
+            "fleet_will_probably_defeat_ratio_range": [0.9, 1.0],
+            "chaos_factor_range": [0.85, 1.00],
+            "chaos_factor_update_interval": 30,
+            "when_build_titan_in_minutes": [70, 100],
+            "chance_for_full_bid_on_auctions": 0.5
+        },
+        "medium":
+        {
+            "icon": "ai_difficulty_medium",
+            "name": "ai_difficulty.name.medium_rrr",
+            "description": "ai_difficulty.description.medium_rrr",            
+            "update_interval": 0,
+            "fleet_will_probably_defeat_ratio_range": [0.9, 1.0],
+            "chaos_factor_range": [0.85, 1.00],
+            "chaos_factor_update_interval": 30,
+            "when_build_titan_in_minutes": [70, 100],
+            "chance_for_full_bid_on_auctions": 0.5
+        },
+        "hard":
+        {
+            "icon": "ai_difficulty_hard",
+            "name": "ai_difficulty.name.hard_rrr",
+            "description": "ai_difficulty.description.hard_rrr",
+            "update_interval": 0,
+            "fleet_will_probably_defeat_ratio_range": [0.92, 1.0],
+            "chaos_factor_range": [0.9, 1.02],
+            "chaos_factor_update_interval": 30,
+            "when_build_titan_in_minutes": [55, 75],
+            "chance_for_full_bid_on_auctions": 0.65,
+            "bonus_modifiers":
+            {
+                "empire_modifiers": [
+                {
+                    "modifier_type": "credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 5.0
+                },
+                {
+                    "modifier_type": "metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 2.5
+                },
+                {
+                    "modifier_type": "crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 2.5
+                },
+                {
+                    "modifier_type": "max_supply",
+                    "value_behavior": "scalar",
+                    "value": 0.1
+                },
+		{
+                    "modifier_type": "unity_max_mana_points",
+                    "value_behavior": "additive",
+                    "value": 750.0
+                },
+                {
+                    "modifier_type": "unity_mana_restore_rate",
+                    "value_behavior": "additive",
+                    "value": 1.5
+                }],
+                "planet_modifiers": [
+                {
+                    "modifier_type": "commerce_track_credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 1.0
+                },
+                {
+                    "modifier_type": "mining_track_metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 0.5
+                },
+                {
+                    "modifier_type": "mining_track_crystal_income_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.5
+                },
+                {
+                    "modifier_type": "civilian_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.04
+                },
+                {
+                    "modifier_type": "civilian_research_rate_per_population",
+                    "value_behavior": "additive",
+                    "value": 0.0001
+                },
+                {
+                    "modifier_type": "military_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.04
+                },
+                {
+                    "modifier_type": "military_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0001
+                },
+                {
+                    "modifier_type": "factory_exotic_build_time",
+                    "value_behavior": "additive",
+                    "value": -12.5
+                }]
+            }
+
+        },
+        "unfair":
+        {
+            "icon": "ai_difficulty_unfair",
+            "name": "ai_difficulty.name.unfair_rrr",
+            "description": "ai_difficulty.description.unfair_rrr",
+            "update_interval": 0,
+            "fleet_will_probably_defeat_ratio_range": [0.94, 1.0],
+            "chaos_factor_range": [0.9, 1.04],
+            "chaos_factor_update_interval": 30,
+            "when_build_titan_in_minutes": [45, 60],
+            "chance_for_full_bid_on_auctions": 0.75,
+            "bonus_modifiers":
+            {
+                "empire_modifiers": [
+                {
+                    "modifier_type": "credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 10.0
+                },
+                {
+                    "modifier_type": "metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 5.0
+                },
+                {
+                    "modifier_type": "crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 5.0
+                },
+                {
+                    "modifier_type": "max_supply",
+                    "value_behavior": "scalar",
+                    "value": 0.15
+                },
+		{
+                    "modifier_type": "unity_max_mana_points",
+                    "value_behavior": "additive",
+                    "value": 1500.0
+                },
+                {
+                    "modifier_type": "unity_mana_restore_rate",
+                    "value_behavior": "additive",
+                    "value": 3.0
+                }],
+                "planet_modifiers": [
+                {
+                    "modifier_type": "commerce_track_credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 2.0
+                },
+                {
+                    "modifier_type": "mining_track_metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 1.0
+                },
+                {
+                    "modifier_type": "mining_track_crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 1.0
+                },
+                {
+                    "modifier_type": "civilian_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.06
+                },
+                {
+                    "modifier_type": "civilian_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0002
+                },
+                {
+                    "modifier_type": "military_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.06
+                },
+                {
+                    "modifier_type": "military_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0002
+                },
+                {
+                    "modifier_type": "factory_exotic_build_time",
+                    "value_behavior": "additive",
+                    "value": -15.0
+                }]
+            }
+        },
+        "nightmare":
+        {
+            "icon": "ai_difficulty_nightmare",
+            "name": "ai_difficulty.name.nightmare_rrr",
+            "description": "ai_difficulty.description.nightmare_rrr",
+            "update_interval": 0,
+            "fleet_will_probably_defeat_ratio_range": [0.96, 1.0],
+            "chaos_factor_range": [0.95, 1.1],
+            "chaos_factor_update_interval": 30,
+            "when_build_titan_in_minutes": [45, 60],
+            "chance_for_full_bid_on_auctions": 0.85,
+            "bonus_modifiers":
+            {
+                "empire_modifiers": [
+                {
+                    "modifier_type": "credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 15.0
+                },
+                {
+                    "modifier_type": "metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 7.5
+                },
+                {
+                    "modifier_type": "crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 7.5
+                },
+                {
+                    "modifier_type": "max_supply",
+                    "value_behavior": "scalar",
+                    "value": 0.2
+                },
+				                {
+                    "modifier_type": "unity_max_mana_points",
+                    "value_behavior": "additive",
+                    "value": 3000.0
+                },
+                {
+                    "modifier_type": "unity_mana_restore_rate",
+                    "value_behavior": "additive",
+                    "value": 6.0
+                }],
+                "planet_modifiers": [
+                {
+                    "modifier_type": "commerce_track_credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 3.0
+                },
+                {
+                    "modifier_type": "mining_track_metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 1.5
+                },
+                {
+                    "modifier_type": "mining_track_crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 1.5
+                },
+                {
+                    "modifier_type": "civilian_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.08
+                },
+                {
+                    "modifier_type": "civilian_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0003
+                },
+                {
+                    "modifier_type": "military_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.08
+                },
+                {
+                    "modifier_type": "military_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0003
+                },
+                {
+                    "modifier_type": "factory_exotic_build_time",
+                    "value_behavior": "additive",
+                    "value": -17.5
+                }]
+            }
+        },
+        "impossible":
+        {
+            "icon": "ai_difficulty_impossible",
+            "name": "ai_difficulty.name.impossible_rrr",
+            "description": "ai_difficulty.description.impossible_rrr", 
+            "update_interval": 0,
+            "fleet_will_probably_defeat_ratio_range": [0.96, 1.0],
+            "chaos_factor_range": [0.95, 1.1],
+            "chaos_factor_update_interval": 30,
+            "when_build_titan_in_minutes": [45, 60],
+            "chance_for_full_bid_on_auctions": 0.9,
+            "bonus_modifiers":
+            {
+                "empire_modifiers": [
+                {
+                    "modifier_type": "credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 20.0
+                },
+                {
+                    "modifier_type": "metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 10.0
+                },
+                {
+                    "modifier_type": "crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 10.0
+                },
+                {
+                    "modifier_type": "max_supply",
+                    "value_behavior": "scalar",
+                    "value": 0.25
+                },
+		{
+                    "modifier_type": "unity_max_mana_points",
+                    "value_behavior": "additive",
+                    "value": 4500.0
+                },
+                {
+                    "modifier_type": "unity_mana_restore_rate",
+                    "value_behavior": "additive",
+                    "value": 9.0
+                }],
+                "planet_modifiers": [
+                {
+                    "modifier_type": "commerce_track_credit_income_rate",
+                    "value_behavior": "additive",
+                    "value": 4.0
+                },
+                {
+                    "modifier_type": "mining_track_metal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 2.0
+                },
+                {
+                    "modifier_type": "mining_track_crystal_income_rate",
+                    "value_behavior": "additive",
+                    "value": 2.0
+                },
+                {
+                    "modifier_type": "civilian_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.1
+                },
+                {
+                    "modifier_type": "civilian_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0004
+                },
+                {
+                    "modifier_type": "military_research_rate",
+                    "value_behavior": "scalar",
+                    "value": 0.1
+                },
+                {
+                    "modifier_type": "military_research_rate_per_population",
+                    "value_behavior": "scalar",
+                    "value": 0.0004
+                },
+                {
+                    "modifier_type": "factory_exotic_build_time",
+                    "value_behavior": "additive",
+                    "value": -20.0
+                }]
+            }
+        }
+    },
+    "behaviors":
+    {
+        "aggressive":
+        {
+            "desired_explore_ship_count":
+            {
+                "type": "constant",
+                "value": 3
+            },
+            "steal_ships_from_roam_fleets_to_defend_supply_percentage": 0.7,
+            "chance_to_ally_with_other_players": [0.2, 0.6],
+            "defense_to_offsense_spend_ratio": 0.2
+        },
+        "defensive":
+        {
+            "desired_explore_ship_count":
+            {
+                "type": "constant",
+                "value": 3
+            },
+            "steal_ships_from_roam_fleets_to_defend_supply_percentage": 0.9,
+            "chance_to_ally_with_other_players": [0.5, 0.9],
+            "defense_to_offsense_spend_ratio": 1
+        }
+    },
+    "ship_factory_build_kinds": [
+	"super_capital_ship",
+	"titan",
+        "capital_ship",
+        "corvette",
+        "cruiser",
+        "frigate",
+		"mem_limited_capital",
+		"mem_supercapital",
+		"mem_superheavy_cruiser",
+		"mem_utility"	
+    ],
+    "capital_ship_build_kind": "capital_ship",
+    "super_capital_ship_build_kind": "super_capital_ship",
+    "titan_build_kind": "titan",
+    "random_exotics": [
+        "defense",
+        "economic",
+        "offense",
+        "utility",
+	"ultimate",
+	"research"
+    ],
+    "asset_ai_trade_values": {
+        "credits": 1,
+        "metal": 1.5,
+        "crystal": 1.5
+    }
+}

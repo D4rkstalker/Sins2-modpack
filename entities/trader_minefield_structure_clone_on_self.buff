@@ -1,0 +1,66 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"execution_interval_value": "fixed_one",
+		"execution_interval_count_value": "interval_count",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        },
+                        "target_filter_id": "clone_prevent_target_filter"
+                    },
+                    "operator_type": "create_clones",
+                    "clone_spawn_position":
+                    {
+                        "position_type": "distance_in_direction_from_position",
+                        "distance_value": "spawn_range_value",
+                        "direction":
+                        {
+                            "direction_type": "random_direction"
+                        },
+                        "source_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            }
+                        }
+                    },
+                    "clone_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "clone_count": "fixed_one",
+					"buff_on_clone": "trader_minefield_structure_clone_on_clones"
+                }]
+            }]
+        }
+    }]
+}

@@ -1,0 +1,129 @@
+{
+    "version": 0,
+    "action_data_source": "advent_battle_capital_ship_cleansing_brilliance",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "cleansing_brilliance_cooldown_time_value",
+        "antimatter_cost": "cleansing_brilliance_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "cleansing_brilliance_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_capital_ship_cleansing_brilliance_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "cleansing_brilliance_target_filter"
+        ],
+        "range": "cleansing_brilliance_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "cleansing_brilliance_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "cleansing_brilliance_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_battle_capital_ship_cleansing_brilliance_ability_hud_icon",
+        "tooltip_picture": "advent_battle_capital_ship_cleansing_brilliance_ability_tooltip_picture",
+        "name": "advent_battle_capital_ship_cleansing_brilliance_ability_name",
+        "description": "advent_battle_capital_ship_cleansing_brilliance_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "cleansing_brilliance_range_value",
+                "radius": "cleansing_brilliance_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "cleansing_brilliance_execution_interval_count_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "cleansing_brilliance_radius_value"
+            }]
+        },
+        {
+            "header_text": "advent_battle_capital_ship_cleansing_brilliance_main_damage_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "cleansing_brilliance_main_damage_rate_value",
+                "value_suffix": "per_second",
+				"ratio_float_format": "two_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "cleansing_brilliance_main_hull_penetration_value",
+				"value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "advent_battle_capital_ship_cleansing_brilliance_nearby_damage_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "cleansing_brilliance_nearby_damage_rate_value",
+                "value_suffix": "per_second",
+				"ratio_float_format": "three_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "cleansing_brilliance_nearby_hull_penetration_value",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

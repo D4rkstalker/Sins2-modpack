@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "advent_rebel_global_resurrection_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "resurrected_unit_id"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "advent_rebel_global_resurrection_assign_resurrected_unit_id_value",
+        "action_value":
+        {
+            "transform_type": "per_unit_id",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_global_resurrection_resurrected_unit_id_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "resurrected_unit_id",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_global_resurrection_chance_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_global_resurrection_delay_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "temple_of_resurrection_activate_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_rebirth_large"
+        }
+    },
+    {
+        "alias_name": "temple_of_resurrection_activate_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_rebirth_medium"
+        }
+    },
+    {
+        "alias_name": "temple_of_resurrection_activate_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_rebirth_small"
+        }
+    }]
+}

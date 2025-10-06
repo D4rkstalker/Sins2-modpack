@@ -1,0 +1,126 @@
+{
+    "version": 0,
+    "action_data_source": "advent_subjugator_cruiser_suppression",
+    "active_actions":
+    {
+        "cooldown_time": "suppression_cooldown_time_value",
+        "antimatter_cost": "suppression_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "suppression_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "suppression_range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_subjugator_cruiser_suppression"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "suppression_target_filter"
+        ],
+        "range": "suppression_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 45.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "suppression_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_subjugator_cruiser_suppression_ability_hud_icon",
+        "tooltip_icon": "advent_subjugator_cruiser_suppression_ability_hud_icon",
+        "tooltip_picture": "advent_subjugator_cruiser_suppression_ability_tooltip_picture",
+        "name": "advent_subjugator_cruiser_suppression_ability_name",
+        "description": "advent_subjugator_cruiser_suppression_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "suppression_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "suppression_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_production",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

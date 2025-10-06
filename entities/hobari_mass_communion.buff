@@ -1,0 +1,30 @@
+{
+    "version": 0,
+	"active_duration": "mass_communion_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "mass_communion_culture_rate_modifier"
+    }],
+    "gui":
+    {
+		"hud_icon": "dominant_culture_established_notification_icon",
+		"name": "npc_reward.hobari_mass_communion.name",
+        "alert_type": "positive_buff",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "mass_communion_culture_rate_modifier"
+            }]
+        }]
+    }
+}

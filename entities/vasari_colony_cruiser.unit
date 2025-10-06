@@ -1,0 +1,242 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 158.485703,
+        "box":
+        {
+            "center": [-8e-06, 0.0, 0.0],
+            "extents": [87.660767, 38.306087, 150.359131]
+        },
+        "collision_rank": 1
+    },
+    "physics":
+    {
+        "can_move_linear": true,
+        "max_linear_speed": 720.0,
+        "time_to_max_linear_speed": 5.76,
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [0.75, 1.25],
+        "can_move_angular": true,
+        "max_angular_speed": 24.0,
+        "time_to_max_angular_speed": 8.0,
+        "max_bank_angle": 35.0,
+        "death_angular_speed_range": [3.0, 6.0],
+        "linear_acceleration_angle": 90.0,
+        "can_strafe_linear": true,
+        "strafe_max_linear_speed": 240.0,
+        "time_to_strafe_max_linear_speed": 12.5,
+        "strafe_max_linear_distance_spatial_radius_scalar": 8.0,
+        "strafe_start_angle": 0.0,
+        "strafe_stop_angle": 180.0,
+        "strafe_speed_start_angle": 10.0,
+        "strafe_max_start_turning_angle": 170.0
+    },
+    "hyperspace":
+    {
+        "speed": 215000.0,
+        "speed_between_stars": 752500.0,
+        "charge_time": 8.0,
+        "charge_time_variance": 1.0,
+        "min_charge_angle": 10.0,
+        "max_charge_angle": 45.0
+    },
+    "move":
+    {
+        "follow_distance": 574.257202
+    },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
+    "ai":
+    {
+        "attack_target_type_groups": [
+            "light_corvette"
+        ],
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"
+        ],
+        "attack_target_type_groups_matching_weapon": "vasari_colony_cruiser_medium_pulse",
+        "pursuit":
+        {
+            "min_target_speed": 100.0,
+            "min_distance_to_target": 4000.0
+        },
+        "attack_target_type_range_scalar": 2.0
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 49.0,
+        "is_always_a_threat": false
+    },
+    "user_interface":
+    {
+        "pip_type": "cruiser",
+        "can_ever_be_selected": true,
+        "selection_priority": 300,
+        "selection_group_unit_type": "colony_ship",
+        "can_move": true,
+        "can_attack": true,
+        "can_show_distance_to_plane_line": true,
+        "can_rotate": true
+    },
+    "weapons":
+    {
+        "weapons": [
+        {
+            "weapon": "vasari_colony_cruiser_medium_pulse",
+            "mesh_point": "child.medpulse_barrel.0",
+            "weapon_position": [-46.945732, -3.286346, 96.214539],
+            "forward": [0.542625, -0.07454, 0.836661],
+            "up": [-0.824758, 0.141458, 0.547507],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -70.0,
+                "max_angle": 5.0
+            }
+        },
+        {
+            "weapon": "vasari_colony_cruiser_medium_pulse",
+            "mesh_point": "child.medpulse_barrel.1",
+            "weapon_position": [47.67255, -3.241137, 96.214531],
+            "forward": [-0.543427, -0.068441, 0.836662],
+            "up": [0.833268, 0.076825, 0.547506],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -70.0,
+                "max_angle": 5.0
+            }
+        },
+        {
+            "weapon": "colony_ship_capture_bait",
+            "required_research_prerequisites": [
+                ["vasari_unlock_colony_cruiser_capture_extractor_ability"]
+            ],
+            "mesh_point": "center",
+            "weapon_position": [0.0, 0.0, 0.0],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 5.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 5.0
+            }
+        }],
+        "max_range_weapon_index": 0
+    },
+    "formation":
+    {
+        "leader_priority": 0,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 3,
+                "group": 0
+            }
+        }
+    },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 1.0,
+        "generic_group_name": "vasari",
+        "generic_counts":
+        {
+            "small_debris": [7, 8],
+            "large_debris": [1, 2]
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 0.8,
+        "durability": 180.0,
+        "can_ever_be_resurrected": true,
+        "levels": [
+        {
+            "max_hull_points": 1215.0,
+            "hull_point_restore_rate": 2.0,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 645.0,
+            "armor_point_restore_rate": 3.0,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 72.0,
+            "max_shield_points": 965.0,
+            "shield_point_restore_rate": 4.0,
+            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_point_restore_scalar_after_damage_taken": 0.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 40.0,
+                "restore_percentage": 0.5
+            },
+            "experience_given_on_death": 10.0
+        }]
+    },
+    "antimatter":
+    {
+        "max_antimatter": 225.0,
+        "antimatter_restore_rate": 0.5
+    },
+    "build":
+    {
+        "build_time": 36.0,
+        "price":
+        {
+            "metal": 245.0,
+            "crystal": 90.0
+        },
+        "build_kind": "cruiser",
+        "supply_cost": 12,
+        "build_group_id": "cruiser"
+    },
+    "items":
+    {
+        "levels": [
+        {
+            "max_ship_component_count": 1
+        }]
+    },
+    "target_filter_unit_type": "cruiser",
+    "tags": [
+        "cruiser"
+    ],
+    "abilities": [
+    {
+        "abilities": [
+            "vasari_colony_cruiser_colonize",
+			"vasari_colony_frigate_capture_object"]
+    }],
+    "ship_roles": [
+        "colonize"
+    ],
+    "colonize_ability": "vasari_colony_cruiser_colonize",
+    "skin_groups": [
+    {
+        "skins": [
+            "vasari_colony_cruiser"]
+    }],
+    "action_effect_size": "large_unit",
+    "can_join_fleet": true
+}

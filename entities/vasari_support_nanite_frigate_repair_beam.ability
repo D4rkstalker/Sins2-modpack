@@ -1,0 +1,86 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_support_nanite_frigate_repair_beam",
+    "active_actions":
+    {
+        "cooldown_time": "repair_beam_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+					"affect_type": "hull_and_armor_only",
+                    "repair_value": "repair_beam_hull_restore_value"
+                },
+                {
+                    "operator_type": "apply_buff",
+					"buff": "vasari_support_nanite_frigate_repair_beam"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "action_data_source",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "beam_effect": "trader_support_capital_ship_energy_transfer_beam"
+                    },
+                    "beam_duration": "repair_beam_beam_duration_value"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "repair_beam_target_filter"
+        ],
+        "range": "repair_beam_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "repair_beam_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_support_nanite_frigate_repair_beam_hud_icon",
+        "name": "vasari_support_nanite_frigate_repair_beam_name",
+        "description": "vasari_support_nanite_frigate_repair_beam_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "repair_beam_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore",
+                "value_id": "repair_beam_hull_restore_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "repair_beam_armor_strength_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "repair_beam_armor_strength_modifier_duration",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

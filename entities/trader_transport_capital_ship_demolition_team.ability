@@ -1,0 +1,191 @@
+{
+    "version": 0,
+    "action_data_source": "trader_transport_capital_ship_demolition_team",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6],
+    "active_actions":
+    {
+        "cooldown_time": "demolition_team_cooldown_value",
+		"antimatter_cost": "demolition_team_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "demolition_team_target_filter"
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+				"radius_value": "demolition_team_radius_value",
+				"include_radius_origin_unit": false,
+				"max_target_count_value": "demolition_team_max_target_count_value",
+				"operators_constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "operand_source"
+					},
+					"target_filter_id": "demolition_team_is_boarded_target_filter"
+				},
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "demolition_team_damage_target_filter"
+					},
+                    "operator_type": "apply_damage",
+					"damage_source": "ability",
+					"damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "demolition_team_boarded_damage_value",
+					"penetration_value": "demolition_team_pierce_value"
+                }],
+				"constraint_not_satisified_operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "demolition_team_damage_target_filter"
+					},
+                    "operator_type": "apply_damage",
+					"damage_source": "ability",
+					"damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "demolition_team_damage_value",
+					"penetration_value": "demolition_team_pierce_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "demolition_team_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead"
+                },                
+				{
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "action_data_source",
+                    "mesh_point": "hangar",
+                    "effects":
+                    {
+                        "muzzle_effect": "trader_transport_capital_ship_scout_muzzle",
+                        "projectile_travel_effect": "trader_transport_capital_ship_scout_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "demolition_team_target_filter"
+        ],
+        "range": "demolition_team_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "demolition_team_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "radius_value": "demolition_team_radius_value",
+					"target_count_value": "demolition_team_auto_cast_target_count_value",
+					"target_filter_id": "demolition_team_damage_target_filter"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "yannock_demolition_team_hud_icon",
+        "name": "npc_reward.yannock_demolition_team.name",
+        "description": "trader_transport_capital_ship_demolition_team_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "demolition_team_range_value",
+				"radius": "demolition_team_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "is_not_boarded_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_per_hull_point",
+                "value_id": "demolition_team_damage_value",
+				"value_float_format": "two_decimal_place",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "demolition_team_pierce_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "demolition_team_max_target_count_value"
+            }]
+        },
+        {
+            "header_text": "is_boarded_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_per_hull_point",
+                "value_id": "demolition_team_boarded_damage_value",
+				"value_float_format": "two_decimal_place",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "demolition_team_pierce_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "demolition_team_max_target_count_value"
+            }]
+        }]
+    }
+}

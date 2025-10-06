@@ -1,0 +1,45 @@
+{
+    "version": 0,
+	"active_duration": "unity_planet_for_a_planet_weapon_modifier_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "unity_planet_for_a_planet_weapon_damage_modifier"
+    },
+    {
+        "buff_weapon_modifier_id": "unity_planet_for_a_planet_weapon_range_modifier"
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "unity_planet_for_a_planet_ability_range_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unity_planet_for_a_planet_ability_hud_icon",
+        "name": "advent_unity_planet_for_a_planet_ability_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "unity_planet_for_a_planet_ability_range_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "unity_planet_for_a_planet_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "unity_planet_for_a_planet_weapon_range_modifier"
+            }]
+        }]
+	}
+}

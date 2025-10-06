@@ -1,0 +1,91 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "phasic_trap_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_overseer_cruiser_phasic_trap_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phasic_trap_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": []
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "phasic_trap_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "phasic_trap_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "phasic_trap_max_target_count_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "phasic_trap_cooldown_time_value",
+        "action_value":
+        {
+            "values": [75.0]
+        }
+    },
+    {
+        "action_value_id": "phasic_trap_duration_value",
+        "action_value":
+        {
+            "values": [45.0]
+        }
+    },
+    {
+        "action_value_id": "phasic_trap_radius_value",
+        "action_value":
+        {
+            "values": [7000.0]
+        }
+    },
+    {
+        "action_value_id": "phasic_trap_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [5500.0]
+        }
+    }]
+}

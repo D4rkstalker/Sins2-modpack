@@ -1,0 +1,114 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "missing_hull_percentage",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "unyielding_will_missing_hull_input_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_try_make_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "unyielding_will_was_invulnerable_value",
+                "comparison_type": "equal_to",
+                "value_b": "fixed_zero"
+            },
+            "actions": [
+            {
+                "action_type": "abort_make_dead"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_rebel_titan_unyielding_will_on_self_invulnerable"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "was_invulnerable",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_child_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+                {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "was_invulnerable",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_zero"
+                }]
+                }
+            ]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "unyielding_will_antimatter_restore_rate_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "unyielding_will_ability_cooldown_duration_modifier"
+    }],
+    "unit_mutations": [
+        "enable_can_use_abilities_when_crippled",
+        "enable_can_use_weapons_when_crippled"
+    ],
+    "gui":
+    {
+        "hud_icon": "advent_rebel_titan_unyielding_will_ability_hud_icon",
+        "name": "advent_rebel_titan_unyielding_will_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "unyielding_will_antimatter_restore_rate_modifier",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "unyielding_will_ability_cooldown_duration_modifier",
+                "is_resolved_value": true
+            }]
+        }]
+    }
+}

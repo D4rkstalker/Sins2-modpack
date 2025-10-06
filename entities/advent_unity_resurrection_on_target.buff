@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_unity_resurrection_buff_small",
+                            "medium_unit": "advent_unity_resurrection_buff_medium",
+                            "large_unit": "advent_unity_resurrection_buff_large"
+                        }
+                    }
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unity_resurrection_ability_hud_icon",
+        "name": "advent_unity_resurrection_ability_on_target_buff_name",
+        "description": "advent_unity_resurrection_ability_on_target_buff_description",
+        "is_visible_within_unit_tooltip": true
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "yannock_exclusive_packages_hud_icon",
+    "name": "npc_reward.yannock_exclusive_packages.name",
+    "description": "npc_reward.yannock_exclusive_packages.description",
+    "always_show_in_shop": true,
+    "is_finite": true,
+    "required_unit_tags": [
+        "capital_ship",
+		"super_capital_ship",
+        "titan",
+		"starbase"
+    ],
+    "owner_constraint":
+    {
+		"constraint_type": "has_weapon",
+		"weapon_tag": "missile"
+    },
+    "max_count_on_unit": 1,
+    "build_group_id": "offense",
+    "weapon_modifiers": [
+    {
+        "modifier_type": "cooldown_duration",
+        "value_behavior": "scalar",
+        "values": [-5.00],
+        "tags": [
+            "missile"]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "values": [2.00],
+        "tags": [
+			"missile"]
+    },
+    {
+        "modifier_type": "range",
+        "value_behavior": "scalar",
+        "values": [0.20],
+        "tags": [
+            "missile"]
+    },
+    {
+        "modifier_type": "cooldown_duration",
+        "value_behavior": "scalar",
+        "values": [2.00],
+        "tags": [
+			"energy",
+			"physical"]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "values": [-2.00],
+        "tags": [
+			"energy",
+			"physical"]
+    }]
+}

@@ -1,0 +1,179 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "desperation_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "modifier_scalar",
+            "splash_damage_amount",
+            "splash_damage_scalar"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "desperation_damage_taken_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "modifier_scalar",
+            "values": [-0.24, -0.36, -0.48, -0.60, -0.72]
+        }
+    },
+    {
+        "action_value_id": "desperation_weapon_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "modifier_scalar",
+            "values": [-0.24, -0.36, -0.48, -0.60, -0.72]
+        }
+    },
+    {
+        "action_value_id": "desperation_trigger_lower_bound_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, 0.0, 0.0, 0.0]
+        }
+    },
+    {
+        "action_value_id": "desperation_trigger_upper_bound_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "desperation_trigger_t_value",
+        "action_value":
+        {
+            "transform_type": "per_percent_missing_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "desperation_splash_radius_value",
+        "action_value":
+        {
+            "values": [750.0, 825.0, 900.0, 975.0, 1050.0]
+        }
+    },
+    {
+        "action_value_id": "desperation_min_splash_damage_percent",
+        "action_value":
+        {
+            "values": [0.12, 0.18, 0.24, 0.36, 0.48]
+        }
+    },
+    {
+        "action_value_id": "desperation_max_splash_damage_percent",
+        "action_value":
+        {
+            "values": [0.24, 0.36, 0.48, 0.60, 0.72]
+        }
+    },
+    {
+        "action_value_id": "desperation_splash_damage_scalar_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "splash_damage_scalar",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "desperation_splash_damage_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "splash_damage_amount",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "damage_taken",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "desperation_damage_taken_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "cooldown_duration",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "desperation_weapon_cooldown_duration_bonus_value"
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "desperation_recalculate_modifier_scalar",
+        "action":
+        {
+            "action_type": "change_buff_memory_float_value",
+            "float_variable": "modifier_scalar",
+            "math_operators": [
+            {
+                "operator_type": "clamped_lerp",
+                "lerp_value_lower_bound_value": "fixed_zero",
+                "lerp_range_lower_bound_value": "desperation_trigger_lower_bound_value",
+                "lerp_value_upper_bound_value": "fixed_one",
+                "lerp_range_upper_bound_value": "desperation_trigger_upper_bound_value",
+                "lerp_t_value": "desperation_trigger_t_value"
+            }]
+        }
+    },
+    {
+        "action_id": "desperation_recalculate_splash_damage_scalar",
+        "action":
+        {
+            "action_type": "change_buff_memory_float_value",
+            "float_variable": "splash_damage_scalar",
+            "math_operators": [
+            {
+                "operator_type": "clamped_lerp",
+                "lerp_value_lower_bound_value": "desperation_min_splash_damage_percent",
+                "lerp_range_lower_bound_value": "desperation_trigger_lower_bound_value",
+                "lerp_value_upper_bound_value": "desperation_max_splash_damage_percent",
+                "lerp_range_upper_bound_value": "desperation_trigger_upper_bound_value",
+                "lerp_t_value": "desperation_trigger_t_value"
+            }]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "desperation_ambient_effect",
+        "alias_binding":
+        {
+            "particle_effect": "desperation_ambient",
+            "sounds": [
+                "ambient_loop_phase_inhibitor"]
+        }
+    }]
+}

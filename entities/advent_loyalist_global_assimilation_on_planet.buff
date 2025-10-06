@@ -1,0 +1,75 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "advent_loyalist_global_assimilation_target_filter"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "value_comparison",
+                            "value_a": "advent_loyalist_global_assimilation_has_updated_once_value",
+                            "comparison_type": "greater_than",
+                            "value_b": "fixed_zero"
+                        },
+                        {
+                            "constraint_type": "random_chance",
+                            "chance_value": "advent_loyalist_global_assimilation_random_chance_value"
+                        }]
+                    },
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_loyalist_global_assimilation_on_target"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "has_updated_once",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    }]
+}

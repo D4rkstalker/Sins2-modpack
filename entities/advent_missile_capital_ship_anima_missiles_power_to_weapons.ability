@@ -1,0 +1,91 @@
+{
+    "version": 0,
+    "action_data_source": "advent_missile_capital_ship_anima_missiles_power_to_weapons",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_missile_capital_ship_anima_missiles_power_to_weapons"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_missile_capital_ship_anima_missiles_power_to_weapons_debuff"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_battle_capital_ship_fusillade_ability_hud_icon",
+        "tooltip_picture": "trader_battle_capital_ship_fusillade_ability_tooltip_picture",
+        "name": "ability.advent_missile_capital_ship_anima_missiles_power_to_weapons_name",
+        "description": "ability.advent_advent_missile_capital_ship_anima_missiles_power_to_weapons_description",
+        "tooltip_line_groups": [
+        {
+	    "header_text": "tooltip.unit_item_active_actions_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "weapon_damage"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "weapon_cooldown"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_color": "positive",
+                "value_id": "duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_color": "negative",
+                "value_id": "debuff_time_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

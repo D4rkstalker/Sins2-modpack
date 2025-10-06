@@ -1,0 +1,156 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "neutron_star_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+				"super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "neutron_star_early_remove_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_unity_recall_on_target"
+                },
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_unity_abolition_on_target"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "neutron_hull_damage_scalar",
+        "action_value":
+        {	
+			"transform_type": "per_current_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.3]
+        }
+    },
+    {
+        "action_value_id": "neutron_pierce",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    },
+    {
+        "action_value_id": "neutron_antimatter_removed_scalar",
+        "action_value":
+        {
+			"transform_type": "per_max_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "neutron_ability_delay_time",
+        "action_value":
+        {
+            "values": [0.4]
+        }
+    },
+    {
+        "action_value_id": "neutron_ability_cooldown_time_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "neutron_ability_range_scalar",
+        "action_value":
+        {
+            "values": [-0.333333]
+        }
+    },
+    {
+        "action_value_id": "neutron_phase_jump_charge_time_scalar",
+        "action_value":
+        {
+            "values": [1.33]
+        }
+    },
+    {
+        "action_value_id": "neutron_phase_jump_speed_scalar",
+        "action_value":
+        {
+            "values": [-0.33]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "neutron_phase_jump_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "neutron_phase_jump_speed_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "neutron_phase_jump_charge_time_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_charge_time",
+            "value_behavior": "scalar",
+            "value_id": "neutron_phase_jump_charge_time_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "neutron_ability_cooldown_time_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "neutron_ability_cooldown_time_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "neutron_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "neutron_ability_range_scalar"
+        }
+    }]
+}

@@ -1,0 +1,41 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "soul_strike_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "frigate",
+				"cruiser",
+				"capital_ship",
+				"super_capital_ship",
+				"titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "planet_bombing"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "soul_strike_damage_value",
+        "action_value":
+        {
+			"transform_type": "per_raw_damage_dealt",
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "soul_strike_penetration_value",
+        "action_value":
+        {
+            "values": [300.0]
+        }
+    }]
+}

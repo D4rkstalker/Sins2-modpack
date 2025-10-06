@@ -1,0 +1,66 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 20402.598992,
+        "min_camera_distance": 1037.216918,
+        "gui":
+        {
+            "hud_icon": "vasari_phase_jump_inhibitor_structure_hud_icon",
+            "hud_monochrome_icon": "vasari_phase_jump_inhibitor_structure_main_view_icon",
+            "hud_picture": "vasari_phase_jump_inhibitor_structure_hud_picture",
+            "tooltip_picture": "vasari_phase_jump_inhibitor_structure_tooltip_picture",
+            "name": "vasari_phase_jump_inhibitor_structure_name",
+            "description": "vasari_phase_jump_inhibitor_structure_description"
+        },
+        "unit_mesh":
+        {
+            "mesh": "trader_phase_jump_inhibitor_structure",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "structure",
+            "icon": "vasari_phase_jump_inhibitor_structure_main_view_icon",
+            "selected_icon": "vasari_phase_jump_inhibitor_structure_main_view_icon_selected",
+            "sub_selected_icon": "vasari_phase_jump_inhibitor_structure_main_view_icon_sub_selected",
+            "has_rotation": false
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 3,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.9,
+                    "particle_effect": "jump_inhibitor_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "jump_inhibitor_ambient",
+                "sound": "ambient_loop_phase_inhibitor"
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_phase_inhibitor"
+                    ],
+                    "scared": [
+                        "ui_onselection_phase_inhibitor"]
+                }
+            }
+        },
+        "death_sequence_group": "jump_inhibitor_death"
+    }]
+}

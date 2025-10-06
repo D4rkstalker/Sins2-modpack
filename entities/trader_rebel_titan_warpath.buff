@@ -1,0 +1,177 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "time_since_last_stack",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "common_simulation_time_value"
+                },
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "warpath_last_stack_changed_time_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "warpath_time_since_last_stack_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "warpath_stack_duration_value"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "fixed_one"
+                },
+                {
+                    "operator_type": "max",
+                    "operand_value": "fixed_zero"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "warpath_time_since_last_stack_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "warpath_stack_duration_value"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "last_stack_changed_time",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "common_simulation_time_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_made_dead_by_current_spawner",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_destination"
+                    },
+                    "target_filter_id": "warpath_small_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "warpath_max_stack_count"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_destination"
+                    },
+                    "target_filter_id": "warpath_large_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "warpath_large_kill_stack_value"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "warpath_max_stack_count"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "last_stack_changed_time",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "common_simulation_time_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_torpedo",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_rebel_titan_warpath_on_torpedo",
+                    "copy_parent_buff_memory_values": true
+                }]
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "warpath_weapon_damage_modifier"
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "warpath_max_angular_speed_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_rebel_titan_warpath_ability_hud_icon",
+        "name": "trader_rebel_titan_warpath_ability_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "warpath_weapon_damage_modifier",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "warpath_max_angular_speed_modifier",
+                "is_resolved_value": true
+            }]
+        }]
+    }
+}

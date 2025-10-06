@@ -1,0 +1,123 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "beam_charge_value",
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "execution_interval_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "damage_rate_value",
+                    "penetration_value": "penetration_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+				"constraint":
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"owned_unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"player_type": "unit_owner"
+					},
+					"prerequisites": [
+						["trader_beam_weapon_damage_0"]
+					]
+				},
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "damage_rate_research_value",
+                    "penetration_value": "penetration_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+				"constraint":
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"owned_unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"player_type": "unit_owner"
+					},
+					"prerequisites": [
+						["trader_beam_weapon_damage_1"]
+					]
+				},
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "damage_rate_research_value_2",
+                    "penetration_value": "penetration_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "charge_effect": "trader_battle_capital_ship_experimental_beam_charge",
+                        "muzzle_effect": "trader_battle_capital_ship_experimental_beam_muzzle",
+                        "beam_effect": "trader_battle_capital_ship_experimental_beam_beam",
+                        "hit_hull_effect": "trader_battle_capital_ship_experimental_beam_hit_hull",
+                        "hit_shield_effect": "trader_battle_capital_ship_experimental_beam_hit_shield",
+                        "hit_shield_impact_radius_t": 1.0
+                    },
+                    "charge_duration": "beam_charge_value",
+                    "beam_duration": "execution_interval_count_value"
+                }]
+            }]
+        }
+    }]
+}

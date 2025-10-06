@@ -1,0 +1,37 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "solar_gamma_star_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_shields"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "solar_gamma_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "solar_gamma_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "solar_gamma_damage_taken_scalar"
+        }
+    }]
+}

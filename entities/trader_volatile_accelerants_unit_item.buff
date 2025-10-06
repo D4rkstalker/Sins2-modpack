@@ -1,0 +1,73 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "volatile_accelerants_duration_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_only",
+                    "damage_value": "volatile_accelerants_damage_rate_value",
+                    "penetration_value": "common_ability_damage_penetration_value"
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "trader_volatile_accelerants_max_linear_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "trader_volatile_accelerants_max_angular_speed_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_volatile_accelerants_unit_item_hud_icon",
+        "name": "trader_volatile_accelerants_unit_item_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "trader_volatile_accelerants_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "trader_volatile_accelerants_max_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_damage_rate",
+                "value_id": "volatile_accelerants_damage_rate_value",
+                "value_color": "negative",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

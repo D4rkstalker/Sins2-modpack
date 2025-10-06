@@ -1,0 +1,122 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "root",
+            "x": [0.0, 0.0],
+            "y": [-10.0, -10.0],
+            "z": [20.0, 20.0],
+            "yaw": [-0.0, -0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 3,
+            "name": "core",
+            "type": "point",
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [1.0, 1.0],
+                "color": "ffffc0ff",
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [2.0, 6.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-5.235988, 6.981318],
+                    "texture_0": "t_gauss_barrel_glow_01",
+                    "texture_animation_fps": [1.0, 1.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 5.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 6,
+            "name": "sparkles",
+            "type": "sphere",
+            "emit_rate": {
+                "behavior": "increase",
+                "primary_emit_rate": [10.0, 10.0],
+                "primary_time": [30.0, 30.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [1.0, 1.0],
+                "color": "ffffc0ff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [0.10, 0.80],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "t_gauss_barrel_glow_01",
+                    "texture_animation_fps": [1.0, 1.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_surface": true,
+            "radius_x": [15.0, 15.0],
+            "radius_y": [15.0, 15.0],
+            "radius_z": [15.0, 15.0],
+            "radial_velocity": [-20.0, 2.0],
+            "azimuthal_tangential_velocity": [0.0, 0.0],
+            "polar_tangential_velocity": [0.0, 0.0],
+            "latitude_angle_range": [0.0, 6.283185],
+            "longitude_angle_range": [0.0, 6.283185]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "ColorMod",
+            "type": "color",
+            "change_duration_context": "particle_time_elapsed",
+            "change_duration": [1.0, 1.0],
+            "begin_color": "ffffc0ff",
+            "end_color": "ffffc0ff"
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 3,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 6,
+            "attachee_id": 0
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 1,
+            "attachee_id": 3
+        },
+        {
+            "attacher_id": 1,
+            "attachee_id": 6
+        }
+    ]
+}

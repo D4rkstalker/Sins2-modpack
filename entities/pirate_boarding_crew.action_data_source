@@ -1,0 +1,129 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "boarding_crew_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_battle_psionic_capital_ship_domination_prevent",
+					"include_pending_buffs": true
+                }
+			}]
+        }
+    },
+    {
+        "target_filter_id": "boarding_crew_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_battle_psionic_capital_ship_domination_prevent",
+					"include_pending_buffs": true
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "boarding_crew_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "boarding_crew_range_value",
+        "action_value":
+        {
+            "values": [6000.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "pirate_boarding_crew_activate_on_self_small",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_boarding"
+        }
+    },
+    {
+        "alias_name": "pirate_boarding_crew_activate_on_self_medium",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_boarding_medium"
+        }
+    },
+    {
+        "alias_name": "pirate_boarding_crew_activate_on_self_large",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_boarding_large"
+        }
+    },
+    {
+        "alias_name": "pirate_boarding_crew_activate_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_boarding_capture_small"
+        }
+    },
+    {
+        "alias_name": "pirate_boarding_crew_activate_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_boarding_capture_medium"
+        }
+    },
+    {
+        "alias_name": "pirate_boarding_crew_activate_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_boarding_capture_large"
+        }
+    }]
+}

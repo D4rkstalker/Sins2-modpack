@@ -1,0 +1,124 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "gravity_pulse_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "gravity_pulse_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "gravity_pulse_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [120.0, 131.25, 142.5, 153.75, 165.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 64.5, 69.0, 73.5, 78.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_disable_duration_value",
+        "action_value":
+        {
+            "values": [6.0, 12.0, 18.0, 24.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_radius_value",
+        "action_value":
+        {
+            "values": [6600.0, 6600.0, 6600.0, 6600.0, 6600.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_improved_radius_value",
+        "action_value":
+        {
+            "values": [12000.0, 12000.0, 12000.0, 12000.0, 12000.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_slow_duration_value",
+        "action_value":
+        {
+            "values": [24.0, 36.0, 48.0, 60.0, 72.0]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_speed_modifier_value",
+        "action_value":
+        {
+            "values": [-0.36, -0.48, -0.72, -0.84, -0.96]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_hyperspace_charge_time_modifier_value",
+        "action_value":
+        {
+            "values": [0.36, 0.48, 0.72, 0.84, 0.96]
+        }
+    },
+    {
+        "action_value_id": "gravity_pulse_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "slow_max_linear_speed",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "gravity_pulse_speed_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "slow_hyperspace_charge_time",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_charge_time",
+            "value_behavior": "scalar",
+            "value_id": "gravity_pulse_hyperspace_charge_time_modifier_value"
+        }
+    }]
+}

@@ -1,0 +1,55 @@
+{
+    "version": 0,
+    "action_data_source": "scout_corvette_decloak_mine",
+    "passive_actions":
+    {
+        "persistant_buff": "scout_corvette_decloak_mine_passive_on_self"
+    },
+    "active_actions":
+    {
+        "cooldown_time": "disarm_booby_trap_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "scout_corvette_decloak_mine_disarm_booby_trap"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "disarm_booby_trap_remove_detected_target_filter"
+        ],
+        "range": "disarm_booby_trap_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "disarm_booby_trap_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "scout_decloak_mine_hud_icon",
+        "name": "trader_scout_corvette_decloak_mine_name",
+        "description": "trader_scout_corvette_decloak_mine_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "decloak_mine_radius_value"
+            }
+        }
+    }
+}

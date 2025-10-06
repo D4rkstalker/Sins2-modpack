@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 4,
+    "field": "military_trader_rebel_repeatables",
+    "field_coord": [8, 0],
+    "research_time": 695.0,
+    "price":
+    {
+        "credits": 5000.0,
+        "metal": 1875.0,
+        "crystal": 1875.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_support_capital_ship_rebel"
+                }]
+        },
+        "action_data_source": "trader_support_capital_ship_antimatter_charge",
+        "buff": "trader_support_capital_ship_antimatter_charge_on_damage_dealer"
+    },
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_battle_capital_experimental_reactor_discharge"
+                }]
+        },
+        "action_data_source": "trader_battle_capital_experimental_reactor_discharge",
+        "buff": "trader_battle_capital_experimental_reactor_discharge"
+    },
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_colony_capital_ship_rebel"
+                }]
+        },
+        "action_data_source": "trader_kamikaze_frigate",
+        "buff": "trader_kamikaze_frigate"
+    }],
+    "name": "research_subject.trader_rebel_capital_weapons_name",
+    "name_uppercase": "research_subject.trader_rebel_capital_weapons_name_upper",
+    "description": "research_subject.trader_rebel_capital_weapons_description",
+    "hud_icon": "trader_rebel_capital_weapons_hud_icon",
+    "tooltip_picture": "trader_rebel_capital_weapons_tooltip_picture"
+}

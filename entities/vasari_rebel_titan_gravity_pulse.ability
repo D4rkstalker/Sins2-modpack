@@ -1,0 +1,327 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_rebel_titan_gravity_pulse",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "gravity_pulse_cooldown_time_value",
+        "antimatter_cost": "gravity_pulse_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "improved_gravity_pulse"
+                        }
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "gravity_pulse_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "gravity_pulse_target_filter"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "nano_leech_active"
+                            }
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_rebel_titan_gravity_pulse_slow"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "nano_leech_active"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_rebel_titan_gravity_pulse_disable"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "improved_gravity_pulse"
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "gravity_pulse_improved_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "gravity_pulse_target_filter"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "nano_leech_active"
+                            }
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_rebel_titan_gravity_pulse_slow"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "nano_leech_active"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_rebel_titan_gravity_pulse_disable"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "weapon.cannon.0",
+                        "effect": "vasari_rebel_titan_gravity_pulse_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "improved_gravity_pulse"
+                        }
+                    },
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "gravity_pulse_auto_cast_target_filter",
+                        "radius_value": "gravity_pulse_improved_radius_value",
+                        "target_count_value": "gravity_pulse_auto_cast_target_count_value"
+                    }]
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "improved_gravity_pulse"
+                            }
+                        }
+                    },
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "gravity_pulse_auto_cast_target_filter",
+                        "radius_value": "gravity_pulse_radius_value",
+                        "target_count_value": "gravity_pulse_auto_cast_target_count_value"
+                    }]
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_rebel_titan_gravity_pulse_ability_hud_icon",
+        "tooltip_picture": "vasari_rebel_titan_gravity_pulse_ability_tooltip_picture",
+        "name": "vasari_rebel_titan_gravity_pulse_ability_name",
+        "description": "vasari_rebel_titan_gravity_pulse_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "gravity_pulse_radius_value"
+            },
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "improved_gravity_pulse"
+                }
+            },
+            "constraint_passed_values":
+            {
+                "radius": "gravity_pulse_improved_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "gravity_pulse_radius_value"
+            }]
+		},
+        {
+            "header_text": "vasari_rebel_titan_gravity_pulse_improved_with_item_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "gravity_pulse_improved_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.vasari_colony_capital_ship_subspace_rupture_ability_without_gravity_warhead_header",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "slow_max_linear_speed"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "slow_hyperspace_charge_time"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "gravity_pulse_slow_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+		{
+			"header_text": "tooltip.vasari_rebel_titan_gravity_pulse_ability_with_nano_leech_header",
+			"lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.disable_duration",
+                "value_id": "gravity_pulse_disable_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

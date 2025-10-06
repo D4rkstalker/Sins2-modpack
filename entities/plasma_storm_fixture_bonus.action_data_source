@@ -1,0 +1,37 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "plasma_storm_fixture_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "is_carrier"
+                    },
+                    {
+                        "constraint_type": "is_unit_factory"
+                    },
+                    {
+                        "constraint_type": "has_weapon"
+                    }]
+                },
+				{
+                    "constraint_type": "composite_not",
+                    "constraint": 
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "advent_antimodule_cruiser"
+					}
+				}]
+        }
+    }]
+}

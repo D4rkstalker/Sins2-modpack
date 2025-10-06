@@ -1,0 +1,78 @@
+{
+    "version": 0,
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "naibor_tacticians_cancel_target_filter"
+                },
+                "action_type": "make_buff_dead"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "give_experience",
+                    "experience_value": "naibor_tacticians_passive_experience_rate"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "passive_experience",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "naibor_tacticians_passive_experience_rate"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "passive_experience",
+                "math_operators": [
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "naibor_tacticians_passive_experience_rate"
+                }]
+            }]
+        }
+    }]
+}

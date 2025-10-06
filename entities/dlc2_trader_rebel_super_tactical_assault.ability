@@ -1,0 +1,257 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_trader_rebel_super_tactical_assault",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "tactical_assault_cooldown_time_value",
+        "antimatter_cost": "tactical_assault_antimatter_cost_value",
+        "actions":
+        {
+	        "constraint":
+            {
+				"constraint_type": "unit_passes_unit_constraint",
+				"unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"unit_constraint":
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "composite_not",
+							"constraint":
+							{
+								"constraint_type": "has_buff",
+								"buff": "plasma_storm_fixture_bonus_on_target"
+							}
+						},
+						{
+							"constraint_type": "composite_or",
+							"constraints": [
+							{
+								"constraint_type": "has_mutation",
+								"mutation": "modular_missile_equipped"
+							},
+							{
+								"constraint_type": "has_mutation",
+								"mutation": "missile_turrets_equipped"
+							}]
+						}]
+					},
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "beam_turrets_equipped"
+					},
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "gauss_turrets_equipped"
+					},
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "modular_railgun_equipped"
+					}]
+				}
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_tactical_assault"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_trader_rebel_super_tactical_assault_buff_start"
+                    }
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+						"constraint_type": "has_mutation",
+						"mutation": "beam_turrets_equipped"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_tactical_assault_on_damage_dealer"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+						"constraints": [
+						{
+							"constraint_type": "has_mutation",
+							"mutation": "modular_missile_equipped"
+						},
+						{
+							"constraint_type": "has_mutation",
+							"mutation": "missile_turrets_equipped"
+						}]
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_tactical_assault_missile_weapon"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+						"constraints": [
+						{
+							"constraint_type": "has_mutation",
+							"mutation": "modular_railgun_equipped"
+						},
+						{
+							"constraint_type": "has_mutation",
+							"mutation": "gauss_turrets_equipped"
+						}]
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_tactical_assault_magnetic_weapon"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_rebel_super_tactical_assault_hud_icon",
+        "tooltip_picture": "dlc2_trader_rebel_super_tactical_assault_tooltip_picture",
+        "name": "dlc2_trader_rebel_super_tactical_assault_ability_name",
+        "description": "dlc2_trader_rebel_super_tactical_assault_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "tactical_assault_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_beam_weapons",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage",
+                "value_id": "tactical_assault_splash_damage_value",
+                "value_float_format": "percentage",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage_radius",
+                "value_id": "tactical_assault_splash_damage_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_gauss_and_railgun_weapons",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.bonus_shield_damage",
+                "value_id": "tactical_assault_bonus_shield_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "tactical_assault_railgun_weapon_range_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "tactical_assault_gauss_weapon_range_modifier"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_missile_weapons",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "tooltip.ability.single_line.enable_missile_retargeting",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "tactical_assault_missile_weapon_cooldown_duration_modifier"
+            }]
+        }]
+    }
+}

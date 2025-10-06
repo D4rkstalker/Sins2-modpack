@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "nano_antimatter_restore_execution_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "restore_antimatter",
+                    "antimatter_restore_value": "nano_antimatter_restore_antimatter_restore_rate_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "vasari_nano_antimatter_restore_unit_item_buff_small",
+                        "medium_unit": "vasari_nano_antimatter_restore_unit_item_buff_medium",
+                        "large_unit": "vasari_nano_antimatter_restore_unit_item_buff_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_nano_antimatter_restore_unit_item_hud_icon",
+        "name": "vasari_nano_antimatter_restore_unit_item_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_restore_rate",
+                "value_id": "nano_antimatter_restore_antimatter_restore_rate_value",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            }]
+        }]
+    }
+}

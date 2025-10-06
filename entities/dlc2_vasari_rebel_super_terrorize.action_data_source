@@ -1,0 +1,159 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "subsume_energy_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_vasari_rebel_super_terrorize",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "subsume_energy_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_vasari_rebel_super_terrorize",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "terrorize_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "terrorize_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [42.0, 48.0, 54.0, 60.0, 72.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 54.0, 48.0, 42.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_duration_value",
+        "action_value":
+        {
+            "values": [42.0, 48.0, 54.0, 60.0, 72.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_radius_value",
+        "action_value":
+        {
+            "values": [1200.0, 1200.0, 1200.0, 1200.0, 1200.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_range_value",
+        "action_value":
+        {
+            "values": [30000.0, 30000.0, 30000.0, 30000.0, 30000.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_damage_value",
+        "action_value":
+        {
+            "values": [120.0, 150.0, 180.0, 210.0, 270.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_penetration_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0, 600.0, 600.0, 600.0]
+        }
+    },
+    {
+        "action_value_id": "terrorize_ability_cost_bonus_value",
+        "action_value":
+        {
+            "values": [0.12, 0.15, 0.18, 0.21, 0.27]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "terrorize_ability_cost_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_antimatter_cost",
+            "value_behavior": "scalar",
+            "value_id": "terrorize_ability_cost_bonus_value"
+        }
+    }]
+}

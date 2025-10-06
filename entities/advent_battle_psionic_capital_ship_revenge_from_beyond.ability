@@ -1,0 +1,131 @@
+{
+    "version": 0,
+    "action_data_source": "advent_battle_psionic_capital_ship_revenge_from_beyond",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9],
+    "active_actions":
+    {
+        "cooldown_time": "revenge_from_beyond_cooldown_time_value",
+        "antimatter_cost": "revenge_from_beyond_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "revenge_from_beyond_buff_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "revenge_from_beyond_buff_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_psionic_capital_ship_revenge_from_beyond"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_battle_capital_ship_revenge_from_beyond_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
+                },
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "revenge_from_beyond_auto_cast_target_filter",
+                    "radius_value": "revenge_from_beyond_buff_radius_value",
+                    "target_count_value": "revenge_from_beyond_auto_cast_target_count_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_battle_psionic_capital_ship_revenge_from_beyond_ability_hud_icon",
+        "name": "advent_battle_psionic_capital_ship_revenge_from_beyond_ability_name",
+        "description": "advent_battle_psionic_capital_ship_revenge_from_beyond_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "revenge_from_beyond_buff_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+			"lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "revenge_from_beyond_duration_value",
+                "value_suffix": "seconds"
+            }]
+		},
+		{
+			"header_text": "tooltip.on_unit_destroyed_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "revenge_from_beyond_damage_value",
+				"ratio_float_format": "two_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "revenge_from_beyond_damage_target_count_value"
+            }]
+        }]
+    }
+}

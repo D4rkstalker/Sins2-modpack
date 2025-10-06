@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "active_duration": "bomb_neutral_cooldown_time_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "bomb_neutral_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_population_damage",
+                    "damage_source": "ability",
+                    "population_damage_value": "bomb_neutral_bombing_population_damage_value",
+                    "population_reduction_type": "all_equally"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "bomb",
+                    "effects":
+                    {
+                        "muzzle_effect": "advent_siege_frigate_planet_bombing_weapon_muzzle",
+                        "projectile_travel_effect": "advent_siege_frigate_planet_bombing_weapon_projectile_travel",
+                        "hit_hull_effect": "advent_siege_frigate_planet_bombing_weapon_hit_hull",
+                        "hit_shield_effect": "advent_siege_frigate_planet_bombing_weapon_hit_shield"
+                    }
+                }]
+            }]
+        }
+    }]
+}

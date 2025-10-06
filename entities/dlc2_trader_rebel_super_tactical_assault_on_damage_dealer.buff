@@ -1,0 +1,89 @@
+{
+    "version": 0,
+    "active_duration": "tactical_assault_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+				{
+					"constraint_type": "damage_has_weapon_tag",
+					"weapon_tag": "beam"
+				}]
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "tactical_assault_splash_damage_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "tactical_assault_splash_damage_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "tactical_assault_splash_damage_value",
+                    "penetration_value": "uniforms_damage_event_penetration_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_trader_rebel_super_tactical_assault_splash"
+                    }
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_rebel_super_tactical_assault_hud_icon",
+        "name": "dlc2_trader_rebel_super_tactical_assault_on_damage_dealer_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage",
+                "value_id": "tactical_assault_splash_damage_value",
+                "value_float_format": "percentage",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage_radius",
+                "value_id": "tactical_assault_splash_damage_radius_value"
+            }]
+        }]
+    }
+}

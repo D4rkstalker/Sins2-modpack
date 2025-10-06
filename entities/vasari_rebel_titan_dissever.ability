@@ -1,0 +1,191 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_rebel_titan_dissever",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "dissever_cooldown_time_value",
+        "antimatter_cost": "dissever_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "dissever_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "dissever_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "dissever_damage_value",
+                    "penetration_value": "dissever_penetration_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "vasari_rebel_titan_dissever_damage_small",
+                            "medium_unit": "vasari_rebel_titan_dissever_damage_medium",
+                            "large_unit": "vasari_rebel_titan_dissever_damage_large"
+                        }
+                    }
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "nano_leech_active"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_rebel_titan_dissever_on_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "ability.0",
+                        "mesh_point_usage": "all",
+                        "effect": "vasari_rebel_titan_dissever_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
+                },
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "dissever_auto_cast_target_filter",
+                    "radius_value": "dissever_radius_value",
+                    "target_count_value": "dissever_auto_cast_target_count_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_rebel_titan_dissever_ability_hud_icon",
+        "tooltip_picture": "vasari_rebel_titan_dissever_ability_tooltip_picture",
+        "name": "vasari_rebel_titan_dissever_ability_name",
+        "description": "vasari_rebel_titan_dissever_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "dissever_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "dissever_radius_value"
+            }]
+		},
+		{
+		    "header_text": "tooltip.vasari_colony_capital_ship_subspace_rupture_ability_without_gravity_warhead_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "dissever_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "dissever_penetration_value",
+				"value_color": "negative"
+            }]
+		},
+		{
+		    "header_text": "tooltip.vasari_rebel_titan_gravity_pulse_ability_with_nano_leech_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "dissever_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "dissever_damage_rate_value",
+                "value_suffix": "per_second",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "dissever_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "dissever_execution_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

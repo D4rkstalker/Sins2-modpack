@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "mining_rush_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "mining_rush_surface_mining_rate_scalar",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "mining_rush_orbital_mining_rate_scalar",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "mining_rush_surface_metal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "mining_rush_surface_mining_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "mining_rush_surface_crystal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "mining_rush_surface_mining_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "mining_rush_orbital_metal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "mining_rush_orbital_mining_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "mining_rush_orbital_crystal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "mining_rush_orbital_mining_rate_scalar"
+        }
+	}]
+}

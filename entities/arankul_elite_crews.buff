@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "active_duration": "buff_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+	{
+		"execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "secret_target"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "secret_3"
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "elite_crews_damage_taken_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_acceleration_modifier"
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "elite_crews_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "arankul_elite_crews_hud_icon",
+        "name": "npc_reward.arankul_elite_crews.name",
+        "description": "npc_reward.arankul_elite_crews.description",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_damage_taken_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "elite_crews_weapon_damage_modifier"
+            }]
+        }]
+    }
+}

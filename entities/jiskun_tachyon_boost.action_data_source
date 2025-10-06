@@ -1,0 +1,73 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"star",
+				"uncolonizable"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "max_linear_speed_bonus_scalar",
+        "action_value":
+        {
+            "values": [0.75]
+        }
+    },
+    {
+        "action_value_id": "max_angular_speed_bonus_scalar",
+        "action_value":
+        {
+            "values": [0.75]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "max_linear_speed_bonus",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "max_linear_speed_bonus_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "max_angular_speed_bonus",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "max_angular_speed_bonus_scalar"
+        }
+    }]
+}

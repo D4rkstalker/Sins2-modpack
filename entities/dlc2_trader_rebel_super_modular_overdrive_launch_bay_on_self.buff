@@ -1,0 +1,65 @@
+{
+    "version": 0,
+    "active_duration": "modular_overdrive_launch_bay_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_child_strikecraft_of_unit",
+                "strikecraft_carrier_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_modular_overdrive_launch_bay_on_target"
+                }]
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect": "dlc2_trader_rebel_super_modular_overdrive_launch_bay_active"
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_strikecraft",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_modular_overdrive_launch_bay_on_target"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_rebel_super_modular_overdrive_hud_icon",
+        "name": "dlc2_trader_rebel_super_modular_overdrive_launch_bays_name",
+        "visibility_scope": "positive"
+    }
+}

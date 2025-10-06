@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "make_dead_when_no_child_buffs_exist": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_constructor_ship_deconstruct_structure_on_structure"
+                }]
+            }]
+        }
+    },
+	{
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "give_assets",
+                    "asset_type": "credits",
+                    "asset_value": "deconstruct_structure_credits"
+                },
+                {
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "deconstruct_structure_metal"
+                },
+                {
+                    "operator_type": "give_assets",
+                    "asset_type": "crystal",
+                    "asset_value": "deconstruct_structure_crystal"
+                }]
+            }]
+        }
+	}],
+    "gui":
+    {
+        "hud_icon": "advent_constructor_ship_deconstruct_structure_ability_hud_icon",
+        "name": "constructor_ship_deconstruct_structure_ability_name",
+        "visibility_scope": "positive",
+		"is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.credits_salvaged",
+                "value_id": "deconstruct_structure_credits",
+				"value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.metal_salvaged",
+                "value_id": "deconstruct_structure_metal",
+				"value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.crystal_salvaged",
+                "value_id": "deconstruct_structure_crystal",
+				"value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            }]
+		}]
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "damage_has_weapon_tag",
+                    "weapon_tag": "plasma"
+                },
+                {
+                    "constraint_type": "random_chance",
+                    "chance_value": "volatile_plasma_chance_value"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_advent_loyalist_super_volatile_plasma_on_target"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect": "dlc2_advent_loyalist_super_volatile_plasma_ambient"
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "volatile_plasma_damage_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "volatile_plasma_damage_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "volatile_plasma_damage_value",
+                    "penetration_value": "volatile_plasma_penetration_value",
+                    "can_damage_be_propagated": false
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_advent_loyalist_super_volatile_plasma_on_death"
+                    }
+                },
+                {
+                    "operator_type": "make_dead"
+                }]
+            }]
+        }
+    }]
+}

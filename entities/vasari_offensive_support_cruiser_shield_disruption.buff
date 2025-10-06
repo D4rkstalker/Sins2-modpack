@@ -1,0 +1,136 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+	"active_duration": "duration_value",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+	{
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect": "shield_disruption_on_target"
+                    }
+                }]
+            }]
+		}
+	},
+    {
+        "trigger_event_type": "on_try_prevent_damage",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "damage_has_damage_source",
+				"damage_source": "weapon"
+            },
+            "actions": [
+            {
+                "action_type": "prevent_damage",
+                "damage_prevented_value": "shield_disruption_prevent_damage_value"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators_constraint":
+                {
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "random_chance",
+						"chance_value": "shield_disruption_shield_bypass_chance"
+					},
+					{
+						"constraint_type": "composite_not",
+						"constraint": 
+						{
+							"constraint_type": "unit_passes_unit_constraint",
+							"unit":
+							{
+								"unit_type": "current_spawner"
+							},
+							"unit_constraint":
+							{
+								"constraint_type": "has_mutation",
+								"mutation": "disable_can_have_shields_bypassed"
+							}
+						}
+					}]
+				},
+                "operators": [
+				{
+                    "operator_type": "apply_damage",
+					"can_damage_be_propagated": false,
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_only",
+                    "damage_value": "shield_disruption_prevent_damage_value",
+					"penetration_value": "shield_disruption_prevent_damage_penetration_value"
+                }],
+                "constraint_not_satisified_operators": [
+                {
+                    "operator_type": "apply_damage",
+					"can_damage_be_propagated": false,
+                    "damage_source": "ability",
+                    "damage_affect_type": "shields_only",
+                    "damage_value": "shield_disruption_additional_shield_damage_value",
+					"penetration_value": "shield_disruption_prevent_damage_penetration_value"
+                },
+                {
+                    "operator_type": "apply_damage",
+					"can_damage_be_propagated": false,
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "shield_disruption_prevent_damage_value",
+					"penetration_value": "shield_disruption_prevent_damage_penetration_value"
+                }]				
+            }]
+        }
+	}],
+    "gui":
+    {
+        "hud_icon": "vasari_offensive_support_cruiser_shield_disruption_hud_icon",
+        "name": "vasari_offensive_support_cruiser_shield_disruption_name",
+		"visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_damage_increase",
+                "value_id": "shield_disruption_shield_bypass_chance",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.bypass_shields_chance",
+                "value_id": "shield_disruption_shield_bypass_chance",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

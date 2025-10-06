@@ -1,0 +1,51 @@
+{
+    "version": 0,
+    "action_data_source": "nilari_compelled_pilgrimage",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "nilari_compelled_pilgrimage_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "compelled_pilgrimage_planet_target_filter"]
+    },
+    "gui":
+    {
+        "hud_icon": "nilari_compelled_pilgrimage_hud_icon",
+        "name": "npc_reward.nilari_compelled_pilgrimage.name",
+        "description": "npc_reward.nilari_compelled_pilgrimage.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.adjacent_population_stolen",
+				"value_id": "compelled_pilgrimage_steal_population_value",
+                "value_float_format": "percentage_one_decimal_place",
+				"value_suffix": "per_second",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "compelled_pilgrimage_execution_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

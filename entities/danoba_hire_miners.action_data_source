@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "hire_miners_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "danoba_hire_miners"
+				}
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "hire_miners_surveying_track_build_price_scalar",
+        "action_value":
+        {
+            "values": [-0.30]
+        }
+    },
+    {
+        "action_value_id": "hire_miners_surveying_track_build_time_scalar",
+        "action_value":
+        {
+            "values": [-0.30]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "hire_miners_surveying_track_build_price_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_build_price",
+            "value_behavior": "scalar",
+            "value_id": "hire_miners_surveying_track_build_price_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "hire_miners_surveying_track_build_time_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_build_time",
+            "value_behavior": "scalar",
+            "value_id": "hire_miners_surveying_track_build_time_scalar"
+        }
+	}]
+}

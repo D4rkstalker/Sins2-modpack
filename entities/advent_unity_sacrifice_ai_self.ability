@@ -1,0 +1,129 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_sacrifice",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unity_mana_1"]
+        ],
+        [
+            ["advent_unity_mana_2"]
+        ],
+        [
+            ["advent_unity_mana_3"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "sacrifice_cooldown_time_value",
+        "unity_mana_cost": "sacrifice_unity_mana_cost_value",
+        "actions":
+        {
+			"constraint":
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "advent_unity_sacrifice_ai_prevent",
+						"include_pending_buffs": true
+					}
+				}
+			},
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "sacrifice_planet_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_sacrifice_on_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_sacrifice_ai_prevent"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "sacrifice_planet_target_filter"
+		],
+		"auto_cast":
+        {
+            "target_definitions": [
+            {
+                "target_filter": "sacrifice_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "sacrifice_auto_cast_ship_target_filter"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_sacrifice_ability_hud_icon",
+        "tooltip_picture": "advent_unity_sacrifice_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_sacrifice_ability_tooltip_picture",
+        "name": "advent_unity_sacrifice_ability_name",
+        "description": "advent_unity_sacrifice_ability_description",
+        "tooltip_line_groups": [
+        {
+            "header_text": "advent_unity_requires_dominant_culture_header",
+            "lines": []
+        },
+        {
+            "header_text": "advent_unity_sacrifice_requirements_header",
+            "lines": []
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "advent_unity_sacrifice_damage_tooltip",
+                "value_id": "sacrifice_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "advent_unity_sacrifice_cull_tooltip",
+                "value_id": "sacrifice_population_culled_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_with_sign"
+            }]
+        }]
+    }
+}

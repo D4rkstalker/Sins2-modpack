@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "vasari_loyalist_mobile_reclamation_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "vasari_loyalist_mobile_reclamation_crystal_value",
+        "action_value":
+        {
+            "transform_type": "per_crystal_price",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.24]
+        }
+    },
+    {
+        "action_value_id": "vasari_loyalist_mobile_reclamation_metal_value",
+        "action_value":
+        {
+            "transform_type": "per_metal_price",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.24]
+        }
+    },
+    {
+        "action_value_id": "vasari_loyalist_mobile_reclamation_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [0.0]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "vasari_loyalist_mobile_reclamation_apply_on_fixture_buffs",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "vasari_loyalist_mobile_reclamation_phase_lane_distance_value",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "vasari_loyalist_mobile_reclamation_on_target_gravity_well"
+            }]
+        }
+    }]
+}

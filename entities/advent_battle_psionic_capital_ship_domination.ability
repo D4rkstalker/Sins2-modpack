@@ -1,0 +1,114 @@
+{
+    "version": 0,
+    "action_data_source": "advent_battle_psionic_capital_ship_domination",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "domination_cooldown_time_value",
+        "antimatter_cost": "domination_antimatter_cost_value",
+        "max_charge_count": "domination_max_charge_count_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_psionic_capital_ship_domination"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_psionic_capital_ship_domination_prevent"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_battle_psionic_capital_ship_domination_activate"
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_battle_psionic_capital_ship_domination_cast"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "domination_target_filter"
+        ],
+        "range": "domination_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "domination_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_battle_psionic_capital_ship_domination_ability_hud_icon",
+        "tooltip_picture": "advent_battle_psionic_capital_ship_domination_ability_tooltip_picture",
+        "name": "advent_battle_psionic_capital_ship_domination_ability_name",
+        "description": "advent_battle_psionic_capital_ship_domination_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "domination_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.cooldown",
+                "value_id": "domination_cooldown_time_value",
+                "value_suffix": "seconds",
+				"ratio_float_format": "one_decimal_place_with_sign"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "domination_max_charge_count_value"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,214 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "subversion_grid_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_vasari_rebel_super_subversion_grid_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "subversion_grid_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "cooldown_bonus",
+            "range_bonus"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "subversion_grid_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [50.0, 50.0, 50.0, 50.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [30000.0, 30000.0, 30000.0, 30000.0, 30000.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [156.0, 234.0, 312.0, 351.0, 390.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0, 120.0, 120.0, 120.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_modifier_execution_interval_value",
+        "action_value":
+        {
+            "values": [3.0, 3.0, 3.0, 3.0, 3.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_modifier_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [18.0, 18.0, 18.0, 18.0, 18.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_base_range_bonus_value",
+        "action_value":
+        {
+            "values": [-0.06, -0.12, -0.18, -0.21, -0.24]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_per_interval_range_bonus_value",
+        "action_value":
+        {
+            "values": [-0.01, -0.02, -0.03, -0.04, -0.05]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_base_cooldown_bonus_value",
+        "action_value":
+        {
+            "values": [0.12, 0.24, 0.36, 0.42, 0.48]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_per_interval_cooldown_bonus_value",
+        "action_value":
+        {
+            "values": [0.02, 0.04, 0.06, 0.07, 0.08]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_weapon_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "cooldown_bonus",
+            "values": [-1.0, -1.0, -1.0, -1.0, -1.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_weapon_range_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "range_bonus",
+            "values": [-1.0, -1.0, -1.0, -1.0, -1.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_ability_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "cooldown_bonus",
+            "values": [-1.0, -1.0, -1.0, -1.0, -1.0]
+        }
+    },
+    {
+        "action_value_id": "subversion_grid_ability_range_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "range_bonus",
+            "values": [-1.0, -1.0, -1.0, -1.0, -1.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "subversion_grid_weapon_cooldown_duration_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "subversion_grid_weapon_cooldown_duration_bonus_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "subversion_grid_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "subversion_grid_weapon_range_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "subversion_grid_ability_cooldown_duration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "subversion_grid_ability_cooldown_duration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "subversion_grid_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "subversion_grid_ability_range_bonus_value"
+        }
+    }]
+}

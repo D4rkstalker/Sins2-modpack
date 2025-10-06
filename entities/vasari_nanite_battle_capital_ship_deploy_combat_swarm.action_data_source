@@ -1,0 +1,119 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "deploy_combat_swarm_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "weapon_has_target"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "deploy_combat_swarm_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "vasari_combat_nanite_frigate"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "deploy_combat_swarm_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [40.0, 40.0, 40.0, 40.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_damage_bonus_value",
+        "action_value":
+        {
+            "values": [1.0, 1.33, 1.66, 2.0, 2.33]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_cooldown_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_charges_value",
+        "action_value":
+        {
+            "values": [6.0, 9.0, 12.0, 15.0, 18.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_on_spawner_max_stacks_value",
+        "action_value":
+        {
+            "values": [18.0, 18.0, 18.0, 18.0, 18.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_experience_bonus_value",
+        "action_value":
+        {
+            "values": [0.0, 4.0, 8.0, 12.0, 16.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_hull_bonus_value",
+        "action_value":
+        {
+            "values": [0.0, 75.0, 150.0, 225.0, 300.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_armor_bonus_value",
+        "action_value":
+        {
+            "values": [0.0, 45.0, 90.0, 135.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_range_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
+        }
+    },
+    {
+        "action_value_id": "deploy_combat_swarm_shield_bonus_value",
+        "action_value":
+        {
+            "values": [0.0, 80.0, 160.0, 240.0, 320.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "deploy_combat_swarm_damage_bonus_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "deploy_combat_swarm_damage_bonus_value"
+        }
+    }]
+}

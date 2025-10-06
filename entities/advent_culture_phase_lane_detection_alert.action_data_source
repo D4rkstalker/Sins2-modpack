@@ -1,0 +1,102 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_lane_detector_notification_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+				"dominant_culture_player_relationship": "self"
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_research_lab_structure_phase_lane_detector_on_planet"
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_lane_detector_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_dominant_culture",
+				"dominant_culture_player_relationship": "self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_lane_detector_phase_lane_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "titan",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_research_lab_structure_phase_lane_detector_on_enemy"
+				}
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "phase_lane_distance",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "apply_buff_to_phase_lanes",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_phase_lanes",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "phase_lane_distance",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "advent_culture_phase_lane_detection_on_phase_lane"
+            }]
+        }
+    }]
+}

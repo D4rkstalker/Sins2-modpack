@@ -1,0 +1,145 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "judgement_high_priority_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "judgement_low_priority_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_ability"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "judgement_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "judgement_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [50.0, 60.0, 70.0, 80.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "judgement_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 55.0, 50.0, 45.0, 35.0]
+        }
+    },
+    {
+        "action_value_id": "judgement_duration_value",
+        "action_value":
+        {
+            "values": [20.0, 30.0, 40.0, 50.0, 70.0]
+        }
+    },
+    {
+        "action_value_id": "judgement_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "judgement_hull_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_max_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [0.03, 0.03, 0.03, 0.03, 0.03]
+        }
+    },
+    {
+        "action_value_id": "judgement_penetration_value",
+        "action_value":
+        {
+            "values": [750.0, 750.0, 750.0, 750.0, 750.0]
+        }
+    },
+    {
+        "action_value_id": "judgement_ability_cost_bonus_value",
+        "action_value":
+        {
+            "values": [0.35, 0.4, 0.45, 0.5, 0.6],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.001, 0.001, 0.001, 0.001]
+            }
+        }
+    },
+    {
+        "action_value_id": "judgement_ability_cooldown_bonus_value",
+        "action_value":
+        {
+            "values": [0.35, 0.4, 0.45, 0.5, 0.6],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.001, 0.001, 0.001, 0.001]
+            }
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "judgement_ability_cost_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_antimatter_cost",
+            "value_behavior": "scalar",
+            "value_id": "judgement_ability_cost_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "judgement_ability_cooldown_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "judgement_ability_cooldown_bonus_value"
+        }
+    }]
+}

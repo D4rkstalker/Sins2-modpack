@@ -1,0 +1,43 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "suppress_scuttle_ui_notifications": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_planet_scuttle_completed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_stripped_to_the_core_action"
+                },
+                {
+                    "operator_type": "give_destroy_planet_rewards",
+                    "rewards_destination_player":
+                    {
+                        "player_type": "buff_owner_player"
+                    }
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "destroyed_planet"
+                }]
+            }]
+        }
+    }]
+}

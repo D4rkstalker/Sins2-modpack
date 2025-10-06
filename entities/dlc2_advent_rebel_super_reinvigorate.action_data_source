@@ -1,0 +1,212 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "reinvigorate_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.9
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "percentage_missing_threshold": 0.75
+                },
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.5
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "reinvigorate_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.9
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "percentage_missing_threshold": 0.75
+                },
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.5
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "reinvigorate_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "reinvigorate_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [5000.0, 5500.0, 6000.0, 6500.0, 7500.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0, 105.0, 110.0, 115.0, 125.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 55.0, 50.0, 45.0, 35.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_radius_value",
+        "action_value":
+        {
+            "values": [5500.0, 6000.0, 6500.0, 7000.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_restore_value",
+        "action_value":
+        {
+            "values": [500.0, 550.0, 600.0, 650.0, 750.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_damage_taken_bonus_value",
+        "action_value":
+        {
+            "values": [-0.1, -0.1, -0.1, -0.1, -0.1],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.00075, -0.00075, -0.00075, -0.00075, -0.00075]
+            }
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_spell_power_bonus_value",
+        "action_value":
+        {
+            "values": [50.0, 50.0, 50.0, 50.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "reinvigorate_damage_output_bonus_value",
+        "action_value":
+        {
+            "values": [0.05, 0.05, 0.05, 0.05, 0.05],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.00075, 0.00075, 0.00075, 0.00075, 0.00075]
+            }
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "reinvigorate_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "reinvigorate_damage_taken_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "reinvigorate_spell_power_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "reinvigorate_spell_power_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "reinvigorate_damage_output_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "reinvigorate_damage_output_bonus_value"
+        }
+    }]
+}

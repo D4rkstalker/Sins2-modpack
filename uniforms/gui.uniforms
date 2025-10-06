@@ -1,0 +1,714 @@
+{
+    "modifier":
+    {
+        "unit_modifier_names":
+        {
+            "ability_cooldown_duration": "unit_modifier.ability_cooldown_duration",
+            "ability_antimatter_cost": "unit_modifier.ability_antimatter_cost",
+            "ability_hull_cost": "unit_modifier.ability_hull_cost",
+            "ability_armor_cost": "unit_modifier.ability_armor_cost",
+            "ability_shields_cost": "unit_modifier.ability_shields_cost",
+            "ability_range": "unit_modifier.ability_range",
+            "max_antimatter": "unit_modifier.max_antimatter",
+            "antimatter_restore_rate": "unit_modifier.antimatter_restore_rate",
+            "max_linear_speed": "unit_modifier.max_linear_speed",
+            "max_linear_acceleration": "unit_modifier.max_linear_acceleration",
+            "max_angular_speed": "unit_modifier.max_angular_speed",
+            "hyperspace_charge_time": "unit_modifier.hyperspace_charge_time",
+            "hyperspace_speed": "unit_modifier.hyperspace_speed",
+            "max_hull_points": "unit_modifier.max_hull_points",
+            "hull_crippled_percentage": "unit_modifier.hull_crippled_percentage",
+            "hull_point_restore_rate": "unit_modifier.hull_point_restore_rate",
+            "hull_point_restore_cooldown_duration_after_damage_taken": "unit_modifier.hull_point_restore_cooldown_duration_after_damage_taken",
+            "hull_point_restore_scalar_after_damage_taken": "unit_modifier.hull_point_restore_scalar_after_damage_taken",
+            "max_armor_points": "unit_modifier.max_armor_points",
+            "armor_point_restore_rate": "unit_modifier.armor_point_restore_rate",
+            "armor_point_restore_cooldown_duration_after_damage_taken": "unit_modifier.armor_point_restore_cooldown_duration_after_damage_taken",
+            "armor_point_restore_scalar_after_damage_taken": "unit_modifier.armor_point_restore_scalar_after_damage_taken",
+            "armor_strength": "unit_modifier.armor_strength",
+            "max_shield_points": "unit_modifier.max_shield_points",
+            "shield_point_restore_rate": "unit_modifier.shield_point_restore_rate",
+            "shield_point_restore_cooldown_duration_after_damage_taken": "unit_modifier.shield_point_restore_cooldown_duration_after_damage_taken",
+            "shield_point_restore_scalar_after_damage_taken": "unit_modifier.shield_point_restore_scalar_after_damage_taken",
+            "shield_burst_restore_points": "unit_modifier.shield_burst_restore_points",
+            "shield_burst_restore_cooldown_duration": "unit_modifier.shield_burst_restore_cooldown_duration",
+            "damage_taken": "unit_modifier.damage_taken",
+            "experience_gained_from_unit_death": "unit_modifier.experience_gained_from_unit_death",
+            "experience_gained_from_planet_bombing": "unit_modifier.experience_gained_from_planet_bombing",
+            "experience_gained_from_loot_collection": "unit_modifier.experience_gained_from_loot_collection",
+            "experience_given_on_death": "unit_modifier.experience_given_on_death",
+            "max_squadron_capacity": "unit_modifier.max_squadron_capacity",
+            "strikecraft_build_time": "unit_modifier.strikecraft_build_time",
+            "credit_income_rate": "unit_modifier.credit_income_rate",
+            "metal_income_rate": "unit_modifier.metal_income_rate",
+            "crystal_income_rate": "unit_modifier.crystal_income_rate",
+            "credit_income_rate_per_population": "unit_modifier.credit_income_rate_per_population",
+            "metal_income_rate_per_population": "unit_modifier.metal_income_rate_per_population",
+            "crystal_income_rate_per_population": "unit_modifier.crystal_income_rate_per_population",
+            "civilian_research_points": "unit_modifier.civilian_research_points",
+            "military_research_points": "unit_modifier.military_research_points",
+            "culture_rate": "unit_modifier.culture_rate",
+            "culture_resistance_rate": "unit_modifier.culture_resistance_rate",
+            "ship_component_price": "unit_modifier.ship_component_price",
+            "self_build_time": "unit_modifier.self_build_time",
+            "spell_power": "unit_modifier.spell_power",
+            "unity_points": "unit_modifier.unity_points",
+            "trade_import_points": "unit_modifier.trade_import_points",
+            "trade_export_credits_points": "unit_modifier.trade_export_credits_points",
+            "trade_export_metal_points": "unit_modifier.trade_export_metal_points",
+            "trade_export_crystal_points": "unit_modifier.trade_export_crystal_points",
+            "loot_collection_duration": "unit_modifier.loot_collection_duration",
+            "phase_resonance_bonus_duration": "empire_modifier.phase_resonance_bonus_duration"
+        },
+        "planet_modifier_names":
+        {
+            "max_civilian_structure_slots": "planet_modifier.max_civilian_structure_slots",
+            "max_military_structure_slots": "planet_modifier.max_military_structure_slots",
+            "commerce_track_credit_income_rate": "planet_modifier.commerce_track_credit_income_rate",
+            "mining_track_metal_income_rate": "planet_modifier.metal_extraction_rate",
+            "mining_track_crystal_income_rate": "planet_modifier.crystal_extraction_rate",
+            "commerce_track_credit_income_rate_per_population": "planet_modifier.commerce_track_credit_income_rate_per_population",
+            "mining_track_metal_income_rate_per_population": "planet_modifier.metal_extraction_rate_per_population",
+            "mining_track_crystal_income_rate_per_population": "planet_modifier.crystal_extraction_rate_per_population",
+            "orbital_extraction_metal_income_rate": "planet_modifier.orbital_extraction_metal_income_rate",
+            "orbital_extraction_crystal_income_rate": "planet_modifier.orbital_extraction_crystal_income_rate",
+            "civilian_research_points": "planet_modifier.civilian_research_points",
+            "military_research_points": "planet_modifier.military_research_points",
+            "civilian_research_points_per_population": "planet_modifier.civilian_research_points_per_population",
+            "military_research_points_per_population": "planet_modifier.military_research_points_per_population",
+            "civilian_research_rate": "planet_modifier.civilian_research_rate",
+            "military_research_rate": "planet_modifier.military_research_rate",
+            "civilian_research_rate_per_population": "planet_modifier.civilian_research_rate_per_population",
+            "military_research_rate_per_population": "planet_modifier.military_research_rate_per_population",
+            "culture_rate": "planet_modifier.culture_rate",
+            "culture_resistance_rate": "planet_modifier.culture_resistance_rate",
+            "unity_points": "planet_modifier.unity_points",
+            "max_health_points": "planet_modifier.max_health_points",
+            "health_points_restore_rate": "planet_modifier.health_points_restore_rate",
+            "max_shield_points": "planet_modifier.max_shield_points",
+            "shield_points_restore_rate": "planet_modifier.shield_points_restore_rate",
+            "planet_shield_burst_restore": "unit_modifier.shield_burst_restore_points",
+            "planet_shield_burst_cooldown": "unit_modifier.shield_burst_restore_cooldown_duration",
+            "max_population_points": "planet_modifier.max_population_points",
+            "population_growth_rate": "planet_modifier.population_growth_rate",
+            "max_allied_population_factor": "planet_modifier.max_allied_population_factor",
+            "neutral_population_assimilation_rate": "planet_modifier.neutral_population_assimilation_rate",
+            "enemy_population_assimilation_rate": "planet_modifier.enemy_population_assimilation_rate",
+            "factory_unit_build_price": "planet_modifier.factory_unit_build_price",
+            "factory_unit_build_time": "planet_modifier.factory_unit_build_time",
+            "factory_exotic_build_time": "planet_modifier.factory_exotic_build_time",
+            "any_development_track_build_price": "planet_modifier.any_development_track_build_price",
+            "any_development_track_build_time": "planet_modifier.any_development_track_build_time",
+            "defense_track_build_price": "planet_modifier.defense_track_build_price",
+            "defense_track_build_time": "planet_modifier.defense_track_build_time",
+            "logistics_track_build_price": "planet_modifier.logistics_track_build_price",
+            "logistics_track_build_time": "planet_modifier.logistics_track_build_time",
+            "commerce_track_build_price": "planet_modifier.commerce_track_build_price",
+            "commerce_track_build_time": "planet_modifier.commerce_track_build_time",
+            "mining_track_build_price": "planet_modifier.mining_track_build_price",
+            "mining_track_build_time": "planet_modifier.mining_track_build_time",
+            "research_track_build_price": "planet_modifier.research_track_build_price",
+            "research_track_build_time": "planet_modifier.research_track_build_time",
+            "focus_track_build_price": "planet_modifier.focus_track_build_price",
+            "focus_track_build_time": "planet_modifier.focus_track_build_time",
+            "surveying_track_build_price": "planet_modifier.surveying_track_build_price",
+            "surveying_track_build_time": "planet_modifier.surveying_track_build_time",
+            "structure_build_price": "planet_modifier.structure_build_price",
+            "structure_build_time": "planet_modifier.structure_build_time",
+            "gravity_well_radius": "planet_modifier.gravity_well_radius",
+            "structure_builder_count": "planet_modifier.structure_builder_count",
+            "max_garrison_supply": "planet_modifier.max_garrison_supply",
+            "bombing_damage_taken": "planet_modifier.bombing_damage_taken",
+            "bombing_population_damage_taken": "planet_modifier.bombing_population_damage_taken",
+            "planet_component_price": "planet_modifier.planet_component_price",
+            "max_planet_component_slots": "planet_modifier.max_planet_component_slots",
+            "max_influence_points": "planet_modifier.max_influence_points",
+            "mana_restore_rate": "planet_modifier.mana_restore_rate",
+            "bonus_max_mana": "planet_modifier.bonus_max_mana",
+            "mana_restore_rate_per_population": "planet_modifier.mana_restore_rate_per_population",
+            "bonus_max_mana_per_population": "planet_modifier.bonus_max_mana_per_population"
+        },
+        "weapon_modifier_names":
+        {
+            "normal":
+            {
+                "damage": "weapon_modifier.damage",
+                "population_damage": "weapon_modifier.population_damage",
+                "cooldown_duration": "weapon_modifier.cooldown_duration",
+                "range": "weapon_modifier.range",
+                "tracking_speed": "weapon_modifier.tracking_speed",
+                "bypass_shields_chance": "weapon_modifier.bypass_shields_chance"
+            },
+            "planet_bombing":
+            {
+                "damage": "weapon_modifier.planet_bombing_damage",
+                "population_damage": "weapon_modifier.population_damage",
+                "cooldown_duration": "weapon_modifier.planet_bombing_cooldown_duration",
+                "range": "weapon_modifier.planet_bombing_range",
+                "tracking_speed": "",
+                "bypass_shields_chance": ""
+            }
+        },
+        "unit_factory_modifier_names":
+        {
+            "build_time": "unit_factory_modifier.build_time"
+        },
+        "exotic_factory_modifier_names":
+        {
+            "build_time": "exotic_factory_modifier.build_time"
+        },
+        "strikecraft_modifier_names":
+        {
+            "squadron_size": "strikecraft_modifier.squadron_size"
+        },
+        "npc_modifier_names":
+        {
+            "buy_metal_credits_cost": "npc_modifier.buy_metal_credits_cost",
+            "sell_metal_credits_received": "npc_modifier.sell_metal_credits_received",
+            "buy_crystal_credits_cost": "npc_modifier.buy_crystal_credits_cost",
+            "sell_crystal_credits_received": "npc_modifier.sell_crystal_credits_received",
+            "sell_exotic_credits_received": "npc_modifier.sell_exotic_credits_received",
+            "send_raid_supply": "npc_modifier.send_raid_supply",
+            "auction_bid_bonus_influence_points": "npc_modifier.auction_bid_bonus_influence_points",
+            "reputation_ability_cooldown_duration": "npc_modifier.reputation_ability_cooldown_duration"
+        },
+        "empire_modifier_names":
+        {
+            "credit_income_rate": "empire_modifier.credit_income_rate",
+            "metal_income_rate": "empire_modifier.metal_income_rate",
+            "crystal_income_rate": "empire_modifier.crystal_income_rate",
+            "credit_income_rate_per_population": "empire_modifier.credit_income_rate_per_population",
+            "metal_income_rate_per_population": "empire_modifier.metal_income_rate_per_population",
+            "crystal_income_rate_per_population": "empire_modifier.crystal_income_rate_per_population",
+            "percentage_of_other_players_total_credit_income": "empire_modifier.percentage_of_other_players_total_credit_income",
+            "surveying_bonus_exotic_chance": "empire_modifier.surveying_bonus_exotic_chance",
+            "factory_build_exotic_price": "empire_modifier.factory_build_exotic_price",
+            "civilian_research_rate": "empire_modifier.civilian_research_rate",
+            "military_research_rate": "empire_modifier.military_research_rate",
+            "civilian_research_rate_per_population": "empire_modifier.civilian_research_rate_per_population",
+            "military_research_rate_per_population": "empire_modifier.military_research_rate_per_population",
+            "max_supply": "empire_modifier.max_supply",
+            "trade_credits_income_rate": "empire_modifier.trade_credits_income_rate",
+            "trade_metal_income_rate": "empire_modifier.trade_metal_income_rate",
+            "trade_crystal_income_rate": "empire_modifier.trade_crystal_income_rate",
+            "max_influence_points": "empire_modifier.max_influence_points",
+            "influence_points_recharge_rate": "empire_modifier.influence_points_recharge_rate",
+            "unity_points": "unit_modifier.unity_points",
+            "unity_max_mana_points": "empire_modifier.unity_max_mana_points",
+            "unity_mana_restore_rate": "empire_modifier.unity_mana_restore_rate"
+        }
+    },
+    "hud_unit_icon":
+    {
+        "home_planet_overlay": "hud_home_planet_overlay_circular",
+        "unit_level_font": "sins_agency_bold_12",
+        "unit_level_layout":
+        {
+            "horizontal_alignment": "left",
+            "vertical_alignment": "top",
+            "width": 20,
+            "height": 20
+        },
+        "unit_level_color": "neutral_value",
+        "planet_level_font": "sins_agency_bold_12",
+        "planet_level_layout":
+        {
+            "horizontal_alignment": "left",
+            "vertical_alignment": "top",
+            "width": 20,
+            "height": 20
+        },
+        "planet_level_color": "neutral_value",
+        "has_unspent_ability_points_icon": "unspent_ability_points_tooltip_icon",
+        "has_unspent_ability_points_layout":
+        {
+            "horizontal_alignment": "right",
+            "vertical_alignment": "top",
+            "width": 20,
+            "height": 20
+        },
+        "has_planet_maintenance_costs_icon": "has_planet_maintenance_costs_icon",
+        "has_planet_maintenance_costs_layout":
+        {
+            "horizontal_alignment": "right",
+            "vertical_alignment": "top",
+            "width": 20,
+            "height": 20
+        },
+        "special_operation_unit_icon_layout":
+        {
+            "horizontal_alignment": "right",
+            "vertical_alignment": "bottom",
+            "width": 20,
+            "height": 20
+        },
+        "metal_asteroid_hud_icon": "metal_asteroid_hud_icon",
+        "crystal_asteroid_hud_icon": "crystal_asteroid_hud_icon"
+    },
+    "asset":
+    {
+        "asset_types":
+        {
+            "credits":
+            {
+                "name": "asset.credits.name",
+                "hud_icon": "credits_asset_icon",
+                "tooltip_icon": "credits_asset_tooltip_icon",
+                "main_view_overlay_icon": "credits_asset_icon",
+                "value_colors":
+                {
+                    "none": "asset_value",
+                    "insufficient": "asset_value_insufficient",
+                    "refund": "asset_value_refund",
+                    "gift": "asset_value_gift",
+                    "offer": "asset_value_offer"
+                },
+                "positive_rate_min_color": "positive_value",
+                "positive_rate_max_color": "positive_value",
+                "positive_rate_max_value": 20,
+                "negative_rate_min_color": "negative_value",
+                "negative_rate_max_color": "negative_value",
+                "negative_rate_max_value": 4
+            },
+            "metal":
+            {
+                "name": "asset.metal.name",
+                "hud_icon": "metal_asset_icon",
+                "tooltip_icon": "metal_asset_tooltip_icon",
+                "main_view_overlay_icon": "metal_asset_icon",
+                "value_colors":
+                {
+                    "none": "asset_value",
+                    "insufficient": "asset_value_insufficient",
+                    "refund": "asset_value_refund",
+                    "gift": "asset_value_gift",
+                    "offer": "asset_value_offer"
+                },
+                "positive_rate_min_color": "positive_value",
+                "positive_rate_max_color": "positive_value",
+                "positive_rate_max_value": 20,
+                "negative_rate_min_color": "negative_value",
+                "negative_rate_max_color": "negative_value",
+                "negative_rate_max_value": 4
+            },
+            "crystal":
+            {
+                "name": "asset.crystal.name",
+                "hud_icon": "crystal_asset_icon",
+                "tooltip_icon": "crystal_asset_tooltip_icon",
+                "main_view_overlay_icon": "crystal_asset_icon",
+                "value_colors":
+                {
+                    "none": "asset_value",
+                    "insufficient": "asset_value_insufficient",
+                    "refund": "asset_value_refund",
+                    "gift": "asset_value_gift",
+                    "offer": "asset_value_offer"
+                },
+                "positive_rate_min_color": "positive_value",
+                "positive_rate_max_color": "positive_value",
+                "positive_rate_max_value": 20,
+                "negative_rate_min_color": "negative_value",
+                "negative_rate_max_color": "negative_value",
+                "negative_rate_max_value": 4
+            }
+        }
+    },
+    "unit_attribute":
+    {
+        "colors":
+        {
+            "hull_points":
+            {
+                "low": "hull_points",
+                "medium": "hull_points",
+                "high": "hull_points"
+            },
+            "crippled_hull_points":
+            {
+                "low": "crippled_hull_points",
+                "medium": "crippled_hull_points",
+                "high": "crippled_hull_points"
+            },            
+            "armor_points":
+            {
+                "low": "armor_points",
+                "medium": "armor_points",
+                "high": "armor_points"
+            },            
+            "shield_points":
+            {
+                "low": "shield_points",
+                "medium": "shield_points",
+                "high": "shield_points"
+            },
+            "antimatter":
+            {
+                "low": "antimatter",
+                "medium": "antimatter",
+                "high": "antimatter"
+            },
+            "planet_health_points":
+            {
+                "low": "hull_points",
+                "medium": "hull_points",
+                "high": "hull_points"
+            },
+            "planet_shield_points":
+            {
+                "low": "shield_points",
+                "medium": "shield_points",
+                "high": "shield_points"
+            },
+            "build_progress":
+            {
+                "low": "build_progress",
+                "medium": "build_progress",
+                "high": "build_progress"
+            },
+            "scuttle_progress":
+            {
+                "low": "scuttle_progress",
+                "medium": "scuttle_progress",
+                "high": "scuttle_progress"
+            },
+            "planet_population_points":
+            {
+                "low": "planet_population",
+                "medium": "planet_population",
+                "high": "planet_population"
+            }
+        }
+    },
+    "query_status":
+    {
+        "insufficient_research_points_message_format": "query_status.insufficient_research_points_message_format",
+        "insufficient_research_tier_message_format": "query_status.insufficient_research_tier_message_format",
+        "insufficient_exotics_message_format": "query_status.insufficient_exotics_message_format",
+        "missing_weapon_constraint_message_prefix": "failed_query_missing_weapon_constraint_label_prefix",
+        "missing_weapon_constraint_message_suffix": "failed_query_missing_weapon_constraint_label_suffix",
+        "unmet_is_carrier_constraint_message": "failed_query_unmet_is_carrier_constraint_label",
+        "unmet_is_in_own_dominant_culture_constraint_message": "failed_query_unmet_is_in_own_dominant_culture_constraint_label",
+        "unmet_is_in_ally_dominant_culture_constraint_message": "failed_query_unmet_is_in_ally_dominant_culture_constraint_label",
+        "unmet_is_in_enemy_dominant_culture_constraint_message": "failed_query_unmet_is_in_enemy_dominant_culture_constraint_label",
+        "unmet_is_in_any_dominant_culture_constraint_message": "failed_query_unmet_is_in_any_dominant_culture_constraint_label",
+        "unmet_is_not_own_home_planet_constraint_message": "failed_query_unmet_is_not_own_home_planet_constraint_label",
+        "unmet_is_not_ally_home_planet_constraint_message": "failed_query_unmet_is_not_ally_home_planet_constraint_label",
+        "unmet_is_not_enemy_home_planet_constraint_message": "failed_query_unmet_is_not_enemy_home_planet_constraint_label",
+        "unmet_is_not_any_home_planet_constraint_message": "failed_query_unmet_is_not_any_home_planet_constraint_label",
+        "unmet_target_gravity_well_must_have_unit_type_constraint": "failed_query_unmet_target_gravity_well_must_have_unit_type_constraint_label",
+        "messages":
+        {
+            "insufficient_credits": "query_status.insufficient_credits",
+            "insufficient_metal": "query_status.insufficient_metal",
+            "insufficient_crystal": "query_status.insufficient_crystal",
+            "insufficient_exotics": "query_status.insufficient_exotics",
+            "insufficient_civilian_structure_slots": "query_status.insufficient_civilian_structure_slots",
+            "insufficient_civilian_structure_slots_at_max": "query_status.insufficient_civilian_structure_slots_at_max",
+            "insufficient_military_structure_slots": "query_status.insufficient_military_structure_slots",
+            "insufficient_military_structure_slots_at_max": "query_status.insufficient_military_structure_slots_at_max",
+            "insufficient_unit_supply": "query_status.insufficient_unit_supply",
+            "insufficient_unit_supply_at_max_supply": "query_status.insufficient_unit_supply_at_max_supply",
+            "insufficient_antimatter": "query_status.insufficient_antimatter",
+            "insufficient_hull": "query_status.insufficient_hull",
+            "insufficient_shields": "query_status.insufficient_shields",
+            "insufficient_planet_health": "query_status.insufficient_planet_health",
+            "insufficient_squadron_capacity": "query_status.insufficient_squadron_capacity",
+            "insufficient_used_trade_export_points": "query_status.insufficient_used_trade_export_points",
+            "insufficient_unused_trade_import_points": "query_status.insufficient_unused_trade_import_points",
+            "insufficient_unused_trade_export_points": "query_status.insufficient_unused_trade_export_points",
+            "global_unit_limit_exceeded": "query_status.global_unit_limit_exceeded",
+            "star_unit_limit_exceeded": "query_status.star_unit_limit_exceeded",
+            "planet_unit_limit_exceeded": "query_status.planet_unit_limit_exceeded",
+            "gravity_well_unit_limit_exceeded": "query_status.gravity_well_unit_limit_exceeded",
+            "unit_exceeds_planet_slot_limit": "query_status.unit_will_consume_too_many_slots",
+            "research_prerequisites_not_met": "query_status.research_prerequisites_not_met",
+            "wormhole_travel_research_prerequisites_not_met": "query_status.wormhole_travel_research_prerequisites_not_met",
+            "planet_is_already_a_home_planet": "query_status.planet_is_already_a_home_planet",
+            "planet_track_level_is_already_max": "query_status.planet_track_level_is_already_max",
+            "planet_track_is_not_upgrading": "query_status.planet_track_is_not_upgrading",
+            "planet_was_recently_bombed": "query_status.planet_was_recently_bombed",
+            "planet_is_not_building_structure": "query_status.planet_is_not_building_structure",
+            "home_planet_cannot_be_changed_due_to_victory_condition": "query_status.home_planet_cannot_be_changed_due_to_victory_condition",
+            "home_planet_cannot_be_changed_already_changing": "query_status.home_planet_cannot_be_changed_already_changing",
+            "home_planet_cannot_be_changed_due_to_using_bonus_civilian_slots": "query_status.remove_item_civilian_structure_slots_being_used",
+            "home_planet_cannot_be_changed_due_to_using_bonus_military_slots": "query_status.remove_item_military_structure_slots_being_used",
+            "position_is_not_within_gravity_well": "query_status.position_is_not_within_gravity_well",
+            "position_is_not_within_structure_build_distance": "query_status.position_is_not_within_structure_build_distance",
+            "position_has_overlapped_unit": "query_status.position_has_overlapped_unit",
+            "no_free_asteroid": "query_status.no_free_asteroid",
+            "structure_requires_phase_resonance_synchronizer_capacity": "query_status.structure_requires_phase_resonance_synchronizer_capacity",
+            "structure_requires_unity_provider_capacity": "query_status.structure_requires_unity_provider_capacity",
+            "structure_requires_planet_trade_capacity": "query_status.structure_requires_planet_trade_capacity",
+            "structure_requires_research_points": "query_status.structure_requires_research_points",
+            "structure_requires_higher_planet_track_level": "query_status.structure_requires_higher_planet_track_level",
+            "structure_will_never_fit_in_build_radius": "query_status.structure_will_never_fit_in_build_radius",
+            "unit_is_not_owned_by_player": "query_status.unit_is_not_owned_by_player",
+            "unit_is_not_operational": "query_status.unit_is_not_operational",
+            "unit_is_crippled": "query_status.unit_is_crippled",
+            "unit_has_no_weapons": "query_status.unit_has_no_weapons",
+            "unit_cannot_move": "query_status.unit_cannot_move",
+            "unit_cannot_hyperspace_ever": "query_status.unit_cannot_hyperspace_ever",
+            "unit_cannot_hyperspace_now": "query_status.unit_cannot_hyperspace_now",
+            "special_operation_unit_cannot_move_too_far": "query_status.special_operation_unit_cannot_move_too_far",
+            "special_operation_unit_cannot_move_out_of_gravity_well": "query_status.special_operation_unit_cannot_move_out_of_gravity_well",
+            "unit_has_no_path_to_destination": "query_status.unit_has_no_path_to_destination",
+            "unit_has_no_path_to_destination_due_to_gravity_well_unit_limit": "query_status.unit_has_no_path_to_destination_due_to_gravity_well_unit_limit",
+            "unit_has_no_gravity_well_to_retreat_to": "query_status.unit_has_no_gravity_well_to_retreat_to",
+            "unit_has_no_gravity_well_to_retreat_from": "query_status.unit_has_no_gravity_well_to_retreat_from",
+            "target_is_not_detected": "query_status.target_is_not_detected",
+            "target_is_out_of_range_and_targetter_cannot_move": "query_status.target_is_out_of_range_and_targetter_cannot_move",
+            "target_is_out_of_range_and_targetter_has_no_path": "query_status.target_is_out_of_range_and_targetter_has_no_path",
+            "target_is_out_of_jump_count_range": "query_status.target_is_out_of_jump_count_range",
+            "target_is_out_of_gravity_well_range": "query_status.target_is_out_of_gravity_well_range",
+            "target_cannot_be_damaged": "query_status.target_cannot_be_damaged",
+            "target_alliance_relationship_is_not_enemy": "query_status.target_alliance_relationship_is_not_enemy",
+            "target_has_no_matching_unit_type": "query_status.target_has_no_matching_unit_type",
+            "target_has_no_matching_unit_definition": "query_status.target_has_no_matching_unit_definition",
+            "target_has_no_matching_ownerships": "query_status.target_has_no_matching_ownerships",
+            "target_has_failed_stateless_constraint": "query_status.target_has_failed_stateless_constraint",
+            "target_has_failed_stateful_constraint": "query_status.target_has_failed_stateful_constraint",
+            "target_cannot_be_targeted_by_enemies": "query_status.target_cannot_be_targeted_by_enemies",
+            "target_cannot_be_targeted_by_allies": "query_status.target_cannot_be_targeted_by_allies",
+            "target_is_dead": "query_status.target_is_dead",
+            "target_is_unbuilt": "query_status.target_is_unbuilt",
+            "target_is_fully_unbuilt": "query_status.target_is_fully_unbuilt",
+            "target_is_not_explored": "query_status.target_is_not_explored",
+            "target_is_in_phase_space": "query_status.target_is_in_phase_space",
+            "target_destination_is_not_within_gravity_well": "query_status.target_destination_is_not_within_gravity_well",
+            "target_is_not_a_planet": "query_status.target_is_not_a_planet",
+            "target_is_required": "query_status.target_is_required",
+            "target_already_colonized": "query_status.target_already_colonized",
+            "target_already_being_colonized": "query_status.target_already_being_colonized",
+            "target_can_never_be_colonized": "query_status.target_can_never_be_colonized",
+            "target_direction_not_valid": "query_status.target_direction_not_valid",
+            "unit_factory_does_not_exist": "query_status.unit_factory_does_not_exist",
+            "unit_factory_does_not_support_build_kind": "query_status.unit_factory_does_not_support_build_kind",
+            "unit_factory_is_not_functional": "query_status.unit_factory_is_not_functional",
+            "unit_factory_is_not_building_unit": "query_status.unit_factory_is_not_building_unit",
+            "exotic_factory_does_not_exist": "query_status.exotic_factory_does_not_exist",
+            "exotic_type_is_not_buildable_ever": "query_status.exotic_type_is_not_buildable_ever",
+            "exotic_factory_is_not_functional": "query_status.exotic_factory_is_not_functional",
+            "exotic_factory_is_not_building_exotic": "query_status.exotic_factory_is_not_building_exotic",
+            "ability_level_is_not_valid": "query_status.ability_level_is_not_valid",
+            "ability_source_item_unknown": "query_status.ability_source_item_unknown",
+            "ability_source_item_unbuilt": "query_status.ability_source_item_unbuilt",
+            "ability_source_item_slot_unbuilt": "query_status.ability_source_item_slot_unbuilt",
+            "ability_construction_not_finished": "query_status.ability_construction_not_finished",
+            "ability_action_constraint_is_not_satisfied": "query_status.ability_action_constraint_is_not_satisfied",
+            "ability_is_already_in_use": "query_status.ability_is_already_in_use",
+            "ability_cooldown_is_not_completed": "query_status.ability_cooldown_is_not_completed",
+            "ability_does_not_have_required_charge": "query_status.ability_does_not_have_required_charge",
+            "ability_is_disabled": "query_status.ability_is_disabled",
+            "ability_is_missing_required_structure": "query_status.ability_is_missing_required_structure",
+            "ability_is_missing_required_available_supply": "query_status.ability_is_missing_required_available_supply",
+            "ability_auto_cast_target_action_constraint_satisfied": "query_status.ability_auto_cast_target_action_constraint_satisfied",
+            "increase_ability_level_ability_not_owned_by_player": "query_status.increase_ability_level_ability_not_owned_by_player",
+            "increase_ability_level_does_not_have_internal_level_source": "query_status.increase_ability_level_does_not_have_internal_level_source",
+            "increase_ability_level_already_max_level": "query_status.increase_ability_level_already_max_level",
+            "increase_ability_level_owner_has_no_levels": "query_status.increase_ability_level_owner_has_no_levels",
+            "increase_ability_level_owner_not_high_enough_level": "query_status.increase_ability_level_owner_not_high_enough_level",
+            "increase_ability_level_owner_has_no_available_ability_points": "query_status.increase_ability_level_owner_has_no_available_ability_points",
+            "research_subject_not_owned": "query_status.research_subject_not_owned",
+            "player_lost": "query_status.player_lost",
+            "npc_is_dead": "query_status.npc_is_dead",
+            "research_subject_already_researching": "query_status.research_subject_already_researching",
+            "research_subject_already_completed": "query_status.research_subject_already_completed",
+            "research_subject_not_researching": "query_status.research_subject_not_researching",
+            "research_subject_required_allied_player_race_missing": "query_status.research_subject_required_allied_player_race_missing",
+            "carrier_slot_index_is_invalid": "query_status.carrier_slot_index_is_invalid",
+            "carrier_slot_is_already_empty": "query_status.carrier_slot_is_already_empty",
+            "colonization_is_disabled": "query_status.colonization_is_disabled",
+            "other_item_requirements_needed_item_missing": "query_status.other_item_requirements_needed_item_missing",
+            "other_item_requirements_mutually_exclusive_item_already_exists": "query_status.other_item_requirements_mutually_exclusive_item_already_exists",
+            "purchase_item_buying_player_is_not_planet_owner": "query_status.purchase_item_buying_player_is_not_planet_owner",
+            "purchase_item_buying_player_is_not_ship_owner": "query_status.purchase_item_buying_player_is_not_ship_owner",
+            "purchase_item_not_in_player_inventory": "query_status.purchase_item_not_in_player_inventory",
+            "purchase_item_no_ship_component_slot_available": "query_status.purchase_item_no_ship_component_slot_available",
+            "purchase_item_no_planet_component_slot_available": "query_status.purchase_item_no_planet_component_slot_available",
+            "purchase_item_finite_item_and_none_in_inventory": "query_status.purchase_item_finite_item_and_none_in_inventory",
+            "purchase_item_planet_type_is_never_valid": "query_status.purchase_item_planet_type_is_never_valid",
+            "purchase_item_planet_not_at_required_level": "query_status.purchase_item_planet_not_at_required_level",
+            "purchase_item_owner_constraint_not_satisfied": "query_status.purchase_item_owner_constraint_not_satisfied",
+            "purchase_item_unit_missing_required_tag": "query_status.purchase_item_unit_missing_required_tag",
+            "purchase_item_unit_is_not_fully_built": "query_status.purchase_item_unit_is_not_fully_built",
+            "purchase_item_missing_required_trade_port_structure": "query_status.purchase_item_missing_required_trade_port_structure",
+            "purchase_item_unit_has_max_count_on_unit_already": "query_status.purchase_item_unit_has_max_count_on_unit_already",
+            "remove_item_not_owned_by_unit": "query_status.remove_item_not_owned_by_unit",
+            "remove_item_ability_being_used": "query_status.remove_item_ability_being_used",
+            "remove_item_cannot_remove_artifact": "query_status.remove_item_cannot_remove_artifact",
+            "remove_item_civilian_structure_slots_being_used": "query_status.remove_item_civilian_structure_slots_being_used",
+            "remove_item_military_structure_slots_being_used": "query_status.remove_item_military_structure_slots_being_used",
+            "remove_item_is_other_item_requirement": "query_status.remove_item_is_other_item_requirement",
+            "alliance_cannot_be_broken_when_not_allied": "query_status.alliance_cannot_be_broken_when_not_allied",
+            "alliance_cannot_be_broken_when_permanently_allied": "query_status.alliance_cannot_be_broken_when_permanently_allied",
+            "alliance_cannot_be_broken_when_locked": "query_status.alliance_cannot_be_broken_when_locked",
+            "alliance_offer_player_lost": "query_status.alliance_offer_player_lost",
+            "alliance_offer_has_unowned_planet": "query_status.alliance_offer_has_unowned_planet",
+            "alliance_offer_has_unconfirmed_planet": "query_status.alliance_offer_has_unconfirmed_planet",
+            "alliance_offer_version_mismatch": "query_status.alliance_offer_version_mismatch",
+            "alliance_offer_expired": "query_status.alliance_offer_expired",
+            "alliance_offer_planet_not_a_planet": "query_status.alliance_offer_planet_not_a_planet",
+            "alliance_offer_planet_never_detected": "query_status.alliance_offer_planet_never_detected",
+            "alliance_offer_planet_not_owned_by_player": "query_status.alliance_offer_planet_not_owned_by_player",
+            "npc_market_is_dead": "query_status.npc_market_is_dead",
+            "npc_market_requires_alliance": "query_status.npc_market_requires_alliance",
+            "npc_market_does_not_match_exclusive_player": "query_status.npc_market_does_not_match_exclusive_player",
+            "npc_market_is_not_discovered": "query_status.npc_market_is_not_discovered",
+            "npc_market_does_not_want_exotic": "query_status.npc_market_does_not_want_exotic",
+            "npc_is_already_revealed": "query_status.npc_is_already_revealed",
+            "npc_alliance_broken": "query_status.npc_alliance_broken",
+            "npc_reputatation_level_is_not_valid": "query_status.npc_reputatation_level_is_not_valid",
+            "npc_reputatation_level_is_at_max_level": "query_status.npc_reputatation_level_is_at_max_level",
+            "npc_reputation_reward_cooldown_is_not_completed": "query_status.npc_reputation_reward_cooldown_is_not_completed",
+            "npc_reputation_reward_target_is_out_of_gravity_well_range": "query_status.target_is_out_of_gravity_well_range",
+            "insufficient_influence_points": "query_status.insufficient_influence_points",
+            "insufficient_player_phase_resonance_points": "query_status.insufficient_player_phase_resonance_points",
+            "insufficient_unity_points": "query_status.insufficient_unity_points",
+            "insufficient_unity_max_mana": "query_status.insufficient_unity_max_mana",
+            "insufficient_unity_mana": "query_status.insufficient_unity_mana",
+            "unity_ability_cooldown_is_not_completed": "query_status.unity_ability_cooldown_is_not_completed",
+            "no_unit_can_join_fleet": "query_status.no_unit_can_join_fleet",
+            "player_ai_directive_requires_synergy_alliance": "query_status.player_ai_directive_requires_synergy_alliance",
+            "player_ai_directive_already_exists": "query_status.player_ai_directive_already_exists",
+            "player_ai_directive_is_owned_by_another_player": "query_status.player_ai_directive_is_owned_by_another_player",
+            "player_ai_directive_cannot_reach_target": "query_status.player_ai_directive_cannot_reach_target"
+        },
+        "icons":
+        {
+            "research_prerequisites_not_met": "research_prerequisites_not_met_icon",
+            "insufficient_civilian_structure_slots": "insufficient_civilian_structure_slots_icon",
+            "insufficient_civilian_structure_slots_at_max": "insufficient_civilian_structure_slots_icon",
+            "insufficient_military_structure_slots": "insufficient_military_structure_slots_icon",
+            "insufficient_military_structure_slots_at_max": "insufficient_military_structure_slots_icon",
+            "insufficient_credits": "credits_asset_tooltip_icon",
+            "insufficient_metal": "metal_asset_tooltip_icon",
+            "insufficient_crystal": "crystal_asset_tooltip_icon",
+            "insufficient_antimatter": "insufficient_antimatter_icon",
+            "insufficient_military_research_tier": "insufficient_military_research_points_icon",
+            "insufficient_civilian_research_tier": "insufficient_civilian_research_points_icon",
+            "insufficient_military_research_points": "insufficient_military_research_points_icon",
+            "insufficient_civilian_research_points": "insufficient_civilian_research_points_icon",
+            "insufficient_unit_supply": "insufficient_unit_supply_icon",
+            "insufficient_unit_supply_at_max_supply": "insufficient_unit_supply_icon",
+            "exotic_factory_does_not_exist": "exotic_factory_does_not_exist_icon",
+            "unit_factory_is_not_functional": "unit_factory_is_not_functional_icon",
+            "purchase_item_no_ship_component_slot_available": "purchase_item_no_ship_component_slot_available_icon",
+            "purchase_item_no_planet_component_slot_available": "purchase_item_no_planet_component_slot_available_icon"
+        },
+        "target_filter_unit_type_names": 
+        {
+            "strikecraft": "target_filter_unit_type.strikecraft_name",
+            "corvette": "target_filter_unit_type.corvette_name",
+            "frigate": "target_filter_unit_type.frigate_name",
+            "cruiser": "target_filter_unit_type.cruiser_name",
+            "capital_ship": "target_filter_unit_type.capital_ship_name",
+            "titan": "target_filter_unit_type.titan_name",
+            "structure": "target_filter_unit_type.structure_name",
+            "starbase": "target_filter_unit_type.starbase_name",
+            "planet": "target_filter_unit_type.planet_name",
+            "star": "target_filter_unit_type.star_name",
+            "gravity_well": "target_filter_unit_type.gravity_well_name",
+            "phase_lane": "target_filter_unit_type.phase_lane_name",
+            "asteroid": "target_filter_unit_type.asteroid_name",
+            "torpedo": "target_filter_unit_type.torpedo_name",
+            "cannon_shell": "target_filter_unit_type.cannon_shell_name",
+            "loot": "target_filter_unit_type.loot_name",
+            "debris": "target_filter_unit_type.debris_name",
+            "uncolonizable": "target_filter_unit_type.uncolonizable_name",
+            "untargetable": "target_filter_unit_type.untargetable_name"
+        },
+        "default_not_ok_icon": "hud_default_not_ok_status_icon"
+    },
+    "structure_slot_tooltip_icons":
+    {
+        "civilian": "civilian_structure_slots_tooltip_icon",
+        "military": "military_structure_slots_tooltip_icon"
+    },
+    "structure_builder_tooltip_icon": "",
+    "home_planet_tooltip_icon": "home_planet_tooltip_icon",
+    "planet_component_items_tooltip_icon": "planet_component_items_tooltip_icon",
+    "inline_icons": [
+    {
+        "name": "credits",
+        "icon": "credits_asset_tooltip_icon"
+    },
+    {
+        "name": "metal",
+        "icon": "metal_asset_tooltip_icon"
+    },
+    {
+        "name": "crystal",
+        "icon": "crystal_asset_tooltip_icon"
+    },
+    {
+        "name": "population",
+        "icon": "population_tooltip_icon"
+    },
+    {
+        "name": "planet_health",
+        "icon": "planet_health_points_tooltip_icon"
+    }],
+    "target_filter_unit_type_names":
+    {
+        "strikecraft": "target_filter_unit_type.strikecraft",
+        "corvette": "target_filter_unit_type.corvette",
+        "frigate": "target_filter_unit_type.frigate",
+        "capital_ship": "target_filter_unit_type.capital_ship",
+        "titan": "target_filter_unit_type.titan",
+        "structure": "target_filter_unit_type.structure",
+        "starbase": "target_filter_unit_type.starbase"
+    },
+    "hud_empire_units_window":
+    {
+        "capital_ship_view_tags": [
+            "capital_ship",
+            "super_capital_ship",
+            "titan",
+			"mem_limited_capital",
+			"mem_supercapital",
+			"mem_superheavy_cruiser"
+        ],
+        "starbase_view_tags": [
+            "starbase"]
+    },
+    "ping_icons":
+    {
+        "attention": "ping_attention_icon",
+        "attack": "ping_attack_icon",
+        "defend": "ping_defend_icon"
+    },
+    "ping_tooltip_icons":
+    {
+        "attention": "ping_attention_tooltip_icon",
+        "attack": "ping_attack_tooltip_icon",
+        "defend": "ping_defend_tooltip_icon"
+    },
+    "simulation_float_option_scalar_value_color": "highlighted_value",
+    "server_tag_names":
+    {
+        "mentoring": "game_server_tag_name.mentoring",
+        "casual_ffa": "game_server_tag_name.casual_ffa",
+        "casual_teams": "game_server_tag_name.casual_teams",
+        "casual_vs_ai": "game_server_tag_name.casual_vs_ai",
+        "normal_ffa": "game_server_tag_name.normal_ffa",
+        "normal_teams": "game_server_tag_name.normal_teams",
+        "normal_vs_ai": "game_server_tag_name.normal_vs_ai",
+        "expert_ffa": "game_server_tag_name.expert_ffa",
+        "expert_teams": "game_server_tag_name.expert_teams",
+        "expert_vs_ai": "game_server_tag_name.expert_vs_ai"
+    },
+    "server_tag_descriptions":
+    {
+        "mentoring": "game_server_tag_description.mentoring",
+        "casual_ffa": "game_server_tag_description.casual_ffa",
+        "casual_teams": "game_server_tag_description.casual_teams",
+        "casual_vs_ai": "game_server_tag_description.casual_vs_ai",
+        "normal_ffa": "game_server_tag_description.normal_ffa",
+        "normal_teams": "game_server_tag_description.normal_teams",
+        "normal_vs_ai": "game_server_tag_description.normal_vs_ai",
+        "expert_ffa": "game_server_tag_description.expert_ffa",
+        "expert_teams": "game_server_tag_description.expert_teams",
+        "expert_vs_ai": "game_server_tag_description.expert_vs_ai"
+    }    
+}

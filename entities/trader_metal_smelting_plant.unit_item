@@ -1,0 +1,38 @@
+{
+    "version": 0,
+    "item_type": "planet_component",
+    "build_group_id": "economy",
+    "hud_icon": "trader_metal_smelting_plant_unit_item_hud_icon",
+    "tooltip_icon": "trader_metal_smelting_plant_unit_item_hud_icon",
+    "tooltip_picture": "trader_metal_smelting_plant_unit_item_tooltip_picture",
+    "name": "trader_metal_smelting_plant_unit_item_name",
+    "description": "trader_metal_smelting_plant_unit_item_description",
+    "build_time": 60.0,
+    "price":
+    {
+        "credits": 750.0,
+        "metal": 200.0,
+        "crystal": 100.0
+    },
+    "max_count_on_unit": 1,
+    "planet_type_groups": [
+    {
+        "planet_types": [
+			"volcanic"
+        ],
+        "build_prerequisites": [
+			["trader_unlock_metal_smelting_plant_unit_item"]
+        ]
+    }],
+    "planet_modifiers": [
+    {
+        "modifier_type": "mining_track_metal_income_rate_per_population",
+        "value_behavior": "scalar",
+        "values": [0.25]
+    },
+    {
+        "modifier_type": "factory_unit_build_time",
+        "value_behavior": "scalar",
+        "values": [-0.15]
+    }]
+}

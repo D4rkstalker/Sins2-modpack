@@ -1,0 +1,183 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "nano_culling_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_vasari_rebel_super_nano_culling",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nano_culling_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_vasari_rebel_super_nano_culling",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "has_missing_hull",
+                "percentage_missing_threshold": 0.2
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nano_culling_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_carrier_capital_ship_repair_cloud",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "nano_culling_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0, 15.0, 15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [8500.0, 8500.0, 8500.0, 8500.0, 8500.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [30.0, 36.0, 42.0, 48.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_cooldown_time_value",
+        "action_value":
+        {
+            "values": [45.0, 42.0, 39.0, 36.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [12.0, 15.0, 18.0, 21.0, 27.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_radius_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_normal_damage_rate_value",
+        "action_value":
+        {
+            "values": [18.0, 21.0, 24.0, 27.0, 33.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_damaged_damage_rate_value",
+        "action_value":
+        {
+            "values": [90.0, 102.0, 114.0, 126.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_penetration_value",
+        "action_value":
+        {
+            "values": [420.0, 420.0, 420.0, 420.0, 420.0]
+        }
+    },
+    {
+        "action_value_id": "nano_culling_hull_damage_trigger_value",
+        "action_value":
+        {
+            "transform_type": "per_max_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.81, 0.84, 0.87, 0.9, 0.96]
+        }
+    }]
+}

@@ -1,0 +1,110 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "anima_tempest_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "anima_tempest_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "anima_tempest_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "anima_tempest_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "anima_tempest_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "anima_tempest_range_value",
+        "action_value":
+        {
+            "values": [20000.0, 30000.0, 40000.0, 50000.0, 60000.0]
+        }
+    },
+    {
+        "action_value_id": "anima_tempest_duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "anima_tempest_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.15, 0.3, 0.45, 0.60, 0.75],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.001, 0.001, 0.001, 0.001]
+            }
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "anima_tempest_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "anima_tempest_weapon_damage_bonus_value"
+        }
+    }]
+}

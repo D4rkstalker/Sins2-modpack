@@ -1,0 +1,137 @@
+{
+    "version": 0,
+    "action_data_source": "trader_transport_capital_ship_boarding_party",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6],
+    "active_actions":
+    {
+		"cooldown_time": "boarding_party_cooldown_value",
+		"antimatter_cost": "boarding_party_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+					"buff": "trader_transport_capital_ship_boarding_party_on_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "boarding_party_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "action_data_source",
+                    "mesh_point": "hangar",
+                    "effects":
+                    {
+                        "muzzle_effect": "trader_transport_capital_ship_scout_muzzle",
+                        "projectile_travel_effect": "trader_transport_capital_ship_scout_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "boarding_party_target_filter"
+		],
+		"range": "boarding_party_range_value",
+        "auto_cast":
+        {
+			"enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "boarding_party_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "boarding_party_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "renzo_boarding_party_hud_icon",
+        "name": "npc_reward.renzo_boarding_party.name",
+        "description": "trader_transport_capital_ship_boarding_party_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "boarding_party_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "boarding_party_damage_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "boarding_party_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "boarding_party_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+		{
+			"header_text": "tooltip.on_unit_destroyed_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "tooltip.unit_converted_tooltip",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "boarding_party_shield_restore_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_restore",
+                "value_id": "boarding_party_armor_restore_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_restore",
+                "value_id": "boarding_party_hull_restore_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

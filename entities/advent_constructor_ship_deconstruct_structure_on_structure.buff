@@ -1,0 +1,86 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+	{
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+					"operator_type": "apply_damage",
+					"damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "deconstruct_structure_damage",
+                    "penetration_value": "deconstruct_structure_pierce"
+                }]
+            }]
+        }
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "first_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_constructor_ship_build_structure_effect_0"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_constructor_ship_build_structure_effect_1"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_constructor_ship_build_structure_effect_2"
+                }]
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_passively_regenerate_hull",
+		"disable_can_passively_regenerate_armor",
+		"disable_can_passively_regenerate_shields",
+		"disable_can_have_shields_burst_restored"],
+    "gui":
+    {
+        "hud_icon": "advent_constructor_ship_deconstruct_structure_ability_hud_icon",
+        "name": "constructor_ship_deconstruct_structure_ability_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "deconstruct_structure_damage",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "deconstruct_structure_pierce",
+                "value_color": "negative"
+            }]
+		}]
+    }
+}

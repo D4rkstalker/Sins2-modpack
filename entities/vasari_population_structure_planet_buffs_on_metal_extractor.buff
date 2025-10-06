@@ -1,0 +1,81 @@
+{
+    "version": 0,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "vasari_neutral_metal_asteroid_bonus_value"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["vasari_upgrade_orbital_extraction_0"]
+						]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "vasari_neutral_metal_asteroid_research_1_bonus_value"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["vasari_upgrade_orbital_extraction_1"]
+						]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "vasari_neutral_metal_asteroid_research_2_bonus_value"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["vasari_upgrade_orbital_extraction_2"]
+						]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "vasari_neutral_metal_asteroid_research_3_bonus_value"
+                }]
+            }]
+        }
+    }]
+}

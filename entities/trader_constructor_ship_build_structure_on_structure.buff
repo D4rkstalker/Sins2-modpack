@@ -1,0 +1,501 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "constructor_ship_target"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "hull_minus_crippled_hull",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "structure_max_hull"
+                },
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "structure_max_crippled_hull"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_three_hundred_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_three_hundred_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_three_hundred_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_three_hundred_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_one_hundred_fifty_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_one_hundred_fifty_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_one_hundred_fifty_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_one_hundred_fifty_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_one_hundred_twenty_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_one_hundred_twenty_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_one_hundred_twenty_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_one_hundred_twenty_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_one_hundred_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_one_hundred_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_one_hundred_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_one_hundred_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_ninety_six_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_ninety_six_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_ninety_six_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_ninety_six_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_ninety_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_ninety_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_ninety_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_ninety_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_seventy_five_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_seventy_five_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_seventy_five_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_seventy_five_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_seventy_two_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_seventy_two_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_seventy_two_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_seventy_two_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_sixty_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_sixty_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_sixty_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_sixty_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_fifty_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_fifty_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_fifty_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_fifty_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_fourty_eight_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_fourty_eight_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_fourty_eight_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_fourty_eight_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_twenty_five_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_twenty_five_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_twenty_five_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_twenty_five_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "build_structure_twenty_four_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_twenty_four_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_twenty_four_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_twenty_four_hull_repair"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "first_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_constructor_ship_build_structure_effect_0"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_constructor_ship_build_structure_effect_1"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_constructor_ship_build_structure_effect_2"
+                }]
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "enable_can_update_build_progress"]
+}

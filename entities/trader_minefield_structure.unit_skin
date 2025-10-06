@@ -1,0 +1,52 @@
+{
+    "version": 0,
+    "skin_stages": [
+        {
+            "is_main_view_icon_visible_camera_distance": 6265.660044,
+            "min_camera_distance": 200.046799,
+            "gui": {
+                "hud_icon": "trader_minefield_structure_hud_icon",
+                "hud_monochrome_icon": "trader_minefield_structure_main_view_icon",
+                "hud_picture": "trader_minefield_structure_hud_picture",
+                "name": "trader_minefield_structure_name",
+                "description": "trader_minefield_structure_description"
+            },
+            "unit_mesh": {
+                "mesh": "trader_spacemine_structure",
+                "shader": "ship",
+                "is_shadow_blocker": true
+            },
+            "main_view_icon": {
+                "group": "structure",
+                "icon": "trader_minefield_structure_main_view_icon",
+                "has_rotation": false
+            },
+            "effects": {
+                "flair_effects": [
+                    {
+                        "mesh_point_name": "center",
+                        "particle_effect": "tec_damage_structure",
+                        "constraint": "is_crippled"
+                    },
+                    {
+                        "mesh_point_name": "center",
+                        "particle_effect": "trader_mineblink"
+                    }
+                ]
+            },
+            "sounds": {
+                "dialogue": {
+                    "selected": {
+                        "neutral": [
+                            "Mine_Tech_OnSelected"
+                        ],
+                        "scared": [
+                            "Mine_Tech_OnSelected"
+                        ]
+                    }
+                }
+            },
+            "death_sequence_group": "spacemine"
+        }
+    ]
+}

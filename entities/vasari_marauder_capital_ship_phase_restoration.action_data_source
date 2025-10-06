@@ -1,0 +1,144 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_restoration_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_hull",
+                "percentage_missing_threshold": 0.75
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_restoration_trigger",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_restoration_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "phase_restoration_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 79.0, 68.0, 62.5, 57.0]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_antimatter_restore_value",
+        "action_value":
+        {
+            "transform_type": "per_max_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.66, 0.825, 0.99, 1.0725, 1.155]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0, 105.0, 90.0, 82.5, 75.0]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_hull_restore_value",
+        "action_value":
+        {
+            "transform_type": "per_max_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.66, 0.825, 0.99, 1.0725, 1.155]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_armor_restore_value",
+        "action_value":
+        {
+            "transform_type": "per_max_armor_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.66, 0.825, 0.99, 1.0725, 1.155]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_restore_delay_value",
+        "action_value":
+        {
+            "values": [6.0, 6.0, 6.0, 6.0, 6.0]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_invincibility_value",
+        "action_value":
+        {
+            "values": [0.7, 0.8, 0.9, 1.0, 1.1]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_shield_restore_value",
+        "action_value":
+        {
+            "transform_type": "per_max_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.9, 1.0, 1.1, 1.15, 1.2]
+        }
+    },
+    {
+        "action_value_id": "phase_restoration_trigger_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 75.0, 90.0, 97.5, 105.0]
+        }
+    }]
+}

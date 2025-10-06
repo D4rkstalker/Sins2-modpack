@@ -1,0 +1,51 @@
+{
+    "version": 0,
+    "active_duration": "buff_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "elite_crews_shield_point_restore_after_damage_taken_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_acceleration_modifier"
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "elite_crews_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "arankul_elite_crews_hud_icon",
+        "name": "npc_reward.arankul_elite_crews.name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_shield_point_restore_after_damage_taken_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "elite_crews_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "elite_crews_weapon_damage_modifier"
+            }]
+        }]
+    }
+}

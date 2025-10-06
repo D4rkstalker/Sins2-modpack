@@ -1,0 +1,124 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "distortion_field_auto_cast_disable_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "vasari_offensive_support_cruiser"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "distortion_field_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure",
+				"corvette"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_current_gravity_well"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_offensive_support_cruiser_distortion_field_on_target",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "disable_can_use_weapons"
+                }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "distortion_field_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure",
+				"corvette"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_current_gravity_well"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [130.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "teleport_delay_time_value",
+        "action_value":
+        {
+            "values": [1.5]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_target_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [1600.0]
+        }
+    }]
+}

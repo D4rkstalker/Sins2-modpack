@@ -1,0 +1,53 @@
+{
+    "version": 0,
+    "action_data_source": "advent_envoy_frigate_culture_resistance",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_envoy_frigate_culture_resistance_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "culture_resistance_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "culture_resistance_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_envoy_frigate_culture_resistance"
+                }]
+            }]
+        },
+        "watched_buff": "advent_envoy_frigate_culture_resistance"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_envoy_frigate_culture_resistance_ability_hud_icon",
+        "name": "advent_envoy_frigate_culture_resistance_ability_name",
+        "description": "advent_envoy_frigate_culture_resistance_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "culture_resistance_rate_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "culture_resistance_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

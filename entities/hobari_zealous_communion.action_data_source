@@ -1,0 +1,94 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "zealous_communion_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_culture_center_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_culture_center_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_culture_center_structure"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "zealous_communion_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "zealous_communion_commerce_income_rate_scalar",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "zealous_communion_metal_income_rate_scalar",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "zealous_communion_crystal_income_rate_scalar",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "zealous_communion_commerce_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "commerce_track_credit_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "zealous_communion_commerce_income_rate_scalar"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "zealous_communion_metal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "zealous_communion_metal_income_rate_scalar"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "zealous_communion_crystal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "zealous_communion_crystal_income_rate_scalar"
+        }
+    }]
+}

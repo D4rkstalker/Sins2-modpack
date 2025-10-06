@@ -1,0 +1,95 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_sanctify",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unity_mana_0"]
+        ],
+        [
+            ["advent_unity_mana_1"]
+        ],
+        [
+            ["advent_unity_mana_2"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "sanctify_cooldown_time_value",
+        "unity_mana_cost": "sanctify_unity_mana_cost_value",
+        "actions":
+        {
+			"constraint":
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "advent_unity_sancify_ai_prevent",
+						"include_pending_buffs": true
+					}
+				}
+			},
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_sanctify_on_planet"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_sancify_ai_prevent"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "sanctify_target_filter"
+		],
+        "auto_cast":
+        {
+            "target_definitions": [
+            {
+                "target_filter": "sanctify_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "sanctify_enemy_target_filter"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_sanctify_ability_hud_icon",
+        "tooltip_picture": "advent_unity_sanctify_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_sanctify_ability_tooltip_picture",
+        "name": "advent_unity_sanctify_ability_name",
+        "description": "advent_unity_sanctify_ability_description"
+    }
+}

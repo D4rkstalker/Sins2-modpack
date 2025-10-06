@@ -1,0 +1,31 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+	"make_dead_on_parent_buff_made_dead": true,
+    "restart_other_stacked_buffs_when_started": true,
+	"time_actions": [
+	{
+		"execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+					"buff": "dlc2_vasari_rebel_super_capital_ship_phase_gate_active_on_phase_gate_countdown"
+                }]
+            }]
+        }
+    }]
+}

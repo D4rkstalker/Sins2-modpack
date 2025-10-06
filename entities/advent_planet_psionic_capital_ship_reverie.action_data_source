@@ -1,0 +1,121 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "reverie_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_planet_psionic_capital_ship_reverie",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "reverie_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_planet_psionic_capital_ship_reverie",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "reverie_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "reverie_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 78.75, 67.5, 56.25, 45.0]
+        }
+    },
+    {
+        "action_value_id": "reverie_cooldown_time_value",
+        "action_value":
+        {
+            "values": [30.0, 25.0, 20.0, 15.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "reverie_armor_damage_taken_value",
+        "action_value":
+        {
+            "transform_type": "per_resolved_armor_damage_dealt",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "reverie_hull_damage_taken_value",
+        "action_value":
+        {
+            "transform_type": "per_resolved_hull_damage_dealt",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "reverie_duration_value",
+        "action_value":
+        {
+            "values": [15.0, 30.0, 45.0, 60.0, 75.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.1, 0.1, 0.1, 0.1, 0.1]
+            }
+        }
+    },
+    {
+        "action_value_id": "reverie_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    }]
+}

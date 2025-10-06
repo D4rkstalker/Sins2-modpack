@@ -1,0 +1,130 @@
+{
+    "version": 0,
+    "active_duration": "concussion_charge_disable_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "concussion_charge_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "concussion_charge_spread_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "concussion_charge_spread_damage_value",
+                    "penetration_value": "concussion_charge_penetration_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "trader_siege_capital_ship_concussion_charge_radius_spawn"
+                    }
+                }]
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "trader_siege_capital_ship_concussion_charge_buff_on_target_small",
+                        "medium_unit": "trader_siege_capital_ship_concussion_charge_buff_on_target_medium",
+                        "large_unit": "trader_siege_capital_ship_concussion_charge_buff_on_target_large"
+                    }
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "can_ever_move"
+                    }
+                },
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_hyperspace",
+		"disable_engines",
+        "disable_can_launch_or_dock_strikecraft",
+        "disable_can_passively_regenerate_armor",
+        "disable_can_passively_regenerate_hull",
+        "disable_can_passively_regenerate_shields",
+        "disable_can_update_unit_production",
+        "disable_can_use_active_abilities",
+        "disable_can_use_weapons"
+    ],
+    "gui":
+    {
+        "hud_icon": "trader_siege_capital_ship_concussion_charge_ability_hud_icon",
+        "name": "trader_siege_capital_ship_concussion_charge_ability_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative"
+    }
+}

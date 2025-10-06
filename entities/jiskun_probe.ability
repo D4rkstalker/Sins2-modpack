@@ -1,0 +1,66 @@
+{
+    "version": 0,
+    "action_data_source": "jiskun_probe",
+	"level_source": "unit_item",
+    "active_actions":
+    {
+		"cooldown_time": "jiskun_probe_cooldown_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+					"buff": "jiskun_probe_on_target"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "jiskun_probe_target_filter"
+		],
+		"range": "jiskun_probe_range_value",
+        "auto_cast":
+        {
+            "target_definitions": [
+            {
+                "target_filter": "jiskun_probe_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "jiskun_probe_hud_icon",
+        "name": "npc_reward.jiskun_probe.name",
+        "description": "npc_reward.jiskun_probe.description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "jiskun_probe_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "tooltip.ability.has_remote_sensor",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "jiskun_probe_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

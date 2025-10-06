@@ -1,0 +1,37 @@
+{
+    "version": 0,
+    "action_data_source": "advent_mine_strikecraft_detonate",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_mine_strikecraft"]
+        ]
+    ],
+    "passive_actions":
+    {
+        "persistant_buff": "advent_mine_strikecraft_detonate"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_mine_strikecraft_detonate_ability_hud_icon",
+        "name": "advent_mine_strikecraft_detonate_ability_name",
+        "description": "advent_mine_strikecraft_detonate_ability_desc",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "mine_detonate_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "mine_detonate_penetration_value",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

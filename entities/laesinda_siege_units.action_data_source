@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "laesinda_siege_units_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+			"constraints": [
+			{
+				"constraint_type": "is_colonizable_planet"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "laesinda_siege_units_ship_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_siege_frigate",
+				"advent_harassment_battle_capital_ship",
+				"advent_planet_psionic_capital_ship"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_on_planet_buff_duration",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    }]
+}

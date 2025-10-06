@@ -1,0 +1,155 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "mind_fracture_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_battle_psionic_capital_ship_mind_fracture",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_ability"
+                },
+                {
+                    "constraint_type": "has_weapon",
+					"weapon_type": "normal"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "mind_fracture_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_ability"
+                },
+                {
+                    "constraint_type": "has_weapon",
+					"weapon_type": "normal"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "mind_fracture_ability_cooldown_modifier_value",
+        "action_value":
+        {
+            "values": [0.2, 0.4, 0.6, 0.8, 1.0]
+        }
+    },
+    {
+        "action_value_id": "mind_fracture_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [65.0, 65.0, 65.0, 65.0, 65.0]
+        }
+    },
+    {
+        "action_value_id": "mind_fracture_cooldown_time_value",
+        "action_value":
+        {
+            "values": [30.0, 41.25, 52.5, 63.75, 75.0]
+        }
+    },
+    {
+        "action_value_id": "mind_fracture_duration_value",
+        "action_value":
+        {
+            "values": [10.0, 20.0, 30.0, 40.0, 50.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.01, 0.01, 0.01, 0.01, 0.01]
+            }
+        }
+    },
+    {
+        "action_value_id": "mind_fracture_radius_value",
+        "action_value":
+        {
+            "values": [2500.0, 2500.0, 2500.0, 2500.0, 2500.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.25, 0.25, 0.25, 0.25, 0.25]
+            }
+        }
+    },
+    {
+        "action_value_id": "mind_fracture_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "mind_fracture_weapon_cooldown_modifier_value",
+        "action_value":
+        {
+            "values": [0.1, 0.2, 0.3, 0.4, 0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "mind_fracture_ability_cooldown_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "mind_fracture_ability_cooldown_modifier_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "mind_fracture_weapon_cooldown_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "mind_fracture_weapon_cooldown_modifier_value"
+        }
+    }]
+}

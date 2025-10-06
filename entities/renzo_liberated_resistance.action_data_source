@@ -1,0 +1,62 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"star",
+				"uncolonizable"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+				"frigate",
+				"cruiser",
+				"capital_ship",
+				"super_capital_ship",
+				"titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "planet_bombing"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [240.0]
+        }
+    },
+    {
+        "action_value_id": "buff_on_planet_buff_duration",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "supply_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    }]
+}

@@ -1,0 +1,125 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "nano_remit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nano_remit_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_hull",
+                    "include_crippled_hull_points": true
+                },
+                {
+                    "constraint_type": "has_missing_antimatter"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "nano_remit_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_antimatter_restore_value",
+        "action_value":
+        {
+            "values": [60.0, 90.0, 120.0, 150.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_cooldown_time_value",
+        "action_value":
+        {
+            "values": [48.0, 43.5, 39.0, 34.5, 30.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_hull_cost_value",
+        "action_value":
+        {
+            "values": [360.0, 480.0, 600.0, 720.0, 840.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_hull_restore_value",
+        "action_value":
+        {
+            "values": [360.0, 480.0, 600.0, 720.0, 840.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_radius_value",
+        "action_value":
+        {
+            "values": [6600.0, 6900.0, 7200.0, 7500.0, 7800.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_improved_radius_value",
+        "action_value":
+        {
+            "values": [13200.0, 13800.0, 14400.0, 15000.0, 15600.0]
+        }
+    },
+    {
+        "action_value_id": "nano_remit_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    }]
+}

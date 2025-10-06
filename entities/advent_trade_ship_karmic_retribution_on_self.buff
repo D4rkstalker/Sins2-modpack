@@ -1,0 +1,60 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+	"make_dead_on_current_spawner_made_dead": false,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+					{
+						"required_units": [
+						{
+							"unit": "advent_light_frigate_karmic",
+							"count": [3, 3]
+						},
+						{
+							"unit": "advent_defense_cruiser_karmic",
+							"count": [1, 1]
+						}]
+                    },
+                    "special_operation_unit_kind": "karmic_retribution",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "fixed_one",
+                    "owner_player":
+                    {
+                        "player_type": "buff_owner_player"
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_trade_ship_karmic_retribution_research_subject_hud_icon",
+        "name": "advent_trade_ship_karmic_retribution_research_subject_name",
+        "description": "advent_trade_ship_karmic_retribution_description",
+        "visibility_scope": "positive"
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "shield_regeneration_radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "shield_regeneration_execution_interval_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "shield_regeneration_shield_restore_rate_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_colony_capital_ship_shield_regeneration_buff_on_target_small",
+                        "medium_unit": "advent_colony_capital_ship_shield_regeneration_buff_on_target_medium",
+                        "large_unit": "advent_colony_capital_ship_shield_regeneration_buff_on_target_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_colony_capital_ship_shield_regeneration_ability_hud_icon",
+        "name": "advent_colony_capital_ship_shield_regeneration_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_rate",
+                "value_id": "shield_regeneration_shield_restore_rate_value",
+				"ratio_float_format": "two_decimal_place_with_sign",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            }]
+		}]
+    }
+}

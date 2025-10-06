@@ -1,0 +1,97 @@
+{
+    "version": 0,
+    "action_data_source": "trader_offensive_support_cruiser_designate_target",
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "designate_target_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_offensive_support_cruiser_designate_target"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "beam_effect": "trader_offensive_support_cruiser_designate_target_laser",
+                        "hit_shield_impact_radius_t": 1.0
+                    },
+                    "charge_duration": "fixed_zero",
+                    "beam_duration": "duration_value"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "designate_target_target_filter"
+        ],
+        "range": "range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "designate_target_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_offensive_support_cruiser_designate_target_hud_icon",
+        "tooltip_icon": "trader_offensive_support_cruiser_designate_target_hud_icon",
+        "name": "trader_offensive_support_cruiser_designate_target_name",
+        "description": "trader_offensive_support_cruiser_designate_target_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "designate_target_damage_taken_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

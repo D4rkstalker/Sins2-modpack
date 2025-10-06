@@ -1,0 +1,108 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "distance_between_units_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "previous_spawner"
+                    },
+                    "comparison_type": "greater_than",
+                    "compare_value": "radius_value"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "trader_support_capital_ship_magnetic_singularity_buff_on_target_small",
+                        "medium_unit": "trader_support_capital_ship_magnetic_singularity_buff_on_target_medium",
+                        "large_unit": "trader_support_capital_ship_magnetic_singularity_buff_on_target_large"
+                    }
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "is_empowered"
+                    }
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "slow_magnitude",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "non_empowered_slow_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "is_empowered"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "slow_magnitude",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "empowered_slow_value"
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "magnetic_singularity_max_linear_speed_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_support_capital_ship_magnetic_singularity_ability_hud_icon",
+        "name": "trader_support_capital_ship_magnetic_singularity_ability_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "magnetic_singularity_max_linear_speed_modifier",
+                "is_resolved_value": true
+            }]
+        }]
+    }
+}

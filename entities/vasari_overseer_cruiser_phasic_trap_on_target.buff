@@ -1,0 +1,91 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "distance_between_units_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "previous_spawner"
+                    },
+                    "comparison_type": "greater_than",
+                    "compare_value": "phasic_trap_radius_value"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+        }
+    }],
+	"unit_mutations": [
+        "in_phase_space"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_overseer_cruiser_phasic_trap_ability_hud_icon",
+        "name": "vasari_overseer_cruiser_phasic_trap_ability_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative"
+    }
+}

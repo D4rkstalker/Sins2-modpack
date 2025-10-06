@@ -1,0 +1,244 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "goliath_superconductor_starbase_artifact_friendly_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_structure_with_slot_type",
+                    "slot_type": "civilian"
+                }
+            },
+			{
+				"constraint_type": "not_self"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "goliath_superconductor_starbase_artifact_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "goliath_superconductor_starbase_artifact_early_remove_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_unity_recall_on_target"
+                },
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_unity_abolition_on_target"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "goliath_superconductor_max_shields_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_max_armor_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_max_hull_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_weapon_cooldown_scalar",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_delay_time",
+        "action_value":
+        {
+            "values": [0.4]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_max_shields_self_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_max_armor_self_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_max_hull_self_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_weapon_cooldown_self_scalar",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_hull_damage_scalar",
+        "action_value":
+        {	
+			"transform_type": "per_current_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.3]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_pierce",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    },
+    {
+        "action_value_id": "goliath_superconductor_antimatter_removed_scalar",
+        "action_value":
+        {
+			"transform_type": "per_max_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "goliath_superconductor_max_shields_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_max_shields_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "goliath_superconductor_max_armor_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_max_armor_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "goliath_superconductor_max_hull_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_max_hull_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "goliath_superconductor_max_shields_self_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_max_shields_self_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "goliath_superconductor_max_armor_self_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_max_armor_self_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "goliath_superconductor_max_hull_self_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_max_hull_self_scalar"
+        }
+    }],
+	"buff_weapon_modifiers": [
+	{
+		"buff_weapon_modifier_id": "goliath_superconductor_weapon_cooldown_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_weapon_cooldown_scalar"
+        }
+	},
+	{
+		"buff_weapon_modifier_id": "goliath_superconductor_weapon_cooldown_self_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "goliath_superconductor_weapon_cooldown_self_scalar"
+        }
+	}]
+}

@@ -1,0 +1,92 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "unity_planet_for_a_planet_weapon_buff_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "unity_planet_for_a_planet_planet_bombed_duration_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "unity_planet_for_a_planet_weapon_modifier_duration",
+        "action_value":
+        {
+            "values": [600.0]
+        }
+    },
+    {
+        "action_value_id": "unity_planet_for_a_planet_weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "unity_planet_for_a_planet_weapon_range_scalar",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "unity_planet_for_a_planet_ability_range_scalar",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "unity_planet_for_a_planet_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "unity_planet_for_a_planet_weapon_damage_scalar"
+        }
+	},
+	{
+        "buff_weapon_modifier_id": "unity_planet_for_a_planet_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "unity_planet_for_a_planet_weapon_range_scalar"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "unity_planet_for_a_planet_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "unity_planet_for_a_planet_ability_range_scalar"
+        }
+    }]
+}

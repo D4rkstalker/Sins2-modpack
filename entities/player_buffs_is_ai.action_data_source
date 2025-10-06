@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "player_buffs_is_ai_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+				"titan",
+				"starbase",
+				"frigate",
+				"cruiser",
+				"super_capital_ship",
+				"structure"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_unity_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+				"titan",
+				"starbase",
+				"super_capital_ship"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+				"constraint_type": "has_buff",
+				"buff": "advent_unity_follower_on_ship"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "cooldown_duration",
+        "action_value":
+        {
+            "values": [999999999.0]
+        }
+    }]
+}

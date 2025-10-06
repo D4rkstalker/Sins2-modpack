@@ -1,0 +1,62 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_resurrection",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [3, 6, 9],
+    "active_actions":
+    {
+        "cooldown_time": "resurrection_cooldown_time_value",
+        "unity_mana_cost": "resurrection_unity_mana_cost_value",
+		"required_available_supply": "fixed_one",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_resurrection_on_gravity_well"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "resurrection_planet_target_filter"]
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_resurrection_ability_hud_icon",
+        "tooltip_picture": "advent_unity_resurrection_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_resurrection_ability_tooltip_picture",
+        "name": "advent_unity_resurrection_ability_name",
+        "description": "advent_unity_resurrection_ability_description",
+        "tooltip_line_groups": [
+        {
+            "header_text": "advent_unity_requires_dominant_culture_header",
+            "lines": []
+        },
+        {
+            "header_text": "advent_unity_resurrection_chance_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.resurrection_supply",
+                "value_id": "resurrection_max_supply_value",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "resurrection_execution_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

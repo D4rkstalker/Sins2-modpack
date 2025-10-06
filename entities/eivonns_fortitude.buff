@@ -1,0 +1,39 @@
+{
+    "version": 0,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "eivonns_fortitude_radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+	"active_duration": "eivonns_fortitude_duration_value",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "eivonns_fortitude_damage_taken_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_shields_frigate_research_subject_hud_icon",
+        "name": "npc_reward.eivonn_eivonns_fortitude_unit_item.name",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "eivonns_fortitude_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "eivonns_fortitude_damage_taken_modifier"
+            }]
+        }]
+    }
+}

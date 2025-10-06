@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"execution_interval_count_value": "abolition_charge_time_value",
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "abolition_ship_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_abolition_on_target"
+                }]
+            }]
+        }
+    },
+    {
+        "first_action_delay_time_value": "abolition_charge_time_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "home_planet"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "none"
+                    }
+                }
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "abolition_ship_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "teleport_to_gravity_well",
+                    "destination_reference_unit":
+                    {
+                        "unit_type": "home_planet"
+                    }
+                }]
+			},
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "home_planet"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+					"buff": "advent_unity_abolition_on_homeworld"
+                }]
+            }]
+        }
+    }]
+}

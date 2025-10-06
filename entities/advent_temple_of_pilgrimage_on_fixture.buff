@@ -1,0 +1,37 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_source_ability_released": true,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_buff_agent",
+                    "buff_on_agent": "advent_temple_of_pilgrimage_watch_enemies"
+                }]
+            }]
+        }
+    }]
+}

@@ -1,0 +1,299 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "starbase_target_filter"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "hull_minus_crippled_hull",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "starbase_max_hull"
+                },
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "starbase_max_crippled_hull"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner",
+						"redirection": "current_gravity_well_primary_fixture"
+					},
+					"target_filter_id": "starbase_friendly_planet_target_filter"
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "starbase_friendly_planet_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "starbase_friendly_planet_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "starbase_friendly_planet_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner",
+							"redirection": "current_gravity_well_primary_fixture"
+						},
+						"target_filter_id": "starbase_neutral_planet_target_filter"
+					},
+					{
+						"constraint_type": "composite_not",
+						"constraint":
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"owned_unit":
+								{
+									"unit_type": "current_spawner"
+								},
+								"player_type": "unit_owner"
+							},
+							"prerequisites": [
+								["vasari_improve_starbase_build_time"]
+							]
+						}
+					}]
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "starbase_neutral_planet_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "starbase_neutral_planet_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "starbase_neutral_planet_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner",
+							"redirection": "current_gravity_well_primary_fixture"
+						},
+						"target_filter_id": "starbase_enemy_planet_target_filter"
+					},
+					{
+						"constraint_type": "composite_not",
+						"constraint":
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"owned_unit":
+								{
+									"unit_type": "current_spawner"
+								},
+								"player_type": "unit_owner"
+							},
+							"prerequisites": [
+								["vasari_improve_starbase_build_time"]
+							]
+						}
+					}]
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "starbase_enemy_planet_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "starbase_enemy_planet_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "starbase_enemy_planet_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner",
+							"redirection": "current_gravity_well_primary_fixture"
+						},
+						"target_filter_id": "starbase_neutral_planet_target_filter"
+					},
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"owned_unit":
+							{
+								"unit_type": "current_spawner"
+							},
+							"player_type": "unit_owner"
+						},
+						"prerequisites": [
+							["vasari_improve_starbase_build_time"]
+						]
+					}]
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "starbase_friendly_planet_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "starbase_friendly_planet_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "starbase_friendly_planet_hull_repair"
+                }]
+            },
+            {
+				"constraint":
+				{
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner",
+							"redirection": "current_gravity_well_primary_fixture"
+						},
+						"target_filter_id": "starbase_enemy_planet_target_filter"
+					},
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"owned_unit":
+							{
+								"unit_type": "current_spawner"
+							},
+							"player_type": "unit_owner"
+						},
+						"prerequisites": [
+							["vasari_improve_starbase_build_time"]
+						]
+					}]
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "starbase_enemy_research_planet_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "starbase_enemy_research_planet_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "starbase_enemy_research_planet_hull_repair"
+                }]
+            }]
+        }
+    }]
+}

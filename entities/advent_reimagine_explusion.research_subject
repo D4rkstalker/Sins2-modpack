@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 1,
+    "field": "civilian_reclamation",
+    "field_coord": [2, 1],
+    "research_time": 135.0,
+    "price":
+    {
+        "credits": 500.0,
+        "metal": 125.0,
+        "crystal": 300.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+			"unit_types": [
+				"planet"
+			]
+        },
+        "action_data_source": "advent_reimagine_explusion",
+        "buff": "advent_reimagine_explusion_bootstrap",
+        "tooltip_sub_header_label": "advent_reimagine_explusion_research_subject_tooltip_sub_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "buff_planet_modifier",
+            "planet_modifier_id": "advent_reimagine_explusion_credit_rate_modifier"
+        },
+		{
+            "rendering_type": "buff_planet_modifier",
+            "planet_modifier_id": "advent_reimagine_explusion_culture_rate_modifier"
+		},
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.duration",
+            "value_id": "advent_reimagine_explusion_buff_duration",
+            "value_suffix": "seconds"
+        }]
+    }],
+    "name": "advent_reimagine_explusion_research_subject_name",
+    "name_uppercase": "advent_reimagine_explusion_research_subject_name_uppercase",
+    "description": "advent_reimagine_explusion_research_subject_description",
+    "hud_icon": "advent_reimagine_explusion_research_subject_hud_icon",
+	"tooltip_icon": "advent_reimagine_explusion_research_subject_hud_icon"
+}

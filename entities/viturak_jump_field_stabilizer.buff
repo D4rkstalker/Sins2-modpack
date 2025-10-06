@@ -1,0 +1,43 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead",
+                "buff": "all_buffs_on_current_spawner",
+                "buff_constraint":
+                {
+                    "constraint_type": "buff_has_mutation",
+                    "buff": "operand_buff",
+                    "mutation": "phase_jump_disruption"
+                }
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "phase_jump_disruption_immune"
+    ],
+    "are_mutations_finite": false,
+    "gui":
+    {
+        "hud_icon": "viturak_jump_field_stabilizer_hud_icon",
+        "name": "npc_reward.viturak_jump_field_stabilizer.name",
+        "description": "npc_reward.viturak_jump_field_stabilizer.description",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "jump_field_stabilizer_hyperspace_charge_time_modifier"
+            }]
+		}]
+    }
+}

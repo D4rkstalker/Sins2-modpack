@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "shield_bestowal_max_shield_points_modifier"
+    }],
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "distance_between_units_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "previous_spawner"
+                    },
+                    "comparison_type": "greater_than",
+                    "compare_value": "shield_bestowal_radius"
+                },
+                "action_type": "make_buff_dead"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "shield_bestowal_shield_repair_rate_value"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "grost_shield_bestowal_hud_icon",
+        "name": "npc_reward.grost_shield_bestowal.name",
+		"visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "shield_bestowal_max_shield_points_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_rate",
+                "value_id": "shield_bestowal_shield_repair_rate_value",
+				"value_color": "positive",
+                "value_suffix": "per_second"
+            }]
+        }]
+    }
+}

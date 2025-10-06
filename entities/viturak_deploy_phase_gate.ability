@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "action_data_source": "viturak_deploy_phase_gate",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "vasari_phase_gate_structure",
+					"buff_on_created_unit": "viturak_deploy_phase_gate",
+                    "special_operation_unit_kind": "viturak_cabal_phase_gate",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "is_self_building": true
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted",
+        "spawned_unit":
+        {
+            "unit": "vasari_phase_gate_structure",
+            "special_operation_unit_kind": "viturak_cabal_phase_gate",
+            "max_count_in_empire": "max_count_in_empire",
+            "gravity_well_primary_planet_target_filter": "owned_planet"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_phase_gate_structure_hud_icon",
+        "name": "npc_reward.viturak_deploy_phase_gate.name",
+        "description": "npc_reward.viturak_deploy_phase_gate.description"
+    }
+}

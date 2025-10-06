@@ -1,0 +1,155 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "nullify_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nullify_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nullify_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+				"structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nullify_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "nullify_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "nullify_beam_duration_value",
+        "action_value":
+        {
+            "values": [0.65]
+        }
+    },
+    {
+        "action_value_id": "nullify_cooldown_time_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "nullify_range_value",
+        "action_value":
+        {
+            "values": [9500.0]
+        }
+    },
+    {
+        "action_value_id": "nullify_antimatter_remove_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "target_current_antimatter_value",
+        "action_value":
+        {
+            "transform_type": "per_current_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_antimatter_threshold_value",
+        "action_value":
+        {
+            "values": [12.0]
+        }
+    }]
+}

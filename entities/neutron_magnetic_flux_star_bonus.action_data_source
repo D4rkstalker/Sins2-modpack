@@ -1,0 +1,91 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "neutron_magnetic_flux_star_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"super_capital_ship",
+				"torpedo",
+                "titan"
+			],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+				"constraints": [
+				{
+					"constraint_type": "has_ability"
+				},
+				{
+					"constraint_type": "has_shields"
+				}]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "neutron_magnetic_flux_damage_rate_value",
+        "action_value":
+        {
+            "transform_type": "per_max_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "neutron_magnetic_flux_penetration_value",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    },
+    {
+        "action_value_id": "neutron_magnetic_flux_ability_cost_bonus_value",
+        "action_value":
+        {
+            "values": [0.75]
+        }
+    },
+    {
+        "action_value_id": "neutron_magnetic_flux_ability_cooldown_bonus_value",
+        "action_value":
+        {
+            "values": [0.75]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "neutron_magnetic_flux_ability_cost_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_antimatter_cost",
+            "value_behavior": "scalar",
+            "value_id": "neutron_magnetic_flux_ability_cost_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "neutron_magnetic_flux_ability_cooldown_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "neutron_magnetic_flux_ability_cooldown_bonus_value"
+        }
+    }]
+}

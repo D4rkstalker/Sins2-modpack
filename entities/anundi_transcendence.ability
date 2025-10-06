@@ -1,0 +1,56 @@
+{
+    "version": 0,
+    "action_data_source": "anundi_transcendence",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "give_experience",
+                    "experience_value": "transcendence_experience_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_unity_transcendence_activate_small",
+                            "medium_unit": "advent_unity_transcendence_activate_medium",
+                            "large_unit": "advent_unity_transcendence_activate_large"
+                        }
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "transcendence_target_filter"]
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_transcendence_ability_hud_icon",
+        "tooltip_picture": "advent_unity_transcendence_ability_tooltip_picture",
+        "name": "advent_unity_transcendence_ability_name",
+        "description": "npc_reward.anundi_transcendence.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.experience_given",
+                "value_id": "transcendence_experience_value"
+            }]
+        }]
+    }
+}

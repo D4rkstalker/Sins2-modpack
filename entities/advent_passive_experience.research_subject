@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 4,
+    "field": "civilian_evangelism",
+    "field_coord": [8, 7],
+    "research_time": 840.0,
+    "price":
+    {
+        "credits": 1400.0,
+        "metal": 600.0,
+        "crystal": 1200.0
+    },
+    "prerequisites": [
+        ["advent_upgrade_culture_rate_2"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_experience"
+            }]
+        },
+        "action_data_source": "advent_passive_experience",
+        "buff": "advent_passive_experience",
+        "tooltip_sub_header_label": "tooltip.advent_passive_experience_rate_sub_header",
+        "tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.advent_passive_experience_rate_without_culture",
+            "value_id": "experience_rate_per_minute_without_culture",
+            "value_color": "positive",
+            "value_suffix": "per_minute"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.advent_passive_experience_rate_with_culture",
+            "value_id": "experience_rate_per_minute_with_culture",
+            "value_color": "positive",
+            "value_suffix": "per_minute"
+        }]
+    }],
+    "name": "advent_passive_experience_research_subject_name",
+    "name_uppercase": "advent_passive_experience_research_subject_name_uppercase",
+    "description": "advent_passive_experience_research_subject_description",
+    "hud_icon": "advent_passive_experience_research_subject_hud_icon",
+    "tooltip_picture": "advent_passive_experience_research_subject_tooltip_picture"
+}

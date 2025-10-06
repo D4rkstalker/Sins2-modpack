@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+	"active_duration": "assimilated_population_planet_bombing_duration_value",
+    "trigger_event_actions": [
+	{
+		"trigger_event_type": "on_current_spawner_player_ownership_changed",
+		"action_group":
+		{
+			"actions": [
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+				"destination_unit":
+				{
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+				}, 
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "assimilated_population_planet_buff_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_reimagine_assimilated_population_on_planet_buff"
+                }]
+			}]
+        }
+    }]
+}

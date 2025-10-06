@@ -1,0 +1,51 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "trade_ship_vision_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "trader_trade_ship"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "try_apply_buff_on_gravity_well",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_single_unit",
+            "destination_unit":
+            {
+                "unit_type": "current_spawner",
+                "redirection": "current_gravity_well"
+            },
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "danoba_trade_ship_vision_on_node"
+            }]
+        }
+    },
+    {
+        "action_id": "try_apply_buff_on_phase_lane",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_single_unit",
+            "destination_unit":
+            {
+                "unit_type": "current_spawner",
+                "redirection": "current_phase_lane"
+            },
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "danoba_trade_ship_vision_on_node"
+            }]
+        }
+    }]
+}

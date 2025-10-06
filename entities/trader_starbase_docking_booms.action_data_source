@@ -1,0 +1,198 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "docking_booms_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+				{
+					"constraint_type": "has_missing_hull",
+					"percentage_missing_threshold": 0.25
+				},
+				{
+					"constraint_type": "has_missing_armor",
+					"percentage_missing_threshold": 0.25
+				},
+				{
+					"constraint_type": "has_missing_antimatter",
+					"percentage_missing_threshold": 0.5
+				}]
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_starbase_docking_booms",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "docking_booms_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+				{
+					"constraint_type": "has_missing_hull",
+					"percentage_missing_threshold": 0.25
+				},
+				{
+					"constraint_type": "has_missing_armor",
+					"percentage_missing_threshold": 0.5
+				}]
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_starbase_docking_booms",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "docking_booms_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "docking_booms_antimatter_restore_rate_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "docking_booms_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "docking_booms_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "docking_booms_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "docking_booms_repair_rate_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "docking_booms_radius_value",
+        "action_value":
+        {
+            "values": [15000.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "trader_starbase_docking_booms_activate",
+        "alias_binding":
+        {
+            "particle_effect": "docking_booms",
+            "sounds": [
+                "vasari_rebel_titan_dissever_activate"]
+        }
+    },
+    {
+        "alias_name": "trader_starbase_docking_booms_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "trader_starbase_docking_booms_buff_small"
+        }
+    },
+    {
+        "alias_name": "trader_starbase_docking_booms_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "trader_starbase_docking_booms_buff_medium"
+        }
+    },
+    {
+        "alias_name": "trader_starbase_docking_booms_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "trader_starbase_docking_booms_buff_large"
+        }
+    }]
+}

@@ -1,0 +1,330 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "disable_collision_displacement_with_first_spawner": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_physics_destination_reached",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "first_spawner"
+					},
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_buff",
+						"buff": "korvaska_kostura_cannon_on_self"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "required_units": [
+                        {
+                            "unit": "vasari_fabricator_cruiser",
+                            "count": [2, 2]
+                        },
+                        {
+                            "unit": "vasari_siege_cruiser",
+                            "count": [3, 3]
+                        }],
+                        "random_units": [
+                        {
+                            "unit": "vasari_raider_corvette",
+                            "weight": 10.0
+                        },
+                        {
+                            "unit": "vasari_heavy_cruiser",
+                            "weight": 3.0
+                        }]
+                    },
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "fixed_one",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "is_friendly"
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+							{
+								"constraint_type": "has_buff",
+								"buff": "trader_shield_generator_structure_on_gravity_well"
+							}
+                        }]
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "vasari_kostura_cannon_factory_structure_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_kostura_cannon_ability_on_planet"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "is_friendly"
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+							{
+								"constraint_type": "has_buff",
+								"buff": "trader_shield_generator_structure_on_gravity_well"
+							}
+                        }]
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "vasari_kostura_cannon_ship_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_kostura_cannon_ability_on_enemy_ship"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "is_friendly"
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+							{
+								"constraint_type": "has_buff",
+								"buff": "trader_shield_generator_structure_on_gravity_well"
+							}
+                        }]
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "vasari_kostura_cannon_structure_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_kostura_cannon_ability_on_enemy_structure"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "is_friendly"
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+							{
+								"constraint_type": "has_buff",
+								"buff": "trader_shield_generator_structure_on_gravity_well"
+							}
+                        }]
+                    }
+                },
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "buff_agent_phase_gate",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "target"
+                        }
+                    },
+                    "buff_on_created_unit": "vasari_kostura_cannon_ability_on_buff_agent"
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "vasari_kostura_cannon_impact_small",
+                            "medium_unit": "vasari_kostura_cannon_impact_medium",
+                            "large_unit": "vasari_kostura_cannon_impact_large"
+                        }
+                    },
+                    "effect_destination_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "effect_forward":
+                    {
+                        "direction_type": "from_position_to_position",
+                        "source_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            }
+                        },
+                        "destination_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "target"
+                            }
+                        }
+                    },
+                    "effect_up":
+                    {
+                        "direction_type": "unit_up",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead"
+                }]
+            }]
+        }
+    }]
+}

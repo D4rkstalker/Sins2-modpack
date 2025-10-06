@@ -1,0 +1,173 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "sanctify_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "titan",
+				"capital_ship",
+				"cruiser",
+				"super_capital_ship",
+				"frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_bombing_planet"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sanctify_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "is_home_planet"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sanctify_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sanctify_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "sanctify_unity_mana_cost_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "sanctify_cooldown_time_value",
+        "action_value":
+        {
+            "values": [300.0, 180.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "sanctify_execution_count_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "sanctify_conversion_execution_count_value",
+        "action_value":
+        {
+            "values": [180.0, 180.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "sanctify_range_distance",
+        "action_value":
+        {
+            "values": [100000.0, 100000.0, 100000.0]
+        }
+    },
+    {
+        "action_value_id": "sanctify_planet_health_restore_amount_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_max_health_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.01, 0.02, 0.03]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_sanctify_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_sanctify_gas_giant"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sanctify_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_sanctify_planet"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sanctify_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_sanctify_asteroid"
+        }
+    }]
+}

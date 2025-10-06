@@ -1,0 +1,105 @@
+{
+    "version": 0,
+    "action_data_source": "trader_siege_capital_ship_raze_planet",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "raze_planet_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "raze_planet_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "raze_planet_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_siege_capital_ship_raze_planet_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "raze_planet_target_filter"
+        ],
+        "range": "raze_planet_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 5.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "is_bombing_planet"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "raze_planet_target_filter"
+            }]
+        },
+        "watched_buff": "trader_siege_capital_ship_raze_planet_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "trader_siege_capital_ship_raze_planet_ability_hud_icon",
+        "name": "trader_siege_capital_ship_raze_planet_ability_name",
+        "description": "trader_siege_capital_ship_raze_planet_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "raze_planet_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_damage",
+                "value_id": "raze_planet_bombing_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.population_damage",
+                "value_id": "raze_planet_bombing_population_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_volleys",
+                "value_id": "raze_planet_execution_count_value"
+            }]
+        }]
+    }
+}

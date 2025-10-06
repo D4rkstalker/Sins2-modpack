@@ -1,0 +1,66 @@
+{
+    "version": 0,
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint": 
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+					"unit_constraint":
+					{
+						"constraint_type": "composite_not",
+						"constraint": 
+						{
+							"constraint_type": "has_missing_hull",
+							"percentage_missing_threshold": 1.00
+						}
+					}
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_mutations": [
+		"disable_can_passively_regenerate_hull",
+		"disable_can_passively_regenerate_armor",
+		"disable_can_passively_regenerate_shields",
+		"disable_can_have_shields_burst_restored"
+    ],
+    "gui":
+    {
+        "hud_icon": "renzo_final_gambit_hud_icon",
+        "name": "npc_reward.renzo_final_gambit.name",
+		"is_visible_within_unit_tooltip": true,
+		"visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.enable_can_use_abilities_when_crippled",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.enable_can_use_weapons_when_crippled",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

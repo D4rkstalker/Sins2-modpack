@@ -1,0 +1,147 @@
+{
+    "version": 0,
+    "level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "vasari_dark_fleet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"uncolonizable"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "exemptions": [
+                "is_not_explored"]
+        }
+    },
+    {
+        "target_filter_id": "vasari_dark_fleet_ai_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "exemptions": [
+                "is_not_explored"]
+        }
+    },
+    {
+        "target_filter_id": "vasari_dark_fleet_auto_cast_high_priority_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_not_explored"]
+        }
+    },
+    {
+        "target_filter_id": "vasari_dark_fleet_auto_cast_low_priority_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "vasari_dark_fleet_auto_cast_high_priority_enemies_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+				"structure",
+				"starbase",
+				"titan",
+				"super_capital_ship",
+				"capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+				{
+					"constraint_type": "is_always_a_threat"
+				},
+				{
+					"constraint_type": "is_structure_with_slot_type",
+					"slot_type": "military"
+				}]
+			}]
+        }
+    },
+    {
+        "target_filter_id": "vasari_dark_fleet_auto_cast_low_priority_enemies_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+				"starbase",
+				"structure",
+				"titan",
+				"super_capital_ship",
+				"capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+			{
+				"constraint_type": "is_always_a_threat"
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "use_range",
+        "action_value":
+        {
+            "values": [12.0, 18.0]
+        }
+    },
+    {
+        "action_value_id": "arrival_delay_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "available_supply_value",
+        "action_value":
+        {
+            "values": [120.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0]
+        }
+    }]
+}

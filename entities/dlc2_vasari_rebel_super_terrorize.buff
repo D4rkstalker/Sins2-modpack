@@ -1,0 +1,90 @@
+{
+    "version": 0,
+    "active_duration": "terrorize_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc2_vasari_rebel_super_terrorize_buff_on_target_small",
+                        "medium_unit": "dlc2_vasari_rebel_super_terrorize_buff_on_target_medium",
+                        "large_unit": "dlc2_vasari_rebel_super_terrorize_buff_on_target_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_ability_executed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_only",
+                    "damage_value": "terrorize_damage_value",
+                    "penetration_value": "terrorize_penetration_value"
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "terrorize_ability_cost_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_vasari_rebel_super_terrorize_hud_icon",
+        "name": "dlc2_vasari_rebel_super_terrorize_ability_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "terrorize_ability_cost_modifier"
+            }]
+        },
+        {
+            "header_text": "dlc2_vasari_rebel_super_terrorize_header_on_target_ability_used",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_terrorize_hull_damage_per_ability_used",
+                "value_id": "terrorize_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "terrorize_penetration_value",
+                "value_color": "negative"
+            }]
+		}]
+    }
+}

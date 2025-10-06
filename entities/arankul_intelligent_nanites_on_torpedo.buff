@@ -1,0 +1,65 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_made_dead_by_current_spawner",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_destination"
+                    },
+                    "target_filter_id": "intelligent_nanites_small_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "intelligent_nanites_max_stack_count"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_destination"
+                    },
+                    "target_filter_id": "intelligent_nanites_large_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "intelligent_nanites_large_kill_stack_value"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "intelligent_nanites_max_stack_count"
+                }]
+            }]
+        }
+    }]
+}

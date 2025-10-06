@@ -1,0 +1,51 @@
+{
+    "version": 0,
+    "level_count": 1,
+    "target_filters": [
+    {
+        "target_filter_id": "defense_aoe_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values":[
+        {
+            "action_value_id": "defense_aoe_radius_value",
+            "action_value":
+            {
+                "values": [1000.0]
+            }
+        },
+        {
+            "action_value_id": "defense_aoe_damage_value",
+            "action_value":
+            {
+                "transform_type": "per_total_resolved_damage_dealt",
+                "values": [0.2]
+            }
+        },
+        {
+            "action_value_id": "defense_aoe_pierce_value",
+            "action_value":
+            {
+                "values": [1000]
+            }
+        }
+    ]
+}

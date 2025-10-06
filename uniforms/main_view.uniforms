@@ -1,0 +1,780 @@
+{
+    "gravity_well_props":
+    {
+        "begin_cloud_fade_distance": 10.0,
+        "end_cloud_fade_distance": 2.0
+    },
+    "mesh_outline":
+    {
+        "planet_thickness": 2.0,
+        "non_planet_thickness": 0.5,
+        "planet_distance_scalar": 1.075,
+        "non_planet_distance_scalar": 1.0,
+        "edge_threshold": 0.01,
+        "ui_status_alphas":
+        {
+            "none": 0,
+            "under_cursor": 1,
+            "bandboxed": 1,
+            "selected": 0.8,
+            "sub_selected": 1,
+            "owner_fleet_under_cursor": 0.8,
+            "owner_fleet_bandboxed": 0.8,
+            "owner_fleet_sub_selected": 0.8
+        }
+    },
+    "build_structure_cursor":
+    {
+        "circle_color_if_can_build": "6f8FD81D",
+        "circle_color_if_can_not_build": "6fff4848",
+        "circle_line_thickness": 2,
+        "circle_segment_count": 50
+    },
+    "build_structure_range":
+    {
+        "circle_color_if_can_build": "6fFFD81D",
+        "circle_color_if_can_not_build": "6fff4848",
+        "circle_line_thickness": 2,
+        "circle_segment_count": 50
+    },
+    "move_area_polygon_segment_count": 50,
+    "gravity_well_border_line_culture_color_transition_distance": 100.0,
+    "gravity_well_inner_border_line":
+    {
+        "thickness": 3,
+        "alpha": 0.6
+    },
+    "gravity_well_inner_border_line_when_outer_visible":
+    {
+        "thickness": 3,
+        "alpha": 0.2
+    },
+    "gravity_well_outer_border_line":
+    {
+        "thickness": 3,
+        "alpha": 0.6
+    },
+    "orbital_path_arc":
+    {
+        "clockwise_begin_color": "#7F1A92C1",
+        "clockwise_end_color": "#AF7EDDF2",
+        "counter_clockwise_begin_color": "#7F1A92C1",
+        "counter_clockwise_end_color": "#AF7EDDF2",
+        "line_thickness": 2,
+        "segment_count": 100,
+        "arc_projection_in_seconds": 900,
+        "max_arc_length": 50.0,
+        "end_fade_in_arc_percentage": 0.65,
+        "end_point_circle":
+        {
+            "radius": 4.0,
+            "color": "#2A7EDDF2",
+            "line_thickness": 4.0,
+            "segment_count": 8
+        }
+    },
+    "structure_plate_arc":
+    {
+        "begin_color": "#7F1A92C1",
+        "end_color": "#AF7EDDF2",
+        "line_thickness": 2,
+        "segment_count": 100,
+        "end_fade_in_arc_percentage": 0.65
+    },
+    "tactical_grid":
+    {
+        "line_segment_length": 2500,
+        "line_color": "#ffffffff",
+        "line_thickness": 2,
+        "planet_cutout_border_line":
+        {
+            "thickness": 1,
+            "alpha": 0.5
+        }
+    },
+    "phase_lanes":
+    {
+        "normal":
+        {
+            "color": "#9b9b9b",
+            "line_thickness": 2,
+            "alpha": 0.6,
+            "removed_blink_duration": 3
+        },
+        "star":
+        {
+            "color": "#e9b66f",
+            "line_thickness": 3,
+            "alpha": 0.8,
+            "removed_blink_duration": 3
+        },
+        "wormhole":
+        {
+            "color": "#A470FF",
+            "line_thickness": 3,
+            "alpha": 0.8,
+            "removed_blink_duration": 3
+        },
+        "stabilized_gravity_wells":
+        {
+            "color": "#ffffff",
+            "line_thickness": 2,
+            "alpha": 0.8,
+            "removed_blink_duration": 3
+        },
+        "ability":
+        {
+            "color": "#ffffff",
+            "line_thickness": 2,
+            "alpha": 0.8,
+            "removed_blink_duration": 3
+        }       
+    },
+    "planet_player_color_transition_duration": 3.5,
+    "selected_pip_color": "#ffffffff",
+    "debug_text_block_font": "sins_agency_bold_12",
+    "unit_icons":
+    {
+        "icon_fade_rate": 2,
+        "main_view_icon_fill_color_with_artifact": "#FFE25D",
+        "gravity_well_player_status_cross_fade_duration": 1,
+        "gravity_well_player_status_blinks":
+        {
+            "enemy_units_detected_at_owned_planet":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "enemy_units_detected_at_unowned_planet":
+            {
+                "duration": 4,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "enemy_jump_inhibitor_blocking_units":
+            {
+                "duration": 1,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "planet_bombed":
+            {
+                "duration": 1,
+                "up_function": "in_out_quad",
+                "down_function": "in_out_quad"
+            },
+            "friendly_culture_being_established":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "friendly_culture_being_lost":
+            {
+                "duration": 1,
+                "up_function": "in_out_quad",
+                "down_function": "in_out_quad"
+            },
+            "enemy_culture_being_established":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "enemy_culture_being_lost":
+            {
+                "duration": 1,
+                "up_function": "in_out_quad",
+                "down_function": "in_out_quad"
+            }
+        },
+        "unit_alert_blinks":
+        {
+            "ping_attention":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "ping_attack":
+            {
+                "duration": 1,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "ping_defend":
+            {
+                "duration": 1.5,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "rallied_to":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "positive_buff":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "negative_buff":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            },
+            "targeted_by_ability":
+            {
+                "duration": 2,
+                "up_function": "in_sine",
+                "down_function": "out_sine"
+            }
+        },
+        "user_interface_status_colors":
+        {
+            "selected": "#55ffffff",
+            "sub_selected": "#ffffff"
+        },
+        "fleet_icon_gravity_well_icon_y_offset": 55,
+        "fleet_icon_viewport_position_y_offset": -45,
+        "fleet_icon":
+        {
+            "group": "fleet",
+            "has_rotation": false,
+            "use_owner_player_color": false
+        },
+        "phase_lane_unit_group_overlap_size": [80, 80],
+        "groups": [
+        {
+            "group": "fleet",
+            "size": [35, 35],
+            "normal_alert_fill": "main_view_icon_alert_fill_medium",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_small",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_medium",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_medium",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "strikecraft",
+            "size": [16, 16],
+            "normal_alert_fill": "main_view_icon_alert_fill_small",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_small",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_small",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_small",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "ship",
+            "size": [20, 20],
+            "normal_alert_fill": "main_view_icon_alert_fill_small",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_small",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_small",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_small",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "capital_ship",
+            "size": [25, 25],
+            "normal_alert_fill": "main_view_icon_alert_fill_medium",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_medium",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_medium",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_medium",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "titan",
+            "size": [35, 35],
+            "normal_alert_fill": "main_view_icon_alert_fill_large",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_large",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_large",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_large",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "starbase",
+            "size": [25, 25],
+            "normal_alert_fill": "main_view_icon_alert_fill_large",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_large",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_large",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_large",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "asteroid",
+            "size": [20, 20],
+            "normal_alert_fill": "main_view_icon_alert_fill_small",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_small",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_small",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_small",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "structure",
+            "size": [20, 20],
+            "normal_alert_fill": "main_view_icon_alert_fill_small",
+            "special_unit_alert_fill": "main_view_icon_alert_fill_small",
+            "selected_status_border": "selected_main_view_icon_ui_status_border_small",
+            "sub_selected_status_border": "sub_selected_main_view_icon_ui_status_border_small",
+            "is_depth_test_enabled": true
+        },
+        {
+            "group": "fixture",
+            "size": [40, 40],
+            "pick_radius": 20,
+            "is_depth_test_enabled": true,
+            "fixture":
+            {
+                "detection_fade":
+                {
+                    "quick_duration": 5,
+                    "quick_alpha": 0.5,
+                    "long_duration": 600,
+                    "long_alpha": 0.3
+                },
+                "home_planet_overlay": "main_view_fixture_home_planet_overlay",
+                "never_detected_icon": "unknown_planet_main_view_icon",
+                "name_font": "ttsupermolotneue_condmed_18",
+                "name_has_drop_shadow": true,
+                "name_offset": -57,
+                "owner_icon_offset": -65,
+                "owner_icon_size": "medium",
+                "beacon_icons":
+                {
+                    "phase_lane_stabilizer": "main_view_fixture_beacon_icon_purple",
+                    "jump_inhibitor": "main_view_fixture_beacon_icon_red",
+                    "loot": "main_view_fixture_beacon_icon_yellow",
+                    "artifact": "main_view_fixture_beacon_icon_gold"
+                },
+                "left_beacon_icon_offset": [0, 0],
+                "right_beacon_icon_offset": [0, 0],
+                "shapes":
+                {
+                    "no_beacons":
+                    {
+                        "background": "main_view_fixture_plate_no_beacons",
+                        "status_indicators":
+                        {
+                            "user_interface":
+                            {
+                                "selected": "main_view_fixture_status_indicator_selected_no_beacons",
+                                "sub_selected": "main_view_fixture_status_indicator_sub_selected_no_beacons"
+                            },
+                            "unit_alerts":
+                            {
+                                "ping_attention": "main_view_fixture_status_indicator_gold_no_beacons",
+                                "ping_attack": "main_view_fixture_status_indicator_pink_no_beacons",
+                                "ping_defend": "main_view_fixture_status_indicator_aqua_no_beacons",
+                                "rallied_to": "main_view_fixture_status_indicator_gold_no_beacons",
+                                "targeted_by_ability": "main_view_fixture_status_indicator_gold_no_beacons"
+                            },
+                            "gravity_well":
+                            {
+                                "enemy_units_detected_at_owned_planet": "main_view_fixture_status_indicator_red_no_beacons",
+                                "enemy_units_detected_at_unowned_planet": "main_view_fixture_status_indicator_red_no_beacons",
+                                "enemy_jump_inhibitor_blocking_units": "main_view_fixture_status_indicator_red_no_beacons",
+                                "planet_bombed": "main_view_fixture_status_indicator_red_no_beacons"
+                            }
+                        }
+                    },
+                    "left_beacon":
+                    {
+                        "background": "main_view_fixture_plate_left_beacon",
+                        "status_indicators":
+                        {
+                            "user_interface":
+                            {
+                                "selected": "main_view_fixture_status_indicator_selected_left_beacon",
+                                "sub_selected": "main_view_fixture_status_indicator_sub_selected_left_beacon"
+                            },
+                            "unit_alerts":
+                            {
+                                "ping_attention": "main_view_fixture_status_indicator_gold_left_beacon",
+                                "ping_attack": "main_view_fixture_status_indicator_pink_left_beacon",
+                                "ping_defend": "main_view_fixture_status_indicator_aqua_left_beacon",
+                                "rallied_to": "main_view_fixture_status_indicator_gold_left_beacon",
+                                "targeted_by_ability": "main_view_fixture_status_indicator_gold_left_beacon"
+                            },
+                            "gravity_well":
+                            {
+                                "enemy_units_detected_at_owned_planet": "main_view_fixture_status_indicator_red_left_beacon",
+                                "enemy_units_detected_at_unowned_planet": "main_view_fixture_status_indicator_red_left_beacon",
+                                "enemy_jump_inhibitor_blocking_units": "main_view_fixture_status_indicator_red_left_beacon",
+                                "planet_bombed": "main_view_fixture_status_indicator_red_left_beacon"
+                            }
+                        }
+                    },
+                    "right_beacon":
+                    {
+                        "background": "main_view_fixture_plate_right_beacon",
+                        "status_indicators":
+                        {
+                            "user_interface":
+                            {
+                                "selected": "main_view_fixture_status_indicator_selected_right_beacon",
+                                "sub_selected": "main_view_fixture_status_indicator_sub_selected_right_beacon"
+                            },
+                            "unit_alerts":
+                            {
+                                "ping_attention": "main_view_fixture_status_indicator_gold_right_beacon",
+                                "ping_attack": "main_view_fixture_status_indicator_pink_right_beacon",
+                                "ping_defend": "main_view_fixture_status_indicator_aqua_right_beacon",
+                                "rallied_to": "main_view_fixture_status_indicator_gold_right_beacon",
+                                "targeted_by_ability": "main_view_fixture_status_indicator_gold_right_beacon"
+                            },
+                            "gravity_well":
+                            {
+                                "enemy_units_detected_at_owned_planet": "main_view_fixture_status_indicator_red_right_beacon",
+                                "enemy_units_detected_at_unowned_planet": "main_view_fixture_status_indicator_red_right_beacon",
+                                "enemy_jump_inhibitor_blocking_units": "main_view_fixture_status_indicator_red_right_beacon",
+                                "planet_bombed": "main_view_fixture_status_indicator_red_right_beacon"
+                            }
+                        }
+                    },
+                    "left_and_right_beacons":
+                    {
+                        "background": "main_view_fixture_plate_left_and_right_beacons",
+                        "status_indicators":
+                        {
+                            "user_interface":
+                            {
+                                "selected": "main_view_fixture_status_indicator_selected_left_and_right_beacons",
+                                "sub_selected": "main_view_fixture_status_indicator_sub_selected_left_and_right_beacons"
+                            },
+                            "unit_alerts":
+                            {
+                                "ping_attention": "main_view_fixture_status_indicator_gold_left_and_right_beacons",
+                                "ping_attack": "main_view_fixture_status_indicator_pink_left_and_right_beacons",
+                                "ping_defend": "main_view_fixture_status_indicator_aqua_left_and_right_beacons",
+                                "rallied_to": "main_view_fixture_status_indicator_gold_left_and_right_beacons",
+                                "targeted_by_ability": "main_view_fixture_status_indicator_gold_left_and_right_beacons"
+                            },
+                            "gravity_well":
+                            {
+                                "enemy_units_detected_at_owned_planet": "main_view_fixture_status_indicator_red_left_and_right_beacons",
+                                "enemy_units_detected_at_unowned_planet": "main_view_fixture_status_indicator_red_left_and_right_beacons",
+                                "enemy_jump_inhibitor_blocking_units": "main_view_fixture_status_indicator_red_left_and_right_beacons",
+                                "planet_bombed": "main_view_fixture_status_indicator_red_left_and_right_beacons"
+                            }
+                        }
+                    }
+                },
+                "bi_pip_groups":
+                {
+                    "backgrounds":
+                    {
+                        "left": "main_view_fixture_pip_group_background_bi_left",
+                        "left_right": "main_view_fixture_pip_group_background_bi_left_right",
+                        "right": "main_view_fixture_pip_group_background_bi_right"
+                    },
+                    "pip_groups_pick_radius": 38,
+                    "pip_groups":
+                    {
+                        "friendly_ships":
+                        {
+                            "cursor_over_icon": "main_view_fixture_pip_group_hover_bi_left",
+                            "cursor_over_icon_offset": [0, 0],
+                            "considered_full_supply_cost": 875,
+                            "arc_begin_angle": 95,
+                            "arc_end_angle": 265,
+                            "arc_segment_gap": 1,
+                            "arc_player_minimum_range": 6,
+                            "arc_brush": "main_view_fixture_pip_group_arcs",
+                            "arc_selected_color": "#ffffffff",
+                            "arc_is_clock_wise": true
+                        },
+                        "enemy_ships":
+                        {
+                            "cursor_over_icon": "main_view_fixture_pip_group_hover_bi_right",
+                            "cursor_over_icon_offset": [0, 0],
+                            "considered_full_supply_cost": 875,
+                            "arc_begin_angle": -85,
+                            "arc_end_angle": 85,
+                            "arc_segment_gap": 1,
+                            "arc_player_minimum_range": 6,
+                            "arc_brush": "main_view_fixture_pip_group_arcs",
+                            "arc_selected_color": "#ffffffff",
+                            "arc_is_clock_wise": false
+                        }
+                    }
+                },
+                "tri_pip_groups":
+                {
+                    "backgrounds":
+                    {
+                        "left": "main_view_fixture_pip_group_background_tri_left",
+                        "left_right": "main_view_fixture_pip_group_background_tri_left_right",
+                        "left_bottom": "main_view_fixture_pip_group_background_tri_left_bottom",
+                        "right": "main_view_fixture_pip_group_background_tri_right",
+                        "right_bottom": "main_view_fixture_pip_group_background_tri_right_bottom",
+                        "bottom": "main_view_fixture_pip_group_background_tri_bottom",
+                        "all": "main_view_fixture_pip_group_background_tri_all"
+                    },
+                    "pip_groups_pick_radius": 38,
+                    "pip_groups":
+                    {
+                        "friendly_ships":
+                        {
+                            "cursor_over_icon": "main_view_fixture_pip_group_hover_tri_left",
+                            "cursor_over_icon_offset": [0, 0],
+                            "considered_full_supply_cost": 875,
+                            "arc_begin_angle": 97,
+                            "arc_end_angle": 229,
+                            "arc_segment_gap": 1,
+                            "arc_player_minimum_range": 6,
+                            "arc_brush": "main_view_fixture_pip_group_arcs",
+                            "arc_selected_color": "ffffffff",
+                            "arc_is_clock_wise": true
+                        },
+                        "enemy_ships":
+                        {
+                            "cursor_over_icon": "main_view_fixture_pip_group_hover_tri_right",
+                            "cursor_over_icon_offset": [0, 0],
+                            "considered_full_supply_cost": 875,
+                            "arc_begin_angle": -47,
+                            "arc_end_angle": 84,
+                            "arc_segment_gap": 1,
+                            "arc_player_minimum_range": 6,
+                            "arc_brush": "main_view_fixture_pip_group_arcs",
+                            "arc_selected_color": "ffffffff",
+                            "arc_is_clock_wise": false
+                        },
+                        "planet_orbit":
+                        {
+                            "cursor_over_icon": "main_view_fixture_pip_group_hover_tri_bottom",
+                            "cursor_over_icon_offset": [0, 0],
+                            "considered_full_supply_cost": 1000,
+                            "arc_begin_angle": 240,
+                            "arc_end_angle": 300,
+                            "arc_segment_gap": 1,
+                            "arc_player_minimum_range": 6,
+                            "arc_brush": "main_view_fixture_pip_group_arcs",
+                            "arc_selected_color": "ffffffff",
+                            "arc_is_clock_wise": false
+                        }
+                    }
+                }
+            }
+        }]
+    },
+    "selected_unit_mesh_user_interface":
+    {
+        "line_to_plane_thickness": 2,
+        "line_circle_thickness": 2,
+        "line_circle_segment_count": 50
+    },
+    "weapon_range":
+    {
+        "line_color_when_highlighted": "85ff5b00",
+        "line_color_when_not_highlighted": "30ff5b00",
+        "line_circle_thickness": 1,
+        "line_circle_segment_count": 50
+    },
+    "ability_range":
+    {
+        "line_color": "BFC83DFF",
+        "line_circle_thickness": 1,
+        "line_circle_segment_count": 50
+    },
+    "ability_between_gravity_well_range":
+    {
+        "line_color": "BFC83DFF",
+        "line_circle_thickness": 2,
+        "line_circle_segment_count": 50
+    },
+    "auto_order_range":
+    {
+        "line_color": "FFFFFFFF",
+        "line_circle_thickness": 2,
+        "line_circle_segment_count": 50
+    },
+    "order_line":
+    {
+        "line_types":
+        {
+            "move":
+            {
+                "primary_color": "BF8FD81D",
+                "pulse_color": "BFD3FF68",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "linear"
+            },
+            "retreat":
+            {
+                "primary_color": "BFFAD81D",
+                "pulse_color": "BFFFFF68",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 5,
+                "pulse_easing_function": "in_out_sine"
+            },
+            "attack":
+            {
+                "primary_color": "BFff4848",
+                "pulse_color": "BFffffff",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "linear"
+            },
+            "use_ability":
+            {
+                "primary_color": "BFC83DFF",
+                "pulse_color": "BFffffff",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "linear"
+            },
+            "hyperspace":
+            {
+                "primary_color": "BF0EADFF",
+                "pulse_color": "BFffffff",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "linear"
+            },
+            "wormhole_travel":
+            {
+                "primary_color": "#bfA672FF",
+                "pulse_color": "BFffffff",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 5,
+                "pulse_easing_function": "in_out_quad"
+            },
+            "rally":
+            {
+                "primary_color": "BFffd600",
+                "pulse_color": "BFffd600",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "linear"
+            },
+            "dock":
+            {
+                "primary_color": "BFFFEA35",
+                "pulse_color": "BFffffff",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "in_cubic"
+            },
+            "launch":
+            {
+                "primary_color": "BFBAFF26",
+                "pulse_color": "BFffffff",
+                "pulse_begin_length_perc": 0.2,
+                "pulse_end_length_perc": 0.1,
+                "pulse_interval": 10,
+                "pulse_easing_function": "out_cubic"
+            }
+        },
+        "line_thickness": 1,
+        "line_alpha_when_not_highlighted": 0.5,
+        "fade_delay_duration": 0.5,
+        "fade_duration": 3.5
+    },
+    "targeting_line":
+    {
+        "line_colors":
+        {
+            "move": "#7CFF2B",
+            "rotate": "#FFCC00",
+            "attack": "#FF3126",
+            "use_ability": "#C83DFF",
+            "use_item": "#C83DFF",
+            "set_rally_point": "#FFCC00",
+            "rotate_structure_plate": "#FFCC00",
+            "set_unit_factory_deliverable_destination": "#FFCC00",
+            "use_npc_reward_positive": "#C83DFF",
+            "use_npc_reward_negative": "#C83DFF",
+            "use_npc_reward_send_pirate_raid": "#C83DFF"
+        },
+        "bad_path_color": "FF0000",
+        "line_thickness": 1,
+        "line_circle_segment_count": 100,
+        "rally_point_destination_circle_radius": 500,
+        "rally_point_destination_circle_thickness": 1,
+        "rally_point_destination_circle_segment_count": 100
+    },
+    "effects":
+    {
+        "hyperspace_travel_effect_early_start_time": 0.8
+    },
+    "pip_group":
+    {
+        "phase_lane_unit_group":
+        {
+            "icon_top_left_offset_from_center": [-25, 13],
+            "icon_size": [50, 21],
+            "considered_full_supply_cost": 1000,
+            "underlay_brush": "phase_lane_unit_group_pip_group_underlay",
+            "pips_brush": "phase_lane_unit_group_pip_group_pips",
+            "pip_offsets": [
+                [7, 5],
+                [10, 7],
+                [13, 9],
+                [17, 10],
+                [21, 10],
+                [24, 10],
+                [28, 10],
+                [31, 9],
+                [34, 7],
+                [37, 6]
+            ]
+        }
+    },
+    "unowned_planet_player_icon": "unowned_planet_player_icon",
+    "planet_mesh_player_icon_center_offset_scalar": 0.2,
+    "planet_mesh_view_name_spacing": 0,
+    "planet_mesh_view_name_font": "sins_agency_bold_12",
+    "non_planet_mesh_player_icon_center_offset_scalar": 0.1,
+    "fow_overlay": "main_view_fow_overlay",
+    "default_bandbox": "bandbox",
+    "attack_bandbox": "attack_bandbox",
+    "loot":
+    {
+        "default_range_color": "3f5f5f5f",
+        "range_line_thickness": 2,
+        "range_segment_count": 100,
+        "collection_active_blink_duration": 2
+    },
+    "key_light":
+    {
+        "light_horizontal_angle": 0.0,
+        "light_vertical_angle": 45.0
+    },
+    "fill_light":
+    {
+        "light_horizontal_angle": -120.0,
+        "light_vertical_angle": 0.0
+    },
+    "rim_light":
+    {
+        "light_horizontal_angle": 3.0,
+        "light_vertical_angle": 10.0
+    },
+    "invalid_ability_target_planet_alpha": 0.3,
+    "invalid_pick_alliance_offer_planet_alpha": 0.3,
+    "invalid_npc_reputation_reward_target_planet_alpha": 0.3,
+    "extra_alert_fill_alpha_for_hud": 0.3,
+    "planet_elevator_car_visible_threshold": 2.0,
+    "social_system":
+    {
+        "out_of_game_text": "social_system.out_of_game_text",
+        "in_lobby_text": "social_system.in_lobby_text",
+        "in_game_text": "social_system.in_game_text",
+        "loading_text": "social_system.loading_text",
+        "requesting_server_text": "social_system.requesting_server_text",
+        "joining_server_text": "social_system.joining_server_text",
+        "waiting_for_server_text": "social_system.waiting_for_server_text"
+    }
+}

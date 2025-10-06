@@ -1,0 +1,35 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "is_artifact": true,
+    "is_finite": true,
+    "hud_icon": "resilient_metaloids_ship_artifact_hud_icon",
+    "tooltip_picture": "resilient_metaloids_ship_artifact_tooltip_picture",
+    "tooltip_icon": "resilient_metaloids_ship_artifact_hud_icon",
+    "name": "ship_artifact.resilient_metaloids.name",
+    "description": "ship_artifact.resilient_metaloids.desc",
+    "required_unit_tags": [
+        "capital_ship",
+		"super_capital_ship",
+        "titan"
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "defense",
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_armor_points",
+        "value_behavior": "scalar",
+        "values": [1.0]
+    },
+    {
+        "modifier_type": "armor_strength",
+        "value_behavior": "additive",
+        "values": [50.0]
+    },
+    {
+        "modifier_type": "armor_point_restore_scalar_after_damage_taken",
+        "value_behavior": "additive",
+        "values": [2.0]
+    }],
+	"ability": "resilient_metaloids_ship_artifact"
+}

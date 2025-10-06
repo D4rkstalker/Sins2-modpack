@@ -1,0 +1,40 @@
+{
+    "version": 0,
+	"stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+	"active_duration": "unity_planet_for_a_planet_planet_bombed_duration_value",
+    "trigger_event_actions": [
+	{
+		"trigger_event_type": "on_current_spawner_player_ownership_changed",
+		"action_group":
+		{
+			"actions": [
+			{
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+				"player":
+                {
+                    "player_type": "buff_owner_player"
+                },
+				"operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "unity_planet_for_a_planet_weapon_buff_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_planet_for_a_planet_on_ships"
+                }]
+            }]
+        }
+    }]
+}

@@ -1,0 +1,107 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "antimatter_droids_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_missing_antimatter",
+                "amount_missing_threshold": 75.0
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_robotics_cruiser"
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_droids_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_missing_antimatter"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [40.0]
+        }
+    },
+    {
+        "action_value_id": "travel_speed_value",
+        "action_value":
+        {
+            "values": [2000.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_restore_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    }]
+}

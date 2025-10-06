@@ -1,0 +1,76 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_hyperspace_stopped",
+        "action_group":
+        {
+            "actions": [
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "goliath_superconductor_starbase_artifact_on_enemy_target_after_hyperspace_damage"
+                }]
+			},
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_antimatter",
+					"antimatter_remove_value": "goliath_superconductor_antimatter_removed_scalar"
+                }]
+			},
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "goliath_superconductor_starbase_artifact_hud_icon",
+        "name": "starbase_artifact.goliath_superconductor.name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+			"header_text": "tooltip.on_phase_jump_exit_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_removed",
+                "value_id": "goliath_superconductor_antimatter_removed_scalar",
+				"value_float_format": "percentage",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_damage_rate",
+                "value_id": "goliath_superconductor_hull_damage_scalar",
+				"value_float_format": "percentage",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "goliath_superconductor_pierce"
+            }]
+        }]
+    }
+}

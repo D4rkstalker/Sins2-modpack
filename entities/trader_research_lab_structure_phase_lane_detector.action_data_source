@@ -1,0 +1,104 @@
+{
+    "version": 0,
+    "level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_lane_detector_notification_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_research_lab_structure_phase_lane_detector_on_planet"
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_lane_detector_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "phase_lane_detector_nearby_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "gravity_well"
+            ],
+            "ownerships": [
+                "enemy",
+				"friendly",
+				"none"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "phase_lane_detector_phase_lane_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "titan",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_research_lab_structure_phase_lane_detector_on_enemy"
+				}
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "phase_lane_distance",
+        "action_value":
+        {
+            "values": [1.0, 2.0]
+        }
+    },
+    {
+        "action_value_id": "jump_distance",
+        "action_value":
+        {
+            "values": [0.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "duration",
+        "action_value":
+        {
+            "values": [60.0, 60.0]
+        }
+    }]
+}

@@ -1,0 +1,51 @@
+{
+    "version": 0,
+	"active_duration": "buff_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "miners_strike_surface_metal_mining_rate_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "miners_strike_surface_crystal_mining_rate_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "miners_strike_orbital_metal_mining_rate_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "miners_strike_orbital_crystal_mining_rate_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_upgrade_terran_biosphere_1_research_subject_hud_icon",
+        "name": "npc_reward.danoba_miners_strike.name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "miners_strike_surface_metal_mining_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "miners_strike_surface_crystal_mining_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "miners_strike_orbital_metal_mining_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "miners_strike_orbital_crystal_mining_rate_modifier"
+            }]
+        }]
+	}
+}

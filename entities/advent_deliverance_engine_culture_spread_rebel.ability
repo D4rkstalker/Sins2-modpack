@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "action_data_source": "advent_deliverance_engine_culture_spread_rebel",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [],
+        [
+            ["advent_upgrade_deliverance_engine_structure_rebel_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "deliverance_engine_culture_spread_rebel_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_deliverance_engine_culture_spread_rebel_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "common_planet_any_owner"
+        ],
+        "between_gravity_well_range": "deliverance_engine_culture_spread_rebel_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 2.0,
+        "auto_cast":
+        {
+            "type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_filter": "deliverance_engine_culture_spread_rebel_auto_cast_target_filter"
+            }],
+            "gravity_well_distance_range": "deliverance_engine_culture_spread_rebel_range_value"
+        },
+        "watched_buff": "advent_deliverance_engine_culture_spread_rebel_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_deliverance_engine_culture_spread_rebel_ability_hud_icon",
+        "tooltip_picture": "advent_deliverance_engine_culture_spread_rebel_ability_tooltip_picture",
+        "name": "advent_deliverance_engine_culture_spread_rebel_ability_name",
+        "description": "advent_deliverance_engine_culture_spread_rebel_ability_description",
+        "targeting":
+        {
+            "targeting_type": "between_gravity_well_range",
+            "values":
+            {
+                "range": "deliverance_engine_culture_spread_rebel_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "deliverance_engine_culture_spread_rebel_culture_rate_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "deliverance_engine_culture_spread_rebel_duration_on_target_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [0.0, 0.0, 0.0]
+    }]
+}

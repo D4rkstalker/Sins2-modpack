@@ -1,0 +1,69 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"execution_interval_count_value": "temple_of_pilgrimage_execution_interval_count_value",
+        "execution_interval_value": "temple_of_pilgrimage_execution_interval_value",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "temple_of_pilgrimage_replace_target_filter"
+			},
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+		}
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_planet_track_queue_increased",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "temple_of_pilgrimage_future_planet_level_value",
+                "comparison_type": "greater_than_equal_to",
+                "value_b": "temple_of_pilgrimage_max_planet_level_value"
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "temple_of_pilgrimage_planet_track_price_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_temple_of_pilgrimage_unit_item_hud_icon",
+        "name": "advent_temple_of_pilgrimage_unit_item_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "temple_of_pilgrimage_planet_track_price_modifier"
+            }]
+        }]
+    }
+}

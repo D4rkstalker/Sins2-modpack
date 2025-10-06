@@ -1,0 +1,130 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "inspiring_broadcast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "inspiring_broadcast_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_colony_capital_ship_inspiring_broadcast_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "inspiring_broadcast_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "inspiring_broadcast_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "inspiring_broadcast_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "inspiring_broadcast_radius_value",
+        "action_value":
+        {
+            "values": [5000.0, 6500.0, 8000.0, 9500.0, 11000.0]
+        }
+    },
+    {
+        "action_value_id": "inspiring_broadcast_weapon_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.125, -0.25, -0.375, -0.5, -0.625]
+        }
+    },
+    {
+        "action_value_id": "inspiring_broadcast_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "trader_colony_capital_ship_mobile_trade_port_trade_import_points_value",
+        "action_value":
+        {
+            "values": [2.0, 4.0, 6.0, 8.0, 10.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "cooldown_duration",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "inspiring_broadcast_weapon_cooldown_duration_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "trader_colony_capital_ship_mobile_trade_port_trade_import_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "trade_import_points",
+            "value_behavior": "additive",
+            "value_id": "trader_colony_capital_ship_mobile_trade_port_trade_import_points_value"
+        }
+    }]
+}

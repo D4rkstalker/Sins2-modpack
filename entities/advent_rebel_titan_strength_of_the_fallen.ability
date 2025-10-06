@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "action_data_source": "advent_rebel_titan_strength_of_the_fallen",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "passive_actions":
+    {
+        "persistant_buff": "advent_rebel_titan_strength_of_the_fallen_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_rebel_titan_strength_of_the_fallen_ability_hud_icon",
+        "tooltip_picture": "advent_rebel_titan_strength_of_the_fallen_ability_tooltip_picture",
+        "name": "advent_rebel_titan_strength_of_the_fallen_ability_name",
+        "description": "advent_rebel_titan_strength_of_the_fallen_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "strength_of_the_fallen_radius"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.damage",
+                "value_id": "strength_of_the_fallen_weapon_damage_scalar_value",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_stack_count",
+                "value_id": "strength_of_the_fallen_max_stack_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "strength_of_the_fallen_stack_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

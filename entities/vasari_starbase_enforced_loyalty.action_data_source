@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "enforced_loyalty_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "enforced_loyalty_development_track_build_rate_scalar_value",
+        "action_value":
+        {
+            "values": [-0.24]
+        }
+    },
+    {
+        "action_value_id": "enforced_loyalty_metal_income_rate_additive_value",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    },
+    {
+        "action_value_id": "enforced_loyalty_structure_build_rate_scalar_value",
+        "action_value":
+        {
+            "values": [-0.24]
+        }
+    },
+    {
+        "action_value_id": "enforced_loyalty_surveying_rate_scalar_value",
+        "action_value":
+        {
+            "values": [-0.48]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "enforced_loyalty_development_track_build_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_time",
+            "value_behavior": "scalar",
+            "value_id": "enforced_loyalty_development_track_build_rate_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "enforced_loyalty_metal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "enforced_loyalty_metal_income_rate_additive_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "enforced_loyalty_structure_build_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "structure_build_time",
+            "value_behavior": "scalar",
+            "value_id": "enforced_loyalty_structure_build_rate_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "enforced_loyalty_surveying_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "surveying_track_build_time",
+            "value_behavior": "scalar",
+            "value_id": "enforced_loyalty_surveying_rate_scalar_value"
+        }
+    }]
+}

@@ -1,0 +1,41 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "pranast_bastion_module_hud_icon",
+    "tooltip_picture": "pranast_bastion_module_tooltip_picture",
+    "name": "npc_reward.pranast_bastion_module.name",
+    "description": "npc_reward.pranast_bastion_module.description",
+    "always_show_in_shop": true,
+    "is_finite": true,
+    "required_unit_tags": [
+        "starbase"
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "defense",
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_hull_points",
+        "value_behavior": "additive",
+        "values": [5000]
+    },
+    {
+        "modifier_type": "hull_point_restore_rate",
+        "value_behavior": "scalar",
+        "values": [8]
+    },
+    {
+        "modifier_type": "max_armor_points",
+        "value_behavior": "additive",
+        "values": [5000]
+    },
+    {
+        "modifier_type": "armor_point_restore_rate",
+        "value_behavior": "scalar",
+        "values": [8]
+    }],
+    "unit_mutations": [
+        "enable_can_use_abilities_when_crippled",
+        "enable_can_use_weapons_when_crippled"
+    ]
+
+}

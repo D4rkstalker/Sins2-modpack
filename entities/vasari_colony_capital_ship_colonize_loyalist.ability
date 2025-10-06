@@ -1,0 +1,157 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_colony_capital_ship_colonize",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "colonize_cooldown_time_value",
+        "antimatter_cost": "colonize_antimatter_cost_value",
+        "actions":
+        {
+			"constraint":
+			{
+				"constraint_type": "unit_passes_unit_constraint",
+				"unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"unit_constraint":
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "anundi_collective_dissonance_on_ships",
+						"include_pending_buffs": true
+					}
+				}
+			},
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "uniforms_colonizable_planets"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "colonize_range_value",
+                "travel_time":
+                {
+                    "travel_time_source": "explicit_time",
+                    "explicit_time_value": "colonize_delay_time_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "colonize_planet",
+                    "buff_on_planet": "vasari_colony_capital_ship_colonize_loyalist"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "projectile_travel_effect": "vasari_colony_shuttle",
+                        "projectile_travel_easing_function": "in_out_cubic"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "uniforms_colonizable_planets"
+        ],
+        "range": "colonize_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "disabled_if_any_enemy_primary_ship_role_in_gravity_well_exists": "bomb_planet",
+            "target_definitions": [
+            {
+                "target_filter": "uniforms_colonizable_planets"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_colony_capital_ship_colonize_ability_hud_icon",
+        "tooltip_picture": "vasari_colony_capital_ship_colonize_ability_tooltip_picture",
+        "name": "vasari_colony_capital_ship_colonize_ability_name",
+        "description": "vasari_colony_capital_ship_colonize_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "colonize_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "unit_owner",
+						"owned_unit":
+						{
+							"unit_type": "current_spawner"
+						}
+					},
+					"prerequisites": [
+						["vasari_loyalist_solitary_path"]
+					]
+				}
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.free_mining_track_level",
+                "value_id": "colonize_level_count_value",
+                "value_color": "positive"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "research_prerequisites_are_met",
+				"player":
+				{
+					"player_type": "unit_owner",
+					"owned_unit":
+					{
+						"unit_type": "current_spawner"
+					}
+				},
+				"prerequisites": [
+					["vasari_loyalist_solitary_path"]
+				]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.free_mining_track_level",
+                "value_id": "colonize_level_count_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "unit_item_value",
+                "label_text": "tooltip.ability.free_planet_component",
+                "unit_item": "vasari_stripped_to_the_core"
+            }]
+        }]
+    }
+}

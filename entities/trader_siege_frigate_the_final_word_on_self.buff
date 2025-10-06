@@ -1,0 +1,60 @@
+{
+    "version": 0,
+    "active_duration": "the_final_word_cooldown_time_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "the_final_word_travel_speed_value"
+                },
+                "operators": [
+                {
+	                "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "the_final_word_target_filter"
+                    },
+                    "operator_type": "cull_allegiance_population",
+                    "damage_source": "ability",
+                    "population_reduction_type": "enemy_only",
+                    "population_culled_value": "the_final_word_bombing_population_damage_value",
+                    "population_reduction_modifier_type": "additive"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "bomb",
+                    "effects":
+                    {
+                        "muzzle_effect": "trader_siege_frigate_planet_bombing_weapon_muzzle",
+                        "projectile_travel_effect": "trader_siege_frigate_planet_bombing_weapon_projectile_travel",
+                        "hit_hull_effect": "trader_siege_frigate_planet_bombing_weapon_hit_hull",
+                        "hit_shield_effect": "trader_siege_frigate_planet_bombing_weapon_hit_shield"
+                    }
+                }]
+            }]
+        }
+    }]
+}

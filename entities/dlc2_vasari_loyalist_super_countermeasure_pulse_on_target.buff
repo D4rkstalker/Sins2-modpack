@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "active_duration": "countermeasure_pulse_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": false,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_loyalist_super_countermeasure_pulse_on_damage_dealer"
+                }]
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_target_small",
+                        "medium_unit": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_target_medium",
+                        "large_unit": "dlc2_vasari_loyalist_super_countermeasure_pulse_buff_on_target_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_torpedo",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_loyalist_super_countermeasure_pulse_on_damage_dealer"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_vasari_loyalist_super_countermeasure_pulse_hud_icon",
+        "name": "dlc2_vasari_loyalist_super_countermeasure_pulse_ability_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_loyalist_super_countermeasure_pulse_damage_against_caster",
+                "value_id": "countermeasure_pulse_damage_taken_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

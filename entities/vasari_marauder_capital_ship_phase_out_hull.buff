@@ -1,0 +1,89 @@
+{
+    "version": 0,
+    "active_duration": "phase_out_hull_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "aura",
+                    "effect_by_size":
+                    {
+                        "small_unit": "vasari_marauder_capital_ship_phase_out_hull_buff_on_target_small",
+                        "medium_unit": "vasari_marauder_capital_ship_phase_out_hull_buff_on_target_medium",
+                        "large_unit": "vasari_marauder_capital_ship_phase_out_hull_buff_on_target_large"
+                    }
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "can_ever_move"
+                    }
+                },
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "damage_taken"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_marauder_capital_ship_phase_out_hull_ability_hud_icon",
+        "name": "vasari_marauder_capital_ship_phase_out_hull_ability_name",
+        "visibility_scope": "positive",
+		"is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "damage_taken"
+            }]
+        }]
+    }
+}

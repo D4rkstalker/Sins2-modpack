@@ -1,0 +1,97 @@
+{
+    "version": 0,
+    "action_data_source": "trader_loyalist_titan_furious_defense",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "furious_defense_cooldown_time_value",
+        "antimatter_cost": "furious_defense_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_loyalist_titan_furious_defense"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_loyalist_titan_furious_defense_ability_hud_icon",
+        "name": "trader_loyalist_titan_furious_defense_ability_name",
+        "description": "trader_loyalist_titan_furious_defense_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "furious_defense_execution_count_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.in_non_friendly_gravity_well_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.damage",
+                "value_id": "furious_defense_normal_weapon_damage_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "furious_defense_normal_hull_restore_rate_bonus_value",
+                "value_float_format": "no_decimal_place_with_sign",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "tooltip.in_friendly_gravity_well_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "furious_defense_improved_weapon_damage_bonus_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "furious_defense_improved_hull_restore_rate_bonus_value",
+                "value_float_format": "no_decimal_place_with_sign",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

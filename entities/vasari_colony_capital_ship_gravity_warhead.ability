@@ -1,0 +1,123 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_colony_capital_ship_gravity_warhead",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "gravity_warhead_cooldown_time_value",
+        "antimatter_cost": "gravity_warhead_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "gravity_warhead_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "gravity_warhead_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_colony_capital_ship_gravity_warhead_on_spawner"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "bomb",
+                    "effects":
+                    {
+                        "muzzle_effect": "vasari_colony_capital_ship_gravity_warhead_muzzle",
+                        "projectile_travel_effect": "vasari_colony_capital_ship_gravity_warhead_projectile_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "gravity_warhead_target_filter"
+        ],
+        "range": "gravity_warhead_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "gravity_warhead_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "target"
+                    },
+					"radius_value": "gravity_warhead_radius_value",
+					"target_count_value": "gravity_warhead_auto_cast_target_value",
+                    "target_filter_id": "gravity_warhead_auto_cast_target_filter",
+                    "target_override_filter_id": "gravity_warhead_auto_cast_override_target_filter"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_colony_capital_ship_gravity_warhead_ability_hud_icon",
+        "tooltip_picture": "vasari_colony_capital_ship_gravity_warhead_ability_tooltip_picture",
+        "name": "vasari_colony_capital_ship_gravity_warhead_ability_name",
+        "description": "vasari_colony_capital_ship_gravity_warhead_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "gravity_warhead_range_value",
+                "radius": "gravity_warhead_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "gravity_warhead_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "gravity_warhead_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "gravity_warhead_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

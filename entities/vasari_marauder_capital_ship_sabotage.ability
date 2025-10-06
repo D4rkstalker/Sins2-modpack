@@ -1,0 +1,101 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_marauder_capital_ship_sabotage",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "sabotage_cooldown_time_value",
+        "antimatter_cost": "sabotage_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "sabotage_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_marauder_capital_ship_sabotage_on_spawner"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "muzzle_effect": "vasari_marauder_capital_ship_sabotage_muzzle",
+                        "projectile_travel_effect": "vasari_marauder_capital_ship_sabotage_projectile_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "sabotage_defense_target_filter",
+            "sabotage_factory_target_filter"
+        ],
+        "range": "sabotage_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "sabotage_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_marauder_capital_ship_sabotage_ability_hud_icon",
+        "tooltip_picture": "vasari_marauder_capital_ship_sabotage_ability_tooltip_picture",
+        "name": "vasari_marauder_capital_ship_sabotage_ability_name",
+        "description": "vasari_marauder_capital_ship_sabotage_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "sabotage_range_value",
+                "radius": "sabotage_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_factory_modifier",
+                "unit_factory_modifier_id": "sabotage_factory_build_time_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "sabotage_structure_build_time_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "cooldown_duration"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "sabotage_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

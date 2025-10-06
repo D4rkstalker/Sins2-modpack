@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "action_data_source": "eivonns_flak_ships",
+    "active_actions":
+    {
+        "required_available_supply": "eivonns_flak_ships_available_supply_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "trader_scout_frigate",
+                            "weight": 4.0
+                        },
+                        {
+                            "unit": "trader_antifighter_frigate",
+                            "weight": 4.0
+                        },
+                        {
+                            "unit": "vasari_antifighter_frigate",
+                            "weight": 1.0
+                        },
+                        {
+                            "unit": "advent_defense_cruiser",
+                            "weight": 1.0
+                        }]
+                    },
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "eivonns_flak_ships_arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "target"
+                        }
+                    },
+                    "available_supply_value": "eivonns_flak_ships_available_supply_value",
+                    "constrain_available_supply_to_owner_player": true,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "uniforms_owned_planets"]
+    },
+    "gui":
+    {
+        "hud_icon": "trader_scout_frigate_hud_icon",
+        "name": "npc_reward.eivonns_flak_ships.name",
+        "description": "npc_reward.eivonns_flak_ships.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.spawned_supply",
+                "value_id": "eivonns_flak_ships_available_supply_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.spawned_ships_random_list_header",
+            "lines": [
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_scout_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_antifighter_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_antifighter_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "advent_defense_cruiser"
+            }]
+        }]
+    }
+}

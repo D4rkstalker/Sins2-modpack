@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "is_artifact": true,
+    "is_finite": true,
+    "hud_icon": "energy_transformer_artifact_hud_icon",
+    "tooltip_icon": "energy_transformer_artifact_hud_icon",
+    "name": "planet_artifact.energy_transformer.name",
+    "description": "planet_artifact.energy_transformer.desc",
+    "required_unit_tags": [
+        "capital_ship",
+		"super_capital_ship",
+        "titan",
+		"starbase"
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "utility",
+    "unit_modifiers": [
+    {
+        "modifier_type": "trade_import_points",
+        "value_behavior": "additive",
+        "values": [12.0]
+    },
+    {
+        "modifier_type": "trade_export_credits_points",
+        "value_behavior": "additive",
+        "values": [4.0]
+    },
+    {
+        "modifier_type": "trade_export_metal_points",
+        "value_behavior": "additive",
+        "values": [4.0]
+    },
+    {
+        "modifier_type": "trade_export_crystal_points",
+        "value_behavior": "additive",
+        "values": [4.0]
+    },
+    {
+        "modifier_type": "unity_points",
+        "value_behavior": "additive",
+        "values": [6.0]
+    }],
+    "player_modifiers":
+	{
+		"empire_modifiers": [
+		{
+			"modifier_type": "unity_max_mana_points",
+			"value_behavior": "additive",
+			"value": 200.0
+		},
+		{
+			"modifier_type": "unity_mana_restore_rate",
+			"value_behavior": "additive",
+			"value": 5.0
+		}]
+	},
+    "phase_resonance_capacitor":
+    {
+        "time_to_store_point": [5]
+    },
+    "ability": "energy_transformer_artifact"
+}

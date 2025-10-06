@@ -1,0 +1,185 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "energy_transfer_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "energy_transfer_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "energy_transfer_chain_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_missing_shields"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "energy_transfer_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_missing_shields"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "beam_duration_value",
+        "action_value":
+        {
+            "values": [1.5, 1.5, 1.5, 1.5, 1.5]
+        }
+    },
+    {
+        "action_value_id": "chain_range_value",
+        "action_value":
+        {
+            "values": [3000.0, 3300.0, 3600.0, 3900.0, 4200.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [8.0, 8.0, 8.0, 8.0, 8.0]
+        }
+    },
+    {
+        "action_value_id": "max_target_count_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 6.0, 6.0, 7.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [6000.0, 6000.0, 6000.0, 6000.0, 6000.0]
+        }
+    },
+    {
+        "action_value_id": "shield_restore_primary_value",
+        "action_value":
+        {
+            "values": [250.0, 500.0, 750.0, 1000.0, 1250.0]
+        }
+    },
+    {
+        "action_value_id": "shield_restore_secondary_value",
+        "action_value":
+        {
+            "values": [100.0, 200.0, 300.0, 400.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_shield_threshold_value",
+        "action_value":
+        {
+            "values": [350.0, 600.0, 850.0, 1100.00, 1350.0]
+        }
+    },
+    {
+        "action_value_id": "target_missing_shield_value",
+        "action_value":
+        {
+            "transform_type": "per_missing_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    }]
+}

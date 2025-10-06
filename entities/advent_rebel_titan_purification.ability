@@ -1,0 +1,143 @@
+{
+    "version": 0,
+    "action_data_source": "advent_rebel_titan_purification",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "purification_cooldown_time_value",
+        "antimatter_cost": "purification_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "above",
+                        "effect": "advent_rebel_titan_purification_activate"
+                    }
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "source_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "affect_type": "hull_only",
+                    "repair_value": "purification_hull_restore_value"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "purification_shield_restore_value"
+                },
+                {
+                    "operator_type": "restore_antimatter",
+                    "antimatter_restore_value": "purification_antimatter_restore_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_rebel_titan_purification_impact_small",
+                            "medium_unit": "advent_rebel_titan_purification_impact_medium",
+                            "large_unit": "advent_rebel_titan_purification_impact_large"
+                        }
+                    }
+                },
+                {
+                    "operator_type": "make_dead",
+                    "skip_player_statistics": false
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "purification_target_filter"
+        ],
+        "range": "purification_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_missing_shields"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "purification_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_rebel_titan_purification_ability_hud_icon",
+        "tooltip_picture": "advent_rebel_titan_purification_ability_tooltip_picture",
+        "name": "advent_rebel_titan_purification_ability_name",
+        "description": "advent_rebel_titan_purification_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "purification_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_restore",
+                "value_id": "purification_hull_restore_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "purification_shield_restore_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_restore",
+                "value_id": "purification_antimatter_restore_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

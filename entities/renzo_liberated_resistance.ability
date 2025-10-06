@@ -1,0 +1,85 @@
+{
+    "version": 0,
+    "action_data_source": "renzo_liberated_resistance",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "buff_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "renzo_liberated_resistance_on_siege_units"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "ability_targets"]
+    },
+    "gui":
+    {
+        "hud_icon": "renzo_liberated_resistance_hud_icon",
+        "name": "npc_reward.renzo_liberated_resistance.name",
+        "description": "npc_reward.renzo_liberated_resistance.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "buff_duration",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.spawned_supply",
+                "value_id": "supply_value"
+            }]
+        },
+		{
+            "header_text": "tooltip.ability.spawned_ships_list_header",
+            "lines": [
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_light_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_long_range_cruiser"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_heavy_cruiser"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_antifighter_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "trader_siege_frigate"
+            }]
+		}]
+    }
+}

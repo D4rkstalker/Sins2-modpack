@@ -1,0 +1,168 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "shield_leech_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"],
+            "constraints": [
+            {
+                "constraint_type": "has_shields"
+            },
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "shield_leech_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"],
+            "constraints": [
+            {
+                "constraint_type": "has_shields"
+            },
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			},
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "total_shield_regen"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "shield_leech_total_shield_regen_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "total_shield_regen",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_armor_penetration_value",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_damage_rate_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_execution_count_value",
+        "action_value":
+        {
+            "values": [40.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_shield_restore_rate_value",
+        "action_value":
+        {
+            "transform_type": "per_resolved_shield_damage_dealt",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_radius_value",
+        "action_value":
+        {
+            "values": [15000.0]
+        }
+    },
+    {
+        "action_value_id": "shield_leech_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    }],
+    "effect_alias_bindings": [
+        {
+            "alias_name": "dlc_ancient_starbase_shield_leech_activate",
+            "alias_binding":
+            {
+                "particle_effect": "shield_leech_activate"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_shield_leech_on_spawner",
+            "alias_binding":
+            {
+                "particle_effect": "shield_leech"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_shield_leech_on_target_large",
+            "alias_binding":
+            {
+                "particle_effect": "shield_leech_on_large"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_shield_leech_on_target_medium",
+            "alias_binding":
+            {
+                "particle_effect": "shield_leech_on_medium"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_shield_leech_on_target_small",
+            "alias_binding":
+            {
+                "particle_effect": "shield_leech_on_small"
+            }
+        }]
+}

@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "avatar_radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_comparison",
+                        "unit_a":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_b":
+                        {
+                            "unit_type": "previous_spawner"
+                        }
+                    }
+                },
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_unity_avatar_buff_on_target_small",
+                        "medium_unit": "advent_unity_avatar_buff_on_target_medium",
+                        "large_unit": "advent_unity_avatar_buff_on_target_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "avatar_energy_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unity_avatar_ability_hud_icon",
+        "name": "advent_unity_avatar_ability_aura_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "avatar_energy_weapon_damage_modifier"
+            }]
+        }]
+    }
+}

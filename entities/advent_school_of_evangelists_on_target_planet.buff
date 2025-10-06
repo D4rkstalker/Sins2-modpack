@@ -1,0 +1,100 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_source_ability_released": true,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": false,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "bomb_planet",
+                    "damage_source": "ability",
+                    "bombing_damage_value": "school_of_evangelists_bombing_damage_value",
+                    "bombing_population_damage_value": "school_of_evangelists_bombing_population_damage_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+					"constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"target_filter_id": "school_of_evangelists_neutral_target_filter"
+					},
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_reimagine_assimilated_population"]
+						]
+					}]
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_reimagine_assimilated_population_on_planet_buff"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_school_of_evangelists_unit_item_hud_icon",
+        "name": "advent_school_of_evangelists_unit_item_name",
+        "is_visible_within_unit_tooltip": true,
+		"is_expire_time_suppressed": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_damage",
+                "value_id": "school_of_evangelists_bombing_damage_value",
+				"value_color": "negative",
+                "value_suffix": "per_second"
+            }]
+		}]
+    }
+}

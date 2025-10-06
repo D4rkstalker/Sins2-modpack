@@ -1,0 +1,151 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "hottest ring",
+            "type": "point",
+            "emit_max_particle_count": [999.0, 999.0],
+            "emit_rate": {
+                "primary_emit_rate": [3.0, 3.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [3.0, 3.0],
+                "color": "ffc0ffff",
+                "fade_in_time": [2.0, 2.0],
+                "fade_out_time": [0.30, 0.30],
+                "billboard": {
+                    "width": [60000.0, 60000.0],
+                    "height": [60000.0, 60000.0],
+                    "rotation": [6.283185, 6.283185],
+                    "texture_0": "kay_flare0000",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random"
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [1.570796, 1.570796]
+        },
+        {
+            "id": 2,
+            "name": "beams",
+            "type": "point",
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "color": "ffc0ffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "width": [16000.0, 16000.0],
+                    "height": [120000.0, 120000.0],
+                    "rotation_speed": [3.141593, 3.141593],
+                    "texture_0": "pulsar_beam",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "texture_animation_first_frame": "random"
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 3,
+            "name": "Outline",
+            "type": "point",
+            "emit_max_particle_count": [999.0, 999.0],
+            "emit_rate": {
+                "primary_emit_rate": [3.0, 3.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [3.0, 3.0],
+                "color": "ffc0ffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "width": [25000.0, 25000.0],
+                    "height": [25000.0, 25000.0],
+                    "texture_0": "whiteshockwave",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "texture_animation_first_frame": "random"
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 4,
+            "name": "NewModifier4",
+            "type": "size",
+            "width_change_rate": [-100.0, -100.0],
+            "height_change_rate": [-100.0, -100.0]
+        },
+        {
+            "id": 5,
+            "name": "NewModifier5",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "constant",
+                "range": [0.0, 0.0]
+            }
+        },
+        {
+            "id": 6,
+            "name": "NewModifier6",
+            "type": "rotate",
+            "op": "around_axis",
+            "angular_velocity": [1.0, 1.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 4,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 0
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "shield_points_bonus_value"
+    },
+    {
+        "buff_unit_modifier_id": "shield_burst_bonus_value"
+    }],
+    "unit_mutations": [
+        "disable_can_have_shields_bypassed"
+    ],
+    "gui":
+    {
+        "name": "advent_shield_boost_unit_item_name",
+  	"hud_icon": "advent_shield_boost_unit_item_hud_icon",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "shield_points_bonus_value",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "shield_burst_bonus_value",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_bypassed",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

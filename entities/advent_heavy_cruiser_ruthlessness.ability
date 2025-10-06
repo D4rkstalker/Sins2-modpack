@@ -1,0 +1,93 @@
+{
+    "version": 0,
+    "action_data_source": "advent_heavy_cruiser_ruthlessness",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_heavy_cruiser_ruthlessness_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "ruthlessness_cooldown_time_value",
+        "antimatter_cost": "ruthlessness_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_heavy_cruiser_ruthlessness_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_heavy_cruiser_ruthlessness_buff_start"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_heavy_cruiser_ruthlessness_ability_hud_icon",
+        "tooltip_picture": "advent_heavy_cruiser_ruthlessness_ability_tooltip_picture",
+        "name": "advent_heavy_cruiser_ruthlessness_ability_name",
+        "description": "advent_heavy_cruiser_ruthlessness_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage",
+                "value_id": "ruthlessness_splash_damage_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "ruthlessness_splash_pierce_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "ruthlessness_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "ruthlessness_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "kinetic_intensifier_ship_artifact_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "kinetic_intensifier_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    },
+    {
+        "action_value_id": "kinetic_intensifier_weapon_range_bonus_value",
+        "action_value":
+        {
+            "values": [0.4]
+        }
+    },
+    {
+        "action_value_id": "kinetic_intensifier_ability_range_bonus_value",
+        "action_value":
+        {
+            "values": [0.4]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "kinetic_intensifier_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "kinetic_intensifier_weapon_damage_bonus_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "kinetic_intensifier_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "kinetic_intensifier_weapon_range_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "kinetic_intensifier_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "kinetic_intensifier_ability_range_bonus_value"
+        }
+    }]
+}

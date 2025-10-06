@@ -1,0 +1,57 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 1,
+    "field": "civilian_evangelism",
+    "field_coord": [2, 7],
+    "research_time": 135.0,
+    "price":
+    {
+        "credits": 500.0,
+        "metal": 125.0,
+        "crystal": 300.0
+    },
+    "prerequisites": [
+        ["advent_upgrade_culture_rate_0"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_established_dominant_culture_gravity_wells",
+        "extra_level_prerequisites": [
+            [
+                ["advent_culture_phase_lane_detection_1"]
+            ]
+        ],
+        "action_data_source": "advent_culture_phase_lane_detection",
+        "buff": "advent_culture_phase_lane_detection_on_gravity_well"
+    },
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+			"unit_types": [
+				"planet"
+			]
+        },
+        "action_data_source": "advent_culture_phase_lane_detection_alert",
+        "buff": "advent_culture_phase_lane_detection_on_planet"
+    }],
+    "name": "advent_culture_phase_lane_detection_0_research_subject_name",
+    "name_uppercase": "advent_culture_phase_lane_detection_0_research_subject_name_uppercase",
+    "description": "advent_culture_phase_lane_detection_0_research_subject_description",
+    "hud_icon": "advent_culture_phase_lane_detection_0_research_subject_hud_icon",
+    "tooltip_picture": "advent_culture_phase_lane_detection_0_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_detection"
+    ],
+    "arbitary_research_line":
+    {
+        "unlock_label": "tooltip.research_subject.arbitary_unlock_label.unlock_phase_lane_detector",
+        "heading": "tooltip.research_subject.arbitary_dominant_culture_bonus",
+        "before_after_heading": "tooltip.research_subject.arbitary_before_after_heading.unlock_phase_lane_detector",
+        "after_number": 1.0
+    }
+}

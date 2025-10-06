@@ -1,0 +1,130 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 55734.090166,
+        "min_camera_distance": 1781.855564,
+        "gui":
+        {
+            "hud_icon": "vasari_pop_growth_hud_icon",
+            "hud_monochrome_icon": "vasari_population_structure_main_view_icon",
+            "hud_picture": "vasari_pop_growth_hud_picture",
+            "tooltip_picture": "vasari_pop_growth_tooltip_picture",
+            "name": "vasari_population_structure_name",
+            "description": ":Increases planetary population growth rate and acts as a trade center hub for the Alliance and their allies."
+        },
+        "unit_mesh":
+        {
+            "mesh": "vasari_population_structure",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "structure",
+            "icon": "vasari_population_structure_main_view_icon",
+            "selected_icon": "vasari_population_structure_main_view_icon_selected",
+            "sub_selected_icon": "vasari_population_structure_main_view_icon_sub_selected",
+            "has_rotation": false
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 10,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "vasari_damage_clouds"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "vasari_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "vasari_damage_escaping_gas",
+                    "sound": "ambient_loop_tech_escaping_gas"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "vasari_damage_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "vasari_damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "vasari_damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "vasari_pop_ambient"
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_phase_culturecenter"
+                    ],
+                    "scared": [
+                        "ui_onselection_phase_culturecenter"]
+                }
+            }
+        },
+        "death_sequence_group": "vasari_planetmodulesmall"
+    }]
+}

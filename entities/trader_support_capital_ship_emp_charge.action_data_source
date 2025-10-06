@@ -1,0 +1,150 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "emp_charge_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+		"starbase",
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_antimatter"
+                },
+                {
+                    "constraint_type": "has_shields"
+                }]
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "emp_charge_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_antimatter"
+                },
+                {
+                    "constraint_type": "has_shields"
+                }]
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "emp_charge_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+		"starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [50.0, 50.0, 50.0, 50.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "empowered_antimatter_remove_value",
+        "action_value":
+        {
+            "values": [60.0, 90.0, 120.0, 150.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "empowered_shield_damage_value",
+        "action_value":
+        {
+            "values": [500.0, 1000.0, 1500.0, 2000.0, 2500.0]
+        }
+    },
+    {
+        "action_value_id": "non_empowered_antimatter_remove_value",
+        "action_value":
+        {
+            "values": [40.0, 60.0, 80.0, 100.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "non_empowered_shield_damage_value",
+        "action_value":
+        {
+            "values": [250.0, 500.0, 750.0, 1000.0, 1250.0]
+        }
+    },
+    {
+        "action_value_id": "emp_charge_penetration_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "projectile_travel_speed_value",
+        "action_value":
+        {
+            "values": [3000.0, 3000.0, 3000.0, 3000.0, 3000.0]
+        }
+    },
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0, 600.0, 600.0, 600.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [8000.0, 8000.0, 8000.0, 8000.0, 8000.0]
+        }
+    }]
+}

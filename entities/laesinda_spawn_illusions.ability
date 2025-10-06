@@ -1,0 +1,110 @@
+{
+    "version": 0,
+    "action_data_source": "laesinda_spawn_illusions",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "spawn_illusions_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "create_clones",
+                    "clone_spawn_position":
+                    {
+                        "position_type": "distance_in_direction_from_position",
+                        "distance_value": "spawn_illusions_spawn_range_value",
+                        "direction":
+                        {
+                            "direction_type": "unit_cross",
+                            "unit":
+                            {
+                                "unit_type": "target"
+                            }
+                        },
+                        "source_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "target"
+                            }
+                        }
+                    },
+                    "clone_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "target"
+                        }
+                    },
+                    "clone_count": "spawn_illusions_clone_count_value",
+                    "buff_on_clone": "laesinda_spawn_illusions_on_clones"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "spawn_illusions_target_filter"
+        ],
+        "range": "spawn_illusions_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "spawn_illusions_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "laesinda_spawn_illusions_hud_icon",
+        "name": "npc_reward.laesinda_spawn_illusions.name",
+        "description": "npc_reward.laesinda_spawn_illusions.description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "spawn_illusions_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.copy_count",
+                "value_id": "spawn_illusions_clone_count_value",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "spawn_illusions_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

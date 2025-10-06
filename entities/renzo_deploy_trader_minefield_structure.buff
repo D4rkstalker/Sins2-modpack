@@ -1,0 +1,75 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+				{
+					"constraint_type": "is_fully_built"
+				}
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+                    "unit_constraint":
+					{
+						"constraint_type": "has_recently_been_damaged"
+					}
+				},
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+					"repair_value": "build_structure_mine_shields_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+					"repair_value": "build_structure_mine_armor_repair"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+					"repair_value": "build_structure_mine_hull_repair"
+                }]
+            }]
+        }
+    }]
+}

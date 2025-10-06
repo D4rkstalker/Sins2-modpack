@@ -1,0 +1,319 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_shield_generator_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"
+			]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_ice_asteroid_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "ice_asteroid_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_ice_volcanic_moon_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+				"volcanic_moon_planet",
+				"ice_moon_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_city_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "city_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_hive_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "hive_asteroid_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_dwarf_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "moon_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_crystal_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "crystalline_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_asteroid_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "asteroid_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_pirate_base_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "pirate_base_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "trader_shield_generator_planet_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "desert_planet",
+				"ferrous_planet",
+                "gas_giant_planet",
+				"ice_planet",
+                "magnetic_planet",
+				"oceanic_planet",
+                "swamp_planet",
+				"terran_planet",
+                "barren_planet",
+				"volcanic_planet",
+                "greenhouse_planet",
+				"ferrous_planet",
+				"desert_home_planet",
+                "terran_home_planet",
+				"ferrous_home_planet",
+				"irradiated_planet"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+			"constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+				    "constraint_type": "has_missing_shields",
+					"percentage_missing_threshold": 1.0
+				}
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "trader_shield_generator_shields_additive",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "trader_shield_generator_shields_regen",
+        "action_value":
+        {
+            "values": [125.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "trader_shield_generator_shields_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "trader_shield_generator_shields_additive"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "trader_shield_generator_shields_regen_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "shield_points_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "trader_shield_generator_shields_regen"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "ice_asteroid_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "ice_asteroid_planet_shield"
+        }
+    },
+    {
+        "alias_name": "ice_volcanic_moon_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "ice_volcanic_moon_planet_shield"
+        }
+    },
+    {
+        "alias_name": "city_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "city_planet_shield"
+        }
+    },
+    {
+        "alias_name": "hive_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "hive_planet_shield"
+        }
+    },
+    {
+        "alias_name": "planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "planet_shield"
+        }
+    },
+    {
+        "alias_name": "crystal_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "crystal_planet_shield"
+        }
+    },
+    {
+        "alias_name": "dwarf_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "dwarf_planet_shield"
+        }
+    },
+    {
+        "alias_name": "asteroid_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "asteroid_planet_shield"
+        }
+    },
+    {
+        "alias_name": "pirate_planet_shield",
+        "alias_binding":
+        {
+            "particle_effect": "pirate_planet_shield"
+        }
+    }]
+}

@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "hold_the_line_radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_comparison",
+                        "unit_a":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_b":
+                        {
+                            "unit_type": "previous_spawner"
+                        }
+                    }
+                },
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc2_trader_loyalist_super_hold_the_line_on_target_small",
+                        "medium_unit": "dlc2_trader_loyalist_super_hold_the_line_on_target_medium",
+                        "large_unit": "dlc2_trader_loyalist_super_hold_the_line_on_target_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "hold_the_line_damage_taken_ship_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_loyalist_super_hold_the_line_hud_icon",
+        "name": "dlc2_trader_loyalist_super_hold_the_line_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "hold_the_line_damage_taken_ship_modifier"
+            }]
+        }]
+    }
+}

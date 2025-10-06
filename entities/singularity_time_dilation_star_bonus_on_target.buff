@@ -1,0 +1,103 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "singularity_time_dilation_weapon_cooldown_duration_modifier"
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_ability_cooldown_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_antimatter_restore_rate_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_hyperspace_charge_time_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_hull_point_restore_rate_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_armor_point_restore_rate_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_shield_point_restore_rate_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_shield_burst_restore_cooldown_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_strikecraft_build_time_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "singularity_time_dilation_self_build_time_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "singularity_time_dilation_star_bonus_hud_icon",
+        "name": "planet_bonus.singularity_time_dilation.name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_antimatter_restore_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_hull_point_restore_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_armor_point_restore_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_shield_point_restore_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "singularity_time_dilation_weapon_cooldown_duration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_ability_cooldown_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_hyperspace_charge_time_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_shield_burst_restore_cooldown_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_strikecraft_build_time_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "singularity_time_dilation_self_build_time_modifier"
+            }]
+        }]
+    }
+}

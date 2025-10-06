@@ -1,0 +1,105 @@
+{
+    "version": 0,
+    "action_data_source": "advent_planet_psionic_capital_ship_provoke_hysteria",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "provoke_hysteria_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "provoke_hysteria_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "provoke_hysteria_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_planet_psionic_capital_ship_provoke_hysteria_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "provoke_hysteria_target_filter"
+        ],
+        "range": "provoke_hysteria_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "is_bombing_planet"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "provoke_hysteria_target_filter"
+            }]
+        },
+        "watched_buff": "advent_planet_psionic_capital_ship_provoke_hysteria_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_planet_psionic_capital_ship_provoke_hysteria_ability_hud_icon",
+        "tooltip_picture": "advent_planet_psionic_capital_ship_provoke_hysteria_ability_tooltip_picture",
+        "name": "advent_planet_psionic_capital_ship_provoke_hysteria_ability_name",
+        "description": "advent_planet_psionic_capital_ship_provoke_hysteria_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "provoke_hysteria_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_damage_rate",
+                "value_id": "provoke_hysteria_bombing_damage_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "value_suffix": "per_second",
+				"value_color": "negative"
+            },
+            {
+				"visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.population_damage",
+                "value_id": "provoke_hysteria_bombing_population_damage_value",
+                "value_float_format": "percentage_three_decimal_place_with_sign",
+                "value_suffix": "per_second",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "provoke_hysteria_execution_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "mass_production_factory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_unit_factory",
+                "must_be_functional": true
+            }]
+        }
+    },
+    {
+        "target_filter_id": "mass_production_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    },
+    {
+        "target_filter_id": "mass_production_starbase_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "mass_production_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [150.0, 150.0, 150.0, 150.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "mass_production_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0, 180.0, 180.0, 180.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "mass_production_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 120.0, 180.0, 240.0, 300.0]
+        }
+    },
+    {
+        "action_value_id": "mass_production_ship_build_time_bonus_value",
+        "action_value":
+        {
+            "values": [-0.15, -0.3, -0.45, -0.6, -0.75]
+        }
+    },
+    {
+        "action_value_id": "mass_production_structure_build_time_bonus_value",
+        "action_value":
+        {
+            "values": [-0.15, -0.3, -0.45, -0.6, -0.75]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "mass_production_self_build_time_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "self_build_time",
+            "value_behavior": "scalar",
+            "value_id": "mass_production_structure_build_time_bonus_value"
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "mass_production_structure_build_time_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "structure_build_time",
+            "value_behavior": "scalar",
+            "value_id": "mass_production_structure_build_time_bonus_value"
+        }
+    }],
+    "buff_unit_factory_modifiers": [
+    {
+        "buff_unit_factory_modifier_id": "mass_production_factory_build_time_modifier",
+        "buff_unit_factory_modifier":
+        {
+            "modifier_type": "build_time",
+            "value_behavior": "scalar",
+            "value_id": "mass_production_ship_build_time_bonus_value"
+        }
+    }]
+}

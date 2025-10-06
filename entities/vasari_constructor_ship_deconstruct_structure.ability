@@ -1,0 +1,123 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_constructor_ship_deconstruct_structure",
+    "active_actions":
+    {
+        "stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_constructor_ship_deconstruct_structure_on_self"
+                }]
+            }]
+
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "constructor_ship_deconstruct_target"
+        ],
+        "range": "deconstruct_structure_range",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 10.0,
+		"watched_buff": "vasari_constructor_ship_deconstruct_structure_on_self",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "type": "pick_target_within_current_gravity_well",
+            "target_definitions": [
+            {
+                "target_filter": "constructor_ship_deconstruct_target"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_constructor_ship_deconstruct_structure_ability_hud_icon",
+        "name": "constructor_ship_deconstruct_structure_ability_name",
+        "description": "constructor_ship_deconstruct_structure_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "deconstruct_structure_range"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "deconstruct_structure_damage",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "deconstruct_structure_pierce",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.credits_salvaged",
+                "value_id": "deconstruct_structure_credits",
+				"value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.metal_salvaged",
+                "value_id": "deconstruct_structure_metal",
+				"value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.crystal_salvaged",
+                "value_id": "deconstruct_structure_crystal",
+				"value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            }]
+		}]
+    }
+}

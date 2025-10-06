@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "trader_starbase_military_science_hud_icon",
+    "tooltip_picture": "trader_starbase_military_science_tooltip_picture",
+    "name": "unit_item.trader_starbase_military_science_labs_name",
+    "description": "unit_item.trader_starbase_military_science_labs_description",
+    "build_time": 90.0,
+    "price":
+    {
+	"credits": 1250.0,
+        "metal": 350.0,
+        "crystal": 350.0
+    },
+    "exotic_price": [
+    {
+        "exotic_type": "utility",
+        "count": 1
+    },
+    {
+        "exotic_type": "economic",
+        "count": 1
+    }],
+    "required_unit_tags": [
+        "starbase"
+    ],
+    "max_count_on_unit": 1,
+    "build_prerequisites": [
+        ["trader_starbase_science_labs"]
+    ],
+    "build_group_id": "utility",
+    "player_modifiers":
+    {
+        "empire_modifiers": [
+        {
+            "modifier_type": "military_research_rate",
+            "value_behavior": "scalar",
+            "value": 0.05
+        }]
+    },
+    "unit_modifiers": [
+    {
+        "modifier_type": "military_research_points",
+        "value_behavior": "additive",
+        "values": [1.0]
+    }]
+}

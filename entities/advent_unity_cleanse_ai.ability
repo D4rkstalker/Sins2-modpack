@@ -1,0 +1,207 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_cleanse",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_unity_structure"]
+        ],
+        [
+            ["advent_unity_mana_0"]
+        ],
+        [
+            ["advent_unity_mana_1"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "cleanse_cooldown_time_value",
+        "unity_mana_cost": "cleanse_unity_mana_cost_value",
+        "actions":
+        {
+			"constraint":
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "has_buff",
+							"buff": "advent_unity_cleanse_ai_prevent",
+							"include_pending_buffs": true
+						}
+					}
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "has_buff",
+							"buff": "advent_unity_cleanse_ai_prevent_two",
+							"include_pending_buffs": true
+						}
+					}
+				}]
+			},
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "radius_value": "cleanse_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "cleanse_radius_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "above",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_unity_cleanse_target_small",
+                            "medium_unit": "advent_unity_cleanse_target_medium",
+                            "large_unit": "advent_unity_cleanse_target_large"
+                        }
+                    }
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+                    "repair_value": "cleanse_hull_restore_value"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+                    "repair_value": "cleanse_armor_restore_value"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "cleanse_shield_restore_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "advent_unity_cleanse_buff_on_radius_small",
+                            "medium_unit": "advent_unity_cleanse_buff_on_radius_medium",
+                            "large_unit": "advent_unity_cleanse_buff_on_radius_large"
+                        }
+                    }
+                },
+                {
+                    "operator_type": "make_dead",
+                    "skip_player_statistics": false
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+					"owned_unit":
+					{
+						"unit_type": "current_spawner"
+					}
+                },
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "cleanse_prevent_target_filter"
+					},
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_cleanse_ai_prevent"
+                },
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "cleanse_prevent_timer_target_filter"
+					},
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_cleanse_ai_prevent_on_player_buffs"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "cleanse_target_filter"
+		],
+        "auto_cast":
+        {
+			"type": "pick_target_within_current_gravity_well",
+            "target_definitions": [
+            {
+                "target_filter": "cleanse_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "target"
+                    },
+					"radius_value": "cleanse_radius_value",
+					"target_count_value": "cleanse_auto_cast_target_value",
+                    "target_filter_id": "cleanse_radius_auto_cast_target_filter",
+					"target_override_filter_id": "cleanse_radius_auto_cast_override_target_filter"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_cleanse_ability_hud_icon",
+        "tooltip_picture": "advent_unity_cleanse_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_cleanse_ability_tooltip_picture",
+        "name": "advent_unity_cleanse_ability_name",
+        "description": "advent_unity_cleanse_ability_description"
+    }
+}

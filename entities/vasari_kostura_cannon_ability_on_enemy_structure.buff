@@ -1,0 +1,51 @@
+{
+    "version": 0,
+    "active_duration": "vasari_kostura_cannon_structure_disable_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            { 
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+					"can_damage_be_propagated": false,
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "vasari_kostura_cannon_structure_damage_value",
+					"penetration_value": "vasari_kostura_cannon_pierce_value"
+                }]
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_use_active_abilities",
+        "disable_can_use_weapons",
+		"disable_can_passively_regenerate_hull",
+		"disable_can_passively_regenerate_armor",
+		"disable_can_passively_regenerate_shields",
+		"disable_can_have_shields_burst_restored",
+		"disable_can_update_build_progress"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_kostura_cannon_ability_hud_icon",
+        "name": "vasari_kostura_cannon_structure_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative"
+    }
+}

@@ -1,0 +1,171 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "singularity_portal_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc_ancient_starbase_singularity_portal_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "singularity_portal_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"titan",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc_ancient_starbase_singularity_portal_on_target"
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "singularity_portal_cooldown_time_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_radius_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_range_value",
+        "action_value":
+        {
+            "values": [25000.0]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_attraction_max_linear_speed_value",
+        "action_value":
+        {
+            "values": [350.0]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_attraction_time_to_max_linear_speed_value",
+        "action_value":
+        {
+            "values": [2.5]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_physics_duration_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "singularity_portal_linear_speed_modifier_value",
+        "action_value":
+        {
+            "values": [-0.75]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "singularity_portal_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "singularity_portal_linear_speed_modifier_value"
+        }
+    }],
+    "effect_alias_bindings": [
+        {
+            "alias_name": "dlc_ancient_starbase_singularity_portal_area_effect",
+            "alias_binding":
+            {
+                "particle_effect": "dlc_ancient_starbase_singularity_portal_area_effect"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_singularity_portal_detonate",
+            "alias_binding":
+            {
+                "particle_effect": "dlc_ancient_starbase_singularity_portal_detonate"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_singularity_portal_on_target_large",
+            "alias_binding":
+            {
+                "particle_effect": "dlc_ancient_starbase_singularity_portal_on_target_large"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_singularity_portal_on_target_medium",
+            "alias_binding":
+            {
+                "particle_effect": "dlc_ancient_starbase_singularity_portal_on_target_medium"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_eye_ambient_effect",
+            "alias_binding":
+            {
+                "particle_effect": "dlc_ancient_starbase_eye_ambient"
+            }
+        },
+        {
+            "alias_name": "dlc_ancient_starbase_singularity_portal_on_target_small",
+            "alias_binding":
+            {
+                "particle_effect": "dlc_ancient_starbase_singularity_portal_on_target_small"
+            }
+        }]
+}

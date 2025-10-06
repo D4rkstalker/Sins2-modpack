@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "stack_count",
+            "stacks_expiry_time"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "energy_absorptive_armor_max_stack_count_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0, 15.0, 15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "energy_absorptive_armor_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "energy_absorptive_armor_stack_duration_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "energy_absorptive_armor_stacks_expiry_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stacks_expiry_time",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "energy_absorptive_armor_weapon_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [-0.01, -0.02, -0.03, -0.04, -0.05]
+        }
+    },
+    {
+        "action_value_id": "energy_absorptive_armor_spell_power_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0, 2.0, 3.0, 4.0, 5.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "energy_absorptive_armor_spell_power_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "energy_absorptive_armor_spell_power_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "energy_absorptive_armor_weapon_cooldown_duration_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "energy_absorptive_armor_weapon_cooldown_duration_bonus_value"
+        }
+    }]
+}

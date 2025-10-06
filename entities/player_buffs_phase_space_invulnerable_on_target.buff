@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_hyperspace_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_phase_space_invulnerable_on_target_phase_jump",
+					"copy_parent_buff_memory_values": true
+				}]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_unit_value",
+				"unit_variable": "previous_gravity_well",
+                "new_unit_value":
+                {
+                    "unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_unit_value",
+				"unit_variable": "previous_gravity_well",
+                "new_unit_value":
+                {
+                    "unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                }
+            }]
+        }
+    }]
+}

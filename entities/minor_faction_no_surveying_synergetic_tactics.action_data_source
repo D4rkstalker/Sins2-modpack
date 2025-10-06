@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "synergetic_tactics_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "titan",
+				"capital_ship",
+				"cruiser",
+				"frigate",
+				"structure",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "ally"
+            ],
+			"constraints": [
+			{
+				"constraint_type": "has_buff",
+				"buff": "vasari_damage_per_allied_player"
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "damage_per_allied_player_damage_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "damage_per_allied_player_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "damage_per_allied_player_damage_value"
+        }
+    }]
+}

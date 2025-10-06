@@ -1,0 +1,117 @@
+{
+    "version": 0,
+    "action_data_source": "trader_antiarmor_frigate_coil_shock",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["trader_unlock_antiarmor_frigate_coil_shock_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "coil_shock_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "coil_shock_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "coil_shock_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_antiarmor_frigate_coil_shock_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "coil_shock_target_filter"
+        ],
+        "range": "coil_shock_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 10.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "coil_shock_auto_cast_target_filter"
+            }]
+        },
+        "watched_buff": "trader_antiarmor_frigate_coil_shock_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "trader_antiarmor_frigate_coil_shock_ability_hud_icon",
+        "tooltip_picture": "trader_antiarmor_frigate_coil_shock_ability_tooltip_picture",
+        "name": "trader_antiarmor_frigate_coil_shock_ability_name",
+        "description": "trader_antiarmor_frigate_coil_shock_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "coil_shock_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_damage",
+                "value_id": "coil_shock_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "coil_shock_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.charge_delay",
+                "value_id": "coil_shock_beam_charge_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_chain_targets",
+                "value_id": "coil_shock_max_target_count_value"
+            }]
+        }]
+    }
+}

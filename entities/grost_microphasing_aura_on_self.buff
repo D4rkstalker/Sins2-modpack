@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+	"make_dead_on_source_ability_released": true,
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "microphasing_aura_execution_interval_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "microphasing_aura_radius",
+                "operators_constraint":
+                {
+                    "constraint_type": "composite_and",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "microphasing_aura_target_filter"
+					},
+					{
+						"constraint_type": "random_chance",
+						"chance_value": "microphasing_aura_chance_value"
+					}]
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "grost_microphasing_aura_on_target"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "grost_microphasing_aura_hud_icon",
+        "name": "npc_reward.grost_microphasing_aura.name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "microphasing_aura_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.execution_chance",
+                "value_id": "microphasing_aura_chance_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.execution_interval",
+                "value_id": "microphasing_aura_execution_interval_value",
+                "value_suffix": "seconds",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

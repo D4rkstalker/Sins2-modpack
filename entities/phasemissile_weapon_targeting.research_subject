@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 4,
+    "field": "military_vasari_repeatables",
+    "field_coord": [9, 0],
+    "research_time": 717.5,
+    "price":
+    {
+        "credits": 0.0,
+        "metal": 3506.25,
+        "crystal": 3506.25
+    },
+    "exotic_price": [
+    {
+        "exotic_type": "research",
+        "count": 5
+    }],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+		"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "tag": "phasemissile"
+            }]
+        },
+        "action_data_source": "phasemissile_weapon_targeting",
+        "buff": "phasemissile_weapon_targeting"
+    }],
+    "name": "research_subject.phasemissile_targeting_name",
+    "name_uppercase": "research_subject.phasemissile_targeting_name_upper",
+    "description": "research_subject.phasemissile_targeting_description",
+    "hud_icon": "vasari_upgrade_missile_damage_2_research_subject_hud_icon",
+    "tooltip_picture": "vasari_upgrade_missile_damage_2_research_subject_tooltip_picture"
+}

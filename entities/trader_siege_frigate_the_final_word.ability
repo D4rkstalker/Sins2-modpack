@@ -1,0 +1,77 @@
+{
+    "version": 0,
+    "action_data_source": "trader_siege_frigate_the_final_word",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["trader_heavy_fallout"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "the_final_word_cooldown_time_value",
+		"stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "the_final_word_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_siege_frigate_the_final_word_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "the_final_word_target_filter"
+        ],
+        "range": "the_final_word_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 10.0,
+        "watched_buff": "trader_siege_frigate_the_final_word_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "trader_heavy_fallout_research_subject_hud_icon",
+        "name": "trader_siege_frigate_the_final_word_name",
+        "description": "trader_siege_frigate_the_final_word_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "the_final_word_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.population_damage",
+                "value_id": "the_final_word_bombing_population_damage_value",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

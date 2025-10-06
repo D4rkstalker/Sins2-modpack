@@ -1,0 +1,67 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "planet"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 1807465.323228,
+        "min_camera_distance": 18433.413115,
+        "gui":
+        {
+            "hud_icon": "brown_dwarf_0_hud_icon",
+            "hud_picture": "brown_dwarf_hud_picture",
+            "tooltip_icon": "brown_dwarf_0_tooltip_icon",
+            "name": "brown_dwarf_name",
+            "description": ""
+        },
+        "planet_mesh":
+        {
+            "mesh": "brown_dwarf",
+            "corona":
+            {
+                "shader": "planet_corona",
+                "color_texture": "planet_corona_glow_clr",
+                "color": "ffbf2b30",
+                "radius_scalar": 2.3,
+                "basic_constants":
+               {
+                    "emissive_factor": 0.5,
+                    "alpha_ramp_steepness": 0.1,
+                    "alpha_ramp_growth_delay": 2.0
+                }
+            }
+        },
+        "main_view_icon":
+        {
+            "group": "fixture",
+            "icon": "brown_dwarf_0_main_view_icon",
+            "has_rotation": false,
+            "use_owner_player_color": false
+        },
+         "effects":
+        {
+			"shield_effect": "gas_giant_shield",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "destroy_planet",
+                "alias_binding":
+                {
+                    "particle_effect": "planet_explosion",
+                    "sounds": [
+                        "effect_strippedtothecore"]
+                }
+            }]
+        },
+        "light":
+        {
+            "type": "point_infinite",
+            "color": "CC66190E",
+            "intensity": 0.37
+        }
+    }],
+    "gravity_well_props": [
+        "sparse_asteroids",
+        "sparse_clouds"]
+}

@@ -1,0 +1,84 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "disruptive_nanite_swarms_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "titan",
+				"starbase",
+				"super_capital_ship",
+				"structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "disruptive_nanite_swarms_weapon_reload_scalar",
+        "action_value":
+        {
+            "values": [0.10]
+        }
+    },
+    {
+        "action_value_id": "disruptive_nanite_swarms_max_linear_speed_scalar",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "disruptive_nanite_swarms_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "disruptive_nanite_swarms_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "disruptive_nanite_swarms_max_linear_speed_scalar"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "disruptive_nanite_swarms_weapon_reload_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "disruptive_nanite_swarms_weapon_reload_scalar"
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "arankul_disruptive_nanite_swarms_apply_on_fixture_buffs",
+        "action":
+        {
+            "action_type": "use_unit_operators_on_gravity_wells",
+            "gravity_well_origin_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "max_jump_distance_value": "disruptive_nanite_swarms_phase_lane_distance_value",
+            "operators": [
+            {
+                "operator_type": "apply_buff",
+                "buff": "arankul_disruptive_nanite_swarms_on_target_gravity_well"
+            }]
+        }
+    }]
+}

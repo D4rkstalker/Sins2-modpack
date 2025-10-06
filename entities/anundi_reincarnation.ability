@@ -1,0 +1,69 @@
+{
+    "version": 0,
+    "action_data_source": "anundi_reincarnation",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "anundi_reincarnation_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "anundi_reincarnation_hud_icon",
+        "name": "npc_reward.anundi_reincarnation.name",
+        "description": "npc_reward.anundi_reincarnation.description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "reincarnation_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+		{
+			"header_text": "tooltip.on_unit_destroyed_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "reincarnation_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "reincarnation_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_build_progress",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_production",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

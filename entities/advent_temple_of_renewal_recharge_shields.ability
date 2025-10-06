@@ -1,0 +1,124 @@
+{
+    "version": 0,
+    "action_data_source": "advent_temple_of_renewal_recharge_shields",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_temple_of_renewal_structure_recharge_shields_ability"]
+        ],
+        [
+            ["advent_upgrade_temple_of_renewal_structure_recharge_shields_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "recharge_shields_cooldown_time_value",
+        "antimatter_cost": "recharge_shields_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "recharge_shields_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "recharge_shields_range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_temple_of_renewal_recharge_shields"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_temple_of_renewal_recharge_shields_activate"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "recharge_shields_target_filter"
+        ],
+        "range": "recharge_shields_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "recharge_shields_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "recharge_shields_target_missing_shields_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "recharge_shields_auto_cast_shields_threshold_value"
+                }
+            },
+            {
+                "target_filter": "recharge_shields_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "recharge_shields_target_missing_shields_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "recharge_shields_auto_cast_shields_threshold_value"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_temple_of_renewal_recharge_shields_ability_hud_icon",
+        "tooltip_icon": "advent_temple_of_renewal_recharge_shields_ability_hud_icon",
+        "tooltip_picture": "advent_temple_of_renewal_recharge_shields_ability_tooltip_picture",
+        "name": "advent_temple_of_renewal_recharge_shields_ability_name",
+        "description": "advent_temple_of_renewal_recharge_shields_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "recharge_shields_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore",
+                "value_id": "recharge_shields_restore_rate_value",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "recharge_shields_execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

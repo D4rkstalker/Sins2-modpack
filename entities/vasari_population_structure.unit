@@ -1,0 +1,121 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 525.628967,
+        "box":
+        {
+            "center": [0.029053, 74.413452, 0.029053],
+            "extents": [260.040222, 450.470459, 225.358749]
+        },
+        "can_be_displaced_on_collision": false
+    },
+    "physics":
+    {},
+    "ai":
+    {
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"]
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 25.0,
+        "is_always_a_threat": false
+    },
+    "player_ai":
+    {
+        "max_count_at_planet":
+        {
+            "type": "constant",
+            "value": 1.0
+        }
+    },
+    "user_interface":
+    {
+        "pip_type": "frigate",
+        "can_ever_be_selected": true,
+        "selection_priority": 100,
+        "selection_group_unit_type": "civilian_structure"
+    },
+    "structure":
+    {
+        "slot_type": "civilian",
+        "slots_required": 1,
+        "roles": [],
+        "build_group_id": "civilian"
+    },
+    "formation":
+    {
+        "leader_priority": 3,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 4,
+                "group": 5
+            }
+        }
+    },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 1.0,
+        "generic_group_name": "vasari",
+        "generic_counts":
+        {
+            "small_debris": [14, 18],
+            "large_debris": [3, 5]
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 3.8,
+        "durability": 510.0,
+        "levels": [
+        {
+            "max_hull_points": 3600.0,
+            "hull_point_restore_rate": 3.0,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 960.0,
+            "armor_point_restore_rate": 4.0,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 48.0,
+            "experience_given_on_death": 25.0
+        }]
+    },
+    "build":
+    {
+        "build_time": 72.0,
+        "price":
+        {
+            "metal": 210.0,
+            "crystal": 60.0
+        },
+        "prerequisites": [
+            ["vasari_unlock_population_structure"]
+        ],
+        "build_kind": "structure",
+        "build_radius": 344.103882
+    },
+    "passive_income":
+    {},
+    "target_filter_unit_type": "structure",
+    "tags": [
+        "structure"
+    ],
+    "virtual_supply_cost": 10,
+    "abilities": [
+        {
+            "abilities": [
+                "vasari_population_structure_growth",
+				"vasari_population_structure_planet_buffs"]
+        }],
+    "skin_groups": [
+    {
+        "skins": [
+            "vasari_population_structure"]
+    }],
+    "action_effect_size": "medium_unit"
+}

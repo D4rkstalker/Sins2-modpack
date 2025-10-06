@@ -1,0 +1,119 @@
+{
+    "version": 0,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+				"include_radius_origin_unit": false,
+				"max_target_count_value": "fixed_one",
+				"radius_origin_unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"radius_value": "booby_trap_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+						"constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_source"
+							},
+							"target_filter_id": "uniforms_is_ai_player"
+						},
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "booby_trap_ai_auto_cast_target_filter"
+						}]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "renzo_booby_trap_on_target"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_source"
+							},
+							"target_filter_id": "uniforms_is_ai_player"
+						},
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "booby_trap_ai_auto_cast_target_filter"
+						}]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "renzo_booby_trap_ai_remove_charge"
+                }]
+            }]
+        }
+	},
+	{
+		"execution_interval_value": "fixed_one",
+		"action_group":
+		{
+            "constraint":
+            {
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "uniforms_is_ai_player"
+				},
+				{
+					"constraint_type": "value_comparison",
+					"value_a": "booby_trap_traps_placed_ai_value",
+					"comparison_type": "greater_than_equal_to",
+					"value_b": "booby_trap_ai_remove_value"
+				}]
+            },
+			"actions": [
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_unit_item",
+                    "unit_item": "renzo_booby_trap"
+                }]
+			}]
+		}
+    }]
+}

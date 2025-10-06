@@ -1,0 +1,83 @@
+{
+    "version": 0,
+    "action_data_source": "advent_guardian_cruiser_will_of_the_unity",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_guardian_cruiser_will_of_the_unity_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "will_of_the_unity_cooldown_time_value",
+        "antimatter_cost": "will_of_the_unity_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "will_of_the_unity_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "will_of_the_unity_range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_guardian_cruiser_will_of_the_unity"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "will_of_the_unity_target_filter"
+        ],
+        "range": "will_of_the_unity_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "will_of_the_unity_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_altar_of_sacrifice_unit_item_hud_icon",
+        "tooltip_picture": "advent_altar_of_sacrifice_unit_item_tooltip_picture",
+        "name": "advent_guardian_cruiser_will_of_the_unity_ability_name",
+        "description": "advent_guardian_cruiser_will_of_the_unity_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "will_of_the_unity_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "will_of_the_unity_spell_power_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "will_of_the_unity_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

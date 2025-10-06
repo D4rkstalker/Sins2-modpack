@@ -1,0 +1,161 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "vasari_battle_capital_ship_volatile_nanites_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "vasari_battle_capital_ship_volatile_nanites_on_target",
+					"include_pending_buffs": true
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "vasari_battle_capital_ship_volatile_nanites_on_radius_origin",
+					"include_pending_buffs": true
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "vasari_battle_capital_ship_volatile_nanites_debuff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "vasari_battle_capital_ship_volatile_nanites_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "volatile_nanites_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [120.0, 120.0, 120.0, 120.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_cooldown_time_value",
+        "action_value":
+        {
+            "values": [240.0, 240.0, 240.0, 240.0, 240.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_damage_radius_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_damage_taken_modifier_value",
+        "action_value":
+        {
+            "values": [0.18, 0.23, 0.28, 0.305, 0.32]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_damage_value",
+        "action_value":
+        {
+            "values": [240.0, 300.0, 360.0, 390.0, 420.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_debuff_radius_value",
+        "action_value":
+        {
+            "values": [2500.0, 2500.0, 2500.0, 2500.0, 2500.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_armor_penetration_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "volatile_nanites_travel_speed_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "volatile_nanites_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "volatile_nanites_damage_taken_modifier_value"
+        }
+    }]
+}

@@ -1,0 +1,57 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "advent_loyalist_global_assimilation_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_loyalist_global_assimilation_on_target"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			}]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "has_updated_once"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "advent_loyalist_global_assimilation_has_updated_once_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "has_updated_once",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "advent_loyalist_global_assimilation_random_chance_value",
+        "action_value":
+        {
+            "values": [0.04]
+        }
+    }]
+}

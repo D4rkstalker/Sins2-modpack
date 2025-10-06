@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 0,
+    "field": "civilian_phase_mastery",
+    "field_coord": [1, 0],
+    "research_time": 90.0,
+    "price":
+    {
+        "metal": 150.0,
+        "crystal": 90.0,
+        "credits": 0.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        },
+        "extra_level_prerequisites": [
+            [
+                ["vasari_improve_phase_lane_detection"]
+            ]
+        ],
+        "action_data_source": "vasari_phase_lane_detection",
+        "buff": "vasari_phase_lane_detection_on_planet"
+    }],
+    "name": "vasari_unlock_phase_lane_detection_research_subject_name",
+    "name_uppercase": "vasari_unlock_phase_lane_detection_research_subject_name_uppercase",
+    "description": "vasari_unlock_phase_lane_detection_research_subject_description",
+    "hud_icon": "vasari_unlock_phase_lane_detection_research_subject_hud_icon",
+    "tooltip_picture": "vasari_unlock_phase_lane_detection_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_detect"
+    ],
+    "arbitary_research_line":
+    {
+        "unlock_label": "tooltip.research_subject.arbitary_unlock_label.unlock_phase_lane_detector",
+		"before_after_heading": "tooltip.research_subject.arbitary_before_after_heading.unlock_phase_lane_detector",
+        "after_number": 1
+    }
+}

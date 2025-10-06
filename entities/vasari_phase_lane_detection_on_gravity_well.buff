@@ -1,0 +1,55 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_id": "apply_child_buff_to_phase_lanes"
+            },
+            {
+                "constraint":
+                {
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner",
+						"redirection": "current_gravity_well_primary_fixture"
+					},
+					"target_filter_id": "phase_lane_detector_planet_target_filter"
+				},
+                "action_type": "use_unit_operators_on_units_in_phase_lanes",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "traveling_from_gravity_well_origin": false,
+				"traveling_to_gravity_well_origin": true,
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "phase_lane_detector_phase_lane_target_filter"
+					},
+                    "operator_type": "apply_buff",
+                    "buff": "trader_research_lab_structure_phase_lane_detector_on_enemy"
+                }]
+            }]
+        }
+    }]
+}

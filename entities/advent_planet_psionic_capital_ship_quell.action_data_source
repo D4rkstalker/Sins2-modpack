@@ -1,0 +1,124 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "quell_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_planet_psionic_capital_ship_quell",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "quell_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "quell_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "quell_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0, 105.0, 90.0, 75.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "quell_armor_damage_taken_value",
+        "action_value":
+        {
+            "transform_type": "per_resolved_armor_damage_dealt",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "quell_hull_damage_taken_value",
+        "action_value":
+        {
+            "transform_type": "per_resolved_hull_damage_dealt",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "quell_duration_value",
+        "action_value":
+        {
+            "values": [20.0, 40.0, 60.0, 80.0, 100.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.25, 0.25, 0.25, 0.25, 0.25]
+            }
+        }
+    },
+    {
+        "action_value_id": "quell_damage_value",
+        "action_value":
+        {
+            "values": [-0.5, -0.5, -0.5, -0.5, -0.5]
+        }
+    },
+    {
+        "action_value_id": "quell_disable_duration_value",
+        "action_value":
+        {
+            "values": [10.0, 11.0, 12.0, 13.0, 14.0]
+        }
+    },
+    {
+        "action_value_id": "quell_radius_value",
+        "action_value":
+        {
+            "values": [5000.0, 5000.0, 5000.0, 5000.0, 5000.0]
+        }
+    },
+    {
+        "action_value_id": "quell_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "damage",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "quell_damage_value"
+        }
+    }]
+}

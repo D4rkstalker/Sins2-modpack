@@ -1,0 +1,128 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "furious_defense_execution_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_and_armor_only",
+                    "repair_value": "furious_defense_hull_restore_rate_bonus_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_id": "try_assign_normal_hull_restore_rate"
+            },
+            {
+                "action_id": "try_assign_normal_weapon_damage"
+            },
+            {
+                "action_id": "try_assign_improved_hull_restore_rate"
+            },
+            {
+                "action_id": "try_assign_improved_weapon_damage"
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect": "trader_loyalist_titan_furious_defense"
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_id": "try_assign_normal_hull_restore_rate"
+            },
+            {
+                "action_id": "try_assign_normal_weapon_damage"
+            },
+            {
+                "action_id": "try_assign_improved_hull_restore_rate"
+            },
+            {
+                "action_id": "try_assign_improved_weapon_damage"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_fixture_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_id": "try_assign_normal_hull_restore_rate"
+            },
+            {
+                "action_id": "try_assign_normal_weapon_damage"
+            },
+            {
+                "action_id": "try_assign_improved_hull_restore_rate"
+            },
+            {
+                "action_id": "try_assign_improved_weapon_damage"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "furious_defense_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_loyalist_titan_furious_defense_ability_hud_icon",
+        "name": "trader_loyalist_titan_furious_defense_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "furious_defense_weapon_damage_modifier",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "furious_defense_hull_restore_rate_bonus_value",
+                "value_float_format": "no_decimal_place_with_sign",
+                "value_suffix": "per_second",
+                "is_resolved_value": true,
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

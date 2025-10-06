@@ -1,0 +1,67 @@
+{
+    "version": 0,
+    "item_type": "planet_component",
+    "build_group_id": "economy",
+    "hud_icon": "trader_commercial_district_unit_item_hud_icon",
+    "tooltip_icon": "trader_commercial_district_unit_item_hud_icon",
+    "tooltip_picture": "trader_commercial_district_unit_item_tooltip_picture",
+    "name": "trader_commercial_district_unit_item_name",
+    "description": "trader_commercial_district_unit_item_description",
+    "item_level_count": 2,
+    "item_level_source": "research_prerequisites_per_level",
+    "item_level_prerequisites": [
+        [
+			["trader_commercial_district_credit_rate"]
+        ]
+    ],
+    "build_time": 60.0,
+    "price":
+    {
+        "credits": 750.0,
+        "metal": 200.0,
+        "crystal": 100.0
+    },
+    "exotic_price": [
+        {
+			"exotic_type": "economic",
+			"count": 1
+        }],
+    "max_count_on_unit": 1,
+    "required_planet_level": 5,
+    "planet_type_groups": [
+    {
+        "planet_types": [
+			"city",
+			"desert",
+			"desert_home",
+			"greenhouse",
+			"oceanic",
+			"swamp",
+			"terran",
+			"terran_home"
+        ],
+        "build_prerequisites": [
+			["trader_unlock_commercial_district_unit_item"]
+        ]
+    }],
+    "planet_modifiers": [
+    {
+        "modifier_type": "commerce_track_credit_income_rate_per_population",
+        "value_behavior": "scalar",
+        "values": [0.1, 0.25]
+    }],
+    "player_modifiers":
+    {
+        "npc_modifiers": [
+        {
+			"value_behavior": "scalar",
+			"modifier_type": "sell_metal_credits_received",
+			"value": 0.05
+        },
+        {
+			"value_behavior": "scalar",
+			"modifier_type": "sell_crystal_credits_received",
+			"value": 0.05
+        }]
+    }
+}

@@ -1,0 +1,193 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "sacrifice_cull_population_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_minimum_population_amount",
+                "real_minimum_population": 1
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sacrifice_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "has_allied_population_amount",
+                "percentage_of_current_pop": 0.1,
+                "real_population_number": 50
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sacrifice_auto_cast_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "titan",
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_bombing_planet"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sacrifice_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                },
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "ally"
+                }]
+            },
+            {
+                "constraint_type": "has_allied_population_amount",
+                "percentage_of_current_pop": 0.1
+            }]
+        }
+    },
+    {
+        "target_filter_id": "sacrifice_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "titan",
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "friendly",
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "sacrifice_unity_mana_cost_value",
+        "action_value":
+        {
+            "values": [1000.0, 1000.0, 1000.0]
+        }
+    },
+    {
+        "action_value_id": "sacrifice_cooldown_time_value",
+        "action_value":
+        {
+            "values": [480.0, 300.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "sacrifice_range_distance",
+        "action_value":
+        {
+            "values": [100000.0, 100000.0, 100000.0]
+        }
+    },
+    {
+        "action_value_id": "sacrifice_population_culled_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "sacrifice_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_owner_allied_population_points",
+            "transform_unit":
+            {
+                "unit_type": "previous_spawner"
+            },
+            "values": [10.0, 15.0, 20.0]
+        }
+    },
+    {
+        "action_value_id": "sacrifice_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_sacrifice_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "wail_of_the_sacrificed_large"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sacrifice_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "wail_of_the_sacrificed_large"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sacrifice_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "wail_of_the_sacrificed_large"
+        }
+    }]
+}

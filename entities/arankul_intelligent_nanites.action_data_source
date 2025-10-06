@@ -1,0 +1,141 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "intelligent_nanites_large_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    },
+    {
+        "target_filter_id": "intelligent_nanites_small_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "stack_count"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "intelligent_nanites_large_kill_stack_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "intelligent_nanites_max_stack_count",
+        "action_value":
+        {
+            "values": [9001.0]
+        }
+    },
+    {
+        "action_value_id": "intelligent_nanites_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "intelligent_nanites_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.001]
+        }
+    },
+    {
+        "action_value_id": "intelligent_nanites_hull_points_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.001]
+        }
+    },
+    {
+        "action_value_id": "intelligent_nanites_armor_points_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.001]
+        }
+    },
+    {
+        "action_value_id": "intelligent_nanites_shield_points_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.001]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "intelligent_nanites_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "intelligent_nanites_weapon_damage_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "intelligent_nanites_hull_points_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "intelligent_nanites_hull_points_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "intelligent_nanites_armor_points_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "intelligent_nanites_armor_points_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "intelligent_nanites_shield_points_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "intelligent_nanites_shield_points_bonus_value"
+        }
+    }]
+}

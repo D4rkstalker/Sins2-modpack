@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "pulsar_star_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"torpedo",
+				"super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "pulsar_miss_chance",
+        "action_value":
+        {
+            "values": [0.333333]
+        }
+    },
+    {
+        "action_value_id": "pulsar_miss_chance_tooltip",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    },
+    {
+        "action_value_id": "pulsar_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "pulsar_prevent_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "pulsar_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "pulsar_damage_taken_scalar"
+        }
+    }]
+}

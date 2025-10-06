@@ -1,0 +1,154 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "distance_between_units_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "previous_spawner"
+                    },
+                    "comparison_type": "greater_than",
+                    "compare_value": "disruption_matrix_make_dead_radius_value"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_fixture_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner",
+                            "redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "uniforms_friendly_planets"
+                    }
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "make_dead_radius",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "disruption_matrix_normal_radius_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "uniforms_friendly_planets"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "make_dead_radius",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "disruption_matrix_bonus_radius_value"
+                }]
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_use_active_abilities"
+	],
+    "gui":
+    {
+        "hud_icon": "trader_loyalist_titan_disruption_matrix_ability_hud_icon",
+        "name": "trader_loyalist_titan_disruption_matrix_ability_name",
+		"visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner",
+						"redirection": "current_gravity_well_primary_fixture"
+					},
+					"target_filter_id": "uniforms_friendly_planets"
+				}
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "disruption_matrix_normal_damage_value",
+				"value_color": "negative",
+                "value_suffix": "per_second"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+				"value_color": "negative"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "unit_passes_target_filter",
+				"unit":
+				{
+					"unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+				},
+				"target_filter_id": "uniforms_friendly_planets"
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "disruption_matrix_bonus_damage_value",
+				"value_color": "negative",
+                "value_suffix": "per_second"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+				"value_color": "negative"
+            }]
+        }]
+	}
+}

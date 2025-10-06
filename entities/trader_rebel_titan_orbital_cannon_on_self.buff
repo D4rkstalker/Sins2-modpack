@@ -1,0 +1,93 @@
+{
+    "version": 0,
+    "active_duration": "buff_on_self_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "create_shell_time_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "bomb",
+                        "effect": "orbital_cannon_launch_muzzle"
+                    }
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "ability_position",
+                    "ability":
+                    {
+                        "ability_type": "source_ability"
+                    },
+                    "ability_position_picking_type": "next_sequential"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "trader_orbital_cannon_shell",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "trader_rebel_titan_orbital_cannon_on_shell",
+                    "hyperspace_destination_position":
+                    {
+                        "position_type": "distance_in_direction_from_position",
+                        "distance_value": "planet_surface_radius",
+                        "direction":
+                        {
+                            "direction_type": "from_position_to_position",
+                            "source_position":
+                            {
+                                "position_type": "unit_position",
+                                "unit":
+                                {
+                                    "unit_type": "target"
+                                }
+                            },
+                            "destination_position":
+                            {
+                                "position_type": "operand_position"
+                            }
+                        },
+                        "source_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "target"
+                            }
+                        }
+                    },
+                    "is_change_gravity_well_to_hyperspace_destination_enabled": false
+                }]
+            }]
+        }
+    }]
+}

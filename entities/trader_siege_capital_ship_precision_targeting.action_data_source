@@ -1,0 +1,89 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "precision_targeting_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+				"starbase",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "precision_targeting_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+				"corvette",
+                "structure",
+                "super_capital_ship",
+				"starbase",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "precision_targeting_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "precision_targeting_bonus_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [0.15, 0.3, 0.45, 0.6, 0.75]
+        }
+    },
+    {
+        "action_value_id": "precision_targeting_cooldown_time_value",
+        "action_value":
+        {
+            "values": [40.0, 40.0, 40.0, 40.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "precision_targeting_duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "precision_targeting_radius_value",
+        "action_value":
+        {
+            "values": [1200.0, 1200.0, 1200.0, 1200.0, 1200.0]
+        }
+    },
+    {
+        "action_value_id": "precision_targeting_range_value",
+        "action_value":
+        {
+            "values": [20000.0, 20000.0, 20000.0, 20000.0, 20000.0]
+        }
+    }]
+}

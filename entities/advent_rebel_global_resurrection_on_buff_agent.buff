@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "advent_rebel_global_resurrection_delay_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "resurrect_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "dead_units_player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "unit_types_to_resurrect": [
+                    "corvette",
+                    "cruiser",
+                    "frigate"
+                ],
+                "specific_unit_ids": [
+                    "advent_rebel_global_resurrection_resurrected_unit_id_value"
+                ]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "temple_of_resurrection_activate_on_target_small",
+                            "medium_unit": "temple_of_resurrection_activate_on_target_medium",
+                            "large_unit": "temple_of_resurrection_activate_on_target_large"
+                        }
+                    },
+                    "effect_destination_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "effect_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }
+                }]
+            }]
+        }
+    }]
+}

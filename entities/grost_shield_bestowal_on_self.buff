@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+	"make_dead_on_source_ability_released": true,
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "include_radius_origin_unit": true,
+                "radius_value": "shield_bestowal_radius",
+                "operators_constraint":
+                {
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "operand_destination"
+					},
+					"target_filter_id": "shield_bestowal_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "grost_shield_bestowal_on_target"
+                }]
+            }]
+        }
+    }]
+}

@@ -1,0 +1,52 @@
+{
+    "version": 0,
+    "level_count": 1,
+    "target_filters": [
+    {
+        "target_filter_id": "missile_boost_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "splash_damage_amount"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "missile_boost_splash_radius_value",
+        "action_value":
+        {
+            "values": [750.0]
+        }
+    },
+    {
+        "action_value_id": "missile_boost_splash_damage_percent",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "missile_boost_splash_damage_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "splash_damage_amount",
+            "values": [1.0]
+        }
+    }]
+}

@@ -1,0 +1,159 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "subsume_energy_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_advent_loyalist_super_subsume_energy_on_target",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "subsume_energy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "subsume_energy_radius_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_antimatter"
+                },
+				{
+					"constraint_type": "has_weapon",
+					"tag": "energy"
+				}]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "subsume_energy_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [50.0, 55.0, 60.0, 65.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 85.0, 80.0, 75.0, 65.0]
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_duration_value",
+        "action_value":
+        {
+            "values": [15.0, 20.0, 25.0, 30.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_radius_value",
+        "action_value":
+        {
+            "values": [2500.0, 2500.0, 2500.0, 2500.0, 2500.0]
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_weapon_cooldown_bonus_value",
+        "action_value":
+        {
+            "values": [0.05, 0.1, 0.15, 0.2, 0.3],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.001, 0.001, 0.001, 0.001]
+            }
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_antimatter_remove_value",
+        "action_value":
+        {
+            "values": [20.0, 25.0, 30.0, 35.0, 45.0]
+        }
+    },
+    {
+        "action_value_id": "subsume_energy_antimatter_restore_value",
+        "action_value":
+        {
+            "transform_type": "per_trigger_event_antimatter",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "subsume_energy_weapon_cooldown_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "subsume_energy_weapon_cooldown_bonus_value",
+            "tags": [
+                "energy"
+            ]
+        }
+    }]
+}

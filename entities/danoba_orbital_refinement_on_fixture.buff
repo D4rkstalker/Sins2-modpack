@@ -1,0 +1,114 @@
+{
+    "version": 0,
+	"make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "orbital_refinement_extractor_max_count",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "orbital_refinement_metal_extractor_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "danoba_orbital_refinement_on_metal_extractor",
+					"copy_parent_buff_memory_values": true
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "orbital_refinement_crystal_extractor_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "danoba_orbital_refinement_on_crystal_extractor",
+					"copy_parent_buff_memory_values": true
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_unit_finished_building_in_gravity_well",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "orbital_refinement_metal_extractor_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "danoba_orbital_refinement_on_metal_extractor",
+					"copy_parent_buff_memory_values": true
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "orbital_refinement_crystal_extractor_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "danoba_orbital_refinement_on_crystal_extractor",
+					"copy_parent_buff_memory_values": true
+                }]
+            }]
+        }
+	}]
+}

@@ -1,0 +1,101 @@
+{
+    "version": 0,
+    "action_data_source": "advent_battle_psionic_capital_ship_malice",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "malice_cooldown_time_value",
+        "antimatter_cost": "malice_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_battle_psionic_capital_ship_malice_activate"
+                    }
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_psionic_capital_ship_malice_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "malice_target_filter"
+        ],
+        "range": "malice_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 180.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "malice_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_battle_psionic_capital_ship_malice_ability_hud_icon",
+        "tooltip_picture": "advent_battle_psionic_capital_ship_malice_ability_tooltip_picture",
+        "name": "advent_battle_psionic_capital_ship_malice_ability_name",
+        "description": "advent_battle_psionic_capital_ship_malice_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "malice_range_value",
+                "radius": "malice_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_propagation",
+                "value_id": "malice_damage_propagation_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "malice_max_target_count_display_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "malice_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "malice_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

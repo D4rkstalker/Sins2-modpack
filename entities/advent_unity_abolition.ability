@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_abolition",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [1, 3, 6],
+    "active_actions":
+    {
+        "cooldown_time": "abolition_cooldown_time_value",
+        "unity_mana_cost": "abolition_unity_mana_cost_value",
+        "actions":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "home_planet"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "none"
+                    }
+                }
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target",
+                    "redirection": "current_gravity_well"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_abolition_on_gravity_well"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "abolition_planet_target_filter"]
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_abolition_ability_hud_icon",
+        "tooltip_picture": "advent_unity_abolition_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_abolition_ability_tooltip_picture",
+        "name": "advent_unity_abolition_ability_name",
+        "description": "advent_unity_abolition_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.charge_delay",
+                "value_id": "abolition_charge_time_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "abolition_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "abolition_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "abolition_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "abolition_weapon_cooldown_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "abolition_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "shield_disruption_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_offensive_support_cruiser_shield_disruption",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "has_shields"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "shield_disruption_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+				"corvette"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_shields"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "shield_disruption_shield_bypass_chance",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    },
+    {
+        "action_value_id": "shield_disruption_additional_shield_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [0.2]
+        }
+    },
+    {
+        "action_value_id": "shield_disruption_prevent_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "shield_disruption_prevent_damage_penetration_value",
+        "action_value":
+        {
+            "transform_type": "per_damage_event_penetration",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "projectile_travel_speed_value",
+        "action_value":
+        {
+            "values": [1600.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "shield_disruption_muzzle",
+        "alias_binding":
+        {
+            "particle_effect": "shield_disruption_muzzle",
+            "sounds": [
+                "ability_muzzle_tech_empcharge"]
+        }
+    },
+    {
+        "alias_name": "shield_disruption_projectile_travel",
+        "alias_binding":
+        {
+            "particle_effect": "shield_disruption_projectile_travel"
+        }
+    },
+    {
+        "alias_name": "shield_disruption_on_target",
+        "alias_binding":
+        {
+            "particle_effect": "shield_disruption_on_target"
+        }
+    }]
+}

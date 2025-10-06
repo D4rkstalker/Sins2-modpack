@@ -1,0 +1,46 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 3,
+    "field": "military_energy",
+    "field_coord": [6, 3],
+    "research_time": 540.0,
+    "price":
+    {
+        "credits": 1100.0,
+        "metal": 425.0,
+        "crystal": 900.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        },
+        "action_data_source": "advent_hyperspace_antimatter_passive_buff",
+        "buff": "advent_hyperspace_antimatter_passive",
+        "tooltip_sub_header_label": "tooltip.advent_hyperspace_antimatter_passive_buff_sub_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.antimatter_restore",
+            "value_id": "antimatter_restored",
+            "value_color": "positive"
+        }]
+    }],
+    "name": "advent_hyperspace_antimatter_research_subject_name",
+    "name_uppercase": "advent_hyperspace_antimatter_research_subject_name_uppercase",
+    "description": "advent_hyperspace_antimatter_research_subject_description",
+    "hud_icon": "advent_hyperspace_antimatter_research_subject_hud_icon",
+    "tooltip_picture": "advent_hyperspace_antimatter_research_subject_tooltip_picture"
+}

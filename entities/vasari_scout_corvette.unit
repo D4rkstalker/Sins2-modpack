@@ -1,0 +1,202 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 22.015528,
+        "box":
+        {
+            "center": [-3e-06, 1.054369, 1.605696],
+            "extents": [12.983511, 4.776119, 20.367086]
+        },
+        "collision_rank": 1
+    },
+    "physics":
+    {
+        "can_move_linear": true,
+        "max_linear_speed": 1410.0,
+        "time_to_max_linear_speed": 4.7,
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [0.75, 1.25],
+        "can_move_angular": true,
+        "max_angular_speed": 72.0,
+        "time_to_max_angular_speed": 2.4,
+        "max_bank_angle": 60.0,
+        "death_angular_speed_range": [5.0, 10.0],
+        "linear_acceleration_angle": 180.0,
+        "can_strafe_linear": true,
+        "strafe_max_linear_speed": 240.0,
+        "time_to_strafe_max_linear_speed": 10.0,
+        "strafe_max_linear_distance_spatial_radius_scalar": 10.0,
+        "strafe_start_angle": 0.0,
+        "strafe_stop_angle": 180.0,
+        "strafe_speed_start_angle": 10.0,
+        "strafe_max_start_turning_angle": 170.0
+    },
+    "hyperspace":
+    {
+        "speed": 215000.0,
+        "speed_between_stars": 752500.0,
+        "charge_time": 8.0,
+        "charge_time_variance": 1.0,
+        "min_charge_angle": 10.0,
+        "max_charge_angle": 45.0
+    },
+    "move":
+    {
+        "follow_distance": 230.27359
+    },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
+    "ai":
+    {
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"
+        ],
+        "auto_follow_target_priority": 4.0
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 49.0,
+        "is_always_a_threat": false,
+        "attack_target_type": "corvette"
+    },
+    "user_interface":
+    {
+        "pip_type": "strikecraft",
+        "can_ever_be_selected": true,
+        "selection_priority": 300,
+        "selection_group_unit_type": "scout_ship",
+        "can_move": true,
+        "can_attack": true,
+        "can_show_distance_to_plane_line": true,
+        "can_rotate": true
+    },
+    "weapons":
+    {
+        "weapons": [
+        {
+            "weapon": "vasari_scout_corvette_pulse",
+            "mesh_point": "child.pdpulse_barrel.0",
+            "weapon_position": [-5.294005, 4.425192, -3.478875],
+            "forward": [-0.258819, 0.0, 0.965926],
+            "up": [-0.330366, 0.939693, -0.088521],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -70.0,
+                "max_angle": 5.0
+            }
+        },
+        {
+            "weapon": "vasari_scout_corvette_pulse",
+            "mesh_point": "child.pdpulse_barrel.1",
+            "weapon_position": [5.360642, 4.425188, -3.478874],
+            "forward": [0.31126, 0.001365, 0.950324],
+            "up": [0.259669, 0.961822, -0.086431],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -70.0,
+                "max_angle": 5.0
+            }
+        }],
+        "max_range_weapon_index": 0
+    },
+    "formation":
+    {
+        "leader_priority": 1,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 2,
+                "group": 0
+            }
+        }
+    },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 1.0,
+        "generic_group_name": "vasari",
+        "generic_counts":
+        {
+            "small_debris": [1, 2]
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 0.8,
+        "durability": 60.0,
+        "can_ever_be_resurrected": true,
+        "levels": [
+        {
+            "max_hull_points": 550.0,
+            "hull_point_restore_rate": 1.0,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 315.0,
+            "armor_point_restore_rate": 1.5,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 18.0,
+            "max_shield_points": 480.0,
+            "shield_point_restore_rate": 2.0,
+            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_point_restore_scalar_after_damage_taken": 0.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 20.0,
+                "restore_percentage": 0.5
+            },
+            "experience_given_on_death": 3.0
+        }]
+    },
+    "build":
+    {
+        "build_time": 15.0,
+        "price":
+        {
+            "metal": 40.0
+        },
+        "build_kind": "corvette",
+        "supply_cost": 3,
+        "auto_cast_instead_of_rally_when_built": true,
+        "build_group_id": "corvette"
+    },
+    "target_filter_unit_type": "corvette",
+    "tags": [
+        "corvette"
+    ],
+    "will_notify_enemy_player_when_entering_gravity_well_override": false,
+    "abilities": [
+    {
+        "abilities": [
+            "vasari_scout_corvette_scout",
+            "vasari_scout_corvette_unstoppable_phase_jump",
+			"vasari_scout_corvette_decloak_mine"
+        ]
+    }],
+    "ship_roles": [
+        "explore"
+    ],
+    "skin_groups": [
+    {
+        "skins": [
+            "vasari_scout_corvette"]
+    }],
+    "action_effect_size": "small_unit"
+}

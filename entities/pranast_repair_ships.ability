@@ -1,0 +1,65 @@
+{
+    "version": 0,
+    "action_data_source": "pranast_repair_ships",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "repair_ships_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "pranast_repair_ships_on_self"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "repair_ships_auto_cast_target_filter",
+                "radius_value": "repair_ships_radius_value",
+                "target_count_value": "repair_ships_auto_cast_target_count_value",
+                "target_override_filter_id": "repair_ships_auto_cast_override_target_filter"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_repair_platform_structure_repair_hud_icon",
+        "name": "npc_reward.pranast_repair_ships.name",
+        "description": "npc_reward.pranast_repair_ships.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "repair_ships_hull_armor_restore_rate_value",
+                "value_suffix": "per_second",
+				"ratio_float_format": "one_decimal_place_with_sign",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "repair_ships_execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,177 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "boarding_party_duration_value",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "unit_passes_target_filter",
+				"unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"target_filter_id": "boarding_party_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "boarding_party_damage_value",
+                    "penetration_value": "boarding_party_penetration_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_try_make_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "unit_passes_target_filter",
+				"unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"target_filter_id": "boarding_party_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "abort_make_dead"
+			},
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "first_spawner"
+                        }
+                    }
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "hull_only",
+                    "repair_value": "boarding_party_hull_restore_value"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+                    "repair_value": "boarding_party_armor_restore_value"
+                },
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "boarding_party_shield_restore_value"
+                }]
+			},
+            {
+                "action_type": "make_buff_dead"
+			}]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "unit_passes_target_filter",
+				"unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"target_filter_id": "boarding_party_secret_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "trader_transport_capital_ship_secret",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead",
+                    "skip_death_sequence": true
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "renzo_boarding_party_hud_icon",
+        "name": "npc_reward.renzo_boarding_party.name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "boarding_party_damage_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "boarding_party_penetration_value",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

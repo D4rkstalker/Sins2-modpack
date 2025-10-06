@@ -1,0 +1,52 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "alutar_antimatter_boost_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "alutar_antimatter_boost_ability_antimatter_cost_bonus_scalar",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "alutar_antimatter_boost_radius_value",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "alutar_antimatter_boost_ability_antimatter_cost_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_antimatter_cost",
+            "value_behavior": "scalar",
+            "value_id": "alutar_antimatter_boost_ability_antimatter_cost_bonus_scalar"
+        }
+    }]
+}

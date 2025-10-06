@@ -1,0 +1,205 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_kostura_cannon_ability",
+    "active_actions":
+    {
+        "cooldown_time": "ability_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_kostura_cannon_ability_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "vasari_kostura_cannon_auto_cast_low_priority_target_filter"
+        ],
+        "between_gravity_well_range": "range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 2.0,
+        "auto_cast":
+        {
+            "type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_filter": "vasari_kostura_cannon_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "vasari_kostura_cannon_auto_cast_low_priority_target_filter"
+            }],
+            "gravity_well_distance_range": "range_value"
+        },
+        "watched_buff": "vasari_kostura_cannon_ability_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_kostura_cannon_ability_hud_icon",
+        "name": "vasari_kostura_cannon_structure_ability_name",
+        "description": "vasari_kostura_cannon_structure_ability_description",
+        "targeting":
+        {
+            "targeting_type": "between_gravity_well_range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "vasari_kostura_cannon_phase_gate_duration_tooltip",
+                "value_id": "vasari_kostura_cannon_structure_disable_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "vasari_kostura_cannon_on_ships_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "vasari_kostura_cannon_ship_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "vasari_kostura_cannon_pierce_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_production",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.disable_duration",
+                "value_id": "vasari_kostura_cannon_ship_disable_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "vasari_kostura_cannon_on_structures_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "vasari_kostura_cannon_structure_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "vasari_kostura_cannon_pierce_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_build_progress",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.disable_duration",
+                "value_id": "vasari_kostura_cannon_structure_disable_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [1.4e-05, 0.000103, 240.376282]
+    }]
+}

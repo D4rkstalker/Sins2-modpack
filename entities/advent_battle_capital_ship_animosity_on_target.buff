@@ -1,0 +1,146 @@
+{
+    "version": 0,
+    "active_duration": "animosity_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_force_attack",
+                "target_unit":
+                {
+                    "unit_type": "first_spawner"
+                }
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_battle_capital_ship_animosity_buff_small",
+                        "medium_unit": "advent_battle_capital_ship_animosity_buff_medium",
+                        "large_unit": "advent_battle_capital_ship_animosity_buff_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_augment_pending_damage_as_source",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_comparison",
+                "unit_a":
+                {
+                    "unit_type": "first_spawner"
+                },
+                "unit_b":
+                {
+                    "unit_type": "trigger_event_destination"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "augment_damage",
+                "bonus_damage_value": "animosity_damage_taken_value"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_augment_pending_damage_as_destination",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_comparison",
+                "unit_a":
+                {
+                    "unit_type": "first_spawner"
+                },
+                "unit_b":
+                {
+                    "unit_type": "trigger_event_source"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "augment_damage",
+                "bonus_damage_value": "animosity_damage_dealt_value"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_torpedo",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_capital_ship_animosity_on_torpedo"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_force_attack"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_battle_capital_ship_animosity_ability_hud_icon",
+        "name": "advent_battle_capital_ship_animosity_ability_name",
+        "visibility_scope": "negative",
+		"tooltip_line_groups": [
+		{
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.is_force_attacking",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_taken_from_source",
+                "value_id": "animosity_damage_dealt_value",
+                "value_float_format": "percentage_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_dealt_to_source",
+                "value_id": "animosity_damage_taken_value",
+                "value_float_format": "percentage_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            }]
+		}]
+    }
+}

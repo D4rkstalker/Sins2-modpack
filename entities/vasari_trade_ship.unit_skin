@@ -1,0 +1,118 @@
+{
+    "version": 0,
+    "skin_stages": [
+        {
+            "is_main_view_icon_visible_camera_distance": 13058.839797,
+            "min_camera_distance": 364.701770,
+            "gui": {
+                "hud_icon": "vasari_trade_ship_hud_icon",
+                "hud_monochrome_icon": "vasari_trade_ship_main_view_icon",
+                "hud_picture": "vasari_trade_ship_hud_picture",
+                "name": "vasari_trade_ship_name",
+                "description": "vasari_trade_ship_description",
+                "show_description_in_unit_tooltip": true
+            },
+            "unit_mesh": {
+                "mesh": "vasari_trade_ship",
+                "shader": "ship",
+                "is_shadow_blocker": true
+            },
+            "main_view_icon": {
+                "group": "ship",
+                "icon": "vasari_trade_ship_main_view_icon"
+            },
+            "effects": {
+				"effect_alias_bindings": [
+				{
+					"alias_name": "vasari_marauder_capital_ship_phase_out_hull_buff_on_target_large",
+					"alias_binding":
+					{
+						"particle_effect": "phases_out_hull_large",
+						"sounds": [
+							"ambient_impact_phase_phaseouthull"]
+					}
+				},
+				{
+					"alias_name": "vasari_marauder_capital_ship_phase_out_hull_buff_on_target_medium",
+					"alias_binding":
+					{
+						"particle_effect": "phases_out_hull_medium",
+						"sounds": [
+							"ambient_impact_phase_phaseouthull"]
+					}
+				},
+				{
+					"alias_name": "vasari_marauder_capital_ship_phase_out_hull_buff_on_target_small",
+					"alias_binding":
+					{
+						"particle_effect": "phases_out_hull_small",
+						"sounds": [
+							"ambient_impact_phase_phaseouthull"]
+					}
+				}],
+                "exhaust_effects": {
+                    "particle_effects": [
+                        {
+                            "particle_effect": "vasari_exhaust"
+                        }
+                    ]
+                },
+                "hyperspace_effects": {
+                    "charge_effect": "vasari_portal_start_frigate",
+                    "charge_effect_between_stars": "hyperspace_vasari_frigate_chargeup_interstellar",
+                    "charge_effect_destabilized": "hyperspace_vasari_frigate_chargeup_unstable",
+                    "travel_effect": "vasari_corvette_portal_travel",
+                    "travel_effect_between_stars": "hyperspace_vasari_frigate_travel_interstellar",
+                    "travel_effect_destabilized": "hyperspace_vasari_frigate_travel_unstable",
+                    "exit_effect": "vasari_frigate_portal_exit",
+                    "charge_sound": "hyperspace_chargeup",
+                    "enter_sound": "hyperspace_entry",
+                    "exit_sound": "hyperspace_exit"
+                },
+                "damage_effects": {
+                    "max_damage_effect_count": 3,
+                    "damage_effects": [
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.990,
+                            "particle_effect": "vasari_damage_embers"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.990,
+                            "particle_effect": "damage_smoke_1"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.750,
+                            "particle_effect": "vasari_damage_plasma_sparks"
+                        },
+                        {
+                            "max_count": 1,
+                            "hull_percentage_threshold": 0.750,
+                            "particle_effect": "damage_electricity_2",
+                            "sound": "ambient_loop_electrical_damage_01"
+                        }
+                    ]
+                }
+            },
+            "sounds": {
+                "move_sounds": {
+                    "engine": "engine_phasefrigate",
+                    "hyperspace_travel": "hyperspace_travel"
+                },
+                "dialogue": {
+                    "selected": {
+                        "neutral": [
+                            "trader_trade_ship_selected_neutral_0"
+                        ]
+                    }
+                }
+            },
+            "death_sequence_group": "vasari_frigate0"
+        }
+    ]
+}

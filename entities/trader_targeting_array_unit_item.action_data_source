@@ -1,0 +1,107 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "targeting_array_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_targeting_array_unit_item_on_self"
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "targeting_array_remove_target_filter",
+        "target_filter":
+        {
+			"unit_types": [
+				"capital_ship",
+                "super_capital_ship",
+				"titan"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_buff",
+                "buff": "trader_targeting_array_unit_item_on_self",
+				"include_pending_buffs": true
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "apply_buff_radius",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "weapon_range_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "ability_range_scalar",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "weapon_tracking_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "targeting_array_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "weapon_range_scalar"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "targeting_array_weapon_tracking_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "tracking_speed",
+            "value_behavior": "scalar",
+            "value_id": "weapon_tracking_scalar"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "targeting_array_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "ability_range_scalar"
+        }
+    }]
+}

@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 1,
+    "field": "military_npc",
+    "field_coord": [2, 2],
+    "research_time": 1.0,
+    "price":
+    {
+        "credits": 0.0,
+        "metal": 0.0,
+        "crystal": 0.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_experience"
+            }]
+        },
+        "action_data_source": "npc_passive_experience",
+        "buff": "npc_passive_experience",
+        "tooltip_sub_header_label": "tooltip.advent_passive_experience_rate_sub_header",
+        "tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": ":NPC Auto Leveling",
+            "value_id": "experience_rate",
+            "value_color": "positive",
+            "value_suffix": "per_minute"
+        }]
+    }],
+    "name": "research_subject.npc_auto_level_name",
+    "name_uppercase": "research_subject.npc_auto_level_name_upper",
+    "description": "research_subject.npc_auto_level_description",
+    "hud_icon": "trader_savage_thrill_research_subject_hud_icon",
+    "tooltip_picture": "trader_savage_thrill_research_subject_tooltip_picture"
+}

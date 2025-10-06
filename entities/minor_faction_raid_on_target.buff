@@ -1,0 +1,31 @@
+{
+    "version": 0,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "damage_per_allied_player_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_damage_per_allied_player_research_subject_hud_icon",
+        "name": "vasari_damage_per_allied_player_research_subject_name",
+		"is_expire_time_suppressed": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "damage_per_allied_player_damage_modifier"
+            }]
+        }]
+    }
+}

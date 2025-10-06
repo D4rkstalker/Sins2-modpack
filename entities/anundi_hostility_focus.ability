@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "action_data_source": "anundi_hostility_focus",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "anundi_hostility_focus_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "anundi_hostility_focus_hud_icon",
+        "name": "npc_reward.anundi_hostility_focus.name",
+        "description": "npc_reward.anundi_hostility_focus.description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "hostility_focus_radius"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "hostility_focus_radius"
+            }]
+		},
+		{
+			"header_text": "header.anundi_hostility_focus",
+			"lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "planet_modifier.military_research_rate",
+                "value_id": "hostility_focus_military_research_rate_scalar",
+				"value_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_stack_count",
+                "value_id": "hostility_focus_max_stacks_value"
+            }]
+        }]
+    }
+}

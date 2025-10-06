@@ -1,0 +1,93 @@
+{
+    "version": 0,
+	"active_duration": "arrival_delay_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+					{
+						"required_units": [
+						{
+							"unit": "trader_light_frigate",
+							"count": [6, 10]
+						},
+						{
+							"unit": "trader_siege_frigate",
+							"count": [2, 2]
+						},
+						{
+							"unit": "trader_antifighter_frigate",
+							"count": [3, 4]
+						},
+						{
+							"unit": "trader_carrier_cruiser",
+							"count": [2, 3]
+						},
+						{
+							"unit": "trader_long_range_cruiser",
+							"count": [3, 6]
+						},
+						{
+							"unit": "trader_heavy_cruiser",
+							"count": [3, 7]
+						}],
+						"random_units": [
+						{
+							"unit": "trader_battle_capital_ship",
+							"weight": 1.0
+						},
+						{
+							"unit": "trader_siege_capital_ship",
+							"weight": 1.0
+						},
+						{
+							"unit": "trader_carrier_capital_ship",
+							"weight": 1.0
+						},
+						{
+							"unit": "trader_colony_capital_ship",
+							"weight": 1.0
+						},
+						{
+							"unit": "trader_support_capital_ship",
+							"weight": 1.0
+						}]
+                    },
+                    "special_operation_unit_kind": "naibor_xeno_raid",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+						"owned_unit":
+						{
+							"unit_type": "previous_spawner"
+						}
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        }
+    }]
+}

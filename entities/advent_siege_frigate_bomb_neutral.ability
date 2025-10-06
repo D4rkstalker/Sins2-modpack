@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "action_data_source": "advent_siege_frigate_bomb_neutral",
+    "active_actions":
+    {
+        "cooldown_time": "bomb_neutral_cooldown_time_value",
+		"stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "bomb_neutral_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_siege_frigate_bomb_neutral_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "bomb_neutral_target_filter"
+        ],
+        "range": "bomb_neutral_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 10.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "bomb_neutral_target_filter"
+            }]
+        },
+        "watched_buff": "advent_siege_frigate_bomb_neutral_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_siege_frigate_bomb_neutral_hud_icon",
+        "name": "advent_siege_frigate_bomb_neutral_ability_name",
+        "description": "advent_siege_frigate_bomb_neutral_ability_desc",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "bomb_neutral_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.population_damage",
+                "value_id": "bomb_neutral_bombing_population_damage_value",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

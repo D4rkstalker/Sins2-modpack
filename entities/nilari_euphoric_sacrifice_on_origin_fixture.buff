@@ -1,0 +1,129 @@
+{
+    "version": 0,
+	"make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"first_action_delay_time_value": "altar_of_sacrifice_action_delay_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_gravity_wells",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "max_jump_distance_value": "altar_of_sacrifice_phase_lane_distance_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination",
+							"redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "altar_of_sacrifice_planet_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_altar_of_sacrifice_on_fixture",
+					"destination_target_filter_id": "altar_of_sacrifice_planet_target_filter",
+                    "destination_unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    }
+                }]
+            }]
+        }
+    },
+    {
+		"first_action_delay_time_value": "euphoric_sacrifice_action_delay_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [ 
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_population_damage",
+                    "damage_source": "ability",
+                    "population_damage_value": "euphoric_sacrifice_population_damage_value",
+                    "population_reduction_type": "all_equally"
+                }]
+            }]
+        }
+    },
+    {
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+						{
+							"small_unit": "advent_altar_of_sacrifice_activate_small",
+							"medium_unit": "advent_altar_of_sacrifice_activate_medium",
+							"large_unit": "advent_altar_of_sacrifice_activate_medium"
+						}
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_gravity_wells",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "max_jump_distance_value": "altar_of_sacrifice_phase_lane_distance_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination",
+							"redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "altar_of_sacrifice_planet_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_altar_of_sacrifice_on_origin_planet",
+					"destination_target_filter_id": "altar_of_sacrifice_planet_target_filter",
+                    "destination_unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    }
+				}]
+			}]
+        }
+    }]
+}

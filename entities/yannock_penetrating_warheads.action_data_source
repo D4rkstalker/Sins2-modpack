@@ -1,0 +1,76 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"uncolonizable",
+				"star"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+				"corvette",
+				"frigate",
+				"cruiser",
+				"capital_ship",
+				"titan",
+				"structure",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "enemy_targets",
+        "target_filter":
+        {
+            "unit_types": [
+				"structure",
+				"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "extra_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [0.75]
+        }
+    },
+    {
+        "action_value_id": "damage_penetration_value",
+        "action_value":
+        {
+            "transform_type": "per_damage_event_penetration",
+            "values": [1.0]
+        }
+    }]
+}

@@ -1,0 +1,252 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "coordinate_corvette_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "coordinate_frigate_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "frigate"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "coordinate_cruiser_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "coordinate_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "has_weapon"
+				},
+				{
+					"constraint_type": "has_ability"
+				}]
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dls2_trader_loyalist_super_coordinate_on_target_corvette",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dls2_trader_loyalist_super_coordinate_on_target_cruiser",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dls2_trader_loyalist_super_coordinate_on_target_frigate",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "coordinate_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [125.0, 130.0, 135.0, 140.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "coordinate_cooldown_time_value",
+        "action_value":
+        {
+            "values": [110.0, 100.0, 90.0, 80.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "coordinate_duration_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "coordinate_radius_value",
+        "action_value":
+        {
+            "values": [10000.0, 11000.0, 12000.0, 13000.0, 15000.0]
+        }
+    },
+    {
+        "action_value_id": "coordinate_corvette_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.15, -0.2, -0.25, -0.3, -0.4]
+        }
+    },
+    {
+        "action_value_id": "coordinate_frigate_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.1, -0.15, -0.2, -0.25, -0.35]
+        }
+    },
+    {
+        "action_value_id": "coordinate_cruiser_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.05, -0.1, -0.15, -0.2, -0.3]
+        }
+    },
+    {
+        "action_value_id": "coordinate_corvette_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.05, 0.1, 0.15, 0.2, 0.3]
+        }
+    },
+    {
+        "action_value_id": "coordinate_frigate_angular_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.1, 0.15, 0.2, 0.25, 0.35]
+        }
+    },
+    {
+        "action_value_id": "coordinate_cruiser_ability_cost_bonus_value",
+        "action_value":
+        {
+            "values": [-0.15, -0.2, -0.25, -0.3, -0.4]
+        }
+    },
+    {
+        "action_value_id": "coordinate_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [15.0, 15.0, 15.0, 15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "coordinate_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [8000.0, 9000.0, 10000.0, 11000.0, 13000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "coordinate_corvette_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "coordinate_corvette_linear_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "coordinate_frigate_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "coordinate_frigate_angular_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "coordinate_cruiser_ability_cost_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_antimatter_cost",
+            "value_behavior": "scalar",
+            "value_id": "coordinate_cruiser_ability_cost_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "coordinate_corvette_cooldown_duration_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "coordinate_corvette_cooldown_duration_bonus_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "coordinate_frigate_cooldown_duration_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "coordinate_frigate_cooldown_duration_bonus_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "coordinate_cruiser_cooldown_duration_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "coordinate_cruiser_cooldown_duration_bonus_value"
+        }
+    }]
+}

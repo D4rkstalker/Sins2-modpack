@@ -1,0 +1,149 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_advent_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "advent_starbase_planetary_shield_array"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_advent_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "advent_starbase_unlock_missile_weapon"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_advent_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "advent_starbase_unlock_plasma_weapon"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_trader_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "trader_starbase_planetary_shield_array"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_trader_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "trader_starbase_unlock_torpedo_weapon"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_trader_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "trader_starbase_unlock_beam_weapon"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_vasari_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "vasari_starbase_planetary_shield_array"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_vasari_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "vasari_starbase_unlock_extra_phase_missile_weapons"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "npc_planet_shield_vasari_starbase_target_filter"
+                    },
+                    "operator_type": "add_unit_item",
+                    "unit_item": "vasari_starbase_unlock_extra_wave_weapons"
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "modifier_type": "culture_resistance_rate",
+        "value_behavior": "additive",
+        "value_id": "culture_resistance_rate_value"
+    }]
+}

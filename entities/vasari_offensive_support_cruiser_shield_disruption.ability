@@ -1,0 +1,104 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_offensive_support_cruiser_shield_disruption",
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "shield_disruption_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "projectile_travel_speed_value"
+                },
+                "range_value": "range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_offensive_support_cruiser_shield_disruption"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "action_data_source",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "muzzle_effect": "shield_disruption_muzzle",
+                        "projectile_travel_effect": "shield_disruption_projectile_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "shield_disruption_target_filter"
+        ],
+        "range": "range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "shield_disruption_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_offensive_support_cruiser_shield_disruption_hud_icon",
+        "tooltip_icon": "vasari_offensive_support_cruiser_shield_disruption_hud_icon",
+        "name": "vasari_offensive_support_cruiser_shield_disruption_name",
+        "description": "vasari_offensive_support_cruiser_shield_disruption_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_damage_increase",
+                "value_id": "shield_disruption_shield_bypass_chance",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.bypass_shields_chance",
+                "value_id": "shield_disruption_shield_bypass_chance",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_dark_fleet_tower",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["vasari_unlock_dark_fleet_tower_unit_item"]
+        ],
+        [
+            ["vasari_upgrade_dark_fleet_tower_unit_item"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "vasari_light_frigate",
+                            "weight": 5.0
+                        },
+                        {
+                            "unit": "vasari_long_range_frigate",
+                            "weight": 3.0
+                        },
+                        {
+                            "unit": "vasari_antifighter_frigate",
+                            "weight": 2.0
+                        },
+                        {
+                            "unit": "vasari_heavy_cruiser",
+                            "weight": 1.0
+                        }]
+                    },
+                    "special_operation_unit_kind": "dark_fleet",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+					"buff": "vasari_dark_fleet_tower_ai_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_alert": "targeted_by_ability",
+        "target_filters": [
+            "vasari_dark_fleet_ai_target_filter"
+        ],
+        "between_gravity_well_range": "use_range",
+        "auto_cast":
+        {
+            "type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "vasari_dark_fleet_auto_cast_high_priority_enemies_target_filter"
+                },
+                "target_filter": "vasari_dark_fleet_auto_cast_high_priority_planet_target_filter"
+            },
+            {
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "vasari_dark_fleet_auto_cast_low_priority_enemies_target_filter"
+                },
+                "target_filter": "vasari_dark_fleet_auto_cast_low_priority_planet_target_filter"
+            },
+            {
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "vasari_dark_fleet_auto_cast_low_priority_enemies_target_filter"
+                },
+                "target_filter": "vasari_dark_fleet_ai_target_filter"
+            }],
+            "gravity_well_distance_range": "use_range"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_dark_fleet_tower_unit_item_hud_icon",
+        "name": "vasari_dark_fleet_tower_unit_item_name",
+        "description": "vasari_dark_fleet_tower_unit_item_description",
+        "targeting":
+        {
+            "targeting_type": "between_gravity_well_range",
+            "values":
+            {
+                "range": "use_range"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.supply_value_label",
+                "value_id": "available_supply_value"
+            }]
+        },
+		{
+            "header_text": "tooltip.ability.spawned_ships_list_header",
+            "lines": [
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_light_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_long_range_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_heavy_cruiser"
+            }]
+		}]
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "intercept_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "intercept_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_duration_value",
+        "action_value":
+        {
+            "values": [8.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_max_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_max_linear_acceleration_bonus_value",
+        "action_value":
+        {
+            "values": [4.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "intercept_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "intercept_max_linear_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "intercept_max_linear_acceleration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "intercept_max_linear_acceleration_bonus_value"
+        }
+    }]
+}

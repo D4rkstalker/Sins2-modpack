@@ -1,0 +1,115 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "designate_target_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "starbase",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_offensive_support_cruiser_designate_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "designate_target_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "starbase",
+                "titan",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [45.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "designate_target_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [0.4]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [9000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "designate_target_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "designate_target_damage_taken_scalar"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "designate_target_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "designate_target_on_target_small"
+        }
+    },
+    {
+        "alias_name": "designate_target_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "designate_target_on_target_medium"
+        }
+    },
+    {
+        "alias_name": "designate_target_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "designate_target_on_target_large"
+        }
+    }]
+}

@@ -1,0 +1,74 @@
+{
+    "version": 0,
+	"make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"first_action_delay_time_value": "booby_trap_arming_time_value",
+		"execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "booby_trap_dead_asteroid_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "renzo_booby_trap_on_dead_asteroid"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "booby_trap_neutral_extractor_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "renzo_booby_trap_on_neutral_extractor"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "booby_trap_loot_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "renzo_booby_trap_on_loot"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "renzo_booby_trap_hud_icon",
+        "name": "npc_reward.renzo_booby_trap.name",
+        "description": "npc_reward.renzo_booby_trap_arming.description",
+		"is_visible_within_unit_tooltip": true
+    }
+}

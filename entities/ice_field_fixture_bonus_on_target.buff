@@ -1,0 +1,108 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_can_be_propagated"
+                },
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_source"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "ice_field_damage_propagation_value",
+                    "penetration_value": "uniforms_damage_event_penetration_value",
+                    "can_damage_be_propagated": false
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_torpedo",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "trigger_event_destination"
+					},
+					"target_filter_id": "ice_field_fixture_bonus_torpedo_exclude_target_filter"
+				}
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "ice_field_fixture_bonus_on_torpedo"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "ice_field_fixture_bonus_hud_icon",
+        "name": "planet_bonus.ice_field.name",
+        "alert_type": "negative_buff",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.weapon_damage_reflected",
+                "value_id": "ice_field_damage_propagation_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

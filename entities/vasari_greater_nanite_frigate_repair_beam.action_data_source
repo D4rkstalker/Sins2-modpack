@@ -1,0 +1,140 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "repair_beam_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"corvette",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_beam_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"corvette",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+			{
+                "constraint_type": "composite_or",
+                "constraints": [
+				{
+					"constraint_type": "has_missing_armor",
+					"amount_missing_threshold": 250.0
+				},
+				{
+					"constraint_type": "has_missing_hull",
+					"amount_missing_threshold": 250.0
+				}]
+			},
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "repair_beam_beam_duration_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "repair_beam_cooldown_time_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "repair_beam_armor_strength_modifier_value",
+        "action_value":
+        {
+            "values": [72.0]
+        }
+    },
+    {
+        "action_value_id": "repair_beam_armor_strength_modifier_duration",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "repair_beam_range_value",
+        "action_value":
+        {
+            "values": [4000.0]
+        }
+    },
+    {
+        "action_value_id": "repair_beam_hull_restore_value",
+        "action_value":
+        {
+            "values": [300.0]
+        }
+    }],
+	"effect_alias_bindings": [
+    {
+        "alias_name": "advent_gunship_corvette_laser_weapon_projectile_travel",
+        "alias_binding":
+        {
+            "particle_effect": "advent_laser_bolt"
+        }
+    },
+    {
+        "alias_name": "trader_support_capital_ship_energy_transfer_beam",
+        "alias_binding":
+        {
+            "beam": "advent_energy_transfer_beam",
+            "sounds": [
+                "ability_muzzle_tech_energytransfer"]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "repair_beam_armor_strength_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "repair_beam_armor_strength_modifier_value"
+        }
+    }]
+}

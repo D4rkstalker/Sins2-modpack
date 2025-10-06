@@ -1,0 +1,176 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_id": "desperation_recalculate_modifier_scalar"
+            },
+            {
+                "action_id": "desperation_recalculate_splash_damage_scalar"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_id": "desperation_recalculate_modifier_scalar"
+            },
+            {
+                "action_id": "desperation_recalculate_splash_damage_scalar"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "desperation_splash_damage_scalar_value",
+                    "comparison_type": "greater_than",
+                    "value_b": "fixed_zero"
+                },
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "splash_damage_amount",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "desperation_splash_damage_scalar_value"
+                },
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "uniforms_damage_event_total_resolved_damage_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "desperation_splash_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "desperation_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "desperation_splash_damage_value",
+                    "penetration_value": "uniforms_damage_event_penetration_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_torpedo",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_loyalist_titan_desperation_on_torpedo",
+                    "copy_parent_buff_memory_values": true
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "bomb",
+                    "effect": "desperation_ambient_effect"
+                }
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "damage_taken"
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "cooldown_duration"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_loyalist_titan_desperation_ability_hud_icon",
+        "name": "vasari_loyalist_titan_desperation_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "damage_taken",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "cooldown_duration",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage",
+                "value_id": "desperation_splash_damage_scalar_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "value_color": "negative",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage_radius",
+                "value_id": "desperation_splash_radius_value"
+            }]
+        }]
+    }
+}

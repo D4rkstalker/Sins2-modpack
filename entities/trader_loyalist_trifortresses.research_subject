@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 4,
+    "field": "military_trader_loyalist_repeatables",
+    "field_coord": [8, 0],
+    "research_time": 695.0,
+    "price":
+    {
+        "credits": 5000.0,
+        "metal": 1875.0,
+        "crystal": 1875.0
+    },
+    "prerequisites": [["trader_twin_fortresses"]],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": ["structure", "starbase"],
+            "ownerships": ["self"]
+        },
+        "action_data_source": "trader_loyalist_shield_burst_restore",
+        "buff": "trader_loyalist_shield_burst_restore"
+    }],
+    "bonus_unit_limits":
+    {
+        "planet": [
+        {
+            "tag": "starbase",
+            "unit_limit": 1
+        }]
+    },
+    "name": "research_subject.trader_loyalist_trifortresses_name",
+    "name_uppercase": "research_subject.trader_loyalist_trifortresses_name_upper",
+    "description": "research_subject.trader_loyalist_trifortresses_description",
+    "hud_icon": "dlc_trader_triple_fortresses_research_subject_hud_icon",
+    "tooltip_picture": "dlc_trader_triple_fortresses_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_faction",
+        "research_text_filter_loyalist"],
+    "arbitary_research_line":
+    {
+        "before_after_heading": "tooltip.research_subject.arbitary_before_after_heading.trader_twin_fortresses",
+        "before_number": 2,
+        "after_number": 3
+    }
+}

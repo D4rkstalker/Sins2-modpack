@@ -1,0 +1,91 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "scrap_for_parts_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+				"structure"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_structure_builder"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_reanimation_unit_item_on_buff_agent"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "vasari_carrier_capital_ship_replicate_forces"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+					"unit_definition": "trader_trade_ship"
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "scrap_for_parts_credits_value",
+        "action_value":
+        {
+            "transform_type": "per_credit_price",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.75]
+        }
+    },
+    {
+        "action_value_id": "scrap_for_parts_metal_value",
+        "action_value":
+        {
+            "transform_type": "per_metal_price",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.75]
+        }
+    },
+    {
+        "action_value_id": "scrap_for_parts_crystal_value",
+        "action_value":
+        {
+            "transform_type": "per_crystal_price",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.75]
+        }
+    }]
+}

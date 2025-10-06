@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "active_duration": "volatile_plasma_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "volatile_plasma_stacking_limit_value",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "volatile_plasma_damage_rate_value",
+                    "penetration_value": "volatile_plasma_penetration_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc2_advent_loyalist_super_volatile_plasma_on_target_small",
+                        "medium_unit": "dlc2_advent_loyalist_super_volatile_plasma_on_target_medium",
+                        "large_unit": "dlc2_advent_loyalist_super_volatile_plasma_on_target_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_loyalist_super_volatile_plasma_hud_icon",
+        "name": "dlc2_advent_loyalist_super_volatile_plasma_ability_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "volatile_plasma_damage_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "volatile_plasma_penetration_value",
+                "value_color": "negative"
+            }]
+		}]
+    }
+}

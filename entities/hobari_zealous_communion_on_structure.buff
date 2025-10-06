@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "zealous_communion_planet_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "hobari_zealous_communion_bonus"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+		"hud_icon": "npc_culture_reward_given_notification_icon",
+		"name": "npc_reward.hobari_zealous_communion.name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "zealous_communion_commerce_income_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "zealous_communion_metal_income_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "zealous_communion_crystal_income_rate_modifier"
+            }]
+        }]
+    }
+}

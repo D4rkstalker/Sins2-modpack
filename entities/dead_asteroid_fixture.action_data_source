@@ -1,0 +1,138 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "dead_asteroid_fixture_asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"asteroid"
+			],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "neutral_metal_asteroid"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "neutral_crystal_asteroid"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "dead_asteroid_fixture_crystal_asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"asteroid"
+			],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "neutral_crystal_asteroid"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "dead_asteroid_fixture_metal_asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"asteroid"
+			],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "neutral_metal_asteroid"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "dead_asteroid_fixture_dead_asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"planet",
+				"uncolonizable"
+			],
+            "ownerships": [
+                "self",
+				"none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "dead_asteroid_fixture"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "dead_asteroid_fixture_convert_on_militia_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"frigate",
+				"cruiser"
+			],
+            "ownerships": [
+                "friendly",
+				"enemy",
+				"none"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "uncolonizable_planet_bonus_crystal_mining_rate_additive",
+        "action_value":
+        {
+            "values": [0.45]
+        }
+    },
+    {
+        "action_value_id": "uncolonizable_planet_bonus_metal_mining_rate_additive",
+        "action_value":
+        {
+            "values": [0.45]
+        }
+    },
+    {
+        "action_value_id": "dead_asteroid_fixture_extra_spawn_chance",
+        "action_value":
+        {
+            "values": [0.50]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "uncolonizable_planet_bonus_crystal_mining_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "crystal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "uncolonizable_planet_bonus_crystal_mining_rate_additive"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "uncolonizable_planet_bonus_metal_mining_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "metal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "uncolonizable_planet_bonus_metal_mining_rate_additive"
+        }
+    }]
+}

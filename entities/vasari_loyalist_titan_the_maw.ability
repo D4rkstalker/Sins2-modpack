@@ -1,0 +1,133 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_loyalist_titan_the_maw",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "the_maw_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "the_maw_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_loyalist_titan_the_maw_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "the_maw_attract_target_filter"
+        ],
+        "range": "the_maw_attraction_radius_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 30.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "the_maw_auto_cast_target_filter"
+            }]
+        },
+        "watched_buff": "vasari_loyalist_titan_the_maw_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_loyalist_titan_the_maw_ability_hud_icon",
+        "tooltip_picture": "vasari_loyalist_titan_the_maw_ability_tooltip_picture",
+        "name": "vasari_loyalist_titan_the_maw_ability_name",
+        "description": "vasari_loyalist_titan_the_maw_ability_description",
+        "targeting":
+        {
+            "targeting_type": "arc",
+            "values":
+            {
+                "range": "the_maw_attraction_radius_value_targeting",
+                "arc_half_angle": "the_maw_arc_half_angle_value_targeting"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "the_maw_attraction_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_supply_consumed",
+                "value_id": "the_maw_max_supply_consumed_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.metal_salvaged",
+                "value_id": "the_maw_metal_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.crystal_salvaged",
+                "value_id": "the_maw_crystal_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "the_maw_attract_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "vasari_loyalist_titan_the_maw_improved_with_item_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.damage",
+                "value_id": "the_maw_weapon_damage_bonus_value",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_stack_count",
+                "value_id": "the_maw_max_stack_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "the_maw_damage_bonus_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,157 @@
+{
+    "version": 0,
+    "action_data_source": "trader_colony_capital_ship_armistice",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "armistice_cooldown_time_value",
+        "antimatter_cost": "armistice_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_colony_capital_ship_armistice_on_spawner"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_colony_capital_ship_armistice_invuln_on_spawner"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "armistice_auto_cast_target_filter",
+                "radius_value": "armistice_radius_value",
+                "target_count_value": "fixed_one"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_colony_capital_ship_armistice_ability_hud_icon",
+        "name": "trader_colony_capital_ship_armistice_ability_name",
+        "description": "ability.trader_colony_capital_ship_armistice_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "armistice_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "armistice_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.invuln_duration",
+                "value_id": "armistice_invuln_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.invulnerable",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_ability_cooldown_progress",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_hull",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_armor",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_shields",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_have_shields_burst_restored",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_passively_regenerate_antimatter",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_build_progress",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_production",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_unit_item_build_progress",
+                "value_color": "negative"
+            }]
+	    },
+	    {
+	    "header_text": "tooltip.after_invuln_ends",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "damage_taken"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_taken_duration",
+                "value_id": "armistice_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

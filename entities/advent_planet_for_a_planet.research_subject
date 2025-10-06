@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 1,
+    "field": "civilian_reclamation",
+    "field_coord": [3, 2],
+    "research_time": 180.0,
+    "price":
+    {
+        "credits": 600.0,
+        "metal": 125.0,
+        "crystal": 225.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+			"unit_types": [
+				"planet"
+			]
+        },
+        "action_data_source": "advent_unity_planet_for_a_planet",
+        "buff": "advent_unity_planet_for_a_planet_on_planet",
+        "tooltip_sub_header_label": "advent_planet_for_a_planet_research_subject_tooltip_sub_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "buff_unit_modifier",
+            "unit_modifier_id": "unity_planet_for_a_planet_ability_range_modifier"
+        },
+        {
+            "rendering_type": "buff_weapon_modifier",
+            "weapon_modifier_id": "unity_planet_for_a_planet_weapon_damage_modifier"
+        },
+        {
+            "rendering_type": "buff_weapon_modifier",
+            "weapon_modifier_id": "unity_planet_for_a_planet_weapon_range_modifier"
+		},
+		{
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.duration",
+            "value_id": "unity_planet_for_a_planet_weapon_modifier_duration",
+            "value_suffix": "seconds"			
+        }]
+    }],
+    "name": "advent_unity_planet_for_a_planet_ability_name",
+	"name_uppercase": "advent_unity_planet_for_a_planet_ability_name_uppercase",
+    "description": "advent_unity_planet_for_a_planet_ability_description",
+    "hud_icon": "advent_unity_planet_for_a_planet_ability_hud_icon",
+	"tooltip_picture": "advent_unity_planet_for_a_planet_ability_tooltip_picture"
+}

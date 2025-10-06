@@ -1,0 +1,78 @@
+{
+    "version": 0,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "replace_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "total_population_growth",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "compelled_pilgrimage_steal_population_value"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "current_population_growth",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "compelled_pilgrimage_steal_population_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "total_population_growth",
+                "math_operators": [
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "compelled_pilgrimage_subtract_origin_population_value"
+                }]
+            }]
+        }
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "compelled_pilgrimage_subtract_population_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "nilari_compelled_pilgrimage_hud_icon",
+        "name": "npc_reward.nilari_compelled_pilgrimage.name",
+		"is_visible_within_unit_tooltip": true,
+		"is_expire_time_suppressed": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.population_stolen",
+				"value_id": "compelled_pilgrimage_steal_population_value",
+                "value_float_format": "percentage_one_decimal_place",
+				"value_suffix": "per_second",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

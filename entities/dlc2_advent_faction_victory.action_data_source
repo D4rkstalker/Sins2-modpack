@@ -1,0 +1,163 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "advent_faction_victory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "gravity_well_contains_unit_type",
+                "unit_type": "star"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "advent_faction_victory_conversion_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy",
+                "none"
+            ],
+            "constraints": [
+			{
+				"constraint_type": "composite_or",
+				"constraints": [
+				{
+					"constraint_type": "has_minimum_population_amount",
+					"real_minimum_population": 0.000001
+				},
+				{
+					"constraint_type": "has_definition",
+					"unit_definition": "gas_giant_planet"
+				}]
+			}]
+        }
+    },
+    {
+        "target_filter_id": "advent_faction_victory_neutral_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_colonizable_planet"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "objectives_completed_value",
+        "action_value":
+        {
+            "values": [1]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_stage_one_delay_value",
+        "action_value":
+        {
+            "values": [300]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_stage_one_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_stage_two_delay_value",
+        "action_value":
+        {
+            "values": [600]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_stage_two_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [2]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_stage_three_delay_value",
+        "action_value":
+        {
+            "values": [900]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_stage_three_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [100]
+        }
+    },
+    {
+        "action_value_id": "advent_faction_victory_bombing_damage_value",
+        "action_value":
+        {
+            "values": [250]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_unity_conversion_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion_gas_giant"
+        }
+    },
+    {
+        "alias_name": "advent_unity_conversion_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion"
+        }
+    },
+    {
+        "alias_name": "advent_unity_conversion_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_conversion_asteroid"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sanctify_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_sanctify_gas_giant"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sanctify_buff_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_sanctify_planet"
+        }
+    },
+    {
+        "alias_name": "advent_unity_sanctify_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_sanctify_asteroid"
+        }
+    }]
+}

@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+				"action_type": "use_unit_operators_on_gravity_wells",
+				"gravity_well_origin_unit":
+				{
+					"unit_type": "current_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+				},
+				"max_jump_distance_value": "fixed_one",
+				"operators": [
+				{
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination",
+							"redirection": "current_gravity_well_primary_fixture"
+						},
+						"target_filter_id": "collective_dissonance_watch_target_filter"
+					},
+					"operator_type": "apply_buff",
+					"buff": "anundi_collective_dissonance_on_fixture",
+					"destination_unit":
+					{
+						"unit_type": "operand_destination",
+						"redirection": "current_gravity_well_primary_fixture"
+					}
+				}]
+			}]
+		}
+    }]
+}

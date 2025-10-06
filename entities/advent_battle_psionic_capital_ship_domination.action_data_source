@@ -1,0 +1,106 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "domination_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_battle_psionic_capital_ship_domination_prevent",
+					"include_pending_buffs": true
+                }
+			}]
+        }
+    },
+    {
+        "target_filter_id": "domination_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+			"constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+					"buff": "advent_battle_psionic_capital_ship_domination_prevent",
+					"include_pending_buffs": true
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "domination_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [150.0, 127.5, 105.0, 82.5, 60.0]
+        }
+    },
+    {
+        "action_value_id": "domination_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 78.75, 67.5, 56.25, 45.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.1, -0.1, -0.1, -0.1, -0.1]
+            }
+        }
+    },
+    {
+        "action_value_id": "domination_max_charge_count_value",
+        "action_value":
+        {
+            "values": [2.0, 4.0, 6.0, 8.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "domination_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    }]
+}

@@ -1,0 +1,100 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "splash_damage_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "ability_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.2, -0.25, -0.3, -0.325, -0.35]
+        }
+    },
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_restore_rate_bonus_value",
+        "action_value":
+        {
+            "values": [5.0, 6.25, 7.5, 8.125, 8.75]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [240.0, 240.0, 240.0, 240.0, 240.0]
+        }
+    },
+    {
+        "action_value_id": "execution_interval_count_value",
+        "action_value":
+        {
+            "values": [60.0, 75.0, 90.0, 97.5, 105.0]
+        }
+    },
+    {
+        "action_value_id": "hull_point_restore_rate_value",
+        "action_value":
+        {
+            "values": [20.0, 25.0, 30.0, 32.5, 35.0]
+        }
+    },
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [750.0, 750.0, 750.0, 750.0, 750.0]
+        }
+    },
+    {
+        "action_value_id": "splash_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_total_resolved_damage_dealt",
+            "values": [0.5, 0.625, 0.75, 0.8125, 0.875]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "ability_cooldown_duration",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "ability_cooldown_duration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "antimatter_restore_rate",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "antimatter_restore_rate_bonus_value"
+        }
+    }]
+}

@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "home_front_advantage_weapon_reload_debuff_modifier"
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "home_front_advantage_damage_reduction_debuff_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_linear_speed_debuff_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "home_front_advantage_linear_acceleration_debuff_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "naibor_home_front_advantage_hud_icon",
+        "name": "npc_reward.naibor_home_front_advantage.name",
+		"is_expire_time_suppressed": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "home_front_advantage_weapon_reload_debuff_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "home_front_advantage_damage_reduction_debuff_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "home_front_advantage_linear_speed_debuff_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "home_front_advantage_linear_acceleration_debuff_modifier"
+            }]
+        }]
+    }
+}

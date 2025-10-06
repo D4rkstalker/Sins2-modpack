@@ -1,0 +1,93 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "missing_hull_percentage",
+            "was_invulnerable"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "unyielding_will_passive_cooldown_time_value",
+        "action_value":
+        {
+            "values": [300.0, 280.0, 260.0, 250.0, 240.0]
+        }
+    },
+    {
+        "action_value_id": "unyielding_will_ability_cooldown_duration_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "missing_hull_percentage",
+            "values": [-1.0, -2.0, -3.0, -3.5, -4.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.01, -0.015, -0.02, -0.0225, -0.025]
+            }
+        }
+    },
+    {
+        "action_value_id": "unyielding_will_antimatter_restore_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "missing_hull_percentage",
+            "values": [1.0, 2.0, 3.0, 3.5, 4.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.01, 0.015, 0.02, 0.0225, 0.025]
+            }
+        }
+    },
+    {
+        "action_value_id": "unyielding_will_invulnerable_duration_value",
+        "action_value":
+        {
+            "values": [90.0, 120.0, 150.0, 165.0, 180.0]
+        }
+    },
+    {
+        "action_value_id": "unyielding_will_missing_hull_input_value",
+        "action_value":
+        {
+            "transform_type": "per_percent_missing_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "unyielding_will_was_invulnerable_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "was_invulnerable",
+            "values": [0.0, 0.0, 0.0, 0.0, 0.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "unyielding_will_ability_cooldown_duration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "unyielding_will_ability_cooldown_duration_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "unyielding_will_antimatter_restore_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "unyielding_will_antimatter_restore_rate_value"
+        }
+    }]
+}

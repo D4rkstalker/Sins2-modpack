@@ -1,0 +1,138 @@
+{
+    "version": 0,
+    "action_data_source": "trader_support_capital_ship_emp_charge",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "emp_charge_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "projectile_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_support_capital_ship_emp_charge_on_spawner"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "muzzle_effect": "trader_support_capital_ship_emp_charge_muzzle",
+                        "projectile_travel_effect": "trader_support_capital_ship_emp_charge_projectile_travel"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "emp_charge_target_filter"
+        ],
+        "range": "range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "emp_charge_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "emp_charge_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_support_capital_ship_emp_charge_ability_hud_icon",
+        "name": "trader_support_capital_ship_emp_charge_ability_name",
+        "description": "trader_support_capital_ship_emp_charge_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "range_value",
+                "radius": "radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+			"header_text": "tooltip.vasari_colony_capital_ship_subspace_rupture_ability_without_gravity_warhead_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_damage",
+                "value_id": "non_empowered_shield_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "emp_charge_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_removed",
+                "value_id": "non_empowered_antimatter_remove_value",
+				"value_color": "negative"
+            }]
+		},
+		{
+			"header_text": "tooltip.trader_support_capital_ship_overcharge_tooltip_lines_sub_header_label",
+			"lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_empowered_damage",
+                "value_id": "empowered_shield_damage_value",
+				"value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "emp_charge_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_empowered_removed",
+                "value_id": "empowered_antimatter_remove_value",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}
+

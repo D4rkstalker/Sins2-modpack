@@ -1,0 +1,102 @@
+{
+    "version": 0,
+    "action_data_source": "advent_guardian_cruiser_shield_projection",
+    "active_actions":
+    {
+        "cooldown_time": "shield_projection_cooldown_time_value",
+        "antimatter_cost": "shield_projection_antimatter_cost_value",
+        "max_charge_count": "shield_projection_max_charge_count_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_guardian_cruiser_shield_projection_on_spawner"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_guardian_cruiser_shield_projection_activate"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "shield_projection_target_filter"
+        ],
+        "range": "shield_projection_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_missing_shields",
+                        "percentage_missing_threshold": 0.66
+                    }
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "shield_projection_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_guardian_cruiser_shield_projection_ability_hud_icon",
+        "tooltip_picture": "advent_guardian_cruiser_shield_projection_ability_tooltip_picture",
+        "name": "advent_guardian_cruiser_shield_projection_ability_name",
+        "description": "advent_guardian_cruiser_shield_projection_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "shield_projection_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_redirected",
+                "value_id": "shield_projection_damage_prevented_value",
+                "value_color": "positive",
+                "value_float_format": "percentage"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "shield_projection_max_charge_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "shield_projection_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

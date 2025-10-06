@@ -1,0 +1,140 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_vasari_loyalist_super_countermeasure_pulse",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "countermeasure_pulse_cooldown_time_value",
+        "antimatter_cost": "countermeasure_pulse_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_loyalist_super_countermeasure_pulse_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_vasari_loyalist_super_countermeasure_pulse_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "countermeasure_pulse_auto_cast_target_filter",
+                    "radius_value": "countermeasure_pulse_auto_cast_radius_value",
+                    "target_count_value": "countermeasure_pulse_auto_cast_target_count_value"
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_missing_shields",
+                            "percentage_missing_threshold": 0.75
+                        }
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_recently_been_damaged"
+                        }
+                    }]
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_vasari_loyalist_super_countermeasure_pulse_hud_icon",
+        "tooltip_picture": "dlc2_vasari_loyalist_super_countermeasure_pulse_tooltip_picture",
+        "name": "dlc2_vasari_loyalist_super_countermeasure_pulse_ability_name",
+        "description": "dlc2_vasari_loyalist_super_countermeasure_pulse_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "countermeasure_pulse_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "countermeasure_pulse_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.effect_on_strikecraft_and_missiles",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "countermeasure_pulse_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fixed_zero",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.effect_on_ships_and_structures",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_loyalist_super_countermeasure_pulse_damage_against_caster",
+                "value_id": "countermeasure_pulse_damage_taken_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "countermeasure_pulse_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

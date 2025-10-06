@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_accelerator_ship_artifact_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "phase_accelerator_hyperspace_speed_scalar",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "phase_accelerator_cooldown_time",
+        "action_value":
+        {
+            "values": [360.0]
+        }
+    },
+    {
+        "action_value_id": "phase_accelerator_duration",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "phase_accelerator_hyperspace_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "phase_accelerator_hyperspace_speed_scalar"
+        }
+    }]
+}

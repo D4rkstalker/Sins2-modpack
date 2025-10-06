@@ -1,0 +1,132 @@
+{
+    "version": 0,
+    "action_data_source": "advent_colony_capital_ship_rebirth",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "rebirth_cooldown_time_value",
+        "antimatter_cost": "rebirth_antimatter_cost_value",
+		"required_available_supply": "fixed_one",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "resurrect_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "dead_units_player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "unit_types_to_resurrect": [
+                    "corvette",
+                    "cruiser",
+                    "frigate"
+                ],
+                "resurrection_sort":
+                {
+                    "sort_steps": [
+                    {
+                        "sort_type": "build_or_virtual_supply",
+                        "sort_order": "descending"
+                    },
+                    {
+                        "sort_type": "distance_to_unit",
+                        "sort_order": "ascending",
+                        "distance_reference_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }]
+                },
+                "max_supply_value": "rebirth_max_supply_value",
+                "buff_on_resurrected_units": "advent_colony_capital_ship_rebirth_on_target"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_colony_capital_ship_rebirth_activate_on_spawner"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "has_resurrectable_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "dead_units_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "unit_types_to_resurrect": [
+                        "corvette",
+                        "cruiser",
+                        "frigate"
+                    ],
+                    "min_supply_value": "rebirth_max_supply_value"
+                },
+                {
+                    "constraint_type": "player_has_available_supply",
+                    "player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "minimum_available_supply": "rebirth_max_supply_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_colony_capital_ship_rebirth_ability_hud_icon",
+        "tooltip_picture": "advent_colony_capital_ship_rebirth_ability_tooltip_picture",
+        "name": "advent_colony_capital_ship_rebirth_ability_name",
+        "description": "advent_colony_capital_ship_rebirth_ability_description",
+		"tooltip_show_current_gravity_well_resurrectable_unit_data": true,	
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.spawned_supply",
+                "value_id": "rebirth_max_supply_value",
+                "ratio_float_format": "two_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

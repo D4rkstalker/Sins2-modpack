@@ -1,0 +1,55 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 2,
+    "field": "civilian_reclamation",
+    "field_coord": [5, 2],
+    "research_time": 360.0,
+    "price":
+    {
+        "credits": 850.0,
+        "metal": 275.0,
+        "crystal": 650.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "planet_bombing"
+            }]
+        },
+        "action_data_source": "advent_reimagine_assimilated_population",
+        "buff": "advent_reimagine_assimilated_population_on_ships",
+        "tooltip_sub_header_label": "tooltip.ability.gravity_well_aura_sub_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "buff_weapon_modifier",
+            "weapon_modifier_id": "assimilated_population_weapon_damage_modifier"
+        },
+        {
+             "rendering_type": "buff_planet_modifier",
+            "planet_modifier_id": "assimilated_population_development_speed_modifier"
+        },
+        {
+            "rendering_type": "buff_planet_modifier",
+            "planet_modifier_id": "assimilated_population_development_cost_modifier"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.duration",
+            "value_id": "assimilated_population_duration_value",
+            "value_suffix": "seconds"
+        }]
+    }],
+    "name": "advent_reimagine_assimilated_population_research_subject_name",
+    "name_uppercase": "advent_reimagine_assimilated_population_research_subject_name_uppercase",
+    "description": "advent_reimagine_assimilated_population_research_subject_description",
+    "hud_icon": "advent_reimagine_assimilated_population_research_subject_hud_icon"
+}

@@ -1,0 +1,158 @@
+{
+    "version": 0,
+    "action_data_source": "advent_planet_psionic_capital_ship_quell",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "quell_cooldown_time_value",
+        "antimatter_cost": "quell_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "radius_value": "quell_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "quell_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_planet_psionic_capital_ship_quell"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_planet_psionic_capital_ship_quell_activate_on_spawner"
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "advent_planet_psionic_capital_ship_quell_activate_on_self"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "quell_target_filter"
+        ],
+        "range": "quell_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 360.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "quell_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_planet_psionic_capital_ship_quell_ability_hud_icon",
+        "tooltip_picture": "advent_planet_psionic_capital_ship_quell_ability_tooltip_picture",
+        "name": "advent_planet_psionic_capital_ship_quell_ability_name",
+        "description": "ability.advent_planet_psionic_capital_ship_quell_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "quell_range_value",
+                "radius": "quell_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.disable_duration",
+                "value_id": "quell_disable_duration_value",
+		"ratio_float_format": "two_decimal_place_with_sign",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_hyperspace",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_engines",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_update_build_progress",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_active_abilities",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.disable_can_use_weapons",
+                "value_color": "negative"
+            }]
+            },
+            {
+	    "header_text": "tooltip.after_disable_ends",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "damage"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.reduced_damage_duration",
+                "value_id": "quell_duration_value",
+		"ratio_float_format": "two_decimal_place_with_sign",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

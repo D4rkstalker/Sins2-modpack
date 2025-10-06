@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "planet"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 1639534.537472,
+        "min_camera_distance": 18510.658849,
+        "gui":
+        {
+            "hud_icon": "tec_city_planet_hud_icon",
+            "hud_picture": "tec_city_planet_hud_picture",
+            "tooltip_icon": "tec_city_planet_tooltip_icon",
+            "name": "city_planet_name",
+            "description": ""
+        },
+        "planet_mesh":
+        {
+            "mesh": "city_planet",
+            "city":
+            {
+                "shader": "planet_city",
+                "city_material": "terran_planet_city"
+            }
+        },
+        "main_view_icon":
+        {
+            "group": "fixture",
+            "icon": "tec_city_planet_main_view_icon",
+            "has_rotation": false,
+            "use_owner_player_color": false
+        },
+        "effects":
+        {
+			"shield_effect": "city_planet_shield",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "destroy_planet",
+                "alias_binding":
+                {
+                    "particle_effect": "planet_explosion",
+                    "sounds": [
+                        "effect_strippedtothecore"]
+                }
+            }]
+        },
+        "light":
+        {
+            "type": "point_infinite",
+            "color": "8fcceaff",
+            "intensity": 0.37
+        }
+    }],
+    "gravity_well_props": [
+        "sparse_asteroids",
+        "sparse_clouds"]
+}

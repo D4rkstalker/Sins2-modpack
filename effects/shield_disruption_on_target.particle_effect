@@ -1,0 +1,90 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [-1.570796, -1.570796],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 9,
+            "name": "Glow",
+            "type": "point",
+            "emit_duration": [60.0, 60.0],
+            "emit_rate": {
+                "primary_emit_rate": [2.0, 2.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.70, 1.20],
+                "color": "ffffc0ff",
+                "fade_in_time": [0.20, 0.20],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [100.0, 100.0],
+                    "texture_0": "t_shockwave",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 0.750,
+                            "alpha_ramp_steepness": 1.0
+                        }
+                    }
+                },
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ff051923",
+                    "intensity": 1.0,
+                    "surface_radius": 50.0
+                }
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 3.141593]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 2,
+            "name": "growMod",
+            "type": "size",
+            "width_change_rate": [400.0, 700.0]
+        },
+        {
+            "id": 3,
+            "name": "colorMod",
+            "type": "color",
+            "change_duration_context": "particle_time_elapsed",
+            "change_duration": [1.0, 1.0],
+            "begin_color": "ff00879b",
+            "end_color": "ff0a699b"
+        },
+        {
+            "id": 7,
+            "name": "shrinkMod",
+            "type": "size",
+            "width_change_rate": [-20.0, -5.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 9,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 9
+        }
+    ]
+}

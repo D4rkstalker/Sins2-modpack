@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "action_data_source": "advent_starbase_final_judgement",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "final_judgement_cooldown_time_value",
+        "actions":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "final_judgement_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_starbase_final_judgement_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect": "advent_starbase_final_judgement_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "final_judgement_auto_cast_target_filter"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_improved_meteoroid_control_research_subject_hud_icon",
+        "name": "advent_starbase_final_judgement_unit_item_name",
+        "description": "advent_starbase_final_judgement_unit_item_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_damage",
+                "value_id": "final_judgement_bombing_damage_value",
+				"ratio_float_format": "one_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_modifier.population_damage",
+                "value_id": "final_judgement_bombing_population_damage_value",
+                "value_float_format": "one_decimal_place_with_sign",
+				"ratio_float_format": "three_decimal_place_with_sign",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_bombing_volleys",
+                "value_id": "final_judgement_execution_interval_count_value"
+            }]
+        }]
+    }
+}

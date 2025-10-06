@@ -1,0 +1,130 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_advent_rebel_super_harvest",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "passive_actions":
+    {
+        "persistant_buff": "dlc2_advent_rebel_super_harvest_on_spawner"
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_rebel_super_harvest_hud_icon",
+        "tooltip_picture": "dlc2_advent_rebel_super_harvest_tooltip_picture",
+        "name": "dlc2_advent_rebel_super_harvest_ability_name",
+        "description": "dlc2_advent_rebel_super_harvest_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "harvest_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "visibility": "upgrade_only",
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "harvest_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_friendly_target_death",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "harvest_antimatter_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_restore",
+                "value_id": "harvest_restore_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "harvest_stack_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_stack_count",
+                "value_id": "harvest_max_stack_count_value"
+            }]
+        },
+        {
+            "header_text": "dlc2_advent_rebel_super_reinvigorate_with_malefic_locus",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "harvest_malefic_damage_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "harvest_malefic_damage_max_target_count_value",
+                "ratio_float_format": "two_decimal_place_with_sign"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "harvest_malefic_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "harvest_malefic_penetration_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "dlc2_advent_rebel_super_reinvigorate_with_mind_locus",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "harvest_mind_restore_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "harvest_mind_restore_max_target_count_value",
+                "ratio_float_format": "two_decimal_place_with_sign"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_restore",
+                "value_id": "harvest_mind_restore_value",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "dlc2_advent_rebel_super_reinvigorate_with_savior_locus",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "harvest_savior_repair_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "harvest_savior_repair_max_target_count_value",
+                "ratio_float_format": "two_decimal_place_with_sign"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_and_shield_restore",
+                "value_id": "harvest_savior_repair_value",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

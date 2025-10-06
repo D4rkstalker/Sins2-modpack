@@ -1,0 +1,97 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_proselytize",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_unity_structure"]
+        ],
+        [
+            ["advent_unity_mana_0"]
+        ],
+        [
+            ["advent_unity_mana_1"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "proselytize_cooldown_time_value",
+        "actions":
+        {
+			"constraint":
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "advent_unity_proselytize_ai_prevent",
+						"include_pending_buffs": true
+					}
+				}
+			},
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_buff_agent",
+                    "is_culture_provider": true,
+                    "buff_on_agent": "advent_unity_proselytize_on_buff_agent"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_proselytize_ai_prevent"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "proselytize_target_filter"
+		],
+		"between_gravity_well_range": "proselytize_range_value",
+        "auto_cast":
+        {
+			"type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_filter": "proselytize_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "proselytize_auto_cast_low_priority_target_filter"
+            }],
+			"gravity_well_distance_range": "proselytize_range_value"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_proselytize_ability_hud_icon",
+        "tooltip_picture": "advent_unity_proselytize_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_proselytize_ability_tooltip_picture",
+        "name": "advent_unity_proselytize_ability_name",
+        "description": "advent_unity_proselytize_ability_description"
+    }
+}

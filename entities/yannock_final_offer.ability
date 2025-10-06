@@ -1,0 +1,69 @@
+{
+    "version": 0,
+    "action_data_source": "yannock_final_offer",
+	"level_source": "unit_item",
+    "active_actions":
+    {
+		"cooldown_time": "cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "final_offer_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "yannock_final_offer_on_target"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "final_offer_target_filter"
+        ],
+        "range": "range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 20.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "final_offer_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "hazardous_space_fixture_bonus_hud_icon",
+        "name": "npc_reward.yannock_final_offer.name",
+        "description": "npc_reward.yannock_final_offer.description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "range_value",
+				"radius": "radius_value"
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "relentless_evangelists_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "nilari_relentless_evangelists_on_planet",
+					"include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "arrival_delay_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    },
+    {
+        "action_value_id": "available_supply_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    }]
+}

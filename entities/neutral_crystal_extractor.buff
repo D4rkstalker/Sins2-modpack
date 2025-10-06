@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "has_buff",
+						"buff": "advent_colony_frigate_capture_object"
+					},
+					{
+						"constraint_type": "has_buff",
+						"buff": "trader_colony_frigate_capture_object"
+					},
+					{
+						"constraint_type": "has_buff",
+						"buff": "vasari_colony_frigate_capture_object"
+					}]
+				}
+			},
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "invulnerable",
+        "can_be_captured"
+    ],
+    "gui":
+    {
+        "hud_icon": "neutral_crystal_extractor_hud_icon",
+        "name": "neutral_crystal_extractor.name",
+		"description": "neutral_crystal_extractor.desc",
+        "is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "uncolonizable_planet_bonus_crystal_mining_rate_additive",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

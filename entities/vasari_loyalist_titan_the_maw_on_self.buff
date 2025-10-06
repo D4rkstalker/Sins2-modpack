@@ -1,0 +1,243 @@
+{
+    "version": 0,
+    "active_duration": "the_maw_attract_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "replace_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_arc_of_unit",
+                "arc_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "arc_direction":
+                {
+                    "direction_type": "unit_forward",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "arc_radius_value": "the_maw_consume_target_radius_value",
+                "arc_angle_value": "the_maw_arc_angle_value",
+                "max_target_count_value": "fixed_one",
+                "target_sort":
+                {
+                    "sort_steps": [
+                    {
+                        "sort_type": "build_or_virtual_supply",
+                        "sort_order": "descending"
+                    },
+                    {
+                        "sort_type": "distance_to_unit",
+                        "sort_order": "ascending",
+                        "distance_reference_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    }]
+                },
+                "operators_constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "the_maw_consume_target_filter"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "the_maw_supply_consumed_increment_value",
+                        "comparison_type": "less_than_equal_to",
+                        "value_b": "the_maw_available_supply_value"
+                    }]
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead",
+                    "skip_player_statistics": false,
+                    "skip_awarding_experience": false
+                },
+                {
+                    "operator_type": "change_buff_memory_float_value",
+                    "float_variable": "available_supply",
+                    "math_operators": [
+                    {
+                        "operator_type": "subtract",
+                        "operand_value": "the_maw_supply_consumed_increment_value"
+                    }]
+                },
+                {
+                    "operator_type": "give_assets",
+                    "destination_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "asset_type": "metal",
+                    "asset_value": "the_maw_metal_value"
+                },
+                {
+                    "operator_type": "give_assets",
+                    "destination_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "asset_type": "crystal",
+                    "asset_value": "the_maw_crystal_value"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "improved_the_maw"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_loyalist_titan_the_maw_on_self_damage_bonus",
+                    "destination_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "the_maw_available_supply_value",
+                    "comparison_type": "less_than_equal_to",
+                    "value_b": "fixed_zero"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_arc_of_unit",
+                "arc_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "arc_direction":
+                {
+                    "direction_type": "unit_forward",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "arc_radius_value": "the_maw_attraction_radius_value",
+                "arc_angle_value": "the_maw_arc_angle_value",
+                "operators_constraint":
+                {
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "operand_destination"
+					},
+					"target_filter_id": "the_maw_attract_debris_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_loyalist_titan_the_maw_on_debris"
+                }]
+            }]
+		}
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_arc_of_unit",
+                "arc_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "arc_direction":
+                {
+                    "direction_type": "unit_forward",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "arc_radius_value": "the_maw_attraction_radius_value",
+                "arc_angle_value": "the_maw_arc_angle_value",
+                "operators_constraint":
+                {
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "the_maw_attract_target_filter"
+					},
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "the_maw_attract_debris_target_filter"
+					}]
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_loyalist_titan_the_maw_on_target"
+                }]
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect": "vasari_loyalist_titan_the_maw_on_self"
+                }
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "available_supply",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "the_maw_max_supply_consumed_value"
+                }]
+            }]
+        }
+    }]
+}

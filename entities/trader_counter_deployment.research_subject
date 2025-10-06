@@ -1,0 +1,43 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 0,
+    "field": "civilian_industry",
+    "field_coord": [1, 7],
+    "research_time": 90.0,
+    "price":
+    {
+        "credits": 450.0,
+        "metal": 50.0,
+        "crystal": 75.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+			"unit_types": [
+				"planet"
+			]
+        },
+        "action_data_source": "trader_counter_deployment",
+        "buff": "trader_counter_deployment_bootstrap",
+        "tooltip_sub_header_label": "trader_counter_deployment_research_subject_tooltip_sub_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "buff_unit_factory_modifier",
+            "unit_factory_modifier_id": "counter_deployment_factory_build_time_modifier"
+        }]
+    }],
+    "name": "trader_counter_deployment_research_subject_name",
+    "name_uppercase": "trader_counter_deployment_research_subject_name_uppercase",
+    "description": "trader_counter_deployment_research_subject_description",
+    "hud_icon": "trader_counter_deployment_research_subject_hud_icon",
+    "tooltip_picture": "trader_counter_deployment_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_faction",
+        "research_text_filter_loyalist"]
+}

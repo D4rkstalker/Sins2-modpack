@@ -1,0 +1,129 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 5205.942101,
+        "min_camera_distance": 238.176456,
+        "gui":
+        {
+            "hud_icon": "advent_constructor_ship_hud_icon",
+            "hud_monochrome_icon": "advent_constructor_ship_main_view_icon",
+            "hud_picture": "advent_constructor_ship_hud_picture",
+            "tooltip_picture": "advent_constructor_ship_tooltip_picture",
+            "name": "advent_constructor_ship_name",
+            "description": "advent_constructor_ship_description",
+            "show_description_in_unit_tooltip": true
+        },
+        "unit_mesh":
+        {
+            "mesh": "advent_constructor_ship",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "ship",
+            "icon": "advent_constructor_ship_main_view_icon",
+            "selected_icon": "advent_constructor_ship_main_view_icon_selected",
+            "sub_selected_icon": "advent_constructor_ship_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "exhaust_effects":
+            {
+                "particle_effects": [
+                {
+                    "particle_effect": "advent_corvette_trail"
+                }]
+            },
+            "damage_effects":
+            {
+                "max_damage_effect_count": 3,
+                "damage_effects": [
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_1"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_2"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_3"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                }]
+            },
+            "shield_effect": "advent_constructor_ship",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "advent_constructor_ship_build_structure_on_self",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_construction_frigate_construct",
+                    "sounds": [
+                        "ability_loop_tech_constructionfrigate"]
+                }
+            }]
+        },
+        "sounds":
+        {
+            "move_sounds":
+            {
+                "engine": "ambient_loop_psi_engine_support",
+                "hyperspace_travel": "hyperspace_travel"
+            },
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_psi_construction_frigate"
+                    ],
+                    "scared": [
+                        "ui_onselection_psi_construction_frigate"
+                    ],
+                    "smug": [
+                        "ui_onselection_psi_construction_frigate"]
+                },
+                "order_issued":
+                {
+                    "neutral": [
+                        "ui_onselection_psi_construction_frigate"
+                    ],
+                    "scared": [
+                        "ui_onselection_psi_construction_frigate"
+                    ],
+                    "smug": [
+                        "ui_onselection_psi_construction_frigate"]
+                }
+            }
+        },
+        "death_sequence_group": "advent_frigate0"
+    }]
+}

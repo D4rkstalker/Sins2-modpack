@@ -1,0 +1,62 @@
+{
+    "version": 0,
+    "action_data_source": "trader_rebel_deploy_extra_titans",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["trader_unlock_rebel_titan"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "deploy_cooldown",
+	"credits_cost": "credits",
+	"metal_cost": "metal",
+	"crystal_cost": "crystal",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "trader_rebel_titan_spawned",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "is_self_building": true
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted",
+        "range": "deploy_range",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "never",
+            "target_definitions": [
+            {
+                "target_filter": "uniforms_owned_planets"
+            }]
+        },
+        "spawned_unit":
+        {
+            "unit": "trader_rebel_titan_spawned"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_rebel_titan_hud_icon",
+        "name": "ability.deploy_extra_titans_name",
+        "description": "ability.deploy_extra_titans_description"
+    }
+}

@@ -1,0 +1,209 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "flames",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-80.0, -80.0],
+            "yaw": [3.141593, 3.141593],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 99,
+            "name": "heat refraction",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [300.0, 300.0],
+            "yaw": [3.141593, 3.141593],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 103,
+            "name": "flamessmall",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-65.0, -65.0],
+            "yaw": [3.141593, 3.141593],
+            "pitch": [-0.0, -0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "flames",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "external_color": "primary",
+                "color": "ffffffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [90.0, 121.50],
+                    "height": [4500.0, 7000.0],
+                    "texture_0": "tec_titan_exhaust",
+                    "gradient_texture": "t_gradient_93",
+                    "erosion_texture": "t_noise_008",
+                    "initial_gradient_pan_offset": [0.80, 0.80],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.10,
+                            "depth_fade_opacity": 5.0,
+                            "depth_fade_distance": 200.0,
+                            "alpha_ramp_curvature": 0.50,
+                            "alpha_ramp_steepness": 0.10,
+                            "alpha_ramp_growth_delay": 1.10,
+                            "alpha_ramp_max_alpha_scalar": 2.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.60,
+                                "u_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.30
+                            },
+                            "erosion_softness": 0.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 0.087266]
+        },
+        {
+            "id": 99,
+            "name": "heat refraction",
+            "type": "point",
+            "emit_particle_count_is_always_one": true,
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "camera_offset": [-10.0, -10.0],
+                "color": "ffffffff",
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "shader_type": "uber_multiply_color",
+                    "width": [400.0, 400.0],
+                    "height": [400.0, 400.0],
+                    "refraction_texture": "water_uv",
+                    "refraction_mask_texture": "heat_refraction_falloff",
+                    "initial_refraction_scalar": [0.10, 0.10],
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.0
+                        },
+                        "refraction_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.010,
+                                "v_pan_speed": 0.10,
+                                "global_scale": 3.0
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": -0.10,
+                                "v_pan_speed": 0.010,
+                                "global_scale": 2.0
+                            },
+                            "u_strength": 0.00510,
+                            "v_strength": 0.00510
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 102,
+            "name": "flamessmall",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [5.0, 5.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "external_color": "primary",
+                "color": "ffffffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [35.0, 47.250],
+                    "height": [4500.0, 7000.0],
+                    "texture_0": "tec_titan_exhaust",
+                    "gradient_texture": "t_gradient_93",
+                    "erosion_texture": "t_noise_008",
+                    "initial_gradient_pan_offset": [0.80, 0.80],
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.10,
+                            "depth_fade_opacity": 5.0,
+                            "depth_fade_distance": 200.0,
+                            "alpha_ramp_curvature": 0.50,
+                            "alpha_ramp_steepness": 0.10,
+                            "alpha_ramp_growth_delay": 1.10,
+                            "alpha_ramp_max_alpha_scalar": 2.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.60,
+                                "u_scale": 0.50
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.30
+                            },
+                            "erosion_softness": 0.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0],
+            "angle_variance": [0.0, 0.087266]
+        }
+    ],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 99,
+            "attachee_id": 99
+        },
+        {
+            "attacher_id": 102,
+            "attachee_id": 103
+        }
+    ],
+    "modifier_to_emitter_attachments": [],
+    "max_effect_radius_scalar": 2.0
+}

@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "decloak_mine_radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"target_filter_id": "disarm_booby_trap_target_filter"
+					}
+				},
+                "action_type": "make_buff_dead"
+			}]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "renzo_booby_trap_hud_icon",
+        "name": "npc_reward.renzo_booby_trap.name",
+		"description": "npc_reward.renzo_booby_trap_detected.description",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative"
+    }
+}

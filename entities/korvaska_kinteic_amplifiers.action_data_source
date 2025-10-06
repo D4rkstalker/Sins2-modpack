@@ -1,0 +1,64 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"uncolonizable",
+				"star"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"]
+        }
+    },
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+				"corvette",
+				"frigate",
+				"cruiser",
+				"capital_ship",
+				"titan",
+				"structure",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "weapon_damage_scalar"
+        }
+    }]
+}

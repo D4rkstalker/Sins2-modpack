@@ -1,0 +1,125 @@
+{
+    "version": 0,
+    "active_duration": "vengeance_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "vengeance_enemy_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_battle_psionic_capital_ship_vengeance_on_enemy",
+					"copy_parent_buff_memory_values": true
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_unit_value",
+				"new_unit_value":
+				{
+					"unit_type": "current_spawner"
+				},
+				"unit_variable": "vengeance_target"
+			},
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "battle_psionic_capital_ship_vengeance_buff_on_target_small",
+                        "medium_unit": "battle_psionic_capital_ship_vengeance_buff_on_target_medium",
+                        "large_unit": "battle_psionic_capital_ship_vengeance_buff_on_target_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "damage_can_be_propagated"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_source"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "vengeance_damage_propagation_value",
+                    "penetration_value": "uniforms_damage_event_penetration_value",
+                    "can_damage_be_propagated": false,
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "vengeance_damage_propogation_target_filter"
+                    }
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_battle_psionic_capital_ship_vengeance_ability_hud_icon",
+        "name": "advent_battle_psionic_capital_ship_vengeance_ability_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_reflected",
+                "value_id": "vengeance_damage_propagation_value",
+                "value_float_format": "percentage",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

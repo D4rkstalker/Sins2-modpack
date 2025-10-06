@@ -1,0 +1,157 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "repair_cloud_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.15
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "percentage_missing_threshold": 0.15
+                }]
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_carrier_capital_ship_repair_cloud",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+{
+        "target_filter_id": "repair_cloud_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.15
+                },
+                {
+                    "constraint_type": "has_missing_armor",
+                    "percentage_missing_threshold": 0.15
+                }]
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_carrier_capital_ship_repair_cloud",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_cloud_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan",
+                "strikecraft"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "repair_cloud_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [90.0, 78.75, 67.5, 56.25, 45.0]
+        }
+    },
+    {
+        "action_value_id": "repair_cloud_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [3.0, 3.0, 3.0, 3.0, 3.0]
+        }
+    },
+    {
+        "action_value_id": "repair_cloud_cooldown_time_value",
+        "action_value":
+        {
+            "values": [54.0, 49.5, 45.0, 40.5, 36.0]
+        }
+    },
+    {
+        "action_value_id": "repair_cloud_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [18.0, 24.0, 30.0, 36.0, 42.0]
+        }
+    },
+    {
+        "action_value_id": "repair_cloud_repair_rate_value",
+        "action_value":
+        {
+            "values": [12.0, 18.0, 24.0, 30.0, 36.0]
+        }
+    },
+    {
+        "action_value_id": "repair_cloud_radius_value",
+        "action_value":
+        {
+            "values": [3600.0, 4800.0, 6000.0, 7200.0, 8400.0]
+        }
+    }]
+}

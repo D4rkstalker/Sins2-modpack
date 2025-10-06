@@ -1,0 +1,110 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "compelled_pilgrimage_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+			]
+        }
+    },
+    {
+        "target_filter_id": "compelled_pilgrimage_adjacent_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "friendly",
+				"enemy"
+			],
+			"constraints": [
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "nilari_compelled_pilgrimage_on_self"
+				}
+			}]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "total_population_growth",
+			"current_population_growth"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "compelled_pilgrimage_steal_population_value",
+        "action_value":
+        {
+			"transform_type": "per_planet_current_population_points",
+			"transform_unit":
+			{
+				"unit_type": "current_spawner"
+			},
+            "values": [0.015]
+        }
+    },
+    {
+        "action_value_id": "compelled_pilgrimage_add_population_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "total_population_growth",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "compelled_pilgrimage_subtract_origin_population_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "current_population_growth",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "compelled_pilgrimage_subtract_population_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "current_population_growth",
+            "values": [-1.0]
+        }
+    },
+    {
+        "action_value_id": "compelled_pilgrimage_execution_count_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "compelled_pilgrimage_add_population_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value_id": "compelled_pilgrimage_add_population_value"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "compelled_pilgrimage_subtract_population_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value_id": "compelled_pilgrimage_subtract_population_value"
+        }
+	}]
+}

@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_structure_builder"
+                }
+			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_ship_role",
+					"ship_roles": [
+						"explore"
+					]
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [3600.0]
+        }
+    }]
+}

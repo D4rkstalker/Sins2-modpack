@@ -1,0 +1,72 @@
+{
+    "version": 0,
+	"make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "naibor_tacticians_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "naibor_naibor_tacticians_passive_experience"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "naibor_naibor_tacticians_hud_icon",
+        "name": "npc_reward.naibor_naibor_tacticians.name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [            
+			{
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.experience_gained_from_unit_death",
+                "value_id": "naibor_tacticians_experience_rate",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.experience_gained_from_planet_bombing",
+                "value_id": "naibor_tacticians_experience_rate",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.experience_gained_per_second",
+                "value_id": "naibor_tacticians_passive_experience_tooltip_value",
+                "value_color": "positive",
+                "value_suffix": "per_second",
+				"is_resolved_value": true
+            }]
+        }]
+    }
+}

@@ -1,0 +1,157 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "altar_of_sacrifice_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+				"strikecraft",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+				"friendly"]
+        }
+    },
+    {
+        "target_filter_id": "altar_of_sacrifice_planet_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+				"friendly",
+				"none"
+			],
+			"constraints": [
+			{
+				"constraint_type": "not_self"
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "altar_of_sacrifice_action_delay_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "altar_of_sacrifice_first_action_delay_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "altar_of_sacrifice_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "altar_of_sacrifice_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "altar_of_sacrifice_current_enemy_unit_count_value",
+        "action_value":
+        {
+            "transform_type": "per_enemy_unit_in_gravity_well",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "altar_of_sacrifice_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_current_population_points",
+            "transform_unit":
+            {
+                "unit_type": "first_spawner"
+            },
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "altar_of_sacrifice_phase_lane_distance_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_altar_of_sacrifice_activate_small",
+        "alias_binding":
+        {
+            "particle_effect": "altar_planet_asteroid",
+            "sounds": [
+                "effect_altar_of_sacrifice"]
+        }
+    },
+    {
+        "alias_name": "advent_altar_of_sacrifice_activate_medium",
+        "alias_binding":
+        {
+            "particle_effect": "altar_planet_terranhome",
+            "sounds": [
+                "effect_altar_of_sacrifice"]
+        }
+    },
+    {
+        "alias_name": "advent_altar_of_sacrifice_activate_other_small",
+        "alias_binding":
+        {
+            "particle_effect": "altar_planet_asteroid_other",
+            "sounds": [
+                "effect_altar_of_sacrifice_other"]
+        }
+    },
+    {
+        "alias_name": "advent_altar_of_sacrifice_activate_other_medium",
+        "alias_binding":
+        {
+            "particle_effect": "altar_planet_terranhome_other",
+            "sounds": [
+                "effect_altar_of_sacrifice_other"]
+        }
+    },
+    {
+        "alias_name": "advent_altar_of_sacrifice_hit_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_altar_of_sacrifice_hit_small"
+        }
+    },
+    {
+        "alias_name": "advent_altar_of_sacrifice_hit_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_altar_of_sacrifice_hit_medium"
+        }
+    },
+    {
+        "alias_name": "advent_altar_of_sacrifice_hit_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_altar_of_sacrifice_hit_large"
+        }
+    }]
+}

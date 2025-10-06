@@ -1,0 +1,234 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "vortex_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "weapon_has_target"
+            },
+			{
+				"constraint_type": "composite_or",
+				"constraints": [
+				{
+					"constraint_type": "has_missing_hull",
+					"percentage_missing_threshold": 0.10
+				},
+				{
+					"constraint_type": "has_missing_armor",
+					"percentage_missing_threshold": 0.20
+				}]
+			}]
+        }
+    },
+    {
+        "target_filter_id": "vortex_auto_cast_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_missing_hull"
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_mutation",
+					"mutation": "invulnerable"
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "vortex_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly"]
+        }
+    },
+    {
+        "target_filter_id": "vortex_debris_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "debris"
+            ],
+            "ownerships": [
+                "enemy",
+				"friendly",
+				"none"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+				"constraints": [
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "advent_generic_large_debris"
+					},
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "trader_generic_large_debris"
+					},
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "generic_large_debris"
+					},
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "vasari_generic_large_debris"
+					}]
+				},
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "advent_generic_small_debris"
+					},
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "trader_generic_small_debris"
+					},
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "generic_small_debris"
+					},
+					{
+						"constraint_type": "has_definition",
+						"unit_definition": "vasari_generic_small_debris"
+					}]
+				}]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "vortex_attraction_max_linear_speed_value",
+        "action_value":
+        {
+            "values": [650.0]
+        }
+    },
+    {
+        "action_value_id": "vortex_attraction_time_to_max_linear_speed_value",
+        "action_value":
+        {
+            "values": [2.5]
+        }
+    },
+    {
+        "action_value_id": "vortex_radius",
+        "action_value":
+        {
+            "values": [10000.0]
+        }
+    },
+    {
+        "action_value_id": "target_count",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "debris_duration",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "hull_restore_value",
+        "action_value":
+        {
+            "transform_type": "per_max_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.6]
+        }
+    },
+    {
+        "action_value_id": "weapon_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.33]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "weapon_damage_bonus_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "vasari_starbase_debris_vortex_unit_item_buff",
+        "alias_binding":
+        {
+            "particle_effect": "debris_reintegration_ability"
+        }
+    }]
+}

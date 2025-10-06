@@ -1,0 +1,55 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "action_values": [
+    {
+        "action_value_id": "elite_bombers_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.15, 0.3, 0.45, 0.6, 0.75]
+        }
+    },
+    {
+        "action_value_id": "elite_bombers_hull_bonus_value",
+        "action_value":
+        {
+            "values": [10.0, 20.0, 30.0, 40.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "elite_bombers_hull_regen_bonus_value",
+        "action_value":
+        {
+            "values": [0.36, 0.48, 0.6, 0.72, 0.84]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "elite_bombers_max_hull_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "additive",
+            "value_id": "elite_bombers_hull_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "elite_bombers_hull_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "elite_bombers_hull_regen_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "elite_bombers_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "elite_bombers_damage_bonus_value"
+        }
+    }]
+}

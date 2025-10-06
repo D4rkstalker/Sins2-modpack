@@ -1,0 +1,129 @@
+{
+    "version": 0,
+    "action_data_source": "advent_loyalist_titan_subjugation",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "subjugation_cooldown_time_value",
+        "antimatter_cost": "subjugation_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "subjugation_radius_value",
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "subjugation_travel_speed_value"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "random_chance",
+                            "chance_value": "subjugation_random_chance_value"
+                        },
+                        {
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "target_filter_id": "subjugation_target_filter"
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_loyalist_titan_subjugation"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "above",
+                        "effect": "advent_loyalist_titan_ship_subjugation_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
+                },
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "subjugation_auto_cast_target_filter",
+                    "radius_value": "subjugation_radius_value",
+                    "target_count_value": "subjugation_auto_cast_target_count_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_loyalist_titan_subjugation_ability_hud_icon",
+        "tooltip_picture": "advent_loyalist_titan_subjugation_ability_tooltip_picture",
+        "name": "advent_loyalist_titan_subjugation_ability_name",
+        "description": "advent_loyalist_titan_subjugation_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "subjugation_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "subjugation_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.random_chance",
+                "value_id": "subjugation_random_chance_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_two_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

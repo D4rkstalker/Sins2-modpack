@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "hostility_focus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"corvette",
+				"frigate",
+				"cruiser",
+				"capital_ship",
+				"titan",
+				"structure",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "hostility_focus_radius",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "hostility_focus_military_research_rate_scalar",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "hostility_focus_max_stacks_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "hostility_focus_military_research_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "military_research_rate",
+            "value_behavior": "scalar",
+            "value_id": "hostility_focus_military_research_rate_scalar"
+        }
+	}]
+}

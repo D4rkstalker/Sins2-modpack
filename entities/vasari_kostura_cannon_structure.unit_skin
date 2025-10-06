@@ -1,0 +1,143 @@
+{
+    "version": 0,
+    "skin_stages": [
+        {
+        "is_main_view_icon_visible_camera_distance": 106499.543077,
+            "min_camera_distance": 2500.525203,
+            "gui": {
+                "hud_icon": "vasari_kostura_cannon_structure_hud_icon",
+                "hud_monochrome_icon": "vasari_kostura_cannon_structure_main_view_icon",
+				"hud_picture": "vasari_kostura_cannon_structure_hud_picture",
+                "name": "vasari_kostura_cannon_structure_name",
+                "description": "vasari_kostura_cannon_structure_description"
+            },
+            "unit_mesh": {
+                "mesh": "vasari_kostura_cannon_structure",
+                "shader": "ship",
+                "is_shadow_blocker": true
+            },
+            "main_view_icon": {
+                "group": "structure",
+                "icon": "vasari_kostura_cannon_structure_main_view_icon"
+            },
+            "effects": {
+                "damage_effects": {
+                    "max_damage_effect_count": 40,
+                    "damage_effects": [
+						{
+							"max_count": 5,
+							"weight": 2.0,
+							"hull_percentage_threshold": 0.99,
+							"particle_effect": "vasari_damage_clouds"
+						},
+                        {
+                            "max_count": 5,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.50,
+                            "particle_effect": "vasari_damage_plasma_sparks"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.450,
+                            "particle_effect": "damage_smoke_1"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 3.0,
+                            "hull_percentage_threshold": 0.450,
+                            "particle_effect": "damage_smoke_2"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 3.0,
+                            "hull_percentage_threshold": 0.450,
+                            "particle_effect": "damage_smoke_3"
+                        },
+                        {
+                            "max_count": 3,
+                            "weight": 3.0,
+                            "hull_percentage_threshold": 0.420,
+                            "particle_effect": "vasari_damage_escaping_gas",
+                            "sound": "ambient_loop_tech_escaping_gas"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.40,
+                            "particle_effect": "damage_electricity",
+                            "sound": "ambient_loop_electrical_damage"
+                        },
+                        {
+                            "max_count": 2,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.40,
+                            "particle_effect": "damage_electricity_2",
+                            "sound": "ambient_loop_electrical_damage_01"
+                        },
+                        {
+                            "max_count": 7,
+                            "weight": 4.0,
+                            "hull_percentage_threshold": 0.380,
+                            "particle_effect": "vasari_damage_embers"
+                        },
+                        {
+                            "max_count": 7,
+                            "weight": 6.0,
+                            "hull_percentage_threshold": 0.350,
+                            "particle_effect": "vasari_damage_fire",
+                            "sound": "ambient_loop_firedamage"
+                        },
+                        {
+                            "max_count": 3,
+                            "weight": 2.0,
+                            "hull_percentage_threshold": 0.30,
+                            "particle_effect": "vasari_damage_fire_pillar",
+                            "sound": "ambient_loop_firepillar_damage"
+                        }
+                    ]
+                },
+                "flair_effects": [
+                    {
+                        "mesh_point_name": "center",
+                        "particle_effect": "vasari_damage_structure",
+                        "constraint": "is_crippled"
+                    }
+                ],
+                "effect_alias_bindings": [
+                    {
+                        "alias_name": "charge_up",
+                        "alias_binding": {
+                            "particle_effect": "orbital_cannon_chargeup",
+                            "sounds": [
+                                "Weapon_PhaseOrbitalCannon_Charge"
+                            ]
+                        }
+                    },
+                    {
+                        "alias_name": "launch_muzzle",
+                        "alias_binding": {
+                            "particle_effect": "orbital_cannon_muzzle",
+                            "sounds": [
+                                "Weapon_PhaseOrbitalCannon_Muzzle"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "sounds": {
+                "dialogue": {
+                    "selected": {
+                        "neutral": [
+                            "ui_onselection_tech_orbitalcannon"
+                        ],
+                        "scared": [
+                            "ui_onselection_tech_orbitalcannon"
+                        ]
+                    }
+                }
+            },
+            "death_sequence_group": "vasari_kostura"
+        }
+    ]
+}

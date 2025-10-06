@@ -1,0 +1,67 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "advent_reimagine_explusion_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "titan",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+				"super_capital_ship",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "exemptions": [
+                "is_dead"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "advent_reimagine_explusion_buff_duration",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "advent_reimagine_explusion_credit_rate_scalar",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    },
+    {
+        "action_value_id": "advent_reimagine_explusion_culture_rate_scalar",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "advent_reimagine_explusion_credit_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "commerce_track_credit_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "advent_reimagine_explusion_credit_rate_scalar"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "advent_reimagine_explusion_culture_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "culture_rate",
+            "value_behavior": "scalar",
+            "value_id": "advent_reimagine_explusion_culture_rate_scalar"
+        }
+    }]
+}

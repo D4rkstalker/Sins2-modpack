@@ -1,0 +1,109 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_source_ability_released": true,
+	"active_duration": "fixed_one",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": false,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+				"constraint":
+				{
+					"constraint_type": "value_comparison",
+					"value_a": "collective_dissonance_owner_allied_population_points_value",
+					"comparison_type": "less_than_equal_to",
+					"value_b": "fixed_zero"
+				},
+				"action_type": "use_unit_operators_on_single_unit",
+				"destination_unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"operators": [
+				{
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "collective_dissonance_enemy_planet_target_filter"
+					},
+					"operator_type": "apply_buff",
+					"buff": "anundi_collective_dissonance_on_fixture_zero_allegiance"
+				}]
+			},
+			{
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "collective_dissonance_enemy_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "anundi_collective_dissonance_on_ships"
+                }]
+			},
+			{
+                "constraint":
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"target_filter_id": "collective_dissonance_friendly_planet_target_filter"
+					},
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "composite_not",
+							"constraint":
+							{
+								"constraint_type": "is_in_dominant_culture",
+								"dominant_culture_player_relationship": "self"
+							}
+						}
+					}]
+				},
+                "action_type": "make_buff_dead"
+			}]
+		}
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "collective_dissonance_max_allied_population_factor_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "collective_dissonance_enemy_population_assimilation_rate_modifier"
+    }]
+}

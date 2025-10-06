@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "star"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 1681227.937275,
+        "min_camera_distance": 97519.547693,
+        "gui":
+        {
+            "hud_icon": "green_star_hud_icon",
+            "hud_picture": "green_star_hud_picture",
+            "tooltip_icon": "green_star_tooltip_icon",
+            "name": "green_star_name",
+            "description": ""
+        },
+        "star_mesh":
+        {
+            "mesh": "star_green",
+            "atmosphere":
+            {
+                "shader": "star_atmosphere",
+                "material": "green_star_atmosphere",
+                "noise_texture": "solar_atmosphere_noise_baw"
+            },
+            "corona":
+            {
+                "shader": "star_corona",
+                "color_texture": "green_star_corona_clr_tex",
+                "noise_texture": "star_corona_noise_baw",
+                "color": "ffffffff",
+                "radius_scalar": 3.5,
+                "animation_speed": 0.1,
+                "noise_1_zoom": 4.0,
+                "basic_constants":
+                {
+                    "emissive_factor": 0.1,
+                    "alpha_ramp_steepness": 0.0,
+                    "alpha_ramp_growth_delay": 1.0
+                }
+            }
+        },
+        "main_view_icon":
+        {
+            "group": "fixture",
+            "icon": "green_star_main_view_icon",
+            "is_additive": true,
+            "has_rotation": false,
+            "use_owner_player_color": false
+        },
+        "effects":
+        {
+            "flair_effects": [
+            {
+                "mesh_point_name": "flair.StarParticle_Grn",
+                "particle_effect": "green_solar_flare"
+            },
+            {
+                "mesh_point_name": "flair.StarParticle_Grn",
+                "particle_effect": "green_solar_flare_2"
+            },
+            {
+                "mesh_point_name": "flair.StarParticle_Grn",
+                "particle_effect": "green_solar_flare_3"
+            },
+            {
+                "mesh_point_name": "flair.StarParticle_Grn",
+                "particle_effect": "green_solar_flare_4"
+            }]
+        },
+        "light":
+        {
+            "type": "point_infinite",
+            "color": "ffb6d7a8",
+            "intensity": 1.0
+        }
+    }]
+}

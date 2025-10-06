@@ -1,0 +1,73 @@
+{
+    "version": 0,
+    "level_count": 2,
+    "target_filters": [
+    {
+        "target_filter_id": "vasari_defensive_tower_structures",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "vasari_defensive_tower_bonus_damage_scalar",
+        "action_value":
+        {
+            "values": [0.12, 0.24]
+        }
+    },
+    {
+        "action_value_id": "vasari_defensive_tower_bonus_range_scalar",
+        "action_value":
+        {
+            "values": [0.12, 0.24]
+        }
+    },
+    {
+        "action_value_id": "vasari_defensive_tower_bonus_ability_range_scalar",
+        "action_value":
+        {
+            "values": [0.12, 0.24]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "vasari_defensive_tower_bonus_damage",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "vasari_defensive_tower_bonus_damage_scalar"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "vasari_defensive_tower_bonus_range",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "vasari_defensive_tower_bonus_range_scalar"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "vasari_defensive_tower_bonus_ability_range_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_range",
+            "value_behavior": "scalar",
+            "value_id": "vasari_defensive_tower_bonus_ability_range_scalar"
+        }
+    }]
+}

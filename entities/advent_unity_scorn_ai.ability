@@ -1,0 +1,62 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_scorn",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_unity_structure"]
+        ],
+        [
+            ["advent_unity_mana_0"]
+        ],
+        [
+            ["advent_unity_mana_1"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "scorn_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_scorn_on_fixture"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "scorn_target_filter"
+		],
+		"between_gravity_well_range": "scorn_range_distance",
+        "auto_cast":
+        {
+			"type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_filter": "scorn_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "scorn_auto_cast_low_priority_target_filter"
+            }],
+			"gravity_well_distance_range": "scorn_range_distance"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_scorn_ability_hud_icon",
+        "tooltip_picture": "advent_unity_scorn_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_scorn_ability_tooltip_picture",
+        "name": "advent_unity_scorn_ability_name",
+        "description": "advent_unity_scorn_ability_description"
+    }
+}

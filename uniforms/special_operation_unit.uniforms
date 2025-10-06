@@ -1,0 +1,462 @@
+{
+    "overwrite_special_operation_unit_kinds": true,
+    "special_operation_unit_kinds": [
+    {
+        "name": "rampant_militia",
+        "definition":
+        {
+            "is_ever_controllable": false,
+            "is_garrison_unit": true,
+            "will_give_experience": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "max_move_distance_from_owner_planet": 1,
+            "should_be_in_planet_defenses_pip_group": true,
+            "name": "special_operation_unit.rampant_militia.name",
+			"description": "special_operation_unit.rampant_militia.description",
+            "hud_icon": "rampant_militia_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "rampant_militia_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF"
+        }
+    },
+    {
+        "name": "garrison",
+        "definition":
+        {
+            "is_ever_controllable": true,
+            "is_garrison_unit": true,
+            "will_give_experience": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "max_move_distance_from_owner_planet": 1,
+            "should_be_in_planet_defenses_pip_group": true,
+            "name": "special_operation_unit.garrison.name",
+            "hud_icon": "garrison_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "garrison_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF"
+        }
+    },
+    {
+        "name": "insurgent",
+        "definition":
+        {
+            "is_ever_controllable": true,
+            "is_insurgent_unit": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "special_operation_unit.insurgent.name",
+            "description": "special_operation_unit.insurgent.description",
+            "hud_icon": "insurgent_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "insurgent_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF",
+            "duration_start_condition": "when_planet_is_not_enemy",
+            "duration": 240
+        }
+    },
+    {
+        "name": "dark_fleet",
+        "definition":
+        {
+            "is_ever_controllable": true,
+			"is_detected_when_hyperspacing_in": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "special_operation_unit.dark_fleet.name",
+            "description": "special_operation_unit.dark_fleet.description",
+            "hud_icon": "dark_fleet_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "dark_fleet_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF",
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 240
+        }
+    },
+    {
+        "name": "reserves",
+        "definition":
+        {
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "will_give_experience": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "special_operation_unit.reserve.name",
+            "description": "special_operation_unit.reserve.description",
+            "hud_icon": "dark_fleet_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "dark_fleet_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF",
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 30
+        }
+    },
+    {
+        "name": "structure_builder",
+        "definition":
+        {
+            "is_ever_controllable": true,
+            "cannot_move_out_of_gravity_well": true
+        }
+    },
+    {
+        "name": "trade_ship",
+        "definition":
+        {
+            "is_ever_controllable": false
+        }
+    },
+    {
+        "name": "trade_escort",
+        "definition":
+        {
+            "is_ever_controllable": false,
+            "name": "special_operation_unit.trade_escort.name",
+            "description": "special_operation_unit.trade_escort.description",
+			"hud_icon": "garrison_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "garrison_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF"
+        }
+    },
+    {
+        "name": "viturak_cabal_remote_fabrication",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_13_tiny",
+            "is_ever_controllable": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "npc_player.viturak_cabal.name",
+			"description": "npc_player.viturak_cabal_remote_fabrication.description",
+            "duration_start_condition": "immediately",
+            "duration": 300,
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "viturak_cabal_phase_gate",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_13_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.viturak_cabal.name",
+			"description": "npc_player.viturak_cabal_phase_gate.description",
+            "main_view_icon_fill_color": "#c99b73",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "viturak_cabal_phase_gate_auction_reward",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_13_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.viturak_cabal.name",
+			"description": "npc_player.viturak_cabal_phase_gate.description",
+            "main_view_icon_fill_color": "#c99b73",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "viturak_cabal_attack_ships",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_13_tiny",
+            "is_ever_controllable": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "npc_player.viturak_cabal.name",
+			"description": "npc_player.viturak_cabal_attack_ships.description",
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 240,
+            "main_view_icon_fill_color": "#c99b73",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "pranast_gauss_defense_structure",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_4_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.pranast_united.name",
+			"description": "npc_player.pranast_gauss_defense_structure.description",
+            "main_view_icon_fill_color": "#e2a29c",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "pirate_raid",
+        "definition":
+        {
+			"hud_icon": "player_icon_pirate_0_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.pirate.name",
+			"description": "npc_player.pirate.description",
+            "main_view_icon_fill_color": "#FFFFFF",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "pranast_defensive_raid",
+        "definition":
+        {
+            "hud_icon": "player_icon_faction_4_tiny",
+            "name": "npc_reward.pranast_defensive_raid.unit_name",
+            "description": "npc_reward.pranast_defensive_raid.unit_description",
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 240,
+            "cannot_move_out_of_gravity_well": true,
+            "main_view_icon_fill_color": "#e2a29c",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "alutar_enclave_temple_of_renewal_auction_reward",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_8_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.alutar_enclave.name",
+			"description": "npc_player.alutar_deploy_temple_of_renewal.unit_description",
+            "main_view_icon_fill_color": "#669999",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "grost_scrappers_union_scavenger_barge",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_1_tiny",
+            "is_ever_controllable": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "npc_player.grost_scrappers_union.name",
+			"description": "npc_player.grost_scrappers_union_scavenger_barge.description",
+            "duration_start_condition": "immediately",
+            "duration": 300,
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "hobari_support_raid",
+        "definition":
+        {
+            "hud_icon": "player_icon_faction_12_tiny",
+            "name": "npc_reward.hobari_send_support_raid.unit_name",
+            "description": "npc_reward.hobari_send_support_raid.unit_description",
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 240,
+            "cannot_move_out_of_gravity_well": true,
+            "main_view_icon_fill_color": "#49796b",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "hobari_deploy_temple_of_communion_auction_reward",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_12_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.free_minds_of_hobari.name",
+			"description": "npc_player.alutar_deploy_temple_of_renewal.unit_description",
+            "main_view_icon_fill_color": "#49796b",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "renzo_trader_minefield_structure",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_2_tiny",
+            "is_ever_controllable": false,
+            "name": "npc_player.renzos_resistance_fighters.name",
+			"description": "npc_player.renzo_trader_minefield_structure.description",
+            "main_view_icon_fill_color": "#73677d",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "arankul_raid",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_6_tiny",
+            "name": "npc_reward.arankul_raid.unit_name",
+            "description": "npc_reward.arankul_raid.unit_description",
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "duration_start_condition": "immediately",
+            "duration": 300,
+            "cannot_move_out_of_gravity_well": false,
+            "main_view_icon_fill_color": "#96836e",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "korvaska_deploy_kostura_cannon_auction_reward",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_7_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.korvaska_war_profiteers.name",
+			"description": "npc_player.korvaska_deploy_kostura_cannon.unit_description",
+            "main_view_icon_fill_color": "#c08080",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "korvaska_raiding_party_auction_reward",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_7_tiny",
+            "is_ever_controllable": true,
+            "name": "npc_player.korvaska_war_profiteers.name",
+            "main_view_icon_fill_color": "#c08080",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "naibor_raid",
+        "definition":
+        {
+            "hud_icon": "player_icon_faction_3_tiny",
+            "name": "npc_reward.naibor_open_rebellion.unit_name",
+            "description": "npc_reward.naibor_open_rebellion.unit_description",
+			"will_notify_enemy_player_when_entering_gravity_well": true,
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "cannot_move_out_of_gravity_well": true,
+            "main_view_icon_fill_color": "#73677d",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "naibor_xeno_raid_scouts",
+        "definition":
+        {
+            "hud_icon": "player_icon_faction_3_tiny",
+            "name": "npc_reward.naibor_xeno_assault_scouts.unit_name",
+            "description": "npc_reward.naibor_xeno_assault_scouts.unit_description",
+			"will_notify_enemy_player_when_entering_gravity_well": true,
+            "is_ever_controllable": true,
+            "duration_start_condition": "immediately",
+            "duration": 350,
+            "is_detected_when_hyperspacing_in": true,
+            "cannot_move_out_of_gravity_well": true,
+            "main_view_icon_fill_color": "#73677d",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "naibor_xeno_raid",
+        "definition":
+        {
+            "hud_icon": "player_icon_faction_3_tiny",
+            "name": "npc_reward.naibor_xeno_assault.unit_name",
+            "description": "npc_reward.naibor_xeno_assault.unit_description",
+			"will_notify_enemy_player_when_entering_gravity_well": true,
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "cannot_move_out_of_gravity_well": true,
+            "main_view_icon_fill_color": "#73677d",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "yannock_demolition_raid",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_10_tiny",
+            "is_ever_controllable": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "npc_reward.yannock_demolition_raid_ships.unit_name",
+			"description": "npc_player.yannock_demolition_raid_ships.description",
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 240,
+            "main_view_icon_fill_color": "#b9a071",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "vasari_minefield_structure",
+        "definition":
+        {
+            "is_ever_controllable": false,
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "nilari_relentless_evangelists",
+        "definition":
+        {
+            "hud_icon": "player_icon_faction_14_tiny",
+            "name": "npc_reward.nilari_relentless_evangelists_ships.unit_name",
+            "description": "npc_reward.nilari_relentless_evangelists_ships.unit_description",
+			"will_notify_enemy_player_when_entering_gravity_well": true,
+            "is_ever_controllable": true,
+            "is_detected_when_hyperspacing_in": true,
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 240,
+            "cannot_move_out_of_gravity_well": true,
+            "main_view_icon_fill_color": "#997275",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "laesinda_siege_raid",
+        "definition":
+        {
+			"hud_icon": "player_icon_faction_5_tiny",
+            "is_ever_controllable": true,
+            "will_notify_enemy_player_when_entering_gravity_well": true,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "npc_player.laesinda_siege_raid.name",
+			"description": "npc_player.laesinda_siege_raid.description",
+            "main_view_icon_fill_color": "#7393b3",
+            "will_give_experience": true
+        }
+    },
+    {
+        "name": "karmic_retribution",
+        "definition":
+        {
+            "is_ever_controllable": false,
+            "will_notify_enemy_player_when_entering_gravity_well": false,
+            "cannot_move_out_of_gravity_well": true,
+            "name": "special_operation_unit.karmic_retribution.name",
+            "description": "special_operation_unit.karmic_retribution.description",
+            "hud_icon": "insurgent_unit_icon",
+            "main_view_icon":
+            {
+                "icon": "insurgent_unit_icon",
+                "mesh_center_offset": 10
+            },
+            "main_view_icon_fill_color": "#FFFFFF",
+            "duration_start_condition": "when_gravity_well_has_no_attackable_enemy_units",
+            "duration": 60,
+            "will_give_experience": false
+        }
+    }]
+}

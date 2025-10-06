@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "strength_of_the_fallen_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "stack_count",
+            "stacks_expiry_time"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "strength_of_the_fallen_max_stack_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "strength_of_the_fallen_radius",
+        "action_value":
+        {
+            "values": [4000.0, 5000.0, 6000.0, 7000.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "strength_of_the_fallen_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "strength_of_the_fallen_stack_duration_value",
+        "action_value":
+        {
+            "values": [150.0, 150.0, 150.0, 150.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "strength_of_the_fallen_stacks_expiry_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stacks_expiry_time",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "strength_of_the_fallen_weapon_damage_scalar_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.03, 0.06, 0.09, 0.12, 0.15]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "strength_of_the_fallen_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "strength_of_the_fallen_weapon_damage_scalar_value"
+        }
+    }]
+}

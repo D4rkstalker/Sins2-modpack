@@ -1,0 +1,44 @@
+{
+    "version": 0,
+    "make_current_spawner_dead_on_buff_made_dead": true,
+    "active_duration": "deploy_missile_battery_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_hull_points",
+        "value_behavior": "additive",
+        "value_id": "deploy_missile_battery_hull_bonus_value"
+    },
+    {
+        "modifier_type": "max_shield_points",
+        "value_behavior": "additive",
+        "value_id": "deploy_missile_battery_shield_bonus_value"
+    },
+    {
+        "modifier_type": "experience_given_on_death",
+        "value_behavior": "additive",
+        "value_id": "deploy_missile_battery_experience_bonus_value"
+    }],
+    "weapon_modifiers": [
+    {
+        "modifier_type": "cooldown_duration",
+        "value_behavior": "scalar",
+        "value_id": "deploy_missile_battery_weapon_cooldown_duration_bonus_value"
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value_id": "deploy_missile_battery_weapon_damage_bonus_value"
+    },
+    {
+        "modifier_type": "range",
+        "value_behavior": "scalar",
+        "value_id": "deploy_missile_battery_weapon_range_bonus_value"
+    }]
+}

@@ -1,0 +1,65 @@
+{
+    "version": 0,
+    "active_duration": "buff_duration",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination",
+							"redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "buff_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "naibor_isolationist_propaganda_on_planet",
+					"destination_unit":
+					{
+						"unit_type": "operand_destination",
+						"redirection": "current_gravity_well_primary_fixture"
+					}
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination",
+							"redirection": "current_gravity_well_primary_fixture"
+                        },
+                        "target_filter_id": "buff_targets_trader"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "naibor_isolationist_propaganda_on_planet_trader",
+					"destination_unit":
+					{
+						"unit_type": "operand_destination",
+						"redirection": "current_gravity_well_primary_fixture"
+					}
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "culture_resistance_modifier"
+    }]
+}

@@ -1,0 +1,112 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_marauder_capital_ship_phase_out_hull",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "phase_out_hull_cooldown_time_value",
+        "antimatter_cost": "phase_out_hull_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_invuln"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "vasari_marauder_capital_ship_phase_out_hull_activate_small",
+                            "medium_unit": "vasari_marauder_capital_ship_phase_out_hull_activate_medium",
+                            "large_unit": "vasari_marauder_capital_ship_phase_out_hull_activate_large"
+                        }
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "phase_out_hull_target_filter"
+        ],
+        "range": "phase_out_hull_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "phase_out_hull_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "phase_out_hull_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_marauder_capital_ship_phase_out_hull_ability_hud_icon",
+        "tooltip_picture": "vasari_marauder_capital_ship_phase_out_hull_ability_tooltip_picture",
+        "name": "vasari_marauder_capital_ship_phase_out_hull_ability_name",
+        "description": "ability.vasari_marauder_capital_ship_phase_out_hull_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "phase_out_hull_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.invuln_duration",
+                "value_id": "phase_out_hull_invuln_duration_value",
+                "value_suffix": "seconds"
+            }]
+	    },
+	    {
+	    "header_text": "tooltip.after_invuln_ends",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "damage_taken"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_taken_duration",
+                "value_id": "phase_out_hull_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

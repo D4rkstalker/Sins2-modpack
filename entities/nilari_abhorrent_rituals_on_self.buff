@@ -1,0 +1,66 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"first_action_delay_time_value": "abhorrent_rituals_interval_value",
+		"execution_interval_count_value": "abhorrent_rituals_interval_count_value",
+		"execution_interval_value": "abhorrent_rituals_interval_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "allegiance",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "abhorrent_rituals_allegiance_add_value"
+                }]
+            }]
+		}
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "allegiance",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "abhorrent_rituals_starting_allegiance_value"
+                }]
+            }]
+        }
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "abhorrent_rituals_max_allied_population_factor_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "nilari_abhorrent_rituals_hud_icon",
+        "name": "npc_reward.nilari_abhorrent_rituals.name",
+		"is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "abhorrent_rituals_max_allied_population_factor_modifier",
+				"is_resolved_value": true
+            }]
+        }]
+	}
+}

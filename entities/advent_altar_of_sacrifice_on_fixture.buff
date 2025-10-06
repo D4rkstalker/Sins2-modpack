@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_minute",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "altar_of_sacrifice_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "altar_of_sacrifice_damage_value",
+                    "penetration_value": "common_ability_damage_penetration_value"
+                },
+				{
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+						{
+							"small_unit": "advent_altar_of_sacrifice_hit_small",
+							"medium_unit": "advent_altar_of_sacrifice_hit_medium",
+							"large_unit": "advent_altar_of_sacrifice_hit_large"
+						}
+                    }
+				}]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

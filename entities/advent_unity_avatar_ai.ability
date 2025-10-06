@@ -1,0 +1,159 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_avatar",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unity_mana_0"]
+        ],
+        [
+            ["advent_unity_mana_1"]
+        ],
+        [
+            ["advent_unity_mana_2"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "avatar_cooldown_time_value",
+        "unity_mana_cost": "avatar_unity_mana_cost_value",
+        "actions":
+        {
+			"constraint":
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "has_buff",
+							"buff": "advent_unity_avatar_ai_prevent",
+							"include_pending_buffs": true
+						}
+					}
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "has_buff",
+							"buff": "advent_unity_avatar_ai_prevent_two",
+							"include_pending_buffs": true
+						}
+					}
+				}]
+			},
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_avatar_on_spawner"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+					"owned_unit":
+					{
+						"unit_type": "current_spawner"
+					}
+                },
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "avatar_prevent_target_filter"
+					},
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_avatar_ai_prevent"
+                },
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "avatar_prevent_timer_target_filter"
+					},
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_avatar_ai_prevent_on_player_buffs"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "avatar_target_filter"
+		],
+        "auto_cast":
+        {
+			"type": "pick_target_within_current_gravity_well",
+            "target_definitions": [
+            {
+                "target_filter": "avatar_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "target"
+                    },
+					"radius_value": "avatar_radius_value",
+					"target_count_value": "avatar_auto_cast_target_value",
+                    "target_filter_id": "avatar_aura_target_filter"
+                }
+            },
+            {
+                "target_filter": "avatar_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "target"
+                    },
+					"radius_value": "avatar_radius_value",
+					"target_count_value": "avatar_auto_cast_target_value",
+                    "target_filter_id": "avatar_aura_target_filter"
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_avatar_ability_hud_icon",
+        "tooltip_picture": "advent_unity_avatar_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_avatar_ability_tooltip_picture",
+        "name": "advent_unity_avatar_ability_name",
+        "description": "advent_unity_avatar_ability_description"
+    }
+}

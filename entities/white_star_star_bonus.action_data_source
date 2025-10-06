@@ -1,0 +1,40 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "white_star_star_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_ability"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "white_star_ability_cooldown_duration_scalar",
+        "action_value":
+        {
+            "values": [-0.33]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "white_star_ability_cooldown_duration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "white_star_ability_cooldown_duration_scalar"
+        }
+    }]
+}

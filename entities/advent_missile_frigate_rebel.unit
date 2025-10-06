@@ -1,0 +1,216 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 85.461723,
+        "box":
+        {
+            "center": [0.0, 7.224814, 2.704742],
+            "extents": [47.946644, 24.352001, 80.232422]
+        },
+        "collision_rank": 1
+    },
+    "physics":
+    {
+        "can_move_linear": true,
+        "max_linear_speed": 800.0,
+        "time_to_max_linear_speed": 6.4,
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [0.75, 1.25],
+        "can_move_angular": true,
+        "max_angular_speed": 30.0,
+        "time_to_max_angular_speed": 5.0,
+        "max_bank_angle": 35.0,
+        "death_angular_speed_range": [5.0, 10.0],
+        "linear_acceleration_angle": 90.0,
+        "can_strafe_linear": true,
+        "strafe_max_linear_speed": 250.0,
+        "time_to_strafe_max_linear_speed": 10.0,
+        "strafe_max_linear_distance_spatial_radius_scalar": 10.0,
+        "strafe_start_angle": 0.0,
+        "strafe_stop_angle": 180.0,
+        "strafe_speed_start_angle": 10.0,
+        "strafe_max_start_turning_angle": 170.0
+    },
+    "hyperspace":
+    {
+        "speed": 215000.0,
+        "speed_between_stars": 752500.0,
+        "charge_time": 8.0,
+        "charge_time_variance": 1.0,
+        "min_charge_angle": 10.0,
+        "max_charge_angle": 45.0
+    },
+    "move":
+    {
+        "follow_distance": 416.871948
+    },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
+    "ai":
+    {
+        "attack_target_type_groups": [
+            "corvette_light"
+        ],
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"
+        ],
+        "attack_target_type_groups_matching_weapon": "advent_missile_frigate_light_missile",
+        "auto_follow_target_priority": 5.0,
+        "pursuit":
+        {
+            "min_target_speed": 300.0,
+            "min_distance_to_target": 6000.0
+        },
+        "attack_target_type_range_scalar": 1.5
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 50.0,
+        "is_always_a_threat": true,
+        "attack_target_type": "lrm"
+    },
+    "player_ai":
+    {
+        "attack_ship_weight_scalar": 0.5
+    },    
+    "user_interface":
+    {
+        "pip_type": "frigate",
+        "can_ever_be_selected": true,
+        "selection_priority": 300,
+        "has_sub_selection_grouping": true,
+        "selection_group_unit_type": "combat_ship",
+        "can_move": true,
+        "can_attack": true,
+        "can_show_distance_to_plane_line": true,
+        "can_rotate": true
+    },
+    "weapons":
+    {
+        "weapons": [
+        {
+            "weapon": "advent_missile_frigate_light_missile",
+            "mesh_point": "weapon.0_left",
+            "weapon_position": [-38.04493, 15.77257, -16.123213],
+            "non_turret_muzzle_positions": [
+                [-39.242599, 8.556314, 2.312525],
+                [-39.956638, 13.007799, -9.885335],
+                [-38.496849, 18.017878, -23.205254],
+                [-34.483627, 23.508284, -33.714787]
+            ],
+            "forward": [-0.707107, 0.707107, 0.0],
+            "up": [0.707107, 0.707107, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            }
+        },
+        {
+            "weapon": "advent_missile_frigate_light_missile",
+            "mesh_point": "weapon.0_right",
+            "weapon_position": [38.173218, 15.77257, -16.123211],
+            "non_turret_muzzle_positions": [
+                [39.549961, 8.556314, 2.312526],
+                [40.907753, 13.007799, -9.885329],
+                [38.261066, 18.017878, -23.205265],
+                [33.974098, 23.508284, -33.714775]
+            ],
+            "forward": [0.664463, 0.707107, 0.241845],
+            "up": [-0.664463, 0.707107, -0.241845],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            }
+        }],
+        "max_range_weapon_index": 0
+    },
+    "formation":
+    {
+        "leader_priority": 1,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 3,
+                "group": 0
+            }
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 0.8,
+        "durability": 200.0,
+        "can_ever_be_resurrected": true,
+        "levels": [
+        {
+            "max_hull_points": 900.0,
+            "hull_point_restore_rate": 1.5,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 410.0,
+            "armor_point_restore_rate": 2.25,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 30.0,
+            "max_shield_points": 925.0,
+            "shield_point_restore_rate": 3.0,
+            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_point_restore_scalar_after_damage_taken": 0.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 30.0,
+                "restore_percentage": 0.5
+            },
+            "experience_given_on_death": 48.0
+        }]
+    },
+    "build":
+    {
+        "build_time": 25.0,
+        "price":
+        {
+            "credits": 180.0,
+            "metal": 90.0,
+            "crystal": 75.0
+        },
+        "prerequisites": [
+            ["advent_unlock_missile_frigate"]
+        ],
+        "build_kind": "frigate",
+        "supply_cost": 6,
+        "build_group_id": "frigate"
+    },
+    "target_filter_unit_type": "frigate",
+    "tags": [
+        "frigate"
+    ],
+    "ship_roles": [
+        "attack_ship"
+    ],
+    "skin_groups": [
+    {
+        "skins": [
+            "advent_missile_frigate"]
+    }],
+    "action_effect_size": "small_unit",
+    "can_join_fleet": true
+}

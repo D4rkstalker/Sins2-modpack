@@ -1,0 +1,114 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "buff_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+				"super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "secret_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+			],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "trader_transport_capital_ship"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_damage_taken_scalar",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_max_linear_speed_scalar",
+        "action_value":
+        {
+            "values": [0.375]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_max_linear_acceleration_scalar",
+        "action_value":
+        {
+            "values": [0.375]
+        }
+    },
+    {
+        "action_value_id": "elite_crews_weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "elite_crews_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_damage_taken_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_max_linear_speed_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "elite_crews_max_linear_acceleration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_max_linear_acceleration_scalar"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "elite_crews_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "elite_crews_weapon_damage_scalar"
+        }
+    }]
+}

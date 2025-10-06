@@ -1,0 +1,93 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "danoba_managers_metal_extractor_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_metal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_metal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_metal_extractor_structure"
+                }]
+            },
+			{
+				"constraint_type": "is_fully_built"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "danoba_managers_crystal_extractor_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_crystal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_crystal_extractor_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_crystal_extractor_structure"
+                }]
+            },
+			{
+				"constraint_type": "is_fully_built"
+			}]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "extractor_count"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "danoba_managers_max_civilian_structure_slots_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "extractor_count",
+            "values": [1.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "danoba_managers_max_civilian_structure_slots_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_civilian_structure_slots",
+            "value_behavior": "additive",
+            "value_id": "danoba_managers_max_civilian_structure_slots_value"
+        }
+    }]
+}

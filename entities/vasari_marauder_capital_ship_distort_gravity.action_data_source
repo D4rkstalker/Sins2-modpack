@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "distort_gravity_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "distort_gravity_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.06, 0.12, 0.18, 0.24, 0.3]
+        }
+    },
+    {
+        "action_value_id": "distort_gravity_angular_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.12, 0.24, 0.36, 0.48, 0.6]
+        }
+    },
+    {
+        "action_value_id": "distort_gravity_radius_value",
+        "action_value":
+        {
+            "values": [9600.0, 10000.0, 10400.0, 10800.0, 11200.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "distort_gravity_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "distort_gravity_linear_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "distort_gravity_max_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "distort_gravity_angular_speed_bonus_value"
+        }
+    }]
+}

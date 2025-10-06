@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "damage_has_weapon_tag",
+                    "weapon_tag": "plasma"
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit": {"unit_type": "trigger_event_destination"},
+                    "unit_constraint": {"constraint_type": "has_antimatter"}
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_antimatter",
+                    "antimatter_remove_value": "antimatter_loss_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_unit_antimatter_removed_by_current_spawner",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "antimatter_damage_per_antimatter_lost_value",
+                    "penetration_value": "antimatter_penetration_value"
+                }]
+            }]
+        }
+    }]
+}

@@ -1,0 +1,170 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_advent_rebel_super_flare",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "flare_cooldown_time_value",
+        "stop_use_type": "on_spawned_buff_removed",
+        "antimatter_cost": "flare_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_advent_rebel_super_flare_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_advent_rebel_super_flare_activate"
+                    }
+                }]
+            }]
+        },
+        "watched_buff": "dlc2_advent_rebel_super_flare_on_self",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "flare_auto_cast_target_filter",
+                    "radius_value": "flare_auto_cast_radius_value",
+                    "target_count_value": "flare_auto_cast_target_count_value"
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_missing_hull",
+                            "percentage_missing_threshold": 0.5
+                        }
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_recently_been_damaged"
+                        }
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "weapon_has_target"
+                        }
+                    }]
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_rebel_super_flare_hud_icon",
+        "tooltip_picture": "dlc2_advent_rebel_super_flare_tooltip_picture",
+        "name": "dlc2_advent_rebel_super_flare_ability_name",
+        "description": "dlc2_advent_rebel_super_flare_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "flare_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "visibility": "upgrade_only",
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "flare_radius_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.effect_while_charging",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.charge_duration",
+                "value_id": "flare_execution_interval_count_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "flare_damage_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "flare_penetration_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_charge_completion",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_advent_rebel_super_flare_damage_per_antimatter",
+                "value_id": "flare_final_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "flare_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_advent_rebel_super_flare_antimatter_consumed",
+                "value_id": "flare_antimatter_removed_value",
+                "value_float_format": "percentage",
+                "value_color": "negative",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

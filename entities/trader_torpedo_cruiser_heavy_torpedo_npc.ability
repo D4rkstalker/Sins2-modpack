@@ -1,0 +1,164 @@
+{
+    "version": 0,
+    "action_data_source": "trader_torpedo_cruiser_heavy_torpedo",
+    "active_actions":
+    {
+        "cooldown_time": "heavy_torpedo_cooldown_time_value",
+        "antimatter_cost": "heavy_torpedo_antimatter_cost_value",
+        "actions":
+        {
+            "constraint":
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "plasma_storm_fixture_bonus_on_target"
+					}
+				}
+            },
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "heavy_torpedo_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_torpedo_cruiser_heavy_torpedo_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "heavy_torpedo_target_filter"
+        ],
+        "range": "heavy_torpedo_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 30.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "heavy_torpedo_auto_cast_npc_priority_target_filter"
+            },
+            {
+                "target_filter": "heavy_torpedo_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "heavy_torpedo_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_torpedo_cruiser_heavy_torpedo_ability_hud_icon",
+		"tooltip_picture": "trader_torpedo_cruiser_heavy_torpedo_ability_tooltip_picture",
+        "name": "trader_torpedo_cruiser_heavy_torpedo_ability_name",
+        "description": "trader_torpedo_cruiser_heavy_torpedo_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "heavy_torpedo_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.salvo_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_count",
+                "value_id": "heavy_torpedo_torpedo_count_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.missile_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "heavy_torpedo_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "heavy_torpedo_armor_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_speed",
+                "value_id": "heavy_torpedo_torpedo_speed_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_hull",
+                "value_id": "heavy_torpedo_torpedo_hull_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor",
+                "value_id": "heavy_torpedo_torpedo_armor_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor_strength",
+                "value_id": "heavy_torpedo_torpedo_armor_strength_value"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [-49.721031, 49.95134, 142.125427]
+    },
+    {
+        "position": [48.701447, 49.95134, 142.125427]
+    },
+    {
+        "position": [-48.221855, -46.91489, 142.124969]
+    },
+    {
+        "position": [47.773556, -46.91489, 142.124954]
+    }]
+}

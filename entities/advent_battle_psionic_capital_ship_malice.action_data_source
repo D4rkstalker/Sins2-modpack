@@ -1,0 +1,130 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "malice_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_battle_psionic_capital_ship_malice_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "malice_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_battle_psionic_capital_ship_malice_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "malice_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "malice_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0, 157.5, 135.0, 123.75, 112.5]
+        }
+    },
+    {
+        "action_value_id": "malice_max_target_count_value",
+        "action_value":
+        {
+            "values": [14.0, 18.0, 22.0, 24.0, 26.0]
+        }
+    },
+    {
+        "action_value_id": "malice_max_target_count_display_value",
+        "action_value":
+        {
+            "values": [15.0, 19.0, 23.0, 25.0, 27.0]
+        }
+    },
+    {
+        "action_value_id": "malice_duration_value",
+        "action_value":
+        {
+            "values": [20.0, 28.0, 36.0, 40.0, 44.0]
+        }
+    },
+    {
+        "action_value_id": "malice_radius_value",
+        "action_value":
+        {
+            "values": [2500.0, 2750.0, 3000.0, 3250.0, 3500.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [5.0, 5.0, 5.0, 5.0, 5.0]
+            }
+        }
+    },
+    {
+        "action_value_id": "malice_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "malice_damage_propagation_value",
+        "action_value":
+        {
+            "transform_type": "per_total_resolved_damage_dealt",
+            "values": [0.3, 0.3, 0.3, 0.3, 0.3],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.001, 0.001, 0.001, 0.001]
+            }
+        }
+    }]
+}

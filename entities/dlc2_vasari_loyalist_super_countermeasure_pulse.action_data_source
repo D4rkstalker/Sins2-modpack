@@ -1,0 +1,121 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "countermeasure_pulse_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "invulnerable"
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "countermeasure_pulse_debuff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "countermeasure_pulse_damage_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "countermeasure_pulse_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [8000.0, 8000.0, 8000.0, 8000.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [30.0, 42.0, 54.0, 66.0, 90.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0, 87.0, 84.0, 81.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_radius_value",
+        "action_value":
+        {
+            "values": [12000.0, 12000.0, 12000.0, 12000.0, 12000.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_duration_value",
+        "action_value":
+        {
+            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_travel_speed",
+        "action_value":
+        {
+            "values": [10000.0, 10000.0, 10000.0, 10000.0, 10000.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_damage_value",
+        "action_value":
+        {
+            "values": [36.0, 48.0, 60.0, 72.0, 96.0]
+        }
+    },
+    {
+        "action_value_id": "countermeasure_pulse_damage_taken_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [-0.18, -0.24, -0.3, -0.36, -0.48]
+        }
+    }]
+}

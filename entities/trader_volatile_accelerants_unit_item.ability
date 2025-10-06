@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "action_data_source": "trader_volatile_accelerants_unit_item",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "volatile_accelerants_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "volatile_accelerants_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "volatile_accelerants_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_volatile_accelerants_unit_item"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "volatile_accelerants_auto_cast_target_filter",
+                "radius_value": "volatile_accelerants_radius_value",
+                "target_count_value": "volatile_accelerants_auto_cast_target_count_value"
+            }
+        }
+    },
+    "gui":
+    {
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "volatile_accelerants_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "volatile_accelerants_radius_value"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "trader_volatile_accelerants_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "trader_volatile_accelerants_max_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_damage_rate",
+                "value_id": "volatile_accelerants_damage_rate_value",
+                "value_color": "negative",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+				"value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "volatile_accelerants_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

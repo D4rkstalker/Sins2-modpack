@@ -1,0 +1,127 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_vasari_rebel_super_terrorize",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "terrorize_cooldown_time_value",
+        "antimatter_cost": "terrorize_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "target"
+                },
+                "radius_value": "terrorize_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "terrorize_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_rebel_super_terrorize"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_vasari_rebel_super_terrorize_start"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "terrorize_target_filter"
+        ],
+        "range": "terrorize_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "subsume_energy_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "subsume_energy_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_vasari_rebel_super_terrorize_hud_icon",
+        "tooltip_picture": "dlc2_vasari_rebel_super_terrorize_tooltip_picture",
+        "name": "dlc2_vasari_rebel_super_terrorize_ability_name",
+        "description": "dlc2_vasari_rebel_super_terrorize_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "terrorize_range_value",
+                "radius": "terrorize_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "terrorize_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "terrorize_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.on_target_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "terrorize_ability_cost_modifier"
+            }]
+        },
+        {
+            "header_text": "dlc2_vasari_rebel_super_terrorize_header_on_target_ability_used",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_terrorize_hull_damage_per_ability_used",
+                "value_id": "terrorize_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "terrorize_penetration_value",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

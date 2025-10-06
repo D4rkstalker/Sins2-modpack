@@ -1,0 +1,75 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "replace_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_battle_psionic_capital_ship_malice_buff_small",
+                        "medium_unit": "advent_battle_psionic_capital_ship_malice_buff_medium",
+                        "large_unit": "advent_battle_psionic_capital_ship_malice_buff_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "damage_can_be_propagated"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_with_child_buffs_of_parent_buff",
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "malice_damage_propagation_value",
+                    "penetration_value": "uniforms_damage_event_penetration_value",
+                    "can_damage_be_propagated": false
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_battle_psionic_capital_ship_malice_ability_hud_icon",
+        "name": "advent_battle_psionic_capital_ship_malice_ability_name",
+		"is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_propagation",
+                "value_id": "malice_damage_propagation_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign",
+				"value_color": "negative"
+            }]
+        }]
+    }
+}

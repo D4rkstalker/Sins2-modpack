@@ -1,0 +1,171 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "distance_between_units_comparison",
+						"unit_a":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_b":
+						{
+							"unit_type": "previous_spawner"
+						},
+						"comparison_type": "greater_than",
+						"compare_value": "shield_leech_radius_value"
+					},
+					{
+						"constraint_type": "unit_passes_unit_constraint",
+						"unit":
+						{
+							"unit_type": "current_spawner"
+						},
+						"unit_constraint":
+						{
+							"constraint_type": "has_missing_shields",
+							"percentage_missing_threshold": 1.0
+						}
+					}]
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "shield_leech_execution_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "shields_only",
+                    "damage_value": "shield_leech_damage_rate_value",
+                    "penetration_value": "shield_leech_armor_penetration_value"
+                }]
+			},
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "previous_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "shields_only",
+                    "repair_value": "shield_leech_damage_rate_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "dlc_ancient_starbase_shield_leech_on_target_small",
+                        "medium_unit": "dlc_ancient_starbase_shield_leech_on_target_medium",
+                        "large_unit": "dlc_ancient_starbase_shield_leech_on_target_large"
+                    }
+                }
+            },
+			{
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "total_shield_regen",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "shield_leech_damage_rate_value"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+			{
+                "action_type": "change_buff_memory_float_value",
+				"buff": "parent_buff",
+                "float_variable": "total_shield_regen",
+                "math_operators": [
+                {
+                    "operator_type": "subtract",
+                    "operand_value": "shield_leech_damage_rate_value"
+                }]
+            }]
+		}
+	}],
+    "gui":
+    {
+        "hud_icon": "dlc_ancient_starbase_shield_leech_unit_item_hud_icon",
+        "name": "dlc_ancient_starbase_shield_leech_unit_item_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_damage_rate",
+                "value_id": "shield_leech_damage_rate_value",
+                "value_color": "negative",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "shield_leech_armor_penetration_value",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_planet_for_a_planet",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [2],
+    "active_actions":
+    {
+        "cooldown_time": "unity_planet_for_a_planet_cooldown_time_value",
+        "unity_mana_cost": "unity_planet_for_a_planet_unity_mana_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_planet_for_a_planet_on_planet"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "unity_planet_for_a_planet_target_filter"]
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_planet_for_a_planet_ability_hud_icon",
+        "tooltip_picture": "advent_unity_planet_for_a_planet_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_planet_for_a_planet_ability_tooltip_picture",
+        "name": "advent_unity_planet_for_a_planet_ability_name",
+        "description": "advent_unity_planet_for_a_planet_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+			{
+                "rendering_type": "single_value",
+                "label_text": "tooltip.unit_item_planet_label",
+                "value_id": "unity_planet_for_a_planet_planet_duration_value",
+                "value_suffix": "seconds"			
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "unity_planet_for_a_planet_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "unity_planet_for_a_planet_weapon_range_modifier"
+			},
+			{
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "unity_planet_for_a_planet_weapon_modifier_duration",
+                "value_suffix": "seconds"			
+            }]
+        }]
+	}
+}

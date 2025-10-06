@@ -1,0 +1,70 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 4,
+    "field": "civilian_policy",
+    "field_coord": [8, 5],
+    "research_time": 840.0,
+    "price":
+    {
+        "credits": 2200.0,
+        "metal": 400.0,
+        "crystal": 700.0
+    },
+    "exotic_price": [
+    {
+        "exotic_type": "ultimate",
+        "count": 1
+    }],
+    "prerequisites": [
+        ["trader_unlock_culture_unit_factory_production_penalty"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+			"unit_types": [
+				"star"
+			]
+        },
+        "action_data_source": "trader_culture_insurgency",
+        "buff": "empty",
+        "tooltip_sub_header_label": "tooltip.research_subject.enemy_planet_modifiers_header_label",
+        "tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.insurgency_supply_value_label",
+            "value_id": "available_supply_value"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.insurgency_chance",
+			"value_float_format": "percentage_one_decimal_place",
+            "value_id": "chance_value",
+			"value_color": "positive"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.insurgency_interval",
+            "value_id": "cooldown_time_value",
+            "value_suffix": "seconds"
+        }]
+    }],
+    "name": "trader_culture_insurgency_research_subject_name",
+    "name_uppercase": "trader_culture_insurgency_research_subject_name_uppercase",
+    "description": "trader_culture_insurgency_research_subject_description",
+    "hud_icon": "trader_culture_insurgency_research_subject_hud_icon",
+    "tooltip_picture": "trader_culture_insurgency_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_faction",
+        "research_text_filter_rebel"
+    ],
+    "arbitary_research_line":
+    {
+        "unlock_label": "tooltip.research_subject.arbitary_unlock_label.trader_culture_insurgency_research_subject"
+    }
+}

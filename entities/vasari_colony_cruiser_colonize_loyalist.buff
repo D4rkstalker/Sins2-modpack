@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+	"planet_modifiers": [
+	{
+        "modifier_type": "max_planet_component_slots",
+        "value_behavior": "additive",
+        "value_id": "fixed_one"
+	}],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_planet_colonized",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["vasari_loyalist_solitary_path"]
+						]
+					},
+                    "operator_type": "add_unit_item",
+                    "unit_item": "vasari_stripped_to_the_core"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

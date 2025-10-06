@@ -1,0 +1,232 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_orbital_cannon_victory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "destroyed_planet"
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_orbital_cannon_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_shield_generator_structure_on_gravity_well"
+				}
+            },
+            {
+                "constraint_type": "is_home_planet"
+            },
+            {
+                "constraint_type": "is_detected"
+            },
+            {
+                "constraint_type": "has_permission",
+                "permission_type": "can_planet_be_damaged"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_orbital_cannon_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "trader_shield_generator_structure_on_gravity_well"
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_planet_type",
+                    "planet_types": [
+                        "asteroid",
+                        "moon"]
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_orbital_cannon_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "ability_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "buff_on_self_duration_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "trader_orbital_cannon_angular_speed_value",
+        "action_value":
+        {
+            "values": [1500.0]
+        }
+    },
+    {
+        "action_value_id": "trader_orbital_cannon_disable_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "create_shell_time_value",
+        "action_value":
+        {
+            "values": [6.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "improved_range_value",
+        "action_value":
+        {
+            "values": [40.0]
+        }
+    },
+    {
+        "action_value_id": "planet_bombing_damage_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "planet_bombing_population_damage_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "planet_surface_radius",
+        "action_value":
+        {
+            "transform_type": "surface_radius",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "objectives_completed_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "objectives_completed_max_stack_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "trader_orbital_cannon_impact_small",
+        "alias_binding":
+        {
+            "particle_effect": "novalith_cannon_impact_asteroid",
+            "sounds": [
+                "explosion_cannonshelltech"]
+        }
+    },
+    {
+        "alias_name": "trader_orbital_cannon_impact_medium",
+        "alias_binding":
+        {
+            "particle_effect": "novalith_cannon_impact_planet",
+            "sounds": [
+                "explosion_cannonshelltech"]
+        }
+    },
+    {
+        "alias_name": "trader_orbital_cannon_impact_large",
+        "alias_binding":
+        {
+            "particle_effect": "novalith_cannon_impact_giant_planet",
+            "sounds": [
+                "explosion_cannonshelltech"]
+        }
+    }],
+	"buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "trader_orbital_cannon_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "additive",
+            "value_id": "trader_orbital_cannon_angular_speed_value"
+        }
+	}]
+}

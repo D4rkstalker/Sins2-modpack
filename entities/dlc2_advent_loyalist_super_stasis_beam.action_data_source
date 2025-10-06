@@ -1,0 +1,128 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "stasis_beam_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "stasis_beam_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "stasis_beam_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "stasis_beam_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [200.0, 300.0, 400.0, 450.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_channel_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_charge_value",
+        "action_value":
+        {
+            "values": [2.0, 2.0, 2.0, 2.0, 2.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_execution_count_value",
+        "action_value":
+        {
+            "values": [3.0, 3.0, 3.0, 3.0, 3.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_cooldown_time_value",
+        "action_value":
+        {
+            "values": [150.0, 120.0, 90.0, 75.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_range_value",
+        "action_value":
+        {
+            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_duration_value",
+        "action_value":
+        {
+            "values": [20.0, 20.0, 20.0, 20.0, 20.0]
+        }
+    },
+    {
+        "action_value_id": "stasis_beam_damage_taken_bonus_value",
+        "action_value":
+        {
+            "values": [0.1, 0.25, 0.4, 0.475, 0.55],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.001, 0.0015, 0.002, 0.00225, 0.0025]
+            }
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "stasis_beam_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "stasis_beam_damage_taken_bonus_value"
+        }
+    }]
+}

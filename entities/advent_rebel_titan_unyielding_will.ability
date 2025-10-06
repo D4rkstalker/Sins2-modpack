@@ -1,0 +1,56 @@
+{
+    "version": 0,
+    "action_data_source": "advent_rebel_titan_unyielding_will",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "passive_actions":
+    {
+        "passive_cooldown_time": "unyielding_will_passive_cooldown_time_value",
+        "persistant_buff": "advent_rebel_titan_unyielding_will_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_rebel_titan_unyielding_will_ability_hud_icon",
+        "tooltip_picture": "advent_rebel_titan_unyielding_will_ability_tooltip_picture",
+        "name": "advent_rebel_titan_unyielding_will_ability_name",
+        "description": "advent_rebel_titan_unyielding_will_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.enable_can_use_abilities_when_crippled",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.enable_can_use_weapons_when_crippled",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "unyielding_will_antimatter_restore_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "unyielding_will_ability_cooldown_duration_modifier"
+            }]
+		},
+		{
+			"header_text": "tooltip.unyielding_will_on_crippled_hull_depleted",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.invulnerable",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "unyielding_will_invulnerable_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

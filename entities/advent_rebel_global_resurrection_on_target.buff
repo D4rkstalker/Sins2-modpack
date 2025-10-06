@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "random_chance",
+                "chance_value": "advent_rebel_global_resurrection_chance_value"
+            },
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "resurrected_unit_id",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "advent_rebel_global_resurrection_assign_resurrected_unit_id_value"
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_buff_agent",
+                    "buff_agent_effect_size_reference_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "buff_on_agent": "advent_rebel_global_resurrection_on_buff_agent",
+                    "copy_parent_buff_memory_values": true
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_temple_of_resurrection_unit_item_hud_icon",
+        "name": "advent_temple_of_resurrection_unit_item_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.random_chance",
+                "value_id": "advent_rebel_global_resurrection_chance_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_one_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,606 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_trader_rebel_super_modular_overdrive",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "modular_overdrive_cooldown_time_value",
+        "antimatter_cost": "modular_overdrive_antimatter_cost_value",
+        "actions":
+        {
+            "constraint":
+            {
+				"constraint_type": "unit_passes_unit_constraint",
+				"unit":
+				{
+					"unit_type": "current_spawner"
+				},
+				"unit_constraint":
+				{
+					"constraint_type": "composite_or",
+					"constraints": [
+					{
+						"constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "composite_not",
+							"constraint":
+							{
+								"constraint_type": "has_buff",
+								"buff": "plasma_storm_fixture_bonus_on_target"
+							}
+						},
+						{
+							"constraint_type": "has_mutation",
+							"mutation": "modular_missile_equipped"
+						}]
+					},
+					{
+						"constraint_type": "composite_not",
+						"constraint": 
+						{
+							"constraint_type": "has_mutation",
+							"mutation": "modular_missile_equipped"
+						}
+					}]
+				}
+            },
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "modular_overdrive_no_module_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_modular_overdrive_no_module"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "modular_railgun_equipped"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_modular_overdrive_railgun_on_self"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "modular_missile_equipped"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_modular_overdrive_missile_on_self"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "modular_launch_bay_equipped"
+                    }
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_modular_overdrive_launch_bay_on_self"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_trader_rebel_super_modular_overdrive_start"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "weapon_has_target"
+                        }
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "modular_railgun_equipped"
+                        }
+                    }]
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "modular_overdrive_missile_auto_cast_target_filter",
+                        "radius_value": "modular_overdrive_missile_radius_value",
+                        "target_count_value": "modular_overdrive_missile_max_target_count_value"
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "modular_missile_equipped"
+                        }
+                    }]
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "weapon_has_target"
+                        }
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "modular_launch_bay_equipped"
+                        }
+                    }]
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_rebel_super_modular_overdrive_hud_icon",
+        "tooltip_picture": "dlc2_trader_rebel_super_modular_overdrive_tooltip_picture",
+        "name": "dlc2_trader_rebel_super_modular_overdrive_ability_name",
+        "description": "dlc2_trader_rebel_super_modular_overdrive_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "fixed_zero"
+            },
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "modular_missile_equipped"
+                }
+            },
+            "constraint_passed_values":
+            {
+                "radius": "modular_overdrive_missile_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "dlc2_trader_rebel_super_modular_overdrive_railgun_equipped",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "dlc2_trader_rebel_super_modular_overdrive_railgun_on_hit"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "modular_overdrive_railgun_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "modular_overdrive_railgun_max_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "modular_overdrive_railgun_impact_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_removed",
+                "value_id": "modular_overdrive_railgun_antimatter_removed_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "dlc2_trader_rebel_super_modular_overdrive_missile_equipped",
+            "lines": [
+            {
+                "visibility": "upgrade_only",
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "modular_overdrive_missile_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_volleys",
+                "value_id": "modular_overdrive_missile_execution_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "modular_overdrive_missile_max_target_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "modular_overdrive_missile_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "modular_overdrive_missile_penetration_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "dlc2_trader_rebel_super_modular_overdrive_launch_bay_equipped",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "modular_overdrive_launch_bay_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.strike_craft_damage_taken",
+                "value_id": "modular_overdrive_launch_bay_damage_taken_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.strike_craft_weapon_damage",
+                "value_id": "modular_overdrive_launch_bay_weapon_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "dlc2_trader_rebel_super_modular_overdrive_nothing_equipped",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "modular_overdrive_no_module_execution_count_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_rate",
+                "value_id": "modular_overdrive_no_module_shield_restore_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [-357.124695, 95.78981, -462.321472],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -462.321472],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -495.932465],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -495.932465],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -526.142029],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -526.142029],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -576.94043],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -610.551392],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -610.551392],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -640.760986],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -640.760986],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -576.94043],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -690.5979],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -724.208862],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -724.208862],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-357.124695, 95.78981, -754.418457],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -754.418457],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [-370.040161, 64.697212, -690.5979],
+        "rotation": [-0.015873, -0.007883, 0.999843, 0.469906, 0.882599, 0.014419, 
+            -0.882574, 0.470061, -0.010305
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -462.321472],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -462.321472],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -640.760986],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -640.760986],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -690.5979],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -690.5979],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -724.208862],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -724.208862],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -754.418457],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -754.418457],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -495.932465],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -495.932465],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -526.142029],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -526.142029],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -576.94043],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -576.94043],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [356.892242, 95.78981, -610.551392],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    },
+    {
+        "position": [373.592285, 64.697212, -610.551392],
+        "rotation": [0.015746, -0.008784, -0.999838, -0.456444, 0.889626, -0.015004,
+            0.889613, 0.456606, 0.009999
+        ]
+    }]
+}

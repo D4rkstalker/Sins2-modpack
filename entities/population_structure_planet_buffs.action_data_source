@@ -1,0 +1,941 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "neutral_metal_extractor_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "neutral_metal_asteroid"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "neutral_crystal_extractor_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "neutral_crystal_asteroid"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "exotic_factory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"capital_ship",
+				"planet",
+				"starbase",
+				"super_capital_ship",
+				"titan"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_exotic_factory_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_exotic_factory_structure"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_exotic_factory_structure_loyalist"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_exotic_factory_structure"
+                },
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "mobile_exotic_factory_enabled"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "unit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"capital_ship",
+				"starbase",
+				"titan",
+				"frigate",
+				"corvette",
+				"cruiser",
+				"super_capital_ship",
+				"strikecraft"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_unit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+				"capital_ship",
+				"starbase",
+				"titan",
+				"frigate",
+				"corvette",
+				"super_capital_ship",
+				"cruiser"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "loot_unit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"capital_ship",
+				"titan",
+				"super_capital_ship"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "culture_unit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"capital_ship",
+				"titan",
+				"starbase",
+				"structure",
+				"frigate",
+				"super_capital_ship",
+				"untargetable"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "is_culture_provider"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "asteroid_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "ice_asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "ice_asteroid_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "hive_asteroid_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "hive_asteroid_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "moon_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "moon_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "ice_moon_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "ice_moon_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "volcanic_moon_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "volcanic_moon_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "terran_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "terran_planet",
+				"terran_home_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "volcanic_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "volcanic_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "ice_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "ice_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "gas_giant_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "gas_giant_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "swamp_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "swamp_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "magnetic_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "magnetic_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "city_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "city_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "barren_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "barren_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "oceanic_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "oceanic_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "ship_graveyard_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "ship_graveyard_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "greenhouse_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "greenhouse_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "ferrous_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "ferrous_planet",
+				"ferrous_home_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "desert_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "desert_planet",
+				"desert_home_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "crystalline_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "crystalline_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "pirate_base_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "pirate_base_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "irradiated_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "irradiated_planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "asteroid_orbital_extraction_metal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "ice_asteroid_orbital_extraction_crystal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "hive_asteroid_population_growth_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "moon_max_hull_points_bonus_value",
+        "action_value":
+        {
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "ice_moon_max_shield_points_bonus_value",
+        "action_value":
+        {
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "volcanic_moon_max_armor_points_bonus_value",
+        "action_value":
+        {
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "terran_commerce_track_credit_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "volcanic_mining_track_metal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "ice_mining_track_crystal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "gas_giant_max_civilian_structure_slots_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "swamp_factory_exotic_build_time_bonus_value",
+        "action_value":
+        {
+            "values": [-0.05]
+        }
+    },
+    {
+        "action_value_id": "magnetic_culture_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "city_max_population_points_bonus_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "barren_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "oceanic_commerce_track_credit_income_rate_per_population_bonus_value",
+        "action_value":
+        {
+            "values": [0.0005]
+        }
+    },
+    {
+        "action_value_id": "ship_graveyard_loot_collection_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    },
+    {
+        "action_value_id": "greenhouse_max_military_structure_slots_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "ferrous_mining_track_metal_income_rate_per_population_bonus_value",
+        "action_value":
+        {
+            "values": [0.0005]
+        }
+    },
+    {
+        "action_value_id": "desert_research_rate_per_population_bonus_value",
+        "action_value":
+        {
+            "values": [0.00025]
+        }
+    },
+    {
+        "action_value_id": "crystalline_mining_track_crystal_income_rate_per_population_bonus_value",
+        "action_value":
+        {
+            "values": [0.0005]
+        }
+    },
+    {
+        "action_value_id": "pirate_base_percentage_of_other_players_total_credit_income_bonus_value",
+        "action_value":
+        {
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "irradiated_antimatter_bonus_value",
+        "action_value":
+        {
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_crystal_asteroid_bonus_value",
+        "action_value":
+        {
+            "values": [0.0225]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_crystal_asteroid_research_1_bonus_value",
+        "action_value":
+        {
+            "values": [0.00225]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_crystal_asteroid_research_2_bonus_value",
+        "action_value":
+        {
+            "values": [0.003375]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_crystal_asteroid_research_3_bonus_value",
+        "action_value":
+        {
+            "values": [0.0045]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_metal_asteroid_bonus_value",
+        "action_value":
+        {
+            "values": [0.0225]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_metal_asteroid_research_1_bonus_value",
+        "action_value":
+        {
+            "values": [0.00225]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_metal_asteroid_research_2_bonus_value",
+        "action_value":
+        {
+            "values": [0.003375]
+        }
+    },
+    {
+        "action_value_id": "advent_neutral_metal_asteroid_research_3_bonus_value",
+        "action_value":
+        {
+            "values": [0.0045]
+        }
+    },
+    {
+        "action_value_id": "trader_neutral_crystal_asteroid_bonus_value",
+        "action_value":
+        {
+            "values": [0.0225]
+        }
+    },
+    {
+        "action_value_id": "trader_neutral_crystal_asteroid_research_1_bonus_value",
+        "action_value":
+        {
+            "values": [0.00225]
+        }
+    },
+    {
+        "action_value_id": "trader_neutral_crystal_asteroid_research_2_bonus_value",
+        "action_value":
+        {
+            "values": [0.003375]
+        }
+    },
+    {
+        "action_value_id": "trader_neutral_metal_asteroid_bonus_value",
+        "action_value":
+        {
+            "values": [0.0225]
+        }
+    },
+    {
+        "action_value_id": "trader_neutral_metal_asteroid_research_1_bonus_value",
+        "action_value":
+        {
+            "values": [0.00225]
+        }
+    },
+    {
+        "action_value_id": "trader_neutral_metal_asteroid_research_2_bonus_value",
+        "action_value":
+        {
+            "values": [0.003375]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_crystal_asteroid_bonus_value",
+        "action_value":
+        {
+            "values": [0.0225]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_crystal_asteroid_research_1_bonus_value",
+        "action_value":
+        {
+            "values": [0.0054]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_crystal_asteroid_research_2_bonus_value",
+        "action_value":
+        {
+            "values": [0.0054]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_crystal_asteroid_research_3_bonus_value",
+        "action_value":
+        {
+            "values": [0.0108]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_metal_asteroid_bonus_value",
+        "action_value":
+        {
+            "values": [0.027]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_metal_asteroid_research_1_bonus_value",
+        "action_value":
+        {
+            "values": [0.00648]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_metal_asteroid_research_2_bonus_value",
+        "action_value":
+        {
+            "values": [0.00648]
+        }
+    },
+    {
+        "action_value_id": "vasari_neutral_metal_asteroid_research_3_bonus_value",
+        "action_value":
+        {
+            "values": [0.01296]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "moon_max_hull_points_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "moon_max_hull_points_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "ice_moon_max_shield_points_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "ice_moon_max_shield_points_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "volcanic_moon_max_armor_points_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "volcanic_moon_max_armor_points_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "ship_graveyard_loot_collection_duration_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "loot_collection_duration",
+            "value_behavior": "scalar",
+            "value_id": "ship_graveyard_loot_collection_duration_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "magnetic_unit_culture_rate_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "culture_rate",
+            "value_behavior": "scalar",
+            "value_id": "magnetic_culture_rate_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "irradiated_max_antimatter_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_antimatter",
+            "value_behavior": "scalar",
+            "value_id": "irradiated_antimatter_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "irradiated_antimatter_restore_rate_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "irradiated_antimatter_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "barren_weapon_damage_bonus_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+			"weapon_type": "normal",
+            "value_behavior": "scalar",
+            "value_id": "barren_weapon_damage_bonus_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "barren_bombardment_weapon_damage_bonus_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+			"weapon_type": "planet_bombing",
+            "value_behavior": "scalar",
+            "value_id": "barren_weapon_damage_bonus_value"
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "asteroid_orbital_extraction_metal_income_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "asteroid_orbital_extraction_metal_income_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "ice_asteroid_orbital_extraction_crystal_income_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "ice_asteroid_orbital_extraction_crystal_income_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "hive_asteroid_population_growth_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "scalar",
+            "value_id": "hive_asteroid_population_growth_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "terran_commerce_track_credit_income_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "commerce_track_credit_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "terran_commerce_track_credit_income_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "volcanic_mining_track_metal_income_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "volcanic_mining_track_metal_income_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "ice_mining_track_crystal_income_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "ice_mining_track_crystal_income_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "gas_giant_max_civilian_structure_slots_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_civilian_structure_slots",
+            "value_behavior": "additive",
+            "value_id": "gas_giant_max_civilian_structure_slots_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "magnetic_culture_rate_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "culture_rate",
+            "value_behavior": "scalar",
+            "value_id": "magnetic_culture_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "city_max_population_points_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_population_points",
+            "value_behavior": "scalar",
+            "value_id": "city_max_population_points_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "oceanic_commerce_track_credit_income_rate_per_population_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "commerce_track_credit_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "oceanic_commerce_track_credit_income_rate_per_population_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "greenhouse_max_military_structure_slots_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_military_structure_slots",
+            "value_behavior": "additive",
+            "value_id": "greenhouse_max_military_structure_slots_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "ferrous_mining_track_metal_income_rate_per_population_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "ferrous_mining_track_metal_income_rate_per_population_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "desert_civilian_research_rate_per_population_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "civilian_research_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "desert_research_rate_per_population_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "desert_military_research_rate_per_population_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "military_research_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "desert_research_rate_per_population_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "crystalline_mining_track_crystal_income_rate_per_population_bonus_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "crystalline_mining_track_crystal_income_rate_per_population_bonus_value"
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "pirate_base_percentage_of_other_players_total_credit_income_bonus_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "percentage_of_other_players_total_credit_income",
+            "value_behavior": "additive",
+            "value_id": "pirate_base_percentage_of_other_players_total_credit_income_bonus_value"
+        }
+    }]
+}

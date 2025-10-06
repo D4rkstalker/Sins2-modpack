@@ -1,0 +1,123 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_carrier_capital_ship_replicate_forces",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "replicate_forces_cooldown_time_value",
+        "antimatter_cost": "replicate_forces_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "create_clones",
+                    "clone_spawn_position":
+                    {
+                        "position_type": "distance_in_direction_from_position",
+                        "distance_value": "replicate_forces_spawn_range_value",
+                        "direction":
+                        {
+                            "direction_type": "unit_cross",
+                            "unit":
+                            {
+                                "unit_type": "target"
+                            }
+                        },
+                        "source_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "target"
+                            }
+                        }
+                    },
+                    "clone_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "target"
+                        }
+                    },
+                    "clone_count": "replicate_forces_clone_count_value",
+                    "buff_on_clone": "vasari_carrier_capital_ship_replicate_forces"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "bomb",
+                    "effects":
+                    {
+                        "muzzle_effect": "vasari_carrier_capital_ship_replicate_forces_muzzle"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "replicate_forces_target_filter"
+        ],
+        "range": "replicate_forces_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "replicate_forces_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_carrier_capital_ship_replicate_forces_ability_hud_icon",
+        "tooltip_picture": "vasari_carrier_capital_ship_replicate_forces_ability_tooltip_picture",
+        "name": "vasari_carrier_capital_ship_replicate_forces_ability_name",
+        "description": "vasari_carrier_capital_ship_replicate_forces_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "replicate_forces_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.copy_count",
+                "value_id": "replicate_forces_clone_count_value",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "replicate_forces_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

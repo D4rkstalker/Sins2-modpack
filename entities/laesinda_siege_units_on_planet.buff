@@ -1,0 +1,53 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+	"active_duration": "buff_on_planet_buff_duration",
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+	{
+		"trigger_event_type": "on_current_spawner_player_ownership_changed",
+		"action_group":
+		{
+			"actions": [
+			{
+                "action_type": "use_unit_operators_on_single_unit",
+				"destination_unit":
+				{
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+				}, 
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "required_units": [
+                        {
+                            "unit": "advent_siege_frigate",
+                            "count": [4, 4]
+                        }]
+                    },
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "fixed_one",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "previous_spawner"
+                        }
+                    },
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+			}]
+        }
+    }]
+}

@@ -1,0 +1,180 @@
+{
+    "version": 0,
+    "action_data_source": "trader_long_range_cruiser_breaker_missile",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["trader_unlock_long_range_cruiser_breaker_missile_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "breaker_missile_cooldown_time_value",
+        "antimatter_cost": "breaker_missile_antimatter_cost_value",
+        "actions":
+        {
+            "constraint":
+            {
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "unit_passes_unit_constraint",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"unit_constraint":
+					{
+						"constraint_type": "has_buff",
+						"buff": "plasma_storm_fixture_bonus_on_target"
+					}
+				}
+            },
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "breaker_missile_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_long_range_cruiser_breaker_missile_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "breaker_missile_target_filter"
+        ],
+        "range": "breaker_missile_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 30.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "breaker_missile_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "breaker_missile_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_long_range_cruiser_breaker_missile_ability_hud_icon",
+        "tooltip_picture": "trader_long_range_cruiser_breaker_missile_ability_tooltip_picture",
+        "name": "trader_long_range_cruiser_breaker_missile_ability_name",
+        "description": "trader_long_range_cruiser_breaker_missile_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "breaker_missile_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.salvo_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_count",
+                "value_id": "breaker_missile_torpedo_count_value"
+            }
+            ]
+        },
+        {
+            "header_text": "tooltip.ability.missile_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "breaker_missile_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "breaker_missile_armor_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_speed",
+                "value_id": "breaker_missile_torpedo_speed_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_hull",
+                "value_id": "breaker_missile_torpedo_hull_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor",
+                "value_id": "breaker_missile_torpedo_armor_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor_strength",
+                "value_id": "breaker_missile_torpedo_armor_strength_value"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [-45.063137, 12.4161, -42.932152]
+    },
+    {
+        "position": [45.594013, 12.4161, -42.932152]
+    },
+    {
+        "position": [-45.063137, 4.592031, -42.932152]
+    },
+    {
+        "position": [45.594013, 4.592031, -42.932152]
+    },
+    {
+        "position": [-45.063137, -3.325405, -42.932152]
+    },
+    {
+        "position": [45.594013, -3.325405, -42.932152]
+    },
+    {
+        "position": [-45.063137, -11.155904, -42.932152]
+    },
+    {
+        "position": [45.594013, -11.155904, -42.932152]
+    }]
+}

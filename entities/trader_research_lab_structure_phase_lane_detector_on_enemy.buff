@@ -1,0 +1,61 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "constraint":
+            {
+				"constraint_type": "unit_passes_target_filter",
+				"unit":
+				{
+					"unit_type": "previous_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+				},
+				"target_filter_id": "phase_lane_detector_notification_target_filter"
+			},
+            "actions": [
+            {
+                "action_type": "add_notification",
+                "notification_type": "planet_conversion_colonized",
+                "planet":
+                {
+                    "unit_type": "previous_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                }
+            }]
+		}
+	},
+    {
+        "trigger_event_type": "on_current_spawner_hyperspace_stopped",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+					"unit_type": "previous_spawner",
+					"redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_research_lab_structure_phase_lane_detector_on_planet"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+			}]
+		}
+	}]
+}

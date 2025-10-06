@@ -1,0 +1,53 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "SimplePoint",
+            "type": "point",
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "mesh",
+                "render_layer": 0,
+                "color": "ffffffff",
+                "initial_alpha": [0.20, 0.20],
+                "fade_in_time": [2.0, 2.0],
+                "fade_out_time": [2.0, 2.0],
+                "billboard": {
+                    "width": [1.0, 2.0],
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0]
+                },
+                "mesh": {
+                    "scale": [0.60, 0.60],
+                    "shader": "ship",
+                    "mesh": "asteroid_shield"
+                }
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": []
+}

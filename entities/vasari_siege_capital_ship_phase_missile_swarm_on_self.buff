@@ -1,0 +1,67 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "executions_per_interval_value": "phase_missile_swarm_torpedo_count_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "ability_position",
+                    "ability":
+                    {
+                        "ability_type": "source_ability"
+                    },
+                    "ability_position_picking_type": "next_sequential"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_torpedo",
+                    "torpedo_to_create": "vasari_phase_missile_swarm_missile",
+                    "torpedo_forward":
+                    {
+                        "direction_type": "operand_position_forward"
+                    },
+                    "torpedo_source_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "torpedo_enable_steering_distance_as_radius_scalar_value": "phase_missile_swarm_torpedo_steering_distance_radius_scalar_value",
+                    "torpedo_target_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "phase_missile_swarm_damage_value",
+                    "penetration_value": "phase_missile_swarm_armor_penetration_value",
+                    "bypass_shields_chance_value": "phase_missile_swarm_bypass_shields_chance_value",
+                    "duration_value": "phase_missile_swarm_torpedo_lifetime_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "vasari_siege_capital_ship_phase_missile_swarm_muzzle"
+                    },
+                    "effect_destination_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "effect_forward":
+                    {
+                        "direction_type": "operand_position_forward"
+                    }
+                }]
+            }]
+        }
+    }]
+}

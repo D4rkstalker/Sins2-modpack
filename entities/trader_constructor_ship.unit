@@ -1,0 +1,150 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 58.884422,
+        "box":
+        {
+            "center": [1e-06, -5.766856, -0.219669],
+            "extents": [23.052158, 20.056675, 55.766438]
+        },
+        "collision_rank": 1
+    },
+    "physics":
+    {
+        "can_move_linear": true,
+        "max_linear_speed": 750.0,
+        "time_to_max_linear_speed": 3.0,
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [0.75, 1.25],
+        "can_move_angular": true,
+        "max_angular_speed": 50.0,
+        "time_to_max_angular_speed": 4.0,
+        "max_bank_angle": 35.0,
+        "death_angular_speed_range": [5.0, 10.0],
+        "linear_acceleration_angle": 90.0,
+        "can_strafe_linear": true,
+        "strafe_max_linear_speed": 250.0,
+        "time_to_strafe_max_linear_speed": 10.0,
+        "strafe_max_linear_distance_spatial_radius_scalar": 10.0,
+        "strafe_start_angle": 0.0,
+        "strafe_stop_angle": 180.0,
+        "strafe_speed_start_angle": 10.0,
+        "strafe_max_start_turning_angle": 170.0
+    },
+    "move":
+    {
+        "follow_distance": 310.315338
+    },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
+    "ai":
+    {
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"]
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 25.0,
+        "is_always_a_threat": false
+    },
+    "user_interface":
+    {
+        "can_ever_be_selected": true,
+        "has_sub_selection_grouping": true,
+        "can_move": true,
+        "can_show_distance_to_plane_line": true,
+        "can_rotate": true
+    },
+    "weapons":
+    {
+        "weapons": [
+        {
+            "weapon": "constructor_deconstruct_bait",
+            "mesh_point": "center",
+            "weapon_position": [-0.006248, -0.808037, 3.347033],
+            "non_turret_muzzle_positions": [
+                [-2.234071, -0.808037, 3.347033],
+                [2.221574, -0.808037, 3.347033]
+            ],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 5.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 5.0
+            }
+        }],
+        "max_range_weapon_index": 0
+    },
+    "formation":
+    {
+        "leader_priority": 1,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 3,
+                "group": 0
+            }
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 0.8,
+        "durability": 50.0,
+        "levels": [
+        {
+            "max_hull_points": 525.0,
+            "hull_point_restore_rate": 1.5,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 750.0,
+            "armor_point_restore_rate": 2.25,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 40.0,
+            "experience_given_on_death": 2.0
+        }]
+    },
+    "build":
+    {
+        "build_time": 100.0,
+        "price":
+        {
+            "credits": 200.0,
+            "metal": 50.0,
+            "crystal": 50.0
+        },
+        "build_kind": "frigate",
+        "build_group_id": "frigate"
+    },
+    "target_filter_unit_type": "frigate",
+    "tags": [
+        "frigate"
+    ],
+    "abilities": [
+    {
+        "abilities": [
+            "trader_constructor_ship_build_structure",
+			"trader_constructor_ship_deconstruct_structure"]
+    }],
+    "build_structure_ability": "trader_constructor_ship_build_structure",
+    "skin_groups": [
+    {
+        "skins": [
+            "trader_constructor_ship"]
+    }],
+    "action_effect_size": "small_unit"
+}

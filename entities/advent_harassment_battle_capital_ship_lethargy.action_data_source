@@ -1,0 +1,139 @@
+{
+    "version": 0,
+	"level_count": 4,
+    "target_filters": [
+    {
+        "target_filter_id": "lethargy_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "capital_ship",
+				"super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "normal"
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "advent_harassment_battle_capital_ship_lethargy",
+					"include_pending_buffs": true
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "lethargy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+				"super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "normal"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "lethargy_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0, 75.0, 75.0, 75.0]
+        }
+    },
+    {
+        "action_value_id": "lethargy_cooldown_time_value",
+        "action_value":
+        {
+            "values": [60.0, 60.0, 60.0, 60.0]
+        }
+    },
+    {
+        "action_value_id": "lethargy_duration_value",
+        "action_value":
+        {
+            "values": [25.0, 25.0, 25.0, 25.0]
+        }
+    },
+    {
+        "action_value_id": "lethargy_range_value",
+        "action_value":
+        {
+            "values": [6000.0, 6000.0, 6000.0, 6000.0]
+        }
+    },
+    {
+        "action_value_id": "lethargy_miss_chance",
+        "action_value":
+        {
+            "values": [0.10, 0.15, 0.2, 0.25],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0005, 0.0005, 0.0005, 0.0005]
+            }
+        }
+    },
+    {
+        "action_value_id": "lethargy_miss_chance_tooltip",
+        "action_value":
+        {
+            "values": [-0.10, -0.15, -0.2, -0.25],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.0005, -0.0005, -0.0005, -0.0005]
+            }
+        }
+    },
+    {
+        "action_value_id": "lethargy_prevent_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "lethargy_weapon_cooldown_value",
+        "action_value":
+        {
+            "values": [0.1, 0.15, 0.2, 0.25]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "lethargy_weapon_cooldown_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "lethargy_weapon_cooldown_value"
+        }
+    }]
+}

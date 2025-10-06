@@ -1,0 +1,134 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 445.244537,
+        "box":
+        {
+            "center": [32.38797, -14.333458, 7.274902],
+            "extents": [352.181793, 212.413513, 362.853485]
+        },
+        "can_be_displaced_on_collision": false
+    },
+    "physics":
+    {},
+    "ai":
+    {
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"]
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 25.0,
+        "is_always_a_threat": false
+    },
+    "user_interface":
+    {
+        "can_be_controlled_by_selected_planet": true,
+        "pip_type": "capital_ship",
+        "can_ever_be_selected": true,
+        "selection_priority": 100,
+        "has_sub_selection_grouping": true,
+        "selection_group_unit_type": "factory_structure"
+    },
+    "structure":
+    {
+        "slot_type": "civilian",
+        "slots_required": 1,
+        "roles": [
+            "unit_factory"
+        ],
+        "build_group_id": "civilian",
+        "abilities_for_range_in_build_rendering": [
+            "advent_ship_factory_structure_repair"]
+    },
+    "formation":
+    {
+        "leader_priority": 3,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 4,
+                "group": 5
+            }
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 3.8,
+        "durability": 600.0,
+        "levels": [
+        {
+            "max_hull_points": 2400.0,
+            "hull_point_restore_rate": 3.0,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 1575.0,
+            "armor_point_restore_rate": 6.0,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 50.0,
+            "max_shield_points": 500.0,
+            "shield_point_restore_rate": 2.5,
+            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_point_restore_scalar_after_damage_taken": 0.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 20.0,
+                "restore_percentage": 1.0
+            },
+            "experience_given_on_death": 25.0
+        }]
+    },
+    "antimatter":
+    {
+        "prerequisites": [
+            ["advent_unlock_ship_factory_structure_repair"]
+        ],
+        "max_antimatter": 350.0,
+        "antimatter_restore_rate": 1.0
+    },
+    "unit_factory":
+    {
+        "build_kinds": [
+            "corvette",
+            "frigate"
+        ],
+        "default_rally_point_offset": [0.0, 0.0, 2500.0],
+        "base_build_point":
+        {
+            "position": [-30.977709, 175.520935, 7.486119],
+            "rotation": [1.0, 0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -0.0, 1.0]
+        }
+    },
+    "build":
+    {
+        "build_time": 50.0,
+        "price":
+        {
+            "credits": 450.0,
+            "metal": 125.0,
+            "crystal": 125.0
+        },
+        "build_kind": "structure",
+        "build_radius": 505.662598
+    },
+    "target_filter_unit_type": "structure",
+    "tags": [
+        "structure"
+    ],
+    "virtual_supply_cost": 10,
+    "abilities": [
+    {
+        "abilities": [
+            "advent_ship_factory_structure_repair"]
+    }],
+    "skin_groups": [
+    {
+        "skins": [
+            "advent_ship_factory_structure"]
+    }],
+    "action_effect_size": "medium_unit"
+}

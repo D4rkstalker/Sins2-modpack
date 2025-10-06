@@ -1,0 +1,95 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "essence_reservoir_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "stack_count",
+            "stacks_expiry_time"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "essence_reservoir_max_stack_count_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_radius",
+        "action_value":
+        {
+            "values": [18000.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_stack_duration_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_stacks_expiry_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stacks_expiry_time",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_spell_power_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "essence_reservoir_spell_power_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "essence_reservoir_spell_power_bonus_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "advent_essence_reservoir_unit_item_on_self",
+        "alias_binding":
+        {
+            "particle_effect": "strength_of_the_fallen"
+        }
+    }]
+}

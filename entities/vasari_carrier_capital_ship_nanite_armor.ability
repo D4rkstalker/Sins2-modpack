@@ -1,0 +1,126 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_carrier_capital_ship_nanite_armor",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "nanite_armor_cooldown_time_value",
+        "antimatter_cost": "nanite_armor_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "affect_type": "armor_only",
+                    "repair_value": "armor_restore_value"
+                },
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_carrier_capital_ship_nanite_armor"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "beam_effect": "vasari_carrier_capital_ship_nanite_armor_beam"
+                    },
+                    "beam_duration": "nanite_armor_beam_duration_value"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "nanite_armor_target_filter"
+        ],
+        "range": "nanite_armor_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "nanite_armor_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "nanite_armor_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_carrier_capital_ship_nanite_armor_ability_hud_icon",
+        "tooltip_picture": "vasari_carrier_capital_ship_nanite_armor_ability_tooltip_picture",
+        "name": "vasari_carrier_capital_ship_nanite_armor_ability_name",
+        "description": "vasari_carrier_capital_ship_nanite_armor_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "nanite_armor_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_restore",
+                "value_id": "armor_restore_value",
+                "value_float_format": "percentage",
+                "value_color": "positive",
+                "value_suffix_text": "tooltip.per_max_armor_points_postfix"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.initial_armor",
+                "value_id": "nanite_armor_per_interval_armor_value",
+                "value_float_format": "no_decimal_place_with_sign",
+                "value_color": "positive",
+                "value_modifiers": [
+                {
+                    "operator_type": "multiply",
+                    "operand_value": "nanite_armor_execution_interval_count_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "nanite_armor_base_armor_value"
+                }]
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.remaining_armor",
+                "value_id": "nanite_armor_base_armor_value",
+                "value_float_format": "no_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "nanite_armor_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

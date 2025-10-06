@@ -1,0 +1,51 @@
+{
+    "version": 0,
+    "active_duration": "will_of_the_unity_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_guardian_cruiser_will_of_the_unity_buff_small",
+                        "medium_unit": "advent_guardian_cruiser_will_of_the_unity_buff_medium",
+                        "large_unit": "advent_guardian_cruiser_will_of_the_unity_buff_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "will_of_the_unity_spell_power_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_altar_of_sacrifice_unit_item_hud_icon",
+        "name": "advent_guardian_cruiser_will_of_the_unity_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "will_of_the_unity_spell_power_modifier"
+            }]
+        }]
+    }
+}

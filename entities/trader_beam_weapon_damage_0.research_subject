@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 2,
+    "field": "military_armament",
+    "field_coord": [5, 3],
+    "research_time": 360.0,
+    "price":
+    {
+        "credits": 1250.0,
+        "metal": 225.0,
+        "crystal": 350.0
+    },
+    "prerequisites": [
+        ["trader_unlock_starbase_unlock_beam_weapon_unit_item"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"tag": "beam_research"
+            }]
+        },
+        "action_data_source": "empty",
+        "buff": "empty"
+	}],
+    "weapon_modifiers": [
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "damage",
+        "value": 0.1,
+        "tags": [
+            "beam"]
+    }],
+    "name": "trader_beam_weapon_damage_0_research_subject_name",
+    "name_uppercase": "trader_beam_weapon_damage_0_research_subject_name_uppercase",
+    "description": "trader_beam_weapon_damage_0_research_subject_description",
+    "hud_icon": "trader_beam_weapon_damage_0_research_subject_hud_icon",
+    "tooltip_picture": "trader_beam_weapon_damage_0_research_subject_tooltip_picture",
+    "extra_text_filter_strings": [
+        "research_text_filter_beam"
+    ]
+}

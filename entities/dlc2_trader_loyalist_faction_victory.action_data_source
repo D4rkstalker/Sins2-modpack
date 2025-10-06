@@ -1,0 +1,241 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_loyalist_faction_victory_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_inner_planet"
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_home_planet"
+				}
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_shield_generator_structure_on_gravity_well"
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_starbase_planetary_shield_array_shielding_on_planet"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "ion_field_generator_planet_artifact"
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "dlc_ancient_starbase_planetary_shield_array_with_shielding_on_planet"
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_loyalist_faction_victory_ion_field_generator_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_inner_planet"
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_home_planet"
+				}
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_shield_generator_structure_on_gravity_well"
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_starbase_planetary_shield_array_shielding_on_planet"
+            },
+            {
+				"constraint_type": "has_buff",
+				"buff": "ion_field_generator_planet_artifact"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "dlc_ancient_starbase_planetary_shield_array_with_shielding_on_planet"
+				}
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_loyalist_faction_victory_ancient_starbase_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_inner_planet"
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_home_planet"
+				}
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_shield_generator_structure_on_gravity_well"
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_starbase_planetary_shield_array_shielding_on_planet"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "ion_field_generator_planet_artifact"
+				}
+            },
+            {
+				"constraint_type": "has_buff",
+				"buff": "dlc_ancient_starbase_planetary_shield_array_with_shielding_on_planet"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_loyalist_faction_victory_ion_field_generator_ancient_starbase_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_inner_planet"
+				}
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+				{
+					"constraint_type": "is_home_planet"
+				}
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_shield_generator_structure_on_gravity_well"
+            },
+            {
+                "constraint_type": "has_buff",
+				"buff": "trader_starbase_planetary_shield_array_shielding_on_planet"
+            },
+            {
+				"constraint_type": "has_buff",
+				"buff": "ion_field_generator_planet_artifact"
+            },
+            {
+				"constraint_type": "has_buff",
+				"buff": "dlc_ancient_starbase_planetary_shield_array_with_shielding_on_planet"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "objectives_completed_value",
+        "action_value":
+        {
+            "values": [1]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_faction_victory_max_planet_shields_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_max_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner",
+				"redirection": "current_gravity_well_primary_fixture"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_faction_victory_max_planet_shields_minimum_value",
+        "action_value":
+        {
+            "values": [25000.0]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_faction_victory_max_planet_shields_ancient_starbase_minimum_value",
+        "action_value":
+        {
+            "values": [50000.0]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_faction_victory_max_planet_shields_ion_field_generator_minimum_value",
+        "action_value":
+        {
+            "values": [35000.0]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_faction_victory_max_planet_shields_ion_field_generator_ancient_starbase_minimum_value",
+        "action_value":
+        {
+            "values": [60000.0]
+        }
+    }]
+}

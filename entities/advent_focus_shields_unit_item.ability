@@ -1,0 +1,95 @@
+{
+    "version": 0,
+    "action_data_source": "advent_focus_shields_unit_item",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_focus_shields_unit_item"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect": "consecration_inducer_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_missing_shields",
+                        "percentage_missing_threshold": 0.75
+                    }
+                },
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_buff",
+                            "buff": "advent_focus_shields_unit_item",
+                            "include_pending_buffs": true
+                        }
+                    }
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.shield_restore",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "focus_shield_restore_duration",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_restore_rate",
+                "value_id": "focus_shield_restore_amount_per_second",
+                "value_float_format": "percentage",
+                "value_color": "positive",
+                "value_suffix": "per_second",
+                "ratio_float_format": "percentage_three_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

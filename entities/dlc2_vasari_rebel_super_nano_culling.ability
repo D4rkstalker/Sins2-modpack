@@ -1,0 +1,143 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_vasari_rebel_super_nano_culling",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "nano_culling_cooldown_time_value",
+        "antimatter_cost": "nano_culling_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "nano_culling_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "nano_culling_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_rebel_super_nano_culling"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_vasari_rebel_super_nano_culling_start"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "nano_culling_auto_cast_target_filter",
+                "radius_value": "nano_culling_auto_cast_radius_value",
+                "target_count_value": "nano_culling_auto_cast_target_count_value",
+                "target_override_filter_id": "nano_culling_auto_cast_override_target_filter"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_vasari_rebel_super_nano_culling_hud_icon",
+        "tooltip_picture": "dlc2_vasari_rebel_super_nano_culling_tooltip_picture",
+        "name": "dlc2_vasari_rebel_super_nano_culling_ability_name",
+        "description": "dlc2_vasari_rebel_super_nano_culling_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "nano_culling_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "nano_culling_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "nano_culling_execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.default",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "nano_culling_normal_damage_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "nano_culling_penetration_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "dlc2_vasari_rebel_super_nano_culling_header_with_hull_damage",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_vasari_rebel_super_nano_culling_hull_damage_threshold",
+                "value_id": "nano_culling_hull_damage_trigger_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_with_sign"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "nano_culling_damaged_damage_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "nano_culling_penetration_value",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

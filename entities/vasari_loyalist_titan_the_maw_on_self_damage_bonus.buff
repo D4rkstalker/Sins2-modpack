@@ -1,0 +1,70 @@
+{
+    "version": 0,
+	"active_duration": "the_maw_damage_bonus_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_stacking_limit_met",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "the_maw_current_stack_count_value",
+                "comparison_type": "less_than",
+                "value_b": "the_maw_max_stack_count_value"
+            },
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                }]
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "the_maw_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_loyalist_titan_improve_the_maw_unit_item_hud_icon",
+        "name": "vasari_loyalist_titan_improve_the_maw_unit_item_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "the_maw_weapon_damage_modifier",
+                "is_resolved_value": true
+            }]
+        }]
+    }
+}

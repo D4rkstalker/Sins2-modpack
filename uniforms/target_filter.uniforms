@@ -1,0 +1,544 @@
+{
+    "torpedo_target_filter":
+    {
+        "unit_types": [
+            "capital_ship",
+            "corvette",
+            "cruiser",
+            "frigate",
+            "starbase",
+            "structure",
+            "super_capital_ship",
+            "titan"
+        ],
+        "ownerships": [
+            "enemy"
+        ],
+        "constraints": [],
+        "exemptions": [
+            "is_dead"]
+    },
+    "overwrite_common_target_filters": true,
+    "common_target_filters": [
+    {
+        "target_filter_id": "common_weapon",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "common_weapon_no_corvette_weapon",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "common_and_strikecraft_weapon",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "strikecraft",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "strikecraft_and_torpedo_weapon",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "common_and_strikecraft_and_torpedo_weapon",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "strikecraft",
+                "structure",
+                "super_capital_ship",
+                "titan",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "strikecraft_and_torpedo_units",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "common_planet_any_owner",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+                "uncolonizable"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": []
+        }
+    },
+    {
+        "target_filter_id": "common_planet_bombing",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_detected_planets_any_owner",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+                "uncolonizable"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_detected"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_colonizable_planets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_colonizable_planet"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_friendly_planets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "ally",
+                "self"
+            ],
+            "constraints": []
+        }
+    },
+    {
+        "target_filter_id": "uniforms_owned_planets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_npc_raid_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+                "star"
+            ],
+            "ownerships": [
+                "enemy",
+                "none"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_npc_raid_self_and_neutral",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+				"star",
+				"uncolonizable"
+            ],
+            "ownerships": [
+                "self",
+				"none"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "constructor_ship_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "is_fully_built"
+                    }
+                },
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "is_structure_plate_spin_changing"
+                    }
+                }]
+            }],
+            "exemptions": [
+                "is_fully_unbuilt"]
+        }
+    },
+	{
+        "target_filter_id": "constructor_ship_deconstruct_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_current_gravity_well"
+			},
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+	{
+        "target_filter_id": "colony_ship_capture_target",
+        "target_filter":
+        {
+            "unit_types": [
+                "asteroid"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_mutation",
+				"mutation": "can_be_captured"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "big_target_only_weapon",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+				"super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "has_mutation",
+						"mutation": "invulnerable"
+					}
+                },
+                {
+					"constraint_type": "has_mutation",
+					"mutation": "suppress_invulnerable"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "common_planet_enemy_owner_not_trader",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "player_buffs_trader_on_planet"
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_npc_raid_targets_under_friendly_culture",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+					"constraint_type": "is_in_dominant_culture",
+					"dominant_culture_player_relationship": "self"
+                },
+                {
+					"constraint_type": "is_in_dominant_culture",
+					"dominant_culture_player_relationship": "ally"
+                }]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_is_ai_player",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+				"super_capital_ship",
+				"titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+			{
+                "constraint_type": "has_buff",
+                "buff": "player_buffs_is_ai_on_target"
+			}]
+        }
+    }],
+    "in_phase_space_mutation": "in_phase_space"
+}

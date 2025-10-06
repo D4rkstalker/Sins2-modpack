@@ -1,0 +1,120 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "ion_pulse_wave_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_trader_rebel_super_ion_pulse_wave_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "ion_pulse_wave_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "ion_pulse_wave_missile_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+			],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "invulnerable"
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "ion_pulse_wave_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [50.0, 50.0, 50.0, 50.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "ion_pulse_wave_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [7000.0, 7000.0, 7000.0, 7000.0, 7000.0]
+        }
+    },
+    {
+        "action_value_id": "ion_pulse_wave_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [110.0, 165.0, 220.0, 247.5, 275.0]
+        }
+    },
+    {
+        "action_value_id": "ion_pulse_wave_cooldown_time_value",
+        "action_value":
+        {
+            "values": [150.0, 150.0, 150.0, 150.0, 150.0]
+        }
+    },
+    {
+        "action_value_id": "ion_pulse_wave_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [2.0, 6.0, 10.0, 12.0, 14.0]
+        }
+    },
+    {
+        "action_value_id": "ion_pulse_wave_disable_duration_value",
+        "action_value":
+        {
+            "values": [5.0, 15.0, 25.0, 30.0, 35.0]
+        }
+    },
+    {
+        "action_value_id": "ion_pulse_wave_radius_value",
+        "action_value":
+        {
+            "values": [7500.0, 7500.0, 7500.0, 7500.0, 7500.0]
+        }
+    }]
+}

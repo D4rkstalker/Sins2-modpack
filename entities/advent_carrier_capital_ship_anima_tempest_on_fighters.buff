@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_force_attack",
+                "target_unit":
+                {
+                    "unit_type": "previous_spawner"
+                }
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_carrier_capital_ship_amplify_energy_buff_on_target_small",
+                        "medium_unit": "advent_carrier_capital_ship_amplify_energy_buff_on_target_small",
+                        "large_unit": "advent_carrier_capital_ship_amplify_energy_buff_on_target_small"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_force_attack"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "anima_tempest_weapon_damage_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_carrier_capital_ship_anima_tempest_ability_hud_icon",
+        "name": "advent_carrier_capital_ship_anima_tempest_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+			{
+				"rendering_type": "single_line",
+				"label_text": "unit_mutation.is_force_attacking",
+				"value_color": "negative"
+			},
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "anima_tempest_weapon_damage_modifier"
+            }]
+        }]
+    }
+
+}

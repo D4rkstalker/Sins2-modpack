@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "distance_between_units_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "previous_spawner"
+                    },
+                    "comparison_type": "greater_than",
+                    "compare_value": "reanimation_apply_buff_radius"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "random_chance",
+                "chance_value": "reanimation_chance_bonus_value"
+            },
+            "actions": [
+			{
+				"action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "create_clones",
+                    "clone_spawn_position":
+                    {
+                        "position_type": "distance_in_direction_from_position",
+                        "distance_value": "fixed_one",
+                        "direction":
+                        {
+                            "direction_type": "unit_cross",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            }
+                        },
+                        "source_position":
+                        {
+                            "position_type": "unit_position",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            }
+                        }
+                    },
+                    "clone_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "clone_count": "fixed_one",
+                    "buff_on_clone": "advent_reanimation_unit_item_on_buff_agent",
+					"override_ownership_unit":
+					{
+						"unit_type": "previous_spawner"
+					}
+                }]
+			}]
+        }
+    }]
+}

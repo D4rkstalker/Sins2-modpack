@@ -1,0 +1,38 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "chastise_missile_max_linear_speed_bonus"
+    },
+    {
+        "buff_unit_modifier_id": "chastise_missile_max_angular_speed_bonus"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_unity_chastise_ability_hud_icon",
+        "name": "advent_unity_chastise_ability_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "chastise_missile_max_linear_speed_bonus"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "chastise_missile_max_angular_speed_bonus"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "reanimation_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+			"constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+					"mutation": "cannot_be_captured_or_cloned"
+                }
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "reanimation_apply_buff_radius",
+        "action_value":
+        {
+            "values": [12000.0]
+        }
+    },
+    {
+        "action_value_id": "reanimation_clone_duration",
+        "action_value":
+        {
+            "values": [300.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [1.0]
+            }
+        }
+    },
+    {
+        "action_value_id": "reanimation_chance_bonus_value",
+        "action_value":
+        {
+            "values": [0.15],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0001]
+            }
+        }
+    }]
+}

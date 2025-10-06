@@ -1,0 +1,33 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "is_artifact": true,
+    "is_finite": true,
+    "hud_icon": "shield_capacitor_hud_icon",
+    "tooltip_picture": "shield_capacitor_tooltip_picture",
+    "name": "unit_item.shield_capacitors_artifact_name",
+    "description": "unit_item.shield_capacitors_artifact_description",
+    "required_unit_tags": [
+        "capital_ship",
+	"super_capital_ship",
+        "titan"
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "defense",
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_shield_points",
+        "value_behavior": "scalar",
+        "values": [1.25]
+    },
+    {
+        "modifier_type": "shield_point_restore_rate",
+        "value_behavior": "scalar",
+        "values": [0.625]
+    },
+    {
+        "modifier_type": "shield_point_restore_scalar_after_damage_taken",
+        "value_behavior": "additive",
+        "values": [0.625]
+    }]
+}

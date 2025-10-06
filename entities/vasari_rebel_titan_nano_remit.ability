@@ -1,0 +1,287 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_rebel_titan_nano_remit",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "nano_remit_cooldown_time_value",
+        "antimatter_cost": "nano_remit_antimatter_cost_value",
+        "hull_cost": "nano_remit_hull_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "improved_titan_nano_emitters"
+                        }
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "nano_remit_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "nano_remit_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "source_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "affect_type": "hull_and_armor_only",
+                    "repair_value": "nano_remit_hull_restore_value"
+                },
+                {
+                    "operator_type": "restore_antimatter",
+                    "antimatter_restore_value": "nano_remit_antimatter_restore_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "vasari_rebel_titan_nano_remit_target_small",
+                            "medium_unit": "vasari_rebel_titan_nano_remit_target_medium",
+                            "large_unit": "vasari_rebel_titan_nano_remit_target_large"
+                        }
+                    }
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "improved_titan_nano_emitters"
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "nano_remit_improved_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "nano_remit_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "repair_damage",
+                    "source_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "affect_type": "hull_only",
+                    "repair_value": "nano_remit_hull_restore_value"
+                },
+                {
+                    "operator_type": "restore_antimatter",
+                    "antimatter_restore_value": "nano_remit_antimatter_restore_value"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "vasari_rebel_titan_nano_remit_target_small",
+                            "medium_unit": "vasari_rebel_titan_nano_remit_target_medium",
+                            "large_unit": "vasari_rebel_titan_nano_remit_target_large"
+                        }
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "ability.0",
+                        "mesh_point_usage": "all",
+                        "effect": "vasari_rebel_titan_nano_remit_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "improved_titan_nano_emitters"
+                        }
+                    },
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "nano_remit_auto_cast_target_filter",
+                        "radius_value": "nano_remit_improved_radius_value",
+                        "target_count_value": "nano_remit_auto_cast_target_count_value"
+                    }]
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "improved_titan_nano_emitters"
+                            }
+                        }
+                    },
+                    {
+                        "constraint_type": "has_valid_targets_in_radius",
+                        "radius_origin_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "nano_remit_auto_cast_target_filter",
+                        "radius_value": "nano_remit_radius_value",
+                        "target_count_value": "nano_remit_auto_cast_target_count_value"
+                    }]
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_rebel_titan_nano_remit_ability_hud_icon",
+        "tooltip_picture": "vasari_rebel_titan_nano_remit_ability_tooltip_picture",
+        "name": "vasari_rebel_titan_nano_remit_ability_name",
+        "description": "vasari_rebel_titan_nano_remit_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "nano_remit_radius_value"
+            },
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "improved_titan_nano_emitters"
+                }
+            },
+            "constraint_passed_values":
+            {
+                "radius": "nano_remit_improved_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "visibility": "upgrade_only",
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "nano_remit_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "nano_remit_hull_restore_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_restore",
+                "value_id": "nano_remit_antimatter_restore_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "nano_remit_radius_value"
+            }]
+        },
+        {
+            "header_text": "vasari_rebel_titan_improved_nano_emitters_item_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "nano_remit_improved_radius_value"
+            }]
+        }]
+    }
+}

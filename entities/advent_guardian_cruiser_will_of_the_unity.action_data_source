@@ -1,0 +1,109 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "will_of_the_unity_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_battle_capital_ship",
+                "advent_battle_psionic_capital_ship",
+				"advent_carrier_capital_ship",
+                "advent_colony_capital_ship",
+				"advent_planet_psionic_capital_ship",
+				"advent_loyalist_titan",
+				"dlc2_advent_loyalist_super_capital_ship",
+				"dlc2_advent_rebel_super_capital_ship",
+				"advent_rebel_titan",
+				"advent_starbase",
+				"advent_heavy_cruiser",
+				"advent_harassment_battle_capital_ship"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_guardian_cruiser_will_of_the_unity",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "weapon_has_target"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "will_of_the_unity_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_battle_capital_ship",
+                "advent_battle_psionic_capital_ship",
+				"advent_carrier_capital_ship",
+                "advent_colony_capital_ship",
+				"advent_planet_psionic_capital_ship",
+				"advent_loyalist_titan",
+				"dlc2_advent_loyalist_super_capital_ship",
+				"dlc2_advent_rebel_super_capital_ship",
+				"advent_rebel_titan",
+				"advent_starbase",
+				"advent_heavy_cruiser",
+				"advent_harassment_battle_capital_ship"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "will_of_the_unity_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "will_of_the_unity_cooldown_time_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "will_of_the_unity_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "will_of_the_unity_range_value",
+        "action_value":
+        {
+            "values": [3000.0]
+        }
+    },
+    {
+        "action_value_id": "will_of_the_unity_spell_power_bonus_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "will_of_the_unity_spell_power_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "will_of_the_unity_spell_power_bonus_value"
+        }
+    }]
+}

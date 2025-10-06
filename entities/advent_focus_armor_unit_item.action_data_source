@@ -1,0 +1,64 @@
+{
+    "version": 0,
+    "level_count": 2,
+    "action_values": [
+    {
+        "action_value_id": "armor_points_bonus_value",
+        "action_value":
+        {
+            "values": [0.40, 0.50],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0002, 0.0003]
+            }
+        }
+    },
+    {
+        "action_value_id": "armor_strength_modifier_value",
+        "action_value":
+        {
+            "values": [8.0, 12.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.125, 0.175]
+            }
+        }
+    },
+    {
+        "action_value_id": "shield_points_modifier_value",
+        "action_value":
+        {
+            "values": [-0.25, -0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "armor_points_bonus_value",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "armor_points_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "armor_strength_bonus_value",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "armor_strength_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "shield_points_negative_value",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "shield_points_modifier_value"
+        }
+    }]
+}

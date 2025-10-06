@@ -1,0 +1,95 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "shield_blessing_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+			"constraints": [
+			{
+				"constraint_type": "composite_not",
+				"constraint": 
+				{
+					"constraint_type": "has_definition",
+					"unit_definition": "advent_mine_strikecraft"
+				}
+			}]
+        }
+    },
+    {
+        "target_filter_id": "shield_blessing_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "friendly"
+			],
+			"constraints": [
+			{
+				"constraint_type": "has_buff",
+				"buff": "advent_carrier_capital_ship_shield_blessing_on_spawner",
+				"include_pending_buffs": true
+			}]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "shield_blessing_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [200.0, 200.0, 200.0, 200.0, 200.0]
+        }
+    },
+    {
+        "action_value_id": "shield_blessing_cooldown_time_value",
+        "action_value":
+        {
+            "values": [300.0, 262.5, 225.0, 206.25, 187.5]
+        }
+    },
+    {
+        "action_value_id": "shield_blessing_duration_value",
+        "action_value":
+        {
+            "values": [90.0, 113.0, 136.0, 147.5, 159.0]
+        }
+    },
+    {
+        "action_value_id": "shield_blessing_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [50000000.0, 50000000.0, 50000000.0, 50000000.0, 50000000.0]
+        }
+    },
+    {
+        "action_value_id": "shield_blessing_shield_points_bonus_value",
+        "action_value":
+        {
+            "values": [100.0, 125.0, 150.0, 162.5, 175.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.5, 0.5, 0.5, 0.5, 0.5]
+            }
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "shield_blessing_shield_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "shield_blessing_shield_points_bonus_value"
+        }
+    }]
+}

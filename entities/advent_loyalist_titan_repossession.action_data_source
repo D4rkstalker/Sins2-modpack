@@ -1,0 +1,137 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "repossession_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+			]
+        }
+    },
+    {
+        "target_filter_id": "assimilated_population_ships_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+		"strikecraft",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "assimilated_population_self_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+				"self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "repossession_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [300.0, 263.0, 226.0, 207.5, 189.0]
+        }
+    },
+    {
+        "action_value_id": "repossession_charge_delay_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    },
+    {
+        "action_value_id": "repossession_cooldown_time_value",
+        "action_value":
+        {
+            "values": [300.0, 240.0, 180.0, 150.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "repossession_range_value",
+        "action_value":
+        {
+            "values": [5000.0, 6000.0, 7000.0, 7500.0, 8000.0]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.15, 0.15, 0.15, 0.15, 0.15]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_development_speed_scalar",
+        "action_value":
+        {
+            "values": [-0.25, -0.25, -0.25, -0.25, -0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_development_cost_scalar",
+        "action_value":
+        {
+            "values": [-0.25, -0.25, -0.25, -0.25, -0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_duration_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0, 600.0, 600.0, 600.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "assimilated_population_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_weapon_damage_scalar"
+        }
+	}],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "assimilated_population_development_speed_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_time",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_development_speed_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "assimilated_population_development_cost_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_price",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_development_cost_scalar"
+        }
+    }]
+}

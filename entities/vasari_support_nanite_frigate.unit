@@ -1,0 +1,158 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 20.0,
+        "box":
+        {
+            "center": [-0.00, -0, 0],
+            "extents": [20.95097, 20.01269, 20.95097]
+        },
+        "collision_rank": 1
+    },
+    "physics":
+    {
+        "can_move_linear": true,
+        "max_linear_speed": 960.0,
+        "time_to_max_linear_speed": 4.0,
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [0.75, 1.25],
+        "can_move_angular": true,
+        "max_angular_speed": 42.0,
+        "time_to_max_angular_speed": 3.0,
+        "max_bank_angle": 35.0,
+        "death_angular_speed_range": [5.0, 10.0],
+        "linear_acceleration_angle": 90.0,
+        "can_strafe_linear": true,
+        "strafe_max_linear_speed": 240.0,
+        "time_to_strafe_max_linear_speed": 10.0,
+        "strafe_max_linear_distance_spatial_radius_scalar": 10.0,
+        "strafe_start_angle": 0.0,
+        "strafe_stop_angle": 180.0,
+        "strafe_speed_start_angle": 10.0,
+        "strafe_max_start_turning_angle": 170.0
+    },
+    "hyperspace": {
+        "speed": 215000.0,
+        "speed_between_stars": 752500.0,
+        "charge_time": 8.0,
+        "charge_time_variance": 1.0,
+        "min_charge_angle": 10.0,
+        "max_charge_angle": 45.0
+    },
+    "move":
+    {
+        "follow_distance": 409.239655
+    },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
+    "ai":
+    {
+        "behaviors": [
+            "auto_follow_unit_attacking_any_or_is_damaged"
+        ],
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"]
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 50.0,
+        "is_always_a_threat": true
+    },
+    "player_ai":
+    {
+        "attack_ship_weight_scalar": 0.1
+    },    
+    "user_interface":
+    {
+        "pip_type": "frigate",
+        "can_ever_be_selected": true,
+        "selection_priority": 300,
+        "has_sub_selection_grouping": true,
+        "selection_group_unit_type": "combat_ship",
+        "can_move": true,
+        "can_attack": true,
+        "can_show_distance_to_plane_line": true,
+        "can_rotate": true
+    },
+    "formation":
+    {
+        "leader_priority": 0,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 1,
+                "group": 0
+            }
+        }
+    },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 1.0,
+        "generic_group_name": "vasari",
+        "generic_counts":
+        {
+            "small_debris": [3, 4]
+        }
+    },
+     "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 0.8,
+        "durability": 0.0,
+        "can_ever_be_resurrected": false,
+        "levels": [
+        {
+            "max_hull_points": 305.0,
+            "hull_point_restore_rate": 1.5,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "max_armor_points": 190.0,
+            "armor_point_restore_rate": 1.2,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_strength": 18.0,
+            "max_shield_points": 255.0,
+            "shield_point_restore_rate": 3.0,
+            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.5
+            },
+            "experience_given_on_death": 24.0
+        }]
+    },
+    "build":
+    {
+        "build_time": 0.0,
+        "price":
+        {},
+        "build_kind": "corvette",
+		"build_radius": 40.0
+    },
+    "target_filter_unit_type": "corvette",
+    "tags": [
+        "corvette"
+    ],
+    "abilities": [
+    {
+        "abilities": [
+            "vasari_support_nanite_frigate_repair_beam"]
+    }],
+	"virtual_supply_cost": 7,
+    "ship_roles": [
+        "attack_ship"
+    ],
+    "skin_groups": [
+    {
+        "skins": [
+            "vasari_support_nanite_frigate"]
+    }],
+    "can_join_fleet": true,
+    "action_effect_size": "small_unit"
+}

@@ -1,0 +1,140 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "flare_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_advent_rebel_super_flare_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "flare_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "flare_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [50.0, 50.0, 50.0, 50.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "flare_auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [4500.0, 4500.0, 4500.0, 4500.0, 4500.0]
+        }
+    },
+    {
+        "action_value_id": "flare_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [20.0, 30.0, 40.0, 45.0, 50.0]
+        }
+    },
+    {
+        "action_value_id": "flare_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0, 120.0, 120.0, 120.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "flare_execution_interval_count_value",
+        "action_value":
+        {
+            "values": [8.0, 8.0, 8.0, 8.0, 8.0]
+        }
+    },
+    {
+        "action_value_id": "flare_radius_value",
+        "action_value":
+        {
+            "values": [4500.0, 4500.0, 4500.0, 4500.0, 4500.0]
+        }
+    },
+    {
+        "action_value_id": "flare_damage_rate_value",
+        "action_value":
+        {
+            "values": [25.0, 50.0, 75.0, 87.5, 100.0]
+        }
+    },
+    {
+        "action_value_id": "flare_final_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_current_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "previous_spawner"
+            },
+            "values": [5.0, 10.0, 15.0, 17.5, 20.0]
+        }
+    },
+    {
+        "action_value_id": "flare_penetration_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "flare_antimatter_removed_value",
+        "action_value":
+        {
+            "transform_type": "per_max_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [-0.001, -0.001, -0.001, -0.001, -0.001]
+            }
+        }
+    }
+]
+}

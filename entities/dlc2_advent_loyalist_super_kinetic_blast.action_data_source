@@ -1,0 +1,157 @@
+{
+    "version": 0,
+    "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "kinetic_blast_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "kinetic_blast_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "kinetic_blast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    },
+    {
+        "target_filter_id": "kinetic_blast_physics_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "kinetic_blast_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0, 105.0, 110.0, 115.0, 125.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_cooldown_time_value",
+        "action_value":
+        {
+            "values": [45.0, 40.0, 35.0, 30.0, 20.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_physics_duration_value",
+        "action_value":
+        {
+            "values": [3.0, 3.0, 3.0, 3.0, 3.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_damage_value",
+        "action_value":
+        {
+            "values": [400.0, 425.0, 450.0, 650.0, 750.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.5, 0.5, 0.5, 0.5, 0.5]
+            }
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_penetration_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_projectile_travel_speed_value",
+        "action_value":
+        {
+            "values": [3000.0, 3000.0, 3000.0, 3000.0, 3000.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_range_value",
+        "action_value":
+        {
+            "values": [10000.0, 10000.0, 10000.0, 10000.0, 10000.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_physics_starting_linear_speed_value",
+        "action_value":
+        {
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_physics_terminal_linear_speed_value",
+        "action_value":
+        {
+            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "kinetic_blast_physics_time_to_terminal_linear_speed_value",
+        "action_value":
+        {
+            "values": [0.75, 0.75, 0.75, 0.75, 0.75]
+        }
+    }]
+}

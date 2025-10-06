@@ -1,0 +1,229 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "vasari_kostura_cannon_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_home_planet"
+            },
+            {
+                "constraint_type": "is_detected"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "vasari_kostura_cannon_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "vasari_kostura_cannon_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+				"corvette",
+				"frigate",
+				"cruiser"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "vasari_kostura_cannon_structure_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "vasari_kostura_cannon_factory_structure_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_unit_factory"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "ability_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "buff_on_self_duration_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_disable_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_pierce_value",
+        "action_value":
+        {
+            "values": [600.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_structure_damage_value",
+        "action_value":
+        {
+            "values": [1500.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_structure_angular_speed_value",
+        "action_value":
+        {
+            "values": [1500.0]
+        }
+    },
+    {
+        "action_value_id": "available_supply_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_structure_disable_duration_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_ship_damage_value",
+        "action_value":
+        {
+            "values": [600.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_ship_disable_duration_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "create_shell_time_value",
+        "action_value":
+        {
+            "values": [6.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "planet_surface_radius",
+        "action_value":
+        {
+            "transform_type": "surface_radius",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "vasari_kostura_cannon_ship_build_rate_scalar",
+        "action_value":
+        {
+            "values": [90001.0]
+        }
+    }],
+    "buff_unit_factory_modifiers": [
+    {
+        "buff_unit_factory_modifier_id": "vasari_kostura_cannon_ship_build_rate_modifier",
+        "buff_unit_factory_modifier":
+        {
+            "modifier_type": "build_time",
+            "value_behavior": "scalar",
+            "value_id": "vasari_kostura_cannon_ship_build_rate_scalar"
+        }
+	}],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "vasari_kostura_cannon_structure_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "additive",
+            "value_id": "vasari_kostura_cannon_structure_angular_speed_value"
+        }
+	}],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "vasari_kostura_cannon_impact_small",
+        "alias_binding":
+        {
+            "particle_effect": "novalith_cannon_impact_asteroid",
+            "sounds": [
+                "explosion_cannonshelltech"]
+        }
+    },
+    {
+        "alias_name": "vasari_kostura_cannon_impact_medium",
+        "alias_binding":
+        {
+            "particle_effect": "novalith_cannon_impact_planet",
+            "sounds": [
+                "explosion_cannonshelltech"]
+        }
+    },
+    {
+        "alias_name": "vasari_kostura_cannon_impact_large",
+        "alias_binding":
+        {
+            "particle_effect": "novalith_cannon_impact_giant_planet",
+            "sounds": [
+                "explosion_cannonshelltech"]
+        }
+    }]
+}

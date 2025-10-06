@@ -1,0 +1,590 @@
+{
+    "version": 0,
+	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_player",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_mutations": [
+        "invulnerable",
+        "can_be_captured"
+    ],
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "advent_colony_frigate_capture_object_metal_mining_rate_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+						},
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"player_type": "buff_owner_player"
+							},
+							"prerequisites": [
+								["advent_upgrade_metal_extraction_0"]
+							]
+						}]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "advent_colony_frigate_capture_object_metal_mining_rate_research_one_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+						},
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"player_type": "buff_owner_player"
+							},
+							"prerequisites": [
+								["advent_upgrade_metal_extraction_1"]
+							]
+						}]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "advent_colony_frigate_capture_object_metal_mining_rate_research_two_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+						},
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"player_type": "buff_owner_player"
+							},
+							"prerequisites": [
+								["advent_upgrade_metal_extraction_2"]
+							]
+						}]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "metal",
+                    "asset_value": "advent_colony_frigate_capture_object_metal_mining_rate_research_three_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "crystal",
+                    "asset_value": "advent_colony_frigate_capture_object_crystal_mining_rate_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+						},
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"player_type": "buff_owner_player"
+							},
+							"prerequisites": [
+								["advent_upgrade_crystal_extraction_0"]
+							]
+						}]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "crystal",
+                    "asset_value": "advent_colony_frigate_capture_object_crystal_mining_rate_research_one_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+						},
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"player_type": "buff_owner_player"
+							},
+							"prerequisites": [
+								["advent_upgrade_crystal_extraction_1"]
+							]
+						}]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "crystal",
+                    "asset_value": "advent_colony_frigate_capture_object_crystal_mining_rate_research_two_additive"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+						"constraints": [
+						{
+							"constraint_type": "unit_passes_target_filter",
+							"unit":
+							{
+								"unit_type": "operand_destination"
+							},
+							"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+						},
+						{
+							"constraint_type": "research_prerequisites_are_met",
+							"player":
+							{
+								"player_type": "buff_owner_player"
+							},
+							"prerequisites": [
+								["advent_upgrade_crystal_extraction_2"]
+							]
+						}]
+                    },
+                    "operator_type": "give_assets",
+                    "asset_type": "crystal",
+                    "asset_value": "advent_colony_frigate_capture_object_crystal_mining_rate_research_three_additive"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "first_spawner"
+                        }
+                    }
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "neutral_crystal_extractor_hud_icon",
+        "name": "neutral_crystal_extractor.name",
+		"description": "neutral_crystal_extractor.desc",
+        "is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_upgrade_metal_extraction_0"]
+						]
+					}
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_metal_mining_rate_additive",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "buff_owner_player"
+					},
+					"prerequisites": [
+						["advent_upgrade_metal_extraction_0"]
+					]
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_upgrade_metal_extraction_1"]
+						]
+					}
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_metal_mining_rate_additive_research_one_gui",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "buff_owner_player"
+					},
+					"prerequisites": [
+						["advent_upgrade_metal_extraction_1"]
+					]
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_upgrade_metal_extraction_2"]
+						]
+					}
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_metal_mining_rate_additive_research_two_gui",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_metal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "buff_owner_player"
+					},
+					"prerequisites": [
+						["advent_upgrade_metal_extraction_2"]
+					]
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_metal_mining_rate_additive_research_three_gui",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_upgrade_crystal_extraction_0"]
+						]
+					}
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_crystal_mining_rate_additive",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "buff_owner_player"
+					},
+					"prerequisites": [
+						["advent_upgrade_crystal_extraction_0"]
+					]
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_upgrade_crystal_extraction_1"]
+						]
+					}
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_crystal_mining_rate_additive_research_one_gui",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "buff_owner_player"
+					},
+					"prerequisites": [
+						["advent_upgrade_crystal_extraction_1"]
+					]
+				},
+				{
+					"constraint_type": "composite_not",
+					"constraint":
+					{
+						"constraint_type": "research_prerequisites_are_met",
+						"player":
+						{
+							"player_type": "buff_owner_player"
+						},
+						"prerequisites": [
+							["advent_upgrade_crystal_extraction_2"]
+						]
+					}
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_crystal_mining_rate_additive_research_two_gui",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        },
+        {
+			"is_visible_constraint": 
+			{
+				"constraint_type": "composite_and",
+				"constraints": [
+				{
+					"constraint_type": "unit_passes_target_filter",
+					"unit":
+					{
+						"unit_type": "current_spawner"
+					},
+					"target_filter_id": "advent_colony_frigate_capture_object_crystal_asteroid_target_filter"
+				},
+				{
+					"constraint_type": "research_prerequisites_are_met",
+					"player":
+					{
+						"player_type": "buff_owner_player"
+					},
+					"prerequisites": [
+						["advent_upgrade_crystal_extraction_2"]
+					]
+				}]
+			},
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.asteroid_extraction_rate_label",
+                "value_id": "advent_colony_frigate_capture_object_crystal_mining_rate_additive_research_three_gui",
+				"value_color": "positive",
+				"value_float_format": "two_decimal_place_with_sign"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "version": 0,
+	"make_dead_on_parent_buff_made_dead": true,
+	"make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "radius_value"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "can_ever_move"
+                    }
+                },
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "can_ever_move"
+                }
+            },
+            "actions": [
+            {
+                "action_type": "stop_brake_to_stop"
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_use_active_abilities",
+        "disable_can_use_weapons",
+		"disable_can_passively_regenerate_hull",
+		"disable_can_passively_regenerate_armor",
+		"disable_can_passively_regenerate_shields",
+		"disable_can_have_shields_burst_restored",
+		"disable_can_update_build_progress",
+		"disable_can_update_unit_production",
+		"disable_can_hyperspace",
+		"disable_engines"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_offensive_support_cruiser_distortion_field_hud_icon",
+        "name": "vasari_offensive_support_cruiser_distortion_field_name",
+		"is_visible_within_unit_tooltip": true,
+		"visibility_scope": "negative"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "version": 0,
+    "action_data_source": "advent_reanimation_unit_item",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "advent_reanimation_unit_item_on_self"
+    },
+    "gui":
+    {
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "reanimation_apply_buff_radius"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.random_chance",
+                "value_id": "reanimation_chance_bonus_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_two_decimal_place_with_sign"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "reanimation_clone_duration",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

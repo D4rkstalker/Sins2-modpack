@@ -1,0 +1,56 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 1,
+    "field": "civilian_industry",
+    "field_coord": [2, 8],
+    "research_time": 120.0,
+    "price":
+    {
+        "credits": 700.0,
+        "metal": 100.0,
+        "crystal": 125.0
+    },
+    "prerequisites": [
+        ["trader_unlock_trade_port"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+				"unit_definition": "trader_trade_ship"
+            }]
+        },
+        "action_data_source": "trader_volatile_cargo",
+        "buff": "trader_volatile_cargo",
+		"tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.damage",
+            "value_id": "trader_volatile_cargo_damage_value",
+			"value_color": "negative"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.armor_penetration",
+            "value_id": "trader_volatile_cargo_pierce_value",
+			"value_color": "negative"
+        },
+		{
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.radius",
+            "value_id": "trader_volatile_cargo_damage_radius_value"
+		}]
+	}],
+    "name": "trader_volatile_cargo_research_subject_name",
+    "name_uppercase": "trader_volatile_cargo_research_subject_name_uppercase",
+    "description": "trader_volatile_cargo_research_subject_description",
+    "hud_icon": "trader_volatile_cargo_research_subject_hud_icon"
+}

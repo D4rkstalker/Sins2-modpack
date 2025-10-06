@@ -1,0 +1,484 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "starbase"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 119348.289701,
+        "min_camera_distance": 2499.904305,
+        "gui":
+        {
+            "hud_icon": "advent_starbase_hud_icon",
+            "hud_monochrome_icon": "advent_starbase_main_view_icon",
+            "hud_picture": "advent_starbase_hud_picture",
+            "tooltip_picture": "advent_starbase_tooltip_picture",
+            "name": "advent_starbase_name",
+            "description": "advent_starbase_desc",
+			"hud_selection_window_icon_offet": [0, 4]
+        },
+        "unit_mesh":
+        {
+            "mesh": "advent_starbase",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "child_mesh_alias_bindings":
+        {
+            "map": [
+            {
+                "mesh_alias_name": "advent_asset_titan_hvyplasma_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_titan_hvyplasma_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_titan_hvyplasma_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_titan_hvyplasma_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_titan_medlaser_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_titan_medlaser_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_titan_medlaser_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_titan_medlaser_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_titan_pdlaser_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_titan_pdlaser_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_titan_pdlaser_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_titan_pdlaser_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_starbase_component_armor",
+                "mesh_definition":
+                {
+                    "mesh": "advent_starbase_component_armor",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_starbase_component_evangelization_node",
+                "mesh_definition":
+                {
+                    "mesh": "advent_starbase_component_evangelization_node",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_starbase_component_hangar",
+                "mesh_definition":
+                {
+                    "mesh": "advent_starbase_component_hangar",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_starbase_component_missile",
+                "mesh_definition":
+                {
+                    "mesh": "advent_starbase_component_missile",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_starbase_component_shield",
+                "mesh_definition":
+                {
+                    "mesh": "advent_starbase_component_shield",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            }]
+        },
+        "main_view_icon":
+        {
+            "group": "starbase",
+            "icon": "advent_starbase_main_view_icon",
+			"extra_rotation": 270.0,
+            "selected_icon": "advent_starbase_main_view_icon_selected",
+            "sub_selected_icon": "advent_starbase_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 30,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_vapor_pushed_out_damage"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "advent_vapor_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "advent_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "advent_damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "advent_damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "level_up_effect": "titan_levelup",
+            "level_up_sound": "capitalship_levelup",
+            "shield_effect": "advent_starbase",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "advent_starbase_laser_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_energy_medium_hithull",
+                        "weapon_impact_energy_medium_hithull_01",
+                        "weapon_impact_energy_medium_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_laser_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_generic_medium_hitshields",
+                        "weapon_impact_generic_medium_hitshields_01",
+                        "weapon_impact_generic_medium_hitshields_02",
+                        "weapon_impact_generic_medium_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_laser_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_energy_medium_laser",
+                        "weapon_muzzle_psi_energy_medium_laser_01",
+                        "weapon_muzzle_psi_energy_medium_laser_02",
+                        "weapon_muzzle_psi_energy_medium_laser_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_laser_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt"
+                }
+            },
+            {
+                "alias_name": "advent_starbase_missile_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_capital_missile_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_heavy_missile",
+                        "weapon_muzzle_psi_heavy_missile_01",
+                        "weapon_muzzle_psi_heavy_missile_02",
+                        "weapon_muzzle_psi_heavy_missile_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_plasma_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_heavy_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_energy_heavy_hithull",
+                        "weapon_impact_energy_heavy_hithull_01",
+                        "weapon_impact_energy_heavy_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_plasma_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_heavy_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_generic_heavy_hitshields",
+                        "weapon_impact_generic_heavy_hitshields_01",
+                        "weapon_impact_generic_heavy_hitshields_02",
+                        "weapon_impact_generic_heavy_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_plasma_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_bolt_heavy_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_energy_heavy_plasma",
+                        "weapon_muzzle_psi_energy_heavy_plasma_01",
+                        "weapon_muzzle_psi_energy_heavy_plasma_02",
+                        "weapon_muzzle_psi_energy_heavy_plasma_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_plasma_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_heavy_bolt"
+                }
+            },
+            {
+                "alias_name": "advent_starbase_point_defense_laser_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_impact_pd",
+                    "sounds": [
+                        "weapon_impact_energy_pointdefense_hithull",
+                        "weapon_impact_energy_pointdefense_hithull_01",
+                        "weapon_impact_energy_pointdefense_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_point_defense_laser_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_impact_pd",
+                    "sounds": [
+                        "weapon_impact_generic_pointdefense_hitshields",
+                        "weapon_impact_generic_pointdefense_hitshields_01",
+                        "weapon_impact_generic_pointdefense_hitshields_02",
+                        "weapon_impact_generic_pointdefense_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_point_defense_laser_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_pd_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_energy_pd",
+                        "weapon_muzzle_psi_energy_pd_01",
+                        "weapon_muzzle_psi_energy_pd_02",
+                        "weapon_muzzle_psi_energy_pd_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_starbase_point_defense_laser_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_pd"
+                }
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "spawned":
+                {
+                    "neutral": [
+                        "advent_starbase_spawned_neutral_0"]
+                },
+                "selected":
+                {
+                    "neutral": [
+                        "advent_starbase_selected_neutral_0",
+                        "advent_starbase_selected_neutral_1",
+                        "advent_starbase_selected_neutral_2"
+                    ],
+                    "scared": [
+                        "advent_starbase_selected_scared_0_placeholder",
+                        "advent_starbase_selected_scared_1_placeholder",
+                        "advent_starbase_selected_scared_2_placeholder"
+                    ]
+                },
+                "order_issued":
+                {
+                    "neutral": [
+                        "advent_starbase_order_issued_neutral_0",
+                        "advent_starbase_order_issued_neutral_1",
+                        "advent_starbase_order_issued_neutral_2"
+                    ],
+                    "scared": [
+                        "advent_starbase_order_issued_scared_0_placeholder",
+                        "advent_starbase_order_issued_scared_1_placeholder",
+                        "advent_starbase_order_issued_scared_2_placeholder"
+                    ]
+                },
+                "attack_order_issued":
+                {
+                    "neutral": [
+                        "advent_starbase_attack_order_issued_neutral_0",
+                        "advent_starbase_attack_order_issued_neutral_1",
+                        "advent_starbase_attack_order_issued_neutral_2",
+                        "advent_starbase_attack_order_issued_neutral_3_placeholder"
+                    ],
+                    "scared": [
+                        "advent_starbase_attack_order_issued_scared_0_placeholder",
+                        "advent_starbase_attack_order_issued_scared_1_placeholder",
+                        "advent_starbase_attack_order_issued_scared_2_placeholder",
+                        "advent_starbase_attack_order_issued_scared_3_placeholder"
+                    ],
+                    "smug": [
+                        "advent_starbase_attack_order_issued_smug_0_placeholder",
+                        "advent_starbase_attack_order_issued_smug_1_placeholder",
+                        "advent_starbase_attack_order_issued_smug_2_placeholder",
+                        "advent_starbase_attack_order_issued_smug_3_placeholder"
+                    ]
+                },
+                "shields_down":
+                {
+                    "neutral": [
+                        "advent_starbase_shields_down_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_starbase_shields_down_scared_0_placeholder"]
+                },
+                "armor_down":
+                {
+                    "scared": [
+                        "advent_starbase_armor_down_scared_0"]
+                },
+                "became_crippled":
+                {
+                    "neutral": [
+                        "advent_starbase_became_crippled_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_starbase_became_crippled_scared_0_placeholder"]
+                },
+                "destroyed":
+                {
+                    "neutral": [
+                        "advent_starbase_destroyed_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_starbase_destroyed_scared_0_placeholder"]
+                },
+                "ship_component_finished_building":
+                {
+                    "neutral": [
+                        "advent_starbase_ship_component_finished_building_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_starbase_ship_component_finished_building_scared_0_placeholder"
+                    ]
+                },
+                "ability_cooldown_is_not_completed":
+                {
+                    "neutral": [
+                        "advent_starbase_ability_cooldown_is_not_completed_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_starbase_ability_cooldown_is_not_completed_scared_0_placeholder"
+                    ]
+                },
+                "insufficient_antimatter":
+                {
+                    "neutral": [
+                        "advent_starbase_insufficient_antimatter_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_starbase_insufficient_antimatter_scared_0_placeholder"
+                    ]
+                }
+            }
+        },
+        "death_sequence_group": "advent_starbase1"
+    }]
+}

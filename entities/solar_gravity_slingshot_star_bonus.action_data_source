@@ -1,0 +1,84 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "solar_gravity_slingshot_star_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "solar_regeneration_star_bonus_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "solar_gravity_slingshot_angular_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "solar_gravity_slingshot_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "solar_regeneration_antimatter_regeneration_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "solar_gravity_slingshot_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "solar_gravity_slingshot_angular_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "solar_gravity_slingshot_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "solar_gravity_slingshot_linear_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "solar_regeneration_antimatter_regeneration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "solar_regeneration_antimatter_regeneration_bonus_value"
+        }
+    }]
+}

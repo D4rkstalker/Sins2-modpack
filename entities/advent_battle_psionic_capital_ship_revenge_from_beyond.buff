@@ -1,0 +1,114 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "active_duration": "revenge_from_beyond_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_battle_capital_ship_revenge_from_beyond_buff_small",
+                        "medium_unit": "advent_battle_capital_ship_revenge_from_beyond_buff_medium",
+                        "large_unit": "advent_battle_capital_ship_revenge_from_beyond_buff_large"
+                    }
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+					"unit_constraint":
+					{
+						"constraint_type": "has_missing_hull",
+						"percentage_missing_threshold": 0.20
+					}
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "include_radius_origin_unit": false,
+                "radius_value": "revenge_from_beyond_damage_radius_value",
+                "max_target_count_value": "revenge_from_beyond_damage_target_count_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "revenge_from_beyond_damage_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "revenge_from_beyond_damage_value",
+                    "penetration_value": "common_ability_damage_penetration_value",
+                    "can_damage_be_propagated": false
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_battle_psionic_capital_ship_revenge_from_beyond_ability_hud_icon",
+        "name": "advent_battle_psionic_capital_ship_revenge_from_beyond_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+		{
+			"header_text": "tooltip.on_unit_destroyed_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "revenge_from_beyond_damage_value",
+				"ratio_float_format": "two_decimal_place_with_sign",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "revenge_from_beyond_damage_target_count_value"
+            }]
+        }]
+    }
+}

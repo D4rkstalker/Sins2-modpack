@@ -1,0 +1,101 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "emp_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_robotics_cruiser_emp_droids_slow",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "emp_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "torpedo"
+            ],
+            "ownerships": [
+                "enemy"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cost_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [3500.0]
+        }
+    },
+    {
+        "action_value_id": "speed_modifier_value",
+        "action_value":
+        {
+            "values": [-0.75]
+        }
+    },
+    {
+        "action_value_id": "travel_speed_value",
+        "action_value":
+        {
+            "values": [4000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "emp_droids_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "speed_modifier_value"
+        }
+    }]
+}

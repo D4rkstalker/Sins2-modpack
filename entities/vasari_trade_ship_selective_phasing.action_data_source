@@ -1,0 +1,61 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "selective_phasing_target_filter",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "vasari_trade_ship"
+            ],
+            "ownerships": [
+				"self"
+			],
+            "constraints": [
+            {
+                "constraint_type": "has_missing_armor",
+				"percentage_missing_threshold": 1.0
+            },
+            {
+                "constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "vasari_trade_ship_selective_phasing_lockout"
+				}
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "selective_phasing_lockout_duration",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "selective_phasing_duration",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "selective_phasing_max_linear_speed_scalar",
+        "action_value":
+        {
+            "values": [-0.6]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "selective_phasing_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "selective_phasing_max_linear_speed_scalar"
+        }
+    }]
+}

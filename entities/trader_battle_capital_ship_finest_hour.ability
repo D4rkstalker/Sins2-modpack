@@ -1,0 +1,92 @@
+{
+    "version": 0,
+    "action_data_source": "trader_battle_capital_ship_finest_hour",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_battle_capital_ship_finest_hour_on_self"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "trader_battle_capital_ship_finest_hour_buff_start"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_recently_fired_weapon"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_battle_capital_ship_finest_hour_ability_hud_icon",
+        "name": "trader_battle_capital_ship_finest_hour_ability_name",
+        "description": "trader_battle_capital_ship_finest_hour_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.splash_damage",
+                "value_id": "splash_damage_value",
+                "value_float_format": "percentage_one_decimal_place",
+				"value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "ability_cooldown_duration"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "antimatter_restore_rate"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "hull_point_restore_rate_value",
+                "value_float_format": "no_decimal_place_with_sign",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

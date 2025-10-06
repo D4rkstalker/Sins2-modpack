@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "replace_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "kinetic_blast_physics_duration_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_repel_from_unit"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_repel_from_unit",
+                "repulsion_origin_unit":
+                {
+                    "unit_type": "previous_spawner"
+                },
+                "starting_linear_speed_value": "kinetic_blast_physics_starting_linear_speed_value",
+                "terminal_linear_speed_value": "kinetic_blast_physics_terminal_linear_speed_value",
+                "time_to_terminal_linear_speed_value": "kinetic_blast_physics_time_to_terminal_linear_speed_value"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "stop_repel_from_unit"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_loyalist_super_kinetic_blast_hud_icon",
+        "name": "dlc2_advent_loyalist_super_kinetic_blast_ability_name",
+		"visibility_scope": "negative",
+		"is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.push_speed",
+                "value_id": "kinetic_blast_physics_terminal_linear_speed_value"
+            }]
+        }]
+    }
+}

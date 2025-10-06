@@ -1,0 +1,1769 @@
+{
+    "artifact_to_planet_count_ratio": 0.3,
+    "chance_of_first_planet_bonus": 0.7,
+    "chance_of_second_planet_bonus": 0.35,
+    "planets": [
+        "desert_home_planet",
+        "ferrous_home_planet",
+        "terran_home_planet",
+		"greenhouse_planet"
+    ],
+    "random_planet_bonuses": [
+		"modern_society_planet_bonus",
+		"metal_miners_planet_bonus",
+		"interstellar_exchange_planet_bonus",
+		"frequent_raiders_planet_bonus",
+		"crystal_miners_planet_bonus",
+		"conductive_interior_planet_bonus",
+		"chaotic_society_planet_bonus",
+		"weapons_test_grounds_planet_bonus",
+		"virtual_reality_park_planet_bonus",
+		"vacation_center_planet_bonus",
+		"tundra_farms_planet_bonus",
+		"thaw_cells_planet_bonus",
+		"strong_magnetic_field_planet_bonus",
+		"strict_security_planet_bonus",
+		"signal_absorption_planet_bonus",
+		"satellite_infrastructure_planet_bonus",
+		"salvager_outpost_planet_bonus",
+		"rare_metal_deposits_planet_bonus",
+		"population_boom_planet_bonus",
+		"planetary_corruption_planet_bonus",
+		"penal_colony_planet_bonus",
+		"pacifist_society_planet_bonus",
+		"ordered_society_planet_bonus",
+		"unstable_gas_planet_bonus"
+	],
+    "artifacts": [],
+	"overwrite_planet_types": true,
+	"planet_types": [
+    {
+        "name": "asteroid",
+        "localized_name": "planet_type_name.asteroid",
+        "tooltip_icon": "asteroid_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 10,
+            "population_maximum": 40,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.10
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.10
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ice_asteroid",
+        "localized_name": "planet_type_name.ice_asteroid",
+        "tooltip_icon": "ice_crystal_asteroid_tooltip_icon",
+        "population":
+        {
+            "starting_population": 20,
+            "population_maximum": 50,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        }]
+    },
+    {
+        "name": "hive_asteroid",
+        "localized_name": "planet_type_name.hive_asteroid",
+        "tooltip_icon": "planet_hive_tooltip_icon",
+        "can_have_planet_elevators": false,
+        "population":
+        {
+            "starting_population": 120,
+            "population_maximum": 180,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        }]
+    },
+	{
+        "name": "barren",
+        "localized_name": "planet_type_name.barren",
+        "tooltip_icon": "planet_barren_tooltip_icon",
+        "population":
+        {
+            "starting_population": 80,
+            "population_maximum": 185,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                    {
+                        "exotic_type": "defense",
+                        "count": [1, 1]
+                    }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        }]
+    },
+    {
+        "name": "city",
+        "localized_name": "planet_type_name.city",
+        "tooltip_icon": "tec_city_planet_tooltip_icon",
+        "population":
+        {
+            "starting_population": 500,
+            "population_maximum": 1500,
+            "growth_rate": 0.075,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        }]
+    },
+    {
+        "name": "crystalline",
+        "localized_name": "planet_type_name.crystalline",
+        "tooltip_icon": "crystalline_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 100,
+            "population_maximum": 200,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.45
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.25
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "utility",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.65
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "utility",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.35
+                }]
+            }
+        }]
+    },
+    {
+        "name": "desert",
+        "localized_name": "planet_type_name.desert",
+        "tooltip_icon": "desert_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population":300,
+            "population_maximum": 400,
+            "growth_rate": 0.06,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.45
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.25
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.25
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.55
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ferrous",
+        "localized_name": "planet_type_name.ferrous",
+        "tooltip_icon": "ferrous_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 120,
+            "population_maximum": 240,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.45
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                }]
+            }
+        }]
+    },
+    {
+        "name": "gas_giant",
+        "localized_name": "planet_type_name.gas_giant",
+        "tooltip_icon": "gas_giant_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 0,
+            "population_maximum": 0,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.3
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.4
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "ultimate",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.5
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ice",
+        "localized_name": "planet_type_name.ice",
+        "tooltip_icon": "ice_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 50,
+            "population_maximum": 145,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                    {
+                        "exotic_type": "utility",
+                        "count": [1, 1]
+                    }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                }]
+            }
+        }]
+    },
+	{
+        "name": "irradiated",
+        "localized_name": "planet_type_name.irradiated",
+        "tooltip_icon": "irradiated_planet_tooltip_icon",
+        "population":
+        {
+            "starting_population": 25,
+            "population_maximum": 90,
+            "growth_rate": 0.04,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                    {
+                        "exotic_type": "defense",
+                        "count": [1, 1]
+                    }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        }]
+    },
+	{
+        "name": "magnetic",
+        "localized_name": "planet_type_name.magnetic",
+        "tooltip_icon": "magnetic_planet_tooltip_icon",
+        "population":
+        {
+            "starting_population": 100,
+            "population_maximum": 250,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.45
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                }]
+            }
+        }]
+    },
+    {
+        "name": "moon",
+        "localized_name": "planet_type_name.moon",
+        "tooltip_icon": "moon_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 40,
+            "population_maximum": 90,
+            "growth_rate": 0.04,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ice_moon",
+        "localized_name": "planet_type_name.ice_moon",
+        "tooltip_icon": "ice_moon_tooltip_icon",
+        "population":
+        {
+            "starting_population": 30,
+            "population_maximum": 70,
+            "growth_rate": 0.04,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "can_have_planet_elevators": false,
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                }]
+            }
+        }]
+    },
+    {
+        "name": "volcanic_moon",
+        "localized_name": "planet_type_name.volcanic_moon",
+        "tooltip_icon": "volcanic_moon_tooltip_icon",
+        "population":
+        {
+            "starting_population": 15,
+            "population_maximum": 55,
+            "growth_rate": 0.04,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "can_have_planet_elevators": false,
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                }]
+            }
+        }]
+    },
+    {
+        "name": "oceanic",
+        "localized_name": "planet_type_name.oceanic",
+        "tooltip_icon": "oceanic_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 350,
+            "population_maximum": 425,
+            "growth_rate": 0.06,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.45
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.35
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.35
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ship_graveyard",
+        "localized_name": "planet_type_name.ship_graveyard",
+        "tooltip_icon": "ship_graveyard_tooltip_icon",
+        "population":
+        {
+            "starting_population": 35,
+            "population_maximum": 75,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                }]
+            }
+        }]
+    },
+    {
+        "name": "swamp",
+        "localized_name": "planet_type_name.swamp",
+        "tooltip_icon": "swamp_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 200,
+            "population_maximum": 350,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.3
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.45
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        }]
+    },
+    {
+        "name": "terran",
+        "localized_name": "planet_type_name.terran",
+        "tooltip_icon": "terran_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 550,
+            "population_maximum": 700,
+            "growth_rate": 0.06,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        }]
+    },
+    {
+        "name": "volcanic",
+        "localized_name": "planet_type_name.volcanic",
+        "tooltip_icon": "volcanic_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 30,
+            "population_maximum": 120,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                    {
+                        "exotic_type": "offense",
+                        "count": [1, 1]
+                    }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                }]
+            }
+        }]
+    },
+    {
+        "name": "pirate_base",
+        "localized_name": "planet_type_name.pirate_base",
+        "tooltip_icon": "pirate_base_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 25,
+            "population_maximum": 50,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [5, 5]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                }]
+            }
+        }]
+    },
+    {
+        "name": "greenhouse",
+        "localized_name": "planet_type_name.greenhouse",
+        "tooltip_icon": "greenhouse_planet_0_tooltip_icon",
+        "population":
+        {
+            "starting_population": 70,
+            "population_maximum": 150,
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.45
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.35
+                }]
+            }
+        }]
+    },
+    {
+        "name": "desert_home",
+        "localized_name": "planet_type_name.desert_home",
+        "tooltip_icon": "desert_planet_0_tooltip_icon",
+		"can_have_artifacts": false,
+        "population":
+        {
+            "starting_population": 300,
+            "population_maximum": 400,
+            "growth_rate": 0.06,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.45
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.25
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.25
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.55
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.05
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ferrous_home",
+        "localized_name": "planet_type_name.ferrous_home",
+        "tooltip_icon": "ferrous_planet_0_tooltip_icon",
+		"can_have_artifacts": false,
+        "population":
+        {
+            "starting_population": 120,
+            "population_maximum": 240,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.45
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.35
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.35
+                }]
+            }
+        }]
+    },
+    {
+        "name": "terran_home",
+        "localized_name": "planet_type_name.terran_home",
+        "tooltip_icon": "terran_planet_0_tooltip_icon",
+		"can_have_artifacts": false,
+        "population":
+        {
+            "starting_population": 550,
+            "population_maximum": 700,
+            "growth_rate": 0.06,
+            "growth_rate_if_above_max_population": -0.1
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.15
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.15
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        }]
+	}]
+}

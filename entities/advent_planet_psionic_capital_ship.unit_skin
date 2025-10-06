@@ -1,0 +1,617 @@
+{
+    "version": 0,
+    "name":
+    {
+        "group": "capital_ship"
+    },
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 13844.127559,
+        "min_camera_distance": 1079.849611,
+        "gui":
+        {
+            "hud_icon": "advent_planet_psionic_capital_ship_hud_icon",
+            "hud_monochrome_icon": "advent_planet_psionic_capital_ship_main_view_icon",
+            "hud_picture": "advent_planet_psionic_capital_ship_hud_picture",
+            "tooltip_picture": "advent_planet_psionic_capital_ship_tooltip_picture",
+            "name": "advent_planet_psionic_capital_ship_name",
+            "description": "advent_planet_psionic_capital_ship_description",
+            "hud_selection_window_icon_offet": [-10, 0]
+        },
+        "unit_mesh":
+        {
+            "mesh": "advent_planet_psionic_capital_ship",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "child_mesh_alias_bindings":
+        {
+            "map": [
+            {
+                "mesh_alias_name": "advent_asset_hvyplasma_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_hvyplasma_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_hvyplasma_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_hvyplasma_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_medlaser_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_medlaser_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_medlaser_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_medlaser_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "advent_asset_psi_ball",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_psi_ball",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            }]
+        },
+        "main_view_icon":
+        {
+            "group": "capital_ship",
+            "icon": "advent_planet_psionic_capital_ship_main_view_icon",
+            "selected_icon": "advent_planet_psionic_capital_ship_main_view_icon_selected",
+            "sub_selected_icon": "advent_planet_psionic_capital_ship_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "exhaust_effects":
+            {
+                "particle_effects": [
+                {
+                    "particle_effect": "advent_trail_battle_psionic_capital"
+                }]
+            },
+            "hyperspace_effects":
+            {
+                "charge_effect": "advent_capital_ship_phase_portal",
+                "charge_effect_between_stars": "advent_capital_ship_interstellar_phase_portal",
+                "charge_effect_destabilized": "advent_capital_ship_phase_portal",
+                "travel_effect": "advent_capital_phase_travel",
+                "travel_effect_between_stars": "advent_capital_interstellar_phase_travel",
+                "travel_effect_destabilized": "advent_capital_phase_travel",
+                "exit_effect": "advent_capital_phase_exit",
+                "charge_sound": "hyperspace_chargeup",
+                "enter_sound": "hyperspace_entry",
+                "exit_sound": "hyperspace_exit"
+            },
+            "damage_effects":
+            {
+                "max_damage_effect_count": 20,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_vapor_damage",
+                    "sound": "ambient_loop_airdecompression"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "advent_vapor_pushed_out_damage",
+                    "sound": "ambient_loop_tech_escaping_gas"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "advent_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "advent_damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "advent_damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "advent_planet_psionic_capital_ship_ambient"
+            }],
+            "level_up_effect": "capitalship_levelup",
+            "level_up_sound": "capitalship_levelup",
+            "shield_effect": "advent_planet_psionic_capital_ship",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_guidance_activate",
+                "alias_binding":
+                {
+                    "particle_effect": "guidance_cast",
+                    "sounds": [
+                        "ability_activate_psi_guidance"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_guidance_buff_large",
+                "alias_binding":
+                {
+                    "particle_effect": "guidance_large"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_guidance_buff_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "guidance_medium"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_guidance_buff_small",
+                "alias_binding":
+                {
+                    "particle_effect": "guidance_small"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_laser_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_energy_medium_hithull",
+                        "weapon_impact_energy_medium_hithull_01",
+                        "weapon_impact_energy_medium_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_laser_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_generic_medium_hitshields",
+                        "weapon_impact_generic_medium_hitshields_01",
+                        "weapon_impact_generic_medium_hitshields_02",
+                        "weapon_impact_generic_medium_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_laser_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_energy_medium_laser",
+                        "weapon_muzzle_psi_energy_medium_laser_01",
+                        "weapon_muzzle_psi_energy_medium_laser_02",
+                        "weapon_muzzle_psi_energy_medium_laser_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_laser_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_laser_bolt"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_missile_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_capital_missile_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_light_missile",
+                        "weapon_muzzle_psi_light_missile_01",
+                        "weapon_muzzle_psi_light_missile_02",
+                        "weapon_muzzle_psi_light_missile_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_planet_bombing_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_nuke",
+                    "sounds": [
+                        "weapon_impact_psi_planetbomb"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_planet_bombing_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_nuke",
+                    "sounds": [
+                        "weapon_impact_psi_planetbomb"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_planet_bombing_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_planet_bombing_weapon_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_planetbomb",
+                        "weapon_muzzle_psi_planetbomb_01"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_planet_bombing_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_nuke_bolt_capital_ship"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_plasma_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_heavy_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_energy_heavy_hithull",
+                        "weapon_impact_energy_heavy_hithull_01",
+                        "weapon_impact_energy_heavy_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_plasma_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_heavy_bolt_impact",
+                    "sounds": [
+                        "weapon_impact_generic_heavy_hitshields",
+                        "weapon_impact_generic_heavy_hitshields_01",
+                        "weapon_impact_generic_heavy_hitshields_02",
+                        "weapon_impact_generic_heavy_hitshields_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_plasma_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_bolt_heavy_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_psi_energy_heavy_plasma",
+                        "weapon_muzzle_psi_energy_heavy_plasma_01",
+                        "weapon_muzzle_psi_energy_heavy_plasma_02",
+                        "weapon_muzzle_psi_energy_heavy_plasma_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_plasma_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_plasma_heavy_bolt"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_provoke_hysteria_active",
+                "alias_binding":
+                {
+                    "sounds": [
+                        "ability_charge_psi_provoke_hysteria"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_provoke_hysteria_buff_large",
+                "alias_binding":
+                {
+                    "particle_effect": "provoke_hysteria_gas_giant",
+                    "sounds": [
+                        "ambient_loop_psi_provoke_hysteria"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_provoke_hysteria_buff_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "provoke_hysteria_planet",
+                    "sounds": [
+                        "ambient_loop_psi_provoke_hysteria"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_provoke_hysteria_buff_small",
+                "alias_binding":
+                {
+                    "particle_effect": "provoke_hysteria_asteroid",
+                    "sounds": [
+                        "ambient_loop_psi_provoke_hysteria"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_provoke_hysteria_charging",
+                "alias_binding":
+                {
+                    "particle_effect": "provoke_hysteria_charge",
+                    "sounds": [
+                        "ability_charge_psi_provoke_hysteria"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_quell_activate_on_self",
+                "alias_binding":
+                {
+                    "particle_effect": "quell_activate"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_quell_activate_on_spawner",
+                "alias_binding":
+                {
+                    "particle_effect": "quell_activate"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_quell_buff_large",
+                "alias_binding":
+                {
+                    "particle_effect": "quell_status_large"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_quell_buff_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "quell_status_medium"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_quell_buff_small",
+                "alias_binding":
+                {
+                    "particle_effect": "quell_status_small"
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_reverie_activate",
+                "alias_binding":
+                {
+                    "particle_effect": "reverie_cast",
+                    "sounds": [
+                        "ability_activate_psi_reverie"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_reverie_buff_large",
+                "alias_binding":
+                {
+                    "particle_effect": "reverie_large",
+                    "sounds": [
+                        "ambient_loop_psi_reverie"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_reverie_buff_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "reverie_medium",
+                    "sounds": [
+                        "ambient_loop_psi_reverie"]
+                }
+            },
+            {
+                "alias_name": "advent_planet_psionic_capital_ship_reverie_buff_small",
+                "alias_binding":
+                {
+                    "particle_effect": "reverie_small",
+                    "sounds": [
+                        "ambient_loop_psi_reverie"]
+                }
+            }]
+        },
+        "sounds":
+        {
+            "move_sounds":
+            {
+                "engine": "ambient_loop_psi_engine_capship",
+                "hyperspace_travel": "hyperspace_travel"
+            },
+            "dialogue":
+            {
+                "spawned":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_spawned_neutral_0"]
+                },
+                "selected":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_selected_neutral_0",
+                        "advent_planet_psionic_capital_ship_selected_neutral_1",
+                        "advent_planet_psionic_capital_ship_selected_neutral_2"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_selected_scared_0",
+                        "advent_planet_psionic_capital_ship_selected_scared_1",
+                        "advent_planet_psionic_capital_ship_selected_scared_2"
+                    ]
+                },
+                "order_issued":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_order_issued_neutral_0",
+                        "advent_planet_psionic_capital_ship_order_issued_neutral_1",
+                        "advent_planet_psionic_capital_ship_order_issued_neutral_2"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_order_issued_scared_0",
+                        "advent_planet_psionic_capital_ship_order_issued_scared_1",
+                        "advent_planet_psionic_capital_ship_order_issued_scared_2"
+                    ]
+                },
+                "attack_order_issued":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_attack_order_issued_neutral_0",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_neutral_1",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_neutral_2",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_neutral_3"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_attack_order_issued_scared_0",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_scared_1",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_scared_2",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_scared_3"
+                    ],
+                    "smug": [
+                        "advent_planet_psionic_capital_ship_attack_order_issued_smug_0",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_smug_1",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_smug_2",
+                        "advent_planet_psionic_capital_ship_attack_order_issued_smug_3"
+                    ]
+                },
+                "retreat":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_retreat_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_retreat_scared_0"]
+                },
+                "hyperspace_charge_started":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_hyperspace_charge_started_neutral_0"
+                    ]
+                },
+                "cannot_hyperspace":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_cannot_hyperspace_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_cannot_hyperspace_scared_0"
+                    ]
+                },
+                "shields_down":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_shields_down_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_shields_down_scared_0"]
+                },
+                "armor_down":
+                {
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_armor_down_scared_0"]
+                },
+                "became_crippled":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_became_crippled_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_became_crippled_scared_0"]
+                },
+                "destroyed":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_destroyed_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_destroyed_scared_0"]
+                },
+                "ship_component_finished_building":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_ship_component_finished_building_neutral_0"
+                    ]
+                },
+                "ability_cooldown_is_not_completed":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_ability_cooldown_is_not_completed_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_ability_cooldown_is_not_completed_scared_0"
+                    ]
+                },
+                "insufficient_antimatter":
+                {
+                    "neutral": [
+                        "advent_planet_psionic_capital_ship_insufficient_antimatter_neutral_0"
+                    ],
+                    "scared": [
+                        "advent_planet_psionic_capital_ship_insufficient_antimatter_scared_0"
+                    ]
+                }
+            }
+        },
+        "death_sequence_group": "advent_capitalship0"
+    }]
+}

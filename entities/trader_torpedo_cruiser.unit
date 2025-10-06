@@ -1,0 +1,234 @@
+{
+    "version": 0,
+    "spatial":
+    {
+        "radius": 205.816559,
+        "box":
+        {
+            "center": [0.0, -4e-06, -3.890709],
+            "extents": [123.859329, 72.532181, 186.872833]
+        },
+        "collision_rank": 1
+    },
+    "physics":
+    {
+        "can_move_linear": true,
+        "max_linear_speed": 625.0,
+        "time_to_max_linear_speed": 7.8125,
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [0.75, 1.25],
+        "can_move_angular": true,
+        "max_angular_speed": 22.0,
+        "time_to_max_angular_speed": 10.0,
+        "max_bank_angle": 35.0,
+        "death_angular_speed_range": [3.0, 6.0],
+        "linear_acceleration_angle": 90.0,
+        "can_strafe_linear": true,
+        "strafe_max_linear_speed": 218.75,
+        "time_to_strafe_max_linear_speed": 12.5,
+        "strafe_max_linear_distance_spatial_radius_scalar": 8.0,
+        "strafe_start_angle": 0.0,
+        "strafe_stop_angle": 180.0,
+        "strafe_speed_start_angle": 10.0,
+        "strafe_max_start_turning_angle": 170.0
+    },
+    "hyperspace":
+    {
+        "speed": 215000.0,
+        "speed_between_stars": 752500.0,
+        "charge_time": 8.0,
+        "charge_time_variance": 1.0,
+        "min_charge_angle": 10.0,
+        "max_charge_angle": 45.0
+    },
+    "move":
+    {
+        "follow_distance": 1065.744995
+    },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
+    "ai":
+    {
+        "attack_target_type_groups": [
+            "defense_starbase_titan",
+            "capital"
+        ],
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"
+        ],
+        "attack_target_type_groups_matching_weapon": "trader_torpedo_cruiser_torpedo",
+        "auto_follow_target_priority": 1.0,
+        "pursuit":
+        {
+            "min_distance_to_target": 11000.0
+        },
+        "attack_target_type_range_scalar": 1.5
+    },
+    "ai_attack_target":
+    {
+        "attack_priority": 50.0,
+        "is_always_a_threat": true
+    },
+    "player_ai":
+    {
+        "max_empire_owned_count_percentage": 0.15
+    },
+    "user_interface":
+    {
+        "pip_type": "cruiser",
+        "can_ever_be_selected": true,
+        "selection_priority": 300,
+        "has_sub_selection_grouping": true,
+        "selection_group_unit_type": "combat_ship",
+        "can_move": true,
+        "can_attack": true,
+        "can_show_max_weapon_range_in_tactical_view": true,
+        "can_show_distance_to_plane_line": true,
+        "can_rotate": true
+    },
+    "weapons":
+    {
+        "weapons": [
+        {
+            "weapon": "trader_torpedo_cruiser_torpedo",
+            "mesh_point": "weapon.0",
+            "weapon_position": [-0.366971, 1.518225, 142.125198],
+            "non_turret_muzzle_positions": [
+                [-49.721031, 49.95134, 142.125427],
+                [48.701447, 49.95134, 142.125427],
+                [-48.221855, -46.91489, 142.124969],
+                [47.773556, -46.91489, 142.124954]
+            ],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [-0.0, 1.0, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -45.0,
+                "max_angle": 45.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -45.0,
+                "max_angle": 45.0
+            }
+        }],
+        "max_range_weapon_index": 0
+    },
+    "formation":
+    {
+        "leader_priority": 1,
+        "offsets_per_formation_type":
+        {
+            "ships_and_structures":
+            {
+                "rank": 3,
+                "group": 0
+            }
+        }
+    },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 3.0,
+        "generic_group_name": "trader",
+        "generic_counts":
+        {
+            "small_debris": [7, 8],
+            "large_debris": [1, 2]
+        }
+    },
+    "health":
+    {
+        "release_time_after_death": 60.0,
+        "can_collide_duration_after_death": 3.95,
+        "durability": 300.0,
+        "can_ever_be_resurrected": true,
+        "levels": [
+        {
+            "max_hull_points": 2275.0,
+            "hull_point_restore_rate": 2.0,
+            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 1000.0,
+            "armor_point_restore_rate": 3.0,
+            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 40.0,
+            "shield_point_restore_rate": 4.0,
+            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_point_restore_scalar_after_damage_taken": 0.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 40.0,
+                "restore_percentage": 0.5
+            },
+            "experience_given_on_death": 80.0
+        }]
+    },
+    "antimatter":
+    {
+        "max_antimatter": 150.0,
+        "antimatter_restore_rate": 0.5
+    },
+    "build":
+    {
+        "build_time": 80.0,
+        "price":
+        {
+            "credits": 850.0,
+            "metal": 120.0,
+            "crystal": 225.0
+        },
+        "exotic_price": [
+        {
+            "exotic_type": "offense",
+            "count": 1
+        }],
+        "prerequisites": [
+            ["trader_unlock_torpedo_cruiser"]
+        ],
+        "build_kind": "cruiser",
+        "supply_cost": 20,
+        "build_group_id": "cruiser"
+    },
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_shield_points",
+        "value_behavior": "additive",
+        "value": 1500.0,
+        "prerequisites": [
+            ["trader_shields_cruiser"]
+        ]
+    }],
+    "target_filter_unit_type": "cruiser",
+    "tags": [
+        "cruiser"
+    ],
+    "abilities": [
+    {
+        "abilities": [
+            "trader_torpedo_cruiser_heavy_torpedo"
+        ]
+    },
+    {
+        "abilities": [
+            "trader_torpedo_cruiser_heavy_torpedo_npc"
+        ],
+		"required_special_operation_unit_kind": "yannock_demolition_raid"
+    }],
+    "ship_roles": [
+        "anti_structure",
+        "attack_ship"
+    ],
+    "skin_groups": [
+    {
+        "skins": [
+            "trader_torpedo_cruiser"]
+    }],
+    "can_join_fleet": true,
+    "action_effect_size": "small_unit"
+}

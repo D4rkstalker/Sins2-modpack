@@ -1,0 +1,101 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "phase_space_invulnerable_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_phase_space_invulnerable_on_target"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "phase_space_invulnerable_collector_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_phase_space_invulnerable_on_collector"
+                },
+                {
+                    "constraint":
+                    {
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "starbase_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_starbase_repair_on_starbase"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "teleport",
+                    "destination_position":
+					{
+						"position_type": "unit_position",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner",
+							"redirection": "current_gravity_well_primary_fixture"
+                        }
+					}
+				}]
+			}]
+        }
+    }],
+    "unit_mutations": [
+        "disable_can_be_targeted_by_enemies",
+        "invulnerable"
+	]
+}
