@@ -1,0 +1,120 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "intimidating_presence_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_overseer_cruiser_intimidating_presence_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "intimidating_presence_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "strikecraft",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "intimidating_presence_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [75.0]
+        }
+    },
+    {
+        "action_value_id": "intimidating_presence_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "intimidating_presence_cooldown_time_value",
+        "action_value":
+        {
+            "values": [40.0]
+        }
+    },
+    {
+        "action_value_id": "intimidating_presence_duration_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "intimidating_presence_radius_value",
+        "action_value":
+        {
+            "values": [12000.0]
+        }
+    },
+    {
+        "action_value_id": "intimidating_presence_stacking_limit_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "intimidating_presence_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "values": [-0.05]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "intimidating_presence_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "intimidating_presence_weapon_damage_bonus_value"
+        }
+    }]
+}

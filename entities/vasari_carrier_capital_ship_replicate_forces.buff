@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "make_current_spawner_dead_on_buff_made_dead": false,
+    "active_duration": "replicate_forces_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "vasari_carrier_capital_ship_replicate_forces_impact_small",
+                            "medium_unit": "vasari_carrier_capital_ship_replicate_forces_impact_medium",
+                            "large_unit": "vasari_carrier_capital_ship_replicate_forces_impact_large"
+                        }
+                    }
+                }]
+            }]
+        }
+    }]
+}
