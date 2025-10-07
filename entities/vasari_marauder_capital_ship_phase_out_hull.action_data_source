@@ -48,10 +48,7 @@
         "target_filter":
         {
             "unit_types": [
-				"capital_ship",
-                "cruiser",
-                "frigate",
-                "structure"
+				"capital_ship"
             ],
             "ownerships": [
                 "enemy"
@@ -63,14 +60,6 @@
             {
                 "constraint_type": "is_always_a_threat"
 			},
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_missing_hull",
-                    "percentage_missing_threshold": 0.5
-                }
-            },
             {
                 "constraint_type": "composite_not",
                 "constraint":
@@ -123,7 +112,7 @@
         "action_value_id": "phase_out_hull_invuln_duration_value",
         "action_value":
         {
-            "values": [2.0, 2.25, 2.5, 2.75, 3.0]
+            "values": [2.0, 4, 6, 8, 10.0]
         }
     },
     {
