@@ -1,0 +1,106 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "tithe_collector_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_tithe_collector_unit_item_on_structure"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_unit_finished_building_in_gravity_well",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "tithe_collector_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_tithe_collector_unit_item_on_structure"
+                }]
+            }]
+        }
+    }],
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "gas_crystalizer_execution_interval_value",
+        "execution_interval_value": "gas_crystalizer_execution_interval_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "give_exotics",
+                "player":
+                {
+                    "player_type": "buff_owner_player"
+                },
+                "exotics":
+                {
+                    "exotics_source_type": "explicit_amount",
+                    "exotic_amounts": [
+                    {
+                        "exotic_type": "offense",
+                        "count_value": "fixed_one"
+                    },
+                    {
+                        "exotic_type": "defense",
+                        "count_value": "fixed_one"
+                    },
+                    {
+                        "exotic_type": "utility",
+                        "count_value": "fixed_one"
+                    },
+                    {
+                        "exotic_type": "economic",
+                        "count_value": "fixed_one"
+                    }
+					]
+                }
+            }]
+        }
+    }]
+}

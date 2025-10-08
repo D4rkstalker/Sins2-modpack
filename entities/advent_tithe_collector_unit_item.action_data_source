@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "tithe_collector_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_definition",
+                "unit_definition": "advent_population_structure"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "tithe_collector_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "tithe_collector_research_time_bonus",
+        "action_value":
+        {
+            "values": [0.03, 0.04, 0.05]
+        }
+    },
+	{
+        "action_value_id": "gas_crystalizer_execution_interval_value",
+        "action_value":
+        {
+            "values": [1800.0,1200.0,720.0]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "tithe_collector_commerce_per_population_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "commerce_track_credit_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "tithe_collector_research_time_bonus"
+        }
+    }]
+}
