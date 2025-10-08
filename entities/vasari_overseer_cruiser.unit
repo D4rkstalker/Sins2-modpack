@@ -54,21 +54,27 @@
     },
     "ai":
     {
-        "behaviors": [
-            "auto_follow_unit_attacking_threat"
-        ],
         "attack_target_type_groups_to_ignore": [
-            "torpedo_strikecraft"]
+            "torpedo_strikecraft"
+        ],
+        "auto_follow_target_priority": 4.0,
+        "pursuit":
+        {
+			"min_target_speed": 300.0,						  
+            "min_distance_to_target": 4500.0
+        },
+        "attack_target_type_range_scalar": 2.0
     },
     "ai_attack_target":
     {
-        "attack_priority": 49.0,
-        "is_always_a_threat": true
+        "attack_priority": 50.0,
+        "is_always_a_threat": true,
+        "attack_target_type": "flak"
     },
     "player_ai":
     {
-        "max_empire_owned_count_percentage": 0.025,
-        "max_count_to_fleet_supply_ratio": 80
+        "max_empire_owned_count_percentage": 0.02,
+        "max_count_to_fleet_supply_ratio": 40
     },
     "user_interface":
     {
@@ -194,7 +200,6 @@
             "vasari_overseer_cruiser_intimidating_presence",
             "vasari_overseer_cruiser_phase_lane_detection",
 			"vasari_overseer_cruiser_phasic_trap",
-            "vasari_overseer_cruiser_structure_repair",
             "vasari_overseer_cruiser_antimatter_recharge"
         ]
     }],
