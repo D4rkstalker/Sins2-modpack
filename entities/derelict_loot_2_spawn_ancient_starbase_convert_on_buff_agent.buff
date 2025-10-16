@@ -1,0 +1,54 @@
+{
+    "version": 0,
+	"make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+		"first_action_delay_time_value": "fixed_one",
+		"execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "ancient_starbase_convert_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "derelict_loot_2_spawn_ancient_starbase_on_starbase"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "ancient_starbase_convert_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "derelict_loot_2_spawn_ancient_starbase_on_starbase_countdown"
+                }]
+			}]
+        }
+    }]
+}

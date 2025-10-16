@@ -4,6 +4,7 @@
     "active_actions":
     {
         "cooldown_time": "deploy_cooldown",
+        "antimatter_cost": "antimatter_cost_value",
         "actions":
         {
             "actions": [
@@ -17,6 +18,7 @@
                 {
                     "operator_type": "create_unit",
                     "unit_to_create": "vasari_exotic_factory_structure",
+                    "special_operation_unit_kind": "garrison",
                     "unit_forward":
                     {
                         "direction_type": "unit_forward",
@@ -33,7 +35,7 @@
         "range": "deploy_range",
         "auto_cast":
         {
-            "enabled_by_default_behavior": "never",
+            "enabled_by_default_behavior": "always",
             "target_definitions": [
             {
                 "target_filter": "uniforms_owned_planets"
@@ -42,6 +44,7 @@
         "spawned_unit":
         {
             "unit": "vasari_exotic_factory_structure",
+	    "special_operation_unit_kind": "garrison",
             "max_count_in_gravity_well": "max_count_in_gravity_well",
             "gravity_well_primary_planet_target_filter": "friendly_planet"
         }

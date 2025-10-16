@@ -9,7 +9,7 @@
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
     {
-		"first_action_delay_time_value": "fixed_one",
+		"first_action_delay_time_value": "ancient_starbase_convert_time",
 		"execution_interval_count_value": "fixed_one",
         "action_group":
         {
@@ -21,6 +21,13 @@
                     "unit_type": "current_spawner"
                 },
                 "operators": [
+                {
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "buff_owner_player"
+                    }
+                },
                 {
                     "operator_type": "add_unit_item",
                     "unit_item": "dlc_ancient_starbase_unlock_light_weapon"
@@ -35,11 +42,19 @@
                 },
                 {
                     "operator_type": "add_unit_item",
+                    "unit_item": "dlc_ancient_starbase_singularity_portal"
+                },
+                {
+                    "operator_type": "add_unit_item",
                     "unit_item": "dlc_ancient_starbase_shield_leech"
                 },
                 {
                     "operator_type": "add_unit_item",
                     "unit_item": "dlc_ancient_starbase_antimatter_pulse_wave"
+                },
+                {
+                    "operator_type": "add_unit_item",
+                    "unit_item": "dlc_ancient_starbase_phase_jump_inhibitor"
                 },
                 {
                     "operator_type": "add_unit_item",

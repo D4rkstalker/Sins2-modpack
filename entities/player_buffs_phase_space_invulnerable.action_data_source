@@ -14,6 +14,29 @@
         }
     },
     {
+        "target_filter_id": "mobile_ruler_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "titan",
+				"capital_ship",
+				"super_capital_ship",
+				"starbase"
+            ],
+            "ownerships": [
+                "self"
+			],
+            "constraints": [
+			{
+				"constraint_type": "has_mutation",
+				"mutation": "is_mobile_ruler"
+			}],
+            "exemptions": [
+                "is_dead"
+			]
+        }
+    },
+    {
         "target_filter_id": "scuttle_target_filter",
         "target_filter":
         {
@@ -185,12 +208,20 @@
     "per_buff_memory_declaration":
     {
         "float_variable_ids": [
-            "hull_minus_crippled_hull"
-		],
-        "unit_variable_ids": [
-            "previous_gravity_well"]
+            "hull_minus_crippled_hull",
+			"valid_is_not_dead_count"
+		]
     },
     "action_values": [
+    {
+        "action_value_id": "valid_not_dead_unit_count",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "valid_is_not_dead_count",
+            "values": [1.0]
+        }
+    },
     {
         "action_value_id": "collecter_radius_value",
         "action_value":
@@ -360,6 +391,13 @@
         {
             "values": [1000.0]
         }
+    },
+    {
+        "action_value_id": "loot_collection_duration_value",
+        "action_value":
+        {
+            "values": [1000000000.0]
+        }
     }],
     "buff_unit_modifiers": [
     {
@@ -369,6 +407,15 @@
             "modifier_type": "hyperspace_speed",
             "value_behavior": "scalar",
             "value_id": "scuttle_hyperspace_speed_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "loot_collection_duration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "loot_collection_duration",
+            "value_behavior": "additive",
+            "value_id": "loot_collection_duration_value"
         }
     }]
 }

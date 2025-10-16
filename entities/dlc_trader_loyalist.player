@@ -602,7 +602,7 @@
                         {
                             "value_behavior": "additive",
                             "modifier_type": "credit_income_rate",
-                            "value": 1.0
+                            "value": 1.5
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_1_civil"
@@ -647,7 +647,7 @@
                         {
                             "value_behavior": "additive",
                             "modifier_type": "credit_income_rate",
-                            "value": 2.0
+                            "value": 2.5
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_3_civil"
@@ -684,6 +684,72 @@
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_4_civil"
+                },
+                {
+                    "acquire_time": 300.0,
+                    "required_research_points": 35,
+                    "price":
+                    {
+                        "credits": 9600.0,
+                        "metal": 1800.0,
+                        "crystal": 3000.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "utility",
+                        "count": 2
+                    },
+                    {
+                        "exotic_type": "economic",
+                        "count": 1
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 1
+                    }],
+                    "player_modifiers":
+                    {
+                        "empire_modifiers": [
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "credit_income_rate",
+                            "value": 3.5
+                        }]
+                    },
+                    "button_background": "research_tier_5"
+                },
+                {
+                    "acquire_time": 360.0,
+                    "required_research_points": 45,
+                    "price":
+                    {
+                        "credits": 14400.0,
+                        "metal": 2700.0,
+                        "crystal": 4500.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "utility",
+                        "count": 4
+                    },
+                    {
+                        "exotic_type": "economic",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 3
+                    }],
+                    "player_modifiers":
+                    {
+                        "empire_modifiers": [
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "credit_income_rate",
+                            "value": 4.0
+                        }]
+                    },
+                    "button_background": "research_tier_6"
                 }],
                 "research_fields": [
                 {
@@ -892,6 +958,84 @@
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_4_military"
+                },
+                {
+                    "acquire_time": 300.0,
+                    "required_research_points": 35,
+                    "price":
+                    {
+                        "credits": 9600.0,
+                        "metal": 1800.0,
+                        "crystal": 3000.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "defense",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "offense",
+                        "count": 2
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 2
+                    }],
+                    "player_modifiers":
+                    {
+                        "unit_modifiers": [
+                        {
+                            "modifier_type": "max_hull_points",
+                            "value_behavior": "scalar",
+                            "value": 0.05
+                        }],
+                        "weapon_modifiers": [
+                        {
+                            "modifier_type": "damage",
+                            "value_behavior": "scalar",
+                            "value": 0.01
+                        }]
+                    },
+                    "button_background": "research_tier_5"
+                },
+                {
+                    "acquire_time": 360.0,
+                    "required_research_points": 45,
+                    "price":
+                    {
+                        "credits": 14400.0,
+                        "metal": 2700.0,
+                        "crystal": 4500.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "defense",
+                        "count": 4
+                    },
+                    {
+                        "exotic_type": "offense",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 3
+                    }],
+                    "player_modifiers":
+                    {
+                        "unit_modifiers": [
+                        {
+                            "modifier_type": "max_armor_points",
+                            "value_behavior": "scalar",
+                            "value": 0.05
+                        }],
+                        "weapon_modifiers": [
+                        {
+                            "modifier_type": "damage",
+                            "value_behavior": "scalar",
+                            "value": 0.01
+                        }]
+                    },
+                    "button_background": "research_tier_6"
                 }],
                 "research_fields": [
                 {
@@ -923,21 +1067,6 @@
                     "id": "military_trader_loyalist_repeatables",
                     "name": "research_tree.trader_enclave",
                     "picture": "trader_research_field_picture_military_experimental"
-                },
-                {
-                    "id": "military_repeatables_offense",
-                    "name": "research_tree.offense_repeat",
-                    "picture": "trader_research_field_picture_military_engineering"
-                },
-                {
-                    "id": "military_repeatables_defense",
-                    "name": "research_tree.defense_repeat",
-                    "picture": "trader_research_field_picture_military_engineering"
-                },
-                {
-                    "id": "military_repeatables_utility",
-                    "name": "research_tree.utility_repeat",
-                    "picture": "trader_research_field_picture_military_engineering"
                 }],
                 "full_name": "trader_research_domain_full_name_military",
                 "partial_name": "trader_research_domain_partial_name_military",
@@ -952,187 +1081,188 @@
             }
         },
         "research_subjects": [
-	    "trader_starbase_science_labs",
-	    "trader_orbital_cannon_attack",
-	    "phase_speed_tier_3",
-	    "phase_speed_tier_2",
-	    "phase_speed_tier_1",
-	    "phase_speed_tier_0",
-	    "trader_loyalist_advent_beam_cycling",
-	    "loot_ship_build_tier_0",
-	    "loot_ship_build_tier_1",
-	    "loot_ship_build_tier_2",
-	    "ship_speed_tier_1",
-	    "ship_speed_tier_2",
-	    "ship_speed_tier_3",
-	    "ship_speed_tier_4",
-	    "shields_battle_regen_tier_0",
-	    "shields_battle_regen_tier_1",
-	    "shields_battle_regen_tier_2",
-	    "shields_battle_regen_tier_3",
-	    "hull_battle_regen_tier_0",
-	    "hull_battle_regen_tier_1",
-	    "hull_battle_regen_tier_2",
-	    "hull_battle_regen_tier_3",
-	    "armor_battle_regen_tier_0",
-	    "armor_battle_regen_tier_1",
-	    "armor_battle_regen_tier_2",
-	    "armor_battle_regen_tier_3",
-	    "planet_item_tier_1",
-	    "trader_loyalist_structure_tier_0",
-	    "trader_loyalist_structure_tier_1",
-	    "trader_loyalist_structure_tier_2",
+	    "dlc_trader_unlock_pranast_repair_ships_unit_item",
+	    "dlc_trader_unlock_pranast_starbase_planetary_shield_array",
+	    "trader_civilian_ship_safety_act",
 	    "trader_garrison_tier_0",
 	    "trader_garrison_tier_1",
 	    "trader_garrison_tier_2",
-	    "pop_income_tier_0",
-	    "pop_income_tier_1",
-	    "pop_tier_0",
-	    "pop_tier_1",
-	    "pop_tier_2",
-	    "pop_tier_3",
-	    "pop_tier_4",
-	    "pop_tier_5",
-            "trader_loyalist_unlock_antifighter_frigate_light_beam_weapon",
-            "trader_loyalist_unlock_rapid_autoloader_unit_item",
-	    "ability_tier_1",
-	    "ability_tier_2",
-	    "ability_tier_3",
-	    "exotic_build_tier_0",
-	    "exotic_build_tier_1",
-	    "exotic_build_tier_2",
-	    "influence_tier_0",
-	    "influence_tier_1",
-	    "influence_tier_2",
+	    "trader_loyalist_advent_beam_cycling",
+	    "trader_loyalist_structure_tier_0",
+	    "trader_loyalist_structure_tier_1",
+	    "trader_loyalist_structure_tier_2",
 	    "trader_loyalist_beam_weapon_damage_0",
 	    "trader_loyalist_beam_weapon_damage_1",
 	    "trader_loyalist_beam_weapon_damage_2",
 	    "trader_loyalist_beam_weapon_damage_3",
-	    "trader_loyalist_ship_armor_tier_0",
-	    "start_trader_enclave_bonus_civ",
-	    "start_trader_enclave_bonus_mil",
-            "missile_speed_tier_0",
-            "missile_speed_tier_1",
-            "missile_speed_tier_2",
-            "planet_item_tier_0",
-	    "trader_ship_build_tier_0",
-	    "trader_ship_build_tier_1",
-	    "trader_ship_build_tier_2",
-	    "trader_ship_build_tier_3",
-	    "trader_ship_build_tier_4",
             "trader_loyalist_defense_tier_0",
             "trader_loyalist_defense_tier_1",
             "trader_loyalist_defense_tier_2",
             "trader_loyalist_defense_tier_3",
             "trader_loyalist_defense_tier_4",
-            "point_defense_tier_0",
-            "point_defense_tier_1",
-            "point_defense_tier_2",
-            "squadron_size_tier_0",
-            "squadron_size_tier_1",
-            "squadron_size_tier_2",
-            "squadron_size_tier_3",
-            "antimatter_tier_1",
-            "antimatter_tier_2",
-            "antimatter_tier_3",
-            "antimatter_tier_4",
-            "civ_slots_tier_0",
-            "civ_slots_tier_1",
-            "civ_slots_tier_2",
-            "civ_slots_tier_3",
-            "civ_slots_tier_4",
-            "crystal_tier_2",
-            "crystal_tier_3",
-            "crystal_tier_4",
-            "crystal_tier_5",
-            "crystal_tier_6",
-            "crystal_tier_7",
-            "crystal_tier_8",
-            "culture_tier_0",
-            "culture_tier_1",
-            "culture_tier_2",
-            "culture_tier_3",
-            "culture_tier_4",
-            "damage_tier_2",
-            "damage_tier_3",
-            "damage_tier_4",
-            "damage_tier_5",
-            "damage_tier_6",
-            "damage_tier_7",
-            "damage_tier_8",
-            "damage_tier_9",
-            "damage_tier_10",
-            "damage_tier_11",
-            "damage_tier_12",
-            "damage_tier_13",
-            "damage_tier_14",
-            "armor_tier_2",
-            "armor_tier_3",
-            "armor_tier_4",
-            "armor_tier_5",
-            "armor_tier_6",
-            "armor_tier_7",
-            "armor_tier_8",
-            "armor_tier_9",
-            "armor_tier_10",
-            "armor_tier_11",
-            "armor_tier_12",
-            "armor_tier_13",
-            "armor_tier_14",
-            "hull_tier_2",
-            "hull_tier_3",
-            "hull_tier_4",
-            "hull_tier_5",
-            "hull_tier_6",
-            "hull_tier_7",
-            "hull_tier_8",
-            "hull_tier_9",
-            "hull_tier_10",
-            "hull_tier_11",
-            "hull_tier_12",
-            "hull_tier_13",
-            "hull_tier_14",
-            "starmax_starbases_tier_0",
-            "metal_tier_2",
-            "metal_tier_3",
-            "metal_tier_4",
-            "metal_tier_5",
-            "metal_tier_6",
-            "metal_tier_7",
-            "metal_tier_8",
-            "mil_slots_tier_0",
-            "mil_slots_tier_1",
-            "mil_slots_tier_2",
-            "mil_slots_tier_3",
-            "mil_slots_tier_4",
-            "credits_tier_2",
-            "credits_tier_3",
-            "credits_tier_4",
-            "credits_tier_5",
-            "credits_tier_6",
-            "credits_tier_7",
-            "credits_tier_8",
-            "shields_tier_2",
-            "shields_tier_3",
-            "shields_tier_4",
-            "shields_tier_5",
-            "shields_tier_6",
-            "shields_tier_7",
-            "shields_tier_8",
-            "shields_tier_9",
-            "shields_tier_10",
-            "shields_tier_11",
-            "shields_tier_12",
-            "shields_tier_13",
-            "shields_tier_14",
-            "structure_range_tier_0",
-            "structure_range_tier_1",
-            "structure_range_tier_2",
-            "planet_rate_tier_0",
-            "planet_rate_tier_1",
-            "planet_rate_tier_2",
+	    "trader_loyalist_ship_armor_tier_0",
+            "trader_loyalist_unlock_antifighter_frigate_light_beam_weapon",
+            "trader_loyalist_unlock_rapid_autoloader_unit_item",
             "trader_max_supply_5",
             "trader_max_supply_6",
+	    "trader_orbital_cannon_attack",
+	    "trader_refined_emitters",
+	    "trader_ship_build_tier_0",
+	    "trader_ship_build_tier_1",
+	    "trader_ship_build_tier_2",
+	    "trader_ship_build_tier_3",
+	    "trader_ship_build_tier_4",
+	    "trader_starbase_science_labs",
+	    "trader_unlock_build_research_exotic",
+	    "trader_unlock_colony_frigate_capture_extractor_ability",
+	    "trader_unlock_heavy_cruiser_intercept_ability",
+	    "trader_unlock_robotics_cruiser_emp_droids_ability",
+
+            "antimatter_tier_1_t",
+            "antimatter_tier_2_t",
+            "antimatter_tier_3_t",
+            "antimatter_tier_4_t",
+	    "ability_tier_1_t",
+	    "ability_tier_2_t",
+	    "ability_tier_3_t",
+	    "armor_battle_regen_tier_0_t",
+	    "armor_battle_regen_tier_1_t",
+	    "armor_battle_regen_tier_2_t",
+	    "armor_battle_regen_tier_3_t",
+            "armor_tier_5_t",
+            "armor_tier_6_t",
+            "armor_tier_7_t",
+            "armor_tier_8_t",
+            "armor_tier_9_t",
+            "armor_tier_10_t",
+            "armor_tier_11_t",
+            "armor_tier_12_t",
+            "armor_tier_13_t",
+            "armor_tier_14_t",
+            "civ_slots_tier_0_t",
+            "civ_slots_tier_1_t",
+            "civ_slots_tier_2_t",
+            "civ_slots_tier_3_t",
+            "civ_slots_tier_4_t",
+            "credits_tier_3_t",
+            "credits_tier_4_t",
+            "credits_tier_5_t",
+            "credits_tier_6_t",
+            "credits_tier_7_t",
+            "credits_tier_8_t",
+            "crystal_tier_3_t",
+            "crystal_tier_4_t",
+            "crystal_tier_5_t",
+            "crystal_tier_6_t",
+            "crystal_tier_7_t",
+            "crystal_tier_8_t",
+            "culture_tier_0_t",
+            "culture_tier_1_t",
+            "culture_tier_2_t",
+            "culture_tier_3_t",
+            "culture_tier_4_t",
+            "damage_tier_0_t",
+            "damage_tier_1_t",
+            "damage_tier_2_t",
+            "damage_tier_3_t",
+            "damage_tier_4_t",
+            "damage_tier_5_t",
+            "damage_tier_6_t",
+            "damage_tier_7_t",
+            "damage_tier_8_t",
+            "damage_tier_9_t",
+            "damage_tier_10_t",
+            "damage_tier_11_t",
+            "damage_tier_12_t",
+            "damage_tier_13_t",
+            "damage_tier_14_t",
+	    "exotic_build_tier_0_t",
+	    "exotic_build_tier_1_t",
+	    "exotic_build_tier_2_t",
+	    "hull_battle_regen_tier_0_t",
+	    "hull_battle_regen_tier_1_t",
+	    "hull_battle_regen_tier_2_t",
+	    "hull_battle_regen_tier_3_t",
+            "hull_tier_5_t",
+            "hull_tier_6_t",
+            "hull_tier_7_t",
+            "hull_tier_8_t",
+            "hull_tier_9_t",
+            "hull_tier_10_t",
+            "hull_tier_11_t",
+            "hull_tier_12_t",
+            "hull_tier_13_t",
+            "hull_tier_14_t",
+	    "influence_tier_0_t",
+	    "influence_tier_1_t",
+	    "influence_tier_2_t",
+	    "loot_ship_build_tier_0_t",
+	    "loot_ship_build_tier_1_t",
+	    "loot_ship_build_tier_2_t",
+            "metal_tier_3_t",
+            "metal_tier_4_t",
+            "metal_tier_5_t",
+            "metal_tier_6_t",
+            "metal_tier_7_t",
+            "metal_tier_8_t",
+            "mil_slots_tier_0_t",
+            "mil_slots_tier_1_t",
+            "mil_slots_tier_2_t",
+            "mil_slots_tier_3_t",
+            "mil_slots_tier_4_t",
+            "missile_speed_tier_0_t",
+            "missile_speed_tier_1_t",
+            "missile_speed_tier_2_t",
+	    "phase_speed_tier_0_t",
+	    "phase_speed_tier_1_t",
+	    "phase_speed_tier_2_t",
+	    "phase_speed_tier_3_t",
+            "planet_rate_tier_0_t",
+            "planet_rate_tier_1_t",
+            "planet_rate_tier_2_t",
+	    "planet_item_tier_0_t",
+	    "planet_item_tier_1_t",
+            "point_defense_tier_0_t",
+            "point_defense_tier_1_t",
+            "point_defense_tier_2_t",
+	    "pop_tier_0_t",
+	    "pop_tier_1_t",
+	    "pop_tier_2_t",
+	    "pop_tier_3_t",
+	    "pop_tier_4_t",
+	    "pop_tier_5_t",
+	    "pop_income_tier_0_t",
+	    "pop_income_tier_1_t",
+            "starmax_starbases_tier_0_t",
+	    "shields_battle_regen_tier_0_t",
+	    "shields_battle_regen_tier_1_t",
+	    "shields_battle_regen_tier_2_t",
+	    "shields_battle_regen_tier_3_t",
+            "shields_tier_5_t",
+            "shields_tier_6_t",
+            "shields_tier_7_t",
+            "shields_tier_8_t",
+            "shields_tier_9_t",
+            "shields_tier_10_t",
+            "shields_tier_11_t",
+            "shields_tier_12_t",
+            "shields_tier_13_t",
+            "shields_tier_14_t",
+	    "ship_speed_tier_1_t",
+	    "ship_speed_tier_2_t",
+	    "ship_speed_tier_3_t",
+	    "ship_speed_tier_4_t",
+            "structure_range_tier_0_t",
+            "structure_range_tier_1_t",
+            "structure_range_tier_2_t",
+            "squadron_size_tier_0_t",
+            "squadron_size_tier_1_t",
+            "squadron_size_tier_2_t",
+            "squadron_size_tier_3_t",
+
+	    "start_trader_enclave_bonus_civ",
+	    "start_trader_enclave_bonus_mil",
+
             "trader_antimatter_0",
             "trader_antimatter_1",
             "trader_asteroid_planet_credit_rate",
@@ -1322,21 +1452,14 @@
             "trader_upgrade_swamp_biosphere",
             "trader_upgrade_volcanic_biosphere",
             "trader_war_measures_act",
-			"trader_refined_emitters",
             "dlc2_trader_unlock_loyalist_super_capital_ship",
             "trader_unlock_titan_factory",
             "trader_unlock_torpedo_cruiser_heavy_torpedo",
-			"trader_civilian_ship_safety_act",
-			"trader_unlock_robotics_cruiser_emp_droids_ability",
             "trader_wormhole_travel",
-			"trader_unlock_colony_frigate_capture_extractor_ability",
             "dlc_trader_triple_fortresses",
             "dlc_trader_unlock_armored_citadel_unit_item",
             "dlc_trader_unlock_bastion_module_unit_item",
-            "dlc_trader_unlock_unassailable_fortress_unit_item",
-			"trader_unlock_heavy_cruiser_intercept_ability",
-			"dlc_trader_unlock_pranast_repair_ships_unit_item",
-			"dlc_trader_unlock_pranast_starbase_planetary_shield_array"
+            "dlc_trader_unlock_unassailable_fortress_unit_item"
         ],
         "faction_research_subjects": [
 		"trader_loyalist_advent_beam_cycling",
@@ -6137,7 +6260,10 @@
                 "credits": 1000.0,
                 "metal": 312.5,
                 "crystal": 312.5
-            }
+            },
+            "factory_build_prerequisites": [
+                ["trader_unlock_build_research_exotic"]
+            ]
         }
     }],
     "garrison":

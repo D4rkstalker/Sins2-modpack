@@ -22,41 +22,8 @@
                 "operators": [
                 {
                     "operator_type": "apply_buff",
-                    "buff": "player_buffs_phase_space_invulnerable_on_target_phase_jump",
-					"copy_parent_buff_memory_values": true
+                    "buff": "player_buffs_phase_space_invulnerable_on_target_phase_jump"
 				}]
-            }]
-        }
-    },
-    {
-        "trigger_event_type": "on_buff_started",
-        "action_group":
-        {
-            "actions": [
-            {
-                "action_type": "change_buff_memory_unit_value",
-				"unit_variable": "previous_gravity_well",
-                "new_unit_value":
-                {
-                    "unit_type": "current_spawner",
-					"redirection": "current_gravity_well_primary_fixture"
-                }
-            }]
-        }
-    },
-    {
-        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
-        "action_group":
-        {
-            "actions": [
-            {
-                "action_type": "change_buff_memory_unit_value",
-				"unit_variable": "previous_gravity_well",
-                "new_unit_value":
-                {
-                    "unit_type": "current_spawner",
-					"redirection": "current_gravity_well_primary_fixture"
-                }
             }]
         }
     }]

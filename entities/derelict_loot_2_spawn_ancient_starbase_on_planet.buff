@@ -1,6 +1,7 @@
 {
     "version": 0,
     "make_dead_on_source_ability_released": true,
+	"make_dead_on_parent_buff_made_dead": true,
     "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
     "stacking_limit":
     {
@@ -9,6 +10,37 @@
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+					"constraint":
+					{
+						"constraint_type": "unit_passes_target_filter",
+						"unit":
+						{
+							"unit_type": "operand_destination"
+						},
+						"target_filter_id": "ancient_starbase_enemy_planet_target_filter"
+					},
+                    "operator_type": "bomb_planet",
+                    "damage_source": "ability",
+                    "bombing_damage_value": "bombing_damage_value",
+                    "bombing_population_damage_value": "fixed_zero"
+                }]
+            }]
+        }
+    }],
     "trigger_event_actions": [
     {
         "trigger_event_type": "on_buff_started",
@@ -30,9 +62,20 @@
                 }
             }]
         }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
     }],
     "unit_mutations": [
-        "disable_can_be_colonized"
+        "disable_can_be_colonized",
+		"suppress_invulnerable"
     ],
     "gui":
     {

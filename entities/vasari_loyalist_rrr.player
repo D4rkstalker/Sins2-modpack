@@ -443,7 +443,7 @@
     ],
     "buildable_strikecraft": [
         "vasari_interceptor_strikecraft",
-        "vasari_bomber_strikecraft"
+	"vasari_bomber_strikecraft_loyalist"
     ],
     "structure_build_groups": [
     {
@@ -638,6 +638,70 @@
                         }]
                     },
                     "button_background": "vasari_research_tier_button_background_4_civil"
+                },
+                {
+                    "acquire_time": 300.0,
+                    "required_research_points": 35,
+                    "price":
+                    {
+                        "metal": 4200.0,
+                        "crystal": 5400.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "utility",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "economic",
+                        "count": 2
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 2
+                    }],
+                    "player_modifiers":
+                    {
+                        "empire_modifiers": [
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "crystal_income_rate",
+                            "value": 1.2
+                        }]
+                    },
+                    "button_background": "research_tier_5"
+                },
+                {
+                    "acquire_time": 360.0,
+                    "required_research_points": 45,
+                    "price":
+                    {
+                        "metal": 6300.0,
+                        "crystal": 8100.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "utility",
+                        "count": 4
+                    },
+                    {
+                        "exotic_type": "economic",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 3
+                    }],
+                    "player_modifiers":
+                    {
+                        "empire_modifiers": [
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "metal_income_rate",
+                            "value": 1.8
+                        }]
+                    },
+                    "button_background": "research_tier_6"
                 }],
                 "research_fields": [
                 {
@@ -658,32 +722,17 @@
                 {
                     "id": "civilian_vasari_repeatables",
                     "name": "research_tree.vasari_race",
-                    "picture": "vasari_research_field_picture_civilian_oppression"
+                    "picture": "vasari_research_field_picture_military_revival"
                 },
                 {
                     "id": "civilian_vasari_loyalist_repeatables",
                     "name": "research_tree.vasari_exodus",
-                    "picture": "vasari_research_field_picture_civilian_oppression"
+                    "picture": "vasari_research_field_picture_military_revival"
                 },
                 {
                     "id": "phase_repeatables_utility_v",
                     "name": "research_tree.phase_mastery",
                     "picture": "vasari_research_field_picture_civilian_phase_mastery"
-                },
-                {
-                    "id": "civilian_repeatables_income_v",
-                    "name": "research_tree.income_repeat",
-                    "picture": "vasari_research_field_picture_civilian_nanotech"
-                },
-                {
-                    "id": "civilian_repeatables_population_v",
-                    "name": "research_tree.population_repeat",
-                    "picture": "vasari_research_field_picture_civilian_nanotech"
-                },
-                {
-                    "id": "civilian_repeatables_utility_v",
-                    "name": "research_tree.utility_repeat",
-                    "picture": "vasari_research_field_picture_civilian_nanotech"
                 }],
                 "full_name": "vasari_research_domain_full_name_civilian",
                 "partial_name": "vasari_research_domain_partial_name_civilian",
@@ -736,8 +785,8 @@
                         },
                         {
                             "modifier_type": "hull_point_restore_rate",
-                            "value_behavior": "additive",
-                            "value": 0.25
+                            "value_behavior": "scalar",
+                            "value": 0.1
                         }]
                     },
                     "button_background": "vasari_research_tier_button_background_1_military"
@@ -784,8 +833,8 @@
                         },
                         {
                             "modifier_type": "hull_point_restore_rate",
-                            "value_behavior": "additive",
-                            "value": 0.25
+                            "value_behavior": "scalar",
+                            "value": 0.1
                         }]
                     },
                     "button_background": "vasari_research_tier_button_background_3_military"
@@ -821,6 +870,75 @@
                         }]
                     },
                     "button_background": "vasari_research_tier_button_background_4_military"
+                },
+                {
+                    "acquire_time": 300.0,
+                    "required_research_points": 35,
+                    "price":
+                    {
+                        "metal": 4200.0,
+                        "crystal": 5400.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "defense",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "offense",
+                        "count": 2
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 2
+                    }],
+                    "player_modifiers":
+                    {
+                        "unit_modifiers": [
+                        {
+                            "modifier_type": "max_hull_points",
+                            "value_behavior": "scalar",
+                            "value": 0.03
+                        },
+                        {
+                            "modifier_type": "hull_point_restore_rate",
+                            "value_behavior": "scalar",
+                            "value": 0.1
+                        }]
+                    },
+                    "button_background": "research_tier_5"
+                },
+                {
+                    "acquire_time": 360.0,
+                    "required_research_points": 45,
+                    "price":
+                    {
+                        "metal": 6300.0,
+                        "crystal": 8100.0
+                    },
+                    "exotic_price": [
+                    {
+                        "exotic_type": "defense",
+                        "count": 4
+                    },
+                    {
+                        "exotic_type": "offense",
+                        "count": 3
+                    },
+                    {
+                        "exotic_type": "ultimate",
+                        "count": 3
+                    }],
+                    "player_modifiers":
+                    {
+                        "weapon_modifiers": [
+                        {
+                            "modifier_type": "damage",
+                            "value_behavior": "scalar",
+                            "value": 0.05
+                        }]
+                    },
+                    "button_background": "research_tier_6"
                 }],
                 "research_fields": [
                 {
@@ -846,27 +964,12 @@
                 {
                     "id": "military_vasari_repeatables",
                     "name": "research_tree.vasari_race",
-                    "picture": "vasari_research_field_picture_military_assault"
+                    "picture": "vasari_research_field_picture_military_revival"
                 },
                 {
                     "id": "military_vasari_loyalist_repeatables",
                     "name": "research_tree.vasari_exodus",
-                    "picture": "vasari_research_field_picture_military_assault"
-                },
-                {
-                    "id": "military_repeatables_offense_v",
-                    "name": "research_tree.offense_repeat",
-                    "picture": "vasari_research_field_picture_military_assault"
-                },
-                {
-                    "id": "military_repeatables_defense_v",
-                    "name": "research_tree.defense_repeat",
-                    "picture": "vasari_research_field_picture_military_assault"
-                },
-                {
-                    "id": "military_repeatables_utility_v",
-                    "name": "research_tree.utility_repeat",
-                    "picture": "vasari_research_field_picture_military_assault"
+                    "picture": "vasari_research_field_picture_military_revival"
                 }],
                 "full_name": "vasari_research_domain_full_name_military",
                 "partial_name": "vasari_research_domain_partial_name_military",
@@ -881,86 +984,65 @@
             }
         },
         "research_subjects": [
-	"vasari_loyalist_mobile_reclamation",
-	"vasari_loyalist_full_mobile_deployment",
-	"vasari_loyalist_solitary_path",
-	"vasari_loyalist_labor_population",
-	    "phase_speed_tier_3_v",
-	    "phase_speed_tier_2_v",
-	    "phase_speed_tier_1_v",
-	    "phase_speed_tier_0_v",
-	    "loot_ship_build_tier_0_v",
-	    "loot_ship_build_tier_1_v",
-	    "loot_ship_build_tier_2_v",
-	    "ship_speed_tier_1_v",
-	    "ship_speed_tier_2_v",
-	    "ship_speed_tier_3_v",
-	    "ship_speed_tier_4_v",
-	    "shields_battle_regen_tier_0_v",
-	    "shields_battle_regen_tier_1_v",
-	    "shields_battle_regen_tier_2_v",
-	    "shields_battle_regen_tier_3_v",
-	    "hull_battle_regen_tier_0_v",
-	    "hull_battle_regen_tier_1_v",
-	    "hull_battle_regen_tier_2_v",
-	    "hull_battle_regen_tier_3_v",
-	    "armor_battle_regen_tier_0_v",
-	    "armor_battle_regen_tier_1_v",
-	    "armor_battle_regen_tier_2_v",
-	    "armor_battle_regen_tier_3_v",
+            "phasemissile_weapon_targeting",
+	    "vasari_loyalist_mobile_reclamation",
+	    "vasari_loyalist_full_mobile_deployment",
+	    "vasari_loyalist_solitary_path",
+	    "vasari_loyalist_labor_population",
 	    "vasari_loyalist_titan_micro_no_item",
 	    "vasari_loyalist_titan_the_maw_no_item",
-	    "planet_item_tier_1_v",
 	    "vasari_loyalist_ship_income_tier_0",
-	    "vasari_ship_income_tier_0",
-	    "vasari_ship_income_tier_1",
-	    "pop_income_tier_0_v",
-	    "pop_income_tier_1_v",
-	    "pop_tier_0_v",
-	    "pop_tier_1_v",
-	    "pop_tier_2_v",
-	    "pop_tier_3_v",
-	    "pop_tier_4_v",
-	    "pop_tier_5_v",
-	    "ability_tier_1_v",
-	    "ability_tier_2_v",
-	    "ability_tier_3_v",
-	    "exotic_build_tier_0_v",
-	    "exotic_build_tier_1_v",
-	    "exotic_build_tier_2_v",
-	    "start_vasari_exodus_bonus_civ",
-	    "start_vasari_exodus_bonus_mil",
             "vasari_loyalist_cost_decrease",
             "vasari_loyalist_navigation",
             "vasari_loyalist_warfare",
             "vasari_loyalist_durability",
             "vasari_loyalist_experience",
+            "vasari_max_supply_6",
             "vasari_phase_resonance_tier_0",
-            "phasemissile_weapon_targeting",
-	    "influence_tier_0_v",
-	    "influence_tier_1_v",
-	    "influence_tier_2_v",
-            "missile_speed_tier_0_v",
-            "missile_speed_tier_1_v",
-            "missile_speed_tier_2_v",
-	    "planet_item_tier_0_v",
-            "point_defense_tier_0_v",
-            "point_defense_tier_1_v",
-            "point_defense_tier_2_v",
-            "squadron_size_tier_0_v",
-            "squadron_size_tier_1_v",
-            "squadron_size_tier_2_v",
-            "squadron_size_tier_3_v",
+            "vasari_planet_orbital_tier_0",
+            "vasari_planet_orbital_tier_1",
+            "vasari_planet_orbital_tier_2",
+	    "vasari_ship_income_tier_0",
+	    "vasari_ship_income_tier_1",
+	    "vasari_trade_ship_selective_phasing",
+	    "vasari_unlock_build_research_exotic",
+	    "vasari_unlock_colony_cruiser_capture_extractor_ability",
+	    "vasari_unlock_hangar_defense_structure",
+	    "vasari_unlock_overseer_cruiser_phasic_trap_ability",
+	    "vasari_unlock_starbase_enforced_loyalty_unit_item",
+
             "antimatter_tier_1_v",
             "antimatter_tier_2_v",
             "antimatter_tier_3_v",
             "antimatter_tier_4_v",
+	    "ability_tier_1_v",
+	    "ability_tier_2_v",
+	    "ability_tier_3_v",
+	    "armor_battle_regen_tier_0_v",
+	    "armor_battle_regen_tier_1_v",
+	    "armor_battle_regen_tier_2_v",
+	    "armor_battle_regen_tier_3_v",
+            "armor_tier_5_v",
+            "armor_tier_6_v",
+            "armor_tier_7_v",
+            "armor_tier_8_v",
+            "armor_tier_9_v",
+            "armor_tier_10_v",
+            "armor_tier_11_v",
+            "armor_tier_12_v",
+            "armor_tier_13_v",
+            "armor_tier_14_v",
             "civ_slots_tier_0_v",
             "civ_slots_tier_1_v",
             "civ_slots_tier_2_v",
             "civ_slots_tier_3_v",
             "civ_slots_tier_4_v",
-            "crystal_tier_2_v",
+            "credits_tier_3_v",
+            "credits_tier_4_v",
+            "credits_tier_5_v",
+            "credits_tier_6_v",
+            "credits_tier_7_v",
+            "credits_tier_8_v",
             "crystal_tier_3_v",
             "crystal_tier_4_v",
             "crystal_tier_5_v",
@@ -972,6 +1054,8 @@
             "culture_tier_2_v",
             "culture_tier_3_v",
             "culture_tier_4_v",
+            "damage_tier_0_v",
+            "damage_tier_1_v",
             "damage_tier_2_v",
             "damage_tier_3_v",
             "damage_tier_4_v",
@@ -985,22 +1069,13 @@
             "damage_tier_12_v",
             "damage_tier_13_v",
             "damage_tier_14_v",
-            "armor_tier_2_v",
-            "armor_tier_3_v",
-            "armor_tier_4_v",
-            "armor_tier_5_v",
-            "armor_tier_6_v",
-            "armor_tier_7_v",
-            "armor_tier_8_v",
-            "armor_tier_9_v",
-            "armor_tier_10_v",
-            "armor_tier_11_v",
-            "armor_tier_12_v",
-            "armor_tier_13_v",
-            "armor_tier_14_v",
-            "hull_tier_2_v",
-            "hull_tier_3_v",
-            "hull_tier_4_v",
+	    "exotic_build_tier_0_v",
+	    "exotic_build_tier_1_v",
+	    "exotic_build_tier_2_v",
+	    "hull_battle_regen_tier_0_v",
+	    "hull_battle_regen_tier_1_v",
+	    "hull_battle_regen_tier_2_v",
+	    "hull_battle_regen_tier_3_v",
             "hull_tier_5_v",
             "hull_tier_6_v",
             "hull_tier_7_v",
@@ -1011,8 +1086,12 @@
             "hull_tier_12_v",
             "hull_tier_13_v",
             "hull_tier_14_v",
-            "starmax_starbases_tier_0_v",
-            "metal_tier_2_v",
+	    "influence_tier_0_v",
+	    "influence_tier_1_v",
+	    "influence_tier_2_v",
+	    "loot_ship_build_tier_0_v",
+	    "loot_ship_build_tier_1_v",
+	    "loot_ship_build_tier_2_v",
             "metal_tier_3_v",
             "metal_tier_4_v",
             "metal_tier_5_v",
@@ -1024,16 +1103,34 @@
             "mil_slots_tier_2_v",
             "mil_slots_tier_3_v",
             "mil_slots_tier_4_v",
-            "credits_tier_2_v",
-            "credits_tier_3_v",
-            "credits_tier_4_v",
-            "credits_tier_5_v",
-            "credits_tier_6_v",
-            "credits_tier_7_v",
-            "credits_tier_8_v",
-            "shields_tier_2_v",
-            "shields_tier_3_v",
-            "shields_tier_4_v",
+            "missile_speed_tier_0_v",
+            "missile_speed_tier_1_v",
+            "missile_speed_tier_2_v",
+	    "phase_speed_tier_0_v",
+	    "phase_speed_tier_1_v",
+	    "phase_speed_tier_2_v",
+	    "phase_speed_tier_3_v",
+            "planet_rate_tier_0_v",
+            "planet_rate_tier_1_v",
+            "planet_rate_tier_2_v",
+	    "planet_item_tier_0_v",
+	    "planet_item_tier_1_v",
+            "point_defense_tier_0_v",
+            "point_defense_tier_1_v",
+            "point_defense_tier_2_v",
+	    "pop_tier_0_v",
+	    "pop_tier_1_v",
+	    "pop_tier_2_v",
+	    "pop_tier_3_v",
+	    "pop_tier_4_v",
+	    "pop_tier_5_v",
+	    "pop_income_tier_0_v",
+	    "pop_income_tier_1_v",
+            "starmax_starbases_tier_0_v",
+	    "shields_battle_regen_tier_0_v",
+	    "shields_battle_regen_tier_1_v",
+	    "shields_battle_regen_tier_2_v",
+	    "shields_battle_regen_tier_3_v",
             "shields_tier_5_v",
             "shields_tier_6_v",
             "shields_tier_7_v",
@@ -1044,13 +1141,21 @@
             "shields_tier_12_v",
             "shields_tier_13_v",
             "shields_tier_14_v",
+	    "ship_speed_tier_1_v",
+	    "ship_speed_tier_2_v",
+	    "ship_speed_tier_3_v",
+	    "ship_speed_tier_4_v",
             "structure_range_tier_0_v",
             "structure_range_tier_1_v",
             "structure_range_tier_2_v",
-            "planet_rate_tier_0_v",
-            "planet_rate_tier_1_v",
-            "planet_rate_tier_2_v",
-            "vasari_max_supply_6",
+            "squadron_size_tier_0_v",
+            "squadron_size_tier_1_v",
+            "squadron_size_tier_2_v",
+            "squadron_size_tier_3_v",
+
+	    "start_vasari_exodus_bonus_civ",
+	    "start_vasari_exodus_bonus_mil",
+
             "vasari_antimatter_0",
             "vasari_antimatter_1",
             "vasari_antimatter_2",
@@ -1231,15 +1336,10 @@
             "vasari_upgrade_wave_weapons_0",
             "vasari_upgrade_wave_weapons_1",
             "vasari_upgrade_wave_weapons_2",
-			"vasari_unlock_starbase_enforced_loyalty_unit_item",
-			"vasari_unlock_overseer_cruiser_phasic_trap_ability",
             "vasari_upgrade_wave_weapons_3",
             "dlc2_vasari_unlock_loyalist_super_capital_ship",
             "dlc2_vasari_upgrade_loyalist_super_item_slots",
-            "dlc2_vasari_unlock_faction_victory_item",
-			"vasari_unlock_colony_cruiser_capture_extractor_ability",
-			"vasari_trade_ship_selective_phasing",
-			"vasari_unlock_hangar_defense_structure"
+            "dlc2_vasari_unlock_faction_victory_item"
         ],
         "faction_research_subjects": [
 		"vasari_upgrade_missile_damage_1",
@@ -1677,9 +1777,9 @@
             "import_points": 7,
             "export_points":
             {
-                "credits": 3,
-                "metal": 3,
-                "crystal": 3
+                "credits": 2,
+                "metal": 2,
+                "crystal": 2
             }
         }]
     },
@@ -5081,7 +5181,6 @@
             }
         }]
     }],
-
     "default_starting_assets":
     {
         "metal": 2880,
@@ -5106,8 +5205,8 @@
     }],
     "asteroid_extraction_rates":
     {
-        "metal": 0.5,
-        "crystal": 0.5
+        "metal": 0.25,
+        "crystal": 0.25
     },
     "planet_bombing_recovery_cooldown": 30.0,
     "colonize_starting_health_percent": 1,
@@ -5287,7 +5386,10 @@
             {
                 "metal": 600.0,
                 "crystal": 600.0
-            }
+            },
+            "factory_build_prerequisites": [
+                ["vasari_unlock_build_research_exotic"]
+            ]
         }
     }],
     "garrison":
@@ -5301,7 +5403,7 @@
         {
             "build_kind": "frigate"
         }],
-        "factory_build_time_scalar": 1.5,
+        "factory_build_time_scalar": 4.0,
         "units":
         {
             "random_units": [
@@ -5629,31 +5731,31 @@
             "max_supply": 250
         },
         {
-            "max_supply": 550,
+            "max_supply": 500,
             "prerequisites": [["vasari_max_supply_0"]]
         },
         {
-            "max_supply": 1175,
+            "max_supply": 850,
             "prerequisites": [["vasari_max_supply_1"]]
         },
         {
-            "max_supply": 1750,
+            "max_supply": 1200,
             "prerequisites": [["vasari_max_supply_2"]]
         },
         {
-            "max_supply": 2375,
+            "max_supply": 1800,
             "prerequisites": [["vasari_max_supply_3"]]
         },
         {
-            "max_supply": 3000,
+            "max_supply": 2400,
             "prerequisites": [["vasari_max_supply_4"]]
         },
         {
-            "max_supply": 3900,
+            "max_supply": 3000,
             "prerequisites": [["vasari_max_supply_5"]]
         },
         {
-            "max_supply": 4800,
+            "max_supply": 3600,
             "prerequisites": [["vasari_max_supply_6"]]
         }]
     },

@@ -1,0 +1,492 @@
+{
+    "opening_duration": 0.3,
+    "closing_duration": 0.3,
+    "fade_function": "in_quad",
+    "container_window":
+    {
+        "layout":
+        {
+            "vertical_alignment": "stretch",
+            "horizontal_alignment": "center",
+            "width": 1920
+        },
+        "research_subject_icon_button_shared_definition":
+        {
+            "completed_research_alpha": 0.5,
+            "completed_research_frame_alpha": 1.0,
+            "does_not_pass_text_filter_alpha": 0.1,
+            "is_unlocked_in_future_alpha": 1.0,
+            "research_available_continuous_cycle_time": 7.0
+        },
+        "top_content_window":
+        {
+            "layout":
+            {
+                "horizontal_alignment": "stretch",
+                "vertical_alignment": "top",
+                "height": 246
+            },
+            "background":
+            {
+                "components": [
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "stretch",
+                        "vertical_alignment": "top",
+                        "height": 271
+                    },
+                    "brush": "research_window_top_underlay",
+                    "brush_render_style": "centered"
+                }]
+            },
+            "domain_name_postfix": "research_window_domain_name_postfix",
+            "header_label":
+            {
+                "layout":
+                {
+                    "vertical_alignment": "top",
+                    "horizontal_alignment": "left",
+                    "width": 200,
+                    "height": 40,
+                    "margins":
+                    {
+                        "left": 525,
+                        "top": 100
+                    }
+                },
+                "style": "hud_title_with_text_glow"
+            },
+            "view_is_compressed_button":
+            {
+                "layout":
+                {
+                    "vertical_alignment": "top",
+                    "horizontal_alignment": "left",
+                    "width": 40,
+                    "height": 40,
+                    "margins":
+                    {
+                        "left": 175,
+                        "top": 98
+                    }
+                },
+                "style": "hud_dark_square",
+                "compressed_icon": "research_view_is_compressed_icon",
+                "uncompressed_icon": "research_view_is_uncompressed_icon",
+                "tooltip":
+                {
+                    "anchor_location_on_button": "bottom_center",
+                    "anchor_location_on_tooltip": "top_center",
+                    "title_text": "research_view_is_compressed_button_title",
+                    "description": "research_view_is_compressed_button_description"
+                }
+            },
+            "text_filter":
+            {
+                "layout":
+                {
+                    "vertical_alignment": "top",
+                    "horizontal_alignment": "left",
+                    "width": 291,
+                    "height": 48,
+                    "margins":
+                    {
+                        "left": 225,
+                        "top": 95
+                    }
+                },
+                "background":
+                {
+                    "brush": "dark_text_entry_underlay",
+                    "brush_render_style": "stretched"
+                },
+                "icon":
+                {
+                    "layout":
+                    {
+                        "vertical_alignment": "center",
+                        "horizontal_alignment": "left",
+                        "width": 40,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 5
+                        }
+                    },
+                    "brush": "research_window_text_filter_icon",
+                    "brush_render_style": "centered"
+                },
+                "text_entry":
+                {
+                    "layout":
+                    {
+                        "vertical_alignment": "top",
+                        "horizontal_alignment": "left",
+                        "width": 180,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 50,
+                            "top": 2
+                        }
+                    },
+                    "style": "hud_research_text_filter"
+                },
+                "clear_button":
+                {
+                    "layout":
+                    {
+                        "vertical_alignment": "center",
+                        "horizontal_alignment": "right",
+                        "width": 40,
+                        "height": 40,
+                        "margins":
+                        {
+                            "right": 2
+                        }
+                    },
+                    "style": "icon_no_background",
+                    "icon": "research_window_clear_text_filter_icon"
+                },
+                "tooltip_header_label": "tooltip.research_window_text_filter_header_label",
+                "tooltip_description":
+                {
+                    "text": "tooltip.research_window_text_filter_description",
+                    "color": "default_description"
+                }
+            },
+            "tier_buttons_panel":
+            {
+                "layout":
+                {
+                    "vertical_alignment": "top",
+                    "horizontal_alignment": "stretch",
+                    "height": 85,
+                    "margins":
+                    {
+                        "left": 10,
+                        "top": 150
+                    }
+                },
+                "tier_count": 7,
+                "button_shared_definition":
+                {
+                    "style": "hud_research_window_tier_button",
+                    "not_completed_overlays": [
+                    {
+                        "brush": "hud_button_overlay_frame",
+                        "brush_render_style": "stretched"
+                    }],
+                    "completed_overlays": [
+                    {
+                        "brush": "hud_button_overlay_frame_research_completed",
+                        "brush_render_style": "stretched",
+                        "outer_margins":{
+                            "left": 4,
+                            "right": 4,
+                            "top": 4,
+                            "bottom": 4
+                        }    
+                    }],
+                    "build_overlay":
+                    {
+                        "fill": "item_build_overlay_fill",
+                        "glow": "item_build_overlay_glow"
+                    },
+                    "build_progress_bar":
+                    {
+                        "layout":
+                        {
+                            "horizontal_alignment": "center",
+                            "vertical_alignment": "bottom",
+                            "width": 195,
+                            "height": 10
+                        },
+                        "frame_brush": "hud_research_tier_button_progress_bar_frame",
+                        "bar_margins":
+                        {
+                            "left": 3,
+                            "right": 3,
+                            "top": 4,
+                            "bottom": 3
+                        },
+                        "bar_color": "build_progress"
+                    },                
+                    "status_icon_margins":
+                    {
+                        "left": 1
+                    },
+                    "cannot_acquire_icon_layout":
+                    {
+                        "horizontal_alignment": "right",
+                        "vertical_alignment": "stretch",
+                        "width": 30
+                    },
+                    "cannot_acquire_icon_background": "status_icon_underlay",
+                    "waiting_icon_layout":
+                    {
+                        "horizontal_alignment": "right",
+                        "vertical_alignment": "stretch",
+                        "width": 30
+                    },
+                    "waiting_icon_background": "status_icon_underlay",
+                    "is_not_available_alpha": 1.0,
+                    "acquired_flash":
+                    {
+                        "brush": "button_flash",
+                        "duration": 1
+                    }
+                },
+                "button_layout_grid":
+                {
+                    "outer_margin": [0, 0],
+                    "element_spacing": [85, 5],
+                    "element_size": [195, 85]
+                },
+                "link_brushes":
+                {
+                    "normal":
+                    {
+                        "horizontal_connector_brush": "research_link_normal_connector_horizontal",
+                        "arrow_brush": "research_link_normal_arrow_to_right"
+                    },
+                    "completed":
+                    {
+                        "horizontal_connector_brush": "research_link_completed_connector_horizontal",
+                        "arrow_brush": "research_link_completed_arrow_to_right"
+                    }
+                }
+            }
+        },
+        "bottom_content_window":
+        {
+            "layout":
+            {
+                "horizontal_alignment": "stretch",
+                "vertical_alignment": "bottom",
+                "height": 104
+            },
+            "background":
+            {
+                "components": [
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "stretch",
+                        "vertical_alignment": "bottom",
+                        "height": 129
+                    },
+                    "brush": "research_window_bottom_underlay",
+                    "brush_render_style": "centered"
+                }]
+            },
+            "researching_research_subject_buttons_panel":
+            {
+                "layout":
+                {
+                    "vertical_alignment": "bottom",
+                    "horizontal_alignment": "center",
+                    "height": 45,
+                    "width": 1615,
+                    "margins":
+                    {
+                        "bottom": 28
+                    }
+                },
+                "button_layout_grid":
+                {
+                    "outer_margin": [0, 0],
+                    "element_spacing": [5, 5],
+                    "element_size": [85, 40]
+                },
+                "max_buttons_count": 18,
+                "components": []
+            }
+        },
+        "research_subjects_container_window":
+        {
+            "layout":
+            {
+                "margins":{
+                    "top": 246,
+                    "bottom": 104
+                }
+            },
+            "tree_window_shared_definition":
+            {
+                "background":
+                {
+                    "layout":
+                    {
+                        "margins":
+                        {
+                            "top": -1,
+                            "bottom": -1
+                        }
+                    },
+                    "brush": "research_screen_shadow_frame",
+                    "brush_render_style": "stretched"
+                },
+                "scrollable_container":
+                {
+                    "mouse_wheel_scroll_speed": 40,
+                    "scroll_bar_layout":
+                    {
+                        "horizontal_alignment": "right",
+                        "width": 20,
+                        "margins":
+                        {}
+                    },
+                    "scroll_bar_style": "list_box",
+                    "field_windows_panel":
+                    {
+                        "seperator_height": 1,
+                        "seperator_brush": "research_field_seperator",
+                        "field_window":
+                        {
+                            "header_picture":
+                            {
+                                "is_scale_to_fit_enabled": true
+                            },
+                            "header_label":
+                            {
+                                "style": "research_field_header",
+                                "layout":
+                                {
+                                    "vertical_alignment": "top",
+                                    "horizontal_alignment": "left",
+                                    "width": 300,
+                                    "height": 24,
+                                    "margins":
+                                    {
+                                        "top": 10,
+                                        "left": 70
+                                    }
+                                }
+                            },
+                            "background_colors": [
+                                "f2061e2a",
+                                "f2082939"
+                            ],
+                            "buttons_panel":
+                            {
+                                "outer_margins":
+                                {
+                                    "left": 10,
+                                    "top": 50,
+                                    "bottom": 30
+                                },
+                                "darkened_area_margins":
+                                {
+                                    "left": 40,
+                                    "right": 90
+                                },
+                                "column_grid":
+                                {
+                                    "outer_margin": [0, 0],
+                                    "element_spacing": [80, 0],
+                                    "element_size": [200, 0]
+                                },
+                                "column_hovered_background": "research_column_hovered_background",
+                                "uncompressed_icon_buttons_grid":
+                                {
+                                    "outer_margin": [0, 0],
+                                    "element_spacing": [25, 10],
+                                    "element_size": [85, 40]
+                                },
+                                "compressed_icon_buttons_grid":
+                                {
+                                    "outer_margin": [0, 0],
+                                    "element_spacing": [25, 5],
+                                    "element_size": [85, 40]
+                                },
+                                "does_not_pass_text_filter_grid_link_alpha": 0.2,
+                                "darkened_area_alpha": 0.25,
+                                "grid_link_state_brushes":
+                                {
+                                    "normal":
+                                    {
+                                        "horizontal_connector_brush": "research_link_normal_connector_horizontal",
+                                        "vertical_connector_brush": "research_link_normal_connector_vertical",
+                                        "junction_brushes":
+                                        {
+                                            "left_right": "research_link_normal_junction_left_right",
+                                            "left_top": "research_link_normal_junction_left_top",
+                                            "left_bottom": "research_link_normal_junction_left_bottom",
+                                            "left_top_bottom": "research_link_normal_junction_left_top_bottom",
+                                            "left_right_top": "research_link_normal_junction_left_right_top",
+                                            "left_right_bottom": "research_link_normal_junction_left_right_bottom",
+                                            "left_right_top_bottom": "research_link_normal_junction_left_right_top_bottom",
+                                            "top_bottom": "research_link_normal_junction_top_bottom",
+                                            "top_right": "research_link_normal_junction_top_right",
+                                            "top_bottom_right": "research_link_normal_junction_top_bottom_right",
+                                            "bottom_right": "research_link_normal_junction_bottom_right"
+                                        },
+                                        "arrow_brushes":
+                                        {
+                                            "to_right": "research_link_normal_arrow_to_right",
+                                            "to_top": "research_link_normal_arrow_to_top",
+                                            "to_bottom": "research_link_normal_arrow_to_bottom"
+                                        }
+                                    },
+                                    "completed":
+                                    {
+                                        "horizontal_connector_brush": "research_link_completed_connector_horizontal",
+                                        "vertical_connector_brush": "research_link_completed_connector_vertical",
+                                        "junction_brushes":
+                                        {
+                                            "left_right": "research_link_completed_junction_left_right",
+                                            "left_top": "research_link_completed_junction_left_top",
+                                            "left_bottom": "research_link_completed_junction_left_bottom",
+                                            "left_top_bottom": "research_link_completed_junction_left_top_bottom",
+                                            "left_right_top": "research_link_completed_junction_left_right_top",
+                                            "left_right_bottom": "research_link_completed_junction_left_right_bottom",
+                                            "left_right_top_bottom": "research_link_completed_junction_left_right_top_bottom",
+                                            "top_bottom": "research_link_completed_junction_top_bottom",
+                                            "top_right": "research_link_completed_junction_top_right",
+                                            "top_bottom_right": "research_link_completed_junction_top_bottom_right",
+                                            "bottom_right": "research_link_completed_junction_bottom_right"
+                                        },
+                                        "arrow_brushes":
+                                        {
+                                            "to_right": "research_link_completed_arrow_to_right",
+                                            "to_top": "research_link_completed_arrow_to_top",
+                                            "to_bottom": "research_link_completed_arrow_to_bottom"
+                                        }
+                                    },
+                                    "unavailable":
+                                    {
+                                        "horizontal_connector_brush": "research_link_unavailable_connector_horizontal",
+                                        "vertical_connector_brush": "research_link_unavailable_connector_vertical",
+                                        "junction_brushes":
+                                        {
+                                            "left_right": "research_link_unavailable_junction_left_right",
+                                            "left_top": "research_link_unavailable_junction_left_top",
+                                            "left_bottom": "research_link_unavailable_junction_left_bottom",
+                                            "left_top_bottom": "research_link_unavailable_junction_left_top_bottom",
+                                            "left_right_top": "research_link_unavailable_junction_left_right_top",
+                                            "left_right_bottom": "research_link_unavailable_junction_left_right_bottom",
+                                            "left_right_top_bottom": "research_link_unavailable_junction_left_right_top_bottom",
+                                            "top_bottom": "research_link_unavailable_junction_top_bottom",
+                                            "top_right": "research_link_unavailable_junction_top_right",
+                                            "top_bottom_right": "research_link_unavailable_junction_top_bottom_right",
+                                            "bottom_right": "research_link_unavailable_junction_bottom_right"
+                                        },
+                                        "arrow_brushes":
+                                        {
+                                            "to_right": "research_link_unavailable_arrow_to_right",
+                                            "to_top": "research_link_unavailable_arrow_to_top",
+                                            "to_bottom": "research_link_unavailable_arrow_to_bottom"
+                                        }
+                                    }
+                                },
+                                "debug_font": "segoeui_16"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

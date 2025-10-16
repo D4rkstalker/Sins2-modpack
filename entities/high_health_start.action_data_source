@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "high_health_start_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "defense_points",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "hull_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "defense_points"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "armor_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "defense_points"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "shield_points_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "defense_points"
+        }
+    }]
+}

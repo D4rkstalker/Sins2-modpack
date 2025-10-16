@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_child_strikecraft_of_unit",
+                "strikecraft_carrier_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_loyalist_super_empowered_strikecraft_on_strikecraft"
+                }]
+            },
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect": "dlc2_vasari_loyalist_super_empowered_strike_craft_ambient"
+                }
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_spawned_strikecraft",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_vasari_loyalist_super_empowered_strikecraft_on_strikecraft"
+                }]
+            }]
+        }
+    }]
+}
