@@ -1,0 +1,87 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "explosive_shot_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "explosive_shot_radius_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "explosive_shot_damage_value",
+                    "penetration_value": "explosive_shot_penetration_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "explosive_shot_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                            	"unit_type": "operand_destination"
+                            },
+                            "target_filter_id": "explosive_shot_radius_target_filter"
+                        },
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                            	"unit_type": "first_spawner"
+                            },
+                            "unit_constraint":
+                            {
+                            	"constraint_type": "has_mutation",
+                            	"mutation": "improved_piercing_shot"
+                            }
+                        }]
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "explosive_shot_damage2_value",
+                    "penetration_value": "explosive_shot_penetration2_value"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

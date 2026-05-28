@@ -2,11 +2,11 @@
     "version": 0,
     "spatial":
     {
-        "radius": 784.155701,
+        "radius": 825.501343,
         "box":
         {
-            "center": [-2.04451, 209.7108, -142.036377],
-            "extents": [508.430298, 574.444885, 444.120972]
+            "center": [-0.014908, 319.929382, -77.126976],
+            "extents": [173.378906, 498.216003, 292.695099]
         },
         "can_be_displaced_on_collision": false
     },
@@ -20,15 +20,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
-    },
-    "player_ai":
-    {
-        "max_count_at_planet":
-        {
-            "type": "constant",
-            "value": 1.0
-        }
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -42,6 +35,12 @@
         "slot_type": "civilian",
         "slots_required": 1,
         "roles": [],
+        "planet_modifiers": [
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value": 0.05
+        }],
         "build_group_id": "civilian"
     },
     "formation":
@@ -77,11 +76,12 @@
             "hull_point_restore_rate": 3.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
+            "max_armor_points": 1000.0,
             "armor_point_restore_rate": 4.0,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
             "armor_strength": 40.0,
-            "max_shield_points": 2000.0,
+            "max_shield_points": 1000.0,
             "shield_point_restore_rate": 5.0,
             "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
             "shield_point_restore_scalar_after_damage_taken": 0.0,
@@ -95,21 +95,22 @@
     },
     "build":
     {
-        "build_time": 75.0,
+        "build_time": 60.0,
         "price":
         {
-            "credits": 450.0,
+            "credits": 300.0,
             "metal": 125.0,
-            "crystal": 75.0
+            "crystal": 120.0
         },
-        "prerequisites": [
-            ["advent_unlock_population_structure"]
-        ],
         "build_kind": "structure",
-        "build_radius": 675.088745
+        "build_radius": 575.192078
     },
     "passive_income":
     {},
+    "culture_provider":
+    {
+        "has_ability_providing_culture_rate": true
+    },
     "target_filter_unit_type": "structure",
     "tags": [
         "structure"
@@ -126,5 +127,20 @@
         "skins": [
             "advent_population_structure"]
     }],
-    "action_effect_size": "medium_unit"
+    "action_effect_size": "medium_unit",
+    "traffic_port":
+    {
+        "max_traffic_ship_count": 2,
+        "traffic_ship_construction_time": 30.0,
+        "traffic_ship": "advent_traffic_ship",
+        "allowed_destination_units": [
+            "advent_population_structure",
+            "trader_population_structure",
+            "vasari_population_structure"
+        ],
+        "special_operation_unit_kind": "traffic_ship",
+        "create_traffic_ship_offset": [0.0, 0.0, 1500.0],
+        "force_stay_in_gravity_well": false,
+        "traffic_ship_per_hundred_pop": 0.75
+    }
 }

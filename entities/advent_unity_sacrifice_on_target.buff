@@ -18,19 +18,67 @@
                 },
                 "operators": [
                 {
-	                "constraint":
+                    "constraint":
                     {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
+                        "constraint_type": "composite_and",
+                        "constraints": [
                         {
-                            "unit_type": "operand_destination"
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "target_filter_id": "sacrifice_cull_population_target_filter"
                         },
-                        "target_filter_id": "sacrifice_cull_population_target_filter"
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint": 
+                            {
+                                "constraint_type": "research_prerequisites_are_met",
+                                "player":
+                                {
+                                    "player_type": "buff_owner_player"
+                                },
+                                "prerequisites": [
+                                    ["advent_upgrade_unity_abilities"]
+                                ]
+                            }
+                        }]
                     },
                     "operator_type": "cull_allegiance_population",
                     "damage_source": "ability",
                     "population_reduction_type": "owner_only",
                     "population_culled_value": "sacrifice_population_culled_value",
+                    "population_reduction_modifier_type": "scalar"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "target_filter_id": "sacrifice_cull_population_target_filter"
+                        },
+                        {
+                            "constraint_type": "research_prerequisites_are_met",
+                            "player":
+                            {
+                                "player_type": "buff_owner_player"
+                            },
+                            "prerequisites": [
+                                ["advent_upgrade_unity_abilities"]
+                            ]
+                        }]
+                    },
+                    "operator_type": "cull_allegiance_population",
+                    "damage_source": "ability",
+                    "population_reduction_type": "owner_only",
+                    "population_culled_value": "researech_sacrifice_population_culled_value",
                     "population_reduction_modifier_type": "scalar"
                 }]
             }]
@@ -75,5 +123,9 @@
                 }]
             }]
         }
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "sacrifice_bombing_population_damage_taken_modifier"
     }]
 }

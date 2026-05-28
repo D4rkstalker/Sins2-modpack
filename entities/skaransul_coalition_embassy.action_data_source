@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "population_count"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "embassy_planet_current_population_points_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_current_population_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "embassy_max_influence_points_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "population_count",
+            "values": [0.01]
+        }
+    },
+    {
+        "action_value_id": "embassy_influence_points_recharge_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "population_count",
+            "values": [0.001]
+        }
+    },
+    {
+        "action_value_id": "embassy_max_influence_points_tooltip_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "embassy_influence_points_recharge_rate_tooltip_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "embassy_max_influence_points_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "max_influence_points",
+            "value_behavior": "additive",
+            "value_id": "embassy_max_influence_points_value"
+        }
+    },
+    {
+        "buff_empire_modifier_id": "embassy_influence_points_recharge_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "influence_points_recharge_rate",
+            "value_behavior": "scalar",
+            "value_id": "embassy_influence_points_recharge_rate_value"
+        }
+    }]
+}

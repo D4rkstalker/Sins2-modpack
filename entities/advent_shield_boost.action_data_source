@@ -1,27 +1,46 @@
 {
     "version": 0,
-    "level_count": 2,
+    "level_count": 3,
     "action_values": [
     {
         "action_value_id": "shield_points_bonus_value",
         "action_value":
         {
-            "values": [0.3, 0.45],
+            "values": [0.3, 0.45, 0.45],
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [0.0002, 0.00035]
+                "ratio_values": [0.0002, 0.00035, 0.00035]
             }
         },
         "action_value_id": "shield_burst_bonus_value",
         "action_value":
         {
-            "values": [0.3, 0.45],
+            "values": [0.3, 0.45, 0.45],
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [0.0002, 0.00035]
+                "ratio_values": [0.0002, 0.00035, 0.00035]
             }
+        }
+    },
+    {
+        "action_value_id": "psi_backlash_damage_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, 5.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0, 0.0, 0.01]
+            }
+        }
+    },
+    {
+        "action_value_id": "psi_backlash_penetration_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, 1000.0]
         }
     }],
     "buff_unit_modifiers": [
@@ -41,6 +60,28 @@
             "modifier_type": "shield_burst_restore_points",
             "value_behavior": "scalar",
             "value_id": "shield_points_bonus_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "backlash_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "advent_psi_backlash_large"
+        }
+    },
+    {
+        "alias_name": "backlash_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "advent_psi_backlash_medium"
+        }
+    },
+    {
+        "alias_name": "backlash_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "advent_psi_backlash_small"
         }
     }]
 }

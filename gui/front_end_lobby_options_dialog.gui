@@ -1,86 +1,66 @@
 {
-    "layout":
-    {},
+    "layout": {},
     "dim_color": "AA000000",
-    "background_window":
-    {
-        "layout":
-        {
+    "background_window": {
+        "layout": {
             "horizontal_alignment": "center",
             "vertical_alignment": "center",
-            "width": 600,
-            "height": 940
+            "width": 1400,
+            "height": 580
         },
-        "content_panel":
-        {
-            "layout":
+        "components": [
             {
-                "margins":
-                {
-                    "left": 170,
-                    "right": 170,
-                    "top": 70,
-                    "bottom": 110
-                }
-            },
-            "header_label":
-            {
-                "layout":
-                {
-                    "vertical_alignment": "top",
-                    "horizontal_alignment": "center",
-                    "width": 200,
-                    "height": 40,
-                    "margins":
-                    {
-                        "top": 0
+                "layout": {
+                    "horizontal_alignment": "stretch",
+                    "vertical_alignment": "stretch",
+                    "margins": {
+                        "left": 45,
+                        "right": 45,
+                        "top": 25,
+                        "bottom": 40
                     }
                 },
-                "style": "hud_title_with_text_glow",
-                "text": "front_end_lobby_options_dialog_header"
+                "brush": "lobby_single_player_watermark",
+                "brush_render_style": "stretched"
+            }
+        ],
+        "content_panel": {
+            "layout": {
+                "margins": {
+                    "left": 50,
+                    "right": 50,
+                    "top": 70,
+                    "bottom": 80
+                }
             },
-            "lobby_options_dialog_options_panel":
-            {
-                "layout":
-                {
+            "lobby_options_dialog_options_panel": {
+                "layout": {
                     "horizontal_alignment": "center",
-                    "width": 320,
-                    "margins":
-                    {
+                    "width": 1300,
+                    "margins": {
                         "top": 60,
                         "bottom": 0
                     }
                 },
-                "buttons_layout_grid":
-                {
-                    "outer_margin": [0, 0],
-                    "element_spacing": [5, 5],
-                    "element_size": [320, 40]
-                },
-                "toggle_option_button_shared_definition":
-                {
+                "toggle_option_button_shared_definition": {
                     "value_text_when_true": "front_end_lobby_dialog.toggle_option.true",
                     "value_text_when_false": "front_end_lobby_dialog.toggle_option.false",
                     "value_color_when_true": "positive_value",
                     "value_color_when_false": "negative_value",
-                    "is_loading_saved_game_description":
-                    {
+                    "is_loading_saved_game_description": {
                         "text": "front_end_lobby_dialog.toggle_option.is_loading_saved_game_description",
                         "color": "highlighted_value"
                     }
                 },
-                "float_option_button_shared_definition":
-                {
-                    "status_names":
-                    {
+                "float_option_button_shared_definition": {
+                    "status_names": {
                         "very_low": "lobby_float_option_very_low",
                         "low": "lobby_float_option_low",
                         "normal": "lobby_float_option_normal",
                         "high": "lobby_float_option_high",
                         "very_high": "lobby_float_option_very_high"
                     },
-                    "status_colors":
-                    {
+                    "status_colors": {
                         "very_low": "highlighted_value",
                         "low": "highlighted_value",
                         "normal": "default_label",
@@ -88,18 +68,41 @@
                         "very_high": "highlighted_value"
                     },
                     "disabled_color": "button_disabled_blue",
-                    "restricted_description":
-                    {
+                    "restricted_description": {
                         "text": "lobby_option_restricted_description",
                         "color": "warning_description"
                     },
-                    "performance_description":
-                    {
+                    "performance_description": {
                         "text": "lobby_option_performance_description",
                         "color": "negative_value"
                     }
                 },
-                "float_option_low_start_button_shared_definition":
+                "float_option_low_start_button_shared_definition": {
+                    "status_names": {
+                        "low": "lobby_float_option_low",
+                        "normal": "lobby_float_option_normal",
+                        "high": "lobby_float_option_high",
+                        "very_high": "lobby_float_option_very_high",
+                        "extreme": "lobby_float_option_extreme"
+                    },
+                    "status_colors": {
+                        "low": "highlighted_value",
+                        "normal": "default_label",
+                        "high": "highlighted_value",
+                        "very_high": "highlighted_value",
+                        "extreme": "highlighted_value"
+                    },
+                    "disabled_color": "button_disabled_blue",
+                    "restricted_description": {
+                        "text": "lobby_option_restricted_description",
+                        "color": "warning_description"
+                    },
+                    "performance_description": {
+                        "text": "lobby_option_performance_description",
+                        "color": "negative_value"
+                    }
+                },
+                "float_option_with_off_button_shared_definition":
                 {
                     "status_names":
                     {
@@ -107,7 +110,7 @@
                         "normal": "lobby_float_option_normal",
                         "high": "lobby_float_option_high",
                         "very_high": "lobby_float_option_very_high",
-                        "extreme": "lobby_float_option_extreme"
+                        "off": "lobby_float_option_off"
                     },
                     "status_colors":
                     {
@@ -115,7 +118,7 @@
                         "normal": "default_label",
                         "high": "highlighted_value",
                         "very_high": "highlighted_value",
-                        "extreme": "highlighted_value"
+                        "off": "negative_value"
                     },
                     "disabled_color": "button_disabled_blue",
                     "restricted_description":
@@ -129,236 +132,574 @@
                         "color": "negative_value"
                     }
                 },
-                "can_gravity_wells_move_button":
+                "start_mode_button_shared_definition":
                 {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 0],
-                    "icon": "option_orbiting_planets",
-                    "name": "can_gravity_wells_move.name",
-                    "description": "can_gravity_wells_move.description",
-                    "can_gravity_wells_move_not_allowed_by_scenario_description":
-                    {
-                        "text": "front_end_lobby_dialog.toggle_option.can_gravity_wells_move_not_allowed_by_scenario_description",
+                    "disabled_color": "button_disabled_blue",
+                    "unique_scenario_description": {
+                        "text": "lobby_option_start_mode_unique_scenario_description",
                         "color": "highlighted_value"
                     },
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    }
-                },
-                "home_planet_victory_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 1],
-                    "icon": "option_home_planet_victory",
-                    "name": "home_planet_victory.name",
-                    "description": "home_planet_victory.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    }
-                },
-                "colonization_victory_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 2],
-                    "icon": "option_colony_planet_victory",
-                    "name": "colonization_victory.name",
-                    "description": "colonization_victory.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    }
-                },
-                "factional_victory_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 3],
-                    "icon": "option_home_planet_victory",
-                    "name": "factional_victory.name",
-                    "description": "factional_victory.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    }
-                },
-                "missions_enabled_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 4],
-                    "icon": "compass_objectives_icon",
-                    "name": "missions_option.name",
-                    "description": "missions_option.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    }
-                },
-                "capturable_units_enabled_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 5],
-                    "icon": "option_capturable_units",
-                    "name": "capturable_units_option.name",
-                    "description": "capturable_units_option.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    }
-                },
-                "base_simulation_time_scale_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 7],
-                    "name": "lobby_option_simulation_speed_scalar.name",
-                    "description": "lobby_option_simulation_speed_scalar.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
+                    "is_loading_saved_game_description": {
+                        "text": "front_end_lobby_dialog.toggle_option.is_loading_saved_game_description",
+                        "color": "highlighted_value"
                     },
-                    "status_values":
-                    {
-                        "very_low": 0.5,
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.25,
-                        "very_high": 1.5
-                    }
-                },
-                "unit_build_rate_scalar_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 8],
-                    "name": "lobby_option_unit_build_rate_scalar.name",
-                    "description": "lobby_option_unit_build_rate_scalar.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
+                    "disabled_start_modes_header": {
+                        "text": "lobby_option_start_mode.disabled_modes_header",
+                        "color": "highlighted_value"
                     },
-                    "status_values":
-                    {
-                        "very_low": 0.5,
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.25,
-                        "very_high": 1.5
-                    }
+                    "disabled_start_modes_list_color": "button_disabled_gold",
+                    "dlc_reinforcements_name": "dlc.reinforcements.name"
                 },
-                "gravity_well_orbit_speed_scalar_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 9],
-                    "name": "lobby_option_gravity_well_orbit_speed_scalar.name",
-                    "description": "lobby_option_gravity_well_orbit_speed_scalar.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    },
-                    "status_values":
-                    {
-                        "very_low": 0.5,
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.25,
-                        "very_high": 1.5
-                    }
-                },
-                "research_rate_scalar_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 10],
-                    "name": "lobby_option_research_rate_scalar.name",
-                    "description": "lobby_option_research_rate_scalar.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    },
-                    "status_values":
-                    {
-                        "very_low": 0.5,
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.25,
-                        "very_high": 1.5
-                    }
-                },
-                "max_fleet_supply_scalar_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 11],
-                    "name": "lobby_option_max_fleet_supply_scalar.name",
-                    "description": "lobby_option_max_fleet_supply_scalar.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    },
-                    "status_values":
-                    {
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.5,
-                        "very_high": 2,
-                        "extreme": 3
-                    }
-                },
-                "max_linear_speed_scalar_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 12],
-                    "name": "lobby_option_max_linear_speed_scalar_button.name",
-                    "description": "lobby_option_max_linear_speed_scalar_button.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    },
-                    "status_values":
-                    {
-                        "very_low": 0.5,
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.25,
-                        "very_high": 1.5
-                    }
-                },
-                "asset_income_rate_scalar_button":
-                {
-                    "style": "lobby_option",
-                    "layout_grid_coord": [0, 13],
-                    "name": "lobby_option_asset_income_rate_scalar.name",
-                    "description": "lobby_option_asset_income_rate_scalar.description",
-                    "tooltip":
-                    {
-                        "anchor_location_on_button": "top_left",
-                        "anchor_location_on_tooltip": "top_right"
-                    },
-                    "status_values":
-                    {
-                        "very_low": 0.5,
-                        "low": 0.75,
-                        "normal": 1,
-                        "high": 1.25,
-                        "very_high": 1.5
-                    }
-                },
-                "close_button":
-                {
+                "close_button": {
                     "style": "hud_dark_wide",
-                    "layout_grid_coord": [0, 15],
+                    "layout": {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "bottom",
+                        "width": 200,
+                        "height": 40,
+                        "margins": {
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "bottom": -20
+                        }
+                    },
                     "text": "front_end_lobby_options_dialog_close_button"
+                },
+                "sections_layout_grid": {
+                    "outer_margin": [
+                        15,
+                        -45
+                    ],
+                    "element_spacing": [
+                        10,
+                        5
+                    ],
+                    "element_size": [
+                        310,
+                        380
+                    ]
+                },
+                "victory_section_panel": {
+                    "background_components": [
+                        {
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched",
+                            "outer_margins": {
+                                "left": 4,
+                                "right": 4,
+                                "top": 4,
+                                "bottom": 4
+                            }
+                        }
+                    ],
+                    "home_planet_victory_button": {
+                        "style": "lobby_option",
+                        "icon": "option_home_planet_victory",
+                        "name": "home_planet_victory.name",
+                        "description": "home_planet_victory.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            0
+                        ]
+                    },
+                    "colonization_victory_button": {
+                        "style": "lobby_option",
+                        "icon": "option_colony_planet_victory",
+                        "name": "colonization_victory.name",
+                        "description": "colonization_victory.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            1
+                        ]
+                    },
+                    "factional_victory_button": {
+                        "style": "lobby_option",
+                        "icon": "option_home_planet_victory",
+                        "name": "factional_victory.name",
+                        "description": "factional_victory.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            2
+                        ]
+                    },
+                    "layout_grid_coord": [
+                        0,
+                        0
+                    ]
+                },
+                "game_options_section_panel": {
+                    "background_components": [
+                        {
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched",
+                            "outer_margins": {
+                                "left": 4,
+                                "right": 4,
+                                "top": 4,
+                                "bottom": 4
+                            }
+                        }
+                    ],
+                    "can_gravity_wells_move_button": {
+                        "style": "lobby_option",
+                        "icon": "option_orbiting_planets",
+                        "name": "can_gravity_wells_move.name",
+                        "description": "can_gravity_wells_move.description",
+                        "can_gravity_wells_move_not_allowed_by_scenario_description": {
+                            "text": "front_end_lobby_dialog.toggle_option.can_gravity_wells_move_not_allowed_by_scenario_description",
+                            "color": "highlighted_value"
+                        },
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            0
+                        ]
+                    },
+                    "missions_enabled_button": {
+                        "style": "lobby_option",
+                        "icon": "compass_objectives_icon",
+                        "name": "missions_option.name",
+                        "description": "missions_option.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            1
+                        ]
+                    },
+                    "capturable_units_enabled_button": {
+                        "style": "lobby_option",
+                        "icon": "option_orbiting_planets",
+                        "name": "capturable_units_option.name",
+                        "description": "capturable_units_option.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            2
+                        ]
+                    },
+                    "start_mode_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_start_mode.name",
+                        "description": "lobby_option_start_mode.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            3
+                        ]
+                    },
+                    "pirate_incursions_enabled_button": {
+                        "style": "lobby_option",
+                        "icon": "option_pirate_incursion_icon",
+                        "name": "pirate_incursions_option.name",
+                        "description": "pirate_incursions_option.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            4
+                        ]
+                    },
+                    "raid_strength_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_raid_strength_scalar.name",
+                        "description": "lobby_option_raid_strength_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.5,
+                            "very_high": 2
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            5
+                        ]
+                    },
+                    "raid_frequency_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_raid_frequency_scalar.name",
+                        "description": "lobby_option_raid_frequency_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.5,
+                            "very_high": 2
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            6
+                        ]
+                    },
+                    "time_to_first_raid_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_time_to_first_raid_scalar.name",
+                        "description": "lobby_option_time_to_first_raid_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "low": 0.5,
+                            "normal": 1,
+                            "high": 1.5,
+                            "very_high": 2,
+                            "off": 0
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            7
+                        ]
+                    },
+                    "layout_grid_coord": [
+                        1,
+                        0
+                    ]
+                },
+                "speed_section_panel": {
+                    "background_components": [
+                        {
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched",
+                            "outer_margins": {
+                                "left": 4,
+                                "right": 4,
+                                "top": 4,
+                                "bottom": 4
+                            }
+                        }
+                    ],
+                    "base_simulation_time_scale_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_simulation_speed_scalar.name",
+                        "description": "lobby_option_simulation_speed_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            0
+                        ]
+                    },
+                    "max_linear_speed_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_max_linear_speed_scalar_button.name",
+                        "description": "lobby_option_max_linear_speed_scalar_button.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            1
+                        ]
+                    },
+                    "hyperspace_speed_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_hyperspace_speed_scalar_button.name",
+                        "description": "lobby_option_hyperspace_speed_scalar_button.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            2
+                        ]
+                    },
+                    "gravity_well_orbit_speed_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_gravity_well_orbit_speed_scalar.name",
+                        "description": "lobby_option_gravity_well_orbit_speed_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            3
+                        ]
+                    },
+                    "layout_grid_coord": [
+                        2,
+                        0
+                    ]
+                },
+                "scalars_section_panel": {
+                    "background_components": [
+                        {
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched",
+                            "outer_margins": {
+                                "left": 4,
+                                "right": 4,
+                                "top": 4,
+                                "bottom": 4
+                            }
+                        }
+                    ],
+                    "unit_build_rate_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_unit_build_rate_scalar.name",
+                        "description": "lobby_option_unit_build_rate_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            0
+                        ]
+                    },
+                    "research_rate_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_research_rate_scalar.name",
+                        "description": "lobby_option_research_rate_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            1
+                        ]
+                    },
+                    "max_fleet_supply_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_max_fleet_supply_scalar.name",
+                        "description": "lobby_option_max_fleet_supply_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5,
+                            "extreme": 2
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            2
+                        ]
+                    },
+                    "asset_income_rate_scalar_button": {
+                        "style": "lobby_option",
+                        "name": "lobby_option_asset_income_rate_scalar.name",
+                        "description": "lobby_option_asset_income_rate_scalar.description",
+                        "tooltip": {
+                            "anchor_location_on_button": "top_left",
+                            "anchor_location_on_tooltip": "top_right"
+                        },
+                        "status_values": {
+                            "very_low": 0.5,
+                            "low": 0.75,
+                            "normal": 1,
+                            "high": 1.25,
+                            "very_high": 1.5
+                        },
+                        "layout_grid_coord": [
+                            0,
+                            3
+                        ]
+                    },
+                    "layout_grid_coord": [
+                        3,
+                        0
+                    ]
+                },
+                "victory_buttons_layout_grid": {
+                    "outer_margin": [
+                        8,
+                        8
+                    ],
+                    "element_spacing": [
+                        5,
+                        5
+                    ],
+                    "element_size": [
+                        290,
+                        40
+                    ]
+                },
+                "game_options_buttons_layout_grid": {
+                    "outer_margin": [
+                        8,
+                        8
+                    ],
+                    "element_spacing": [
+                        5,
+                        5
+                    ],
+                    "element_size": [
+                        290,
+                        40
+                    ]
+                },
+                "speed_buttons_layout_grid": {
+                    "outer_margin": [
+                        8,
+                        8
+                    ],
+                    "element_spacing": [
+                        5,
+                        5
+                    ],
+                    "element_size": [
+                        290,
+                        40
+                    ]
+                },
+                "scalars_buttons_layout_grid": {
+                    "outer_margin": [
+                        8,
+                        8
+                    ],
+                    "element_spacing": [
+                        5,
+                        5
+                    ],
+                    "element_size": [
+                        290,
+                        40
+                    ]
+                },
+                "victory_header_label": {
+                    "layout": {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 310,
+                        "height": 25,
+                        "margins": {
+                            "left": 15,
+                            "top": -80
+                        }
+                    },
+                    "style": "hud_title_with_center_text_glow",
+                    "text": "front_end_lobby_options_dialog.victory_header"
+                },
+                "game_options_header_label": {
+                    "layout": {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 310,
+                        "height": 25,
+                        "margins": {
+                            "left": 335,
+                            "top": -80
+                        }
+                    },
+                    "style": "hud_title_with_center_text_glow",
+                    "text": "front_end_lobby_options_dialog.game_options_header"
+                },
+                "speed_header_label": {
+                    "layout": {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 310,
+                        "height": 25,
+                        "margins": {
+                            "left": 655,
+                            "top": -80
+                        }
+                    },
+                    "style": "hud_title_with_center_text_glow",
+                    "text": "front_end_lobby_options_dialog.speed_header"
+                },
+                "scalars_header_label": {
+                    "layout": {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 310,
+                        "height": 25,
+                        "margins": {
+                            "left": 975,
+                            "top": -80
+                        }
+                    },
+                    "style": "hud_title_with_center_text_glow",
+                    "text": "front_end_lobby_options_dialog.scalars_header"
                 }
-            }            
+            }
         }
     }
 }

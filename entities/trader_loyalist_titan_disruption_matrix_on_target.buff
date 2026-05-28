@@ -85,34 +85,35 @@
     }],
     "unit_mutations": [
         "disable_can_use_active_abilities"
-	],
+    ],
     "gui":
     {
         "hud_icon": "trader_loyalist_titan_disruption_matrix_ability_hud_icon",
         "name": "trader_loyalist_titan_disruption_matrix_ability_name",
-		"visibility_scope": "negative",
+        "visibility_scope": "negative",
+        "is_visible_within_unit_tooltip": true,
         "tooltip_line_groups": [
         {
-			"is_visible_constraint": 
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "unit_passes_target_filter",
-					"unit":
-					{
-						"unit_type": "current_spawner",
-						"redirection": "current_gravity_well_primary_fixture"
-					},
-					"target_filter_id": "uniforms_friendly_planets"
-				}
-			},
+            "is_visible_constraint": 
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "uniforms_friendly_planets"
+                }
+            },
             "lines": [
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.damage",
                 "value_id": "disruption_matrix_normal_damage_value",
-				"value_color": "negative",
+                "value_color": "negative",
                 "value_suffix": "per_second"
             },
             {
@@ -120,26 +121,26 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
                 "value_id": "fixed_zero",
-				"value_color": "negative"
+                "value_color": "negative"
             }]
         },
         {
-			"is_visible_constraint": 
-			{
-				"constraint_type": "unit_passes_target_filter",
-				"unit":
-				{
-					"unit_type": "current_spawner",
-					"redirection": "current_gravity_well_primary_fixture"
-				},
-				"target_filter_id": "uniforms_friendly_planets"
-			},
+            "is_visible_constraint": 
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "uniforms_friendly_planets"
+            },
             "lines": [
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.damage",
                 "value_id": "disruption_matrix_bonus_damage_value",
-				"value_color": "negative",
+                "value_color": "negative",
                 "value_suffix": "per_second"
             },
             {
@@ -147,8 +148,8 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
                 "value_id": "fixed_zero",
-				"value_color": "negative"
+                "value_color": "negative"
             }]
         }]
-	}
+    }
 }

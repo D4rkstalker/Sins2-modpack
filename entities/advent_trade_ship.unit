@@ -44,7 +44,8 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft"
         ],
-        "auto_follow_target_priority": -1.0
+        "auto_follow_target_priority": -1.0,
+        "target_engagement_mode": "only_engage_if_in_range"
     },
     "ai_attack_target": {
         "attack_priority": 25.0,
@@ -76,15 +77,19 @@
                 "max_hull_points": 750.0,
                 "hull_point_restore_rate": 1.50,
                 "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
-				"max_shield_points": 1000.0,
-				"shield_point_restore_rate": 3.0,
-				"shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
-				"shield_point_restore_scalar_after_damage_taken": 0.0,
-				"shield_burst_restore":
-				{
-					"cooldown_duration": 30.0,
-					"restore_percentage": 0.5
-				},
+                "max_armor_points": 500.0,
+		"armor_strength": 50.0,
+                "armor_point_restore_rate": 3.0,
+                "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+                "max_shield_points": 500.0,
+                "shield_point_restore_rate": 3.0,
+                "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+                "shield_point_restore_scalar_after_damage_taken": 0.0,
+                "shield_burst_restore":
+                {
+                	"cooldown_duration": 30.0,
+                	"restore_percentage": 0.5
+                },
                 "experience_given_on_death": 3.0
             }
         ]
@@ -94,6 +99,12 @@
         "frigate"
     ],
     "will_notify_enemy_player_when_entering_gravity_well_override": false,
+    "abilities": [
+    {
+        "abilities": [
+            "special_operation_unit"
+        ]
+    }],
     "skin_groups": [
         {
             "skins": [

@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "antimatter_fountain_fixture_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_antimatter"
+            }],
+            "exemptions": [
+                "is_dead"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_fountain_antimatter_regeneration_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "antimatter_fountain_antimatter_regeneration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "antimatter_fountain_antimatter_regeneration_bonus_value"
+        }
+    }]
+}

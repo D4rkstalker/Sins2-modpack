@@ -1,0 +1,69 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "adept_anima_weapon_damage_modifier"
+    },
+    {
+        "buff_weapon_modifier_id": "adept_anima_weapon_range_modifier"
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_try_prevent_damage",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "random_chance",
+                    "chance_value": "adept_anima_chance_value"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "prevent_damage",
+                "damage_prevented_value": "adept_anima_prevented_value"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_carrier_capital_ship_adept_drone_anima_ability_hud_icon",
+        "name": "advent_carrier_capital_ship_adept_drone_anima_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "header_text": "flak_burst_damage_to_strikecraft_tooltip_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "adept_anima_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "adept_anima_weapon_range_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "research_subject.vasari_phase_shields_header_name",
+                "value_id": "adept_anima_chance_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

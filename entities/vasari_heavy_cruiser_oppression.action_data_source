@@ -1,0 +1,83 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "oppression_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+		"frigate",
+		"cruiser",
+                "structure",
+		"capital_ship",
+		"super_capital_ship",
+		"titan",
+		"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "oppression_weapon_range_modifier_value",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "oppression_regen_modifier_value",
+        "action_value":
+        {
+            "values": [-0.25]
+        }
+    },
+    {
+        "action_value_id": "oppression_duration_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "oppression_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "oppression_weapon_range_modifier_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "oppression_shield_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "oppression_regen_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "oppression_armor_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "oppression_regen_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "oppression_hull_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "oppression_regen_modifier_value"
+        }
+    }]
+}

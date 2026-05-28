@@ -1,0 +1,43 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "enhanced_tunneling_hyperspace_speed_modifier"
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_hyperspace_stopped",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "gui":
+    {
+    "name": "vasari_enhanced_tunneling_name",
+    "description": "vasari_enhanced_tunneling_description",
+    "hud_icon": "vasari_enhanced_tunneling_hud_icon",
+    "alert_type": "positive_buff",
+    "is_visible_within_unit_tooltip": true,
+    "visibility_scope": "positive",
+    "tooltip_line_groups": [
+	{
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "enhanced_tunneling_hyperspace_speed_modifier"
+            }]
+        }]
+    }
+}

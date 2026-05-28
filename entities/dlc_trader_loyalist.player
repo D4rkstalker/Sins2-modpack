@@ -2,7 +2,7 @@
     "race": "trader",
     "home_planet":
     {
-        "random_fixture_filling": "random_terran_homeworld_planet",
+        "random_fixture_filling": "random_terran_home_planet",
         "levels": [
         {
             "income_rates":
@@ -517,10 +517,15 @@
         "trader_gauss_defense_structure",
         "trader_phase_jump_inhibitor_structure",
         "trader_hangar_defense_structure_loyalist",
-        "trader_starbase_loyalist",
-        "trader_orbital_cannon_structure"
+        "trader_starbase_loyalist"
     ],
-    "faction_structures": [
+    "allowed_traffic_ports": [
+        "advent_population_structure",
+        "trader_crystal_extractor_structure",
+        "trader_exotic_factory_structure",
+        "trader_metal_extractor_structure",
+        "trader_population_structure",
+        "vasari_population_structure"
     ],
     "ability_created_units": [
         "trader_missile_battery_frigate_loyalist",
@@ -568,53 +573,11 @@
             {
                 "research_tiers": [
                 {
-                    "acquire_time": 30.0,
+                    "acquire_time": 15.0,
                     "required_research_points": 1,
                     "price":
                     {
-                        "credits": 400.0,
-                        "metal": 75.0,
-                        "crystal": 125.0
-                    },
-                    "player_modifiers":
-                    {
-                        "empire_modifiers": [
-                        {
-                            "value_behavior": "additive",
-                            "modifier_type": "credit_income_rate",
-                            "value": 1.0
-                        }]
-                    },
-                    "button_background": "trader_research_tier_button_background_0_civil"
-                },
-                {
-                    "acquire_time": 60.0,
-                    "required_research_points": 4,
-                    "price":
-                    {
-                        "credits": 800.0,
-                        "metal": 150.0,
-                        "crystal": 250.0
-                    },
-                    "player_modifiers":
-                    {
-                        "empire_modifiers": [
-                        {
-                            "value_behavior": "additive",
-                            "modifier_type": "credit_income_rate",
-                            "value": 1.5
-                        }]
-                    },
-                    "button_background": "trader_research_tier_button_background_1_civil"
-                },
-                {
-                    "acquire_time": 120.0,
-                    "required_research_points": 8,
-                    "price":
-                    {
-                        "credits": 1600.0,
-                        "metal": 300.0,
-                        "crystal": 500.0
+                        "credits": 250.0
                     },
                     "player_modifiers":
                     {
@@ -623,17 +586,76 @@
                             "value_behavior": "additive",
                             "modifier_type": "credit_income_rate",
                             "value": 2.0
+                        },
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "metal_income_rate",
+                            "value": 0.5
+                        },
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "crystal_income_rate",
+                            "value": 0.5
+                        }]
+                    },
+                    "button_background": "trader_research_tier_button_background_0_civil"
+                },
+                {
+                    "acquire_time": 75.0,
+                    "required_research_points": 3,
+                    "price":
+                    {
+                        "credits": 1000.0,
+                        "crystal": 250.0
+                    },
+                    "player_modifiers":
+                    {
+                        "planet_modifiers": [
+                        {
+                            "value_behavior": "additive",
+                            "modifier_type": "max_allied_population_factor",
+                            "value": 0.1
+                        }]
+                    },
+                    "button_background": "trader_research_tier_button_background_1_civil"
+                },
+                {
+                    "acquire_time": 150.0,
+                    "required_research_points": 6,
+                    "price":
+                    {
+                        "credits": 2000.0,
+                        "metal": 200.0,
+                        "crystal": 500.0
+                    },
+                    "player_modifiers":
+                    {
+                        "empire_modifiers": [
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_credits_income_rate",
+                            "value": 0.1
+                        },
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_metal_income_rate",
+                            "value": 0.1
+                        },
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_crystal_income_rate",
+                            "value": 0.1
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_2_civil"
                 },
                 {
-                    "acquire_time": 180.0,
-                    "required_research_points": 15,
+                    "acquire_time": 300.0,
+                    "required_research_points": 10,
                     "price":
                     {
-                        "credits": 3200.0,
-                        "metal": 600.0,
+                        "credits": 4000.0,
+                        "metal": 450.0,
                         "crystal": 1000.0
                     },
                     "exotic_price": [
@@ -643,22 +665,22 @@
                     }],
                     "player_modifiers":
                     {
-                        "empire_modifiers": [
+                        "planet_modifiers": [
                         {
                             "value_behavior": "additive",
-                            "modifier_type": "credit_income_rate",
-                            "value": 2.5
+                            "modifier_type": "max_allied_population_factor",
+                            "value": 0.15
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_3_civil"
                 },
                 {
-                    "acquire_time": 240.0,
-                    "required_research_points": 25,
+                    "acquire_time": 600.0,
+                    "required_research_points": 15,
                     "price":
                     {
-                        "credits": 6400.0,
-                        "metal": 1200.0,
+                        "credits": 7500.0,
+                        "metal": 750.0,
                         "crystal": 2000.0
                     },
                     "exotic_price": [
@@ -678,54 +700,64 @@
                     {
                         "empire_modifiers": [
                         {
-                            "value_behavior": "additive",
-                            "modifier_type": "credit_income_rate",
-                            "value": 3.0
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_credits_income_rate",
+                            "value": 0.15
+                        },
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_metal_income_rate",
+                            "value": 0.15
+                        },
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_crystal_income_rate",
+                            "value": 0.15
                         }]
                     },
                     "button_background": "trader_research_tier_button_background_4_civil"
                 },
                 {
-                    "acquire_time": 300.0,
-                    "required_research_points": 35,
+                    "acquire_time": 900.0,
+                    "required_research_points": 25,
                     "price":
                     {
-                        "credits": 9600.0,
-                        "metal": 1800.0,
-                        "crystal": 3000.0
+                        "credits": 15000.0,
+                        "metal": 1500.0,
+                        "crystal": 4000.0
                     },
                     "exotic_price": [
                     {
                         "exotic_type": "utility",
-                        "count": 2
+                        "count": 3
                     },
                     {
                         "exotic_type": "economic",
-                        "count": 1
+                        "count": 2
                     },
                     {
                         "exotic_type": "ultimate",
-                        "count": 1
+                        "count": 2
                     }],
                     "player_modifiers":
                     {
-                        "empire_modifiers": [
+                        "planet_modifiers": [
                         {
                             "value_behavior": "additive",
-                            "modifier_type": "credit_income_rate",
-                            "value": 3.5
+                            "modifier_type": "max_allied_population_factor",
+                            "value": 0.15
                         }]
                     },
                     "button_background": "research_tier_5"
                 },
                 {
-                    "acquire_time": 360.0,
-                    "required_research_points": 45,
+                    "acquire_time": 1200.0,
+                    "required_research_points": 35,
                     "price":
                     {
-                        "credits": 14400.0,
-                        "metal": 2700.0,
-                        "crystal": 4500.0
+                        "credits": 22500.0,
+                        "metal": 2250.0,
+                        "crystal": 6000.0
                     },
                     "exotic_price": [
                     {
@@ -744,9 +776,19 @@
                     {
                         "empire_modifiers": [
                         {
-                            "value_behavior": "additive",
-                            "modifier_type": "credit_income_rate",
-                            "value": 4.0
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_credits_income_rate",
+                            "value": 0.15
+                        },
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_metal_income_rate",
+                            "value": 0.15
+                        },
+                        {
+                            "value_behavior": "scalar",
+                            "modifier_type": "trade_crystal_income_rate",
+                            "value": 0.15
                         }]
                     },
                     "button_background": "research_tier_6"
@@ -770,32 +812,17 @@
                 {
                     "id": "civilian_trader_repeatables",
                     "name": "research_tree.trader_race",
-                    "picture": "trader_research_field_picture_civilian_annexation"
+                    "picture": "trader_research_field_picture_military_mobilization"
                 },
                 {
                     "id": "civilian_trader_loyalist_repeatables",
                     "name": "research_tree.trader_enclave",
-                    "picture": "trader_research_field_picture_civilian_annexation"
+                    "picture": "trader_research_field_picture_military_mobilization"
                 },
                 {
                     "id": "phase_repeatables_utility",
                     "name": "research_tree.phase_mastery",
-                    "picture": "trader_research_field_picture_civilian_policy"
-                },
-                {
-                    "id": "civilian_repeatables_income",
-                    "name": "research_tree.income_repeat",
-                    "picture": "trader_research_field_picture_civilian_policy"
-                },
-                {
-                    "id": "civilian_repeatables_population",
-                    "name": "research_tree.population_repeat",
-                    "picture": "trader_research_field_picture_civilian_policy"
-                },
-                {
-                    "id": "civilian_repeatables_utility",
-                    "name": "research_tree.utility_repeat",
-                    "picture": "trader_research_field_picture_civilian_policy"
+                    "picture": "vasari_research_field_picture_civilian_phase_mastery"
                 }],
                 "full_name": "trader_research_domain_full_name_civilian",
                 "partial_name": "trader_research_domain_partial_name_civilian",
@@ -812,13 +839,11 @@
             {
                 "research_tiers": [
                 {
-                    "acquire_time": 30.0,
+                    "acquire_time": 15.0,
                     "required_research_points": 1,
                     "price":
                     {
-                        "credits": 400.0,
-                        "metal": 75.0,
-                        "crystal": 125.0
+                        "credits": 250.0
                     },
                     "player_modifiers":
                     {
@@ -838,12 +863,11 @@
                     "button_background": "trader_research_tier_button_background_0_military"
                 },
                 {
-                    "acquire_time": 60.0,
-                    "required_research_points": 4,
+                    "acquire_time": 75.0,
+                    "required_research_points": 3,
                     "price":
                     {
-                        "credits": 800.0,
-                        "metal": 150.0,
+                        "credits": 1000.0,
                         "crystal": 250.0
                     },
                     "player_modifiers":
@@ -864,12 +888,12 @@
                     "button_background": "trader_research_tier_button_background_1_military"
                 },
                 {
-                    "acquire_time": 120.0,
-                    "required_research_points": 8,
+                    "acquire_time": 150.0,
+                    "required_research_points": 6,
                     "price":
                     {
-                        "credits": 1600.0,
-                        "metal": 300.0,
+                        "credits": 2000.0,
+                        "metal": 200.0,
                         "crystal": 500.0
                     },
                     "player_modifiers":
@@ -890,12 +914,12 @@
                     "button_background": "trader_research_tier_button_background_2_military"
                 },
                 {
-                    "acquire_time": 180.0,
-                    "required_research_points": 15,
+                    "acquire_time": 300.0,
+                    "required_research_points": 10,
                     "price":
                     {
-                        "credits": 3200.0,
-                        "metal": 600.0,
+                        "credits": 4000.0,
+                        "metal": 450.0,
                         "crystal": 1000.0
                     },
                     "exotic_price": [
@@ -921,12 +945,12 @@
                     "button_background": "trader_research_tier_button_background_3_military"
                 },
                 {
-                    "acquire_time": 240.0,
-                    "required_research_points": 25,
+                    "acquire_time": 600.0,
+                    "required_research_points": 15,
                     "price":
                     {
-                        "credits": 6400.0,
-                        "metal": 1200.0,
+                        "credits": 7500.0,
+                        "metal": 750.0,
                         "crystal": 2000.0
                     },
                     "exotic_price": [
@@ -960,13 +984,13 @@
                     "button_background": "trader_research_tier_button_background_4_military"
                 },
                 {
-                    "acquire_time": 300.0,
-                    "required_research_points": 35,
+                    "acquire_time": 900.0,
+                    "required_research_points": 25,
                     "price":
                     {
-                        "credits": 9600.0,
-                        "metal": 1800.0,
-                        "crystal": 3000.0
+                        "credits": 15000.0,
+                        "metal": 1500.0,
+                        "crystal": 4000.0
                     },
                     "exotic_price": [
                     {
@@ -999,13 +1023,13 @@
                     "button_background": "research_tier_5"
                 },
                 {
-                    "acquire_time": 360.0,
-                    "required_research_points": 45,
+                    "acquire_time": 1200.0,
+                    "required_research_points": 35,
                     "price":
                     {
-                        "credits": 14400.0,
-                        "metal": 2700.0,
-                        "crystal": 4500.0
+                        "credits": 22500.0,
+                        "metal": 2250.0,
+                        "crystal": 6000.0
                     },
                     "exotic_price": [
                     {
@@ -1061,12 +1085,12 @@
                 {
                     "id": "military_trader_repeatables",
                     "name": "research_tree.trader_race",
-                    "picture": "trader_research_field_picture_military_experimental"
+                    "picture": "trader_research_field_picture_military_mobilization"
                 },
                 {
                     "id": "military_trader_loyalist_repeatables",
                     "name": "research_tree.trader_enclave",
-                    "picture": "trader_research_field_picture_military_experimental"
+                    "picture": "trader_research_field_picture_military_mobilization"
                 }],
                 "full_name": "trader_research_domain_full_name_military",
                 "partial_name": "trader_research_domain_partial_name_military",
@@ -1105,16 +1129,13 @@
             "trader_loyalist_unlock_rapid_autoloader_unit_item",
             "trader_max_supply_5",
             "trader_max_supply_6",
-	    "trader_orbital_cannon_attack",
 	    "trader_refined_emitters",
 	    "trader_ship_build_tier_0",
 	    "trader_ship_build_tier_1",
 	    "trader_ship_build_tier_2",
 	    "trader_ship_build_tier_3",
 	    "trader_ship_build_tier_4",
-	    "trader_starbase_science_labs",
 	    "trader_unlock_build_research_exotic",
-	    "trader_unlock_colony_frigate_capture_extractor_ability",
 	    "trader_unlock_heavy_cruiser_intercept_ability",
 	    "trader_unlock_robotics_cruiser_emp_droids_ability",
 
@@ -1329,7 +1350,6 @@
             "trader_structure_build_rate",
             "trader_structure_hull",
             "trader_structure_price_decrease",
-            "trader_terran_planet_credit_rate",
             "trader_trade_port_culture",
             "trader_trade_port_income_rate_0",
             "trader_trade_port_income_rate_1",
@@ -1339,43 +1359,39 @@
             "trader_unlock_antiarmor_frigate_coil_shock_ability",
             "trader_unlock_antifighter_frigate",
             "trader_unlock_antimatter_engine_unit_item",
-            "trader_unlock_aquaculture_harvester_unit_item",
+            "trader_unlock_autocannon_defense_flechette_blast_ability",
             "trader_unlock_backup_shield_generator_unit_item",
             "trader_unlock_beam_armor_unit_item",
             "trader_unlock_build_ultimate_exotic",
             "trader_unlock_carrier_cruiser",
-            "trader_unlock_chemical_plant_unit_item",
             "trader_unlock_combat_repair_system_unit_item",
             "trader_unlock_commercial_district_unit_item",
             "trader_unlock_crystal_synthesizer_unit_item",
             "trader_unlock_crystalline_biosphere",
             "trader_unlock_culture_center",
-            "trader_unlock_culture_planet_credit_income_rate_bonus",
             "trader_unlock_culture_ship_max_linear_speed_bonus",
             "trader_unlock_deploy_starbase_unit_item",
             "trader_unlock_desert_biosphere",
             "trader_unlock_exotic_factory_structure",
-            "trader_unlock_ferric_mining_rig_unit_item",
             "trader_unlock_ferrous_biosphere",
-            "trader_unlock_fissile_plant_unit_item",
             "trader_unlock_flak_burst_unit_item",
             "trader_unlock_fulfilment_warehouse_unit_item",
             "trader_unlock_garrison_recruitment_center",
             "trader_unlock_gas_crystalizer_unit_item",
             "trader_unlock_gas_giant_biosphere",
             "trader_unlock_gas_harvester_unit_item",
-            "trader_unlock_hangar_defense_point_defense_autocannon_weapon",
+            "trader_unlock_gauss_defense_meson_bolt_ability",
+            "trader_unlock_hangar_defense_production_ability",
             "trader_unlock_hangar_defense_structure",
-            "trader_unlock_harvesting_crawler_unit_item",
             "trader_unlock_heavy_armor_unit_item",
             "trader_unlock_heavy_cruiser",
             "trader_unlock_heavy_garrison",
             "trader_unlock_heavy_gauss_slugs_unit_item",
+            "trader_unlock_high_density_district_unit_item",
             "trader_unlock_high_yield_warheads_unit_item",
             "trader_unlock_home_guard_outpost_unit_item",
             "trader_unlock_hyperspace_between_stars",
             "trader_unlock_ice_biosphere",
-            "trader_unlock_ice_processor_unit_item",
             "trader_unlock_industrial_complex_unit_item",
             "trader_unlock_irradiated_biosphere",
             "trader_unlock_long_range_cruiser",
@@ -1390,18 +1406,15 @@
             "trader_unlock_loyalist_titan_shield_array_unit_item",
             "trader_unlock_magnetic_biosphere",
             "trader_unlock_media_conglomerate_unit_item",
-            "trader_unlock_metal_smelting_plant_unit_item",
             "trader_unlock_missile_armor_unit_item",
             "trader_unlock_missile_corvette",
             "trader_unlock_missile_guidance_computer_unit_item",
             "trader_unlock_munitions_plant_unit_item",
             "trader_unlock_oceanic_biosphere",
             "trader_unlock_oceanic_domes_unit_item",
-            "trader_unlock_orbital_cannon_structure",
             "trader_unlock_phase_jump_inhibitor",
             "trader_unlock_phase_lane_detector",
             "trader_unlock_phase_lane_detector_extended_range",
-            "trader_unlock_population_structure",
             "trader_unlock_regional_government_unit_item",
             "trader_unlock_remote_drone_refinery_unit_item",
             "trader_unlock_reserve_squadron_hangar_unit_item",
@@ -1420,7 +1433,6 @@
             "trader_unlock_starbase_trade_port_unit_item",
             "trader_unlock_starbase_unit_factory_unit_item",
             "trader_unlock_starbase_unlock_beam_weapon_unit_item",
-            "trader_unlock_starbase_unlock_torpedo_weapon_unit_item",
             "trader_unlock_swamp_biosphere",
             "trader_unlock_targeting_array_unit_item",
             "trader_unlock_torpedo_cruiser",
@@ -1432,18 +1444,24 @@
             "trader_unlock_volcanic_biosphere",
             "trader_unstoppable_phase_jump",
             "trader_upgrade_backup_shield_generator_unit_item",
+            "trader_upgrade_barren_biosphere",
+            "trader_upgrade_barren_biosphere_credit_rate",
             "trader_upgrade_consumables_0",
             "trader_upgrade_consumables_1",
             "trader_upgrade_crystalline_biosphere",
+            "trader_upgrade_crystalline_biosphere_credit_rate",
             "trader_upgrade_culture_ship_max_linear_speed_bonus",
             "trader_upgrade_desert_biosphere",
             "trader_upgrade_experience_gain_0",
             "trader_upgrade_experience_gain_1",
             "trader_upgrade_ferrous_biosphere",
+            "trader_upgrade_ferrous_biosphere_credit_rate",
             "trader_upgrade_ice_biosphere",
             "trader_upgrade_ice_biosphere_credit_rate",
             "trader_upgrade_irradiated_biosphere",
+            "trader_upgrade_irradiated_biosphere_credit_rate",
             "trader_upgrade_loot_experience_gain",
+            "trader_upgrade_magnetic_biosphere",
             "trader_upgrade_oceanic_biosphere",
             "trader_upgrade_oceanic_domes_unit_item_0",
             "trader_upgrade_oceanic_domes_unit_item_1",
@@ -1451,11 +1469,14 @@
             "trader_upgrade_regional_government_office_unit_item",
             "trader_upgrade_swamp_biosphere",
             "trader_upgrade_volcanic_biosphere",
+            "trader_upgrade_volcanic_biosphere_credit_rate",
             "trader_war_measures_act",
             "dlc2_trader_unlock_loyalist_super_capital_ship",
             "trader_unlock_titan_factory",
             "trader_unlock_torpedo_cruiser_heavy_torpedo",
             "trader_wormhole_travel",
+            "trader_unlock_commodity_exchange_unit_item",
+            "trader_unlock_population_growth_ability",
             "dlc_trader_triple_fortresses",
             "dlc_trader_unlock_armored_citadel_unit_item",
             "dlc_trader_unlock_bastion_module_unit_item",
@@ -1494,13 +1515,11 @@
     },
     "missing_ship_component_shop_build_time_scalar": 10.0,
     "ship_components": [
-	"trader_starbase_military_science_labs",
-	"trader_starbase_civilian_science_labs",
-	"trader_orbital_cannon_attack",
         "trader_missile_armor",
         "trader_beam_armor",
         "trader_heavy_armor",
         "trader_capital_ship_insurance",
+        "trader_capital_ship_insurance_free",
         "trader_salvage_kit",
         "trader_radiation_bomb",
         "trader_flak_burst",
@@ -1569,6 +1588,7 @@
     }],
     "planet_components": [
         "trader_alloy_foundry",
+        "trader_archaeology_center",
         "trader_asteroid_civilian_research_lab",
         "trader_asteroid_military_research_lab",
         "trader_chemical_plant",
@@ -1599,9 +1619,8 @@
         "trader_xeno_tech_lab",
         "trader_surface_irradiated_planet_research_lab",
         "trader_fissile_plant",
+        "trader_commodity_exchange",
 		"dlc_trader_repair_ships"
-    ],
-    "faction_planet_components": [
     ],
     "planet_component_build_groups": [
     {
@@ -1629,7 +1648,7 @@
             "defense": [
             {
                 "max_military_structure_slots": 0,
-                "max_health_points": 500,
+                "max_health_points": 250,
                 "health_points_restore_rate": 2.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -1640,9 +1659,21 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
-                "max_health_points": 1500.0,
+                "max_military_structure_slots": 5,
+                "max_health_points": 750.0,
                 "health_points_restore_rate": 4.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 15,
+                "max_health_points": 1500.0,
+                "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -1672,29 +1703,29 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.3,
-                "credits_income_rate_per_population": 0.03,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 0.7,
-                "credits_income_rate_per_population": 0.048,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.008,
+                "metal_income_rate_per_population": 0.009,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.008,
+                "crystal_income_rate_per_population": 0.0045,
                 "max_health_points": 250
             },
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0128,
+                "metal_income_rate_per_population": 0.018,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0128,
+                "crystal_income_rate_per_population": 0.009,
                 "max_health_points": 500
             }],
             "research": [
@@ -1708,9 +1739,7 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
-                "metal": 1,
-                "crystal": 1
+                "metal": 1
             }
         }]
     },
@@ -1722,7 +1751,7 @@
             "defense": [
             {
                 "max_military_structure_slots": 0,
-                "max_health_points": 500,
+                "max_health_points": 250,
                 "health_points_restore_rate": 2.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -1733,9 +1762,21 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
-                "max_health_points": 1500.0,
+                "max_military_structure_slots": 5,
+                "max_health_points": 750.0,
                 "health_points_restore_rate": 4.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 15,
+                "max_health_points": 1500.0,
+                "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -1765,25 +1806,25 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.3,
-                "credits_income_rate_per_population": 0.03,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 0.7,
-                "credits_income_rate_per_population": 0.048,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             }],
             "mining": [
             {},
             {
-                "crystal_income_rate": 0.18,
-                "crystal_income_rate_per_population": 0.008,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.009,
                 "max_health_points": 250
             },
             {
-                "crystal_income_rate": 0.42,
-                "crystal_income_rate_per_population": 0.0128,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.018,
                 "max_health_points": 500
             }],
             "research": [
@@ -1797,8 +1838,7 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
-                "crystal": 2
+                "crystal": 1
             }
         }]
     },
@@ -1810,7 +1850,7 @@
             "defense": [
             {
                 "max_military_structure_slots": 0,
-                "max_health_points": 500,
+                "max_health_points": 250,
                 "health_points_restore_rate": 2.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -1821,8 +1861,8 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
-                "max_health_points": 1500.0,
+                "max_military_structure_slots": 5,
+                "max_health_points": 750.0,
                 "health_points_restore_rate": 4.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -1833,8 +1873,8 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
-                "max_health_points": 3000.0,
+                "max_military_structure_slots": 15,
+                "max_health_points": 1500.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -1871,55 +1911,59 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.4,
-                "credits_income_rate_per_population": 0.008,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
-            },
-            {
-                "credits_income_rate": 0.9,
-                "credits_income_rate_per_population": 0.0128,
-                "max_health_points": 500
-            },
-            {
-                "credits_income_rate": 1.5,
-                "credits_income_rate_per_population": 0.0192,
-                "max_health_points": 750
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.002,
+                "metal_income_rate_per_population": 0.0036,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.002,
+                "crystal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0072,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0072,
+                "max_health_points": 500
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0108,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0108,
+                "max_health_points": 750
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0008,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0008,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0018,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0018,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.003,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.003,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 750
             }],
@@ -1932,7 +1976,14 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
+                "metal": 1,
+                "crystal": 1
+            }
+        },
+        {
+            "import_points": 2,
+            "export_points":
+            {
                 "metal": 1,
                 "crystal": 1
             }
@@ -1969,7 +2020,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -1981,21 +2032,9 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 30,
-                "max_health_points": 7500.0,
-                "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -2037,43 +2076,68 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
+                "max_health_points": 750
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0045,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0045,
+                "max_health_points": 750
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.006,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.006,
+                "max_health_points": 1000
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0006,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
+                "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0013,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
+                "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             }],
             "focus": [
@@ -2094,7 +2158,7 @@
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
+                "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
@@ -2103,7 +2167,7 @@
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
+                "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
@@ -2140,7 +2204,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -2152,7 +2216,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -2164,7 +2228,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 7500.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -2176,7 +2240,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 40,
+                "max_military_structure_slots": 75,
                 "max_health_points": 10500.0,
                 "health_points_restore_rate": 12.0,
                 "max_shield_points": 0,
@@ -2195,19 +2259,19 @@
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 5,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 11,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 15,
+                "max_civilian_structure_slots": 14,
                 "structure_builder_count": 4,
                 "max_health_points": 750
             },
@@ -2219,92 +2283,69 @@
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 20,
+                "max_civilian_structure_slots": 21,
                 "structure_builder_count": 6,
                 "max_health_points": 1250
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.4,
-                "credits_income_rate_per_population": 0.008,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 0.9,
-                "credits_income_rate_per_population": 0.0128,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "credits_income_rate": 1.5,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
             },
             {
-                "credits_income_rate": 2.2,
-                "credits_income_rate_per_population": 0.0268,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.045,
                 "max_health_points": 1000
-            },
-            {
-                "credits_income_rate": 3.0,
-                "credits_income_rate_per_population": 0.0349,
-                "max_health_points": 1250
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.002,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.002,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 750
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0018,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0018,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1000
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0025,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0025,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1250
             }],
             "focus": [
             {}]
@@ -2315,14 +2356,14 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 3
+                "credits": 5
             }
         },
         {
             "import_points": 2,
             "export_points":
             {
-                "credits": 4
+                "credits": 5
             }
         },
         {
@@ -2336,14 +2377,14 @@
             "import_points": 4,
             "export_points":
             {
-                "credits": 6
+                "credits": 5
             }
         },
         {
             "import_points": 5,
             "export_points":
             {
-                "credits": 7
+                "credits": 5
             }
         }]
     },
@@ -2369,7 +2410,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 5,
                 "max_health_points": 1500.0,
                 "health_points_restore_rate": 4.0,
                 "max_shield_points": 0,
@@ -2381,9 +2422,21 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 30,
+                "max_health_points": 5000.0,
+                "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -2400,130 +2453,95 @@
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 3,
+                "max_civilian_structure_slots": 4,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 7,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 8,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 4,
                 "max_health_points": 750
+            },
+            {
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 12,
+                "structure_builder_count": 5,
+                "max_health_points": 1000
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_crystalline_biosphere"]
-                ],
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_crystalline_biosphere"]
-                ],
-                "credits_income_rate": 2.1,
-                "credits_income_rate_per_population": 0.0288,
-                "max_health_points": 750
             }],
             "mining": [
             {},
             {
-                "crystal_income_rate": 0.24,
+                "crystal_income_rate": 0.0,
                 "crystal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             },
             {
-                "crystal_income_rate": 0.56,
-                "crystal_income_rate_per_population": 0.0054,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0072,
                 "max_health_points": 500
             },
             {
-                "crystal_income_rate": 0.96,
-                "crystal_income_rate_per_population": 0.00756,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0108,
                 "max_health_points": 750
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_crystalline_biosphere"]
                 ],
-                "crystal_income_rate": 1.44,
-                "crystal_income_rate_per_population": 0.00983,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0144,
                 "max_health_points": 1000
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_crystalline_biosphere"]
                 ],
-                "crystal_income_rate": 2.0,
-                "crystal_income_rate_per_population": 0.01179,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.018,
                 "max_health_points": 1250
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "prerequisites": [
+                    ["trader_upgrade_crystalline_biosphere"]
+                ],
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_crystalline_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0018,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0018,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1000
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_crystalline_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0025,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0025,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1250
             }],
             "focus": [
             {}]
@@ -2542,7 +2560,7 @@
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
+                "credits": 1,
                 "crystal": 2
             }
         },
@@ -2550,7 +2568,7 @@
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
+                "credits": 1,
                 "crystal": 2
             }
         }]
@@ -2589,7 +2607,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -2601,7 +2619,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -2613,7 +2631,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 7500.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -2657,45 +2675,37 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.5,
-                "credits_income_rate_per_population": 0.01,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.1,
-                "credits_income_rate_per_population": 0.016,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "credits_income_rate": 1.8,
-                "credits_income_rate_per_population": 0.024,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "credits_income_rate": 2.6,
-                "credits_income_rate_per_population": 0.0336,
-                "max_health_points": 1000
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
+                "prerequisites": [
+                    ["trader_upgrade_desert_biosphere"]
+                ],
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
             },
             {
@@ -2703,29 +2713,19 @@
                     ["trader_upgrade_desert_biosphere"]
                 ],
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00576,
+                "metal_income_rate_per_population": 0.0045,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00576,
+                "crystal_income_rate_per_population": 0.0045,
                 "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00806,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00806,
-                "max_health_points": 1000
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
@@ -2733,25 +2733,13 @@
                 "prerequisites": [
                     ["trader_upgrade_desert_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
             }],
             "focus": [
             {}]
@@ -2771,265 +2759,16 @@
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 3,
-            "export_points":
-            {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 4,
-            "export_points":
-            {
-                "credits": 4,
-                "metal": 1,
-                "crystal": 1
-            }
-        }]
-    },
-    {
-        "planet_type": "desert_home",
-        "can_ever_be_colonized": true,
-        "colonization_research_prerequisites": [
-            ["trader_unlock_desert_biosphere"]
-        ],
-        "tracks":
-        {
-            "defense": [
-            {
-                "max_military_structure_slots": 0,
-                "max_health_points": 500,
-                "health_points_restore_rate": 2.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 5,
-                "max_health_points": 1500.0,
-                "health_points_restore_rate": 4.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 10,
-                "max_health_points": 3000.0,
-                "health_points_restore_rate": 6.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 20,
-                "max_health_points": 5000.0,
-                "health_points_restore_rate": 8.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 30,
-                "max_health_points": 7500.0,
-                "health_points_restore_rate": 10.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            }],
-            "logistics": [
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 0,
-                "structure_builder_count": 1
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 4,
-                "structure_builder_count": 2,
-                "max_health_points": 250
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 7,
-                "structure_builder_count": 3,
-                "max_health_points": 500
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 10,
-                "structure_builder_count": 4,
-                "max_health_points": 750
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 12,
-                "structure_builder_count": 5,
-                "max_health_points": 1000
-            }],
-            "commerce": [
-            {},
-            {
-                "credits_income_rate": 0.5,
-                "credits_income_rate_per_population": 0.01,
-                "max_health_points": 250
-            },
-            {
-                "credits_income_rate": 1.1,
-                "credits_income_rate_per_population": 0.016,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "credits_income_rate": 1.8,
-                "credits_income_rate_per_population": 0.024,
-                "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "credits_income_rate": 2.6,
-                "credits_income_rate_per_population": 0.0336,
-                "max_health_points": 1000
-            }],
-            "mining": [
-            {},
-            {
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
-                "max_health_points": 250
-            },
-            {
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00576,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00576,
-                "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00806,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00806,
-                "max_health_points": 1000
-            }],
-            "research": [
-            {},
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 250
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_desert_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
-            }],
-            "focus": [
-            {}]
-        },
-        "maintenance_cost_rates": [],
-        "trade_capacity_levels": [
-        {
-            "import_points": 1,
-            "export_points":
-            {
                 "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
         },
         {
-            "import_points": 2,
-            "export_points":
-            {
-                "credits": 2,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 4,
-            "export_points":
-            {
-                "credits": 4,
+                "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
@@ -3069,7 +2808,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -3081,7 +2820,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -3093,7 +2832,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 7500.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -3112,88 +2851,73 @@
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 3,
+                "max_civilian_structure_slots": 4,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 7,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 8,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 4,
                 "max_health_points": 750
+            },
+            {
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 12,
+                "structure_builder_count": 5,
+                "max_health_points": 1000
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "credits_income_rate": 2.1,
-                "credits_income_rate_per_population": 0.0288,
-                "max_health_points": 750
             }],
             "mining": [
             {
                 "metal_income_rate": 0
             },
             {
-                "metal_income_rate": 0.24,
+                "metal_income_rate": 0.0,
                 "metal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             },
             {
-                "metal_income_rate": 0.56,
-                "metal_income_rate_per_population": 0.0054,
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0072,
                 "max_health_points": 500
             },
             {
-                "metal_income_rate": 0.96,
-                "metal_income_rate_per_population": 0.00756,
+                "prerequisites": [
+                    ["trader_upgrade_ferrous_biosphere"]
+                ],
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0108,
                 "max_health_points": 750
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_ferrous_biosphere"]
                 ],
-                "metal_income_rate": 1.44,
-                "metal_income_rate_per_population": 0.00983,
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0144,
                 "max_health_points": 1000
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "metal_income_rate": 2.0,
-                "metal_income_rate_per_population": 0.01179,
-                "max_health_points": 1250
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
@@ -3201,11 +2925,11 @@
                 "prerequisites": [
                     ["trader_upgrade_ferrous_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             },
@@ -3213,11 +2937,11 @@
                 "prerequisites": [
                     ["trader_upgrade_ferrous_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 750
             }],
@@ -3238,231 +2962,15 @@
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
-                "metal": 2
-            }
-        },
-        {
-            "import_points": 3,
-            "export_points":
-            {
-                "credits": 3,
-                "metal": 2
-            }
-        }]
-    },
-    {
-        "planet_type": "ferrous_home",
-        "can_ever_be_colonized": true,
-        "colonization_research_prerequisites": [
-            ["trader_unlock_ferrous_biosphere"]
-        ],
-        "tracks":
-        {
-            "defense": [
-            {
-                "max_military_structure_slots": 0,
-                "max_health_points": 500,
-                "health_points_restore_rate": 2.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 5,
-                "max_health_points": 1500.0,
-                "health_points_restore_rate": 4.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 10,
-                "max_health_points": 3000.0,
-                "health_points_restore_rate": 6.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 20,
-                "max_health_points": 5000.0,
-                "health_points_restore_rate": 8.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 30,
-                "max_health_points": 7500.0,
-                "health_points_restore_rate": 10.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            }],
-            "logistics": [
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 0,
-                "structure_builder_count": 1
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 3,
-                "structure_builder_count": 2,
-                "max_health_points": 250
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 6,
-                "structure_builder_count": 3,
-                "max_health_points": 500
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 8,
-                "structure_builder_count": 4,
-                "max_health_points": 750
-            }],
-            "commerce": [
-            {},
-            {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
-                "max_health_points": 250
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "credits_income_rate": 2.1,
-                "credits_income_rate_per_population": 0.0288,
-                "max_health_points": 750
-            }],
-            "mining": [
-            {
-                "metal_income_rate": 0
-            },
-            {
-                "metal_income_rate": 0.24,
-                "metal_income_rate_per_population": 0.0036,
-                "max_health_points": 250
-            },
-            {
-                "metal_income_rate": 0.56,
-                "metal_income_rate_per_population": 0.0054,
-                "max_health_points": 500
-            },
-            {
-                "metal_income_rate": 0.96,
-                "metal_income_rate_per_population": 0.00756,
-                "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "metal_income_rate": 1.44,
-                "metal_income_rate_per_population": 0.00983,
-                "max_health_points": 1000
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "metal_income_rate": 2.0,
-                "metal_income_rate_per_population": 0.01179,
-                "max_health_points": 1250
-            }],
-            "research": [
-            {},
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 250
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_ferrous_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
-            }],
-            "focus": [
-            {}]
-        },
-        "maintenance_cost_rates": [],
-        "trade_capacity_levels": [
-        {
-            "import_points": 1,
-            "export_points":
-            {
                 "credits": 1,
                 "metal": 2
             }
         },
         {
-            "import_points": 2,
-            "export_points":
-            {
-                "credits": 2,
-                "metal": 2
-            }
-        },
-        {
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
+                "credits": 1,
                 "metal": 2
             }
         }]
@@ -3478,7 +2986,7 @@
             "defense": [
             {
                 "max_military_structure_slots": 0,
-                "max_health_points": 500,
+                "max_health_points": 250,
                 "health_points_restore_rate": 2.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -3490,7 +2998,7 @@
             },
             {
                 "max_military_structure_slots": 5,
-                "max_health_points": 1000.0,
+                "max_health_points": 750.0,
                 "health_points_restore_rate": 4.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -3501,8 +3009,8 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
-                "max_health_points": 2000.0,
+                "max_military_structure_slots": 15,
+                "max_health_points": 1500.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -3513,8 +3021,8 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
-                "max_health_points": 3000.0,
+                "max_military_structure_slots": 30,
+                "max_health_points": 2500.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -3525,7 +3033,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 4000.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -3537,8 +3045,8 @@
                 }
             },
             {
-                "max_military_structure_slots": 40,
-                "max_health_points": 5000.0,
+                "max_military_structure_slots": 75,
+                "max_health_points": 7000.0,
                 "health_points_restore_rate": 12.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -3556,19 +3064,19 @@
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 5,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 11,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 15,
+                "max_civilian_structure_slots": 14,
                 "structure_builder_count": 4,
                 "max_health_points": 750
             },
@@ -3580,16 +3088,86 @@
             },
             {
                 "max_planet_component_slots": 5,
-                "max_civilian_structure_slots": 20,
+                "max_civilian_structure_slots": 21,
                 "structure_builder_count": 6,
                 "max_health_points": 1250
             }],
             "commerce": [
-            {}],
+            {},
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
+                "max_health_points": 250
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
+                "max_health_points": 500
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
+                "max_health_points": 750
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.045,
+                "max_health_points": 1000
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.06,
+                "max_health_points": 1250
+            }],
             "mining": [
             {}],
             "research": [
-            {}],
+            {},
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 250
+            },
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 500
+            },
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 750
+            },
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0022,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0022,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 1000
+            },
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.003,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.003,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 1250
+            }],
             "focus": [
             {}]
         },
@@ -3599,45 +3177,35 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
-                "metal": 1,
-                "crystal": 1
+                "credits": 5
             }
         },
         {
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
-                "metal": 1,
-                "crystal": 1
+                "credits": 5
             }
         },
         {
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
+                "credits": 5
             }
         },
         {
             "import_points": 4,
             "export_points":
             {
-                "credits": 4,
-                "metal": 1,
-                "crystal": 1
+                "credits": 5
             }
         },
         {
             "import_points": 5,
             "export_points":
             {
-                "credits": 5,
-                "metal": 1,
-                "crystal": 1
+                "credits": 5
             }
         }]
     },
@@ -3675,7 +3243,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -3687,7 +3255,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -3706,67 +3274,72 @@
             },
             {
                 "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 3,
+                "max_civilian_structure_slots": 4,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 7,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 8,
+                "max_civilian_structure_slots": 9,
                 "structure_builder_count": 4,
                 "max_health_points": 750
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_ice_biosphere"]
-                ],
-                "credits_income_rate": 2.1,
-                "credits_income_rate_per_population": 0.0288,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
             }],
             "mining": [
             {},
             {
-                "crystal_income_rate": 0.18,
-                "crystal_income_rate_per_population": 0.003,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             },
             {
-                "crystal_income_rate": 0.42,
-                "crystal_income_rate_per_population": 0.0045,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0072,
                 "max_health_points": 500
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_ice_biosphere"]
                 ],
-                "crystal_income_rate": 0.72,
-                "crystal_income_rate_per_population": 0.0063,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0108,
                 "max_health_points": 750
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_ice_biosphere"]
+                ],
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0144,
+                "max_health_points": 1000
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0006,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0008,
                 "civilian_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
@@ -3774,10 +3347,19 @@
                 "prerequisites": [
                     ["trader_upgrade_ice_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0013,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0018,
                 "civilian_research_points_per_population": 0.0,
                 "max_health_points": 500
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_ice_biosphere"]
+                ],
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.003,
+                "civilian_research_points_per_population": 0.0,
+                "max_health_points": 750
             }],
             "focus": [
             {}]
@@ -3789,23 +3371,15 @@
             "export_points":
             {
                 "credits": 1,
-                "crystal": 2
+                "crystal": 1
             }
         },
         {
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
-                "crystal": 2
-            }
-        },
-        {
-            "import_points": 3,
-            "export_points":
-            {
-                "credits": 3,
-                "crystal": 2
+                "credits": 1,
+                "crystal": 1
             }
         }]
     },
@@ -3843,7 +3417,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -3855,7 +3429,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -3874,53 +3448,56 @@
             },
             {
                 "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 3,
+                "max_civilian_structure_slots": 4,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 7,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 8,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 4,
                 "max_health_points": 750
+            },
+            {
+                "max_planet_component_slots": 3,
+                "max_civilian_structure_slots": 12,
+                "structure_builder_count": 5,
+                "max_health_points": 1000
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_irradiated_biosphere"]
-                ],
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00576,
+                "metal_income_rate_per_population": 0.0045,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00576,
+                "crystal_income_rate_per_population": 0.0045,
                 "max_health_points": 750
             },
             {
@@ -3928,45 +3505,73 @@
                     ["trader_upgrade_irradiated_biosphere"]
                 ],
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00806,
+                "metal_income_rate_per_population": 0.006,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00806,
+                "crystal_income_rate_per_population": 0.006,
                 "max_health_points": 1000
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_irradiated_biosphere"]
+                ],
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0075,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0075,
+                "max_health_points": 1250
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_irradiated_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
+            },
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 750
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_irradiated_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0022,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0022,
                 "military_research_points_per_population": 0.0,
-                "max_health_points": 750
+                "max_health_points": 1000
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_irradiated_biosphere"]
+                ],
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.003,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.003,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 1250
             }],
             "focus": [
             {}]
@@ -3977,7 +3582,6 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
@@ -3986,7 +3590,6 @@
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
                 "metal": 1,
                 "crystal": 1
             }
@@ -4026,7 +3629,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -4038,7 +3641,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -4050,7 +3653,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 7500.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -4062,7 +3665,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 40,
+                "max_military_structure_slots": 75,
                 "max_health_points": 10500.0,
                 "health_points_restore_rate": 12.0,
                 "max_shield_points": 0,
@@ -4081,19 +3684,19 @@
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 5,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 11,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 15,
+                "max_civilian_structure_slots": 14,
                 "structure_builder_count": 4,
                 "max_health_points": 750
             },
@@ -4105,73 +3708,85 @@
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 20,
+                "max_civilian_structure_slots": 21,
                 "structure_builder_count": 6,
                 "max_health_points": 1250
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
+                "max_health_points": 750
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0045,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0045,
+                "max_health_points": 750
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 750
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0018,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0022,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0018,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0022,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 1000
             }],
@@ -4193,7 +3808,7 @@
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
+                "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
@@ -4202,25 +3817,7 @@
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 4,
-            "export_points":
-            {
-                "credits": 4,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 5,
-            "export_points":
-            {
-                "credits": 5,
+                "credits": 1,
                 "metal": 1,
                 "crystal": 1
             }
@@ -4257,21 +3854,9 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 20,
-                "max_health_points": 5000.0,
-                "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -4307,43 +3892,68 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
+                "max_health_points": 750
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0045,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0045,
+                "max_health_points": 750
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.006,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.006,
+                "max_health_points": 1000
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0006,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
+                "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0013,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
+                "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             }],
             "focus": [
@@ -4353,6 +3963,24 @@
         "trade_capacity_levels": [
         {
             "import_points": 1,
+            "export_points":
+            {
+                "credits": 1,
+                "metal": 1,
+                "crystal": 1
+            }
+        },
+        {
+            "import_points": 2,
+            "export_points":
+            {
+                "credits": 1,
+                "metal": 1,
+                "crystal": 1
+            }
+        },
+        {
+            "import_points": 3,
             "export_points":
             {
                 "credits": 1,
@@ -4380,7 +4008,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 5,
                 "max_health_points": 1500.0,
                 "health_points_restore_rate": 4.0,
                 "max_shield_points": 0,
@@ -4392,7 +4020,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -4424,48 +4052,53 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_ice_biosphere"]
-                ],
-                "credits_income_rate": 2.1,
-                "credits_income_rate_per_population": 0.0288,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
             }],
             "mining": [
             {},
             {
-                "crystal_income_rate": 0.18,
-                "crystal_income_rate_per_population": 0.003,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             },
             {
-                "crystal_income_rate": 0.42,
-                "crystal_income_rate_per_population": 0.0045,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0072,
                 "max_health_points": 500
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_ice_biosphere"]
                 ],
-                "crystal_income_rate": 0.72,
-                "crystal_income_rate_per_population": 0.0063,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0108,
                 "max_health_points": 750
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_ice_biosphere"]
+                ],
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0144,
+                "max_health_points": 1000
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0006,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0008,
                 "civilian_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
@@ -4473,10 +4106,19 @@
                 "prerequisites": [
                     ["trader_upgrade_ice_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.2,
-                "civilian_research_rate_per_population_scalar": 0.0013,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0018,
                 "civilian_research_points_per_population": 0.0,
                 "max_health_points": 500
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_ice_biosphere"]
+                ],
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.003,
+                "civilian_research_points_per_population": 0.0,
+                "max_health_points": 750
             }],
             "focus": [
             {}]
@@ -4488,7 +4130,15 @@
             "export_points":
             {
                 "credits": 1,
-                "crystal": 2
+                "crystal": 1
+            }
+        },
+        {
+            "import_points": 2,
+            "export_points":
+            {
+                "credits": 1,
+                "crystal": 1
             }
         }]
     },
@@ -4511,9 +4161,21 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 5,
                 "max_health_points": 1500.0,
                 "health_points_restore_rate": 4.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 15,
+                "max_health_points": 3000.0,
+                "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -4543,66 +4205,73 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_volcanic_biosphere"]
-                ],
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
-                "max_health_points": 250
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
+                "max_health_points": 500
             }],
             "mining": [
             {},
             {
-                "metal_income_rate": 0.18,
-                "metal_income_rate_per_population": 0.003,
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             },
             {
-                "metal_income_rate": 0.42,
-                "metal_income_rate_per_population": 0.0045,
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0072,
                 "max_health_points": 500
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0108,
+                "max_health_points": 750
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_volcanic_biosphere"]
                 ],
-                "metal_income_rate": 0.72,
-                "metal_income_rate_per_population": 0.0063,
-                "max_health_points": 750
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0144,
+                "max_health_points": 1000
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_volcanic_biosphere"]
+                ],
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.018,
+                "max_health_points": 1250
             }],
             "research": [
             {},
             {
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.0006,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0008,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
-            },
-            {
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.0013,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 500
-            },
-            {
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.0021,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_volcanic_biosphere"]
                 ],
-                "military_research_rate_scalar": 0.2,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0018,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 500
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_volcanic_biosphere"]
+                ],
+                "military_research_rate_scalar": 0.0,
                 "military_research_rate_per_population_scalar": 0.003,
                 "military_research_points_per_population": 0.0,
-                "max_health_points": 1000
+                "max_health_points": 750
             }],
             "focus": [
             {}]
@@ -4614,7 +4283,15 @@
             "export_points":
             {
                 "credits": 1,
-                "metal": 2
+                "metal": 1
+            }
+        },
+        {
+            "import_points": 2,
+            "export_points":
+            {
+                "credits": 1,
+                "metal": 1
             }
         }]
     },
@@ -4652,7 +4329,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -4664,21 +4341,9 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 30,
-                "max_health_points": 7500.0,
-                "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -4695,19 +4360,19 @@
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 3,
+                "max_civilian_structure_slots": 4,
                 "structure_builder_count": 2,
                 "max_health_points": 250
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 6,
+                "max_civilian_structure_slots": 7,
                 "structure_builder_count": 3,
                 "max_health_points": 500
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 8,
+                "max_civilian_structure_slots": 10,
                 "structure_builder_count": 4,
                 "max_health_points": 750
             },
@@ -4720,76 +4385,66 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.5,
-                "credits_income_rate_per_population": 0.01,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.1,
-                "credits_income_rate_per_population": 0.016,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_oceanic_biosphere"]
-                ],
-                "credits_income_rate": 1.8,
-                "credits_income_rate_per_population": 0.024,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_oceanic_biosphere"]
-                ],
-                "credits_income_rate": 2.6,
-                "credits_income_rate_per_population": 0.0336,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.045,
                 "max_health_points": 1000
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
+                "max_health_points": 250
+            }],
+            "research": [
+            {},
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
+                "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
                 "prerequisites": [
                     ["trader_upgrade_oceanic_biosphere"]
                 ],
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
-                "max_health_points": 500
-            }],
-            "research": [
-            {},
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 250
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "prerequisites": [
+                    ["trader_upgrade_oceanic_biosphere"]
+                ],
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 750
             },
@@ -4797,25 +4452,13 @@
                 "prerequisites": [
                     ["trader_upgrade_oceanic_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0018,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0022,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0018,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0022,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 1000
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_oceanic_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0025,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0025,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1250
             }],
             "focus": [
             {}]
@@ -4826,36 +4469,28 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
-                "metal": 1,
-                "crystal": 1
+                "credits": 4
             }
         },
         {
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
-                "metal": 1,
-                "crystal": 1
+                "credits": 4
             }
         },
         {
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
+                "credits": 4
             }
         },
         {
             "import_points": 4,
             "export_points":
             {
-                "credits": 4,
-                "metal": 1,
-                "crystal": 1
+                "credits": 4
             }
         }]
     },
@@ -4893,7 +4528,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -4905,7 +4540,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -4936,56 +4571,44 @@
             },
             {
                 "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 10,
+                "max_civilian_structure_slots": 9,
                 "structure_builder_count": 4,
                 "max_health_points": 750
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 12,
-                "structure_builder_count": 5,
-                "max_health_points": 1000
             }],
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "credits_income_rate": 2.1,
-                "credits_income_rate_per_population": 0.0288,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_swamp_biosphere"]
-                ],
-                "credits_income_rate": 3.0,
-                "credits_income_rate_per_population": 0.0403,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.045,
                 "max_health_points": 1000
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_swamp_biosphere"]
-                ],
-                "credits_income_rate": 4.0,
-                "credits_income_rate_per_population": 0.0524,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.06,
                 "max_health_points": 1250
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
@@ -4993,28 +4616,31 @@
                     ["trader_upgrade_swamp_biosphere"]
                 ],
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "prerequisites": [
+                    ["trader_upgrade_swamp_biosphere"]
+                ],
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             },
@@ -5022,25 +4648,13 @@
                 "prerequisites": [
                     ["trader_upgrade_swamp_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0015,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0015,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_swamp_biosphere"]
-                ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0018,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0018,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1000
             }],
             "focus": [
             {}]
@@ -5051,27 +4665,21 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
-                "metal": 1,
-                "crystal": 1
+                "credits": 3
             }
         },
         {
             "import_points": 2,
             "export_points":
             {
-                "credits": 2,
-                "metal": 1,
-                "crystal": 1
+                "credits": 3
             }
         },
         {
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
+                "credits": 3
             }
         }]
     },
@@ -5106,7 +4714,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -5118,7 +4726,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -5130,7 +4738,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 7500.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -5174,81 +4782,60 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.5,
-                "credits_income_rate_per_population": 0.01,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "credits_income_rate": 1.1,
-                "credits_income_rate_per_population": 0.016,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             },
             {
-                "credits_income_rate": 1.8,
-                "credits_income_rate_per_population": 0.024,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
                 "max_health_points": 750
             },
             {
-                "credits_income_rate": 2.6,
-                "credits_income_rate_per_population": 0.0336,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.045,
                 "max_health_points": 1000
-            },
-            {
-                "credits_income_rate": 3.5,
-                "credits_income_rate_per_population": 0.0437,
-                "max_health_points": 1250
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
+                "metal_income_rate_per_population": 0.0015,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             },
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
+                "metal_income_rate_per_population": 0.003,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
+                "crystal_income_rate_per_population": 0.003,
                 "max_health_points": 500
-            },
-            {
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00576,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00576,
-                "max_health_points": 750
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
             }],
             "focus": [
             {}]
@@ -5259,7 +4846,7 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
+                "credits": 2,
                 "metal": 1,
                 "crystal": 1
             }
@@ -5277,251 +4864,16 @@
             "import_points": 3,
             "export_points":
             {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 4,
-            "export_points":
-            {
-                "credits": 4,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 5,
-            "export_points":
-            {
-                "credits": 5,
-                "metal": 1,
-                "crystal": 1
-            }
-        }]
-    },
-    {
-        "planet_type": "terran_home",
-        "can_ever_be_colonized": true,
-        "tracks":
-        {
-            "defense": [
-            {
-                "max_military_structure_slots": 0,
-                "max_health_points": 500,
-                "health_points_restore_rate": 2.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 5,
-                "max_health_points": 1500.0,
-                "health_points_restore_rate": 4.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 10,
-                "max_health_points": 3000.0,
-                "health_points_restore_rate": 6.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 20,
-                "max_health_points": 5000.0,
-                "health_points_restore_rate": 8.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 30,
-                "max_health_points": 7500.0,
-                "health_points_restore_rate": 10.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            }],
-            "logistics": [
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 0,
-                "structure_builder_count": 1
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 4,
-                "structure_builder_count": 2,
-                "max_health_points": 250
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 7,
-                "structure_builder_count": 3,
-                "max_health_points": 500
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 10,
-                "structure_builder_count": 4,
-                "max_health_points": 750
-            },
-            {
-                "max_planet_component_slots": 4,
-                "max_civilian_structure_slots": 12,
-                "structure_builder_count": 5,
-                "max_health_points": 1000
-            }],
-            "commerce": [
-            {},
-            {
-                "credits_income_rate": 0.5,
-                "credits_income_rate_per_population": 0.01,
-                "max_health_points": 250
-            },
-            {
-                "credits_income_rate": 1.1,
-                "credits_income_rate_per_population": 0.016,
-                "max_health_points": 500
-            },
-            {
-                "credits_income_rate": 1.8,
-                "credits_income_rate_per_population": 0.024,
-                "max_health_points": 750
-            },
-            {
-                "credits_income_rate": 2.6,
-                "credits_income_rate_per_population": 0.0336,
-                "max_health_points": 1000
-            },
-            {
-                "credits_income_rate": 3.5,
-                "credits_income_rate_per_population": 0.0437,
-                "max_health_points": 1250
-            }],
-            "mining": [
-            {},
-            {
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.0024,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.0024,
-                "max_health_points": 250
-            },
-            {
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00384,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00384,
-                "max_health_points": 500
-            },
-            {
-                "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.00576,
-                "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.00576,
-                "max_health_points": 750
-            }],
-            "research": [
-            {},
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 250
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 500
-            },
-            {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0012,
-                "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0012,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
-            }],
-            "focus": [
-            {}]
-        },
-        "maintenance_cost_rates": [],
-        "trade_capacity_levels": [
-        {
-            "import_points": 1,
-            "export_points":
-            {
-                "credits": 1,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 2,
-            "export_points":
-            {
                 "credits": 2,
                 "metal": 1,
                 "crystal": 1
             }
         },
         {
-            "import_points": 3,
-            "export_points":
-            {
-                "credits": 3,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
             "import_points": 4,
             "export_points":
             {
-                "credits": 4,
-                "metal": 1,
-                "crystal": 1
-            }
-        },
-        {
-            "import_points": 5,
-            "export_points":
-            {
-                "credits": 5,
+                "credits": 2,
                 "metal": 1,
                 "crystal": 1
             }
@@ -5549,166 +4901,6 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
-                "max_health_points": 1500.0,
-                "health_points_restore_rate": 4.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
-                "max_military_structure_slots": 20,
-                "max_health_points": 3000.0,
-                "health_points_restore_rate": 6.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            }],
-            "logistics": [
-            {
-                "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 0,
-                "structure_builder_count": 1
-            },
-            {
-                "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 3,
-                "structure_builder_count": 2,
-                "max_health_points": 250
-            },
-            {
-                "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 6,
-                "structure_builder_count": 3,
-                "max_health_points": 500
-            },
-            {
-                "max_planet_component_slots": 3,
-                "max_civilian_structure_slots": 8,
-                "structure_builder_count": 4,
-                "max_health_points": 750
-            }],
-            "commerce": [
-            {},
-            {
-                "credits_income_rate": 0.6,
-                "credits_income_rate_per_population": 0.012,
-                "max_health_points": 250
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_volcanic_biosphere"]
-                ],
-                "credits_income_rate": 1.3,
-                "credits_income_rate_per_population": 0.0192,
-                "max_health_points": 500
-            }],
-            "mining": [
-            {},
-            {
-                "metal_income_rate": 0.18,
-                "metal_income_rate_per_population": 0.003,
-                "max_health_points": 250
-            },
-            {
-                "metal_income_rate": 0.42,
-                "metal_income_rate_per_population": 0.0045,
-                "max_health_points": 500
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_volcanic_biosphere"]
-                ],
-                "metal_income_rate": 0.72,
-                "metal_income_rate_per_population": 0.0063,
-                "max_health_points": 750
-            }],
-            "research": [
-            {},
-            {
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.0006,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 250
-            },
-            {
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.0013,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 500
-            },
-            {
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.0021,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 750
-            },
-            {
-                "prerequisites": [
-                    ["trader_upgrade_volcanic_biosphere"]
-                ],
-                "military_research_rate_scalar": 0.2,
-                "military_research_rate_per_population_scalar": 0.003,
-                "military_research_points_per_population": 0.0,
-                "max_health_points": 1000
-            }],
-            "focus": [
-            {}]
-        },
-        "maintenance_cost_rates": [],
-        "trade_capacity_levels": [
-        {
-            "import_points": 1,
-            "export_points":
-            {
-                "credits": 1,
-                "metal": 2
-            }
-        },
-        {
-            "import_points": 2,
-            "export_points":
-            {
-                "credits": 2,
-                "metal": 2
-            }
-        },
-        {
-            "import_points": 3,
-            "export_points":
-            {
-                "credits": 3,
-                "metal": 2
-            }
-        }]
-    },
-    {
-        "planet_type": "pirate_base",
-        "can_ever_be_colonized": true,
-        "tracks":
-        {
-            "defense": [
-            {
-                "max_military_structure_slots": 0,
-                "max_health_points": 500,
-                "health_points_restore_rate": 2.0,
-                "max_shield_points": 0,
-                "shield_points_restore_rate": 0.0,
-                "planet_shield_burst_restore":
-                {
-                    "cooldown_duration": 30.0,
-                    "restore_percentage": 1.0
-                }
-            },
-            {
                 "max_military_structure_slots": 5,
                 "max_health_points": 1500.0,
                 "health_points_restore_rate": 4.0,
@@ -5721,7 +4913,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 15,
                 "max_health_points": 3000.0,
                 "health_points_restore_rate": 6.0,
                 "max_shield_points": 0,
@@ -5733,7 +4925,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 20,
+                "max_military_structure_slots": 30,
                 "max_health_points": 5000.0,
                 "health_points_restore_rate": 8.0,
                 "max_shield_points": 0,
@@ -5745,7 +4937,7 @@
                 }
             },
             {
-                "max_military_structure_slots": 30,
+                "max_military_structure_slots": 50,
                 "max_health_points": 7500.0,
                 "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
@@ -5755,11 +4947,193 @@
                     "cooldown_duration": 30.0,
                     "restore_percentage": 1.0
                 }
+            }],
+            "logistics": [
+            {
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 0,
+                "structure_builder_count": 1
             },
             {
-                "max_military_structure_slots": 40,
-                "max_health_points": 10500.0,
-                "health_points_restore_rate": 12.0,
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 4,
+                "structure_builder_count": 2,
+                "max_health_points": 250
+            },
+            {
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 7,
+                "structure_builder_count": 3,
+                "max_health_points": 500
+            },
+            {
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 10,
+                "structure_builder_count": 4,
+                "max_health_points": 750
+            },
+            {
+                "max_planet_component_slots": 4,
+                "max_civilian_structure_slots": 12,
+                "structure_builder_count": 5,
+                "max_health_points": 1000
+            }],
+            "commerce": [
+            {},
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
+                "max_health_points": 250
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
+                "max_health_points": 500
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
+                "max_health_points": 750
+            }],
+            "mining": [
+            {},
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0036,
+                "max_health_points": 250
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0072,
+                "max_health_points": 500
+            },
+            {
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0108,
+                "max_health_points": 750
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_volcanic_biosphere"]
+                ],
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0144,
+                "max_health_points": 1000
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_volcanic_biosphere"]
+                ],
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.018,
+                "max_health_points": 1250
+            }],
+            "research": [
+            {},
+            {
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0008,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 250
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_volcanic_biosphere"]
+                ],
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0018,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 500
+            },
+            {
+                "prerequisites": [
+                    ["trader_upgrade_volcanic_biosphere"]
+                ],
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.003,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 750
+            }],
+            "focus": [
+            {}]
+        },
+        "maintenance_cost_rates": [],
+        "trade_capacity_levels": [
+        {
+            "import_points": 1,
+            "export_points":
+            {
+                "credits": 1,
+                "metal": 1
+            }
+        },
+        {
+            "import_points": 2,
+            "export_points":
+            {
+                "credits": 1,
+                "metal": 1
+            }
+        }]
+    },
+    {
+        "planet_type": "pirate_base",
+        "can_ever_be_colonized": true,
+        "tracks":
+        {
+            "defense": [
+            {
+                "max_military_structure_slots": 0,
+                "max_health_points": 250,
+                "health_points_restore_rate": 2.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 5,
+                "max_health_points": 750.0,
+                "health_points_restore_rate": 4.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 15,
+                "max_health_points": 1500.0,
+                "health_points_restore_rate": 6.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 30,
+                "max_health_points": 2500.0,
+                "health_points_restore_rate": 8.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 50,
+                "max_health_points": 4000.0,
+                "health_points_restore_rate": 10.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
                 "planet_shield_burst_restore":
@@ -5792,17 +5166,17 @@
                 "credits_income_rate_per_population": 0
             },
             {
-                "credits_income_rate": 0.4,
-                "credits_income_rate_per_population": 0.008,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.002,
+                "metal_income_rate_per_population": 0.0036,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.002,
+                "crystal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             }],
             "research": [
@@ -5816,7 +5190,7 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 3
+                "credits": 1
             }
         }]
     },
@@ -5828,7 +5202,7 @@
             "defense": [
             {
                 "max_military_structure_slots": 0,
-                "max_health_points": 500,
+                "max_health_points": 250,
                 "health_points_restore_rate": 2.0,
                 "max_shield_points": 0,
                 "shield_points_restore_rate": 0.0,
@@ -5839,7 +5213,19 @@
                 }
             },
             {
-                "max_military_structure_slots": 10,
+                "max_military_structure_slots": 5,
+                "max_health_points": 750.0,
+                "health_points_restore_rate": 4.0,
+                "max_shield_points": 0,
+                "shield_points_restore_rate": 0.0,
+                "planet_shield_burst_restore":
+                {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 1.0
+                }
+            },
+            {
+                "max_military_structure_slots": 15,
                 "max_health_points": 1500.0,
                 "health_points_restore_rate": 4.0,
                 "max_shield_points": 0,
@@ -5871,21 +5257,49 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 0.4,
-                "credits_income_rate_per_population": 0.008,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
+                "max_health_points": 500
+            },
+            {
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.035,
+                "max_health_points": 750
             }],
             "mining": [
             {},
             {
                 "metal_income_rate": 0.0,
-                "metal_income_rate_per_population": 0.002,
+                "metal_income_rate_per_population": 0.0036,
                 "crystal_income_rate": 0.0,
-                "crystal_income_rate_per_population": 0.002,
+                "crystal_income_rate_per_population": 0.0036,
                 "max_health_points": 250
             }],
             "research": [
-            {}],
+            {},
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0008,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0008,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 250
+            },
+            {
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0018,
+                "civilian_research_points_per_population": 0.0,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0018,
+                "military_research_points_per_population": 0.0,
+                "max_health_points": 500
+            }],
             "focus": [
             {}]
         },
@@ -5896,8 +5310,15 @@
             "export_points":
             {
                 "credits": 1,
-                "metal": 1,
-                "crystal": 1
+                "metal": 1
+            }
+        },
+        {
+            "import_points": 2,
+            "export_points":
+            {
+                "credits": 1,
+                "metal": 1
             }
         }]
     },
@@ -6003,16 +5424,13 @@
             "commerce": [
             {},
             {
-                "credits_income_rate": 3.0,
-                "credits_income_rate_per_population": 0.006,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.015,
                 "max_health_points": 250
             },
             {
-                "prerequisites": [
-                    ["trader_upgrade_swamp_biosphere"]
-                ],
-                "credits_income_rate": 3.0,
-                "credits_income_rate_per_population": 0.013,
+                "credits_income_rate": 0.0,
+                "credits_income_rate_per_population": 0.025,
                 "max_health_points": 500
             }],
             "mining": [
@@ -6021,20 +5439,20 @@
                 "prerequisites": [
                     ["trader_upgrade_swamp_biosphere"]
                 ],
-                "metal_income_rate": 0.5,
-                "metal_income_rate_per_population": 0.002,
-                "crystal_income_rate": 0.3,
-                "crystal_income_rate_per_population": 0.001,
+                "metal_income_rate": 0.0,
+                "metal_income_rate_per_population": 0.0015,
+                "crystal_income_rate": 0.0,
+                "crystal_income_rate_per_population": 0.0015,
                 "max_health_points": 250
             }],
             "research": [
             {},
             {
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0003,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0004,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0003,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0004,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 250
             },
@@ -6042,11 +5460,11 @@
                 "prerequisites": [
                     ["trader_upgrade_swamp_biosphere"]
                 ],
-                "civilian_research_rate_scalar": 0.1,
-                "civilian_research_rate_per_population_scalar": 0.0007,
+                "civilian_research_rate_scalar": 0.0,
+                "civilian_research_rate_per_population_scalar": 0.0009,
                 "civilian_research_points_per_population": 0.0,
-                "military_research_rate_scalar": 0.1,
-                "military_research_rate_per_population_scalar": 0.0007,
+                "military_research_rate_scalar": 0.0,
+                "military_research_rate_per_population_scalar": 0.0009,
                 "military_research_points_per_population": 0.0,
                 "max_health_points": 500
             }],
@@ -6059,18 +5477,14 @@
             "import_points": 1,
             "export_points":
             {
-                "credits": 1,
-                "metal": 1,
-                "crystal": 1
+                "credits": 3
             }
         },
         {
             "import_points": 2,
             "export_points":
             {
-                "credits": 1,
-                "metal": 2,
-                "crystal": 1
+                "credits": 3
             }
         }]
     }],
@@ -6099,19 +5513,19 @@
     }],
     "asteroid_extraction_rates":
     {
-        "metal": 0.3,
-        "crystal": 0.3
+        "metal": 0.5,
+        "crystal": 0.5
     },
     "planet_bombing_recovery_cooldown": 30.0,
     "colonize_starting_health_percent": 1,
     "colonize_starting_shield_percent": 1,
     "culture":
     {
-        "base_allegiance_growth_rate_from_neutral": 0.25,
-        "base_allegiance_growth_rate_from_other_players": 0.05,
-        "base_max_allegiance_factor": 0.5,
-        "base_per_population_bonus_per_allied_population_percentage_scalar": 0.5,
-        "base_per_population_penalty_per_other_population_percentage_scalar": 0.25,
+        "base_allegiance_growth_rate_from_neutral": 0.1,
+        "base_allegiance_growth_rate_from_other_players": 0.025,
+        "base_max_allegiance_factor": 0.0,
+        "base_per_population_bonus_per_allied_population_percentage_scalar": 1.0,
+        "base_per_population_penalty_per_other_population_percentage_scalar": 1.0,
         "decay_rates": [
         {
             "decay_rate": 0.02
@@ -6141,24 +5555,6 @@
                 "value": 0.15,
                 "prerequisites": [
                     ["trader_upgrade_culture_ship_max_linear_speed_bonus"]
-                ]
-            }]
-        }],
-        "friendly_planet_modifiers": [
-        {
-            "modifier_type": "commerce_track_credit_income_rate_per_population",
-            "value_behavior": "scalar",
-            "values": [
-            {
-                "value": 0.1,
-                "prerequisites": [
-                    ["trader_unlock_culture_center"]
-                ]
-            },
-            {
-                "value": 0.25,
-                "prerequisites": [
-                    ["trader_unlock_culture_planet_credit_income_rate_bonus"]
                 ]
             }]
         }],
@@ -6327,12 +5723,12 @@
         "trade_income_rates":
         {
             "credits": 1.5,
-            "metal": 0.75,
-            "crystal": 0.75
+            "metal": 1.0,
+            "crystal": 1.0
         },
         "trade_ship_death_assets":
         {
-            "credits": 250
+            "credits": 100
         },
         "trade_ship_escorts": [
         {
@@ -6365,27 +5761,27 @@
             "prerequisites": [["trader_max_supply_0"]]
         },
         {
-            "max_supply": 1000,
+            "max_supply": 750,
             "prerequisites": [["trader_max_supply_1"]]
         },
         {
-            "max_supply": 1500,
+            "max_supply": 1000,
             "prerequisites": [["trader_max_supply_2"]]
         },
         {
-            "max_supply": 2000,
+            "max_supply": 1400,
             "prerequisites": [["trader_max_supply_3"]]
         },
         {
-            "max_supply": 2500,
+            "max_supply": 1800,
             "prerequisites": [["trader_max_supply_4"]]
         },
         {
-            "max_supply": 3250,
+            "max_supply": 2200,
             "prerequisites": [["trader_max_supply_5"]]
         },
         {
-            "max_supply": 4000,
+            "max_supply": 2600,
             "prerequisites": [["trader_max_supply_6"]]
         }]
     },
@@ -6411,10 +5807,24 @@
         "race_name": "player_race_name.trader",
         "race_description": "player_race_description.trader",
         "faction_name": "player_faction_name.dlc_trader_loyalist",
+        "faction_short_name": "player_faction_short_name.dlc_trader_loyalist",
         "faction_description": "npc_player.pranast_united.description",
         "faction_icon": "faction_4",
         "load_screen_character_brush": "trader_load_screen_character",
-        "player_slot_plate": "trader_loyalist_player_slot_plate",
+        "player_slot_plates": [
+            "dlc_trader_loyalist_player_slot_plate",
+            "dlc_trader_loyalist_player_slot_plate_2",
+            "dlc_trader_loyalist_player_slot_plate_3",
+            "dlc_trader_loyalist_player_slot_plate_4",
+            "dlc_trader_loyalist_player_slot_plate_5",
+            "dlc_trader_loyalist_player_slot_plate_6",
+            "dlc_trader_loyalist_player_slot_plate_7",
+            "dlc_trader_loyalist_player_slot_plate_8",
+            "dlc_trader_loyalist_player_slot_plate_9",
+            "dlc_trader_loyalist_player_slot_plate_10",
+            "dlc_trader_loyalist_player_slot_plate_11",
+            "dlc_trader_loyalist_player_slot_plate_12"
+        ],
         "mission_notification_icon": "tec_mission_reward_notification_icon",
         "mission_tooltip_notification_icon": "tec_mission_reward_notification_tooltip_picture"
     },
@@ -7260,6 +6670,7 @@
             "cannot_give_away_home_or_last_planet": "player_ai_alliance_offer_decline_reason.cannot_give_away_home_or_last_planet",
             "could_not_accept_due_to_insufficient_assets": "player_ai_alliance_offer_decline_reason.could_not_accept_due_to_insufficient_assets",
             "could_not_accept_due_to_insufficient_exotics": "player_ai_alliance_offer_decline_reason.could_not_accept_due_to_insufficient_exotics",
+            "could_not_accept_due_to_insufficient_influence": "player_ai_alliance_offer_decline_reason.could_not_accept_due_to_insufficient_influence",
             "could_not_accept_due_to_other_reasons": "player_ai_alliance_offer_decline_reason.could_not_accept_due_to_other_reasons",
             "cease_fire_required_before_other_alliances": "player_ai_alliance_offer_decline_reason.cease_fire_required_before_other_alliances",
             "cease_fire_minimum_duration_required_before_other_alliances": "player_ai_alliance_offer_decline_reason.cease_fire_minimum_duration_required_before_other_alliances",
@@ -7267,8 +6678,43 @@
             "alliance_refused": "player_ai_alliance_offer_decline_reason.alliance_refused",
             "give_planets_requires_synergy_alliance": "player_ai_alliance_offer_decline_reason.give_planets_requires_synergy_alliance",
             "already_given_planet_recently": "player_ai_alliance_offer_decline_reason.already_given_planet_recently",
-            "trade_is_not_reasonable": "player_ai_alliance_offer_decline_reason.trade_is_not_reasonable"
-        }
+            "trade_is_not_reasonable": "player_ai_alliance_offer_decline_reason.trade_is_not_reasonable",
+            "out_of_patience": "player_ai_alliance_offer_decline_reason.out_of_patience"
+        },
+        "rival_taunts": [
+            "player_ai_tec_taunt.1",
+            "player_ai_tec_taunt.2",
+            "player_ai_tec_taunt.3",
+            "player_ai_tec_taunt.4",
+            "player_ai_tec_taunt.5",
+            "player_ai_tec_taunt.6",
+            "player_ai_tec_taunt.7",
+            "player_ai_tec_taunt.8",
+            "player_ai_tec_taunt.9",
+            "player_ai_tec_taunt.10",
+            "player_ai_tec_loyalist_taunt.1",
+            "player_ai_tec_loyalist_taunt.2",
+            "player_ai_tec_loyalist_taunt.3",
+            "player_ai_tec_loyalist_taunt.4",
+            "player_ai_tec_loyalist_taunt.5",
+            "player_ai_tec_loyalist_taunt.6"
+        ],
+        "cease_fire_messages": [
+            "player_ai_tec_alliance.1",
+            "player_ai_tec_alliance.2",
+            "player_ai_tec_alliance.3"
+        ],
+        "bounty_placed_messages": [
+            "player_ai_tec_enclave_bounty_taunt.0",
+            "player_ai_tec_enclave_bounty_taunt.1",
+            "player_ai_tec_enclave_bounty_taunt.2",
+            "player_ai_tec_enclave_bounty_taunt.3",
+            "player_ai_tec_enclave_bounty_taunt.4",
+            "player_ai_tec_enclave_bounty_taunt.5",
+            "player_ai_tec_enclave_bounty_taunt.7",
+            "player_ai_tec_enclave_bounty_taunt.9",
+            "player_ai_tec_enclave_bounty_taunt.10"
+        ]
     },
     "planet_elevators":
     {
@@ -7294,8 +6740,13 @@
         }
     },
     "theme_picker_mesh_preview_units": [
-        "trader_battle_capital_ship",
+        "trader_interceptor_strikecraft",
         "trader_light_frigate",
+        "trader_carrier_cruiser",
+        "trader_heavy_cruiser",
+        "trader_battle_capital_ship",
+        "trader_carrier_capital_ship",
+        "trader_loyalist_titan",
         "trader_starbase"
     ],
     "theme_picker_skybox": "skybox_cloud_16"

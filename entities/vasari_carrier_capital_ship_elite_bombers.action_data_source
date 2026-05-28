@@ -1,26 +1,82 @@
 {
     "version": 0,
     "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "microphasing_aura_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft"
+            ],
+            "ownerships": [
+                "friendly",
+		"self"
+            ]
+        }
+    }],
     "action_values": [
     {
         "action_value_id": "elite_bombers_damage_bonus_value",
         "action_value":
         {
-            "values": [0.15, 0.3, 0.45, 0.6, 0.75]
+            "values": [0.1, 0.2, 0.3, 0.4, 0.5]
         }
     },
     {
         "action_value_id": "elite_bombers_hull_bonus_value",
         "action_value":
         {
-            "values": [10.0, 20.0, 30.0, 40.0, 50.0]
+            "values": [5.0, 10.0, 15.0, 20.0, 25.0]
         }
     },
     {
         "action_value_id": "elite_bombers_hull_regen_bonus_value",
         "action_value":
         {
-            "values": [0.36, 0.48, 0.6, 0.72, 0.84]
+            "values": [0.18, 0.24, 0.3, 0.36, 0.42]
+        }
+    },
+    {
+        "action_value_id": "microphasing_aura_radius",
+        "action_value":
+        {
+            "values": [8000.0, 8000.0, 8000.0, 9000.0, 10000.0]
+        }
+    },
+    {
+        "action_value_id": "microphasing_aura_chance_value",
+        "action_value":
+        {
+            "values": [0.2, 0.3, 0.3, 0.3, 0.3]
+        }
+    },
+    {
+        "action_value_id": "microphasing_aura_execution_interval_value",
+        "action_value":
+        {
+            "values": [4.0, 4.0, 3.0, 3.0, 3.0]
+        }
+    },
+    {
+        "action_value_id": "microphasing_aura_max_linear_speed_scalar",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "microphasing_aura_max_linear_acceleration_scalar",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "microphasing_aura_max_angular_speed_scalar",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
         }
     }],
     "buff_unit_modifiers": [
@@ -40,6 +96,33 @@
             "modifier_type": "hull_point_restore_rate",
             "value_behavior": "scalar",
             "value_id": "elite_bombers_hull_regen_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "microphasing_aura_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "microphasing_aura_max_linear_speed_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "microphasing_aura_max_linear_acceleration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "microphasing_aura_max_linear_acceleration_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "microphasing_aura_max_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "microphasing_aura_max_angular_speed_scalar"
         }
     }],
     "buff_weapon_modifiers": [

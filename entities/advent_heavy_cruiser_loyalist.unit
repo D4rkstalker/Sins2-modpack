@@ -107,8 +107,8 @@
             "up": [0.0, 1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -5.0,
-                "max_angle": 5.0
+                "min_angle": -15.0,
+                "max_angle": 15.0
             },
             "pitch_arc":
             {
@@ -130,6 +130,16 @@
             }
         }
     },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 3.95,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [7, 8],
+            "large_debris": [1, 2]
+        }
+    },
     "health":
     {
         "release_time_after_death": 60.0,
@@ -138,7 +148,7 @@
         "can_ever_be_resurrected": true,
         "levels": [
         {
-            "max_hull_points": 1120.0,
+            "max_hull_points": 1400.0,
             "hull_point_restore_rate": 2.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
@@ -153,8 +163,8 @@
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 60.0
         }]
@@ -187,11 +197,29 @@
     "abilities": [
     {
         "abilities": [
-            "advent_heavy_cruiser_ruthlessness"
+            "advent_heavy_cruiser_ruthlessness",
+		"siege_breakers"
         ]
+    },
+    {
+        "abilities": [
+            "advent_heavy_cruiser_ruthlessness",
+		"siege_breakers",
+			"special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "garrison"
+    },
+    {
+        "abilities": [
+            "advent_heavy_cruiser_ruthlessness",
+		"siege_breakers",
+			"special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "insurgent"
     }],
     "ship_roles": [
-        "attack_ship"
+		"attack_ship",
+		"anti_structure"
     ],
     "skin_groups": [
     {

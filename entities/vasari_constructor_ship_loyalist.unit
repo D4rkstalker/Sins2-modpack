@@ -36,6 +36,13 @@
     {
         "follow_distance": 310.315338
     },
+    "attack":
+    {
+        "attack_pattern":
+        {
+            "type": "stop_and_fire"
+        }
+    },
     "ai":
     {
         "attack_target_type_groups_to_ignore": [
@@ -44,7 +51,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "support"
     },
     "user_interface":
     {
@@ -53,6 +61,32 @@
         "can_move": true,
         "can_show_distance_to_plane_line": true,
         "can_rotate": true
+    },
+    "weapons":
+    {
+        "weapons": [
+        {
+            "weapon": "constructor_deconstruct_bait",
+            "mesh_point": "center",
+            "weapon_position": [-0.006248, -0.808037, 3.347033],
+            "non_turret_muzzle_positions": [
+                [-2.234071, -0.808037, 3.347033],
+                [2.221574, -0.808037, 3.347033]
+            ],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 5.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 5.0
+            }
+        }],
+        "max_range_weapon_index": 0
     },
     "formation":
     {
@@ -85,11 +119,6 @@
             "experience_given_on_death": 2.0
         }]
     },
-    "antimatter":
-    {
-        "max_antimatter": 1.0,
-        "antimatter_restore_rate": 1.0
-    },
     "build":
     {
         "build_time": 100.0,
@@ -101,15 +130,10 @@
         "build_kind": "frigate",
         "build_group_id": "frigate"
     },
-    "unit_modifiers": [
+    "ship_component_shop":
     {
-        "modifier_type": "max_antimatter",
-        "value_behavior": "additive",
-        "value": 49.0,
-        "prerequisites": [
-            ["vasari_unlock_exotic_factory_structure"]
-        ]
-    }],
+        "required_mutation": "modular_launch_bay_equipped"
+    },
     "target_filter_unit_type": "frigate",
     "tags": [
         "frigate"
@@ -118,7 +142,8 @@
     {
         "abilities": [
             "vasari_constructor_ship_build_structure",
-	    "vasari_loyalist_deploy_exotic_structure"]
+			"vasari_constructor_ship_deconstruct_structure",
+		"vasari_deploy_pop_structure"]
     }],
     "build_structure_ability": "vasari_constructor_ship_build_structure",
     "skin_groups": [

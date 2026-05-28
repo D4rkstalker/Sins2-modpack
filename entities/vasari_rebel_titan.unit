@@ -8,7 +8,44 @@
             "center": [0.125427, -3.720459, -934.602051],
             "extents": [1361.392334, 1349.117065, 1472.93042]
         },
-        "collision_rank": 3
+        "collision_rank": 3,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 0.0, 200.0],
+            "radius": 300.0
+        },
+        {
+            "center": [400.0, 400.0, 100.0],
+            "radius": 400.0
+        },
+        {
+            "center": [400.0, -400.0, 100.0],
+            "radius": 400.0
+        },
+        {
+            "center": [-400.0, 400.0, 100.0],
+            "radius": 400.0
+        },
+        {
+            "center": [-400.0, -400.0, 100.0],
+            "radius": 400.0
+        },
+        {
+            "center": [0.0, 0.0, -1000.0],
+            "radius": 50.0
+        },
+        {
+            "center": [0.0, 0.0, -1400.0],
+            "radius": 50.0
+        },
+        {
+            "center": [0.0, 0.0, -1800.0],
+            "radius": 50.0
+        },
+        {
+            "center": [0.0, 0.0, -2200.0],
+            "radius": 75.0
+        }]
     },
     "physics":
     {
@@ -117,13 +154,13 @@
             "up": [-0.0, 1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -144,13 +181,13 @@
             "up": [0.906308, 0.422618, 0.0],
             "yaw_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 0.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 0.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -171,13 +208,13 @@
             "up": [-0.819152, 0.573576, -0.0],
             "yaw_arc":
             {
-                "min_angle": 0.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 0.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -255,13 +292,13 @@
             "up": [-0.819152, 0.573577, -0.0],
             "yaw_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -1604,7 +1641,8 @@
         "base_max_squadron_capacity": 0,
         "strikecraft_kinds": [
             "interceptor",
-            "bomber"
+            "bomber",
+            "mem_custom_strikecraft1"
         ],
         "launch_destination_formation": "titan_strikecraft",
         "launch_destination_formation_offset":
@@ -1640,26 +1678,23 @@
             "weight": 10.0,
             "build_group": [
                 "vasari_rebel_titan_hull_plating_0",
-                "vasari_rebel_titan_hull_plating_1",
-                "vasari_self_repairing_armor"
+                "vasari_self_repairing_armor",
+                "vasari_phase_shield"
             ]
         },
         {
             "weight": 8.0,
             "build_group": [
-                "vasari_rebel_titan_unlock_phase_cannon_weapon",
-                "vasari_rebel_beam_boost",
-                "vasari_rebel_wave_boost",
-                "vasari_rebel_titan_unlock_extra_phase_missile_weapons",
-                "vasari_phase_missile_boost"
+                "vasari_beam_boost",
+		"vasari_rebel_wave_boost",
+		"vasari_loyalist_phase_missile_boost"
             ]
         },
         {
             "weight": 8.0,
             "build_group": [
-                "vasari_rebel_titan_improve_gravity_pulse",
-                "vasari_rebel_titan_improve_nano_emitters",
-                "vasari_antimatter_recharger"
+                "vasari_antimatter_recharger",
+                "vasari_phase_shield"
             ]
         },
         {
@@ -1671,10 +1706,21 @@
             ]
         },
         {
+            "weight": 4.0,
+            "build_group": [
+                "vasari_experience_boost"
+            ]
+        },
+        {
             "weight": 3.0,
             "build_group": [
-                "vasari_rebel_titan_unlock_extra_phase_missile_weapons",
-                "vasari_phase_missile_boost"
+                "arankul_intelligent_nanites"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
+		"vasari_loyalist_phase_missile_boost"
             ]
         },
         {
@@ -1701,6 +1747,7 @@
         "titan"
     ],
     "is_loot_collector": true,
+    "capture_points": 15,
     "abilities": [
     {
         "abilities": [
@@ -1730,25 +1777,28 @@
         "mesh_alias_name": "vasari_rebel_titan_component_armor_1",
         "mesh_point": "child.vasari_rebel_titan_component_armor_1",
         "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_rebel_titan_hull_plating_1"
+        "required_unit_item": "vasari_rebel_titan_hull_plating_0",
+        "required_unit_item_level": 1
     },
     {
         "mesh_alias_name": "vasari_rebel_titan_component_nano",
         "mesh_point": "child.vasari_rebel_titan_component_nano",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_rebel_titan_improve_nano_emitters"
+        "is_weapon_effects_destination": true
     },
     {
         "mesh_alias_name": "vasari_rebel_titan_component_missile_launcher",
         "mesh_point": "child.vasari_rebel_titan_component_missile_launcher",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_rebel_titan_unlock_extra_phase_missile_weapons"
+        "is_weapon_effects_destination": true
     },
     {
         "mesh_alias_name": "vasari_rebel_titan_component_cannon",
         "mesh_point": "child.vasari_rebel_titan_component_cannon",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_rebel_titan_unlock_phase_cannon_weapon"
+        "is_weapon_effects_destination": true
+    },
+    {
+        "mesh_alias_name": "vasari_rebel_titan_component_reactor",
+        "mesh_point": "child.vasari_rebel_titan_component_cannon",
+        "is_weapon_effects_destination": true
     }],
     "action_effect_size": "large_unit",
     "can_join_fleet": true

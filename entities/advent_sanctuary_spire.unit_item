@@ -10,41 +10,47 @@
     "build_time": 90.0,
     "price":
     {
-        "credits": 500.0,
-        "metal": 100.0,
-        "crystal": 150.0
+        "credits": 600.0,
+        "metal": 120.0,
+        "crystal": 175.0
     },
-    "exotic_price": [
-    {
-        "exotic_type": "defense",
-        "count": 1
-    }],
     "max_count_on_unit": 1,
     "planet_type_groups": [
     {
         "planet_types": [
-			"barren",
-			"crystalline",
-			"desert",
-			"desert_home",
-			"ferrous",
-			"ferrous_home",
-			"greenhouse",
-			"ice",
-			"oceanic",
-			"swamp",
-			"terran",
-			"terran_home",
-			"volcanic"
+            "barren",
+            "city",
+            "crystalline",
+            "desert",
+            "desert_home",
+            "ferrous",
+            "ferrous_home",
+            "ice",
+            "ice_moon",
+            "irradiated",
+            "greenhouse",
+            "magnetic",
+            "moon",
+            "oceanic",
+            "swamp",
+            "terran",
+            "terran_home",
+            "volcanic",
+            "volcanic_moon"
         ],
         "build_prerequisites": [
-			["advent_unlock_sanctuary_spire_unit_item"]
+            ["advent_unlock_sanctuary_spire_unit_item"]
         ]
     }],
     "planet_modifiers": [
     {
-        "modifier_type": "commerce_track_credit_income_rate",
+        "modifier_type": "max_population_points",
+        "value_behavior": "additive",
+        "values": [50.0]
+    },
+    {
+        "modifier_type": "population_growth_rate",
         "value_behavior": "scalar",
-        "values": [0.5]
+        "values": [0.1]
     }]
 }

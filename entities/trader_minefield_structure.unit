@@ -15,8 +15,8 @@
         ]
     },
     "ai_attack_target": {
-        "attack_priority": 50.0,
-        "is_always_a_threat": true,
+        "attack_priority": 1.0,
+        "is_always_a_threat": false,
         "attack_target_type": "defense"
     },
     "user_interface": {
@@ -32,6 +32,9 @@
         "roles": [
             "defense"
         ],
+        "abilities_for_range_in_build_rendering": [
+            "trader_minefield_structure_detonate"
+		],
         "build_group_id": "military"
     },
     "formation": {
@@ -68,12 +71,16 @@
             "metal": 13.0,
             "crystal": 5.50
         },
+        "prerequisites": [
+            ["trader_unlock_minefield_structure"]
+        ],
         "build_kind": "structure",
         "build_radius": 53.297188
     },
     "target_filter_unit_type": "structure",
     "tags": [
-        "structure"
+        "structure",
+		"mem_utility"
     ],
     "virtual_supply_cost": 1,
     "abilities": [

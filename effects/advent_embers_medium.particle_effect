@@ -1,0 +1,114 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 7,
+        "name": "Shards",
+        "type": "point",
+        "emit_max_particle_count": [1.0, 1.0],
+        "emit_rate":
+        {
+            "primary_emit_rate": [2.0, 2.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [1.0, 1.5],
+            "color": "ffdd00dd",
+            "fade_in_time": [0.25, 0.25],
+            "fade_out_time": [0.1, 0.1],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "width": [2.5, 7.0],
+                "rotation": [0.0, 6.283185],
+                "rotation_speed": [-0.261799, 0.261799],
+                "initial_erosion_noise_offset_u": [0.0, 0.0],
+                "initial_erosion_noise_offset_v": [0.0, 0.0],
+                "texture_animation": "advent_shards_3x3",
+                "texture_animation_first_frame": "random",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "depth_fade_opacity": 15.0
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [15.0, 150.0],
+        "angle_variance": [0.0, 1.745329]
+    }],
+    "modifiers": [
+    {
+        "id": 16,
+        "name": "Shrink",
+        "type": "float_property",
+        "property_type": "width_and_height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "linear",
+            "easing_values": [1.0, 0.0]
+        }
+    },
+    {
+        "id": 17,
+        "name": "RandomPush",
+        "type": "push",
+        "force":
+        {
+            "type": "random",
+            "range": [1000.0, 2000.0]
+        },
+        "op": "random_jitter",
+        "direction": [1.0, 1.0, 1.0],
+        "point": [1.0, 1.0, 1.0]
+    },
+    {
+        "id": 18,
+        "name": "Drag",
+        "type": "drag",
+        "start_delay": [0.12, 0.12],
+        "coefficient_generator":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "in_sine",
+            "easing_values": [0.0, 0.125]
+        }
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 7,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": [
+    {
+        "attacher_id": 16,
+        "attachee_id": 7
+    },
+    {
+        "attacher_id": 17,
+        "attachee_id": 7
+    },
+    {
+        "attacher_id": 18,
+        "attachee_id": 7
+    }]
+}

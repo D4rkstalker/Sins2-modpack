@@ -3,13 +3,13 @@
     "level_count": 5,
     "target_filters": [
     {
-        "target_filter_id": "cleansing_brilliance_auto_cast_high_priority_target_filter",
+        "target_filter_id": "cleansing_brilliance_high_priority_auto_cast_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
                 "starbase",
-		"super_capital_ship",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
@@ -22,17 +22,13 @@
         }
     },
     {
-        "target_filter_id": "cleansing_brilliance_auto_cast_target_filter",
+        "target_filter_id": "cleansing_brilliance_low_priority_auto_cast_target_filter",
         "target_filter":
         {
             "unit_types": [
-                "capital_ship",
                 "cruiser",
                 "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
+                "structure"
             ],
             "ownerships": [
                 "enemy"
@@ -58,7 +54,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -75,7 +72,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     }],
     "action_values": [
@@ -83,7 +81,7 @@
         "action_value_id": "cleansing_brilliance_antimatter_cost_value",
         "action_value":
         {
-            "values": [150.0, 150.0, 150.0, 150.0, 150.0]
+            "values": [128.0, 141.0, 154.0, 167.0, 180.0]
         }
     },
     {
@@ -143,6 +141,13 @@
                 "ratio_type": "per_spell_power",
                 "ratio_values": [0.5, 0.5, 0.5, 0.5, 0.5]
             }
+        }
+    },
+    {
+        "action_value_id": "auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [8.0, 8.0, 8.0, 8.0, 8.0]
         }
     },
     {

@@ -1,0 +1,100 @@
+{
+    "version": 0,
+    "name": "weapon_name.medium_beam",
+    "pitch_speed": 25.0,
+    "yaw_speed": 25.0,
+    "pitch_firing_tolerance": 1.0,
+    "yaw_firing_tolerance": 1.0,
+    "range": 8000.0,
+    "cooldown_duration": 8.0,
+    "uniforms_target_filter_id": "common_weapon",
+    "attack_target_type_groups": [
+        "heavy",
+        "antistructure",
+        "capital_supercapital",
+        "defense",
+        "carrier_support",
+        "light"
+    ],
+    "weapon_type": "normal",
+    "damage_affect_type": "hull_and_armor_and_shields",
+    "damage": 40.0,
+    "penetration": 450.0,
+    "tags": [
+        "beam",
+        "energy"
+    ],
+    "acquire_target_logic": "order_target_or_best_target_in_range",
+    "target_acquired_duration_required_to_fire": 0.25,
+    "firing":
+    {
+        "firing_type": "beam",
+        "beam_duration": 1.0
+    },
+    "modifiers": [
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value": -0.19,
+        "prerequisites": [
+            ["advent_long_range_cruiser_assault"]
+        ]
+    },
+    {
+        "modifier_type": "cooldown_duration",
+        "value_behavior": "scalar",
+        "value": -0.5,
+        "prerequisites": [
+            ["advent_long_range_cruiser_assault"]
+        ]
+    },
+    {
+        "modifier_type": "range",
+        "value_behavior": "scalar",
+        "value": -1.0,
+        "prerequisites": [
+            ["advent_long_range_cruiser_assault"]
+        ]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value": 1.05,
+        "prerequisites": [
+            ["advent_long_range_cruiser_siege"]
+        ]
+    },
+    {
+        "modifier_type": "range",
+        "value_behavior": "scalar",
+        "value": 0.5,
+        "prerequisites": [
+            ["advent_long_range_cruiser_siege"]
+        ]
+    },
+    {
+        "modifier_type": "cooldown_duration",
+        "value_behavior": "scalar",
+        "value": 0.5,
+        "prerequisites": [
+            ["advent_long_range_cruiser_siege"]
+        ]
+    }],
+    "effects":
+    {
+        "muzzle_effect": "advent_long_range_cruiser_weapon_medium_beam_muzzle",
+        "beam_effect": "advent_long_range_cruiser_weapon_medium_beam_beam",
+        "hit_hull_effect": "advent_long_range_cruiser_weapon_medium_beam_hit_hull",
+        "hit_shield_effect": "advent_long_range_cruiser_weapon_medium_beam_hit_shield"
+    },
+    "turret":
+    {
+        "type": "biaxial",
+        "biaxial_base_mesh": "advent_asset_medbeam_mount_0",
+        "biaxial_barrel_mesh": "advent_asset_medbeam_barrel_0",
+        "barrel_position": [8e-06, 6.322134, -6.959893],
+        "muzzle_positions": [
+            [0.014009, -0.662284, 14.462872]
+        ]
+    }
+}

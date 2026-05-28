@@ -1,0 +1,108 @@
+{
+    "version": 0,
+    "active_duration": "telekinetic_push_buff_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "telekinetic_push_radius_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "telekinetic_push_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_carrier_capital_ship_telekinetic_push_slow"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "telekinetic_push_radius_value",
+                "travel_time":
+                {
+                    "travel_time_source": "speed_and_distance",
+                    "travel_speed_value": "telekinetic_push_travel_speed"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "telekinetic_push_physics_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_carrier_capital_ship_telekinetic_push_on_target"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "telekinetic_push_strikecraft_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "telekinetic_push_damage_strikecraft_value",
+                    "penetration_value": "common_ability_damage_penetration_value"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "telekinetic_push_missile_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "telekinetic_push_damage_missile_value",
+                    "penetration_value": "common_ability_damage_penetration_value"
+                }]
+            }]
+        }
+    }]
+}

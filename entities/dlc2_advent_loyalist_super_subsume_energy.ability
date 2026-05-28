@@ -1,0 +1,102 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_advent_loyalist_super_subsume_energy",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "subsume_energy_cooldown_time_value",
+        "antimatter_cost": "subsume_energy_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_advent_loyalist_super_subsume_energy_on_self"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_advent_loyalist_super_subsume_energy_on_activation"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "subsume_energy_target_filter"
+        ],
+        "range": "subsume_energy_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "subsume_energy_auto_cast_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_advent_loyalist_super_subsume_energy_hud_icon",
+        "tooltip_picture": "dlc2_advent_loyalist_super_subsume_energy_tooltip_picture",
+        "name": "dlc2_advent_loyalist_super_subsume_energy_ability_name",
+        "description": "dlc2_advent_loyalist_super_subsume_energy_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "subsume_energy_range_value",
+                "radius": "subsume_energy_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "subsume_energy_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "subsume_energy_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.on_target_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.antimatter_stolen",
+                "value_id": "subsume_energy_antimatter_remove_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "subsume_energy_weapon_cooldown_modifier"
+            }]
+        }]
+    }
+}

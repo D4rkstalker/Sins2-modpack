@@ -2,11 +2,11 @@
     "version": 0,
     "spatial":
     {
-        "radius": 696.848022,
+        "radius": 803.656006,
         "box":
         {
-            "center": [-0.155853, -34.311096, 0.201233],
-            "extents": [634.50708, 662.34845, 633.255005]
+            "center": [0.0, -67.861542, 0.0],
+            "extents": [530.971191, 712.169434, 602.366943]
         },
         "can_be_displaced_on_collision": false
     },
@@ -20,15 +20,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
-    },
-    "player_ai":
-    {
-        "max_count_at_planet":
-        {
-            "type": "constant",
-            "value": 1.0
-        }
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -42,6 +35,12 @@
         "slot_type": "civilian",
         "slots_required": 1,
         "roles": [],
+        "planet_modifiers": [
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value": 0.05
+        }],
         "build_group_id": "civilian"
     },
     "formation":
@@ -87,21 +86,22 @@
     },
     "build":
     {
-        "build_time": 75.0,
+        "build_time": 60.0,
         "price":
         {
-            "credits": 750.0,
-            "metal": 100.0,
-            "crystal": 50.0
+            "credits": 500.0,
+            "metal": 125.0,
+            "crystal": 75.0
         },
-        "prerequisites": [
-            ["trader_unlock_population_structure"]
-        ],
         "build_kind": "structure",
-        "build_radius": 896.443604
+        "build_radius": 1003.979675
     },
     "passive_income":
     {},
+    "culture_provider":
+    {
+        "has_ability_providing_culture_rate": true
+    },
     "target_filter_unit_type": "structure",
     "tags": [
         "structure"
@@ -118,5 +118,20 @@
         "skins": [
             "trader_population_structure"]
     }],
-    "action_effect_size": "medium_unit"
+    "action_effect_size": "medium_unit",
+    "traffic_port":
+    {
+        "max_traffic_ship_count": 2,
+        "traffic_ship_construction_time": 30.0,
+        "traffic_ship": "trader_traffic_ship",
+        "allowed_destination_units": [
+            "advent_population_structure",
+            "trader_population_structure",
+            "vasari_population_structure"
+        ],
+        "special_operation_unit_kind": "traffic_ship",
+        "create_traffic_ship_offset": [0.0, 0.0, 1500.0],
+        "force_stay_in_gravity_well": false,
+        "traffic_ship_per_hundred_pop": 0.75
+    }
 }

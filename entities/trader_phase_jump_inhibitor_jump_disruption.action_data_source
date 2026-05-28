@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "jump_disruption_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "phase_jump_disruption_immune"
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "disruption_on_target_duration",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    }]
+}

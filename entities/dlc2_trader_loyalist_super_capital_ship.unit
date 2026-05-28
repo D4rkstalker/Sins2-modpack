@@ -8,7 +8,40 @@
             "center": [-1.5e-05, 20.10466, -92.644714],
             "extents": [396.810608, 290.569519, 1171.342041]
         },
-        "collision_rank": 2
+        "collision_rank": 2,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, -50.0, -1100.0],
+            "radius": 175.0
+        },
+        {
+            "center": [0.0, 0.0, -600.0],
+            "radius": 325.0
+        },
+        {
+            "center": [-250.0, -25.0, -100.0],
+            "radius": 175.0
+        },
+        {
+            "center": [-225.0, -25.0, 250.0],
+            "radius": 175.0
+        },
+        {
+            "center": [-250.0, -75.0, 600.0],
+            "radius": 100.0
+        },
+        {
+            "center": [250.0, -25.0, -100.0],
+            "radius": 175.0
+        },
+        {
+            "center": [225.0, -25.0, 250.0],
+            "radius": 175.0
+        },
+        {
+            "center": [250.0, -75.0, 600.0],
+            "radius": 100.0
+        }]
     },
     "physics":
     {
@@ -67,7 +100,7 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft_corvette"
         ],
-        "attack_target_type_groups_matching_weapon": "trader_battle_capital_ship_heavy_gauss",
+        "attack_target_type_groups_matching_weapon": "dlc2_trader_loyalist_super_capital_ship_beam",
         "auto_follow_target_priority": 5.0,
         "pursuit":
         {
@@ -79,7 +112,7 @@
     {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
-        "attack_target_type": "capital"
+        "attack_target_type": "supercapital"
     },
     "user_interface":
     {
@@ -202,13 +235,13 @@
             "up": [0.5, 0.866025, 0.0],
             "yaw_arc":
             {
-                "min_angle": -120.0,
-                "max_angle": 120.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -120.0,
-                "max_angle": 60.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -240,13 +273,13 @@
             "up": [-0.5, 0.866025, -0.0],
             "yaw_arc":
             {
-                "min_angle": -120.0,
-                "max_angle": 120.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -120.0,
-                "max_angle": 60.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -743,13 +776,13 @@
                     "types": [
                         "defense"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 },
                 {
                     "types": [
                         "economic"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 }],
                 "weight": 1.0
             }],
@@ -1654,11 +1687,11 @@
         "exotic_price": [
         {
             "exotic_type": "defense",
-            "count": 3
+            "count": 2
         },
         {
             "exotic_type": "economic",
-            "count": 3
+            "count": 2
         }],
         "prerequisites": [
             ["dlc2_trader_unlock_loyalist_super_capital_ship"]
@@ -1700,9 +1733,8 @@
     {
         "build_group": [
             "dlc2_trader_loyalist_super_capital_ship_unlock_missile_weapon",
-            "trader_missile_guidance_computer",
             "trader_targeting_array",
-            "trader_rapid_autoloader",
+            "trader_loyalist_rapid_autoloader",
             "trader_missile_armor",
             "trader_heavy_armor"
         ],
@@ -1713,7 +1745,7 @@
             "dlc2_trader_loyalist_super_capital_ship_factory_supplies",
             "trader_reserve_squadron_hangar",
             "trader_targeting_array",
-            "trader_rapid_autoloader",
+            "trader_loyalist_rapid_autoloader",
             "trader_combat_repair_system",
             "trader_heavy_armor"
         ],
@@ -1724,12 +1756,24 @@
             "dlc2_trader_loyalist_super_capital_ship_antimatter_reserves",
             "trader_antimatter_engine",
             "trader_targeting_array",
-            "trader_rapid_autoloader",
+            "trader_loyalist_rapid_autoloader",
             "trader_beam_armor",
             "trader_flak_burst"
         ],
         "weight": 15.0
-    }],
+    },
+        {
+            "weight": 8.0,
+            "build_group": [
+                "trader_tactical_analyst"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
+            ]
+        }],
     "culture_provider":
     {},
     "target_filter_unit_type": "super_capital_ship",
@@ -1737,6 +1781,7 @@
         "super_capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 10,
     "abilities": [
     {
         "abilities": [
@@ -1756,18 +1801,6 @@
             "dlc2_trader_loyalist_super_capital_ship"]
     }],
     "child_meshes": [
-    {
-        "mesh_alias_name": "dlc2_trader_loyalist_super_capital_ship_component_cargo",
-        "mesh_point": "child.dlc2_trader_loyalist_super_capital_ship_component_cargo",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "dlc2_trader_loyalist_super_capital_ship_antimatter_reserves"
-    },
-    {
-        "mesh_alias_name": "dlc2_trader_loyalist_super_capital_ship_component_cargo",
-        "mesh_point": "child.dlc2_trader_loyalist_super_capital_ship_component_cargo",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "dlc2_trader_loyalist_super_capital_ship_factory_supplies"
-    },
     {
         "mesh_alias_name": "dlc2_trader_loyalist_super_capital_ship_component_missile",
         "mesh_point": "child.dlc2_trader_loyalist_super_capital_ship_component_missile",

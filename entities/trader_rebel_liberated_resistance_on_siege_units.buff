@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_planet_made_dead_by_current_spawner",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_comparison",
+                    "unit_a":
+                    {
+                        "unit_type": "home_planet"
+                    },
+                    "unit_b":
+                    {
+                        "unit_type": "none"
+                    }
+                }
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "home_planet"
+                }, 
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "trader_heavy_cruiser_rebel",
+                            "weight": 6.0
+                        },
+                        {
+                            "unit": "trader_long_range_cruiser",
+                            "weight": 6.0
+                        },
+                        {
+                            "unit": "trader_antifighter_frigate_rebel",
+                            "weight": 3.0
+                        },
+                        {
+                            "unit": "trader_siege_frigate",
+                            "weight": 3.0
+                        }]
+                    },
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "fixed_one",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+	    }]
+        }
+    }]
+}

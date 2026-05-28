@@ -1,0 +1,231 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "antimatter_pulse_wave_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_pulse_wave_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_pulse_wave_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_pulse_wave_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "has_antimatter"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_antimatter",
+                    "percentage_missing_threshold": 0.25
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_pulse_wave_damage_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_pulse_wave_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_antimatter"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_pulse_wave_cooldown_time_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_pulse_wave_radius_value",
+        "action_value":
+        {
+            "values": [2500.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_pulse_wave_damage_radius_value",
+        "action_value":
+        {
+            "values": [750.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_pulse_wave_range_value",
+        "action_value":
+        {
+            "values": [25000.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_pulse_wave_antimatter_remove_value",
+        "action_value":
+        {
+            "transform_type": "per_current_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "antimatter_pulse_wave_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_trigger_event_antimatter",
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_pulse_wave_damage_penetration_value",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "dlc_ancient_starbase_antimatter_pulse_wave_activate",
+        "alias_binding":
+        {
+            "particle_effect": "dlc_ancient_starbase_antimatter_pulse_wave_activate_aoe"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_antimatter_pulse_wave_buff_large",
+        "alias_binding":
+        {
+            "particle_effect": "detonate_antimatter_on_target_large"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_antimatter_pulse_wave_buff_medium",
+        "alias_binding":
+        {
+             "particle_effect": "detonate_antimatter_on_target_medium"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_antimatter_pulse_wave_buff_small",
+        "alias_binding":
+        {
+            "particle_effect": "detonate_antimatter_on_target_small"
+        }
+    }]
+}

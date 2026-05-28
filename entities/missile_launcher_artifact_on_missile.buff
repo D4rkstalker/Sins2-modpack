@@ -1,0 +1,81 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "make_dead_on_current_spawner_made_dead": false,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "max_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "max_accel_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "max_angular_modifier"
+    }],
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "fixed_minute",
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_unit_damaged_by_current_spawner",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_value": "missile_launcher_artifact_armor_damage_value",
+                    "penetration_value": "missile_launcher_artifact_pierce_value",
+                    "damage_affect_type": "hull_and_armor_only"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_destination"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_value": "missile_launcher_artifact_hull_damage_value",
+                    "penetration_value": "missile_launcher_artifact_pierce_value",
+                    "damage_affect_type": "hull_only"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "missile_launcher_artifact_hud_icon",
+        "name": "unit_item.missile_launcher_artifact_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive"
+    }
+}

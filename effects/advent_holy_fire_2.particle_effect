@@ -1,0 +1,102 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 13,
+        "name": "FlameBlasts",
+        "type": "point",
+        "emit_duration": [1.5, 1.5],
+        "emit_rate":
+        {
+            "primary_emit_rate": [6.0, 6.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 1,
+            "max_duration": [0.75, 1.0],
+            "color": "ffff00ff",
+            "fade_in_time": [0.5, 0.5],
+            "fade_out_time": [10.25, 10.25],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "shader_type": "uber_multiply_color",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "anchor": "bottom",
+                "width": [120.0, 200.0],
+                "height": [250.0, 350.0],
+                "rotation": [0.0, 0.25],
+                "random_flip_texture_horizontal_chance": 0.5,
+                "random_flip_texture_vertical_chance": 0.5,
+                "texture_0": "fire_pillar_texture",
+                "gradient_texture": "advent_refraction_gradient",
+                "distortion_texture": "smoke_uv",
+                "erosion_texture": "phantom_faces_uv_seamless",
+                "initial_erosion_noise_offset_u": [0.0, 10.0],
+                "texture_animation_first_frame": "random",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "depth_fade_opacity": 5.0,
+                        "depth_fade_distance": 3.0,
+                        "alpha_ramp_steepness": 2.0
+                    },
+                    "erosion_constants":
+                    {
+                        "noise_constants_0":
+                        {
+                            "u_pan_speed": 0.05,
+                            "v_pan_speed": 1.0
+                        },
+                        "noise_constants_1":
+                        {
+                            "u_pan_speed": 0.01,
+                            "v_pan_speed": 0.6,
+                            "global_scale": 0.5
+                        },
+                        "erosion_test": 0.1,
+                        "erosion_softness": 0.65
+                    },
+                    "distortion_constants":
+                    {
+                        "noise_constants_0":
+                        {
+                            "u_pan_speed": 0.1,
+                            "v_pan_speed": 0.5
+                        },
+                        "noise_constants_1":
+                        {
+                            "u_pan_speed": 0.03,
+                            "v_pan_speed": 0.75
+                        }
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [1200.0, 1400.0],
+        "angle_variance": [0.0, 0.047266]
+    }],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 13,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": [],
+    "max_effect_radius_scalar": 1.0
+}

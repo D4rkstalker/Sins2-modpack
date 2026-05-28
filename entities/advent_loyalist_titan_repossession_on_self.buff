@@ -33,6 +33,29 @@
                         }
                     },
                     "keep_planet_track_levels": true
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "above",
+                        "effect": "generic_colonized_effect"
+                    }
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size": 
+                        {
+                            "large_unit": "repossession_effect_large",
+                            "medium_unit": "repossession_effect",
+                            "small_unit": "repossession_effect_small"
+                        }
+                    }
                 }]
             },
             {
@@ -55,15 +78,15 @@
             {
                 "constraint":
                 {
-					"constraint_type": "research_prerequisites_are_met",
-					"player":
-					{
-						"player_type": "buff_owner_player"
-					},
-					"prerequisites": [
-						["advent_reimagine_assimilated_population"]
-					]
-				},
+                    "constraint_type": "research_prerequisites_are_met",
+                    "player":
+                    {
+                        "player_type": "buff_owner_player"
+                    },
+                    "prerequisites": [
+                        ["advent_reimagine_assimilated_population"]
+                    ]
+                },
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
                 {

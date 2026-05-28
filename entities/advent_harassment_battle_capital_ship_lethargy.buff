@@ -1,6 +1,6 @@
 {
     "version": 0,
-	"active_duration": "lethargy_duration_value",
+    "active_duration": "lethargy_duration_value",
     "stacking_limit":
     {
         "stacking_limit": "fixed_one",
@@ -15,21 +15,42 @@
         {
             "constraint":
             {
-				"constraint_type": "composite_and",
-				"constraints": [
-				{
-					"constraint_type": "random_chance",
-					"chance_value": "lethargy_miss_chance"
-				},
-				{
-					"constraint_type": "damage_has_damage_source",
-					"damage_source": "weapon"
-				}]
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "random_chance",
+                    "chance_value": "lethargy_miss_chance"
+                },
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                }]
             },
             "actions": [
             {
                 "action_type": "prevent_damage",
                 "damage_prevented_value": "lethargy_prevent_damage_value"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "unit_skin",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "advent_battle_capital_ship_lethargy_buff_small",
+                        "medium_unit": "advent_battle_capital_ship_lethargy_buff_medium",
+                        "large_unit": "advent_battle_capital_ship_lethargy_buff_large"
+                    }
+                }
             }]
         }
     }],
@@ -53,8 +74,7 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.weapon_accuracy",
                 "value_id": "lethargy_miss_chance_tooltip",
-				"value_float_format": "percentage_two_decimal_place_with_sign",
-				"ratio_float_format": "percentage_two_decimal_place_with_sign",
+                "value_float_format": "percentage_two_decimal_place_with_sign",
                 "value_color": "negative"
             }]
         }]

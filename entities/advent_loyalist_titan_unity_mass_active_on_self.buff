@@ -1,0 +1,82 @@
+{
+    "version": 0,
+    "make_dead_when_no_child_buffs_exist": true,
+    "make_dead_when_no_child_buffs_exist_delay_time": "unity_mass_beam_charge_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "unity_mass_beam_charge_value",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_loyalist_titan_unity_mass_active_on_target"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "charge_effect": "advent_loyalist_titan_unity_mass_charge",
+                        "muzzle_effect": "advent_loyalist_titan_unity_mass_muzzle",
+                        "beam_effect": "advent_loyalist_titan_unity_mass_beam",
+                        "hit_hull_effect": "advent_loyalist_titan_unity_mass_hit_hull",
+                        "hit_shield_effect": "advent_loyalist_titan_unity_mass_hit_shield",
+                        "hit_shield_impact_radius_t": 1.0
+                    },
+                    "charge_duration": "unity_mass_beam_charge_value",
+                    "beam_duration": "unity_mass_beam_execution_interval_count_value"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "ability.0",
+                        "effect": "advent_loyalist_titan_unity_mass_charge_sound_effect"
+                    }
+                }]
+            }]
+        }
+    }]
+}

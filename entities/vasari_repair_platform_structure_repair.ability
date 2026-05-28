@@ -1,0 +1,141 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_repair_platform_structure_repair",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [],
+        [
+            ["vasari_repair_platform_structure_repair_rate_0"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "repair_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_repair_platform_structure_repair"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "vasari_repair_platform_structure_repair_activate"
+                    }
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "repair_target_filter"
+        ],
+        "range": "range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "repair_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            },
+            {
+                "target_filter": "repair_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_structure_repair_hud_icon",
+        "tooltip_picture": "vasari_structure_repair_picture",
+        "name": "vasari_repair_platform_structure_repair_ability_name",
+        "description": "vasari_repair_platform_structure_repair_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "repair_rate_value",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

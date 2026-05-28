@@ -1,0 +1,33 @@
+{
+    "version": 0,
+	"per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "damage_past_shields"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "damage_event_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0]
+        }
+    },
+	{
+        "action_value_id": "damage_prevented_value",
+         "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "damage_past_shields",
+            "values": [0.5]
+        }
+    },
+	{
+        "action_value_id": "damage_prevented_tooltip_value",
+         "action_value":
+        {
+            "values": [-0.5]
+        }
+    }]
+}

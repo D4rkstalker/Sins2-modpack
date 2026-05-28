@@ -1,0 +1,111 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "has_buff",
+                            "buff": "trader_minefield_structure_hide_armed"
+                        },
+                        {
+                            "constraint_type": "has_buff",
+                            "buff": "vasari_minefield_structure_hide_armed"
+                        }]
+                    },
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "advent_constructor_ship_deconstruct_structure_on_structure",
+                                "include_pending_buffs": true
+                            }
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "trader_constructor_ship_deconstruct_structure_on_structure",
+                                "include_pending_buffs": true
+                            }
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "vasari_constructor_ship_deconstruct_structure_on_structure",
+                                "include_pending_buffs": true
+                            }
+                        }]
+                    }]
+                }
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "trigger_event_source"
+                },
+				"radius_value": "detonate_damage_radius",
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "detonate_damage_value",
+                    "penetration_value": "detonate_penetration_value",
+                    "can_damage_be_propagated": false,
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "detonate_target_filter"
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "make_dead"
+                }]
+            }]
+        }
+    }]
+}

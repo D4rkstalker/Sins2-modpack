@@ -1,0 +1,124 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_trader_rebel_super_nav_computer",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "passive_actions":
+    {
+        "persistant_buff": "dlc2_trader_rebel_super_nav_computer_passive_on_spawner"
+    },
+    "active_actions":
+    {
+        "cooldown_time": "nav_computer_cooldown_time_value",
+        "antimatter_cost": "nav_computer_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_rebel_super_nav_computer_active"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_missing_hull",
+                        "percentage_missing_threshold": 0.5
+                    }
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_recently_been_damaged"
+                    }
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_rebel_super_nav_computer_hud_icon",
+        "tooltip_picture": "dlc2_trader_rebel_super_nav_computer_tooltip_picture",
+        "name": "dlc2_trader_rebel_super_nav_computer_ability_name",
+        "description": "dlc2_trader_rebel_super_nav_computer_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "nav_computer_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.aura_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "nav_computer_radius_value"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "nav_computer_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "nav_computer_max_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "nav_computer_hyperspace_charge_time_modifier"
+            }]
+        },
+        {
+            "header_text": "dlc2_trader_rebel_super_nav_computer_activated",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "nav_computer_duration_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_trader_rebel_super_nav_computer_max_linear_speed",
+                "value_id": "nav_computer_active_linear_speed_bonus_value",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_trader_rebel_super_nav_computer_max_angular_speed",
+                "value_id": "nav_computer_active_max_angular_speed_bonus_value",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

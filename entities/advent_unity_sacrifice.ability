@@ -35,7 +35,25 @@
         "targeting_type": "unit_targeted",
         "targeting_ui": "pick_gravity_well",
         "target_filters": [
-            "sacrifice_planet_target_filter"]
+            "sacrifice_planet_target_filter"
+	],
+        "ai_only_auto_cast":
+        {
+            "type": "pick_planet_anywhere",
+            "target_definitions": [
+            {
+                "target_filter": "sacrifice_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "sacrifice_auto_cast_ship_target_filter"
+                }
+            }]
+        }
     },
     "gui":
     {
@@ -54,6 +72,25 @@
             "lines": []
         },
         {
+            "is_visible_constraint": 
+            {
+                "constraint_type": "composite_not",
+                "constraint": 
+                {
+                    "constraint_type": "research_prerequisites_are_met",
+                    "player":
+                    {
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "player_type": "unit_owner"
+                    },
+                    "prerequisites": [
+                        ["advent_upgrade_unity_abilities"]
+                    ]
+                }
+            },
             "lines": [
             {
                 "rendering_type": "single_value",
@@ -72,6 +109,44 @@
                 "rendering_type": "single_value",
                 "label_text": "advent_unity_sacrifice_cull_tooltip",
                 "value_id": "sacrifice_population_culled_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_with_sign"
+            }]
+        },
+        {
+            "is_visible_constraint": 
+            {
+                "constraint_type": "research_prerequisites_are_met",
+                "player":
+                {
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "player_type": "unit_owner"
+                },
+                "prerequisites": [
+                    ["advent_upgrade_unity_abilities"]
+                ]
+            },
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "advent_unity_sacrifice_damage_tooltip",
+                "value_id": "sacrifice_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "common_ability_damage_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "advent_unity_sacrifice_cull_tooltip",
+                "value_id": "researech_sacrifice_population_culled_value",
                 "value_float_format": "percentage",
                 "ratio_float_format": "percentage_with_sign"
             }]

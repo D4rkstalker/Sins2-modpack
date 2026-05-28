@@ -21,12 +21,24 @@
                 {
                     "constraint":
                     {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
+                        "constraint_type": "composite_or",
+                        "constraints": [
                         {
-                            "unit_type": "operand_destination"
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                             "target_filter_id": "guidance_target_filter"
                         },
-                        "target_filter_id": "guidance_target_filter"
+                        {
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination"
+                            },
+                            "target_filter_id": "guidance_starbase_target_filter"
+                        }]
                     },
                     "operator_type": "apply_buff",
                     "buff": "advent_planet_psionic_capital_ship_guidance"
@@ -52,7 +64,8 @@
         },
         "targeting_type": "unit_targeted",
         "target_filters": [
-            "guidance_target_filter"
+            "guidance_target_filter",
+            "guidance_starbase_target_filter"
         ],
         "range": "guidance_range_value",
         "move_alignment":
@@ -65,12 +78,27 @@
         "auto_cast":
         {
             "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
             "target_definitions": [
             {
                 "target_filter": "guidance_auto_cast_high_priority_target_filter"
             },
             {
-                "target_filter": "guidance_auto_cast_target_filter"
+                "target_filter": "guidance_starbase_auto_cast_target_filter"
+            },
+            {
+                "target_filter": "guidance_auto_cast_low_priority_target_filter"
             }]
         }
     },

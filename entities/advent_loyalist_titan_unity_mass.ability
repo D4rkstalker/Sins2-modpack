@@ -61,14 +61,36 @@
         "description": "advent_loyalist_titan_unity_mass_ability_description",
         "targeting":
         {
-            "targeting_type": "range",
+            "targeting_type": "radius",
             "values":
             {
-                "range": "unity_mass_range_value"
+                "radius": "unity_mass_radius_value"
             }
         },
         "tooltip_line_groups": [
         {
+			"header_text": "tooltip.unit_item_passive_modifiers_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "unity_mass_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.spell_power_per_target",
+                "value_id": "unity_mass_spell_power_bonus_value",
+				"value_float_format": "two_decimal_place_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "unity_mass_max_target_count_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.unit_item_active_actions_sub_header_label",
             "lines": [
             {
                 "rendering_type": "single_value",
@@ -89,18 +111,6 @@
                 "label_text": "tooltip.ability.duration",
                 "value_id": "unity_mass_beam_execution_interval_count_value",
                 "value_suffix": "seconds"
-            },
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.spell_power_per_target",
-                "value_id": "unity_mass_spell_power_bonus_value",
-				"value_float_format": "two_decimal_place_with_sign",
-                "value_color": "positive"
-            },
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.max_targets",
-                "value_id": "unity_mass_max_target_count_value"
             }]
         }]
     }

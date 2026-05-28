@@ -8,6 +8,40 @@
         {
             "values": [1.0, 2.0, 3.0, 4.0, 5.0]
         }
+    },
+    {
+        "action_value_id": "adept_anima_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.07, 0.14, 0.21, 0.28, 0.35]
+        }
+    },
+    {
+        "action_value_id": "adept_anima_range_bonus_value",
+        "action_value":
+        {
+            "values": [0.04, 0.08, 0.12, 0.16, 0.2],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0005, 0.0005, 0.0005, 0.0005, 0.0005]
+            }
+        }
+    },
+    {
+        "action_value_id": "adept_anima_prevented_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "adept_anima_chance_value",
+        "action_value":
+        {
+            "values": [0.06, 0.12, 0.18, 0.24, 0.3]
+        }
     }],
     "buff_unit_modifiers": [
     {
@@ -17,6 +51,25 @@
             "modifier_type": "max_squadron_capacity",
             "value_behavior": "additive",
             "value_id": "adept_drone_anima_max_squadron_capacity_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "adept_anima_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "adept_anima_damage_bonus_value"
+        }
+    },
+    {
+        "buff_weapon_modifier_id": "adept_anima_weapon_range_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "range",
+            "value_behavior": "scalar",
+            "value_id": "adept_anima_range_bonus_value"
         }
     }]
 }

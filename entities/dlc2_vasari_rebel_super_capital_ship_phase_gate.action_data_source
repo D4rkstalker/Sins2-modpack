@@ -1,11 +1,65 @@
 {
     "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "dlc2_vasari_rebel_super_capital_ship_phase_gate_target_filter",
+        "target_filter":
+        {
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            }]
+        }
+    }],
     "action_values": [
+    {
+        "action_value_id": "hyperspace_speed_value",
+        "action_value":
+        {
+            "values": [0.33]
+        }
+    },
+    {
+        "action_value_id": "hyperspace_charge_time_value",
+        "action_value":
+        {
+            "values": [-0.33]
+        }
+    },
+    {
+        "action_value_id": "dlc2_vasari_rebel_super_capital_ship_phase_gate_radius_value",
+        "action_value":
+        {
+            "values": [16000.0]
+        }
+    },
     {
         "action_value_id": "duration_value",
         "action_value":
         {
-            "values": [10.0]
+            "values": [15.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "hyperspace_charge_time_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_charge_time",
+            "value_behavior": "scalar",
+            "value_id": "hyperspace_charge_time_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "hyperspace_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "hyperspace_speed_value"
         }
     }]
 }

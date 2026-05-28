@@ -8,7 +8,56 @@
             "center": [6.1e-05, 0.0, 6.1e-05],
             "extents": [601.780457, 355.246246, 1578.984863]
         },
-        "collision_rank": 3
+        "collision_rank": 3,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 175.0, -1150.0],
+            "radius": 150.0
+        },
+        {
+            "center": [0.0, 150.0, -700.0],
+            "radius": 250.0
+        },
+        {
+            "center": [0.0, 125.0, -250.0],
+            "radius": 300.0
+        },
+        {
+            "center": [0.0, -50.0, 250.0],
+            "radius": 350.0
+        },
+        {
+            "center": [-450.0, 125.0, 250.0],
+            "radius": 175.0
+        },
+        {
+            "center": [-425.0, 100.0, 700.0],
+            "radius": 150.0
+        },
+        {
+            "center": [-400.0, 75.0, 1100.0],
+            "radius": 100.0
+        },
+        {
+            "center": [450.0, 125.0, 250.0],
+            "radius": 175.0
+        },
+        {
+            "center": [425.0, 100.0, 700.0],
+            "radius": 150.0
+        },
+        {
+            "center": [400.0, 75.0, 1100.0],
+            "radius": 100.0
+        },
+        {
+            "center": [0.0, -300.0, 750.0],
+            "radius": 100.0
+        },
+        {
+            "center": [0.0, -300.0, 1000.0],
+            "radius": 75.0
+        }]
     },
     "physics":
     {
@@ -61,7 +110,7 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft_corvette"
         ],
-        "attack_target_type_groups_matching_weapon": "vasari_battle_capital_ship_beam",
+        "attack_target_type_groups_matching_weapon": "dlc2_vasari_loyalist_super_capital_ship_beam",
         "auto_follow_target_priority": 5.0,
         "pursuit":
         {
@@ -74,7 +123,7 @@
     {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
-        "attack_target_type": "capital"
+        "attack_target_type": "supercapital"
     },
     "user_interface":
     {
@@ -649,19 +698,19 @@
                     "types": [
                         "defense"
                     ],
-                    "counts": [1, 2]
+                    "counts": [0, 1]
                 },
                 {
                     "types": [
                         "utility"
                     ],
-                    "counts": [1, 2]
+                    "counts": [0, 1]
                 },
                 {
                     "types": [
                         "economic"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 }],
                 "weight": 1.0
             }],
@@ -1509,15 +1558,15 @@
         "exotic_price": [
         {
             "exotic_type": "defense",
-            "count": 2
+            "count": 1
         },
         {
             "exotic_type": "utility",
-            "count": 2
+            "count": 1
         },
         {
             "exotic_type": "economic",
-            "count": 3
+            "count": 2
         }],
         "prerequisites": [
             ["dlc2_vasari_unlock_loyalist_super_capital_ship"]
@@ -1696,9 +1745,9 @@
             "vasari_mobile_ruler_ship",
             "vasari_loyalist_titan_mobile_research_complex",
             "vasari_mobile_fleet_beacon",
-            "vasari_mobile_resonance_collector",
+            "vasari_mobile_resonance_collector_rrr",
             "vasari_self_repairing_armor",
-            "vasari_strikecraft_armor"
+            "vasari_loyalist_strikecraft_armor"
         ],
         "weight": 15.0
     },
@@ -1709,7 +1758,7 @@
             "vasari_phase_shield",
             "vasari_antimatter_recharger",
             "vasari_self_repairing_armor",
-            "vasari_strikecraft_armor"
+            "vasari_loyalist_strikecraft_armor"
         ],
         "weight": 12.0
     },
@@ -1720,9 +1769,15 @@
             "vasari_beam_boost",
             "vasari_engine_boost",
             "vasari_self_repairing_armor",
-            "vasari_strikecraft_armor"
+            "vasari_loyalist_strikecraft_armor"
         ],
         "weight": 12.0
+    },
+    {
+        "build_group": [
+                "vasari_experience_boost"
+        ],
+        "weight": 8.0
     },
     {
         "build_group": [
@@ -1736,6 +1791,12 @@
         ],
         "weight": 3.0
     },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
+            ]
+        },
     {
         "build_group": [
             "vasari_wave_boost"
@@ -1753,6 +1814,7 @@
         "super_capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 10,
     "abilities": [
     {
         "abilities": [

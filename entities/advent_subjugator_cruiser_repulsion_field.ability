@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "action_data_source": "advent_subjugator_cruiser_repulsion_field",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_subjugator_cruiser_repulsion_field_ability"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "repulsion_field_cooldown_time_value",
+        "antimatter_cost": "repulsion_field_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_subjugator_cruiser_repulsion_field_on_self"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "repulsion_field_auto_cast_target_filter",
+                "radius_value": "repulsion_field_radius_value",
+                "target_count_value": "repulsion_field_auto_cast_target_count_value"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_subjugator_cruiser_repulsion_field_ability_hud_icon",
+        "name": "advent_subjugator_cruiser_repulsion_field_ability_name",
+        "description": "advent_subjugator_cruiser_repulsion_field_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "repulsion_field_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "repulsion_field_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "repulsion_field_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "repulsion_field_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

@@ -14,7 +14,8 @@
                 "torpedo"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -22,13 +23,25 @@
         "target_filter":
         {
             "unit_types": [
-                "capital_ship",
+                "capital_ship"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "self_destruct_high2_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
                 "starbase",
                 "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -44,7 +57,8 @@
                 "torpedo"
             ],
             "ownerships": [
-                "friendly"]
+                "friendly"
+            ]
         }
     },
     {
@@ -58,7 +72,8 @@
                 "titan"
             ],
             "ownerships": [
-                "friendly"]
+                "friendly"
+            ]
         }
     },
     {
@@ -74,7 +89,12 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
         }
     }],
     "action_values": [
@@ -89,21 +109,35 @@
         "action_value_id": "self_destruct_hull_damage_value",
         "action_value":
         {
-            "values": [2500.0]
+            "values": [1250.0]
         }
     },
     {
         "action_value_id": "self_destruct_high_damage_value",
         "action_value":
         {
-            "values": [20000.0]
+            "values": [15000.0]
         }
     },
     {
         "action_value_id": "self_destruct_hull_high_damage_value",
         "action_value":
         {
-            "values": [5000.0]
+            "values": [1875.0]
+        }
+    },
+    {
+        "action_value_id": "self_destruct_high2_damage_value",
+        "action_value":
+        {
+            "values": [20000.0]
+        }
+    },
+    {
+        "action_value_id": "self_destruct_hull_high2_damage_value",
+        "action_value":
+        {
+            "values": [2500.0]
         }
     },
     {
@@ -117,7 +151,7 @@
         "action_value_id": "self_destruct_friendly_hull_damage_value",
         "action_value":
         {
-            "values": [625.0]
+            "values": [312.5]
         }
     },
     {
@@ -131,7 +165,7 @@
         "action_value_id": "self_destruct_friendly_hull_high_damage_value",
         "action_value":
         {
-            "values": [1250.0]
+            "values": [625.0]
         }
     },
     {
@@ -159,7 +193,7 @@
         "action_value_id": "self_destruct_travel_speed_value",
         "action_value":
         {
-            "values": [5000.0]
+            "values": [7500.0]
         }
     },
     {
@@ -183,7 +217,8 @@
         {
             "particle_effect": "titan_safety_override_protocol_activation",
             "sounds": [
-                "effect_laststand"]
+                "effect_laststand"
+            ]
         }
     }]
 }

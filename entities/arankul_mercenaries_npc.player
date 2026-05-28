@@ -3,6 +3,87 @@
     "race": "vasari",
     "fleet": "vasari_fleet",
     "fleet_name_group": "fleet",
+    "unit_build_groups": [
+    {
+        "id": "corvette",
+        "name": "unit_build_group_name.corvette",
+        "column_count": 2
+    },
+    {
+        "id": "frigate",
+        "name": "unit_build_group_name.frigate",
+        "column_count": 3
+    },
+    {
+        "id": "cruiser",
+        "name": "unit_build_group_name.cruiser",
+        "column_count": 3
+    },
+    {
+        "id": "capital_ship",
+        "name": "unit_build_group_name.capital_ship",
+        "column_count": 3
+    },
+    {
+        "id": "super_capital_ship",
+        "name": "unit_build_group_name.super_capital_ship",
+        "column_count": 1
+    },
+    {
+        "id": "titan",
+        "name": "unit_build_group_name.titan",
+        "column_count": 1
+    }],
+    "ship_component_build_groups": [
+    {
+        "id": "consumable",
+        "name": "ship_component_build_group_name_consumable",
+        "column_count": 2
+    },
+    {
+        "id": "offense",
+        "name": "ship_component_build_group_name_offense",
+        "column_count": 4
+    },
+    {
+        "id": "defense",
+        "name": "ship_component_build_group_name_defense",
+        "column_count": 4
+    },
+    {
+        "id": "utility",
+        "name": "ship_component_build_group_name_utility",
+        "column_count": 4
+    }],
+    "unit_names": [
+    {
+        "group_name": "capital_ship",
+        "localized_text":
+        {
+            "id_prefix": "capital_ship_name.vasari"
+        }
+    },
+    {
+        "group_name": "fleet",
+        "localized_text":
+        {
+            "id_prefix": "fleet_name.vasari"
+        }
+    },
+    {
+        "group_name": "starbase",
+        "localized_text":
+        {
+            "id_prefix": "starbase_name.vasari"
+        }
+    },
+    {
+        "group_name": "titan",
+        "localized_text":
+        {
+            "id_prefix": "titan_name.vasari"
+        }
+    }],
     "sounds":
     {
         "user_interface_sounds":
@@ -843,6 +924,10 @@
             "count": [2, 3]
         },
         {
+            "unit": "vasari_minelayer_cruiser",
+            "count": [1, 1]
+        },
+        {
             "unit": "vasari_starbase_n",
             "count": [1, 1]
         }]
@@ -891,7 +976,22 @@
         },
         {
             "unit": "vasari_nanite_battle_capital_ship",
-            "count": [1, 1]
+            "count": [1, 1],
+			"options":
+			{
+				"level": 5,
+				"forced_leveled_up_abilities": [
+					"vasari_nanite_battle_capital_ship_deploy_combat_swarm",							
+					"vasari_nanite_battle_capital_ship_deploy_support_swarm",
+					"vasari_nanite_battle_capital_ship_deploy_assault_swarm"
+				],
+                "items": [
+                    "vasari_nano_swarm",
+                    "vasari_nano_repair_kit",
+                    "vasari_nano_antimatter_restore",
+					"vasari_self_repairing_armor"
+                ]
+			}
         },
         {
             "unit": "vasari_antifighter_frigate",
@@ -954,15 +1054,17 @@
         "vasari_antiarmor_cruiser",
         "vasari_siege_cruiser",
         "vasari_battle_capital_ship_n",
+        "vasari_colony_capital_ship_n",
         "vasari_carrier_capital_ship_n",
         "vasari_marauder_capital_ship_n",
         "vasari_siege_capital_ship_n",
-		"vasari_nanite_battle_capital_ship_n",
-		"dlc_vasari_mad_titan_n"
+	"vasari_nanite_battle_capital_ship_n",
+	"dlc_vasari_mad_titan_n",
+	"vasari_minelayer_cruiser"
     ],
     "structure_builder":
     {
-        "ship": "vasari_constructor_ship",
+        "ship": "vasari_constructor_ship_npc",
         "special_operation_unit_kind": "structure_builder"
     },
     "structures": [
@@ -987,11 +1089,12 @@
     ],
     "npc":
     {
+	"can_survey_planets": false,
         "visuals": [
         {
             "name": "npc_player.arankul_mercenaries.name",
             "description": "npc_player.arankul_mercenaries.description",
-            "portrait": "miner_0",
+            "portrait": "npc_arankul_0",
             "icon": "faction_6",
             "color_group": "npc_arankul_mercenaries",
             "reputation_panel": "arankul_mercenaries_panel"
@@ -1013,14 +1116,18 @@
                 "attacking": "jiskun_npc_attacking_0"
             }
         },
+	"ai_difficulty": "hard",
         "ai_params":
         {
-            "max_jumps_from_home_planet_for_fleets": 10,
-			"max_fleet_capital_ship_count": 6,
-            "will_fleet_retreat": false,
-			"will_fleet_colonize": false,
-            "fleet_will_probably_defeat_ratio_range": [0.9, 1.1],
-            "pick_another_buildable_attack_ship_type_interval_in_minutes": [0, 0],
+            "max_jumps_from_home_planet_for_fleets": 99,
+            "max_fleet_capital_ship_count": 6,
+            "will_fleet_retreat": true,
+            "will_fleet_colonize": false,
+            "fleet_will_probably_defeat_ratio_range": [0.7, 0.8],
+            "chaos_factor_range": [0.7, 0.9],
+            "chaos_factor_update_interval": 100,
+            "defense_to_offsense_spend_ratio": 0.2,
+            "pick_another_buildable_attack_ship_type_interval_in_minutes": [1, 2],
             "desired_explore_ship_count":
             {
                 "type": "constant",
@@ -1029,12 +1136,43 @@
         },
         "max_fleet_supply":
         {
-            "roam": [225, 450, 675, 900],
-            "defend": [300, 600, 900, 1200]
+            "roam": [450, 900, 1350, 1800],
+            "defend": [300, 400, 500, 600]
         },
+        "npc_tags": [
+            "arankul"
+        ],
         "start_allied_to_playable_players": true,
-        "start_allied_to_other_npc_players": true,
+        "start_allied_to_other_npc_players": false,
         "start_allied_to_militia_npc_players": false,
+        "bounty_market":
+        {
+            "market_weight": 5,
+            "bounty_cut": 0.4,
+            "metal_credit_value": 3.0,
+            "crystal_credit_value": 3.0,
+            "exotic_credit_values": [
+            {
+                "exotic_name": "offense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "defense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "utility",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "economic",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "ultimate",
+                "credit_value": 1500
+            }]
+        },
         "auctions": [
         {
             "weight": 0.8,
@@ -1135,8 +1273,376 @@
                     "sell_credits_amount": 750.0
                 }
             }]
-        },					
-        "simple_can_ever_be_colonized_planet_types": [],
+        },
+        "max_concurrent_raids": 2,
+        "raid_types": [
+        {
+            "raid_type": "destroy_planet",
+            "awakening_cooldown": [30.0, 90.0],
+            "standard_cooldown": [360.0, 720.0],
+            "initial_delay_from_game_start": [1800.0, 1800.0],
+            "max_jump_distance": 99,
+            "dormant_target_search_interval": 10.0,
+            "arrival_delay_duration": 10.0,
+            "composition_brackets": [
+            {
+                "value_threshold": [0.0, 100.0],
+                "units":
+                {
+                    "required_units": [
+                    {
+                        "unit": "vasari_siege_cruiser",
+                        "count": [3, 3]
+                    },
+                    {
+                        "unit": "vasari_battle_capital_ship",
+                        "options":
+                        {
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    }],
+                    "random_units": [
+                    {
+                        "unit": "vasari_heavy_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_carrier_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_long_range_frigate",
+                        "weight": 1.0
+                    },
+                    {
+                        "unit": "vasari_antifighter_frigate",
+                        "weight": 1.0
+                    }]
+                },
+                "supply_cap": 300,
+                "threat_level": "low"
+            },
+            {
+                "value_threshold": [100.0, 500.0],
+                "units":
+                {
+                    "required_units": [
+                    {
+                        "unit": "vasari_siege_cruiser",
+                        "count": [3, 6]
+                    },
+                    {
+                        "unit": "vasari_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 2,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_nanite_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 2,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    }],
+                    "random_units": [
+                    {
+                        "unit": "vasari_heavy_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_carrier_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_long_range_frigate",
+                        "weight": 1.0
+                    },
+                    {
+                        "unit": "vasari_antifighter_frigate",
+                        "weight": 1.0
+                    }]
+                },
+                "supply_cap": 420,
+                "threat_level": "moderate"
+            },
+            {
+                "value_threshold": [100.0, 500.0],
+                "units":
+                {
+                    "required_units": [
+                    {
+                        "unit": "vasari_siege_cruiser",
+                        "count": [3, 6]
+                    },
+                    {
+                        "unit": "vasari_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 3,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_nanite_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 3,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_siege_capital_ship",
+                        "options":
+                        {
+                            "level": 3,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    }],
+                    "random_units": [
+                    {
+                        "unit": "vasari_heavy_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_carrier_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_long_range_frigate",
+                        "weight": 1.0
+                    },
+                    {
+                        "unit": "vasari_antifighter_frigate",
+                        "weight": 1.0
+                    }]
+                },
+                "supply_cap": 540,
+                "threat_level": "medium"
+            },
+            {
+                "value_threshold": [500.0, 1000.0],
+                "units":
+                {
+                    "required_units": [
+                    {
+                        "unit": "vasari_siege_cruiser",
+                        "count": [6, 9]
+                    },
+                    {
+                        "unit": "vasari_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 4,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_nanite_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 4,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_siege_capital_ship",
+                        "options":
+                        {
+                            "level": 4,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_carrier_capital_ship",
+                        "options":
+                        {
+                            "level": 4,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    }],
+                    "random_units": [
+                    {
+                        "unit": "vasari_heavy_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_carrier_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_long_range_frigate",
+                        "weight": 1.0
+                    },
+                    {
+                        "unit": "vasari_antifighter_frigate",
+                        "weight": 1.0
+                    }]
+                },
+                "supply_cap": 660,
+                "threat_level": "high"
+            },
+            {
+                "value_threshold": [1000.0, 100000.0],
+                "units":
+                {
+                    "required_units": [
+                    {
+                        "unit": "vasari_siege_cruiser",
+                        "count": [9, 12]
+                    },
+                    {
+                        "unit": "vasari_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 5,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_nanite_battle_capital_ship",
+                        "options":
+                        {
+                            "level": 5,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_siege_capital_ship",
+                        "options":
+                        {
+                            "level": 5,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_carrier_capital_ship",
+                        "options":
+                        {
+                            "level": 5,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_colony_capital_ship",
+                        "options":
+                        {
+                            "level": 5,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    },
+                    {
+                        "unit": "vasari_marauder_capital_ship",
+                        "options":
+                        {
+                            "level": 5,
+							"items": [
+								"vasari_nano_swarm",
+								"vasari_nano_repair_kit",
+								"vasari_nano_antimatter_restore",
+								"vasari_self_repairing_armor"
+							]
+                        }
+                    }],
+                    "random_units": [
+                    {
+                        "unit": "vasari_heavy_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_carrier_cruiser",
+                        "weight": 2.0
+                    },
+                    {
+                        "unit": "vasari_long_range_frigate",
+                        "weight": 1.0
+                    },
+                    {
+                        "unit": "vasari_antifighter_frigate",
+                        "weight": 1.0
+                    }]
+                },
+                "supply_cap": 810,
+                "threat_level": "extreme"
+            }]
+        }],
         "simple_planet_level": 10,
         "simple_planet_tracks":
         {
@@ -1149,7 +1655,8 @@
             "logistics":
             {
                 "max_civilian_structure_slots": 6,
-                "structure_builder_count": 2
+                "structure_builder_count": 2,
+				"max_planet_component_slots": 3
             },
             "commerce":
             {
@@ -1200,19 +1707,47 @@
             "levels": [
             {
                 "influence_point_cost": 2,
-                "npc_modifiers":{}
+                "npc_modifiers":
+		{
+                    "send_raid_supply":
+                    {
+                        "value_behavior": "additive",
+                        "value": 20.0
+                    }
+		}
             },
             {
                 "influence_point_cost": 4,
-                "npc_modifiers":{}
+                "npc_modifiers":
+		{
+                    "send_raid_supply":
+                    {
+                        "value_behavior": "additive",
+                        "value": 40.0
+                    }
+		}
             },
             {
                 "influence_point_cost": 6,
-                "npc_modifiers":{}
+                "npc_modifiers":
+		{
+                    "send_raid_supply":
+                    {
+                        "value_behavior": "additive",
+                        "value": 60.0
+                    }
+		}
             },
             {
                 "influence_point_cost": 10,
-                "npc_modifiers":{}
+                "npc_modifiers":
+		{
+                    "send_raid_supply":
+                    {
+                        "value_behavior": "additive",
+                        "value": 80.0
+                    }
+		}
             }]
         }
     },

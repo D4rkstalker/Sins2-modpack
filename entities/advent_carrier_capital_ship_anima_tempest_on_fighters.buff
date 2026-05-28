@@ -51,22 +51,45 @@
     {
         "buff_weapon_modifier_id": "anima_tempest_weapon_damage_modifier"
     }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "anima_tempest_max_linear_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "anima_tempest_max_linear_acceleration_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "anima_tempest_max_angular_speed_modifier"
+    }],
     "gui":
     {
         "hud_icon": "advent_carrier_capital_ship_anima_tempest_ability_hud_icon",
         "name": "advent_carrier_capital_ship_anima_tempest_ability_name",
+        "is_visible_within_unit_tooltip": true,
         "visibility_scope": "positive",
         "tooltip_line_groups": [
         {
             "lines": [
-			{
-				"rendering_type": "single_line",
-				"label_text": "unit_mutation.is_force_attacking",
-				"value_color": "negative"
-			},
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.is_force_attacking",
+                "value_color": "negative"
+            },
             {
                 "rendering_type": "buff_weapon_modifier",
                 "weapon_modifier_id": "anima_tempest_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "anima_tempest_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "anima_tempest_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "anima_tempest_max_angular_speed_modifier"
             }]
         }]
     }

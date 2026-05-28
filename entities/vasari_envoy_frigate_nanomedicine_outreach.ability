@@ -1,0 +1,94 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_envoy_frigate_nanomedicine_outreach",
+    "active_actions":
+    {
+        "cooldown_time": "nanomedicine_outreach_cooldown_time_value",
+        "actions":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "nanomedicine_outreach_ally_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_envoy_frigate_nanomedicine_outreach_on_planet"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "vasari_envoy_frigate_nanomedicine_outreach_on_planet",
+                        "include_pending_buffs": true
+                    }
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "vasari_envoy_frigate_nanomedicine_outreach_hud_icon",
+        "name": "vasari_envoy_frigate_nanomedicine_outreach_name",
+        "description": "vasari_envoy_frigate_nanomedicine_outreach_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "nanomedicine_outreach_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.envoy_on_allied_planet_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_health_restore_rate",
+                "value_id": "nanomedicine_outreach_health_points_restore_rate_value",
+                "value_float_format": "one_decimal_place_with_sign",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "tooltip.unit_item_self_label",
+            "lines": [
+            {
+                "rendering_type": "buff_empire_modifier",
+                "empire_modifier_id": "nanomedicine_outreach_influence_points_recharge_rate_modifier"
+            }]
+        }]
+    }
+}

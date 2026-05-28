@@ -1,0 +1,40 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "vasari_upgrade_experience_gain_research_subject_hud_icon",
+    "tooltip_picture": "vasari_upgrade_experience_gain_research_subject_tooltip_picture",
+    "name": "vasari_experience_boost_unit_item_name",
+    "description": "vasari_experience_boost_unit_item_description",
+    "build_time": 15.0,
+    "price":
+    {
+        "metal": 275.0,
+        "crystal": 375.0
+    },
+    "required_unit_tags": [
+        "capital_ship",
+        "super_capital_ship",
+        "titan"
+    ],
+    "build_prerequisites": [
+        ["vasari_unlock_experience_boost_unit_item"]
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "utility",
+    "unit_modifiers": [
+    {
+        "modifier_type": "experience_gained_from_unit_death",
+        "value_behavior": "scalar",
+        "values": [0.15]
+    },
+    {
+        "modifier_type": "experience_gained_from_planet_bombing",
+        "value_behavior": "scalar",
+        "values": [0.75]
+    },
+    {
+        "modifier_type": "experience_gained_from_loot_collection",
+        "value_behavior": "scalar",
+        "values": [0.5]
+    }]
+}

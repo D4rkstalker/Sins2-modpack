@@ -1,0 +1,88 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "demolition_team_radius_value",
+                "include_radius_origin_unit": false,
+                "max_target_count_value": "demolition_team_max_target_count_value",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "demolition_team_damage_target_filter"
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "demolition_team_damage_value",
+                    "penetration_value": "demolition_team_pierce_value"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "demolition_team_damage_target_filter"
+                    },
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "trader_transport_capital_ship_scout_damage_large",
+                            "medium_unit": "trader_transport_capital_ship_scout_damage_medium",
+                            "large_unit": "trader_transport_capital_ship_scout_damage_small"
+                        }
+                    }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect": "trader_transport_capital_ship_scout_target"
+                    }
+                },
+                {
+                    "operator_type": "make_dead"
+                }]
+            }]
+        }
+    }]
+}

@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "active_duration": "gravity_pulse_slow_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_augment_pending_damage_as_destination",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "augment_damage",
+                "bonus_damage_value": "gravity_pulse_slow_bonus_damage_value"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "slow_max_linear_speed"
+    },
+    {
+        "buff_unit_modifier_id": "slow_hyperspace_charge_time"
+    }],
+    "unit_mutations": [
+        "gravity_effect_active"
+    ],
+    "gui":
+    {
+        "hud_icon": "vasari_rebel_titan_gravity_pulse_ability_hud_icon",
+        "name": "vasari_rebel_titan_gravity_pulse_ability_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "slow_max_linear_speed"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "slow_hyperspace_charge_time"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_taken",
+                "value_id": "gravity_pulse_slow_bonus_damage_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

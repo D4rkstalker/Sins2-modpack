@@ -3,6 +3,66 @@
     "race": "advent",
     "fleet": "advent_fleet",
     "fleet_name_group": "fleet",
+    "unit_build_groups": [
+    {
+        "id": "corvette",
+        "name": "unit_build_group_name.corvette",
+        "column_count": 2
+    },
+    {
+        "id": "frigate",
+        "name": "unit_build_group_name.frigate",
+        "column_count": 3
+    },
+    {
+        "id": "cruiser",
+        "name": "unit_build_group_name.cruiser",
+        "column_count": 3
+    },
+    {
+        "id": "capital_ship",
+        "name": "unit_build_group_name.capital_ship",
+        "column_count": 3
+    },
+    {
+        "id": "super_capital_ship",
+        "name": "unit_build_group_name.super_capital_ship",
+        "column_count": 1
+    },
+    {
+        "id": "titan",
+        "name": "unit_build_group_name.titan",
+        "column_count": 1
+    }],
+    "unit_names": [
+    {
+        "group_name": "capital_ship",
+        "localized_text":
+        {
+            "id_prefix": "capital_ship_name.advent"
+        }
+    },
+    {
+        "group_name": "fleet",
+        "localized_text":
+        {
+            "id_prefix": "fleet_name.advent"
+        }
+    },
+    {
+        "group_name": "starbase",
+        "localized_text":
+        {
+            "id_prefix": "starbase_name.advent"
+        }
+    },
+    {
+        "group_name": "titan",
+        "localized_text":
+        {
+            "id_prefix": "titan_name.advent"
+        }
+    }],
     "sounds":
     {
         "user_interface_sounds":
@@ -644,7 +704,7 @@
             },
             "alliance_broken_cease_fire":
             {
-                "sound": "aluxian_npc_attacking_0",
+                "sound": "alutar_npc_attacking_0",
                 "is_dialogue": true
             },
             "alliance_offered_share_vision_aggressive":
@@ -706,6 +766,80 @@
         "metal": 750,
         "crystal": 500
     },
+    "buildable_exotics": [
+    {
+        "exotic_name": "defense",
+        "exotic_definition":
+        {
+            "factory_build_time": 120.0,
+            "factory_build_price":
+            {
+                "metal": 240.0,
+                "crystal": 240.0
+            }
+        }
+    },
+    {
+        "exotic_name": "economic",
+        "exotic_definition":
+        {
+            "factory_build_time": 120.0,
+            "factory_build_price":
+            {
+                "metal": 240.0,
+                "crystal": 240.0
+            }
+        }
+    },
+    {
+        "exotic_name": "offense",
+        "exotic_definition":
+        {
+            "factory_build_time": 120.0,
+            "factory_build_price":
+            {
+                "metal": 240.0,
+                "crystal": 240.0
+            }
+        }
+    },
+    {
+        "exotic_name": "utility",
+        "exotic_definition":
+        {
+            "factory_build_time": 120.0,
+            "factory_build_price":
+            {
+                "metal": 240.0,
+                "crystal": 240.0
+            }
+        }
+    },
+    {
+        "exotic_name": "ultimate",
+        "exotic_definition":
+        {
+            "factory_build_time": 240.0,
+            "factory_build_price":
+            {
+                "metal": 480.0,
+                "crystal": 480.0
+            }
+        }
+    },
+    {
+        "exotic_name": "research",
+        "exotic_definition":
+        {
+            "factory_build_time": 360.0,
+            "factory_build_price":
+            {
+                "credits": 1000.0,
+                "metal": 350.0,
+                "crystal": 350.0
+            }
+        }
+    }],
     "planet_bombing_recovery_cooldown": 30.0,
     "colonize_starting_health_percent": 1,
     "colonize_starting_shield_percent": 1,
@@ -716,7 +850,7 @@
     }],
     "home_planet":
     {
-        "random_fixture_filling": "random_ice_planet",
+        "random_fixture_filling": "random_oceanic_planet",
         "levels": [
         {
             "income_rates":
@@ -756,6 +890,24 @@
         {
             "unit": "advent_population_structure",
             "count": [2, 2]
+        },
+        {
+            "unit": "advent_harassment_battle_capital_ship_n",
+            "count": [2, 2],
+			"options":
+			{
+				"level": 5,
+				"forced_leveled_up_abilities": [
+					"advent_harassment_battle_capital_ship_fracture",							
+					"advent_battle_psionic_capital_ship_psionic_scream",
+					"advent_harassment_battle_capital_ship_lethargy"
+				],
+                "items": [
+                    "advent_votary_siphon",
+					"advent_harmony_circuit",
+					"advent_shield_boost"
+                ]
+			}
         },
         {
             "unit": "advent_starbase_n",
@@ -837,11 +989,13 @@
         "advent_light_frigate",
         "advent_subjugator_cruiser",
         "advent_siege_frigate",
+        "advent_colony_frigate",
+		"advent_harassment_battle_capital_ship_n",
         "advent_defense_cruiser"
     ],
     "structure_builder":
     {
-        "ship": "advent_constructor_ship",
+        "ship": "advent_constructor_ship_npc",
         "special_operation_unit_kind": "structure_builder"
     },
     "structures": [
@@ -852,13 +1006,24 @@
 	"advent_unity_structure",
 	"advent_starbase_n"
     ],
+    "allowed_traffic_ports": [
+        "trader_population_structure",
+        "advent_population_structure",
+        "vasari_population_structure",
+        "advent_exotic_factory_structure",
+        "advent_crystal_extractor_structure",
+        "advent_metal_extractor_structure",
+		"trader_capturable_crystal_extractor_structure",
+		"trader_capturable_metal_extractor_structure"
+    ],
     "npc":
     {
+	"can_survey_planets": false,
         "visuals": [
         {
             "name": "npc_player.anundi_collective.name",
             "description": "npc_player.anundi_collective.description",
-            "portrait": "miner_0",
+            "portrait": "npc_anundi_0",
             "icon": "militia_10",
             "color_group": "npc_anundi_collective",
             "reputation_panel": "anundi_collective_panel"
@@ -867,19 +1032,20 @@
         {
             "sounds":
             {
-                "use_ability_generic": "aluxian_npc_use_ability_generic_0",
-                "use_ability_raid_0": "aluxian_npc_use_ability_raid_0_0",
-                "use_ability_raid_1": "aluxian_npc_use_ability_raid_1_0",
-                "use_ability_purchase_item": "aluxian_npc_use_ability_purchase_item_0",
-                "reputation_level_increased": "aluxian_npc_reputation_level_increased_0",
-                "insufficient_influence_points": "aluxian_npc_insufficient_influence_points_0",
-                "auction_started": "aluxian_npc_auction_started_0",
-                "auction_won": "aluxian_npc_auction_won_0",
-                "auction_lost": "aluxian_npc_auction_lost_0",
-                "auction_ignored": "aluxian_npc_auction_ignored_0",
-                "attacking": "aluxian_npc_attacking_0"
+                "use_ability_generic": "alutar_npc_use_ability_generic_0",
+                "use_ability_raid_0": "alutar_npc_use_ability_raid_0",
+                "use_ability_raid_1": "alutar_npc_use_ability_raid_0",
+                "use_ability_purchase_item": "alutar_npc_use_ability_purchase_item_0",
+                "reputation_level_increased": "alutar_npc_reputation_level_increased_0",
+                "insufficient_influence_points": "alutar_npc_insufficient_influence_points_0",
+                "auction_started": "alutar_npc_auction_started_0",
+                "auction_won": "alutar_npc_auction_won_0",
+                "auction_lost": "alutar_npc_auction_lost_0",
+                "auction_ignored": "alutar_npc_auction_ignored_0",
+                "attacking": "alutar_npc_attacking_0"
             }
         },
+	"ai_difficulty": "hard",
         "ai_params":
         {
             "will_fleet_colonize": false,
@@ -897,9 +1063,40 @@
             "roam": [125, 250, 375, 500],
             "defend": [312, 625, 875, 1250]
         },
+        "npc_tags": [
+            "anundi"
+        ],
         "start_allied_to_playable_players": true,
         "start_allied_to_other_npc_players": true,
         "start_allied_to_militia_npc_players": false,
+        "bounty_market":
+        {
+            "market_weight": 1,
+            "bounty_cut": 0.4,
+            "metal_credit_value": 3.0,
+            "crystal_credit_value": 3.0,
+            "exotic_credit_values": [
+            {
+                "exotic_name": "offense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "defense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "utility",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "economic",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "ultimate",
+                "credit_value": 1500
+            }]
+        },
         "auctions": [
         {
             "weight": 1.0,
@@ -945,8 +1142,8 @@
             "rewards": [
                 "",
                 "",
-                "anundi_reincarnation",
-                "anundi_reincarnation"]
+                "laesinda_buy_discord",
+                "laesinda_buy_discord"]
         },
 	{
             "weight": 0.1,
@@ -1020,29 +1217,30 @@
         },						
         "simple_can_ever_be_colonized_planet_types": [
             "asteroid",
-			"crystalline",
+            "barren",
+            "city",
+            "crystalline",
             "desert",
-			"desert_home",
+            "desert_home",
             "ferrous",
-			"ferrous_home",
-			"ice_asteroid",
+            "ferrous_home",
+            "gas_giant",
+            "greenhouse",
+            "hive_asteroid",
             "ice",
+            "ice_asteroid",
+            "ice_moon",
+            "irradiated",
+            "magnetic",
             "moon",
             "oceanic",
-			"pirate_base",
-			"swamp",
+            "pirate_base",
+            "ship_graveyard",
+            "swamp",
             "terran",
-			"terran_home",
+            "terran_home",
             "volcanic",
-			"ship_graveyard",
-			"greenhouse",
-			"barren",
-			"city",
-			"magnetic",
-			"ice_moon",
-			"volcanic_moon",
-			"gas_giant",
-			"hive_asteroid"
+            "volcanic_moon"
         ],
         "simple_planet_level": 10,
         "simple_planet_tracks":
@@ -1113,22 +1311,46 @@
             {
                 "influence_point_cost": 2,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.02,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 4,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.04,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 6,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.06,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 8,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.08,
+                        "value_behavior": "scalar"
+                    }
+		}
             }]
         }
     },

@@ -7,12 +7,12 @@
     "tooltip_picture": "trader_industrial_complex_unit_item_tooltip_picture",
     "name": "trader_industrial_complex_unit_item_name",
     "description": "trader_industrial_complex_unit_item_description",
-    "build_time": 90.0,
+    "build_time": 75.0,
     "price":
     {
-        "credits": 1250.0,
-        "metal": 350.0,
-        "crystal": 250.0
+        "credits": 2000.0,
+        "metal": 500.0,
+        "crystal": 500.0
     },
     "exotic_price": [
     {
@@ -20,34 +20,39 @@
         "count": 1
     }],
     "max_count_on_unit": 1,
+    "required_planet_level": 5,
     "planet_type_groups": [
     {
         "planet_types": [
-			"barren",
-			"city",
-			"desert",
-			"desert_home",
-			"ferrous",
-			"ferrous_home",
-			"greenhouse",
-			"swamp",
-			"terran",
-			"terran_home",
-			"volcanic"
+            "barren",
+            "city",
+            "crystalline",
+            "desert",
+            "desert_home",
+            "ferrous",
+            "ferrous_home",
+            "ice",
+            "ice_moon",
+            "irradiated",
+            "greenhouse",
+            "magnetic",
+            "moon",
+            "oceanic",
+            "swamp",
+            "terran",
+            "terran_home",
+            "volcanic",
+            "volcanic_moon"
         ],
         "build_prerequisites": [
-			["trader_unlock_industrial_complex_unit_item"]
+            ["trader_unlock_industrial_complex_unit_item"]
         ]
     }],
-    "planet_modifiers": [
+    "other_item_requirements":
     {
-        "modifier_type": "factory_unit_build_time",
-        "value_behavior": "scalar",
-        "values": [-0.25]
+        "mutually_exclusive_items": [
+            "trader_commercial_district",
+            "trader_high_density_district"]
     },
-    {
-        "modifier_type": "factory_unit_build_price",
-        "value_behavior": "scalar",
-        "values": [-0.05]
-    }]
+    "ability": "trader_industrial_complex"
 }

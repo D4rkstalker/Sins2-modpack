@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_mutations": [
+        "enable_can_have_shields_burst_restored"
+    ],
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "composite_or",
+                            "constraints": [
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "advent_unlock_shield_burst_restore",
+                                "include_pending_buffs": true
+                            },
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "trader_unlock_backup_shield_generator",
+                                "include_pending_buffs": true
+                            },
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "vasari_upgrade_shields_with_advent",
+                                "include_pending_buffs": true
+                            }]
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "skaransul_tech_sharing_on_target_vasari"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "skaransul_tech_sharing_hud_icon",
+        "name": "npc_reward.skaransul_tech_sharing.name",
+        "visibility_scope": "positive"
+    }
+}

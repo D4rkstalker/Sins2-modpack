@@ -8,7 +8,45 @@
             "center": [0.0, 0.0, -415.71637],
             "extents": [1131.765137, 1409.317139, 605.150024]
         },
-        "collision_rank": 3
+        "collision_rank": 3,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 550.0, -100.0],
+            "radius": 200.0
+        },
+        {
+            "center": [0.0, 50.0, 0.0],
+            "radius": 250.0
+        },
+        {
+            "center": [0.0, -450.0, -125.0],
+            "radius": 250.0
+        },
+        {
+            "center": [0.0, -900.0, -350.0],
+            "radius": 150.0
+        },
+        {
+            "center": [0.0, -1150.0, -550.0],
+            "radius": 100.0
+        },
+        {
+            "center": [400.0, 500.0, -400.0],
+            "radius": 200.0
+        },
+        {
+            "center": [-400.0, 500.0, -400.0],
+            "radius": 200.0
+        },
+        {
+            "center": [450.0, 50.0, -450.0],
+            "radius": 150.0
+        },
+        {
+            "center": [-450.0, 50.0, -450.0],
+            "radius": 150.0
+        }
+        ]
     },
     "physics":
     {
@@ -2104,7 +2142,8 @@
         "base_max_squadron_capacity": 0,
         "strikecraft_kinds": [
             "interceptor",
-            "bomber"
+            "bomber",
+            "mem_custom_strikecraft1"
         ],
         "launch_destination_formation": "capital_ship_strikecraft",
         "launch_destination_formation_offset":
@@ -2132,31 +2171,46 @@
         {
             "weight": 5.0,
             "build_group": [
+                "advent_rebel_titan_hull_plating",
                 "advent_rebel_titan_shield_booster",
-                "advent_shield_boost"
+                "advent_shield_boost",
+                "advent_reanimation",
+                "advent_essence_reservoir",
+                "advent_psionic_dynamo"
             ]
         },
         {
             "weight": 5.0,
             "build_group": [
                 "advent_rebel_titan_hull_plating",
-                "advent_structural_forcefields"
+                "advent_structural_forcefields",
+                "advent_shield_boost",
+                "advent_reanimation",
+                "advent_essence_reservoir",
+                "advent_psionic_dynamo"
             ]
         },
         {
             "weight": 5.0,
             "build_group": [
                 "advent_rebel_titan_hull_plating",
-                "advent_focus_armor",
+                "advent_rebel_titan_shield_booster",
                 "advent_harmony_circuit",
-                "advent_essence_reservoir"
+                "advent_essence_reservoir",
+                "advent_shield_boost",
+                "advent_reanimation",
+                "advent_essence_reservoir",
+                "advent_psionic_dynamo"
             ]
         },
         {
             "weight": 5.0,
             "build_group": [
-                "advent_focus_weapons",
+                "advent_rebel_titan_missile_boost",
                 "advent_harmony_circuit",
+                "advent_psionic_dynamo",
+                "advent_reanimation",
+                "advent_essence_reservoir",
                 "advent_psionic_dynamo"
             ]
         },
@@ -2165,6 +2219,12 @@
             "build_group": [
                 "advent_energy_booster",
                 "advent_plasma_booster"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
             ]
         },
         {
@@ -2195,13 +2255,6 @@
             "weight": 3.0,
             "build_group": [
                 "advent_focus_shields",
-                "advent_harmony_circuit"
-            ]
-        },
-        {
-            "weight": 3.0,
-            "build_group": [
-                "advent_focus_weapons",
                 "advent_harmony_circuit"
             ]
         },

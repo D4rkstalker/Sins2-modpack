@@ -17,12 +17,6 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "not_self"
-            },
-            {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
@@ -38,7 +32,6 @@
         "target_filter":
         {
             "unit_types": [
-                "corvette",
                 "cruiser",
                 "frigate",
                 "structure"
@@ -48,11 +41,27 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "not_self"
-            },
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_retrofit_bay_repair",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_auto_cast_lower_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
             {
                 "constraint_type": "composite_not",
                 "constraint":
@@ -110,6 +119,20 @@
         "action_value":
         {
             "values": [200.0, 300.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_armor_corvette_threshold_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_hull_corvette_threshold_value",
+        "action_value":
+        {
+            "values": [100.0, 100.0]
         }
     },
     {

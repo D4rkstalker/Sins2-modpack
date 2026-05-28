@@ -1,0 +1,39 @@
+{
+    "version": 0,
+    "active_duration": "conversion_execution_interval_count_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_parent_buff_made_dead",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "buff_made_dead_has_context",
+                "buff_made_dead_context": "made_dead_by_action"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                }, 
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_reimagine_assimilated_population_on_planet_buff"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

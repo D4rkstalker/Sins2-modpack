@@ -1,7 +1,7 @@
 {
     "version": 0,
-	"make_dead_on_parent_buff_made_dead": true,
-	"make_dead_on_distance_to_parent_buff_exceeded":
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_distance_to_parent_buff_exceeded":
     {
         "distance": "radius_value"
     },
@@ -18,6 +18,20 @@
         "action_group":
         {
             "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "above",
+                    "effect_by_size": 
+                    {
+                        "small_unit": "distortion_field_effect_small",
+                        "medium_unit": "distortion_field_effect_medium",
+                        "large_unit": "distortion_field_effect_medium"
+                    }
+                }
+            },
             {
                 "constraint":
                 {
@@ -60,20 +74,20 @@
     "unit_mutations": [
         "disable_can_use_active_abilities",
         "disable_can_use_weapons",
-		"disable_can_passively_regenerate_hull",
-		"disable_can_passively_regenerate_armor",
-		"disable_can_passively_regenerate_shields",
-		"disable_can_have_shields_burst_restored",
-		"disable_can_update_build_progress",
-		"disable_can_update_unit_production",
-		"disable_can_hyperspace",
-		"disable_engines"
+        "disable_can_passively_regenerate_hull",
+        "disable_can_passively_regenerate_armor",
+        "disable_can_passively_regenerate_shields",
+        "disable_can_have_shields_burst_restored",
+        "disable_can_update_build_progress",
+        "disable_can_update_unit_production",
+        "disable_can_hyperspace",
+        "disable_engines"
     ],
     "gui":
     {
         "hud_icon": "vasari_offensive_support_cruiser_distortion_field_hud_icon",
         "name": "vasari_offensive_support_cruiser_distortion_field_name",
-		"is_visible_within_unit_tooltip": true,
-		"visibility_scope": "negative"
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative"
     }
 }

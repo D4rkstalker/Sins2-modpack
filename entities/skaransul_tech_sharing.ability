@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "action_data_source": "skaransul_tech_sharing",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "skaransul_tech_sharing_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "skaransul_tech_sharing_hud_icon",
+        "name": "npc_reward.skaransul_tech_sharing.name",
+        "tooltip_line_groups": [
+        {
+			"header_text": "tooltip.ability.on_trader_units",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "trader_restore_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_and_shield_restore_rate",
+                "value_id": "trader_restore_rate",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_advent_units",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "advent_damage_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "advent_damage_rate",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "advent_damage_penetration",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_vasari_units_without_shield_burst",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.enable_can_have_shields_burst_restored",
+                "value_color": "positive"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.on_vasari_units_with_shield_burst",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.enable_can_create_retargeting_torpedoes",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "vasari_shield_burst_restore_points_restore_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "vasari_shield_burst_restore_cooldown_duration_modifier"
+            }]
+        }]
+    }
+}

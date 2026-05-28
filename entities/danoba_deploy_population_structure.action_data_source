@@ -1,0 +1,99 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "owned_planet",
+        "target_filter":
+        {
+            "ownerships": [
+                "self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "build_structure_mine_hull_repair",
+        "action_value":
+        {
+            "transform_type": "per_max_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.017]
+        }
+    },
+    {
+        "action_value_id": "build_structure_mine_armor_repair",
+        "action_value":
+        {
+            "transform_type": "per_max_armor_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.017]
+        }
+    },
+    {
+        "action_value_id": "build_structure_mine_shields_repair",
+        "action_value":
+        {
+            "transform_type": "per_max_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.017]
+        }
+    },
+	{
+        "action_value_id": "max_population_points_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "crystal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "metal_income_rate_bonus_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "max_population_points_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_population_points",
+            "value_behavior": "additive",
+            "value_id": "max_population_points_value"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "mining_track_metal_income_rate_per_population_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "metal_income_rate_bonus_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "mining_track_crystal_income_rate_per_population_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "crystal_income_rate_bonus_value"
+        }
+    }]
+}

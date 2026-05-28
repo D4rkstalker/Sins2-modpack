@@ -1,0 +1,40 @@
+{
+    "version": 0,
+    "action_data_source": "grost_concentration_aura",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "grost_concentration_aura_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "grost_concentration_aura_hud_icon",
+        "name": "npc_reward.grost_concentration_aura.name",
+        "description": "npc_reward.grost_concentration_aura.description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "concentration_aura_radius"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "concentration_aura_radius"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.concentration_aura_header",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "concentration_aura_damage_modifier"
+            }]
+        }]
+    }
+}

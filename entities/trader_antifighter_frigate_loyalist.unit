@@ -13,13 +13,13 @@
     "physics":
     {
         "can_move_linear": true,
-        "max_linear_speed": 900.0,
+        "max_linear_speed": 800.0,
         "time_to_max_linear_speed": 4.0,
         "arrival_tolerance_spatial_radius_scalar": 0.25,
         "death_linear_speed_range": [0.75, 1.25],
         "can_move_angular": true,
-        "max_angular_speed": 50.0,
-        "time_to_max_angular_speed": 4.0,
+        "max_angular_speed": 20.0,
+        "time_to_max_angular_speed": 2.0,
         "max_bank_angle": 35.0,
         "death_angular_speed_range": [5.0, 10.0],
         "linear_acceleration_angle": 90.0,
@@ -85,9 +85,9 @@
         "has_sub_selection_grouping": true,
         "selection_group_unit_type": "combat_ship",
         "can_move": true,
+        "can_rotate": true,
         "can_attack": true,
-        "can_show_distance_to_plane_line": true,
-        "can_rotate": true
+        "can_show_distance_to_plane_line": true
     },
     "weapons":
     {
@@ -95,9 +95,9 @@
         {
             "weapon": "trader_antifighter_frigate_point_defense_beam",
             "mesh_point": "child.pdturret_mount_0",
-            "weapon_position": [-10.803877, 3.248874, 6.77173],
-            "forward": [0.0, 0.0, 1.0],
-            "up": [-0.0, 1.0, -0.0],
+            "weapon_position": [-10.803879, 3.248876, 6.77173],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -160.0,
@@ -112,9 +112,9 @@
         {
             "weapon": "trader_antifighter_frigate_point_defense_beam",
             "mesh_point": "child.pdturret_mount_1",
-            "weapon_position": [10.778549, 3.248877, 6.771729],
-            "forward": [0.0, 0.0, 1.0],
-            "up": [-0.0, 1.0, -0.0],
+            "weapon_position": [10.778546, 3.248876, 6.771729],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -10.0,
@@ -129,9 +129,9 @@
         {
             "weapon": "trader_antifighter_frigate_point_defense_beam",
             "mesh_point": "child.pdturret_mount_2",
-            "weapon_position": [-10.804204, 3.248875, -15.852016],
-            "forward": [-0.0, -0.0, -1.0],
-            "up": [0.0, 1.0, 0.0],
+            "weapon_position": [-10.804201, 3.248875, -15.852015],
+            "forward": [-1e-06, -0.0, -1.0],
+            "up": [-0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -10.0,
@@ -146,13 +146,47 @@
         {
             "weapon": "trader_antifighter_frigate_point_defense_beam",
             "mesh_point": "child.pdturret_mount_3",
-            "weapon_position": [10.778221, 3.248879, -15.852016],
-            "forward": [-0.0, -0.0, -1.0],
-            "up": [0.0, 1.0, 0.0],
+            "weapon_position": [10.778224, 3.248877, -15.852015],
+            "forward": [-1e-06, -0.0, -1.0],
+            "up": [-0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -160.0,
                 "max_angle": 10.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -70.0,
+                "max_angle": 15.0
+            }
+        },
+        {
+            "weapon": "trader_antifighter_frigate_point_defense_beam",
+            "mesh_point": "child.pdturret_mount_4",
+            "weapon_position": [10.86469, -2.603849, 6.799904],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [0.139173, -0.990268, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -185.0,
+                "max_angle": 5.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -70.0,
+                "max_angle": 15.0
+            }
+        },
+        {
+            "weapon": "trader_antifighter_frigate_point_defense_beam",
+            "mesh_point": "child.pdturret_mount_5",
+            "weapon_position": [-10.86503, -2.603801, 6.799904],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [-0.139173, -0.990268, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -5.0,
+                "max_angle": 185.0
             },
             "pitch_arc":
             {
@@ -166,9 +200,9 @@
                 ["trader_loyalist_unlock_antifighter_frigate_light_beam_weapon"]
             ],
             "mesh_point": "child.turret_mount_0",
-            "weapon_position": [0.050043, 7.761029, -4.835336],
-            "forward": [0.0, 0.0, 1.0],
-            "up": [-0.0, 1.0, -0.0],
+            "weapon_position": [0.050044, 7.761027, -4.835336],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -180.0,
@@ -211,11 +245,11 @@
         "can_ever_be_resurrected": true,
         "levels": [
         {
-            "max_hull_points": 325.0,
+            "max_hull_points": 400.0,
             "hull_point_restore_rate": 1.5,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 410.0,
+            "max_armor_points": 450.0,
             "armor_point_restore_rate": 2.25,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
@@ -251,7 +285,7 @@
     {
         "modifier_type": "max_shield_points",
         "value_behavior": "additive",
-        "value": 400.0,
+        "value": 250.0,
         "prerequisites": [
             ["trader_shields_frigate"]
         ]
@@ -260,6 +294,22 @@
     "tags": [
         "frigate"
     ],
+    "abilities": [
+    {
+        "abilities": []
+    },
+    {
+        "abilities": [
+			"special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "garrison"
+    },
+    {
+        "abilities": [
+			"special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "insurgent"
+    }],
     "ship_roles": [
         "attack_ship"
     ],
@@ -268,6 +318,6 @@
         "skins": [
             "trader_antifighter_frigate_rrr"]
     }],
-    "can_join_fleet": true,
-    "action_effect_size": "small_unit"
+    "action_effect_size": "small_unit",
+    "can_join_fleet": true
 }

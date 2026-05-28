@@ -8,7 +8,24 @@
             "center": [0.0, 8e-06, 3.1e-05],
             "extents": [394.124542, 192.930969, 900.904419]
         },
-        "collision_rank": 2
+        "collision_rank": 2,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 50.0, -700.0],
+            "radius": 225.0
+        },
+        {
+            "center": [0.0, 0.0, -250.0],
+            "radius": 275.0
+        },
+        {
+            "center": [0.0, -25.0, 200.0],
+            "radius": 200.0
+        },
+        {
+            "center": [0.0, -50.0, 550.0],
+            "radius": 125.0
+        }]
     },
     "physics":
     {
@@ -62,7 +79,7 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft_corvette"
         ],
-        "attack_target_type_groups_matching_weapon": "trader_battle_capital_ship_heavy_gauss",
+        "attack_target_type_groups_matching_weapon": "dlc2_trader_rebel_super_capital_ship_gauss",
         "auto_follow_target_priority": 5.0,
         "pursuit":
         {
@@ -74,7 +91,7 @@
     {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
-        "attack_target_type": "capital"
+        "attack_target_type": "supercapital"
     },
     "user_interface":
     {
@@ -780,13 +797,13 @@
                     "types": [
                         "offense"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 },
                 {
                     "types": [
                         "utility"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 }],
                 "weight": 1.0
             }],
@@ -1678,11 +1695,11 @@
         "exotic_price": [
         {
             "exotic_type": "offense",
-            "count": 3
+            "count": 2
         },
         {
             "exotic_type": "utility",
-            "count": 3
+            "count": 2
         }],
         "prerequisites": [
             ["dlc2_trader_unlock_rebel_super_capital_ship"]
@@ -1790,7 +1807,6 @@
         "build_group": [
             "dlc2_trader_rebel_super_capital_ship_modular_missile",
             "dlc2_trader_rebel_super_capital_ship_turret_missile",
-            "trader_missile_guidance_computer",
             "trader_rapid_autoloader",
             "trader_targeting_array",
             "trader_missile_armor"
@@ -1818,7 +1834,19 @@
             "trader_flak_burst"
         ],
         "weight": 10.0
-    }],
+    },
+        {
+            "weight": 8.0,
+            "build_group": [
+                "trader_tactical_analyst"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
+            ]
+        }],
     "culture_provider":
     {},
     "ship_component_shop":
@@ -1832,6 +1860,7 @@
         "super_capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 10,
     "abilities": [
     {
         "abilities": [

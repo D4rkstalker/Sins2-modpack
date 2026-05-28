@@ -3,6 +3,20 @@
     "level_count": 3,
     "target_filters": [
     {
+        "target_filter_id": "resurrection_ai_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ]
+        }
+    },
+    {
         "target_filter_id": "resurrection_planet_target_filter",
         "target_filter":
         {
@@ -15,7 +29,7 @@
                 "enemy",
                 "friendly",
                 "none"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "composite_or",
@@ -47,24 +61,10 @@
         }
     },
     {
-        "action_value_id": "resurrection_min_supply_value",
-        "action_value":
-        {
-            "values": [100.0, 100.0, 100.0]
-        }
-    },
-    {
-        "action_value_id": "resurrection_range_distance",
-        "action_value":
-        {
-            "values": [100000.0, 100000.0, 100000.0]
-        }
-    },
-    {
         "action_value_id": "resurrection_max_supply_value",
         "action_value":
         {
-            "values": [20.0, 30.0, 40.0]
+            "values": [25.0, 37.5, 50.0]
         }
     },
     {
@@ -72,6 +72,13 @@
         "action_value":
         {
             "values": [15.0, 15.0, 15.0]
+        }
+    },
+    {
+        "action_value_id": "resurrection_ai_auto_cast_supply_value",
+        "action_value":
+        {
+            "values": [150.0, 200.0, 250.0]
         }
     }],
     "effect_alias_bindings": [

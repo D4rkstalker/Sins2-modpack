@@ -1,0 +1,71 @@
+{
+    "version": 0,
+    "action_data_source": "skaransul_send_envoy",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "skaransul_send_envoy_on_fixture"
+                },        
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "trader_envoy_frigate",
+                            "weight": 1.0
+                        },
+                        {
+                            "unit": "advent_skaransul_envoy_frigate",
+                            "weight": 1.0
+                        },
+                        {
+                            "unit": "vasari_envoy_frigate",
+                            "weight": 1.0
+                        }]
+                    },
+                    "special_operation_unit_kind": "nilari_relentless_evangelists",
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "buff_owner_player"
+                    },
+                    "available_supply_value": "available_supply_value",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "alutar_clairvoyance_target_filter"
+        ]
+    },
+    "gui":
+    {
+        "tooltip_line_groups": [
+        {
+            "header_text": "advent_unity_clairvoyance_detection_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "alutar_clairvoyance_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

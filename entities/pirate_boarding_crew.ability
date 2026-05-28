@@ -14,56 +14,24 @@
                 {
                     "unit_type": "target"
                 },
-                "operators": [
+                "travel_time":
                 {
-                    "operator_type": "change_owner_player",
-                    "new_owner_player":
-                    {
-                        "player_type": "unit_owner",
-                        "owned_unit":
-                        {
-                            "unit_type": "first_spawner"
-                        }
-                    }
+                    "travel_time_source": "explicit_time",
+                    "explicit_time_value": "boarding_crew_delay_time_value"
                 },
+                "operators": [
                 {
                     "operator_type": "apply_buff",
-                    "buff": "advent_battle_psionic_capital_ship_domination_prevent"
+                    "buff": "pirate_boarding_crew"
                 },
                 {
-                    "operator_type": "play_point_effect",
-                    "effect_definition":
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "action_data_source",
+                    "mesh_point": "aura",
+                    "effects":
                     {
-                        "binding": "action_data_source",
-                        "mesh_point": "center",
-                        "effect_by_size":
-                        {
-                            "small_unit": "pirate_boarding_crew_activate_on_target_small",
-                            "medium_unit": "pirate_boarding_crew_activate_on_target_medium",
-                            "large_unit": "pirate_boarding_crew_activate_on_target_large"
-                        }
-                    }
-                }]
-            },
-            {
-                "action_type": "use_unit_operators_on_single_unit",
-                "destination_unit":
-                {
-                    "unit_type": "current_spawner"
-                },
-                "operators": [
-                {
-                    "operator_type": "play_point_effect",
-                    "effect_definition":
-                    {
-                        "binding": "action_data_source",
-                        "mesh_point": "center",
-                        "effect_by_size":
-                        {
-                            "small_unit": "pirate_boarding_crew_activate_on_self_small",
-                            "medium_unit": "pirate_boarding_crew_activate_on_self_medium",
-                            "large_unit": "pirate_boarding_crew_activate_on_self_large"
-                        }
+                        "projectile_travel_effect": "pirate_boarding_crew_shuttle",
+                        "projectile_travel_easing_function": "in_out_cubic"
                     }
                 }]
             }]
@@ -89,13 +57,17 @@
             },
             "target_definitions": [
             {
-                "target_filter": "boarding_crew_auto_cast_target_filter"
+                "target_filter": "boarding_crew_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "boarding_crew_auto_cast_low_priority_target_filter"
             }]
         }
     },
     "gui":
     {
         "hud_icon": "pirate_boarding_crew_hud_icon",
+        "tooltip_picture": "pirate_boarding_crew_tooltip_picture",
         "name": "npc_reward.pirate_boarding_crew_name",
         "description": "npc_reward.pirate_boarding_crew_description",
         "targeting":
@@ -105,6 +77,24 @@
             {
                 "range": "boarding_crew_range_value"
             }
-        }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.target_must_die_to_capture",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "boarding_crew_damage_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "boarding_crew_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
     }
 }

@@ -1,0 +1,155 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "mutual_threat_ally_factory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "cruiser",
+                "titan"
+            ],
+            "ownerships": [
+                "ally"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_unit_factory",
+                "must_be_functional": true
+            }]
+        }
+    },
+    {
+        "target_filter_id": "mutual_threat_minor_faction_factory_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "cruiser",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_unit_factory",
+                "must_be_functional": true
+            },
+            {
+                "constraint_type": "has_buff",
+                "buff": "npc_player_buffs_on_unit"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "mutual_threat_ally_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "ally",
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "mutual_threat_orbital_extraction_metal_income_rate_value",
+        "action_value":
+        {
+            "values": [0.18]
+        }
+    },
+    {
+        "action_value_id": "mutual_threat_orbital_extraction_crystal_income_rate_value",
+        "action_value":
+        {
+            "values": [0.18]
+        }
+    },
+    {
+        "action_value_id": "mutual_threat_factory_unit_build_time_value",
+        "action_value":
+        {
+            "values": [-0.18]
+        }
+    },
+    {
+        "action_value_id": "mutual_threat_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "mutual_threat_duration_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "mutual_threat_influence_points_recharge_rate_value",
+        "action_value":
+        {
+            "values": [0.12]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "mutual_threat_influence_points_recharge_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "influence_points_recharge_rate",
+            "value_behavior": "scalar",
+            "value_id": "mutual_threat_influence_points_recharge_rate_value"
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "mutual_threat_orbital_extraction_metal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "mutual_threat_orbital_extraction_metal_income_rate_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "mutual_threat_orbital_extraction_crystal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "mutual_threat_orbital_extraction_crystal_income_rate_value"
+        }
+    }],
+    "buff_unit_factory_modifiers": [
+    {
+        "buff_unit_factory_modifier_id": "mutual_threat_factory_build_time_modifier",
+        "buff_unit_factory_modifier":
+        {
+            "modifier_type": "build_time",
+            "value_behavior": "scalar",
+            "value_id": "mutual_threat_factory_unit_build_time_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "mutual_threat_activate",
+        "alias_binding":
+        {
+            "particle_effect": "MutualThreat"
+        }
+    }]
+}

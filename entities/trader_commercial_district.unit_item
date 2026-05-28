@@ -11,57 +11,50 @@
     "item_level_source": "research_prerequisites_per_level",
     "item_level_prerequisites": [
         [
-			["trader_commercial_district_credit_rate"]
+            ["trader_commercial_district_credit_rate"]
         ]
     ],
-    "build_time": 60.0,
+    "build_time": 75.0,
     "price":
     {
-        "credits": 750.0,
-        "metal": 200.0,
-        "crystal": 100.0
+        "credits": 1000.0,
+        "metal": 250.0,
+        "crystal": 250.0
     },
-    "exotic_price": [
-        {
-			"exotic_type": "economic",
-			"count": 1
-        }],
     "max_count_on_unit": 1,
     "required_planet_level": 5,
     "planet_type_groups": [
     {
         "planet_types": [
-			"city",
-			"desert",
-			"desert_home",
-			"greenhouse",
-			"oceanic",
-			"swamp",
-			"terran",
-			"terran_home"
+            "barren",
+            "city",
+            "crystalline",
+            "desert",
+            "desert_home",
+            "ferrous",
+            "ferrous_home",
+            "ice",
+            "ice_moon",
+            "irradiated",
+            "greenhouse",
+            "magnetic",
+            "moon",
+            "oceanic",
+            "swamp",
+            "terran",
+            "terran_home",
+            "volcanic",
+            "volcanic_moon"
         ],
         "build_prerequisites": [
-			["trader_unlock_commercial_district_unit_item"]
+            ["trader_unlock_commercial_district_unit_item"]
         ]
     }],
-    "planet_modifiers": [
+    "other_item_requirements":
     {
-        "modifier_type": "commerce_track_credit_income_rate_per_population",
-        "value_behavior": "scalar",
-        "values": [0.1, 0.25]
-    }],
-    "player_modifiers":
-    {
-        "npc_modifiers": [
-        {
-			"value_behavior": "scalar",
-			"modifier_type": "sell_metal_credits_received",
-			"value": 0.05
-        },
-        {
-			"value_behavior": "scalar",
-			"modifier_type": "sell_crystal_credits_received",
-			"value": 0.05
-        }]
-    }
+        "mutually_exclusive_items": [
+            "trader_high_density_district",
+            "trader_industrial_complex"]
+    },
+    "ability": "trader_commercial_district"
 }

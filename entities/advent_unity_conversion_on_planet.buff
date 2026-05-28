@@ -1,6 +1,11 @@
 {
     "version": 0,
     "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
@@ -74,7 +79,7 @@
                 "effect_definition":
                 {
                     "binding": "action_data_source",
-                    "mesh_point": "above",
+                    "mesh_point": "center",
                     "effect_by_size":
                     {
                         "small_unit": "advent_unity_conversion_buff_small",
@@ -92,28 +97,38 @@
                 }
             },
             {
-				"constraint":
+                "constraint":
                 {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
+                    "constraint_type": "composite_and",
+                    "constraints": [
                     {
-                        "unit_type": "first_spawner"
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "conversion_enemy_planet_target_filter"
                     },
-                    "unit_constraint":
                     {
-                        "constraint_type": "has_definition",
-                        "unit_definition": "player_buffs_advent_loyalist"
-                    }
+                        "constraint_type": "research_prerequisites_are_met",
+                        "player":
+                        {
+                            "player_type": "buff_owner_player"
+                        },
+                        "prerequisites": [
+                            ["advent_reimagine_assimilated_population"]
+                        ]
+                    }]
                 },
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
                 {
                     "unit_type": "current_spawner"
                 },
-				"operators": [
+                "operators": [
                 {
                     "operator_type": "apply_buff",
-                    "buff": "advent_unity_conversion_on_planet_ai"
+                    "buff": "advent_unity_conversion_on_planet_assimilated_populace"
                 }]
             }]
         }
@@ -142,6 +157,34 @@
                 {
                     "operator_type": "colonize_planet",
                     "show_planet_colonized_notification": true
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "research_prerequisites_are_met",
+                        "player":
+                        {
+                            "player_type": "unit_owner",
+                            "owned_unit":
+                            {
+                                "unit_type": "current_spawner"
+                            }
+                        },
+                        "prerequisites": [
+                            ["advent_upgrade_unity_abilities"]
+                        ]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_conversion_damage"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "above",
+                        "effect": "generic_colonized_effect"
+                    }
                 }]
             },
             {
@@ -163,7 +206,7 @@
                 "label_text": "tooltip.ability.planet_bombing_damage",
                 "value_id": "conversion_bombing_damage_value",
                 "value_suffix": "per_second",
-				"value_color": "negative"
+                "value_color": "negative"
             }]
         }]
     }

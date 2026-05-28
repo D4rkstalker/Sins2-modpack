@@ -1,0 +1,233 @@
+{
+    "version": 0,
+    "action_data_source": "trader_salvage_kit_unit_item",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "credits_cost": "salvage_kit_credit_cost_value",
+        "metal_cost": "salvage_kit_metal_cost_value",
+        "cooldown_time": "cooldown_time",
+        "max_charge_count": "salvage_kit_charge_count_value",
+        "actions":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "trader_salvage_kit_unit_item_charge_cooldown"
+                    }
+                }
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_salvage_kit_unit_item"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "value_comparison",
+                            "value_a": "salvage_kit_action_level_value",
+                            "comparison_type": "greater_than",
+                            "value_b": "fixed_one"
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "unit_passes_unit_constraint",
+                                "unit":
+                                {
+                                    "unit_type": "current_spawner"
+                                },
+                                "unit_constraint":
+                                {
+                                    "constraint_type": "has_buff",
+                                    "buff": "trader_salvage_kit_unit_item_charge_count"
+                                }
+                            }
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "unit_passes_unit_constraint",
+                                "unit":
+                                {
+                                    "unit_type": "current_spawner"
+                                },
+                                "unit_constraint":
+                                {
+                                    "constraint_type": "has_buff",
+                                    "buff": "trader_salvage_kit_unit_item_charge_count_level_two"
+                                }
+                            }
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_salvage_kit_unit_item_charge_count_level_three"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "composite_and",
+                            "constraints": [
+                            {
+                                "constraint_type": "value_comparison",
+                                "value_a": "salvage_kit_action_level_value",
+                                "comparison_type": "equal_to",
+                                "value_b": "fixed_one"
+                            },
+                            {
+                                "constraint_type": "composite_not",
+                                "constraint":
+                                {
+                                    "constraint_type": "unit_passes_unit_constraint",
+                                    "unit":
+                                    {
+                                        "unit_type": "current_spawner"
+                                    },
+                                    "unit_constraint":
+                                    {
+                                        "constraint_type": "has_buff",
+                                        "buff": "trader_salvage_kit_unit_item_charge_count"
+                                    }
+                                }
+                            }]
+                        },
+                        {
+                            "constraint_type": "composite_and",
+                            "constraints": [
+                            {
+                                "constraint_type": "value_comparison",
+                                "value_a": "salvage_kit_action_level_value",
+                                "comparison_type": "greater_than",
+                                "value_b": "fixed_one"
+                            },
+                            {
+                                "constraint_type": "unit_passes_unit_constraint",
+                                "unit":
+                                {
+                                    "unit_type": "current_spawner"
+                                },
+                                "unit_constraint":
+                                {
+                                    "constraint_type": "has_buff",
+                                    "buff": "trader_salvage_kit_unit_item_charge_count_level_two"
+                                }
+                            }]
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_salvage_kit_unit_item_charge_count_level_two"
+                },
+                {	
+                    "constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "value_comparison",
+                            "value_a": "salvage_kit_action_level_value",
+                            "comparison_type": "equal_to",
+                            "value_b": "fixed_zero"
+                        },
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "trader_salvage_kit_unit_item_charge_count"
+                            }
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_salvage_kit_unit_item_charge_count"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_missing_armor",
+                    "amount_missing_threshold": 500.0
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.item_stack_count",
+                "value_id": "salvage_kit_charge_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.credits_price_label",
+                "value_id": "salvage_kit_credit_cost_value",
+                "visibility": "upgrade_only"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.metal_price_label",
+                "value_id": "salvage_kit_metal_cost_value",
+                "visibility": "upgrade_only"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "armor_restore_duration",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_restore_rate",
+                "value_id": "armor_restore_amount_per_second",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            }]
+        }]
+    }
+}

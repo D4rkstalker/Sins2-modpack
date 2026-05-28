@@ -21,15 +21,12 @@
                 "cruiser",
                 "frigate",
                 "structure",
-				"corvette"
+                "corvette"
             ],
             "ownerships": [
                 "enemy"
             ],
             "constraints": [
-            {
-                "constraint_type": "is_in_current_gravity_well"
-            },
             {
                 "constraint_type": "composite_not",
                 "constraint":
@@ -37,14 +34,6 @@
                     "constraint_type": "has_buff",
                     "buff": "vasari_offensive_support_cruiser_distortion_field_on_target",
                     "include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_mutation",
-					"mutation": "disable_can_use_weapons"
                 }
             },
             {
@@ -60,7 +49,7 @@
                 "cruiser",
                 "frigate",
                 "structure",
-				"corvette"
+                "corvette"
             ],
             "ownerships": [
                 "enemy"
@@ -104,7 +93,7 @@
         "action_value_id": "auto_cast_target_value",
         "action_value":
         {
-            "values": [3.0]
+            "values": [6.0]
         }
     },
     {
@@ -119,6 +108,47 @@
         "action_value":
         {
             "values": [1600.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "distortion_field_activate",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_TeleportDisableActivate"
+        }
+    },
+    {
+        "alias_name": "distortion_field_channel",
+        "alias_binding":
+        {
+            "particle_effect": "Buff_TeleportDisableChanneling"
+        }
+    },
+	{
+		"alias_name": "distortion_field_effect_small",
+		"alias_binding":
+		{
+			"particle_effect": "CapitalBuff_IonDisableSmall",
+            "sounds": [
+                "Effect_TeleportDisable"]
+		}
+    },
+	{
+		"alias_name": "distortion_field_effect_medium",
+		"alias_binding":
+		{
+			"particle_effect": "CapitalBuff_IonDisableLarge",
+            "sounds": [
+                "Effect_TeleportDisable"]
+		}
+    },
+    {
+        "alias_name": "distortion_field_sound",
+        "alias_binding":
+        {
+            "sounds": [
+                "HYPERSPACE_EXIT"]
         }
     }]
 }

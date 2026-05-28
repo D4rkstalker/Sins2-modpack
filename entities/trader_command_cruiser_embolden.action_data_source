@@ -1,0 +1,170 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "embolden_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "starbase",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.1
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_command_cruiser_embolden",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "embolden_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.1
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_command_cruiser_embolden",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "embolden_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_shields"
+                },
+                {
+                    "constraint_type": "has_weapon"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "embolden_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    },
+    {
+        "action_value_id": "embolden_cooldown_time_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    },
+    {
+        "action_value_id": "embolden_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "embolden_range_value",
+        "action_value":
+        {
+            "values": [4000.0]
+        }
+    },
+    {
+        "action_value_id": "embolden_shield_point_restore_scalar_after_damage_taken_bonus_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "embolden_cooldown_duration_bonus_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "embolden_shield_point_restore_scalar_after_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "embolden_shield_point_restore_scalar_after_damage_taken_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "embolden_cooldown_duration_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "embolden_cooldown_duration_bonus_value"
+        }
+    }]
+}

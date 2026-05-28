@@ -1,0 +1,98 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "action_values": [
+    {
+        "action_value_id": "scar_duration_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, 10.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0, 0.0, 0.01]
+            }
+        }
+    },
+    {
+        "action_value_id": "scar_penetration_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, 500.0]
+        }
+    },
+    {
+        "action_value_id": "scar_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, -20.0],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0, 0.0, -0.25]
+            }
+        }
+    },
+    {
+        "action_value_id": "scar_degen_value",
+        "action_value":
+        {
+            "values": [0.0, 0.0, -0.25],
+            "ratio":
+            {
+                "ratio_type": "per_spell_power",
+                "ratio_values": [0.0, 0.0, -0.0025]
+            }
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "scar_shield_degen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "scar_degen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "scar_armor_degen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "scar_degen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "scar_hull_degen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "scar_degen_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "psi_scar_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "psi_scar_on_large"
+        }
+    },
+    {
+        "alias_name": "psi_scar_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "psi_scar_on_medium"
+        }
+    },
+    {
+        "alias_name": "psi_scar_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "psi_scar_on_small"
+        }
+    }]
+}

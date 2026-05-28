@@ -1,6 +1,6 @@
 {
     "version": 0,
-	"level_count": 4,
+    "level_count": 5,
     "target_filters": [
     {
         "target_filter_id": "demolition_team_target_filter",
@@ -31,7 +31,7 @@
             "constraints": [
             {
                 "constraint_type": "has_buff",
-				"buff": "trader_transport_capital_ship_boarding_party_is_boarded"
+                "buff": "trader_transport_capital_ship_boarding_party_is_boarded"
             }]
         }
     },
@@ -50,11 +50,11 @@
             "constraints": [
             {
                 "constraint_type": "has_missing_hull",
-				"percentage_missing_threshold": 0.25
+                "percentage_missing_threshold": 0.25
             },
             {
                 "constraint_type": "has_buff",
-				"buff": "trader_transport_capital_ship_boarding_party_is_boarded"
+                "buff": "trader_transport_capital_ship_boarding_party_is_boarded"
             },
             {
                 "constraint_type": "has_recently_been_damaged"
@@ -74,12 +74,13 @@
                 "frigate",
                 "starbase",
                 "structure",
-				"corvette",
-				"super_capital_ship",
+                "corvette",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -92,8 +93,8 @@
                 "frigate",
                 "starbase",
                 "structure",
-				"corvette",
-				"super_capital_ship",
+                "corvette",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
@@ -115,7 +116,7 @@
             {
                 "unit_type": "target"
             },
-            "values": [1.0, 1.333333, 1.666667, 2.0]
+            "values": [1.0, 1.33, 1.67, 2.0, 2.333]
         }
     },
     {
@@ -127,66 +128,101 @@
             {
                 "unit_type": "target"
             },
-            "values": [2.0, 2.666667, 3.333333, 4.0]
+            "values": [2.0, 2.67, 3.33, 4.0, 4.67]
         }
     },
     {
         "action_value_id": "demolition_team_pierce_value",
         "action_value":
         {
-            "values": [200.0, 200.0, 200.0, 200.0]
+            "values": [200.0, 200.0, 200.0, 200.0, 200.0]
         }
     },
     {
         "action_value_id": "demolition_team_antimatter_cost_value",
         "action_value":
         {
-            "values": [85.0, 85.0, 85.0, 85.0]
+            "values": [72.0, 79.0, 86.0, 93.0, 100.0]
         }
     },
     {
         "action_value_id": "demolition_team_max_target_count_value",
         "action_value":
         {
-            "values": [25.0, 25.0, 25.0, 25.0]
+            "values": [25.0, 25.0, 25.0, 25.0, 25.0]
         }
     },
     {
         "action_value_id": "demolition_team_auto_cast_target_count_value",
         "action_value":
         {
-            "values": [5.0, 5.0, 5.0, 5.0]
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
         }
     },
     {
         "action_value_id": "boarding_party_travel_speed_value",
         "action_value":
         {
-            "values": [1000.0, 1000.0, 1000.0, 1000.0]
+            "values": [1000.0, 1000.0, 1000.0, 1000.0, 1000.0]
         }
     },
     {
         "action_value_id": "demolition_team_range_value",
         "action_value":
         {
-            "values": [8000.0, 8000.0, 8000.0, 8000.0]
+            "values": [8000.0, 8000.0, 8000.0, 8000.0, 8000.0]
         }
     },
     {
         "action_value_id": "demolition_team_radius_value",
         "action_value":
         {
-            "values": [2000.0, 2500.0, 3000.0, 3500.0]
+            "values": [2000.0, 2500.0, 3000.0, 3500.0, 4000.0]
         }
     },
     {
         "action_value_id": "demolition_team_cooldown_value",
         "action_value":
         {
-            "values": [90.0, 80.0, 70.0, 60.0]
+            "values": [90.0, 80.0, 70.0, 60.0, 50.0]
         }
     }],
     "effect_alias_bindings": [
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage_large",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Damage_Titan"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage_medium",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Damage_Capship"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage_small",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Damage_Frigate"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_target",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Target"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_hit",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Hit"
+        }
+    },
     {
         "alias_name": "trader_transport_capital_ship_scout_muzzle",
         "alias_binding":

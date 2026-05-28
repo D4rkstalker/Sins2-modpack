@@ -1,0 +1,164 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_current_spawner_made_dead": false,
+    "make_dead_on_distance_to_parent_buff_exceeded":
+    {
+        "distance": "essence_reservoir_radius"
+    },
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "per_source_ability",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "players_have_alliance_relationship",
+                "player_a":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "relationship_type": "enemy",
+                "player_b":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "first_spawner"
+                    }
+                }
+            },
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_made_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "essence_reservoir_small_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "buff": "parent_buff",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "essence_reservoir_max_stack_count_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "essence_reservoir_medium_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "buff": "parent_buff",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "essence_reservoir_medium_stack_value"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "essence_reservoir_max_stack_count_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "essence_reservoir_large_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "buff": "parent_buff",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "essence_reservoir_large_stack_value"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "essence_reservoir_max_stack_count_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "essence_reservoir_huge_target_filter"
+                },
+                "action_type": "change_buff_memory_float_value",
+                "buff": "parent_buff",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "essence_reservoir_huge_stack_value"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "essence_reservoir_max_stack_count_value"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "buff": "parent_buff",
+                "float_variable": "stacks_expiry_time",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "common_simulation_time_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "essence_reservoir_stack_duration_value"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

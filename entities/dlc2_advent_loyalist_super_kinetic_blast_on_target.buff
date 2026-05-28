@@ -29,12 +29,40 @@
             "actions": [
             {
                 "action_type": "start_repel_from_unit",
+		"constraint":
+		{
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                    	"unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "kinetic_blast_physics1_target_filter"
+		},
                 "repulsion_origin_unit":
                 {
                     "unit_type": "previous_spawner"
                 },
                 "starting_linear_speed_value": "kinetic_blast_physics_starting_linear_speed_value",
                 "terminal_linear_speed_value": "kinetic_blast_physics_terminal_linear_speed_value",
+                "time_to_terminal_linear_speed_value": "kinetic_blast_physics_time_to_terminal_linear_speed_value"
+            },
+            {
+                "action_type": "start_repel_from_unit",
+		"constraint":
+		{
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                    	"unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "kinetic_blast_physics2_target_filter"
+		},
+                "repulsion_origin_unit":
+                {
+                    "unit_type": "previous_spawner"
+                },
+                "starting_linear_speed_value": "kinetic_blast_physics_starting_linear_speed2_value",
+                "terminal_linear_speed_value": "kinetic_blast_physics_terminal_linear_speed2_value",
                 "time_to_terminal_linear_speed_value": "kinetic_blast_physics_time_to_terminal_linear_speed_value"
             }]
         }
@@ -53,16 +81,7 @@
     {
         "hud_icon": "dlc2_advent_loyalist_super_kinetic_blast_hud_icon",
         "name": "dlc2_advent_loyalist_super_kinetic_blast_ability_name",
-		"visibility_scope": "negative",
-		"is_visible_within_unit_tooltip": true,
-        "tooltip_line_groups": [
-        {
-            "lines": [
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.push_speed",
-                "value_id": "kinetic_blast_physics_terminal_linear_speed_value"
-            }]
-        }]
+        "visibility_scope": "negative",
+        "is_visible_within_unit_tooltip": true
     }
 }

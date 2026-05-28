@@ -13,7 +13,7 @@
     "physics":
     {
         "can_move_angular": true,
-        "max_angular_speed": 2.5,
+        "max_angular_speed": 7.5,
         "death_angular_speed_range": [3.0, 5.0]
     },
     "attack":
@@ -25,13 +25,18 @@
     },    
     "ai":
     {
+        "attack_target_type_groups": [
+            "defense_starbase_titan",
+            "capital_supercapital_heavy"
+        ],
         "attack_target_type_groups_to_ignore": [
-            "torpedo_strikecraft"]
+            "torpedo_strikecraft_corvette"]
     },
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "defense"
     },
     "player_ai":
     {

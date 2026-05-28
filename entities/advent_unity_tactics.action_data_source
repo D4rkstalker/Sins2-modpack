@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "level_count": 1,
+    "target_filters": [
+    {
+        "target_filter_id": "advent_unity_tactics_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "frigate",
+		"cruiser"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "advent_unity_tactics_radius",
+        "action_value":
+        {
+            "values": [10000.0]
+        }
+    },
+    {
+        "action_value_id": "advent_unity_tactics_damage_taken_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    },
+    {
+        "action_value_id": "advent_unity_tactics_battle_regen_value",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "advent_unity_tactics_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "advent_unity_tactics_damage_taken_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_tactics_shield_battle_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_scalar_after_damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "advent_unity_tactics_battle_regen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_tactics_armor_battle_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_scalar_after_damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "advent_unity_tactics_battle_regen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_tactics_hull_battle_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_scalar_after_damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "advent_unity_tactics_battle_regen_value"
+        }
+    }]
+}

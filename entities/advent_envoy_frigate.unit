@@ -60,7 +60,8 @@
     "ai_attack_target":
     {
         "attack_priority": 49.0,
-        "is_always_a_threat": true
+        "is_always_a_threat": true,
+        "attack_target_type": "support"
     },
     "player_ai":
     {
@@ -92,7 +93,7 @@
     },
     "spawn_debris":
     {
-        "spawn_debris_time": 1.0,
+        "spawn_debris_time": 1.95,
         "generic_group_name": "advent",
         "generic_counts":
         {
@@ -111,13 +112,16 @@
             "max_hull_points": 600.0,
             "hull_point_restore_rate": 1.2,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+            "hull_point_restore_scalar_after_damage_taken": 0.0,
             "max_armor_points": 0.0,
-            "armor_point_restore_rate": 0.0,
+            "armor_point_restore_rate": 1.2,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
-            "armor_strength": 0.0,
+            "armor_point_restore_scalar_after_damage_taken": 0.0,
+            "armor_strength": 5.0,
             "max_shield_points": 850.0,
             "shield_point_restore_rate": 2.68,
             "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+            "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
                 "cooldown_duration": 60.0,
@@ -147,6 +151,31 @@
         "supply_cost": 8,
         "build_group_id": "frigate"
     },
+    "unit_modifiers": [
+    {
+        "modifier_type": "armor_strength",
+        "value_behavior": "additive",
+        "value": 30.0,
+        "prerequisites": [
+            ["advent_rebel_envoy_fleet_tactics"]
+        ]
+    },
+    {
+        "modifier_type": "max_armor_points",
+        "value_behavior": "additive",
+        "value": 600.0,
+        "prerequisites": [
+            ["advent_rebel_envoy_fleet_tactics"]
+        ]
+    },
+    {
+        "modifier_type": "max_linear_speed",
+        "value_behavior": "additive",
+        "value": 500.0,
+        "prerequisites": [
+            ["advent_rebel_envoy_fleet_tactics"]
+        ]
+    }],
     "culture_provider":
     {},
     "target_filter_unit_type": "frigate",
@@ -157,7 +186,8 @@
     {
         "abilities": [
             "advent_envoy_frigate_culture_provider",
-            "advent_envoy_frigate_culture_resistance"
+            "advent_envoy_frigate_culture_resistance",
+		"advent_rebel_envoy_pray_aura"
         ]
     }],
     "ship_roles": [

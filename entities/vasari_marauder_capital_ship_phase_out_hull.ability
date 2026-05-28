@@ -18,29 +18,6 @@
                 },
                 "operators": [
                 {
-					"constraint":
-					{
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "operand_destination"
-                        },
-                        "target_filter_id": "phase_out_hull_target_filter_enemy"
-					},
-                    "operator_type": "apply_buff",
-                    "buff": "vasari_marauder_capital_ship_phase_out_hull"
-                },
-                {
-					"constraint":
-					{
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "operand_destination"
-                        },
-                        "target_filter_id": "phase_out_hull_target_filter_friendly"
-					},
-
                     "operator_type": "apply_buff",
                     "buff": "vasari_marauder_capital_ship_phase_out_hull_invuln"
                 },
@@ -57,6 +34,48 @@
                             "large_unit": "vasari_marauder_capital_ship_phase_out_hull_activate_large"
                         }
                     }
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "constraint": 
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "phase_out_ally"
+                },
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_ally"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "constraint": 
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "phase_out_enemy"
+                },
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_enemy"
                 }]
             }]
         },
@@ -82,12 +101,22 @@
             },
             "target_definitions": [
             {
+                "target_filter": "phase_out_hull_auto_cast_high_priority_ally_filter"
+            },
+            {
                 "target_filter": "phase_out_hull_auto_cast_high_priority_target_filter"
             },
             {
                 "target_filter": "phase_out_hull_auto_cast_low_priority_target_filter"
+            },
+            {
+                "target_filter": "phase_out_hull_auto_cast_low_priority_ally_filter"
             }]
         }
+    },
+    "unit_constraint_params":
+    {
+        "unit_level_for_has_unit_level_constraint_value": "phase_out_hull_auto_cast_level_minimum"
     },
     "gui":
     {
@@ -112,13 +141,27 @@
                 "value_id": "phase_out_hull_invuln_duration_value",
                 "value_suffix": "seconds"
             }]
-	    },
-	    {
-	    "header_text": "tooltip.after_invuln_ends",
+        },
+        {
+	    "header_text": "tooltip.on_friendly",
             "lines": [
             {
                 "rendering_type": "buff_unit_modifier",
                 "unit_modifier_id": "damage_taken"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_taken_duration",
+                "value_id": "phase_out_hull_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+	    "header_text": "tooltip.on_enemy",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "damage_amplify"
             },
             {
                 "rendering_type": "single_value",

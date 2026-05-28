@@ -3,7 +3,7 @@
     "level_count": 5,
     "target_filters": [
     {
-        "target_filter_id": "replicate_forces_auto_cast_target_filter",
+        "target_filter_id": "replicate_forces_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -11,19 +11,35 @@
             ],
             "ownerships": [
                 "friendly"
-			],
+            ],
             "constraints": [
             {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
-                }
-			},
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal"
+            },
             {
                 "constraint_type": "is_always_a_threat"
-			}]
+            }]
+        }
+    },
+    {
+        "target_filter_id": "replicate_forces_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "frigate"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal"
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
         }
     },
     {
@@ -36,16 +52,60 @@
             ],
             "ownerships": [
                 "friendly"
-			],
-			"constraints": [
+            ],
+            "constraints": [
             {
-                "constraint_type": "composite_not",
-                "constraint":
+                "constraint_type": "composite_or",
+                "constraints": [
                 {
-                    "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
-                }
-			}]
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "cannot_be_captured_or_cloned"
+                    }
+                },
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "skaransul_indomitable_spirit_on_target"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_definition",
+                            "unit_definition": "vasari_greater_nanite_frigate"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_definition",
+                            "unit_definition": "vasari_support_nanite_frigate"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_definition",
+                            "unit_definition": "vasari_combat_nanite_frigate"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_definition",
+                            "unit_definition": "vasari_assault_nanite_frigate"
+                        }
+                    }]
+                }]
+            }]
         }
     }],
     "action_values": [
@@ -53,7 +113,7 @@
         "action_value_id": "replicate_forces_antimatter_cost_value",
         "action_value":
         {
-            "values": [120.0, 110.0, 100.0, 95.0, 90.0]
+            "values": [85.0, 93.0, 101.0, 109.0, 117.0]
         }
     },
     {
@@ -89,6 +149,39 @@
         "action_value":
         {
             "values": [120.0, 120.0, 120.0, 120.0, 120.0]
+        }
+    },
+    {
+        "action_value_id": "replicate_clone_armor_modifier_value",
+        "action_value":
+        {
+            "values": [0.1, 0.2, 0.3, 0.35, 0.4]
+        }
+    },
+    {
+        "action_value_id": "replicate_clone_hull_modifier_value",
+        "action_value":
+        {
+            "values": [0.1, 0.2, 0.3, 0.35, 0.4]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "replicate_clone_armor_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "replicate_clone_armor_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "replicate_clone_hull_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "replicate_clone_hull_modifier_value"
         }
     }]
 }

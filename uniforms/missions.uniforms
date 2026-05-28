@@ -56,31 +56,7 @@
                 "advance" : [],
                 "chains" : 
                 [{
-                    "id": "trader_opening_sort",
-                    "name": "missions.game_start_tec.name",
-                    "description": "missions.game_start_tec.description",
-                    "trigger":
-                    [{
-                        "trigger_type": "have_colonized_total_planets",
-                        "count": 1
-                    }],
-                    "advance": [{
-                        "trigger_type": "has_any_faction",
-                        "factions": [
-                            "trader_loyalist_rrr"
-                        ],
-                        "advance_id": "trader_opening_preparation_loyalist_rrr"
-                    },
-                    {
-                        "trigger_type": "has_any_faction",
-                        "factions": [
-                            "trader_rebel_rrr"
-                        ],
-                        "advance_id": "trader_opening_preparation_rebel_rrr"
-                    }]
-                 },
-                 {
-                    "id": "trader_opening_preparation_loyalist_rrr",
+                    "id": "trader_opening_preparation_rrr",
                     "name": "missions.trader_opening_preparation.name",
                     "description": "missions.trader_opening_preparation.description",
                     "trigger":
@@ -91,61 +67,8 @@
                         "trigger_tooltip_desc_override": "missions.trader_opening_preparation.capital"
                     },
                     {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "trader_light_frigate_loyalist",
-                        "count": 5,
-                        "trigger_tooltip_desc_override": "missions.trader_opening_preparation.light"
-                    },
-                    {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "trader_colony_frigate",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.trader_opening_preparation.colony"
-                    },
-                    {
-                        "trigger_type": "build_civilian_research_provider_structure",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.trader_opening_preparation.research"
-                    }],
-                    "reward":
-                    [{
-                        "reward_type": "credits",
-                        "count": 500
-                    },
-                    {
-                        "reward_type": "metal",
-                        "count": 100
-                    },
-                    {
-                        "reward_type": "crystal",
-                        "count": 100
-                    }],
-                    "advance": [{
-                        "advance_id": "trader_opening_expansion_rrr"
-                    }]
-                 },
-                 {
-                    "id": "trader_opening_preparation_rebel_rrr",
-                    "name": "missions.trader_opening_preparation.name",
-                    "description": "missions.trader_opening_preparation.description",
-                    "trigger":
-                    [{
-                        "trigger_type": "build_any_capital_ship",
-                        "build_kind": "capital_ship",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.trader_opening_preparation.capital"
-                    },
-                    {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "trader_light_frigate_rebel",
-                        "count": 5,
-                        "trigger_tooltip_desc_override": "missions.trader_opening_preparation.light"
-                    },
-                    {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "trader_colony_frigate",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.trader_opening_preparation.colony"
+                        "trigger_type": "build_ships",
+                        "count": 7
                     },
                     {
                         "trigger_type": "build_civilian_research_provider_structure",
@@ -262,12 +185,12 @@
                     {
                         "trigger_type": "increase_planet_track_at_home_planet",
                         "home_planet_track": "commerce",
-			            "count": 5
+			            "count": 4
                     },
                     {
                         "trigger_type": "increase_planet_track_at_home_planet",
                         "home_planet_track": "mining",
-                        "count": 3
+                        "count": 2
                     }],
                     "reward": [{
                         "reward_type": "exotics",
@@ -338,9 +261,8 @@
                         ]
                     },
                     {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "vasari_light_frigate",
-                        "count": 6
+                        "trigger_type": "build_ships",
+                        "count": 7
                     }],
                     "reward": [{
                         "reward_type": "unit",
@@ -457,31 +379,7 @@
                 "advance" : [],
                 "chains" : 
                 [{
-                    "id": "advent_opening_sort",
-                    "name": "missions.game_start_advent.name",
-                    "description": "missions.game_start_advent.description",
-                    "trigger":
-                    [{
-                        "trigger_type": "have_colonized_total_planets",
-                        "count": 1
-                    }],
-                    "advance": [{
-                        "trigger_type": "has_any_faction",
-                        "factions": [
-                            "advent_loyalist_rrr"
-                        ],
-                        "advance_id": "advent_opening_preparation_loyalist_rrr"
-                    },
-                    {
-                        "trigger_type": "has_any_faction",
-                        "factions": [
-                            "advent_rebel_rrr"
-                        ],
-                        "advance_id": "advent_opening_preparation_rebel_rrr"
-                    }]
-                 },
-                 {
-                    "id": "advent_opening_preparation_loyalist_rrr",
+                    "id": "advent_opening_preparation_rrr",
                     "name": "missions.advent_opening_preparation.name",
                     "description": "missions.advent_opening_preparation.description",
                     "trigger":
@@ -492,16 +390,8 @@
                         "trigger_tooltip_desc_override": "missions.advent_opening_preparation.capital"
                     },
                     {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "advent_light_frigate_loyalist",
-                        "count": 9,
-                        "trigger_tooltip_desc_override": "missions.advent_opening_preparation.light"
-                    },
-                    {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "advent_colony_frigate_loyalist",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.advent_opening_preparation.colony"
+                        "trigger_type": "build_ships",
+                        "count": 7
                     },
                     {
                         "trigger_type": "build_civilian_research_provider_structure",
@@ -511,65 +401,20 @@
                     "reward":
                     [{
                         "reward_type": "credits",
-                        "count": 300
+                        "count": 500
                     },
                     {
                         "reward_type": "metal",
-                        "count": 150
+                        "count": 100
                     },
                     {
                         "reward_type": "crystal",
-                        "count": 150
+                        "count": 100
                     }],
                     "advance": [{
                         "advance_id": "advent_opening_expansion_rrr"
                     }]
                  },
-                 {
-                    "id": "advent_opening_preparation_rebel_rrr",
-                    "name": "missions.advent_opening_preparation.name",
-                    "description": "missions.advent_opening_preparation.description",
-                    "trigger":
-                    [{
-                        "trigger_type": "build_any_capital_ship",
-                        "build_kind": "capital_ship",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.advent_opening_preparation.capital"
-                    },
-                    {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "advent_light_frigate",
-                        "count": 9,
-                        "trigger_tooltip_desc_override": "missions.advent_opening_preparation.light"
-                    },
-                    {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "advent_colony_frigate",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.advent_opening_preparation.colony"
-                    },
-                    {
-                        "trigger_type": "build_civilian_research_provider_structure",
-                        "count": 1,
-                        "trigger_tooltip_desc_override": "missions.advent_opening_preparation.research"
-                    }],
-                    "reward":
-                    [{
-                        "reward_type": "credits",
-                        "count": 300
-                    },
-                    {
-                        "reward_type": "metal",
-                        "count": 150
-                    },
-                    {
-                        "reward_type": "crystal",
-                        "count": 150
-                    }],
-                    "advance": [{
-                        "advance_id": "advent_opening_expansion_rrr"
-                    }]
-                },
                 {
                     "id": "advent_opening_expansion_rrr",
                     "name": "missions.advent_opening_expansion.name",
@@ -594,8 +439,12 @@
                         "trigger_tooltip_desc_override": "missions.advent_opening_expansion.icevolcanic"
                     }],
                     "reward": [{
+                        "reward_type": "credits",
+                        "count": 300
+                    },
+                    {
                         "reward_type": "crystal",
-                        "count": 250
+                        "count": 150
                     }],
                     "advance": [{
                         "advance_id": "advent_opening_credits_rrr"
@@ -623,7 +472,7 @@
                     }],
                     "reward": [{
                         "reward_type": "credits",
-                        "count": 750
+                        "count": 850
                     }],
                     "advance": [{
                         "trigger_type": "has_any_faction",
@@ -756,8 +605,12 @@
                         "passthrough_enabled": true
                     }],
                     "reward": [{
+                        "reward_type": "credits",
+                        "count": 300
+                    },
+                    {
                         "reward_type": "metal",
-                        "count": 250
+                        "count": 150
                     }],
                     "advance": [{
                         "is_main_chain_end": true,
@@ -793,8 +646,12 @@
                         "passthrough_enabled": true
                     }],
                     "reward": [{
+                        "reward_type": "credits",
+                        "count": 300
+                    },
+                    {
                         "reward_type": "metal",
-                        "count": 250
+                        "count": 150
                     }],
                     "advance": [{
                         "is_main_chain_end": true,
@@ -893,7 +750,7 @@
                     [{
                         "trigger_type": "increase_planet_track_at_home_planet",
                         "home_planet_track": "research",
-			            "count": 3
+			            "count": 2
                     },
                     {
                         "trigger_type": "own_any_unit_item",
@@ -1186,9 +1043,10 @@
 			            "count": 3
                     },
                     {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "trader_gauss_defense_structure",
-                        "count": 3
+                        "trigger_type": "research_any_valid_subject",
+                        "research_subjects": [
+                            "trader_unlock_hangar_defense_structure"
+                        ]
                     }],
                     "reward": [{
                         "reward_type": "metal",
@@ -1820,7 +1678,7 @@
                     [{
                         "trigger_type": "increase_planet_track_at_home_planet",
                         "home_planet_track": "research",
-			            "count": 3
+			            "count": 2
                     },
                     {
                         "trigger_type": "own_any_unit_item",
@@ -2188,7 +2046,7 @@
                         }
                     }],
                     "advance": [{
-                        "advance_id": "advent_consumables_rrr"
+                        "advance_id": "advent_consumables_loyalist_rrr"
                     }]
                 },
                 {
@@ -2225,11 +2083,54 @@
                         }
                     }],
                     "advance": [{
-                        "advance_id": "advent_consumables_rrr"
+                        "trigger_type": "has_any_faction",
+                        "factions": [
+                            "advent_loyalist_rrr"
+                        ],
+                        "advance_id": "advent_consumables_loyalist_rrr"
+                    },
+                    {
+                        "trigger_type": "has_any_faction",
+                        "factions": [
+                            "advent_rebel_rrr"
+                        ],
+                        "advance_id": "advent_consumables_rebel_rrr"
                     }]
                 },
                 {
-                    "id": "advent_consumables_rrr",
+                    "id": "advent_consumables_loyalist_rrr",
+                    "name": "missions.advent_consumables.name",
+                    "description": "missions.advent_consumables.description",
+                    "trigger":
+                    [{
+                        "trigger_type": "build_units_of_type",
+                        "unit": "advent_capital_ship_factory_structure_loyalist",
+                        "count": 1,
+                        "trigger_tooltip_desc_override": "missions.advent_consumables.retrofit"
+                    },
+                    {
+                        "trigger_type": "own_any_unit_item",
+                        "unit_items": [
+                            "advent_plasma_pulse",
+                            "advent_armor_battery"
+                        ],
+                        "passthrough_enabled": true,
+                        "trigger_tooltip_desc_override": "missions.advent_consumables.items"
+                    }],
+                    "reward": [{
+                        "reward_type": "exotics",
+                        "exotics": [
+                        {
+                            "exotic_type": "defense",
+                            "count": 1
+                        }]
+                    }],
+                    "advance": [{
+                        "advance_id": "advent_capital_construction_rrr"
+                    }]
+                },
+                {
+                    "id": "advent_consumables_rebel_rrr",
                     "name": "missions.advent_consumables.name",
                     "description": "missions.advent_consumables.description",
                     "trigger":
@@ -2354,9 +2255,9 @@
                         ]
                     },
                     {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "advent_unity_structure_loyalist",
-                        "count": 2
+                        "trigger_type": "faction_system_point_spend",
+                        "count": 2,
+                        "passthrough_enabled": true
                     }],
                     "reward": [{
                         "reward_type": "credits",
@@ -2388,7 +2289,7 @@
                     {
                         "trigger_type": "increase_planet_track_at_home_planet",
                         "home_planet_track": "focus",
-			            "count": 5
+			            "count": 2
                     }],
                     "reward": [{
                         "reward_type": "exotics",
@@ -2399,8 +2300,20 @@
                         }]
                     }],
                     "advance": [{
+                        "trigger_type": "has_any_faction",
+                        "factions": [
+                            "advent_loyalist_rrr"
+                        ],
                         "is_last_mission": true,
                         "advance_id": "advent_early_defense_loyalist_rrr"
+                    },
+                    {
+                        "trigger_type": "has_any_faction",
+                        "factions": [
+                            "advent_rebel_rrr"
+                        ],
+                        "is_last_mission": true,
+                        "advance_id": "advent_early_defense_rebel_rrr"
                     }]
                 }]
             },
@@ -2420,9 +2333,9 @@
                         ]
                     },
                     {
-                        "trigger_type": "build_units_of_type",
-                        "unit": "advent_unity_structure",
-                        "count": 2
+                        "trigger_type": "faction_system_point_spend",
+                        "count": 2,
+                        "passthrough_enabled": true
                     }],
                     "reward": [{
                         "reward_type": "credits",
@@ -2454,7 +2367,7 @@
                     {
                         "trigger_type": "increase_planet_track_at_home_planet",
                         "home_planet_track": "focus",
-			            "count": 5
+			            "count": 2
                     }],
                     "reward": [{
                         "reward_type": "exotics",
@@ -2465,12 +2378,23 @@
                         }]
                     }],
                     "advance": [{
+                        "trigger_type": "has_any_faction",
+                        "factions": [
+                            "advent_loyalist_rrr"
+                        ],
+                        "is_last_mission": true,
+                        "advance_id": "advent_early_defense_loyalist_rrr"
+                    },
+                    {
+                        "trigger_type": "has_any_faction",
+                        "factions": [
+                            "advent_rebel_rrr"
+                        ],
                         "is_last_mission": true,
                         "advance_id": "advent_early_defense_rebel_rrr"
                     }]
                 }]
             },
-
             {
                 "operation_id": "advent_early_defense_loyalist_rrr",
                 "advance" : [],
@@ -2537,7 +2461,7 @@
                     "advance": [{
                         "is_main_chain_end": true,
                         "main_chain_advance_id": "mid_game_operation_lines",
-                        "operation_advance_id": "advent_refining_rrr"
+                        "operation_advance_id": "advent_refining_loyalist_rrr"
                     }]
                 }]
             },
@@ -3294,7 +3218,8 @@
                     [{
                         "trigger_type": "research_any_valid_subject",
                         "research_subjects": [
-                            "trader_unlock_backup_shield_generator_unit_item"
+                            "trader_unlock_backup_shield_generator_unit_item",
+                            "trader_unlock_backup_shield_generator_unit_item_rebel"
                         ]
                     },
                     {
@@ -3568,18 +3493,13 @@
                     "description": "missions.vasari_skirantra_use.description",
                     "trigger":
                     [{
-                        "trigger_type": "build_units_of_type",
-                        "unit": "vasari_carrier_capital_ship",
+                        "trigger_type": "build_any_capital_ship",
+                        "build_kind": "capital_ship",
                         "count": 1
                     },
                     {
                         "trigger_type": "own_unit_item",
                         "unit_item": "vasari_self_repairing_armor",
-                        "count": 1
-                    },
-                    {
-                        "trigger_type": "own_unit_item",
-                        "unit_item": "vasari_strikecraft_armor",
                         "count": 1
                     },
                     {
@@ -3779,7 +3699,7 @@
                     },
                     {
                         "trigger_type": "own_unit_item",
-                        "unit_item": "vasari_beam_boost",
+                        "unit_item": "vasari_rebel_beam_boost",
                         "count": 1
                     },
                     {
@@ -3892,11 +3812,6 @@
                     [{
                         "trigger_type": "build_units_of_type",
                         "unit": "vasari_battle_capital_ship_rebel",
-                        "count": 1
-                    },
-                    {
-                        "trigger_type": "own_unit_item",
-                        "unit_item": "vasari_wave_boost",
                         "count": 1
                     },
                     {
@@ -5185,7 +5100,7 @@
                     },
                     {
                         "trigger_type": "build_units_of_type",
-                        "unit": "vasari_fleet_beacon_structure",
+                        "unit": "vasari_fleet_beacon_structure_loyalist",
                         "count": 1,
                         "passthrough_enabled": true
                     },
@@ -5221,7 +5136,7 @@
                     },
                     {
                         "trigger_type": "build_units_of_type",
-                        "unit": "vasari_fleet_beacon_structure",
+                        "unit": "vasari_fleet_beacon_structure_rebel",
                         "count": 1,
                         "passthrough_enabled": true
                     },

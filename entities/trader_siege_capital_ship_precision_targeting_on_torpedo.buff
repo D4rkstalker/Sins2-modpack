@@ -1,0 +1,69 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_made_dead": false,
+    "restart_other_stacked_buffs_when_started": true,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "fixed_minute",
+        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_augment_pending_damage_as_source",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "augment_damage",
+                "bonus_damage_value": "precision_targeting_bonus_damage_value"
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "precision_targeting_max_linear_speed_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "precision_targeting_max_linear_acceleration_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "precision_targeting_max_angular_speed_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_siege_capital_ship_precision_targeting_ability_hud_icon",
+        "name": "trader_siege_capital_ship_precision_targeting_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "precision_targeting_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "precision_targeting_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "precision_targeting_max_angular_speed_modifier"
+            }]
+        }]
+    }
+}

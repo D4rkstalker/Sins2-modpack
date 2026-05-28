@@ -1,6 +1,6 @@
 {
     "version": 0,
-	"level_count": 2,
+    "level_count": 2,
     "target_filters": [
     {
         "target_filter_id": "school_of_evangelists_watch_target_filter",
@@ -10,7 +10,9 @@
                 "planet"
             ],
             "ownerships": [
-                "enemy"
+                "friendly",
+                "enemy",
+                "none"
             ],
             "constraints": [
             {
@@ -22,7 +24,8 @@
                 "permission_type": "can_planet_be_damaged"
             }],
             "exemptions": [
-                "is_not_explored"]
+                "is_not_explored"
+            ]
         }
     },
     {
@@ -74,8 +77,8 @@
                 "corvette",
                 "cruiser",
                 "frigate",
-				"strikecraft",
-				"super_capital_ship",
+                "strikecraft",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
@@ -83,7 +86,8 @@
             ],
             "constraints": [
             {
-                "constraint_type": "has_weapon"
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal"
             }]
         }
     },
@@ -95,7 +99,7 @@
                 "planet"
             ],
             "ownerships": [
-				"self"
+                "self"
             ]
         }
     }],
@@ -129,17 +133,24 @@
         }
     },
     {
-        "action_value_id": "assimilated_population_development_speed_scalar",
+        "action_value_id": "assimilated_population_population_growth_rate_scalar",
         "action_value":
         {
-            "values": [-0.25, -0.25]
+            "values": [0.1, 0.1]
         }
     },
     {
-        "action_value_id": "assimilated_population_development_cost_scalar",
+        "action_value_id": "assimilated_population_neutral_population_assimilation_rate_scalar",
         "action_value":
         {
-            "values": [-0.25, -0.25]
+            "values": [0.25, 0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_enemy_population_assimilation_rate_scalar",
+        "action_value":
+        {
+            "values": [0.25, 0.25]
         }
     },
     {
@@ -214,24 +225,33 @@
             "value_behavior": "scalar",
             "value_id": "assimilated_population_weapon_damage_scalar"
         }
-	}],
+    }],
     "buff_planet_modifiers": [
     {
-        "buff_planet_modifier_id": "assimilated_population_development_speed_modifier",
+        "buff_planet_modifier_id": "assimilated_population_population_growth_rate_modifier",
         "buff_planet_modifier":
         {
-            "modifier_type": "any_development_track_build_time",
-            "value_behavior": "scalar",
-            "value_id": "assimilated_population_development_speed_scalar"
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value_id": "assimilated_population_population_growth_rate_scalar"
         }
-	},
+    },
     {
-        "buff_planet_modifier_id": "assimilated_population_development_cost_modifier",
+        "buff_planet_modifier_id": "assimilated_population_neutral_population_assimilation_rate_modifier",
         "buff_planet_modifier":
         {
-            "modifier_type": "any_development_track_build_price",
+            "modifier_type": "neutral_population_assimilation_rate",
             "value_behavior": "scalar",
-            "value_id": "assimilated_population_development_cost_scalar"
+            "value_id": "assimilated_population_neutral_population_assimilation_rate_scalar"
         }
-	}]
+    },
+    {
+        "buff_planet_modifier_id": "assimilated_population_enemy_population_assimilation_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "enemy_population_assimilation_rate",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_enemy_population_assimilation_rate_scalar"
+        }
+    }]
 }

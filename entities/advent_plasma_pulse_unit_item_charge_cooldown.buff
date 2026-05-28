@@ -1,0 +1,179 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "disable_can_update_unit_item_build_progress"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "in_phase_space"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_buff",
+                            "buff": "retrofit_in_gravity_well"
+                        }
+                    }]
+                }
+            },
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "charge_restore_time",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "plasma_pulse_charge_restore_time_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "plasma_pulse_charge_cooldown_value"
+                },
+                "action_type": "change_ability_charges",
+                "ability":
+                {
+                    "ability_type": "source_ability"
+                },
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "plasma_pulse_charge_count_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "plasma_pulse_charge_restore_time_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "plasma_pulse_charge_cooldown_value"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "plasma_pulse_charge_cooldown_with_retrofit_value",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "disable_can_update_unit_item_build_progress"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "in_phase_space"
+                        }
+                    },
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "retrofit_in_gravity_well"
+                    }]
+                }
+            },
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "charge_restore_time",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "plasma_pulse_charge_restore_time_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "plasma_pulse_charge_cooldown_value"
+                },
+                "action_type": "change_ability_charges",
+                "ability":
+                {
+                    "ability_type": "source_ability"
+                },
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "plasma_pulse_charge_count_value"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "plasma_pulse_charge_restore_time_value",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_b": "plasma_pulse_charge_cooldown_value"
+                },
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "cooldown_duration"
+    },
+    {
+        "buff_weapon_modifier_id": "planet_bombing_cooldown_duration"
+    }]
+}

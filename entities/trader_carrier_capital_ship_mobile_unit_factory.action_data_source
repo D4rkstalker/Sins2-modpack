@@ -8,6 +8,20 @@
         {
             "values": [0.0, -0.15, -0.3, -0.45, -0.6]
         }
+    },
+    {
+        "action_value_id": "heavy_strikecraft_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.14, 0.28, 0.42, 0.56, 0.7]
+        }
+    },
+    {
+        "action_value_id": "heavy_strikecraft_armor_bonus_value",
+        "action_value":
+        {
+            "values": [20.0, 25.0, 30.0, 35.0, 40.0]
+        }
     }],
     "buff_unit_factory_modifiers": [
     {
@@ -17,6 +31,26 @@
             "modifier_type": "build_time",
             "value_behavior": "scalar",
             "value_id": "mobile_unit_factory_build_time_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "heavy_strikecraft_armor_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "additive",
+            "value_id": "heavy_strikecraft_armor_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "heavy_strikecraft_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "heavy_strikecraft_damage_bonus_value"
         }
     }]
 }

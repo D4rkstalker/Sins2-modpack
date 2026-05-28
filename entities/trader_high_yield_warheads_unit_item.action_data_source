@@ -1,0 +1,152 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "high_yield_warheads_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "planet_bombing"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "high_yield_warheads_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+			],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "planet_bombing"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_high_yield_warheads_unit_item",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "high_yield_warheads_radius_value",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "buff_duration",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "planet_bombing_damage_scalar",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "high_yield_warheads_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [3]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "high_yield_warheads_bombing_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "weapon_type": "planet_bombing",
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "planet_bombing_damage_scalar"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_on_target_large",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_buff_titan"
+        }
+    },
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_on_target_medium",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_buff_capital"
+        }
+    },
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_on_target_small",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_buff_frigate"
+        }
+    },
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_on_target_trigger_large",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_buff_trigger_titan"
+        }
+    },
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_on_target_trigger_medium",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_buff_trigger_capital"
+        }
+    },
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_on_target_trigger_small",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_buff_trigger_frigate"
+        }
+    },
+    {
+        "alias_name": "trader_high_yield_warheads_unit_item_caster",
+        "alias_binding":
+        {
+            "particle_effect": "high_yield_warheads_cast_ring"
+        }
+    }]
+}

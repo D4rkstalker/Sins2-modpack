@@ -2,41 +2,230 @@
     "version": 0,
     "target_filters": [
     {
+        "target_filter_id": "player_buffs_is_ai_planet_upgrades",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_constructors_item_builders",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_constructor_ship_loyalist",
+                "advent_constructor_ship_rebel",
+                "trader_constructor_ship_loyalist",
+                "trader_constructor_ship_rebel",
+                "vasari_constructor_ship_loyalist",
+                "vasari_constructor_ship_rebel"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_population_structure",
+        "target_filter":
+        {
+            "unit_definitions": [
+                "advent_population_structure",
+                "trader_population_structure",
+                "vasari_population_structure"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_fleet_add_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+                "corvette",
+                "frigate",
+                "cruiser"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_in_fleet"
+                }
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_recently_been_damaged"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "special_operation_unit",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_ship_role",
+                    "ship_roles": [
+                    	"explore",
+                    	"colonize"
+                    ]
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_structure_builder"
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_fleet_starbase_add_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_in_fleet"
+                }
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_recently_been_damaged"
+                }
+            },
+            {
+                "constraint_type": "has_mutation",
+                    "mutation": "enable_can_hyperspace"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_fleet_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+                "super_capital_ship"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_fleet"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.2
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "player_buffs_is_ai_readd_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "frigate",
+                "corvette",
+                "cruiser"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_fleet"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_orders"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            }]
+        }
+    },
+    {
         "target_filter_id": "player_buffs_is_ai_targets",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-				"titan",
-				"starbase",
-				"frigate",
-				"cruiser",
-				"super_capital_ship",
-				"structure"
+                "titan",
+                "starbase",
+                "frigate",
+                "cruiser",
+                "super_capital_ship",
+                "structure"
             ],
             "ownerships": [
                 "self"
-			]
-        }
-    },
-    {
-        "target_filter_id": "player_buffs_is_ai_unity_targets",
-        "target_filter":
-        {
-            "unit_types": [
-                "capital_ship",
-				"titan",
-				"starbase",
-				"super_capital_ship"
-            ],
-            "ownerships": [
-                "self"
-			],
-            "constraints": [
-            {
-				"constraint_type": "has_buff",
-				"buff": "advent_unity_follower_on_ship"
-            }]
+            ]
         }
     }],
     "action_values": [
@@ -44,7 +233,52 @@
         "action_value_id": "cooldown_duration",
         "action_value":
         {
-            "values": [999999999.0]
+            "values": [500000.0]
+        }
+    },
+    {
+        "action_value_id": "fleet_unit_execution_interval",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "fleet_unit_execution2_interval",
+        "action_value":
+        {
+            "values": [1200.0]
+        }
+    },
+    {
+        "action_value_id": "fleet_unit_execution3_interval",
+        "action_value":
+        {
+            "values": [3600.0]
+        }
+    },
+    {
+        "action_value_id": "population_structure_culture_rate_value",
+        "action_value":
+        {	
+            "values": [0.005]
+        }
+    },
+    {
+        "action_value_id": "planet_ai_random_chance_value",
+        "action_value":
+        {	
+            "values": [0.01]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "population_structure_culture_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "culture_rate",
+            "value_behavior": "additive",
+            "value_id": "population_structure_culture_rate_value"
         }
     }]
 }

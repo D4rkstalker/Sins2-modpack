@@ -63,7 +63,8 @@
     "ai_attack_target":
     {
         "attack_priority": 50.0,
-        "is_always_a_threat": true
+        "is_always_a_threat": true,
+        "attack_target_type": "support"
     },
     "player_ai":
     {
@@ -94,11 +95,21 @@
             }
         }
     },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 3.95,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [7, 8],
+            "large_debris": [1, 2]
+        }
+    },
     "health":
     {
         "release_time_after_death": 60.0,
         "can_collide_duration_after_death": 3.95,
-        "durability": 200.0,
+        "durability": 250.0,
         "can_ever_be_resurrected": true,
         "levels": [
         {
@@ -139,6 +150,23 @@
         "supply_cost": 8,
         "build_group_id": "cruiser"
     },
+    "unit_modifiers": [
+    {
+        "modifier_type": "antimatter_restore_rate",
+        "value_behavior": "additive",
+        "value": 2.0,
+        "prerequisites": [
+            ["advent_unlock_subjugator_cruiser_repulsion_field_ability"]
+        ]
+    },
+    {
+        "modifier_type": "max_antimatter",
+        "value_behavior": "additive",
+        "value": 50.0,
+        "prerequisites": [
+            ["advent_unlock_subjugator_cruiser_repulsion_field_ability"]
+        ]
+    }],
     "target_filter_unit_type": "cruiser",
     "tags": [
         "cruiser"
@@ -156,8 +184,16 @@
             "advent_subjugator_cruiser_nullify",
 			"advent_subjugator_cruiser_repulsion_field"
         ],
-        "required_player": "advent_rebel"
-	}],
+        "required_player": "advent_rebel_rrr"
+	},
+    {
+        "abilities": [
+            "advent_subjugator_cruiser_suppression",
+            "advent_subjugator_cruiser_nullify",
+			"special_operation_unit"
+        ],
+		"required_special_operation_unit_kind": "hobari_support_raid"
+    }],
     "ship_roles": [
         "attack_ship"
     ],

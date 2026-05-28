@@ -5,6 +5,16 @@
         "target_filter_id": "targeting_array_target_filter",
         "target_filter":
         {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+			],
             "ownerships": [
                 "friendly"
             ],
@@ -23,26 +33,6 @@
                     "constraint_type": "has_buff",
                     "buff": "trader_targeting_array_unit_item_on_self"
                 }
-            }]
-        }
-    },
-    {
-        "target_filter_id": "targeting_array_remove_target_filter",
-        "target_filter":
-        {
-			"unit_types": [
-				"capital_ship",
-                "super_capital_ship",
-				"titan"
-			],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_buff",
-                "buff": "trader_targeting_array_unit_item_on_self",
-				"include_pending_buffs": true
             }]
         }
     }],

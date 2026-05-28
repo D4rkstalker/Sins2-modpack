@@ -1,0 +1,111 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_trader_loyalist_super_mag_shield",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "mag_shield_cooldown_time_value",
+        "antimatter_cost": "mag_shield_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_loyalist_super_mag_shield"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "dlc2_trader_loyalist_super_mag_shield_start"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                        	"constraint_type": "has_missing_shields",
+                        	"percentage_missing_threshold": 0.5
+                        },
+                        {
+                        	"constraint_type": "has_missing_armor",
+                        	"percentage_missing_threshold": 0.25
+                        }]
+                    }
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_recently_been_damaged"
+                    }
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_loyalist_super_mag_shield_hud_icon",
+        "tooltip_picture": "dlc2_trader_loyalist_super_mag_shield_tooltip_picture",
+        "name": "dlc2_trader_loyalist_super_mag_shield_ability_name",
+        "description": "dlc2_trader_loyalist_super_mag_shield_ability_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "mag_shield_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_prevented",
+                "value_id": "mag_shield_damage_prevented_value",
+                "value_float_format": "percentage",
+                "ratio_float_format": "percentage_with_sign",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "dlc2_trader_loyalist_super_mag_shield_cost_per_damage",
+                "value_id": "mag_shield_antimatter_conversion_value",
+                "value_float_format": "two_decimal_place",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

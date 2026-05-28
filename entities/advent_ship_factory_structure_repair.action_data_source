@@ -2,16 +2,12 @@
     "version": 0,
     "target_filters": [
     {
-        "target_filter_id": "repair_auto_cast_target_filter",
+        "target_filter_id": "repair_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
                 "starbase",
-                "structure",
                 "super_capital_ship",
                 "titan"
             ],
@@ -20,11 +16,30 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "not_self"
-            },
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_ship_factory_structure_repair",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "repair_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
             {
                 "constraint_type": "composite_not",
                 "constraint":

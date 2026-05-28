@@ -2,7 +2,7 @@
     "version": 0,
     "target_filters": [
     {
-        "target_filter_id": "shield_disruption_auto_cast_target_filter",
+        "target_filter_id": "shield_disruption_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -25,7 +25,51 @@
                 }
             },
             {
-                "constraint_type": "has_shields"
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.85
+                }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "shield_disruption_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure",
+                "corvette"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_offensive_support_cruiser_shield_disruption",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.85
+                }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
             }]
         }
     },
@@ -41,7 +85,7 @@
                 "frigate",
                 "structure",
                 "super_capital_ship",
-				"corvette"
+                "corvette"
             ],
             "ownerships": [
                 "enemy"
@@ -124,23 +168,24 @@
         "alias_name": "shield_disruption_muzzle",
         "alias_binding":
         {
-            "particle_effect": "shield_disruption_muzzle",
-            "sounds": [
-                "ability_muzzle_tech_empcharge"]
+            "particle_effect": "Ability_DefeatShieldsMuzzle"
         }
     },
     {
         "alias_name": "shield_disruption_projectile_travel",
         "alias_binding":
         {
-            "particle_effect": "shield_disruption_projectile_travel"
+            "particle_effect": "Ability_DefeatShieldsTravel"
         }
     },
     {
         "alias_name": "shield_disruption_on_target",
         "alias_binding":
         {
-            "particle_effect": "shield_disruption_on_target"
+            "particle_effect": "Buff_DefeatShields",
+            "sounds": [
+                "Effect_ShieldDisruption"
+            ]
         }
     }]
 }

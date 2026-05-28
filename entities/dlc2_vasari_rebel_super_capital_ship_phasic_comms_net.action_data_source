@@ -1,11 +1,73 @@
 {
     "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "phasic_comms_net_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    }],
     "action_values": [
     {
         "action_value_id": "phasic_comms_net_culture_rate_value",
         "action_value":
         {
             "values": [0.03]
+        }
+    },
+    {
+        "action_value_id": "phasic_comms_net_planet_track_build_price_scalar_value",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "phasic_comms_net_planet_track_track_build_time_scalar_value",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },	
+    {
+        "action_value_id": "phasic_comms_net_structure_build_price_scalar_value",
+        "action_value":
+        {
+            "values": [-0.10]
+        }
+    },
+    {
+        "action_value_id": "phasic_comms_net_structure_build_time_scalar_value",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },
+    {
+        "action_value_id": "phasic_comms_net_factory_unit_build_price_scalar_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    },
+    {
+        "action_value_id": "phasic_comms_net_factory_unit_build_time_scalar_value",
+        "action_value":
+        {
+            "values": [-0.15]
+        }
+    },	
+    {
+        "action_value_id": "phasic_comms_net_factory_exotic_build_time_scalar_value",
+        "action_value":
+        {
+            "values": [-0.15]
         }
     }],
     "buff_unit_modifiers": [
@@ -16,6 +78,70 @@
             "modifier_type": "culture_rate",
             "value_behavior": "additive",
             "value_id": "phasic_comms_net_culture_rate_value"
+        }
+    }],
+	"buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_planet_track_build_price_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_price",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_planet_track_build_price_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_planet_track_build_time_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_time",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_planet_track_track_build_time_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_structure_build_price_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "structure_build_price",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_structure_build_price_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_structure_build_time_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "structure_build_time",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_structure_build_time_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_factory_unit_build_price_price_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "factory_unit_build_price",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_factory_unit_build_price_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_factory_unit_build_time_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "factory_unit_build_time",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_factory_unit_build_time_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "phasic_comms_net_factory_exotic_build_time_scalar_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "factory_exotic_build_time",
+            "value_behavior": "scalar",
+            "value_id": "phasic_comms_net_factory_exotic_build_time_scalar_value"
         }
     }]
 }

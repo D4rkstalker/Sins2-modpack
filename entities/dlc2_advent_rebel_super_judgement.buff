@@ -8,6 +8,30 @@
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "executions_per_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_only",
+                    "damage_value": "judgement_hull_damage_value",
+                    "penetration_value": "judgement_penetration_value"
+                }]
+            }]
+        }
+    }],
     "trigger_event_actions": [
     {
         "trigger_event_type": "on_buff_started",
@@ -43,8 +67,16 @@
         "name": "dlc2_advent_rebel_super_judgement_ability_name",
         "visibility_scope": "negative",
         "tooltip_line_groups": [
-		{
+        {
             "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.current_hull_damage_rate",
+                "value_id": "judgement_hull_damage_value",
+                "value_float_format": "percentage_two_decimal_place_with_sign",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
             {
                 "rendering_type": "buff_unit_modifier",
                 "unit_modifier_id": "judgement_ability_cost_modifier"
@@ -53,6 +85,6 @@
                 "rendering_type": "buff_unit_modifier",
                 "unit_modifier_id": "judgement_ability_cooldown_modifier"
             }]
-		}]
+        }]
     }
 }

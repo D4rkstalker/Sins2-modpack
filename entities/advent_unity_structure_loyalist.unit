@@ -20,7 +20,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -33,7 +34,7 @@
     "structure":
     {
         "slot_type": "civilian",
-        "slots_required": 2,
+        "slots_required": 1,
         "roles": [],
         "build_group_id": "civilian"
     },
@@ -66,7 +67,7 @@
         "durability": 500.0,
         "levels": [
         {
-            "max_hull_points": 2000.0,
+            "max_hull_points": 2500.0,
             "hull_point_restore_rate": 3.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
@@ -81,19 +82,19 @@
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 25.0
         }]
     },
     "build":
     {
-        "build_time": 90.0,
+        "build_time": 75.0,
         "price":
         {
-            "credits": 900.0,
-            "metal": 150.0,
+            "credits": 600.0,
+            "metal": 50.0,
             "crystal": 300.0
         },
         "prerequisites": [
@@ -106,17 +107,18 @@
     {
         "provided_unity_points": 1.0
     },
+    "abilities": [
+    {
+        "abilities": [
+            "advent_unity_structure",
+            "advent_unity_structure_global"
+        ]
+    }],
     "target_filter_unit_type": "structure",
     "tags": [
         "structure"
     ],
     "virtual_supply_cost": 10,
-    "abilities": [
-    {
-        "abilities": [
-            "advent_unity_structure"
-        ]
-    }],
     "skin_groups": [
     {
         "skins": [

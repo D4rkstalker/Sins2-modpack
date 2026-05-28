@@ -1,0 +1,98 @@
+{
+    "version": 0,
+    "action_data_source": "envoy_frigate_diplomatic_purpose",
+    "passive_actions":
+    {
+        "persistant_buff": "envoy_frigate_diplomatic_purpose_on_self"
+    },
+    "active_actions":
+    {
+        "cooldown_time": "diplomatic_purpose_cooldown_time_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "envoy_frigate_diplomatic_purpose_immunity"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect": "diplomatic_purpose_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_recently_been_damaged"
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "envoy_frigate_diplomatic_purpose_hud_icon",
+        "name": "envoy_frigate_diplomatic_purpose_name",
+        "description": "envoy_frigate_diplomatic_purpose_description",
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.unit_item_passive_modifiers_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_empire_modifier",
+                "empire_modifier_id": "diplomatic_purpose_max_influence_points_modifier"
+            },
+            {
+                "rendering_type": "buff_empire_modifier",
+                "empire_modifier_id": "diplomatic_purpose_influence_points_recharge_rate_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_stack_count",
+                "value_id": "diplomatic_purpose_max_stacks_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.stack_interval",
+                "value_id": "diplomatic_purpose_execution_interval_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.unit_item_active_actions_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.invulnerable",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "diplomatic_purpose_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

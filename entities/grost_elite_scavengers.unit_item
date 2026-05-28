@@ -8,20 +8,21 @@
     "is_finite": true,
     "required_unit_tags": [
         "capital_ship",
-		"super_capital_ship",
+        "super_capital_ship",
         "titan"
     ],
     "max_count_on_unit": 1,
     "build_group_id": "utility",
     "unit_modifiers": [
-        {
-            "modifier_type": "loot_collection_duration",
-            "value_behavior": "scalar",
-            "values": [-5.0]
-        },
-        {
-            "modifier_type": "experience_gained_from_loot_collection",
-            "value_behavior": "scalar",
-            "values": [1.0]
-        }]
+    {
+        "modifier_type": "unit_capture_points",
+        "value_behavior": "additive",
+        "values": [25.0]
+    },
+    {
+        "modifier_type": "experience_gained_from_loot_collection",
+        "value_behavior": "scalar",
+        "values": [1.0]
+    }],
+    "item_ai_valuation": 500.0
 }

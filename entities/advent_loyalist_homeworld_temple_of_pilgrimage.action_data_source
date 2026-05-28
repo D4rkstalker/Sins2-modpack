@@ -14,7 +14,8 @@
                 "none"
             ],
             "exemptions": [
-                "is_not_explored"]
+                "is_not_explored"
+            ]
         }
     },
     {
@@ -34,23 +35,23 @@
             {
                 "constraint_type": "is_detected"
             },
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "composite_and",
-					"constraints": [
-					{
-						"constraint_type": "has_buff",
-						"buff": "anundi_collective_dissonance_on_fixture",
-						"include_pending_buffs": true
-					},
-					{
-						"constraint_type": "is_in_dominant_culture",
-						"dominant_culture_player_relationship": "enemy"
-					}]
-				}
-			}]
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "anundi_collective_dissonance_on_fixture",
+                        "include_pending_buffs": true
+                    },
+                    {
+                        "constraint_type": "is_in_dominant_culture",
+                        "dominant_culture_player_relationship": "enemy"
+                    }]
+                }
+            }]
         }
     },
     {
@@ -65,14 +66,15 @@
                 "cruiser",
                 "frigate",
                 "strikecraft",
-				"super_capital_ship",
+                "super_capital_ship",
                 "structure"
             ],
             "ownerships": [
                 "enemy"
             ],
             "exemptions": [
-                "is_dead"]
+                "is_dead"
+            ]
         }
     },
     {
@@ -88,8 +90,7 @@
             "constraints": [
             {
                 "constraint_type": "has_buff",
-				"buff": "advent_temple_of_pilgrimage_recently_colonized"
-				
+                "buff": "advent_temple_of_pilgrimage_recently_colonized"
             }]
         }
     }],
@@ -124,7 +125,7 @@
         "action_value_id": "advent_loyalist_homeworld_planet_track_build_price_scalar_value",
         "action_value":
         {
-            "values": [-0.2]
+            "values": [-0.3]
         }
     }],
     "buff_planet_modifiers": [
@@ -133,6 +134,15 @@
         "buff_planet_modifier":
         {
             "modifier_type": "any_development_track_build_price",
+            "value_behavior": "scalar",
+            "value_id": "advent_loyalist_homeworld_planet_track_build_price_scalar_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "advent_loyalist_homeworld_planet_track_time_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "any_development_track_build_time",
             "value_behavior": "scalar",
             "value_id": "advent_loyalist_homeworld_planet_track_build_price_scalar_value"
         }
@@ -169,6 +179,14 @@
                     "redirection": "current_gravity_well_primary_fixture"
                 }
             }]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "generic_colonized_effect",
+        "alias_binding":
+        {
+            "particle_effect": "Buff_RecentlyColonized"
         }
     }]
 }

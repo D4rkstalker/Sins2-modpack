@@ -1,0 +1,60 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "admiral_scion_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_ability"
+                },
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "item_has_active_ability"
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "apply_buff_radius",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "admiral_scion_ability_cooldown_modifier_value",
+        "action_value":
+        {
+            "values": [-0.1]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "admiral_scion_ability_cooldown_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "admiral_scion_ability_cooldown_modifier_value"
+        }
+    }]
+}

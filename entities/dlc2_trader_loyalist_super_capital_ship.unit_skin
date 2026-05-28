@@ -28,6 +28,33 @@
         {
             "map": [
             {
+                "mesh_alias_name": "pdbeamturret_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_pdlaser_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "pdbeamturret_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_pdlaser_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "medbeamturret_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "vasari_asset_medbeam_cap_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
                 "mesh_alias_name": "dlc2_trader_loyalist_super_capital_ship_component_cargo",
                 "mesh_definition":
                 {
@@ -253,7 +280,7 @@
                 "alias_binding":
                 {
                     "beam": "trader_capital_ship_medium_beam_weapon_beam",
-                    "sounds": ["weapon_techstarbasebeamheavy_travel"]
+                    "sounds": ["trader_med_beam"]
                 }
             },
             {
@@ -283,47 +310,6 @@
                 {
                     "beam": "trader_point_defense_beam_weapon_beam",
                     "sounds": ["weapon_psisupportbeamlight_travel"]
-                }
-            },
-            {
-                "alias_name": "trader_loyalist_titan_beam_weapon_beam",
-                "alias_binding":
-                {
-                    "beam": "trader_loyalist_beam",
-                    "sounds": [
-                        "weapon_techstarbasebeamheavy_travel"]
-                }
-            },
-            {
-                "alias_name": "trader_loyalist_titan_beam_weapon_hit_hull",
-                "alias_binding":
-                {
-                    "particle_effect": "trader_loyalist_beam_impact",
-                    "sounds": [
-                        "weapon_impact_energy_heavy_hithull",
-                        "weapon_impact_energy_heavy_hithull_01",
-                        "weapon_impact_energy_heavy_hithull_02"
-                    ]
-                }
-            },
-            {
-                "alias_name": "trader_loyalist_titan_beam_weapon_hit_shield",
-                "alias_binding":
-                {
-                    "particle_effect": "trader_loyalist_beam_impact",
-                    "sounds": [
-                        "weapon_impact_generic_heavy_hitshields",
-                        "weapon_impact_generic_heavy_hitshields_01",
-                        "weapon_impact_generic_heavy_hitshields_02",
-                        "weapon_impact_generic_heavy_hitshields_03"
-                    ]
-                }
-            },
-            {
-                "alias_name": "trader_loyalist_titan_beam_weapon_muzzle",
-                "alias_binding":
-                {
-                    "particle_effect": "trader_loyalist_beam_muzzle"
                 }
             },
             {
@@ -381,7 +367,7 @@
                 {
                     "beam": "trader_advanced_beam",
                     "sounds": [
-                        "weapon_techstarbasebeamheavy_travel"]
+                        "trader_heavy_beam"]
                 }
             },
             {
@@ -513,7 +499,9 @@
                 "alias_name": "dlc2_trader_loyalist_super_coordinate_on_spawner",
                 "alias_binding":
                 {
-                    "particle_effect": "mark_target"
+                    "particle_effect": "mark_target",
+                    "sounds": [
+                        "ability_activate_tech_coord_assault"]
                 }
             },
             {
@@ -541,49 +529,63 @@
                 "alias_name": "dlc2_trader_loyalist_super_hold_the_line_on_spawner",
                 "alias_binding":
                 {
-                    "particle_effect": "hold_the_line"
+                    "particle_effect": "hold_the_line",
+                    "sounds": [
+                        "ability_activate_tech_holdtheline"]
                 }
             },
             {
                 "alias_name": "dlc2_trader_loyalist_super_hold_the_line_on_target_large",
                 "alias_binding":
                 {
-                    "particle_effect": "hold_the_line_on_large"
+                    "particle_effect": "hold_the_line_on_large",
+                    "sounds": [
+                        "ambient_loop_tech_holdtheline_target"]
                 }
             },
             {
                 "alias_name": "dlc2_trader_loyalist_super_hold_the_line_on_target_medium",
                 "alias_binding":
                 {
-                    "particle_effect": "hold_the_line_on_medium"
+                    "particle_effect": "hold_the_line_on_medium",
+                    "sounds": [
+                        "ambient_loop_tech_holdtheline_target"]
                 }
             },
             {
                 "alias_name": "dlc2_trader_loyalist_super_hold_the_line_on_target_small",
                 "alias_binding":
                 {
-                    "particle_effect": "hold_the_line_on_small"
+                    "particle_effect": "hold_the_line_on_small",
+                    "sounds": [
+                        "ambient_loop_tech_holdtheline_target"]
                 }
             },
             {
                 "alias_name": "dlc2_trader_loyalist_super_mag_shield_active",
                 "alias_binding":
                 {
-                    "particle_effect": "buff_trader_magnetic_overshield"
+                    "particle_effect": "buff_trader_magnetic_overshield",
+                    "sounds": [
+                        "ambient_loop_tech_magnetic_overshield"]
                 }
             },
             {
                 "alias_name": "dlc2_trader_loyalist_super_mag_shield_start",
                 "alias_binding":
                 {
-                    "particle_effect": "buff_trader_magnetic_overshield_activate"
+                    "particle_effect": "buff_trader_magnetic_overshield_activate",
+                    "sounds": [
+                        "ability_activate_tech_magnetic_overshield"]
                 }
             },
             {
                 "alias_name": "dlc2_trader_loyalist_super_reserves_activate",
                 "alias_binding":
                 {
-                    "particle_effect": "reserve_fleet"
+                    "particle_effect": "reserve_fleet",
+                    "sounds": [
+                        "ability_activate_tech_reserve_fleet"]
                 }
             }]
         },

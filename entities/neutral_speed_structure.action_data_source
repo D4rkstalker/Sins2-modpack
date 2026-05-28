@@ -1,0 +1,109 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "allied_units_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self",
+                "ally"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [5600.0]
+        }
+    },
+    {
+        "action_value_id": "duration_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "turn_rate_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "speed_value",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "phase_jump_charge_value",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "speed_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "max_linear_acceleration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "speed_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "max_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "turn_rate_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "hyperspace_charge_time_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_charge_time",
+            "value_behavior": "scalar",
+            "value_id": "phase_jump_charge_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "hyperspace_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "speed_value"
+        }
+    }]
+}

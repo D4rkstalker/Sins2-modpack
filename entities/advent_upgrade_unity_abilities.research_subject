@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 3,
+    "field": "civilian_advent_repeatables",
+    "field_coord": [6, 0],
+    "research_time": 650.0,
+    "price":
+    {
+        "credits": 2900.0,
+        "metal": 1300.0,
+        "crystal": 1300.0
+    },
+    "empire_modifiers": [
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "unity_max_mana_points",
+        "value": 0.25
+    },
+    {
+        "value_behavior": "scalar",
+        "modifier_type": "unity_mana_restore_rate",
+        "value": 0.33
+    }],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "unit_types": [
+                "star"
+            ]
+        },
+        "action_data_source": "advent_unity_conversion_research",
+        "buff": "empty",
+        "tooltip_sub_header_label": "tooltip.research_subject.conversion_unity_ability_bonus",
+        "tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": "advent_unity_sacrifice_damage_tooltip",
+            "value_id": "conversion_damage_value",
+            "value_float_format": "one_decimal_place",
+            "value_color": "negative"
+        },
+        {
+            "rendering_type": "single_value",
+            "label_text": "advent_unity_conversion_damage_tooltip",
+            "value_id": "conversion_damage_value_upgrade",
+            "value_float_format": "one_decimal_place_with_sign",
+            "value_color": "negative"
+        },
+        {
+            "visible_if_value_zero": true,
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.armor_penetration",
+            "value_id": "common_ability_damage_penetration_value",
+            "value_color": "negative"
+        }]
+    }],
+    "name": "advent_upgrade_unity_conversion_name",
+    "name_uppercase": "advent_upgrade_unity_conversion_name_uppercase",
+    "description": "advent_upgrade_unity_conversion_description",
+    "hud_icon": "advent_unity_conversion_ability_hud_icon",
+    "tooltip_picture": "advent_unity_conversion_ability_tooltip_picture"
+}

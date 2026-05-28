@@ -55,8 +55,12 @@
     "ai":
     {
         "attack_target_type_groups": [
-            "heavy_capital",
-            "defense"
+            "heavy",
+            "antistructure",
+            "capital_supercapital",
+            "defense",
+            "carrier_support",
+            "light"
         ],
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft"
@@ -74,7 +78,7 @@
     {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
-        "attack_target_type": "lrm"
+        "attack_target_type": "antiarmor"
     },
     "user_interface":
     {
@@ -103,8 +107,8 @@
             "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
-                "min_angle": -5.0,
-                "max_angle": 5.0
+                "min_angle": -15.0,
+                "max_angle": 15.0
             },
             "pitch_arc":
             {
@@ -160,19 +164,29 @@
             }
         }
     },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 3.95,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [7, 8],
+            "large_debris": [1, 2]
+        }
+    },
     "health":
     {
         "release_time_after_death": 60.0,
         "can_collide_duration_after_death": 3.95,
-        "durability": 300.0,
+        "durability": 250.0,
         "can_ever_be_resurrected": true,
         "levels": [
         {
-            "max_hull_points": 1000.0,
+            "max_hull_points": 1250.0,
             "hull_point_restore_rate": 2.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 1200.0,
+            "max_armor_points": 1140.0,
             "armor_point_restore_rate": 4.0,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
@@ -183,8 +197,8 @@
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 64.0
         }]
@@ -205,12 +219,59 @@
         "supply_cost": 10,
         "build_group_id": "cruiser"
     },
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_armor_points",
+        "value_behavior": "additive",
+        "value": 175.0,
+        "prerequisites": [
+            ["advent_long_range_cruiser_assault"]
+        ]
+    },
+    {
+        "modifier_type": "max_hull_points",
+        "value_behavior": "additive",
+        "value": 100.0,
+        "prerequisites": [
+            ["advent_long_range_cruiser_assault"]
+        ]
+    },
+    {
+        "modifier_type": "max_angular_speed",
+        "value_behavior": "scalar",
+        "value": 1.0,
+        "prerequisites": [
+            ["advent_long_range_cruiser_assault"]
+        ]
+    }],
     "target_filter_unit_type": "cruiser",
     "tags": [
         "cruiser"
     ],
+    "abilities": [
+    {
+        "abilities": [
+            "advent_long_range_cruiser_dampen",
+	    "heavy_antimatter_drain"
+		]
+    },
+    {
+        "abilities": [
+            "advent_long_range_cruiser_dampen",
+	    "heavy_antimatter_drain",
+            "special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "garrison"
+    },
+    {
+        "abilities": [
+            "advent_long_range_cruiser_dampen",
+	    "heavy_antimatter_drain",
+            "special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "insurgent"
+    }],
     "ship_roles": [
-        "anti_structure",
         "attack_ship"
     ],
     "skin_groups": [

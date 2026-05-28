@@ -132,6 +132,41 @@
                 }]
             },
             {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "improved_titan_nano_emitters"
+                    }
+                },
+                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "nano_remit_improved_radius_value",
+                "operators_constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "operand_destination"
+                    },
+                    "target_filter_id": "nano_remit_target_filter"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_rebel_titan_nano_remit_buff"
+                }]
+            },
+            {
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
                 {
@@ -277,6 +312,16 @@
         {
             "header_text": "vasari_rebel_titan_improved_nano_emitters_item_header",
             "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "nano_remit_buff_regen_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "nano_remit_buff_regen_duration_value",
+                "value_suffix": "seconds"
+            },
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.radius",

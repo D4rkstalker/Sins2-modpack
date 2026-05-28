@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "make_current_spawner_dead_on_buff_made_dead": false,
+    "make_current_spawner_dead_on_buff_made_dead": true,
     "active_duration": "replicate_forces_duration_value",
     "stacking_limit":
     {
@@ -9,6 +9,13 @@
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "replicate_clone_armor_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "replicate_clone_hull_modifier"
+    }],
     "trigger_event_actions": [
     {
         "trigger_event_type": "on_buff_started",
@@ -35,8 +42,37 @@
                             "large_unit": "vasari_carrier_capital_ship_replicate_forces_impact_large"
                         }
                     }
+                },
+                {
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "first_spawner"
+                        }
+                    }
                 }]
             }]
         }
-    }]
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_carrier_capital_ship_replicate_forces_ability_hud_icon",
+        "name": "vasari_carrier_capital_ship_replicate_forces_ability_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "replicate_clone_armor_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "replicate_clone_hull_modifier"
+            }]
+        }]
+    }
 }

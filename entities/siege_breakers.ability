@@ -1,0 +1,34 @@
+{
+    "version": 0,
+    "action_data_source": "siege_breakers",
+    "passive_actions":
+    {
+        "persistant_buff": "siege_breakers"
+    },
+    "gui":
+    {
+        "name": "ability.siege_breakers_name",
+        "description": "ability.siege_breaker_description",
+	"hud_icon": "unit_bounty_increased_notification_icon",
+	"tooltip_picture": "unit_bounty_increased_notification_tooltip_picture",
+        "tooltip_line_groups": [
+        {
+            "header_text": "target_filter_unit_type.starbase_name",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.bonus_damage",
+                "value_id": "siege_breaker_bonus_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_taken",
+                "value_id": "siege_breaker_on_self_bonus_value",
+                "value_float_format": "percentage",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

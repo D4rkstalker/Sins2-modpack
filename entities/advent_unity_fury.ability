@@ -1,0 +1,75 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_fury",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [3, 6, 9],
+    "active_actions":
+    {
+        "cooldown_time": "fury_cooldown_time_value",
+        "unity_mana_cost": "fury_unity_mana_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_buff_agent",
+                    "buff_on_agent": "advent_unity_fury_on_spawner"
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_fury_ability_hud_icon",
+        "tooltip_picture": "advent_unity_fury_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_fury_ability_tooltip_picture",
+        "name": "advent_unity_fury_ability_name",
+        "description": "advent_unity_fury_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "fury_radius_value"
+            }
+        },
+	"tooltip_line_groups": [
+        {
+            "header_text": "advent_unity_fury_effect_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage_rate",
+                "value_id": "fury_damage_rate_value",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "fury_armor_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "fury_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "fury_execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+
+    }
+}

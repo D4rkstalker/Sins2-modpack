@@ -125,24 +125,62 @@
                 "enter_sound": "hyperspace_entry",
                 "exit_sound": "hyperspace_exit"
             },
+            "damage_effects":
+            {
+                "max_damage_effect_count": 4,
+                "damage_effects": [
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "tec_damage_embers"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.99,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "tec_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 1,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.75,
+                    "particle_effect": "damage_air_decompression",
+                    "sound": "ambient_loop_airdecompression"
+                }]
+            },
             "flair_effects": [
             {
                 "mesh_point_name": "center",
                 "particle_effect": "tec_damage_frigate",
                 "constraint": "is_crippled"
             }],
+            "shield_effect": "trader_light_frigate",
             "effect_alias_bindings": [
             {
                 "alias_name": "pirate_light_frigate_light_autocannon_weapon_hit_hull",
                 "alias_binding":
                 {
-                    "particle_effect": "light_autocannon_impact",
+                    "particle_effect": "medium_autocannon_impact",
                     "sounds": [
-                        "weapon_impact_physical_light_hithull",
-                        "weapon_impact_physical_light_hithull_01",
-                        "weapon_impact_physical_light_hithull_02",
-                        "weapon_impact_physical_light_hithull_03",
-                        "weapon_impact_physical_light_hithull_04"
+                        "weapon_impact_physical_medium_hithull",
+                        "weapon_impact_physical_medium_hithull_01",
+                        "weapon_impact_physical_medium_hithull_02",
+                        "weapon_impact_physical_medium_hithull_03",
+                        "weapon_impact_physical_medium_hithull_04"
                     ]
                 }
             },
@@ -150,12 +188,12 @@
                 "alias_name": "pirate_light_frigate_light_autocannon_weapon_hit_shield",
                 "alias_binding":
                 {
-                    "particle_effect": "light_autocannon_impact",
+                    "particle_effect": "medium_autocannon_impact",
                     "sounds": [
-                        "weapon_impact_generic_light_hitshields",
-                        "weapon_impact_generic_light_hitshields_01",
-                        "weapon_impact_generic_light_hitshields_02",
-                        "weapon_impact_generic_light_hitshields_03"
+                        "weapon_impact_generic_medium_hitshields",
+                        "weapon_impact_generic_medium_hitshields_01",
+                        "weapon_impact_generic_medium_hitshields_02",
+                        "weapon_impact_generic_medium_hitshields_03"
                     ]
                 }
             },
@@ -163,12 +201,13 @@
                 "alias_name": "pirate_light_frigate_light_autocannon_weapon_muzzle",
                 "alias_binding":
                 {
-                    "particle_effect": "trader_light_autocannon_weapon_muzzle",
+                    "particle_effect": "trader_medium_autocannon_weapon_muzzle",
                     "sounds": [
-                        "weapon_muzzle_tech_light_autocannon",
-                        "weapon_muzzle_tech_light_autocannon_01",
-                        "weapon_muzzle_tech_light_autocannon_02",
-                        "weapon_muzzle_tech_light_autocannon_03"
+                        "weapon_muzzle_tech_medium_autocannon",
+                        "weapon_muzzle_tech_medium_autocannon_01",
+                        "weapon_muzzle_tech_medium_autocannon_02",
+                        "weapon_muzzle_tech_medium_autocannon_03",
+                        "weapon_muzzle_tech_medium_autocannon_04"
                     ]
                 }
             },
@@ -176,7 +215,7 @@
                 "alias_name": "pirate_light_frigate_light_autocannon_weapon_projectile_travel",
                 "alias_binding":
                 {
-                    "particle_effect": "trader_light_autocannon_weapon_projectile_travel"
+                    "particle_effect": "trader_medium_autocannon_weapon_projectile_travel"
                 }
             },
             {
@@ -185,11 +224,10 @@
                 {
                     "particle_effect": "pd_autocannon_impact",
                     "sounds": [
-                        "weapon_impact_physical_light_hithull",
-                        "weapon_impact_physical_light_hithull_01",
-                        "weapon_impact_physical_light_hithull_02",
-                        "weapon_impact_physical_light_hithull_03",
-                        "weapon_impact_physical_light_hithull_04"
+                        "weapon_impact_physical_pointdefense_hithull",
+                        "weapon_impact_physical_pointdefense_hithull_01",
+                        "weapon_impact_physical_pointdefense_hithull_02",
+                        "weapon_impact_physical_pointdefense_hithull_03"
                     ]
                 }
             },
@@ -223,7 +261,7 @@
                 "alias_name": "trader_antifighter_frigate_point_defense_autocannon_weapon_projectile_travel",
                 "alias_binding":
                 {
-                    "particle_effect": "trader_light_autocannon_weapon_projectile_travel"
+                    "particle_effect": "trader_point_defense_autocannon_weapon_projectile_travel"
                 }
             }]
         },
@@ -231,7 +269,7 @@
         {
             "move_sounds":
             {
-                "engine": "engine_techcapitalship",
+                "engine": "engine_techfrigateship",
                 "hyperspace_travel": "hyperspace_travel"
             },
             "dialogue":

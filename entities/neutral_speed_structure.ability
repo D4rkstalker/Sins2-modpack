@@ -1,0 +1,61 @@
+{
+    "version": 0,
+    "action_data_source": "neutral_speed_structure",
+    "passive_actions":
+    {
+        "persistant_buff": "neutral_speed_structure_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "neutral_speed_structure_hud_icon",
+        "name": "neutral_speed_structure_ability_name",
+        "description": "neutral_speed_structure_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.aura_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "max_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "hyperspace_charge_time_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "hyperspace_speed_modifier"
+            }]
+        }]
+    }
+}

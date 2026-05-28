@@ -1,7 +1,6 @@
 {
     "version": 0,
     "action_data_source": "trader_siege_capital_ship_precision_targeting",
-    "is_ultimate_ability": true,
     "level_source": "internal_level",
     "min_required_unit_levels": [0, 2, 4, 6, 8],
     "active_actions":
@@ -12,64 +11,50 @@
         {
             "constraint":
             {
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "unit_passes_unit_constraint",
-					"unit":
-					{
-						"unit_type": "current_spawner"
-					},
-					"unit_constraint":
-					{
-						"constraint_type": "has_buff",
-						"buff": "plasma_storm_fixture_bonus_on_target"
-					}
-				}
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "plasma_storm_fixture_bonus_on_target"
+                    }
+                }
             },
             "actions": [
             {
-                "action_type": "use_unit_operators_on_units_in_radius_of_unit",
-                "radius_origin_unit":
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
                 {
-                    "unit_type": "target"
+                    "unit_type": "current_spawner"
                 },
-                "radius_value": "precision_targeting_radius_value",
                 "operators": [
                 {
-                    "constraint":
-                    {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "operand_destination"
-                        },
-                        "target_filter_id": "precision_targeting_target_filter"
-                    },
                     "operator_type": "apply_buff",
                     "buff": "trader_siege_capital_ship_precision_targeting"
                 }]
             }]
         },
-        "targeting_type": "unit_targeted",
-        "target_filters": [
-            "precision_targeting_target_filter"
-        ],
-        "range": "precision_targeting_range_value",
-        "move_alignment":
-        {
-            "type": "yaw",
-            "angle": 0.0,
-            "allow_opposite_angle": false
-        },
-        "firing_angle": 30.0,
         "auto_cast":
         {
             "enabled_by_default_behavior": "always",
-            "target_definitions": [
+            "caster_constraint":
             {
-                "target_filter": "precision_targeting_auto_cast_target_filter"
-            }]
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "has_recently_fired_weapon"
+                }
+            }
         }
     },
     "gui":
@@ -77,15 +62,6 @@
         "hud_icon": "trader_siege_capital_ship_precision_targeting_ability_hud_icon",
         "name": "trader_siege_capital_ship_precision_targeting_ability_name",
         "description": "trader_siege_capital_ship_precision_targeting_ability_description",
-        "targeting":
-        {
-            "targeting_type": "range_and_radius",
-            "values":
-            {
-                "range": "precision_targeting_range_value",
-                "radius": "precision_targeting_radius_value"
-            }
-        },
         "tooltip_line_groups": [
         {
             "lines": [
@@ -93,14 +69,30 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.bonus_missile_damage",
                 "value_id": "precision_targeting_bonus_damage_value",
-                "value_float_format": "percentage_with_sign",
-                "value_color": "negative"
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_color": "positive"
             },
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.duration",
                 "value_id": "precision_targeting_duration_value",
                 "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.on_missile_tooltip_lines_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "precision_targeting_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "precision_targeting_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "precision_targeting_max_angular_speed_modifier"
             }]
         }]
     }

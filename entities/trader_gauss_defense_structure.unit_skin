@@ -1,0 +1,317 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 31367.340209,
+        "min_camera_distance": 697.814868,
+        "gui":
+        {
+            "hud_icon": "trader_gauss_defense_structure_hud_icon",
+            "hud_monochrome_icon": "trader_gauss_defense_structure_main_view_icon",
+            "hud_picture": "trader_gauss_defense_structure_hud_picture",
+            "tooltip_picture": "trader_gauss_defense_structure_tooltip_picture",
+            "name": "trader_gauss_defense_structure_name",
+            "description": "trader_gauss_defense_structure_description"
+        },
+        "unit_mesh":
+        {
+            "mesh": "trader_gauss_defense_structure",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "child_mesh_alias_bindings": {
+            "map": [
+            {
+                "mesh_alias_name": "misturret_barrel_0",
+                "mesh_definition":
+                {
+                        "mesh": "trader_asset_misturret_barrel_0",
+                        "shader": "ship",
+                        "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "misturret_mount_0",
+                "mesh_definition":
+                {
+                        "mesh": "trader_asset_misturret_mount_0",
+                        "shader": "ship",
+                        "is_shadow_blocker": true
+                }
+            }]
+        },
+        "main_view_icon":
+        {
+            "group": "structure",
+            "icon": "trader_gauss_defense_structure_main_view_icon",
+            "selected_icon": "trader_gauss_defense_structure_main_view_icon_selected",
+            "sub_selected_icon": "trader_gauss_defense_structure_main_view_icon_sub_selected"
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 20,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "damage_air_decompression",
+                    "sound": "ambient_loop_airdecompression"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "tec_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "tec_damage_escaping_gas",
+                    "sound": "ambient_loop_tech_escaping_gas"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "tec_damage_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "effect_alias_bindings": [
+            {
+                "alias_name": "trader_gauss_defense_structure_heavy_gauss_weapon_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "tech_capital_gauss_cannon_impact",
+                    "sounds": [
+                        "weapon_impact_physical_heavy_hithull",
+                        "weapon_impact_physical_heavy_hithull_01",
+                        "weapon_impact_physical_heavy_hithull_02",
+                        "weapon_impact_physical_heavy_hithull_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_heavy_gauss_weapon_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "tech_capital_gauss_cannon_impact",
+                    "sounds": [
+                        "weapon_impact_generic_heavy_hitshields",
+                        "weapon_impact_generic_heavy_hitshields_01",
+                        "weapon_impact_generic_heavy_hitshields_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_heavy_gauss_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "tech_turret_gauss_structure_muzzleflash",
+                    "sounds": [
+                        "weapon_muzzle_tech_gausscannon",
+                        "weapon_muzzle_tech_gausscannon_01",
+                        "weapon_muzzle_tech_gausscannon_02",
+                        "weapon_muzzle_tech_gausscannon_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_heavy_gauss_weapon_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "tech_capital_gauss_cannon_travel"
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_hit_hull",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_impact",
+                    "sounds": [
+                        "weapon_impact_energy_heavy_hithull",
+                        "weapon_impact_energy_heavy_hithull_01",
+                        "weapon_impact_energy_heavy_hithull_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_hit_shield",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_impact",
+                    "sounds": [
+                        "weapon_impact_generic_heavy_hitshields",
+                        "weapon_impact_generic_heavy_hitshields_01",
+                        "weapon_impact_generic_heavy_hitshields_02"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_tech_gausscannon",
+                        "weapon_muzzle_tech_gausscannon_01",
+                        "weapon_muzzle_tech_gausscannon_02",
+                        "weapon_muzzle_tech_gausscannon_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_projectile_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_bolt"
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_buff_on_target_large",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_status_large"
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_buff_on_target_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_status_medium"
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_meson_bolt_buff_on_target_small",
+                "alias_binding":
+                {
+                    "particle_effect": "tec_meson_status_small"
+                }
+            },
+            {
+                "alias_name": "trader_support_capital_ship_medium_missile_weapon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "capital_ship_torpedo_muzzle",
+                    "sounds": [
+                        "weapon_muzzle_tech_medium_missile_capship",
+                        "weapon_muzzle_tech_medium_missile_capship_01",
+                        "weapon_muzzle_tech_medium_missile_capship_02",
+                        "weapon_muzzle_tech_medium_missile_capship_03"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_meson_bolt_cannon_muzzle",
+                "alias_binding":
+                {
+                    "particle_effect": "Buff_GaussRailgunFire",
+                    "sounds": [
+                        "Weapon_Tech_GaussCannonRailGun_Muzzle"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_meson_bolt_cannon_chargeup",
+                "alias_binding":
+                {
+                    "particle_effect": "Buff_GaussRailgunChargeup",
+                    "sounds": [
+                        "WEAPON_TECH_GAUSSCANNONRAILGUN_CHARGEUP"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_meson_bolt_cannon_hit",
+                "alias_binding":
+                {
+                    "particle_effect": "Buff_GaussRailgunImpact",
+                    "sounds": [
+                        "WEAPON_TECH_GAUSSCANNONRAILGUN_IMPACT"
+                    ]
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_meson_bolt_cannon_travel",
+                "alias_binding":
+                {
+                    "particle_effect": "Buff_GaussRailgunTravel"
+                }
+            },
+            {
+                "alias_name": "trader_gauss_defense_structure_meson_bolt_cannon_debuff",
+                "alias_binding":
+                {
+                    "particle_effect": "Buff_GaussRailgunArmourReduction",
+                      "sounds": [
+                        "EFFECT_INTERFERENCE"
+                    ]
+                }
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_tech_gauss_defense"
+                    ],
+                    "scared": [
+                        "ui_onselection_tech_gauss_defense"]
+                }
+            }
+        },
+        "death_sequence_group": "planetmodulesmall"
+    }]
+}

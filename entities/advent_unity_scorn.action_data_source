@@ -14,19 +14,19 @@
             ],
             "exemptions": [
                 "is_not_explored"
-			],
-			"constraints": [
-			{
+            ],
+            "constraints": [
+            {
                 "constraint_type": "is_in_dominant_culture",
                 "dominant_culture_player_relationship": "self"
             },
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "advent_unity_scorn_on_gravity_well"
-				}
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_unity_scorn_on_gravity_well"
+                }
             }]
         }
     },
@@ -43,19 +43,19 @@
             ],
             "exemptions": [
                 "is_not_explored"
-			],
-			"constraints": [
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "is_detected"
-				}
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_detected"
+                }
             },
-			{
+            {
                 "constraint_type": "has_adjacent_planet_with_ownership",
                 "max_jump_distance": 2,
-				"targeter_relationship_type": "self"
+                "targeter_relationship_type": "self"
             }]
         }
     },
@@ -74,7 +74,8 @@
                 "none"
             ],
             "exemptions": [
-                "is_not_explored"]
+                "is_not_explored"
+            ]
         }
     },
     {
@@ -89,9 +90,9 @@
             ],
             "exemptions": [
                 "is_not_explored"
-			],
-			"constraints": [
-			{
+            ],
+            "constraints": [
+            {
                 "constraint_type": "is_in_dominant_culture",
                 "dominant_culture_player_relationship": "self"
             }]
@@ -123,14 +124,14 @@
         "action_value_id": "scorn_commerce_rate_scalar",
         "action_value":
         {
-            "values": [-0.1, -0.2, -0.3]
+            "values": [-0.3, -0.6, -0.9]
         }
     },
     {
         "action_value_id": "scorn_metal_mining_rate_scalar",
         "action_value":
         {
-            "values": [-0.1, -0.2, -0.3]
+            "values": [-0.3, -0.6, -0.9]
         }
     },
     {
@@ -144,7 +145,7 @@
         "action_value_id": "scorn_crystal_mining_rate_scalar",
         "action_value":
         {
-            "values": [-0.1, -0.2, -0.3]
+            "values": [-0.3, -0.6, -0.9]
         }
     },
     {
@@ -170,7 +171,7 @@
             "value_behavior": "scalar",
             "value_id": "scorn_commerce_rate_scalar"
         }
-	},
+    },
     {
         "buff_planet_modifier_id": "scorn_metal_mining_rate_modifier",
         "buff_planet_modifier":
@@ -179,7 +180,7 @@
             "value_behavior": "scalar",
             "value_id": "scorn_commerce_rate_scalar"
         }
-	},
+    },
     {
         "buff_planet_modifier_id": "scorn_crystal_mining_rate_modifier",
         "buff_planet_modifier":
@@ -188,7 +189,25 @@
             "value_behavior": "scalar",
             "value_id": "scorn_commerce_rate_scalar"
         }
-	},
+    },
+    {
+        "buff_planet_modifier_id": "scorn_orbital_metal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_metal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "scorn_commerce_rate_scalar"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "scorn_orbital_crystal_mining_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "orbital_extraction_crystal_income_rate",
+            "value_behavior": "scalar",
+            "value_id": "scorn_commerce_rate_scalar"
+        }
+    },
     {
         "buff_planet_modifier_id": "scorn_ship_build_rate_modifier",
         "buff_planet_modifier":
@@ -197,7 +216,7 @@
             "value_behavior": "scalar",
             "value_id": "scorn_ship_build_rate_scalar"
         }
-	},
+    },
     {
         "buff_planet_modifier_id": "scorn_structure_build_rate_modifier",
         "buff_planet_modifier":
@@ -206,7 +225,7 @@
             "value_behavior": "scalar",
             "value_id": "scorn_structure_build_rate_scalar"
         }
-	}],
+    }],
     "effect_alias_bindings": [
     {
         "alias_name": "advent_unity_scorn_buff_large",

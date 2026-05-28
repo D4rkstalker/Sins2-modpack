@@ -15,20 +15,19 @@
             "constraint":
             {
                 "constraint_type": "composite_and",
-                    "constraints": [
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
                     {
-                        "constraint_type": "damage_has_damage_source",
-                        "damage_source": "weapon"
+                        "unit_type": "trigger_event_destination"
                     },
-                    {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "trigger_event_destination"
-                        },
-                        "target_filter_id": "defense_aoe_target_filter"
-                    }
-                ]
+                    "target_filter_id": "defense_aoe_target_filter"
+                }]
             },
             "actions": [
             {
@@ -49,14 +48,13 @@
                     "target_filter_id": "defense_aoe_target_filter"
                 },
                 "operators": [
-                    {
-                        "operator_type": "apply_damage",
-                        "damage_source": "ability",
-                        "damage_affect_type": "hull_and_armor_and_shields",
-                        "damage_value": "defense_aoe_damage_value",
-                        "penetration_value": "defense_aoe_pierce_value"
-                    }
-                ]
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "defense_aoe_damage_value",
+                    "penetration_value": "uniforms_damage_event_penetration_value"
+                }]
             }]
         }
     }]

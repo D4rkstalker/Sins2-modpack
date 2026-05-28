@@ -1,0 +1,155 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 67577.633164,
+        "min_camera_distance": 2160.501433,
+        "gui":
+        {
+            "hud_icon": "vasari_phase_synchronizer_structure_hud_icon",
+            "hud_monochrome_icon": "vasari_phase_synchronizer_structure_main_view_icon",
+            "hud_picture": "vasari_phase_synchronizer_structure_hud_picture",
+            "tooltip_picture": "vasari_phase_synchronizer_structure_tooltip_picture",
+            "name": "neutral_speed_structure_name",
+            "description": "neutral_speed_structure_description",
+			"show_description_in_unit_tooltip": true
+        },
+        "unit_mesh":
+        {
+            "mesh": "vasari_phase_synchronizer_structure",
+            "shader": "ship",
+            "is_shadow_blocker": true
+		},
+        "child_mesh_alias_bindings":
+        {
+            "map": [
+            {
+                "mesh_alias_name": "synchronizer_core",
+                "mesh_definition":
+                {
+                    "mesh": "vasari_phase_synchronizer_structure_core",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            }]
+        },
+        "main_view_icon":
+        {
+            "group": "structure",
+            "icon": "vasari_phase_synchronizer_structure_main_view_icon",
+            "selected_icon": "vasari_phase_synchronizer_structure_main_view_icon_selected",
+            "sub_selected_icon": "vasari_phase_synchronizer_structure_main_view_icon_sub_selected",
+            "has_rotation": false
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 10,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "vasari_damage_clouds"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "vasari_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "vasari_damage_escaping_gas",
+                    "sound": "ambient_loop_tech_escaping_gas"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "vasari_damage_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "vasari_damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "vasari_damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+				"sound": "ambient_loop_scan_derelict",
+                "particle_effect": "scanning_derelict_loot",
+                "constraint": "is_loot_collection_active"
+            },
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "vasari_phase_synchronizer_structure_rings_rotation"
+            },
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "vasari_damage_structure",
+                "constraint": "is_crippled"
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "planetmodule_phaseorbitaltradeport_onselection_0"
+                    ],
+                    "scared": [
+                        "planetmodule_phaseorbitaltradeport_onselection_0"]
+                }
+            }
+        },
+        "death_sequence_group": "vasari_planetmodulelarge"
+    }]
+}

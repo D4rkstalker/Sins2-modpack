@@ -1,0 +1,120 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_try_make_dead",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "target_filter_id": "plague_enemy_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_source"
+                    }
+                },
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_source"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "target_filter_id": "plague_self_corvette_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nanite_plague_on_target"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "target_filter_id": "plague_self_frigate_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nanite_plague_on_target"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "target_filter_id": "plague_self_frigate_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nanite_plague_on_target"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "target_filter_id": "plague_self_cruiser_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nanite_plague_on_target"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "target_filter_id": "plague_self_cruiser_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nanite_plague_on_target"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "target_filter_id": "plague_self_cruiser_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_source"
+                        }
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nanite_plague_on_target"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_nanite_plague_hud_icon",
+        "name": "research_subject.vasari_nanite_plague_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive"
+    }
+}

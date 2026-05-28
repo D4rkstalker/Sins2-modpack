@@ -1,6 +1,5 @@
 {
     "version": 0,
-    "make_dead_on_current_spawner_made_dead": false,
     "stacking_limit":
     {
         "stacking_limit": "fixed_one",
@@ -8,16 +7,11 @@
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
-    "trigger_event_actions": [
-    {
+    "trigger_event_actions":
+    [{
         "trigger_event_type": "on_unit_damaged_by_current_spawner",
         "action_group":
         {
-            "constraint":
-            {
-            	"constraint_type": "damage_has_damage_source",
-            	"damage_source": "weapon"
-            },
             "actions": [
             {
                 "action_type": "use_unit_operators_on_single_unit",
@@ -27,11 +21,30 @@
                 },
                 "operators": [
                 {
+                    "constraint":
+                    {
+                    	"constraint_type": "composite_or",
+                    	"constraints": [
+                    	{
+                        	"constraint_type": "damage_has_weapon_tag",
+                        	"weapon_tag": "plasma"
+                    	},
+                    	{
+                        	"constraint_type": "damage_has_weapon_tag",
+                        	"weapon_tag": "holy_fire"
+                    	}]
+                    },
                     "operator_type": "repair_damage",
                     "affect_type": "armor_only",
-                    "repair_value": "repair"
+                    "repair_value": "repair_plasma_holy_fire"
                 }]
             }]
         }
-    }]
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_sin_of_wrath_hud_icon",
+        "name": "research_subject.advent_loyalist_battle_armor_restore_name",
+        "visibility_scope": "positive"
+    }
 }

@@ -3,38 +3,36 @@
     "level_count": 5,
     "target_filters": [
     {
-        "target_filter_id": "domination_auto_cast_target_filter",
+        "target_filter_id": "domination_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "domination_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "corvette",
-                "cruiser",
                 "frigate"
             ],
             "ownerships": [
                 "enemy"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "is_always_a_threat"
-			},
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
-                }
-			},
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-					"buff": "advent_battle_psionic_capital_ship_domination_prevent",
-					"include_pending_buffs": true
-                }
-			}]
+            }]
         }
     },
     {
@@ -48,25 +46,34 @@
             ],
             "ownerships": [
                 "enemy"
-			],
-			"constraints": [
+            ],
+            "constraints": [
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
                     "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
+                    "mutation": "cannot_be_captured_or_cloned"
                 }
-			},
+            },
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
                     "constraint_type": "has_buff",
-					"buff": "advent_battle_psionic_capital_ship_domination_prevent",
-					"include_pending_buffs": true
+                    "buff": "advent_battle_psionic_capital_ship_domination_prevent",
+                    "include_pending_buffs": true
                 }
-			}]
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "special_operation_unit",
+                    "include_pending_buffs": true
+                }
+            }]
         }
     }],
     "action_values": [
@@ -74,7 +81,7 @@
         "action_value_id": "domination_antimatter_cost_value",
         "action_value":
         {
-            "values": [150.0, 127.5, 105.0, 82.5, 60.0]
+            "values": [89.0, 98.0, 107.0, 116.0, 125.0]
         }
     },
     {

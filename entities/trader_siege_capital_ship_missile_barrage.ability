@@ -13,20 +13,20 @@
         {
             "constraint":
             {
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "unit_passes_unit_constraint",
-					"unit":
-					{
-						"unit_type": "current_spawner"
-					},
-					"unit_constraint":
-					{
-						"constraint_type": "has_buff",
-						"buff": "plasma_storm_fixture_bonus_on_target"
-					}
-				}
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                   "constraint_type": "unit_passes_unit_constraint",
+                   "unit":
+                   {
+                    	"unit_type": "current_spawner"
+                   },
+                   "unit_constraint":
+                   {
+                    	"constraint_type": "has_buff",
+                    	"buff": "plasma_storm_fixture_bonus_on_target"
+                   }
+                }
             },
             "actions": [
             {
@@ -71,7 +71,10 @@
             },
             "target_definitions": [
             {
-                "target_filter": "trader_siege_capital_ship_missile_barrage_auto_cast_target_filter"
+                "target_filter": "trader_siege_capital_ship_missile_barrage_auto_cast_high_target_filter"
+            },
+            {
+                "target_filter": "trader_siege_capital_ship_missile_barrage_auto_cast_low_target_filter"
             }]
         },
         "watched_buff": "trader_siege_capital_ship_missile_barrage_on_self"
@@ -91,14 +94,14 @@
             }
         },
         "tooltip_line_groups": [
-		{
-			"lines": [
+        {
+            "lines": [
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.missile_volleys",
                 "value_id": "missile_barrage_execution_count_value"
             }]
-		},
+        },
         {
             "header_text": "tooltip.ability.salvo_properties",
             "lines": [
@@ -114,25 +117,25 @@
             }]
         },
         {
-			"is_visible_constraint": 
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "research_prerequisites_are_met",
-					"player":
-					{
-						"owned_unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"player_type": "unit_owner"
-					},
-					"prerequisites": [
-						["trader_missile_weapon_armor"]
-					]
-				}
-			},
+            "is_visible_constraint": 
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "research_prerequisites_are_met",
+                    "player":
+                    {
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "player_type": "unit_owner"
+                    },
+                    "prerequisites": [
+                        ["trader_missile_weapon_armor"]
+                    ]
+                }
+            },
             "header_text": "tooltip.ability.missile_properties",
             "lines": [
             {
@@ -165,21 +168,21 @@
             }]
         },
         {
-			"is_visible_constraint": 
-			{
-				"constraint_type": "research_prerequisites_are_met",
-				"player":
-				{
-					"owned_unit":
-					{
-						"unit_type": "current_spawner"
-					},
-					"player_type": "unit_owner"
-				},
-				"prerequisites": [
-					["trader_missile_weapon_armor"]
-				]
-			},
+            "is_visible_constraint": 
+            {
+                "constraint_type": "research_prerequisites_are_met",
+                "player":
+                {
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "player_type": "unit_owner"
+                },
+                "prerequisites": [
+                    ["trader_missile_weapon_armor"]
+                ]
+            },
             "header_text": "tooltip.ability.missile_properties",
             "lines": [
             {
@@ -215,7 +218,7 @@
                 "label_text": "tooltip.ability.missile_armor_strength",
                 "value_id": "missile_barrage_torpedo_armor_strength_value"
             },
-			{
+            {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.max_targets",
                 "value_id": "missile_barrage_max_target_count_value"

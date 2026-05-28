@@ -26,6 +26,34 @@
         }
     },
     {
+        "target_filter_id": "jam_weapons_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_battle_capital_ship_jam_weapons_on_target",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
         "target_filter_id": "jam_weapons_auto_cast_target_filter",
         "target_filter":
         {
@@ -62,7 +90,7 @@
         "action_value_id": "jam_weapons_antimatter_cost_value",
         "action_value":
         {
-            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+            "values": [77.0, 84.0, 91.0, 98.0, 105.0]
         }
     },
     {

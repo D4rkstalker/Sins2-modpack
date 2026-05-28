@@ -17,7 +17,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -35,7 +36,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"],
+                "enemy"
+            ],
             "constraints": [
             {
                 "constraint_type": "composite_not",
@@ -45,6 +47,9 @@
                     "buff": "vasari_rebel_titan_nano_leech_on_target",
                     "include_pending_buffs": true
                 }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
             }]
         }
     }],
@@ -52,7 +57,7 @@
     {
         "float_variable_ids": [
             "total_hull_regen",
-			"total_antimatter_regen"]
+            "total_antimatter_regen"]
     },
     "action_values": [
     {
@@ -77,7 +82,7 @@
         "action_value_id": "nano_leech_antimatter_cost_value",
         "action_value":
         {
-            "values": [180.0, 157.5, 135.0, 112.5, 90.0]
+            "values": [115.0, 127.0, 139.0, 151.0, 163.0]
         }
     },
     {
@@ -113,6 +118,18 @@
         "action_value":
         {
             "values": [12.0, 18.0, 24.0, 30.0, 36.0]
+        }
+    },
+    {
+        "action_value_id": "nano_leech_damage_percent_rate_value",
+        "action_value":
+        {
+            "transform_type": "per_current_hull_points",
+            "values": [0.005, 0.01, 0.015, 0.02, 0.025],
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            }
         }
     },
     {

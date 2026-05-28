@@ -4,7 +4,7 @@
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
-	{
+    {
         "execution_interval_value": "fixed_one",
         "action_group":
         {
@@ -17,15 +17,15 @@
                 },
                 "operators": [
                 {
-					"operator_type": "apply_damage",
-					"damage_source": "ability",
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
                     "damage_affect_type": "hull_and_armor_and_shields",
                     "damage_value": "deconstruct_structure_damage",
                     "penetration_value": "deconstruct_structure_pierce"
                 }]
             }]
         }
-	}],
+    }],
     "trigger_event_actions": [
     {
         "trigger_event_type": "on_buff_started",
@@ -54,11 +54,16 @@
             }]
         }
     }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "antimatter_restore_rate_modifier"
+    }],
     "unit_mutations": [
         "disable_can_passively_regenerate_hull",
-		"disable_can_passively_regenerate_armor",
-		"disable_can_passively_regenerate_shields",
-		"disable_can_have_shields_burst_restored"],
+        "disable_can_passively_regenerate_armor",
+        "disable_can_passively_regenerate_shields",
+        "disable_can_have_shields_burst_restored"
+    ],
     "gui":
     {
         "hud_icon": "trader_constructor_ship_deconstruct_structure_ability_hud_icon",
@@ -81,6 +86,6 @@
                 "value_id": "deconstruct_structure_pierce",
                 "value_color": "negative"
             }]
-		}]
+        }]
     }
 }

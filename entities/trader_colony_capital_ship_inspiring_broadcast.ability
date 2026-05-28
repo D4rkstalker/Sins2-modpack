@@ -32,15 +32,29 @@
             "enabled_by_default_behavior": "always",
             "caster_constraint":
             {
-                "constraint_type": "unit_passes_unit_constraint",
-                "unit":
+                "constraint_type": "composite_and",
+                "constraints":[
                 {
-                    "unit_type": "current_spawner"
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
                 },
-                "unit_constraint":
                 {
-                "constraint_type": "has_recently_fired_weapon"
-                }
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "inspiring_broadcast_auto_cast_target_filter",
+                    "radius_value": "inspiring_broadcast_radius_value",
+                    "target_count_value": "inspiring_broadcast_auto_cast_target_count_value"
+                }]
             }
         }
     },
@@ -74,6 +88,18 @@
                 "label_text": "tooltip.ability.duration",
                 "value_id": "inspiring_broadcast_duration_value",
                 "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "buff_trade_export_credits",
+                "trade_export_credits_points_id": "trader_colony_capital_ship_mobile_trade_port_trade_export_credits_points_modifier"
+            },
+            {
+                "rendering_type": "buff_trade_export_metal",
+                "trade_export_metal_points_id": "trader_colony_capital_ship_mobile_trade_port_trade_export_metal_points_modifier"
+            },
+            {
+                "rendering_type": "buff_trade_export_crystal",
+                "trade_export_crystal_points_id": "trader_colony_capital_ship_mobile_trade_port_trade_export_crystal_points_modifier"
             },
             {
                 "rendering_type": "buff_trade_capacity",

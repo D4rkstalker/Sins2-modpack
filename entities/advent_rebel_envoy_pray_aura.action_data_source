@@ -1,0 +1,142 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "advent_rebel_envoy_pray_aura_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "advent_rebel_envoy_pray_aura_friendly_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "advent_rebel_envoy_pray_aura_radius",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_envoy_pray_aura_damage_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_envoy_pray_aura_degen_value",
+        "action_value":
+        {
+            "values": [-0.25]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_envoy_pray_aura_regen_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "advent_rebel_envoy_pray_aura_speed_value",
+        "action_value":
+        {
+            "values": [-0.25]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_shield_degen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "advent_rebel_envoy_pray_aura_degen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_armor_degen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "advent_rebel_envoy_pray_aura_degen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_hull_degen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "advent_rebel_envoy_pray_aura_degen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "advent_rebel_envoy_pray_aura_speed_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_shield_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "advent_rebel_envoy_pray_aura_regen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_armor_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "advent_rebel_envoy_pray_aura_regen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_rebel_envoy_pray_aura_hull_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "advent_rebel_envoy_pray_aura_regen_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "advent_rebel_envoy_pray_aura_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "advent_rebel_envoy_pray_aura_damage_value"
+        }
+    }]
+}

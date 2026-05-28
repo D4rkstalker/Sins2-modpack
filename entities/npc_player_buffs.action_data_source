@@ -10,7 +10,7 @@
             ],
             "ownerships": [
                 "self"
-			]
+            ]
         }
     },
     {
@@ -19,49 +19,34 @@
         {
             "unit_types": [
                 "planet",
-				"capital_ship"
+                "capital_ship"
             ],
             "ownerships": [
                 "self"
-			]
+            ]
         }
     },
     {
-        "target_filter_id": "synergetic_tactics_target_filter",
+        "target_filter_id": "npc_player_buffs_unit_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "corvette",
                 "strikecraft",
                 "titan",
-				"capital_ship",
-				"cruiser",
-				"frigate",
-				"structure",
-				"super_capital_ship",
-				"starbase"
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "starbase"
             ],
             "ownerships": [
-                "ally"
-            ],
-			"constraints": [
-			{
-				"constraint_type": "has_buff",
-				"buff": "vasari_damage_per_allied_player"
-			},
-			{
-				"constraint_type": "has_weapon"
-			}]
+                "self"
+            ]
         }
     }],
     "action_values": [
-    {
-        "action_value_id": "npc_surveying_track_build_time_value",
-        "action_value":
-        {
-            "values": [100000000.0]
-        }
-    },
     {
         "action_value_id": "damage_per_allied_player_damage_value",
         "action_value":
@@ -69,16 +54,6 @@
             "values": [0.05]
         }
     }],
-    "buff_planet_modifiers": [
-    {
-        "buff_planet_modifier_id": "npc_surveying_track_build_time_modifier",
-        "buff_planet_modifier":
-        {
-            "modifier_type": "surveying_track_build_time",
-            "value_behavior": "additive",
-            "value_id": "npc_surveying_track_build_time_value"
-        }
-	}],
     "buff_weapon_modifiers": [
     {
         "buff_weapon_modifier_id": "damage_per_allied_player_damage_modifier",

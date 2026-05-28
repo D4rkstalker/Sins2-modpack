@@ -1,0 +1,30 @@
+{
+    "version": 0,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "make_dead_on_parent_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_factory_modifiers": [
+    {
+        "buff_unit_factory_modifier_id": "mutual_threat_factory_build_time_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_envoy_frigate_mutual_threat_hud_icon",
+        "name": "vasari_envoy_frigate_mutual_threat_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+		{
+            "lines": [
+            {
+                "rendering_type": "buff_unit_factory_modifier",
+                "unit_factory_modifier_id": "mutual_threat_factory_build_time_modifier"
+            }]
+        }]
+    }
+}

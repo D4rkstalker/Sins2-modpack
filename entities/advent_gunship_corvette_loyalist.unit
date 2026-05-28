@@ -13,9 +13,9 @@
     "physics":
     {
         "can_move_linear": true,
-        "max_linear_speed": 1100.0,
-        "time_to_max_linear_speed": 2.2,
-        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "max_linear_speed": 1200.0,
+        "time_to_max_linear_speed": 2.4,
+        "arrival_tolerance_spatial_radius_scalar": 1.5,
         "death_linear_speed_range": [0.75, 1.25],
         "can_move_angular": true,
         "max_angular_speed": 100.0,
@@ -104,7 +104,7 @@
                 [-4.584358, -0.916773, 30.864183]
             ],
             "forward": [0.0, 0.0, 1.0],
-            "up": [0.0, 1.0, -0.0],
+            "up": [-0.0, 1.0, -0.0],
             "yaw_arc":
             {
                 "min_angle": -5.0,
@@ -114,6 +114,57 @@
             {
                 "min_angle": -5.0,
                 "max_angle": 5.0
+            }
+        },
+        {
+            "weapon": "advent_gunship_corvette_laser_turret",
+            "mesh_point": "child.advent_gunship_lightturret_mount_0",
+            "weapon_position": [-1e-06, -2.85, 1.731898],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [-0.0, -1.0, -0.0],
+            "yaw_arc":
+            {
+                "min_angle": -180.0,
+                "max_angle": 180.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -85.0,
+                "max_angle": 3.0
+            }
+        },
+        {
+            "weapon": "advent_gunship_corvette_laser_turret",
+            "mesh_point": "child.advent_gunship_lightturret_mount_1",
+            "weapon_position": [-8.6, -0.33, -2.4],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [-0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -210.0,
+                "max_angle": 15.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -85.0,
+                "max_angle": 3.0
+            }
+        },
+        {
+            "weapon": "advent_gunship_corvette_laser_turret",
+            "mesh_point": "child.advent_gunship_lightturret_mount_2",
+            "weapon_position": [8.6, -0.33, -2.4],
+            "forward": [-0.0, 0.0, 1.0],
+            "up": [-0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -15.0,
+                "max_angle": 210.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -85.0,
+                "max_angle": 3.0
             }
         }],
         "max_range_weapon_index": 0
@@ -130,6 +181,15 @@
             }
         }
     },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 0.8,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [1, 2]
+        }
+    },
     "health":
     {
         "release_time_after_death": 60.0,
@@ -137,23 +197,23 @@
         "can_ever_be_resurrected": true,
         "levels": [
         {
-            "max_hull_points": 360.0,
+            "max_hull_points": 325.0,
             "hull_point_restore_rate": 1.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 240.0,
+            "max_armor_points": 170.0,
             "armor_point_restore_rate": 2.0,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
             "armor_strength": 10.0,
-            "max_shield_points": 110.0,
+            "max_shield_points": 75.0,
             "shield_point_restore_rate": 1.0,
             "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 20.0
         }]
@@ -168,8 +228,8 @@
         "build_time": 15.0,
         "price":
         {
-            "credits": 90.0,
-            "metal": 40.0,
+            "credits": 75.0,
+            "metal": 30.0,
             "crystal": 30.0
         },
         "prerequisites": [
@@ -189,6 +249,22 @@
             "advent_gunship_corvette_harmonic_reactor",
             "advent_gunship_corvette_antimatter_transfer"
         ]
+    },
+    {
+        "abilities": [
+            "advent_gunship_corvette_harmonic_reactor",
+            "advent_gunship_corvette_antimatter_transfer",
+            "special_operation_unit"
+        ],
+        "required_special_operation_unit_kind": "garrison"
+    },
+    {
+        "abilities": [
+            "advent_gunship_corvette_harmonic_reactor",
+            "advent_gunship_corvette_antimatter_transfer",
+            "special_operation_unit"
+        ],
+        "required_special_operation_unit_kind": "insurgent"
     }],
     "ship_roles": [
         "attack_ship"

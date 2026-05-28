@@ -1,0 +1,70 @@
+{
+    "version": 0,
+    "level_count": 3,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_garrison_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_buff",
+                "buff": "special_operation_unit"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "trader_garrison_buff_scalar",
+        "action_value":
+        {
+            "values": [0.0, 0.5, 1.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "trader_garrison_buff_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "trader_garrison_buff_hull_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "trader_garrison_buff_armor_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "trader_garrison_buff_shield_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
+        }
+    }]
+}

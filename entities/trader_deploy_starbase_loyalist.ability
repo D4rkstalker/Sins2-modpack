@@ -35,13 +35,23 @@
         {
             "unit": "trader_starbase_loyalist"
         },
-        "move_alignment":
+        "auto_cast":
         {
-            "type": "yaw",
-            "angle": 0.0,
-            "allow_opposite_angle": false
-        },
-        "firing_angle": 10.0
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "deploy_starbase_auto_cast_target_filter"
+            },
+            "target_definitions": [
+            {
+                "target_filter": "deploy_starbase_target_filter"
+            }]
+        }
     },
     "gui":
     {

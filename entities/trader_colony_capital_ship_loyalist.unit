@@ -13,13 +13,13 @@
     "physics":
     {
         "can_move_linear": true,
-        "max_linear_speed": 750.0,
-        "time_to_max_linear_speed": 6.0,
+        "max_linear_speed": 800.0,
+        "time_to_max_linear_speed": 5.0,
         "arrival_tolerance_spatial_radius_scalar": 0.25,
         "death_linear_speed_range": [0.75, 1.25],
         "can_move_angular": true,
         "max_angular_speed": 19.5,
-        "time_to_max_angular_speed": 15.0,
+        "time_to_max_angular_speed": 13.0,
         "max_bank_angle": 15.0,
         "death_angular_speed_range": [2.0, 4.0],
         "linear_acceleration_angle": 75.0,
@@ -67,7 +67,7 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft_corvette"
         ],
-        "attack_target_type_groups_matching_weapon": "trader_colony_capital_ship_autocannon",
+        "attack_target_type_groups_matching_weapon": "trader_colony_capital_ship_medium_beam",
         "auto_follow_target_priority": 5.0,
         "pursuit":
         {
@@ -101,13 +101,13 @@
         {
             "weapon": "trader_colony_capital_ship_medium_beam",
             "mesh_point": "child.medturret_mount_0",
-            "weapon_position": [80.129822, -21.793007, 65.200592],
-            "forward": [1.0, 0.0, 1e-06],
-            "up": [0.0, 1.0, 0.0],
+            "weapon_position": [-80.129822, -21.793011, 65.200592],
+            "forward": [-1.0, -0.0, 0.0],
+            "up": [-0.0, 1.0, 0.0],
             "yaw_arc":
             {
-                "min_angle": -75.0,
-                "max_angle": 45.0
+                "min_angle": -45.0,
+                "max_angle": 75.0
             },
             "pitch_arc":
             {
@@ -118,8 +118,25 @@
         {
             "weapon": "trader_colony_capital_ship_medium_beam",
             "mesh_point": "child.medturret_mount_1",
-            "weapon_position": [98.329254, -21.793007, -26.380995],
-            "forward": [1.0, 0.0, 1e-06],
+            "weapon_position": [-98.329247, -21.793011, -26.380989],
+            "forward": [-1.0, -0.0, 0.0],
+            "up": [-0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -100.0,
+                "max_angle": 70.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -50.0,
+                "max_angle": 15.0
+            }
+        },
+        {
+            "weapon": "trader_colony_capital_ship_medium_beam",
+            "mesh_point": "child.medturret_mount_2",
+            "weapon_position": [99.308868, -21.793011, -26.413099],
+            "forward": [1.0, 0.0, 0.0],
             "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
@@ -134,31 +151,14 @@
         },
         {
             "weapon": "trader_colony_capital_ship_medium_beam",
-            "mesh_point": "child.medturret_mount_2",
-            "weapon_position": [-99.308868, -21.793007, -26.413101],
-            "forward": [-1.0, 0.0, -0.0],
-            "up": [0.0, 1.0, 0.0],
-            "yaw_arc":
-            {
-                "min_angle": -100.0,
-                "max_angle": 70.0
-            },
-            "pitch_arc":
-            {
-                "min_angle": -50.0,
-                "max_angle": 15.0
-            }
-        },
-        {
-            "weapon": "trader_colony_capital_ship_medium_beam",
             "mesh_point": "child.medturret_mount_3",
-            "weapon_position": [-80.313599, -21.793007, 64.301414],
-            "forward": [-1.0, 0.0, -0.0],
+            "weapon_position": [80.313599, -21.793011, 64.301407],
+            "forward": [1.0, 0.0, 0.0],
             "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 75.0
+                "min_angle": -75.0,
+                "max_angle": 45.0
             },
             "pitch_arc":
             {
@@ -169,8 +169,8 @@
         {
             "weapon": "trader_colony_capital_ship_point_defense_beam",
             "mesh_point": "child.pdturret_mount_0",
-            "weapon_position": [-80.990875, 51.855099, -4.275206],
-            "forward": [-1.0, 0.0, -0.0],
+            "weapon_position": [80.990883, 51.855099, -4.275206],
+            "forward": [1.0, 0.0, 0.0],
             "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
@@ -186,9 +186,9 @@
         {
             "weapon": "trader_colony_capital_ship_point_defense_beam",
             "mesh_point": "child.pdturret_mount_1",
-            "weapon_position": [80.460815, 51.855099, -4.268632],
-            "forward": [1.0, 0.0, -0.0],
-            "up": [0.0, 1.0, 0.0],
+            "weapon_position": [-80.460823, 51.855099, -4.268632],
+            "forward": [-1.0, -0.0, 0.0],
+            "up": [-0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -90.0,
@@ -201,14 +201,116 @@
             }
         },
         {
+            "weapon": "trader_colony_capital_ship_light_beam",
+            "mesh_point": "child.lightturret_mount_0",
+            "weapon_position": [-0.000717, 53.988209, 295.309998],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -105.0,
+                "max_angle": 105.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -75.0,
+                "max_angle": 3.0
+            }
+        },
+        {
+            "weapon": "trader_colony_capital_ship_light_beam",
+            "mesh_point": "child.lightturret_mount_1",
+            "weapon_position": [-0.000717, 67.064728, -351.188599],
+            "forward": [0.0, 0.0, -1.0],
+            "up": [0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -100.0,
+                "max_angle": 100.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -75.0,
+                "max_angle": 3.0
+            }
+        },
+        {
+            "weapon": "trader_colony_capital_ship_light_beam",
+            "mesh_point": "child.lightturret_mount_2",
+            "weapon_position": [-0.000717, -120.368103, -318.898712],
+            "forward": [-0.0, 0.0, -1.0],
+            "up": [-0.0, -1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -160.0,
+                "max_angle": 160.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -75.0,
+                "max_angle": 5.0
+            }
+        },
+        {
+            "weapon": "trader_colony_capital_ship_light_beam",
+            "mesh_point": "child.lightturret_mount_3",
+            "weapon_position": [-0.000717, -120.367996, -147.287704],
+            "forward": [0.0, 0.0, 1.0],
+            "up": [-0.0, -1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -160.0,
+                "max_angle": 160.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -75.0,
+                "max_angle": 3.0
+            }
+        },
+        {
+            "weapon": "trader_colony_capital_ship_light_beam",
+            "mesh_point": "child.lightturret_mount_4",
+            "weapon_position": [37.299278, 70.953682, 143.1418],
+            "forward": [1.0, 0.0, 0.0],
+            "up": [0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -95.0,
+                "max_angle": 45.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -75.0,
+                "max_angle": 5.0
+            }
+        },
+        {
+            "weapon": "trader_colony_capital_ship_light_beam",
+            "mesh_point": "child.lightturret_mount_5",
+            "weapon_position": [-37.30072, 70.953682, 143.1418],
+            "forward": [-1.0, -0.0, 0.0],
+            "up": [-0.0, 1.0, 0.0],
+            "yaw_arc":
+            {
+                "min_angle": -45.0,
+                "max_angle": 95.0
+            },
+            "pitch_arc":
+            {
+                "min_angle": -75.0,
+                "max_angle": 5.0
+            }
+        },
+        {
             "weapon": "trader_colony_capital_ship_planet_bombing",
             "mesh_point": "bomb",
-            "weapon_position": [1.6e-05, -22.421749, 366.704102],
+            "weapon_position": [-1.6e-05, -22.421749, 366.704102],
             "non_turret_muzzle_positions": [
-                [1.6e-05, -22.421749, 366.704102]
+                [-1.6e-05, -22.421749, 366.704102]
             ],
             "forward": [0.0, 0.0, 1.0],
-            "up": [0.0, 1.0, -0.0],
+            "up": [0.0, 1.0, 0.0],
             "yaw_arc":
             {
                 "min_angle": -10.0,
@@ -763,7 +865,7 @@
                     "additive_values": {
                         "max_antimatter": 260.0,
                         "antimatter_restore_rate": 0.85,
-                        "max_squadron_capacity": 2.0,
+                        "max_squadron_capacity": 1.0,
                         "metal_income_rate": 0.1,
                         "crystal_income_rate": 0.1
                     },
@@ -776,7 +878,7 @@
                     "additive_values": {
                         "max_antimatter": 295.0,
                         "antimatter_restore_rate": 0.95,
-                        "max_squadron_capacity": 2.0,
+                        "max_squadron_capacity": 1.0,
                         "metal_income_rate": 0.2,
                         "crystal_income_rate": 0.2
                     },
@@ -796,7 +898,7 @@
                     "additive_values": {
                         "max_antimatter": 330.0,
                         "antimatter_restore_rate": 1.05,
-                        "max_squadron_capacity": 2.0,
+                        "max_squadron_capacity": 1.0,
                         "metal_income_rate": 0.3,
                         "crystal_income_rate": 0.3
                     },
@@ -816,7 +918,7 @@
                     "additive_values": {
                         "max_antimatter": 365.0,
                         "antimatter_restore_rate": 1.15,
-                        "max_squadron_capacity": 3.0,
+                        "max_squadron_capacity": 2.0,
                         "metal_income_rate": 0.4,
                         "crystal_income_rate": 0.4
                     },
@@ -836,7 +938,7 @@
                     "additive_values": {
                         "max_antimatter": 400.0,
                         "antimatter_restore_rate": 1.25,
-                        "max_squadron_capacity": 3.0,
+                        "max_squadron_capacity": 2.0,
                         "metal_income_rate": 0.5,
                         "crystal_income_rate": 0.5
                     },
@@ -856,7 +958,7 @@
                     "additive_values": {
                         "max_antimatter": 435.0,
                         "antimatter_restore_rate": 1.35,
-                        "max_squadron_capacity": 3.0,
+                        "max_squadron_capacity": 2.0,
                         "metal_income_rate": 0.6,
                         "crystal_income_rate": 0.6
                     },
@@ -876,7 +978,7 @@
                     "additive_values": {
                         "max_antimatter": 470.0,
                         "antimatter_restore_rate": 1.45,
-                        "max_squadron_capacity": 4.0,
+                        "max_squadron_capacity": 2.0,
                         "metal_income_rate": 0.7,
                         "crystal_income_rate": 0.7
                     },
@@ -896,7 +998,7 @@
                     "additive_values": {
                         "max_antimatter": 505.0,
                         "antimatter_restore_rate": 1.55,
-                        "max_squadron_capacity": 4.0,
+                        "max_squadron_capacity": 3.0,
                         "metal_income_rate": 0.8,
                         "crystal_income_rate": 0.8
                     },
@@ -916,7 +1018,7 @@
                     "additive_values": {
                         "max_antimatter": 540.0,
                         "antimatter_restore_rate": 1.65,
-                        "max_squadron_capacity": 4.0,
+                        "max_squadron_capacity": 3.0,
                         "metal_income_rate": 0.9,
                         "crystal_income_rate": 0.9
                     },
@@ -935,7 +1037,7 @@
                     "additive_values": {
                         "max_antimatter": 575.0,
                         "antimatter_restore_rate": 1.75,
-                        "max_squadron_capacity": 5.0,
+                        "max_squadron_capacity": 3.0,
                         "metal_income_rate": 1.0,
                         "crystal_income_rate": 1.0
                     },
@@ -956,7 +1058,7 @@
                     "additive_values": {
                         "max_antimatter": 610.0,
                         "antimatter_restore_rate": 1.85,
-                        "max_squadron_capacity": 5.0,
+                        "max_squadron_capacity": 3.0,
                         "metal_income_rate": 1.2,
                         "crystal_income_rate": 1.2
                     },
@@ -976,7 +1078,7 @@
                     "additive_values": {
                         "max_antimatter": 645.0,
                         "antimatter_restore_rate": 1.95,
-                        "max_squadron_capacity": 5.0,
+                        "max_squadron_capacity": 4.0,
                         "metal_income_rate": 1.4,
                         "crystal_income_rate": 1.4
                     },
@@ -996,7 +1098,7 @@
                     "additive_values": {
                         "max_antimatter": 680.0,
                         "antimatter_restore_rate": 2.05,
-                        "max_squadron_capacity": 6.0,
+                        "max_squadron_capacity": 4.0,
                         "metal_income_rate": 1.6,
                         "crystal_income_rate": 1.6
                     },
@@ -1016,7 +1118,7 @@
                     "additive_values": {
                         "max_antimatter": 715.0,
                         "antimatter_restore_rate": 2.15,
-                        "max_squadron_capacity": 6.0,
+                        "max_squadron_capacity": 4.0,
                         "metal_income_rate": 1.8,
                         "crystal_income_rate": 1.8
                     },
@@ -1036,7 +1138,7 @@
                     "additive_values": {
                         "max_antimatter": 750.0,
                         "antimatter_restore_rate": 2.25,
-                        "max_squadron_capacity": 6.0,
+                        "max_squadron_capacity": 4.0,
                         "metal_income_rate": 2.0,
                         "crystal_income_rate": 2.0
                     },
@@ -1056,7 +1158,7 @@
                     "additive_values": {
                         "max_antimatter": 785.0,
                         "antimatter_restore_rate": 2.35,
-                        "max_squadron_capacity": 7.0,
+                        "max_squadron_capacity": 5.0,
                         "metal_income_rate": 2.2,
                         "crystal_income_rate": 2.2
                     },
@@ -1076,7 +1178,7 @@
                     "additive_values": {
                         "max_antimatter": 820.0,
                         "antimatter_restore_rate": 2.45,
-                        "max_squadron_capacity": 7.0,
+                        "max_squadron_capacity": 5.0,
                         "metal_income_rate": 2.4,
                         "crystal_income_rate": 2.4
                     },
@@ -1096,7 +1198,7 @@
                     "additive_values": {
                         "max_antimatter": 855.0,
                         "antimatter_restore_rate": 2.55,
-                        "max_squadron_capacity": 7.0,
+                        "max_squadron_capacity": 5.0,
                         "metal_income_rate": 2.6,
                         "crystal_income_rate": 2.6
                     },
@@ -1116,7 +1218,7 @@
                     "additive_values": {
                         "max_antimatter": 890.0,
                         "antimatter_restore_rate": 2.65,
-                        "max_squadron_capacity": 8.0,
+                        "max_squadron_capacity": 5.0,
                         "metal_income_rate": 2.8,
                         "crystal_income_rate": 2.8
                     },
@@ -1135,7 +1237,7 @@
                     "additive_values": {
                         "max_antimatter": 925.0,
                         "antimatter_restore_rate": 2.75,
-                        "max_squadron_capacity": 8.0,
+                        "max_squadron_capacity": 6.0,
                         "metal_income_rate": 3.0,
                         "crystal_income_rate": 3.0
                     },
@@ -1201,36 +1303,56 @@
         "launch_destination_formation": "capital_ship_strikecraft",
         "launch_destination_formation_offset":
         {
-            "rank": 2,
-            "group": 0
+            "rank": 3,
+            "group": 2
         },
         "hangar_data": [
         {
-            "hangar_basis":
+            "launch_basis":
             {
-				"position": [75.040066, 0.023466, -207.366314],
-				"rotation": [-0.0, 0.0, -1.0, -0.0, 1.0, 0.0, 1.0, 0.0, -0.0]
+                "position": [18.0, 18.0, -60.0],
+                "rotation": [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
+            },
+            "land_basis":
+            {
+                "position": [18.0, 18.0, -60.0],
+                "rotation": [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
             }
         },
         {
-            "hangar_basis":
+            "launch_basis":
             {
-				"position": [75.040066, 0.023466, -207.366314],
-				"rotation": [-0.0, 0.0, -1.0, -0.0, 1.0, 0.0, 1.0, 0.0, -0.0]
+                "position": [-18.0, 18.0, -60.0],
+                "rotation": [0.0, 0.0, 1.0, -0.0, 1.0, 0.0, -1.0, -0.0, 0.0]
+            },
+            "land_basis":
+            {
+                "position": [-18.0, 18.0, -60.0],
+                "rotation": [0.0, 0.0, 1.0, -0.0, 1.0, 0.0, -1.0, -0.0, 0.0]
             }
         },
         {
-            "hangar_basis":
+            "launch_basis":
             {
-				"position": [-75.040066, 0.023466, -207.366314],
-				"rotation": [-0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, -0.0]
+                "position": [18.0, 18.0, -116.5],
+                "rotation": [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
+            },
+            "land_basis":
+            {
+                "position": [18.0, 18.0, -116.5],
+                "rotation": [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
             }
         },
         {
-            "hangar_basis":
+            "launch_basis":
             {
-				"position": [-75.040066, 0.023466, -207.366314],
-				"rotation": [-0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, -0.0]
+                "position": [-18.0, 18.0, -116.5],
+                "rotation": [0.0, 0.0, 1.0, -0.0, 1.0, 0.0, -1.0, -0.0, 0.0]
+            },
+            "land_basis":
+            {
+                "position": [-18.0, 18.0, -116.5],
+                "rotation": [0.0, 0.0, 1.0, -0.0, 1.0, 0.0, -1.0, -0.0, 0.0]
             }
         }]
     },
@@ -1252,6 +1374,12 @@
     "passive_income":
     {},
     "item_builds": [
+        {
+            "weight": 20.0,
+            "build_group": [
+                "trader_deploy_starbase_loyalist"
+            ]
+        },
     {
         "build_group": [
             "trader_flak_burst",
@@ -1267,6 +1395,12 @@
         ],
         "weight": 8.0
     },
+        {
+            "weight": 8.0,
+            "build_group": [
+                "trader_tactical_analyst"
+            ]
+        },
     {
         "build_group": [
             "trader_heavy_armor",
@@ -1308,6 +1442,7 @@
         "capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 5,
     "abilities": [
     {
         "abilities": [

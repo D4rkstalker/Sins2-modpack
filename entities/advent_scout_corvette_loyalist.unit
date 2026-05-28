@@ -57,7 +57,8 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft"
         ],
-        "auto_follow_target_priority": -1.0
+        "auto_follow_target_priority": -1.0,
+        "target_engagement_mode": "only_engage_if_in_range"
     },
     "ai_attack_target":
     {
@@ -88,6 +89,15 @@
             }
         }
     },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 0.8,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [1, 2]
+        }
+    },
     "health":
     {
         "release_time_after_death": 60.0,
@@ -96,7 +106,7 @@
         "can_ever_be_resurrected": true,
         "levels": [
         {
-            "max_hull_points": 420.0,
+            "max_hull_points": 525.0,
             "hull_point_restore_rate": 1.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
@@ -111,8 +121,8 @@
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 2.0
         }]

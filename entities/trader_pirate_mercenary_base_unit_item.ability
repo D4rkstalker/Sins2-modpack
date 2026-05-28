@@ -50,6 +50,40 @@
                     "check_research_prerequisites": false
                 }]
             }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "never",
+            "caster_constraint":
+            {
+                "constraint_type": "player_has_available_supply",
+                "minimum_available_supply": "pirate_mercenary_base_auto_cast_available_supply_value",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                }
+            }
+        },
+        "ai_only_auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "player_has_available_supply",
+                "minimum_available_supply": "pirate_mercenary_base_auto_cast_available_supply_value",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                }
+            }
         }
     },
     "gui":

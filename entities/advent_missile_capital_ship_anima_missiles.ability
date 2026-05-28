@@ -11,6 +11,23 @@
         "antimatter_cost": "anima_missiles_antimatter_cost_value",
         "actions":
         {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                   "constraint_type": "unit_passes_unit_constraint",
+                   "unit":
+                   {
+                    	"unit_type": "current_spawner"
+                   },
+                   "unit_constraint":
+                   {
+                    	"constraint_type": "has_buff",
+                    	"buff": "plasma_storm_fixture_bonus_on_target"
+                   }
+                }
+            },
             "actions": [
             {
                 "action_type": "use_unit_operators_on_single_unit",
@@ -40,21 +57,20 @@
         "auto_cast":
         {
             "enabled_by_default_behavior": "always",
-            "caster_constraint":
-            {
-                "constraint_type": "unit_passes_unit_constraint",
-                "unit":
-                {
-                    "unit_type": "current_spawner"
-                },
-                "unit_constraint":
-                {
-                    "constraint_type": "weapon_has_target"
-                }
-            },
             "target_definitions": [
             {
-                "target_filter": "advent_missile_capital_ship_anima_missiles_auto_cast_target_filter"
+                "target_filter": "advent_missile_capital_ship_anima_missiles_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "radius_value": "anima_missiles_radius_value",
+                    "target_count_value": "anima_missile_auto_cast_target_count_value",
+                    "target_filter_id": "advent_missile_capital_ship_anima_missiles_auto_cast_target_filter"
+                }
             }]
         },
         "watched_buff": "advent_missile_capital_ship_anima_missiles_on_self"
@@ -92,6 +108,11 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.missile_volleys",
                 "value_id": "anima_missiles_execution_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "anima_missiles_max_target_count_value"
             },
             {
                 "rendering_type": "single_value",

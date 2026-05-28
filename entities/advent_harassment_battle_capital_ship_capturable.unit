@@ -45,25 +45,9 @@
             "type": "stop_and_fire"
         }
     },
-    "ai": {
-        "attack_target_type_groups": [
-            "heavy_capital",
-            "defense"
-        ],
-        "attack_target_type_groups_to_ignore": [
-            "torpedo_strikecraft_corvette"
-        ],
-        "attack_target_type_groups_matching_weapon": "advent_harassment_battle_capital_ship_beam",
-        "auto_follow_target_priority": 5.0,
-        "pursuit": {
-			"min_target_speed": 100.0,
-            "min_distance_to_target": 5000.0
-        },
-        "attack_target_type_range_scalar": 1.5
-    },
     "ai_attack_target": {
         "attack_priority": 50.0,
-        "is_always_a_threat": true,
+        "is_always_a_threat": false,
         "attack_target_type": "capital"
     },
     "user_interface": {
@@ -254,51 +238,9 @@
             }
         }
     },
-    "spawn_debris": {
-        "spawn_debris_time": 4.10,
-        "generic_group_name": "advent",
-        "generic_counts": {
-            "small_debris": [12, 16],
-            "large_debris": [8, 10]
-        },
-        "spawn_loot": {
-            "loot_unit": "ship_loot_advent",
-            "loot_name": "advent_harassment_battle_capital_ship_loot_name",
-            "experience_given": 200.0,
-            "exotics": [
-                {
-                    "bundles": [
-                        {
-                            "types": [
-                                "offense"
-                            ],
-                            "counts": [1, 2]
-                        }
-                    ],
-                    "weight": 1.0
-                },
-                {
-                    "bundles": [
-                        {
-                            "types": [
-                                "utility"
-                            ],
-                            "counts": [1, 1]
-                        }
-                    ],
-                    "weight": 1.0
-                }
-            ],
-            "assets": {
-                "credits": [200.0, 600.0],
-                "metal": [75.0, 225.0],
-                "crystal": [90.0, 270.0]
-            }
-        }
-    },
     "health": {
-        "release_time_after_death": 60.0,
-        "can_collide_duration_after_death": 6.0,
+        "release_time_after_death": 0.0,
+        "can_collide_duration_after_death": 0.0,
         "durability": 500.0,
         "can_ever_be_resurrected": false,
         "levels": [
@@ -415,7 +357,7 @@
                 "hull_point_restore_rate": 4.9,
                 "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
                 "hull_crippled_percentage": 0.80,
-                "max_armor_points": 1640.0,
+                "max_armor_points": 164.0,
                 "armor_point_restore_rate": 6.10,
                 "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
                 "armor_strength": 100.0,
@@ -1041,27 +983,6 @@
     "exotic_factory": {
         "required_mutation": "mobile_exotic_factory_enabled"
     },
-    "build": {
-        "build_time": 75.0,
-        "price": {
-            "credits": 2000.0,
-            "metal": 725.0,
-            "crystal": 900.0
-        },
-        "exotic_price": [
-            {
-                "exotic_type": "offense",
-                "count": 2
-            },
-            {
-                "exotic_type": "utility",
-                "count": 1
-            }
-        ],
-        "build_kind": "capital_ship",
-        "supply_cost": 50,
-        "build_group_id": "capital_ship"
-    },
     "carrier": {
         "base_max_squadron_capacity": 0,
         "strikecraft_kinds": [
@@ -1173,6 +1094,14 @@
         "attack_ship",
         "bomb_planet"
     ],
+    "capturable_unit":
+    {
+        "type": "change_owner_on_capture",
+        "capture_points_total": 900,
+        "allow_surrender": false,
+        "is_recapturable": false
+    },
+	"virtual_supply_cost": 1,
     "skin_groups": [
         {
             "skins": [
@@ -1180,6 +1109,5 @@
             ]
         }
     ],
-    "action_effect_size": "medium_unit",
-    "can_join_fleet": true
+    "action_effect_size": "medium_unit"
 }

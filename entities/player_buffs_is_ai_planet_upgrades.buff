@@ -1,0 +1,107 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_minute",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "planet_ai_random_chance_value"
+                    },
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "commerce",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": false
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "planet_ai_random_chance_value"
+                    },
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "logistics",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": false
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "planet_ai_random_chance_value"
+                    },
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "defense",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": false
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "planet_ai_random_chance_value"
+                    },
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "mining",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": false
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "planet_ai_random_chance_value"
+                    },
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "research",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": false
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "planet_ai_random_chance_value"
+                    },
+                    "operator_type": "increase_planet_track_level",
+                    "planet_track_type": "focus",
+                    "will_offset_development_track_upgrade_price": true,
+                    "ignore_research": false
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

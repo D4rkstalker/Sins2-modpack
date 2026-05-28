@@ -1,0 +1,56 @@
+{
+    "version": 0,
+    "action_data_source": "deploy_pop_structure",
+    "active_actions":
+    {
+        "cooldown_time": "deploy_cooldown",
+        "credits_cost": "advent_credits_cost",
+	"metal_cost": "advent_metal_cost",
+	"crystal_cost": "advent_crystal_cost",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "advent_population_structure",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "is_self_building": true
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted",
+        "range": "deploy_range",
+        "auto_cast":
+        {
+            "target_definitions": [
+            {
+                "target_filter": "uniforms_owned_planets"
+            }]
+        },
+        "spawned_unit":
+        {
+            "unit": "advent_population_structure",
+            "max_count_in_gravity_well": "max_count_in_gravity_well"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_population_structure_hud_icon",
+        "name": "ability.deploy_exotic_factory_name",
+        "description": "ability.deploy_exotic_factory_description"
+    }
+}

@@ -1,6 +1,7 @@
 {
     "version": 0,
-	"make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_parent_buff_made_dead": true,
+    "active_duration": "fixed_one_plus_zero_point_one",
     "stacking_limit":
     {
         "stacking_limit": "fixed_one",
@@ -175,6 +176,24 @@
                     "mesh_point": "center",
                     "effect": "planet_shield"
                 }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "trader_shield_generator_gas_giant_planet_target_filter"
+                },
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect": "gas_giant_planet_shield"
+                }
             }]
         }
     },
@@ -203,10 +222,11 @@
         "hud_icon": "trader_shield_generator_structure_ability_hud_icon",
         "name": "trader_shield_generator_structure_ability_name",
         "is_visible_within_unit_tooltip": true,
+        "is_expire_time_suppressed": true,
         "visibility_scope": "positive",
         "tooltip_line_groups": [
         {
-			"header_text": "trader_shield_generator_structure_ability_tooltip_sub_header_label",
+            "header_text": "trader_shield_generator_structure_ability_tooltip_sub_header_label",
             "lines": [
             {
                 "rendering_type": "buff_planet_modifier",

@@ -10,12 +10,40 @@
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
     {
-        "execution_interval_value": "fixed_one",
+        "execution_interval_value": "fixed_three",
         "action_group":
         {
             "actions": [
             {
                 "action_id": "trader_loyalist_homeworld_home_guard_command_apply_on_fixture_buffs"
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fixed_three",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "trader_garrison_buff_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_garrison_buff_on_ship"
+                }]
             }]
         }
     }]

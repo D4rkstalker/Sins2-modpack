@@ -1,0 +1,99 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 9,
+        "name": "Wisps",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [50.0, 50.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    },
+    {
+        "id": 11,
+        "name": "Fog",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [90.0, 90.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 13,
+        "name": "DarkWisps",
+        "type": "point",
+        "emit_rate":
+        {
+            "primary_emit_rate": [4.5, 4.5]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 1,
+            "max_duration": [2.0, 2.0],
+            "color": "ff404040",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [10.0, 20.0],
+                "height": [300.0, 500.0],
+                "initial_erosion_noise_offset_u": [0.0, 0.0],
+                "initial_erosion_noise_offset_v": [0.5, 0.5],
+                "random_flip_texture_horizontal_chance": 0.5,
+                "texture_animation": "advent_portal_wisps_dark_2x2",
+                "texture_animation_first_frame": "sequential",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 1.5
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [-100.0, 0.0]
+    }],
+    "modifiers": [
+    {
+        "id": 14,
+        "name": "Heighten",
+        "type": "float_property",
+        "property_type": "height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "linear",
+            "easing_values": [0.5, 1.0]
+        }
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 13,
+        "attachee_id": 9
+    }],
+    "modifier_to_emitter_attachments": [
+    {
+        "attacher_id": 14,
+        "attachee_id": 13
+    }]
+}

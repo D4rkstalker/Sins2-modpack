@@ -20,7 +20,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -54,14 +55,24 @@
             }
         }
     },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 3.95,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [14, 18],
+            "large_debris": [3, 5]
+        }
+    },
     "health":
     {
         "release_time_after_death": 60.0,
-        "can_collide_duration_after_death": 3.8,
+        "can_collide_duration_after_death": 3.95,
         "durability": 600.0,
         "levels": [
         {
-            "max_hull_points": 2400.0,
+            "max_hull_points": 3000.0,
             "hull_point_restore_rate": 3.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
@@ -76,8 +87,8 @@
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 25.0
         }]
@@ -105,12 +116,12 @@
     },
     "build":
     {
-        "build_time": 50.0,
+        "build_time": 60.0,
         "price":
         {
-            "credits": 450.0,
-            "metal": 125.0,
-            "crystal": 125.0
+            "credits": 600.0,
+            "metal": 80.0,
+            "crystal": 100.0
         },
         "build_kind": "structure",
         "build_radius": 505.662598

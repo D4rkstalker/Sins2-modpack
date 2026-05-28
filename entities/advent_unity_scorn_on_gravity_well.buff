@@ -10,24 +10,24 @@
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
     {
-		"execution_interval_count_value": "fixed_one",
+        "execution_interval_count_value": "fixed_one",
         "action_group":
         {
             "actions": [
             {
-			    "constraint":
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"target_filter_id": "scorn_debuff_target_filter"
-					}
-				},
+                "constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "scorn_debuff_target_filter"
+                    }
+                },
                 "action_type": "make_buff_dead"
             }]
 		}
@@ -51,7 +51,13 @@
         "buff_planet_modifier_id": "scorn_metal_mining_rate_modifier"
     },
     {
+        "buff_planet_modifier_id": "scorn_orbital_metal_mining_rate_modifier"
+    },
+    {
         "buff_planet_modifier_id": "scorn_crystal_mining_rate_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "scorn_orbital_crystal_mining_rate_modifier"
     },
     {
         "buff_planet_modifier_id": "scorn_ship_build_rate_modifier"
@@ -63,7 +69,7 @@
     {
         "hud_icon": "advent_unity_scorn_ability_hud_icon",
         "name": "advent_unity_scorn_ability_name",
-		"is_visible_within_unit_tooltip": true,
+        "is_visible_within_unit_tooltip": true,
         "visibility_scope": "negative",
         "tooltip_line_groups": [
         {
@@ -78,7 +84,15 @@
             },
             {
                 "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "scorn_orbital_metal_mining_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
                 "planet_modifier_id": "scorn_crystal_mining_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "scorn_orbital_crystal_mining_rate_modifier"
             },
             {
                 "rendering_type": "buff_planet_modifier",
@@ -89,5 +103,5 @@
                 "planet_modifier_id": "scorn_structure_build_rate_modifier"
             }]
         }]
-	}
+    }
 }

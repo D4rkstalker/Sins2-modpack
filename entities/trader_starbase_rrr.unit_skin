@@ -27,6 +27,51 @@
         {
             "map": [
             {
+                "mesh_alias_name": "pdbeamturret_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_pdlaser_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "pdbeamturret_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_pdlaser_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "lightbeamturret_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_medbeam_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "lightbeamturret_mount_0",
+                "mesh_definition":
+                {
+                    "mesh": "advent_asset_medbeam_mount_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
+                "mesh_alias_name": "medbeamturret_barrel_0",
+                "mesh_definition":
+                {
+                    "mesh": "vasari_asset_hvybeam_barrel_0",
+                    "shader": "ship",
+                    "is_shadow_blocker": true
+                }
+            },
+            {
                 "mesh_alias_name": "beamturret_barrel_0",
                 "mesh_definition":
                 {
@@ -180,6 +225,19 @@
         },
         "effects":
         {
+            "hyperspace_effects":
+            {
+                "charge_effect": "hyperspace_tech_titan_chargeup",
+                "charge_effect_between_stars": "hyperspace_tech_titan_chargeup_interstellar",
+                "charge_effect_destabilized": "hyperspace_tech_titan_chargeup_unstable",
+                "travel_effect": "hyperspace_tech_titan_travel",
+                "travel_effect_between_stars": "hyperspace_tech_titan_travel_interstellar",
+                "travel_effect_destabilized": "hyperspace_tech_titan_travel_unstable",
+                "exit_effect": "hyperspace_tech_titan_exit",
+                "charge_sound": "hyperspace_chargeup",
+                "enter_sound": "hyperspace_entry",
+                "exit_sound": "hyperspace_exit"
+            },
             "damage_effects":
             {
                 "max_damage_effect_count": 75,
@@ -257,49 +315,6 @@
             "level_up_sound": "capitalship_levelup",
             "effect_alias_bindings": [
             {
-                "alias_name": "trader_loyalist_titan_furious_defense",
-                "alias_binding":
-                {
-                    "particle_effect": "trader_loyalist_titan_furious_defense",
-                    "sounds": [
-                        "ability_activate_tech_furious_defense"]
-                }
-            },
-            {
-                "alias_name": "trader_support_capital_ship_energy_transfer_beam",
-                "alias_binding":
-                {
-                    "beam": "trader_support_capital_ship_energy_transfer_beam",
-                    "sounds": [
-                        "ability_muzzle_tech_energytransfer"]
-                }
-            },
-            {
-                "alias_name": "trader_carrier_capital_ship_mass_production_buff",
-                "alias_binding":
-                {
-                    "particle_effect": "sova_mass_production",
-                    "sounds": [
-                        "ability_mass_production_loop"]
-                }
-            },
-            {
-                "alias_name": "trader_battle_capital_ship_adaptive_force_field_buff_start",
-                "alias_binding":
-                {
-                    "particle_effect": "buff_trader_adaptive_forcefield_start",
-                    "sounds": [
-                        "ability_activate_tech_adaptive_forcefield"]
-                }
-            },
-            {
-                "alias_name": "trader_ship_adaptive_force_field",
-                "alias_binding":
-                {
-                    "particle_effect": "buff_trader_adaptive_forcefield"
-                }
-            },
-            {
                 "alias_name": "trader_autocannon_defense_structure_heavy_autocannon_weapon_hit_hull",
                 "alias_binding":
                 {
@@ -360,7 +375,7 @@
                 "alias_binding":
                 {
                     "beam": "trader_capital_ship_light_beam_weapon_beam",
-                    "sounds": ["weapon_psisupportbeamlight_travel"]
+                    "sounds": ["trader_light_beam"]
                 }
             },
             {
@@ -368,7 +383,7 @@
                 "alias_binding":
                 {
                     "beam": "trader_capital_ship_medium_beam_weapon_beam",
-                    "sounds": ["weapon_psicapitalbeamheavy_travel"]
+                    "sounds": ["trader_med_beam"]
                 }
             },
             {
@@ -376,7 +391,7 @@
                 "alias_binding":
                 {
                     "beam": "trader_capital_ship_heavy_beam_weapon_beam",
-                    "sounds": ["weapon_techstarbasebeamheavy_travel"]
+                    "sounds": ["trader_heavy_beam"]
                 }
             },
             {
@@ -397,7 +412,7 @@
                 "alias_name": "trader_capital_ship_medium_beam_weapon_hit_hull",
                 "alias_binding":
                 {
-                    "particle_effect": "advent_beam_light_impact",
+                    "particle_effect": "trader_medium_beam_impact",
                     "sounds": [
                         "weapon_impact_energy_heavy_hithull",
                         "weapon_impact_energy_heavy_hithull_01",
@@ -435,7 +450,7 @@
                 "alias_name": "trader_capital_ship_medium_beam_weapon_hit_shield",
                 "alias_binding":
                 {
-                    "particle_effect": "advent_beam_light_impact",
+                    "particle_effect": "trader_medium_beam_impact",
                     "sounds": [
                         "weapon_impact_generic_heavy_hitshields",
                         "weapon_impact_generic_heavy_hitshields_01",

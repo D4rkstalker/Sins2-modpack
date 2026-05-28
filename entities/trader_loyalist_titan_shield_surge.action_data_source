@@ -56,7 +56,34 @@
                 "constraint_type": "not_self"
             },
             {
-                "constraint_type": "has_missing_shields"
+                "constraint_type": "has_missing_shields",
+                "amount_missing_threshold": 100.0
+            }]
+        }
+    },
+    {
+        "target_filter_id": "shield_surge_auto_cast_override_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.25
             }]
         }
     }],
@@ -65,7 +92,7 @@
         "action_value_id": "shield_surge_antimatter_cost_value",
         "action_value":
         {
-            "values": [100.0, 87.5, 75.0, 62.5, 50.0]
+            "values": [64.0, 70.0, 76.0, 82.0, 88.0]
         }
     },
     {

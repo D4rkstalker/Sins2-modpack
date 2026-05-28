@@ -17,11 +17,12 @@
                 "none"
             ],
             "exemptions": [
-                "is_not_explored"]
+                "is_not_explored"
+            ]
         }
     },
     {
-        "target_filter_id": "clairvoyance_auto_cast_target_filter",
+        "target_filter_id": "clairvoyance_ai_auto_cast_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -33,19 +34,19 @@
             ],
             "exemptions": [
                 "is_not_explored"
-			],
-			"constraints": [
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "is_detected"
-				}
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_detected"
+                }
             },
-			{
+            {
                 "constraint_type": "has_adjacent_planet_with_ownership",
-                "max_jump_distance": 2,
-				"targeter_relationship_type": "self"
+                "max_jump_distance": 1,
+                "targeter_relationship_type": "self"
             }]
         }
     }],
@@ -68,14 +69,7 @@
         "action_value_id": "clairvoyance_duration_value",
         "action_value":
         {
-            "values": [30.0, 90.0, 180.0]
-        }
-    },
-    {
-        "action_value_id": "clairvoyance_range_distance",
-        "action_value":
-        {
-            "values": [100000.0, 100000.0, 100000.0]
+            "values": [37.5, 112.5, 225.0]
         }
     },
     {

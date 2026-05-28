@@ -1,0 +1,66 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 3,
+    "field": "military_trader_repeatables",
+    "field_coord": [7, 0],
+    "research_time": 672.5,
+    "price":
+    {
+        "credits": 3600.0,
+        "metal": 1350.0,
+        "crystal": 1350.0
+    },
+    "weapon_modifiers": [
+    {
+        "weapon_type": "planet_bombing",
+        "value_behavior": "scalar",
+        "modifier_type": "damage",
+        "value": 0.25
+    },
+    {
+        "weapon_type": "planet_bombing",
+        "value_behavior": "scalar",
+        "modifier_type": "range",
+        "value": 0.25
+    }],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+				"weapon_type": "planet_bombing"
+            }]
+        },
+        "action_data_source": "trader_rebel_liberated_resistance",
+        "buff": "trader_rebel_liberated_resistance_on_siege_units",
+        "tooltip_lines": [
+		{
+			"rendering_type": "single_value",
+			"label_text": "tooltip.ability.spawned_supply",
+			"value_id": "supply_value"
+		}]
+	}],
+    "name": "npc_reward.renzo_liberated_resistance.name",
+    "name_uppercase": "npc_reward.renzo_liberated_resistance.name_uppercase",
+    "description": "trader_rebel_liberated_resistance_description",
+    "hud_icon": "insurgent_units_arrived_notification_icon",
+    "tooltip_picture": "insurgent_units_arrived_notification_tooltip_picture",
+    "arbitary_research_line":
+    {
+	"unlock_label": "tooltip.research_subject.arbitary_unlock_label.liberated_resistance",
+        "heading": "tooltip.research_subject.liberated_resistance",
+        "units_listing": [
+            "trader_heavy_cruiser",
+            "trader_long_range_cruiser",
+			"trader_antifighter_frigate",
+			"trader_siege_frigate"
+        ]
+    }
+}

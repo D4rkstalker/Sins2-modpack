@@ -3,15 +3,16 @@
     "level_count": 3,
     "target_filters": [
     {
-        "target_filter_id": "sanctify_enemy_target_filter",
+        "target_filter_id": "sanctify_ai_auto_cast_active_bombing_target_filter",
         "target_filter":
         {
             "unit_types": [
-                "titan",
-				"capital_ship",
-				"cruiser",
-				"super_capital_ship",
-				"frigate"
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
             ],
             "ownerships": [
                 "enemy"
@@ -23,35 +24,27 @@
         }
     },
     {
-        "target_filter_id": "sanctify_auto_cast_high_priority_target_filter",
+        "target_filter_id": "sanctify_ai_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "planet"
             ],
             "ownerships": [
-                "self"
+                "friendly"
             ],
             "constraints": [
             {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-                    "constraint_type": "is_in_dominant_culture",
-                    "dominant_culture_player_relationship": "self"
-                },
-                {
-                    "constraint_type": "is_in_dominant_culture",
-                    "dominant_culture_player_relationship": "ally"
-                }]
+                "constraint_type": "is_home_planet"
             },
             {
-                "constraint_type": "is_home_planet"
+                "constraint_type": "has_missing_planet_health",
+                "percentage_missing_threshold": 0.33
             }]
         }
     },
     {
-        "target_filter_id": "sanctify_auto_cast_low_priority_target_filter",
+        "target_filter_id": "sanctify_ai_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -62,16 +55,11 @@
             ],
             "constraints": [
             {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-                    "constraint_type": "is_in_dominant_culture",
-                    "dominant_culture_player_relationship": "self"
-                },
-                {
-                    "constraint_type": "is_in_dominant_culture",
-                    "dominant_culture_player_relationship": "ally"
-                }]
+                "constraint_type": "has_missing_planet_health",
+                "percentage_missing_threshold": 0.75
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
             }]
         }
     },
@@ -130,13 +118,6 @@
         }
     },
     {
-        "action_value_id": "sanctify_range_distance",
-        "action_value":
-        {
-            "values": [100000.0, 100000.0, 100000.0]
-        }
-    },
-    {
         "action_value_id": "sanctify_planet_health_restore_amount_value",
         "action_value":
         {
@@ -145,10 +126,17 @@
             {
                 "unit_type": "current_spawner"
             },
-            "values": [0.01, 0.02, 0.03]
+            "values": [0.0125, 0.025, 0.0375]
         }
     }],
     "effect_alias_bindings": [
+	{
+		"alias_name": "generic_colonized_effect",
+		"alias_binding":
+		{
+			"particle_effect": "Buff_RecentlyColonized"
+		}
+	},
     {
         "alias_name": "advent_unity_sanctify_buff_large",
         "alias_binding":

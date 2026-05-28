@@ -1,0 +1,181 @@
+{
+    "version": 0,
+    "action_data_source": "pirate_king_capital_ship_mag_blast_missile",
+    "is_ultimate_ability": true,
+    "level_source": "internal_level",
+    "min_required_unit_levels": [5, 9, 13, 18, 19],
+    "active_actions":
+    {
+        "cooldown_time": "mag_blast_missile_cooldown_time_value",
+        "antimatter_cost": "mag_blast_missile_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "mag_blast_missile_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "pirate_king_capital_ship_mag_blast_missile_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "mag_blast_missile_target_filter"
+        ],
+        "range": "mag_blast_missile_range_value",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 30.0,
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "weapon_has_target"
+                }
+            },
+            "target_definitions": [
+            {
+                "target_filter": "mag_blast_missile_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "mag_blast_missile_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_torpedo_cruiser_heavy_torpedo_ability_hud_icon",
+        "tooltip_picture": "trader_torpedo_cruiser_heavy_torpedo_ability_tooltip_picture",
+        "name": "pirate_king_capital_ship_mag_blast_missile_ability_name",
+        "description": "pirate_king_capital_ship_mag_blast_missile_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range_and_radius",
+            "values":
+            {
+                "range": "mag_blast_missile_range_value",
+                "radius": "mag_blast_missile_splash_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.salvo_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_count",
+                "value_id": "mag_blast_missile_torpedo_count_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.missile_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "mag_blast_missile_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "mag_blast_missile_armor_penetration_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_speed",
+                "value_id": "mag_blast_missile_torpedo_speed_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_hull",
+                "value_id": "mag_blast_missile_torpedo_hull_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor",
+                "value_id": "mag_blast_missile_torpedo_armor_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.area_damage_on_hit",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.shield_damage",
+                "value_id": "mag_blast_missile_splash_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "mag_blast_missile_armor_penetration_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "mag_blast_missile_splash_radius_value"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [-125.755096, 9.678199, 15.36973]
+    },
+    {
+        "position": [-148.672195, -2.731733, 15.36973]
+    },
+    {
+        "position": [-111.961098, -13.32696, 15.36973]
+    },
+    {
+        "position": [-102.692101, 21.16291, 15.36973]
+    },
+    {
+        "position": [-139.828705, 32.50882, 15.36973]
+    },
+    {
+        "position": [125.542603, 9.439618, 15.36973]
+    },
+    {
+        "position": [139.882797, 32.186741, 15.36973]
+    },
+    {
+        "position": [102.162399, 21.35161, 15.36973]
+    },
+    {
+        "position": [148.784302, -3.00209, 15.36973]
+    },
+    {
+        "position": [112.170502, -13.4422, 15.36973]
+    }]
+}

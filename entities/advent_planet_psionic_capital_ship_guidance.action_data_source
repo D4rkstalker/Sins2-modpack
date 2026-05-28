@@ -2,7 +2,7 @@
     "version": 0,
     "level_count": 5,
     "target_filters": [
-            {
+    {
         "target_filter_id": "guidance_auto_cast_high_priority_target_filter",
         "target_filter":
         {
@@ -15,9 +15,6 @@
                 "friendly"
             ],
             "constraints": [
-            {
-                "constraint_type": "has_ability"
-            },
             {
                 "constraint_type": "weapon_has_target"
             },
@@ -33,25 +30,44 @@
         }
     },
     {
-        "target_filter_id": "guidance_auto_cast_target_filter",
+        "target_filter_id": "guidance_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
-                "capital_ship",
                 "corvette",
                 "cruiser",
                 "frigate",
-                "structure",
-                "super_capital_ship",
-                "titan"
+                "structure"
             ],
             "ownerships": [
                 "friendly"
             ],
             "constraints": [
             {
-                "constraint_type": "has_ability"
+                "constraint_type": "weapon_has_target"
             },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_planet_psionic_capital_ship_guidance",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "guidance_starbase_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
             {
                 "constraint_type": "weapon_has_target"
             },
@@ -89,6 +105,23 @@
                 "constraint_type": "not_self"
             }]
         }
+    },
+    {
+        "target_filter_id": "guidance_starbase_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_mutation",
+                "mutation": "item_has_active_ability"
+            }]
+        }
     }],
     "action_values": [
     {
@@ -107,14 +140,14 @@
         "action_value_id": "guidance_antimatter_cost_value",
         "action_value":
         {
-            "values": [120.0, 112.5, 105.0, 97.5, 90.0]
+            "values": [89.0, 98.0, 107.0, 116.0, 125.0]
         }
     },
     {
         "action_value_id": "guidance_cooldown_time_value",
         "action_value":
         {
-            "values": [60.0, 55.0, 50.0, 45.0, 40.0]
+            "values": [90.0, 75.0, 60.0, 45.0, 30.0]
         }
     },
     {

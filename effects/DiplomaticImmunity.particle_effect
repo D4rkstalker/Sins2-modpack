@@ -1,0 +1,207 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "GlowRingTop",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [-0.0, -0.0]
+        },
+        {
+            "id": 1,
+            "name": "Rays",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [-0.0, -0.0]
+        },
+        {
+            "id": 2,
+            "name": "GlowRingBottom",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [-1.570796, -1.570796],
+            "roll": [-0.0, -0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "GlowRingTop",
+            "type": "point",
+            "emit_max_particle_count": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [0.90, 0.90]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "ffc8ff00",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [60.0, 60.0],
+                    "height": [60.0, 60.0],
+                    "texture_0": "brightcenter_clr",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 1,
+            "name": "Rays",
+            "type": "ring",
+            "emit_max_particle_count": [60.0, 60.0],
+            "emit_rate": {
+                "primary_emit_rate": [10.0, 10.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [3.0, 3.0],
+                "color": "ffc8cd00",
+                "fade_in_time": [0.250, 0.250],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [100.0, 100.0],
+                    "height": [100.0, 100.0],
+                    "rotation": [0.0, 6.283185],
+                    "rotation_speed": [-0.174533, 0.174533],
+                    "texture_0": "massdistortion",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "use_edge": false,
+            "radius_x": [3.0, 3.0],
+            "radius_y": [3.0, 3.0],
+            "normal_offset": [0.0, 0.0],
+            "normal_velocity": [0.0, 0.0],
+            "radial_velocity": [0.0, 0.0],
+            "tangential_velocity": [15.0, 15.0],
+            "angle_range": [0.0, 6.283185],
+            "angle_range_behavior": "random"
+        },
+        {
+            "id": 2,
+            "name": "GlowRingBottom",
+            "type": "point",
+            "emit_max_particle_count": [5.0, 5.0],
+            "emit_rate": {
+                "primary_emit_rate": [0.90, 0.90]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "color": "ffc8ff64",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [60.0, 60.0],
+                    "height": [60.0, 60.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "brightcenter_clr",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 0,
+            "name": "RingInflate",
+            "type": "size",
+            "width_change_rate": [120.0, 120.0],
+            "height_change_rate": [120.0, 120.0]
+        },
+        {
+            "id": 1,
+            "name": "RaysInflate",
+            "type": "size",
+            "particle_time_duration": [2.0, 2.0],
+            "width_change_rate": [20.0, 20.0],
+            "height_change_rate": [20.0, 20.0]
+        },
+        {
+            "id": 2,
+            "name": "PushRaysOut",
+            "type": "push",
+            "particle_time_duration": [1.250, 1.250],
+            "force": {
+                "type": "random",
+                "range": [-20.0, -20.0]
+            },
+            "op": "to_point_in_effect_space"
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 1,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 2
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 0,
+            "attachee_id": 2
+        },
+        {
+            "attacher_id": 1,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 1
+        }
+    ]
+}

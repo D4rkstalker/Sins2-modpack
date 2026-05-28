@@ -8,7 +8,64 @@
             "center": [0.0, 37.743637, -598.973145],
             "extents": [3203.873291, 390.483459, 1621.959961]
         },
-        "collision_rank": 3
+        "collision_rank": 3,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 50.0, 600.0],
+            "radius": 450.0
+        },
+        {
+            "center": [0.0, 50.0, -1000.0],
+            "radius": 450.0
+        },
+        {
+            "center": [900.0, 100.0, 300.0],
+            "radius": 300.0
+        },
+        {
+            "center": [1500.0, 150.0, 100.0],
+            "radius": 200.0
+        },
+        {
+            "center": [2000.0, 150.0, -100.0],
+            "radius": 150.0
+        },
+        {
+            "center": [2400.0, 150.0, -200.0],
+            "radius": 100.0
+        },
+        {
+            "center": [2800.0, 150.0, -250.0],
+            "radius": 100.0
+        },
+        {
+            "center": [1200.0, 100.0, -300.0],
+            "radius": 250.0
+        },
+        {
+            "center": [-900.0, 100.0, 300.0],
+            "radius": 300.0
+        },
+        {
+            "center": [-1500.0, 150.0, 100.0],
+            "radius": 200.0
+        },
+        {
+            "center": [-2000.0, 150.0, -100.0],
+            "radius": 150.0
+        },
+        {
+            "center": [-2400.0, 150.0, -200.0],
+            "radius": 100.0
+        },
+        {
+            "center": [-2800.0, 150.0, -250.0],
+            "radius": 100.0
+        },
+        {
+            "center": [-1200.0, 100.0, -300.0],
+            "radius": 250.0
+        }]
     },
     "physics":
     {
@@ -649,13 +706,13 @@
             "up": [-0.0, 1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -699,13 +756,13 @@
             "up": [-0.0, 1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -45.0,
-                "max_angle": 45.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -1695,7 +1752,8 @@
         "base_max_squadron_capacity": 0,
         "strikecraft_kinds": [
             "interceptor",
-            "bomber"
+            "bomber",
+            "mem_custom_strikecraft1"
         ],
         "launch_destination_formation": "capital_ship_strikecraft",
         "launch_destination_formation_offset":
@@ -1731,9 +1789,8 @@
             "weight": 10.0,
             "build_group": [
                 "vasari_loyalist_titan_hull_plating_0",
-                "vasari_loyalist_titan_hull_plating_1",
-                "vasari_loyalist_titan_hull_plating_2",
-                "vasari_self_repairing_armor"
+                "vasari_self_repairing_armor",
+                "vasari_phase_shield"
             ]
         },
         {
@@ -1752,21 +1809,34 @@
             "weight": 8.0,
             "build_group": [
                 "vasari_wave_boost",
-                "vasari_phase_missile_boost"
+                "vasari_phase_missile_boost",
+                "vasari_phase_shield"
             ]
         },
         {
             "weight": 8.0,
             "build_group": [
                 "vasari_loyalist_titan_hangar",
-                "vasari_strikecraft_armor",
+                "vasari_loyalist_titan_strikecraft_armor",
                 "vasari_engine_boost"
+            ]
+        },
+        {
+            "weight": 8.0,
+            "build_group": [
+                "vasari_experience_boost"
             ]
         },
         {
             "weight": 5.0,
             "build_group": [
                 "vasari_antimatter_recharger"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
             ]
         },
         {
@@ -1827,32 +1897,28 @@
     {
         "mesh_alias_name": "vasari_loyalist_titan_component_armor_0",
         "mesh_point": "child.component_armor_0",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_loyalist_titan_hull_plating_0"
+        "is_weapon_effects_destination": true
     },
     {
         "mesh_alias_name": "vasari_loyalist_titan_component_armor_1",
         "mesh_point": "child.component_armor_1",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_loyalist_titan_hull_plating_1"
+        "is_weapon_effects_destination": true
     },
     {
         "mesh_alias_name": "vasari_loyalist_titan_component_armor_2",
         "mesh_point": "child.component_armor_2",
         "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_loyalist_titan_hull_plating_2"
+        "required_unit_item": "vasari_loyalist_titan_hull_plating_0"
     },
     {
         "mesh_alias_name": "vasari_loyalist_titan_component_broken_reactor",
         "mesh_point": "child.component_reactor_broken",
-        "is_weapon_effects_destination": true,
-        "hidden_by_unit_item": "vasari_loyalist_titan_improve_micro_phase_jump"
+        "is_weapon_effects_destination": true
     },
     {
         "mesh_alias_name": "vasari_loyalist_titan_component_reactor_fixed",
         "mesh_point": "child.component_reactor_fixed",
-        "is_weapon_effects_destination": true,
-        "required_unit_item": "vasari_loyalist_titan_improve_micro_phase_jump"
+        "is_weapon_effects_destination": true
     },
     {
         "mesh_alias_name": "vasari_loyalist_titan_component_phase_canon",

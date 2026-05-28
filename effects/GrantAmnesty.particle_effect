@@ -1,0 +1,133 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "Rings",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [-0.0, -0.0]
+        },
+        {
+            "id": 1,
+            "name": "Lightning",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [-0.0, -0.0],
+            "roll": [-0.0, -0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Rings",
+            "type": "point",
+            "emit_max_particle_count": [40.0, 40.0],
+            "emit_rate": {
+                "primary_emit_rate": [7.0, 7.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [3.0, 3.0],
+                "color": "ffbf64ff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [2.0, 2.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [60.0, 60.0],
+                    "height": [60.0, 60.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "massdistortion",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [50.0, 60.0],
+            "angle_variance": [3.141593, 3.141593]
+        },
+        {
+            "id": 1,
+            "name": "Lightning",
+            "type": "point",
+            "emit_max_particle_count": [23.0, 23.0],
+            "emit_rate": {
+                "primary_emit_rate": [4.0, 4.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [3.0, 3.0],
+                "color": "ffffffff",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [2.0, 2.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [25.0, 25.0],
+                    "height": [25.0, 25.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "plasma_clr",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [30.0, 45.0],
+            "angle_variance": [3.141593, 3.141593]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 1,
+            "name": "LightningGrow",
+            "type": "size",
+            "width_change_rate": [120.0, 120.0],
+            "height_change_rate": [120.0, 120.0]
+        },
+        {
+            "id": 2,
+            "name": "RingsGrow",
+            "type": "size",
+            "width_change_rate": [80.0, 80.0],
+            "height_change_rate": [80.0, 80.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 1,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 1,
+            "attachee_id": 1
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 0
+        }
+    ]
+}

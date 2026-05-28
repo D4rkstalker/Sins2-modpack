@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "hazardous_space_fixture_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_experience"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "hazardous_space_experience_bonus_value",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "hazardous_space_experience_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "experience_gained_from_unit_death",
+            "value_behavior": "scalar",
+            "value_id": "hazardous_space_experience_bonus_value"
+        }
+    }]
+}

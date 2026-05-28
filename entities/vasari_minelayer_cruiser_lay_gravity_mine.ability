@@ -3,9 +3,9 @@
     "action_data_source": "vasari_minelayer_cruiser_lay_gravity_mine",
     "active_actions":
     {
-		"cooldown_time": "cooldown_value",
-		"metal_cost": "metal_cost_value",
-		"crystal_cost": "crystal_cost_value",
+        "cooldown_time": "cooldown_value",
+        "metal_cost": "metal_cost_value",
+        "crystal_cost": "crystal_cost_value",
         "actions":
         {
             "actions": [
@@ -19,7 +19,7 @@
                 {
                     "operator_type": "create_unit",
                     "unit_to_create": "vasari_gravity_minefield_structure",
-					"buff_on_created_unit": "renzo_deploy_trader_minefield_structure",
+                    "buff_on_created_unit": "renzo_deploy_trader_minefield_structure",
                     "special_operation_unit_kind": "vasari_minefield_structure",
                     "unit_forward":
                     {
@@ -34,17 +34,24 @@
             }]
         },
         "targeting_type": "position_targeted",
-		"range": "range_value",
+        "range": "range_value",
         "spawned_unit":
         {
             "unit": "vasari_gravity_minefield_structure",
             "special_operation_unit_kind": "vasari_minefield_structure",
             "max_count_in_gravity_well": "max_count_in_gravity_well"
+        },
+        "auto_cast": 
+        {
+            "target_definitions": [
+            {
+                "target_filter": "deploy_mine_auto_cast_target_filter"
+            }]
         }
     },
     "gui":
     {
-        "hud_icon": "vasari_explosive_minefield_structure_hud_icon",
+        "hud_icon": "vasari_gravity_minefield_structure_hud_icon",
         "name": "vasari_minelayer_cruiser_lay_gravity_mine_name",
         "description": "vasari_minelayer_cruiser_lay_gravity_mine_desc"
     }

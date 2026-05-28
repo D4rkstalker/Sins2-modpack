@@ -1,0 +1,123 @@
+{
+    "version": 0,
+    "action_data_source": "dls2_trader_loyalist_super_coordinate",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "coordinate_cooldown_time_value",
+        "antimatter_cost": "coordinate_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dls2_trader_loyalist_super_coordinate_on_spawner"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints":[
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
+                },
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "coordinate_auto_cast_target_filter",
+                    "radius_value": "coordinate_auto_cast_radius_value",
+                    "target_count_value": "coordinate_auto_cast_target_count_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dls2_trader_loyalist_super_coordinate_hud_icon",
+        "tooltip_picture": "dls2_trader_loyalist_super_coordinate_tooltip_picture",
+        "name": "dls2_trader_loyalist_super_coordinate_ability_name",
+        "description": "dls2_trader_loyalist_super_coordinate_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "coordinate_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "coordinate_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "coordinate_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.corvettes",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "coordinate_corvette_cooldown_duration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "coordinate_corvette_linear_speed_modifier"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.frigates",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "coordinate_frigate_cooldown_duration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "coordinate_frigate_angular_speed_modifier"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.cruisers",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "coordinate_cruiser_cooldown_duration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "coordinate_cruiser_ability_cost_modifier"
+            }]
+        }]
+    }
+}

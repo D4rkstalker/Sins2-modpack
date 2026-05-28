@@ -1,0 +1,79 @@
+{
+    "version": 0,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "stack_count",
+            "stacks_expiry_time"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "psionic_dynamo_max_stack_count_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "psionic_dynamo_stack_count_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "psionic_dynamo_stack_duration_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "psionic_dynamo_stacks_expiry_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stacks_expiry_time",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "psionic_dynamo_spell_power_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "psionic_dynamo_cooldown_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [-0.025]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "psionic_dynamo_spell_power_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "psionic_dynamo_spell_power_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "psionic_dynamo_cooldown_bonus_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "ability_cooldown_duration",
+            "value_behavior": "scalar",
+            "value_id": "psionic_dynamo_cooldown_bonus_value"
+        }
+    }]
+}

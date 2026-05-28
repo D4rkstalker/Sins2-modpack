@@ -1,17 +1,14 @@
 {
     "version": 0,
-    "level_count": 4,
+    "level_count": 5,
     "target_filters": [
     {
-        "target_filter_id": "fracture_auto_cast_target_filter",
+        "target_filter_id": "fracture_auto_cast_high_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-				"super_capital_ship",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
@@ -23,12 +20,39 @@
             },
             {
                 "constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "advent_harassment_battle_capital_ship_fracture",
-					"include_pending_buffs": true
-				}
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_harassment_battle_capital_ship_fracture",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "fracture_auto_cast_low_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_harassment_battle_capital_ship_fracture",
+                    "include_pending_buffs": true
+                }
             }]
         }
     },
@@ -41,7 +65,7 @@
                 "corvette",
                 "cruiser",
                 "frigate",
-				"super_capital_ship",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
@@ -51,35 +75,42 @@
     }],
     "action_values": [
     {
+        "action_value_id": "auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
+        }
+    },
+    {
         "action_value_id": "fracture_antimatter_cost_value",
         "action_value":
         {
-            "values": [55.0, 55.0, 55.0, 55.0]
+            "values": [47.0, 52.0, 57.0, 62.0, 67.0]
         }
     },
     {
         "action_value_id": "fracture_cooldown_time_value",
         "action_value":
         {
-            "values": [35.0, 35.0, 35.0, 35.0]
+            "values": [35.0, 35.0, 35.0, 35.0, 35.0]
         }
     },
     {
         "action_value_id": "fracture_armor_strength_value",
         "action_value":
         {
-            "values": [-20.0, -35.0, -50.0, -65.0]
+            "values": [-20.0, -35.0, -50.0, -65.0, -80.0]
         }
     },
     {
         "action_value_id": "fracture_duration_value",
         "action_value":
         {
-            "values": [20.0, 20.0, 20.0, 20.0],
+            "values": [20.0, 20.0, 20.0, 20.0, 20.0],
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [0.1, 0.1, 0.1, 0.1]
+                "ratio_values": [0.1, 0.1, 0.1, 0.1, 0.1]
             }
         }
     },
@@ -87,11 +118,11 @@
         "action_value_id": "fracture_radius_value",
         "action_value":
         {
-            "values": [1500.0, 1500.0, 1500.0, 1500.0],
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0],
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [2.0, 2.0, 2.0, 2.0]
+                "ratio_values": [2.0, 2.0, 2.0, 2.0, 2.0]
             }
         }
     },
@@ -99,7 +130,7 @@
         "action_value_id": "fracture_range_value",
         "action_value":
         {
-            "values": [6000.0, 6000.0, 6000.0, 6000.0]
+            "values": [6000.0, 6000.0, 6000.0, 6000.0, 6000.0]
         }
     }],
     "buff_unit_modifiers": [

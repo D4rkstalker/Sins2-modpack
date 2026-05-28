@@ -2,12 +2,21 @@
     "version": 0,
     "target_filters": [
     {
-        "target_filter_id": "friendly_planet",
+        "target_filter_id": "deploy_mine_auto_cast_target_filter",
         "target_filter":
         {
+            "unit_types": [
+                "structure",
+                "asteroid",
+                "uncolonizable",
+                "capital_ship",
+                "loot"
+            ],
             "ownerships": [
-                "friendly"
-			]
+                "friendly",
+                "none",
+                "enemy"
+            ]
         }
     }],
     "action_values": [
@@ -22,36 +31,36 @@
         "action_value_id": "build_structure_mine_hull_repair",
         "action_value":
         {
-			"transform_type": "per_max_hull_points",
-			"transform_unit":
-			{
-				"unit_type": "current_spawner"
-			},
-            "values": [0.025000]
+            "transform_type": "per_max_hull_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.025]
         }
     },
     {
         "action_value_id": "build_structure_mine_armor_repair",
         "action_value":
         {
-			"transform_type": "per_max_armor_points",
-			"transform_unit":
-			{
-				"unit_type": "current_spawner"
-			},
-            "values": [0.025000]
+            "transform_type": "per_max_armor_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.025]
         }
     },
     {
         "action_value_id": "build_structure_mine_shields_repair",
         "action_value":
         {
-			"transform_type": "per_max_shield_points",
-			"transform_unit":
-			{
-				"unit_type": "current_spawner"
-			},
-            "values": [0.025000]
+            "transform_type": "per_max_shield_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [0.025]
         }
     },
     {

@@ -9,7 +9,7 @@
     "restart_other_stacked_buffs_when_started": true,
     "trigger_event_actions": [
     {
-		"trigger_event_type": "on_buff_started",
+        "trigger_event_type": "on_buff_started",
         "action_group":
         {
             "actions": [
@@ -726,6 +726,61 @@
                 {
                     "operator_type": "remove_unit_item",
                     "unit_item": "zero_point_engine_ship_artifact"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "missile_launcher_target_filter"
+                },
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "previous_spawner"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "ship_loot_yoink_spawner",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "previous_spawner"
+                        }
+                    },
+                    "buff_on_created_unit": "pirate_yoink_missile_launcher_artifact"
+                }]
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "missile_launcher_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_unit_item",
+                    "unit_item": "missile_launcher_artifact"
                 }]
             }]
         }

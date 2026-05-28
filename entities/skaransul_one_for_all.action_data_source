@@ -1,0 +1,90 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "one_for_all_ally_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "ally",
+                "friendly",
+                "self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "starbase_planetary_shield_array_max_shield_points",
+        "action_value":
+        {
+            "values": [5000.0]
+        }
+    },
+    {
+        "action_value_id": "starbase_planetary_shield_array_shield_restore",
+        "action_value":
+        {
+            "values": [62.5]
+        }
+    },
+    {
+        "action_value_id": "starbase_planetary_shield_array_shield_burst",
+        "action_value":
+        {
+            "values": [0.33]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "vasari_starbase_planetary_shield_array_max_planet_shield_points",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "starbase_planetary_shield_array_max_shield_points"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "vasari_starbase_planetary_shield_array_shield_restore",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "shield_points_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "starbase_planetary_shield_array_shield_restore"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "vasari_starbase_planetary_shield_array_shield_burst",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "planet_shield_burst_cooldown",
+            "value_behavior": "scalar",
+            "value_id": "starbase_planetary_shield_array_shield_burst"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "one_for_all_on_planet_large",
+        "alias_binding":
+        {
+            "particle_effect": "planetary_large_shield_skaransul"
+        }
+    },
+    {
+        "alias_name": "one_for_all_on_planet_medium",
+        "alias_binding":
+        {
+            "particle_effect": "planetary_shield_skaransul"
+        }
+    },
+    {
+        "alias_name": "one_for_all_on_planet_small",
+        "alias_binding":
+        {
+            "particle_effect": "planetary_small_shield_skaransul"
+        }
+    }]
+}

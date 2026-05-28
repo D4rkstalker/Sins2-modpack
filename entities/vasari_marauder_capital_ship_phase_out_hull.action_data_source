@@ -3,6 +3,45 @@
     "level_count": 5,
     "target_filters": [
     {
+        "target_filter_id": "phase_out_hull_auto_cast_high_priority_ally_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_hull",
+                "percentage_missing_threshold": 0.75
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_ally",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_channeling_ability"
+                }
+            }]
+        }
+    },
+    {
         "target_filter_id": "phase_out_hull_auto_cast_high_priority_target_filter",
         "target_filter":
         {
@@ -11,34 +50,37 @@
             ],
             "ownerships": [
                 "enemy"
-			],
-			"constraints": [
+            ],
+            "constraints": [
             {
                 "constraint_type": "is_always_a_threat"
-			},
-			{
-				"constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "has_buff",
-					"buff": "trader_siege_capital_ship_missile_barrage_on_self"
-				},
-				{
-					"constraint_type": "has_buff",
-					"buff": "advent_colony_capital_ship_shield_regeneration_on_self"
-				},
-				{
-					"constraint_type": "has_buff",
-					"buff": "advent_battle_psionic_capital_ship_vengeance"
-				}]
-			},
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_unit_level",
+                    "comparison_type": "greater_than_equal_to",
+                    "value_source": "constraint_params"
+                },
+                {
+                    "constraint_type": "is_channeling_ability"
+                }]
+            },
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
                     "constraint_type": "has_buff",
-                    "buff": "vasari_marauder_capital_ship_phase_out_hull",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_enemy",
                     "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_dead_soon"
                 }
             }]
         }
@@ -48,25 +90,84 @@
         "target_filter":
         {
             "unit_types": [
-				"capital_ship"
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure"
             ],
             "ownerships": [
                 "enemy"
-			],
-			"constraints": [
+            ],
+            "constraints": [
             {
                 "constraint_type": "has_ability"
-			},
+            },
             {
                 "constraint_type": "is_always_a_threat"
-			},
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_hull",
+                    "percentage_missing_threshold": 0.5
+                }
+            },
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
                     "constraint_type": "has_buff",
-                    "buff": "vasari_marauder_capital_ship_phase_out_hull",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_enemy",
                     "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_dead_soon"
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_out_hull_auto_cast_low_priority_ally_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_hull",
+                "percentage_missing_threshold": 0.75
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_marauder_capital_ship_phase_out_hull_ally",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_channeling_ability"
                 }
             }]
         }
@@ -83,11 +184,52 @@
             ],
             "ownerships": [
                 "enemy",
-                "friendly"]
+                "friendly"
+            ],
+            "constraints": [
+             {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_phase_jump_inhibitor_structure"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "trader_phase_jump_inhibitor_structure"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_phase_jump_inhibitor_structure"
+                }
+            }]
         }
     },
     {
-        "target_filter_id": "phase_out_hull_target_filter_enemy",
+        "target_filter_id": "phase_out_ally",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "phase_out_enemy",
         "target_filter":
         {
             "unit_types": [
@@ -98,59 +240,50 @@
             ],
             "ownerships": [
                 "enemy"
-                ]
+            ]
         }
-    },
-    {
-        "target_filter_id": "phase_out_hull_target_filter_friendly",
-        "target_filter":
-        {
-            "unit_types": [
-                "capital_ship",
-                "cruiser",
-                "frigate",
-                "structure"
-            ],
-            "ownerships": [
-                
-                "friendly"]
-        }
-    }
-	],
+    }],
     "action_values": [
     {
         "action_value_id": "phase_out_hull_antimatter_cost_value",
         "action_value":
         {
-            "values": [120.0, 97.5, 75.0, 52.5, 30.0]
+            "values": [90.0, 93.0, 96.0, 99.0, 102.0]
         }
     },
     {
         "action_value_id": "phase_out_hull_cooldown_time_value",
         "action_value":
         {
-            "values": [27.0, 22.5, 18.0, 13.5, 9.0]
+            "values": [21.0, 19.5, 18.0, 16.5, 15.0]
         }
     },
     {
         "action_value_id": "phase_out_hull_duration_value",
         "action_value":
         {
-            "values": [ 4, 6, 8, 10.0, 12]
+            "values": [10.0, 14.0, 18.0, 22.0, 26.0]
         }
     },
     {
         "action_value_id": "phase_out_hull_invuln_duration_value",
         "action_value":
         {
-            "values": [4.0, 8.0, 12.0, 16.0, 20.0]
+            "values": [2.0, 2.25, 2.5, 2.75, 3.0]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_damage_amplify_value",
+        "action_value":
+        {
+            "values": [0.2, 0.25, 0.3, 0.35, 0.4]
         }
     },
     {
         "action_value_id": "phase_out_hull_damage_taken_value",
         "action_value":
         {
-            "values": [-0.5, -0.4, -0.3, -0.2, -0.1]
+            "values": [-0.4, -0.45, -0.5, -0.55, -0.6]
         }
     },
     {
@@ -158,6 +291,13 @@
         "action_value":
         {
             "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
+        }
+    },
+    {
+        "action_value_id": "phase_out_hull_auto_cast_level_minimum",
+        "action_value":
+        {
+            "values": [5.0, 5.0, 5.0, 5.0, 5.0]
         }
     }],
     "buff_unit_modifiers": [
@@ -168,6 +308,15 @@
             "modifier_type": "damage_taken",
             "value_behavior": "scalar",
             "value_id": "phase_out_hull_damage_taken_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "damage_amplify",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "phase_out_hull_damage_amplify_value"
         }
     }]
 }

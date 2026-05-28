@@ -2,11 +2,11 @@
     "version": 0,
     "spatial":
     {
-        "radius": 525.628967,
+        "radius": 619.896912,
         "box":
         {
-            "center": [0.029053, 74.413452, 0.029053],
-            "extents": [260.040222, 450.470459, 225.358749]
+            "center": [0.0, -0.543365, 2.372131],
+            "extents": [433.139343, 580.597656, 452.844025]
         },
         "can_be_displaced_on_collision": false
     },
@@ -20,15 +20,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
-    },
-    "player_ai":
-    {
-        "max_count_at_planet":
-        {
-            "type": "constant",
-            "value": 1.0
-        }
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -42,6 +35,12 @@
         "slot_type": "civilian",
         "slots_required": 1,
         "roles": [],
+        "planet_modifiers": [
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value": 0.05
+        }],
         "build_group_id": "civilian"
     },
     "formation":
@@ -87,20 +86,21 @@
     },
     "build":
     {
-        "build_time": 72.0,
+        "build_time": 60.0,
         "price":
         {
-            "metal": 210.0,
-            "crystal": 60.0
+            "metal": 240.0,
+            "crystal": 90.0
         },
-        "prerequisites": [
-            ["vasari_unlock_population_structure"]
-        ],
         "build_kind": "structure",
-        "build_radius": 344.103882
+        "build_radius": 819.639771
     },
     "passive_income":
     {},
+    "culture_provider":
+    {
+        "has_ability_providing_culture_rate": true
+    },
     "target_filter_unit_type": "structure",
     "tags": [
         "structure"
@@ -117,5 +117,20 @@
         "skins": [
             "vasari_population_structure"]
     }],
-    "action_effect_size": "medium_unit"
+    "action_effect_size": "medium_unit",
+    "traffic_port":
+    {
+        "max_traffic_ship_count": 2,
+        "traffic_ship_construction_time": 30.0,
+        "traffic_ship": "vasari_traffic_ship",
+        "allowed_destination_units": [
+            "advent_population_structure",
+            "trader_population_structure",
+            "vasari_population_structure"
+        ],
+        "special_operation_unit_kind": "traffic_ship",
+        "create_traffic_ship_offset": [0.0, 0.0, 1500.0],
+        "force_stay_in_gravity_well": false,
+        "traffic_ship_per_hundred_pop": 0.75
+    }
 }

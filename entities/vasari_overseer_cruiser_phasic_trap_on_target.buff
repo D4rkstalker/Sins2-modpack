@@ -75,6 +75,26 @@
             "actions": [
             {
                 "action_type": "stop_brake_to_stop"
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "phasic_trap_torpedo_target_filter"
+                    },
+                    "operator_type": "make_dead"
+                }]
             }]
         }
     }],
@@ -85,7 +105,7 @@
     {
         "hud_icon": "vasari_overseer_cruiser_phasic_trap_ability_hud_icon",
         "name": "vasari_overseer_cruiser_phasic_trap_ability_name",
-		"is_visible_within_unit_tooltip": true,
+        "is_visible_within_unit_tooltip": true,
         "visibility_scope": "negative"
     }
 }

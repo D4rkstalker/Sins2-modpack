@@ -10,12 +10,29 @@
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
     {
-		"execution_interval_count_value": "fixed_one",
+        "execution_interval_count_value": "fixed_one",
         "first_action_delay_time_value": "gravity_warhead_first_action_delay",
         "action_group":
         {
             "actions": [
             {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "suppress_disable_can_hyperspace"
+                        }
+                    }
+                },
                 "action_type": "stop_brake_to_stop"
             }]
 		}
@@ -27,6 +44,23 @@
         {
             "actions": [
             {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "suppress_disable_can_hyperspace"
+                        }
+                    }
+                },
                 "action_type": "start_brake_to_stop"
             },
             {
@@ -75,7 +109,7 @@
         "hud_icon": "vasari_colony_capital_ship_gravity_warhead_ability_hud_icon",
         "name": "vasari_colony_capital_ship_gravity_warhead_ability_name",
         "visibility_scope": "negative",
-		"is_visible_within_unit_tooltip": true,
+        "is_visible_within_unit_tooltip": true,
         "tooltip_line_groups": [
         {
             "lines": [

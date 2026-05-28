@@ -3,15 +3,15 @@
     "level_count": 3,
     "target_filters": [
     {
-        "target_filter_id": "conversion_auto_cast_ship_target_filter",
+        "target_filter_id": "conversion_ai_auto_cast_ship_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "titan",
-				"capital_ship",
-				"frigate",
-				"super_capital_ship",
-				"cruiser"
+                "capital_ship",
+                "frigate",
+                "super_capital_ship",
+                "cruiser"
             ],
             "ownerships": [
                 "enemy"
@@ -19,18 +19,19 @@
             "constraints": [
             {
                 "constraint_type": "has_weapon",
-				"weapon_type": "planet_bombing"
+                "weapon_type": "planet_bombing"
             }]
         }
     },
     {
-        "target_filter_id": "conversion_auto_cast_high_priority_target_filter",
+        "target_filter_id": "conversion_ai_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "planet"
             ],
             "ownerships": [
+                "enemy",
                 "none"
             ],
             "constraints": [
@@ -53,15 +54,15 @@
                 "constraint_type": "has_allied_population_amount",
                 "percentage_of_current_pop": 0.5
             },
-			{
+            {
                 "constraint_type": "has_adjacent_planet_with_ownership",
                 "max_jump_distance": 2,
-				"targeter_relationship_type": "self"
+                "targeter_relationship_type": "self"
             }]
         }
     },
     {
-        "target_filter_id": "conversion_auto_cast_low_priority_target_filter",
+        "target_filter_id": "conversion_ai_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -87,10 +88,10 @@
                 "constraint_type": "has_allied_population_amount",
                 "percentage_of_current_pop": 0.5
             },
-			{
+            {
                 "constraint_type": "has_adjacent_planet_with_ownership",
-                "max_jump_distance": 3,
-				"targeter_relationship_type": "self"
+                "max_jump_distance": 4,
+                "targeter_relationship_type": "self"
             }]
         }
     },
@@ -124,6 +125,18 @@
         }
     },
     {
+        "target_filter_id": "conversion_enemy_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
         "target_filter_id": "conversion_neutral_target_filter",
         "target_filter":
         {
@@ -154,6 +167,60 @@
                 "percentage_of_current_pop": 0.5
             }]
         }
+    },
+    {
+        "target_filter_id": "assimilated_population_ships_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "assimilated_population_self_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "conversion_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
     }],
     "action_values": [
     {
@@ -178,17 +245,10 @@
         }
     },
     {
-        "action_value_id": "conversion_range_value",
-        "action_value":
-        {
-            "values": [100000.0, 100000.0, 100000.0]
-        }
-    },
-    {
         "action_value_id": "conversion_bombing_damage_value",
         "action_value":
         {
-            "values": [50.0, 100.0, 150.0]
+            "values": [62.5, 125.0, 187.5]
         }
     },
     {
@@ -197,8 +257,62 @@
         {
             "values": [0.0, 0.0, 0.0]
         }
+    },
+    {
+        "action_value_id": "conversion_damage_value",
+        "action_value":
+        {
+            "transform_type": "per_planet_owner_allied_population_points",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [10.0, 12.5, 15.0]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_weapon_damage_scalar",
+        "action_value":
+        {
+            "values": [0.15, 0.15, 0.15]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_population_growth_rate_scalar",
+        "action_value":
+        {
+            "values": [0.1, 0.1, 0.1]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_neutral_population_assimilation_rate_scalar",
+        "action_value":
+        {
+            "values": [0.25, 0.25, 0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_enemy_population_assimilation_rate_scalar",
+        "action_value":
+        {
+            "values": [0.25, 0.25, 0.25]
+        }
+    },
+    {
+        "action_value_id": "assimilated_population_duration_value",
+        "action_value":
+        {
+            "values": [600.0, 600.0, 600.0]
+        }
     }],
     "effect_alias_bindings": [
+    {
+        "alias_name": "generic_colonized_effect",
+        "alias_binding":
+        {
+            "particle_effect": "Buff_RecentlyColonized"
+        }
+    },
     {
         "alias_name": "advent_unity_conversion_buff_large",
         "alias_binding":
@@ -219,5 +333,43 @@
         {
             "particle_effect": "advent_conversion_asteroid"
         }
-    }]
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "assimilated_population_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_weapon_damage_scalar"
+        }
+	}],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "assimilated_population_population_growth_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "population_growth_rate",
+            "value_behavior": "additive",
+            "value_id": "assimilated_population_population_growth_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "assimilated_population_neutral_population_assimilation_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "neutral_population_assimilation_rate",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_neutral_population_assimilation_rate_scalar"
+        }
+	},
+    {
+        "buff_planet_modifier_id": "assimilated_population_enemy_population_assimilation_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "enemy_population_assimilation_rate",
+            "value_behavior": "scalar",
+            "value_id": "assimilated_population_enemy_population_assimilation_rate_scalar"
+        }
+	}]
 }

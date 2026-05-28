@@ -1,0 +1,214 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "harmony_ally_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "ally",
+                "friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "harmony_ally_unit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "titan",
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "starbase"
+            ],
+            "ownerships": [
+                "ally"]
+        }
+    },
+    {
+        "target_filter_id": "harmony_minor_faction_unit_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "strikecraft",
+                "titan",
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "structure",
+                "super_capital_ship",
+                "starbase"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_buff",
+                "buff": "npc_player_buffs_on_unit"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "harmony_shield_point_restore_rate_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "harmony_armor_point_restore_rate_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "harmony_hull_point_restore_rate_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+	{
+        "action_value_id": "harmony_shield_point_restore_scalar_after_damage_taken_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "harmony_armor_point_restore_scalar_after_damage_taken_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "harmony_hull_point_restore_scalar_after_damage_taken_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "harmony_antimatter_restore_rate_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    },
+    {
+        "action_value_id": "harmony_cooldown_time_value",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "harmony_duration_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "harmony_influence_points_recharge_rate_value",
+        "action_value":
+        {
+            "values": [0.05]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "harmony_influence_points_recharge_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "influence_points_recharge_rate",
+            "value_behavior": "scalar",
+            "value_id": "harmony_influence_points_recharge_rate_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "harmony_shield_point_restore_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "harmony_shield_point_restore_rate_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "harmony_armor_point_restore_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "harmony_armor_point_restore_rate_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "harmony_hull_point_restore_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "harmony_hull_point_restore_rate_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "harmony_shield_point_restore_scalar_after_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "shield_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "harmony_shield_point_restore_scalar_after_damage_taken_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "harmony_armor_point_restore_scalar_after_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "harmony_armor_point_restore_scalar_after_damage_taken_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "harmony_hull_point_restore_scalar_after_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_scalar_after_damage_taken",
+            "value_behavior": "additive",
+            "value_id": "harmony_hull_point_restore_scalar_after_damage_taken_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "harmony_antimatter_restore_rate_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "harmony_antimatter_restore_rate_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "harmony_activate",
+        "alias_binding":
+        {
+            "particle_effect": "MutualThreat"
+        }
+    }]
+}

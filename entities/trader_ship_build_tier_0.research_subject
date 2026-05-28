@@ -1,27 +1,48 @@
 {
     "version": 0,
     "domain": "civilian",
-    "tier": 2,
+    "tier": 1,
     "field": "civilian_trader_repeatables",
-    "field_coord": [4, 0],
-    "research_time": 605.0,
+    "field_coord": [2, 0],
+    "research_time": 560.0,
     "price":
     {
-        "credits": 3000.0,
-        "metal": 1125.0,
-        "crystal": 1125.0
+        "credits": 1600.0,
+        "metal": 600.0,
+        "crystal": 600.0
     },
-    "planet_modifiers": [
+    "unit_modifiers": [
     {
-        "modifier_type": "factory_unit_build_price",
+        "modifier_type": "strikecraft_build_time",
         "value_behavior": "scalar",
-        "value": -0.08
+        "value": -0.2
     }],
     "unit_factory_modifiers": [
     {
         "modifier_type": "build_time",
         "value_behavior": "scalar",
-        "value": -0.15
+        "value": -0.3,
+        "build_kinds": [
+            "corvette",
+            "frigate",
+            "cruiser"
+        ]
+    },
+    {
+        "modifier_type": "build_time",
+        "value_behavior": "scalar",
+        "value": -0.2,
+        "build_kinds": [
+            "capital_ship",
+            "super_capital_ship",
+            "titan"
+        ]
+    }],
+    "planet_modifiers": [
+    {
+        "modifier_type": "factory_unit_build_price",
+        "value_behavior": "scalar",
+        "value": -0.1
     }],
     "name": "research_subject.trader_ship_build_name",
     "name_uppercase": "research_subject.trader_ship_build_name_upper",

@@ -6,34 +6,41 @@
     "tooltip_picture": "vasari_terran_mining_booster_unit_item_tooltip_picture",
     "name": "vasari_terran_mining_booster_unit_item_name",
     "description": "vasari_terran_mining_booster_unit_item_description",
-    "build_time": 90.0,
+    "build_time": 30.0,
     "price":
     {
-        "metal": 600.0,
-        "crystal": 360.0
+        "metal": 300.0,
+        "crystal": 180.0
     },
+    "exotic_price": [
+    {
+        "exotic_type": "offense",
+        "count": 1
+    }],
     "max_count_on_unit": 1,
     "planet_type_groups": [
     {
         "planet_types": [
-			"greenhouse",
-			"swamp",
-			"terran",
-			"terran_home"
-        ],
-        "build_prerequisites": [
-			["vasari_unlock_terran_mining_booster_unit_item"]
+            "greenhouse",
+            "swamp",
+            "terran",
+            "terran_home"
         ]
     }],
     "planet_modifiers": [
     {
         "modifier_type": "mining_track_metal_income_rate",
         "value_behavior": "additive",
-        "values": [2.4]
+        "values": [1.8]
     },
     {
         "modifier_type": "mining_track_crystal_income_rate",
         "value_behavior": "additive",
-        "values": [1.8]
+        "values": [1.5]
+    },
+    {
+        "modifier_type": "max_population_points",
+        "value_behavior": "scalar",
+        "values": [-0.48]
     }]
 }

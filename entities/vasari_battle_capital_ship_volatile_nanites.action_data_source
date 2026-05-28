@@ -3,13 +3,11 @@
     "level_count": 5,
     "target_filters": [
     {
-        "target_filter_id": "vasari_battle_capital_ship_volatile_nanites_auto_cast_target_filter",
+        "target_filter_id": "vasari_battle_capital_ship_volatile_nanites_high_priority_auto_cast_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-                "cruiser",
-                "frigate",
                 "starbase",
                 "super_capital_ship",
                 "titan"
@@ -23,21 +21,57 @@
             },
             {
                 "constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "vasari_battle_capital_ship_volatile_nanites_on_target",
-					"include_pending_buffs": true
-				}
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_battle_capital_ship_volatile_nanites_on_target",
+                    "include_pending_buffs": true
+                }
             },
             {
                 "constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "vasari_battle_capital_ship_volatile_nanites_on_radius_origin",
-					"include_pending_buffs": true
-				}
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_battle_capital_ship_volatile_nanites_on_radius_origin",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "vasari_battle_capital_ship_volatile_nanites_low_priority_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_battle_capital_ship_volatile_nanites_on_target",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_battle_capital_ship_volatile_nanites_on_radius_origin",
+                    "include_pending_buffs": true
+                }
             }]
         }
     },
@@ -56,7 +90,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -74,15 +109,23 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     }],
     "action_values": [
     {
+        "action_value_id": "auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    },
+    {
         "action_value_id": "volatile_nanites_antimatter_cost_value",
         "action_value":
         {
-            "values": [120.0, 120.0, 120.0, 120.0, 120.0]
+            "values": [102.0, 112.0, 122.0, 132.0, 142.0]
         }
     },
     {
@@ -103,7 +146,7 @@
         "action_value_id": "volatile_nanites_damage_taken_modifier_value",
         "action_value":
         {
-            "values": [0.2, 0.4, 0.6, 0.8, 1.0]
+            "values": [0.18, 0.23, 0.28, 0.305, 0.32]
         }
     },
     {
@@ -117,21 +160,21 @@
         "action_value_id": "volatile_nanites_debuff_radius_value",
         "action_value":
         {
-            "values": [2500.0, 3000.0, 3500.0, 4000.0, 4500.0]
+            "values": [2500.0, 2500.0, 2500.0, 2500.0, 2500.0]
         }
     },
     {
         "action_value_id": "volatile_nanites_duration_value",
         "action_value":
         {
-            "values": [60.0, 90.0, 120.0, 180.0, 240.0]
+            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
         }
     },
     {
         "action_value_id": "volatile_nanites_armor_penetration_value",
         "action_value":
         {
-            "values": [1000.0, 1000.0, 1000.0, 1000.0, 1000.0]
+            "values": [100.0, 100.0, 100.0, 100.0, 100.0]
         }
     },
     {

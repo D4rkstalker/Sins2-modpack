@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "cultural_integrity_ally_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "ally",
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "cultural_integrity_bombing_damage_taken_value",
+        "action_value":
+        {
+            "values": [-0.5]
+        }
+    },
+    {
+        "action_value_id": "cultural_integrity_cooldown_time_value",
+        "action_value":
+        {
+            "values": [120.0]
+        }
+    },
+    {
+        "action_value_id": "cultural_integrity_duration_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "cultural_integrity_influence_points_recharge_rate_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "cultural_integrity_influence_points_recharge_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "influence_points_recharge_rate",
+            "value_behavior": "scalar",
+            "value_id": "cultural_integrity_influence_points_recharge_rate_value"
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "cultural_integrity_bombing_damage_taken_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "bombing_damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "cultural_integrity_bombing_damage_taken_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "harmony_activate",
+        "alias_binding":
+        {
+            "particle_effect": "MutualThreat"
+        }
+    }]
+}

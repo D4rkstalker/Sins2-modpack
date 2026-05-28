@@ -1,0 +1,281 @@
+{
+  "version": 2,
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Rings",
+      "x": [
+        0.0,
+        0.0
+      ],
+      "y": [
+        0.0,
+        0.0
+      ],
+      "z": [
+        0.0,
+        0.0
+      ],
+      "yaw": [
+        0.0,
+        0.0
+      ],
+      "pitch": [
+        -0.0,
+        -0.0
+      ],
+      "roll": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Lightning",
+      "x": [
+        0.0,
+        0.0
+      ],
+      "y": [
+        0.0,
+        0.0
+      ],
+      "z": [
+        0.0,
+        0.0
+      ],
+      "yaw": [
+        0.0,
+        0.0
+      ],
+      "pitch": [
+        -0.0,
+        -0.0
+      ],
+      "roll": [
+        -0.0,
+        -0.0
+      ]
+    }
+  ],
+  "emitters": [
+    {
+      "id": 0,
+      "name": "Rings",
+      "particle": {
+        "billboard": {
+          "uber_constants": {
+            "basic_constants": {
+              "emissive_factor": 1,
+              "alpha_ramp_steepness": 1,
+              "alpha_ramp_growth_delay": 1
+            }
+          },
+          "rotation": [
+            0.0,
+            6.283185
+          ],
+          "rotation_speed": [
+            -0.0,
+            0.0
+          ],
+          "render_with_additive_blending": true,
+          "width": [
+            60.0,
+            60.0
+          ],
+          "height": [
+            60.0,
+            60.0
+          ],
+          "texture_0": "shockwave5_clr",
+          "texture_1": "",
+          "texture_animation_fps": [
+            0.0,
+            0.0
+          ],
+          "texture_animation": "",
+          "texture_animation_first_frame": "random",
+          "texture_animation_next_frame": "random"
+        },
+        "mesh": {},
+        "render_layer": 0,
+        "color": "ffbfdcff",
+        "mass": [
+          1.0,
+          1.0
+        ],
+        "max_duration": [
+          3.0,
+          3.0
+        ],
+        "type": "billboard",
+        "fade_in_time": [
+          1.0,
+          1.0
+        ],
+        "fade_out_time": [
+          2.0,
+          2.0
+        ]
+      },
+      "emit_rate": {
+        "primary_emit_rate": [
+          7.0,
+          7.0
+        ]
+      },
+      "type": "point",
+      "is_visible": true,
+      "emit_start_delay": [
+        0.0,
+        0.0
+      ],
+      "angle_variance": [
+        3.141593,
+        3.141593
+      ],
+      "forward_velocity": [
+        50.0,
+        60.0
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Lightning",
+      "particle": {
+        "billboard": {
+          "uber_constants": {
+            "basic_constants": {
+              "emissive_factor": 1,
+              "alpha_ramp_steepness": 1,
+              "alpha_ramp_growth_delay": 1
+            }
+          },
+          "rotation": [
+            0.0,
+            6.283185
+          ],
+          "rotation_speed": [
+            -0.0,
+            0.0
+          ],
+          "render_with_additive_blending": true,
+          "width": [
+            25.0,
+            25.0
+          ],
+          "height": [
+            25.0,
+            25.0
+          ],
+          "texture_0": "firecraigelectrical_clr",
+          "texture_1": "",
+          "texture_animation_fps": [
+            0.0,
+            0.0
+          ],
+          "texture_animation": "",
+          "texture_animation_first_frame": "random",
+          "texture_animation_next_frame": "random"
+        },
+        "mesh": {},
+        "render_layer": 0,
+        "color": "ffffffff",
+        "mass": [
+          1.0,
+          1.0
+        ],
+        "max_duration": [
+          3.0,
+          3.0
+        ],
+        "type": "billboard",
+        "fade_in_time": [
+          1.0,
+          1.0
+        ],
+        "fade_out_time": [
+          2.0,
+          2.0
+        ]
+      },
+      "emit_rate": {
+        "primary_emit_rate": [
+          4.0,
+          4.0
+        ]
+      },
+      "type": "point",
+      "is_visible": true,
+      "emit_start_delay": [
+        0.0,
+        0.0
+      ],
+      "angle_variance": [
+        3.141593,
+        3.141593
+      ],
+      "forward_velocity": [
+        30.0,
+        45.0
+      ]
+    }
+  ],
+  "modifiers": [
+    {
+      "id": 1,
+      "name": "LightningGrow",
+      "type": "size",
+      "start_delay": [
+        0.0,
+        0.0
+      ],
+      "width_change_rate": [
+        120.0,
+        120.0
+      ],
+      "height_change_rate": [
+        120.0,
+        120.0
+      ]
+    },
+    {
+      "id": 2,
+      "name": "RingsGrow",
+      "type": "size",
+      "start_delay": [
+        0.0,
+        0.0
+      ],
+      "width_change_rate": [
+        80.0,
+        80.0
+      ],
+      "height_change_rate": [
+        80.0,
+        80.0
+      ]
+    }
+  ],
+  "emitter_to_node_attachments": [
+    {
+      "attacher_id": 0,
+      "attachee_id": 0
+    },
+    {
+      "attacher_id": 1,
+      "attachee_id": 1
+    }
+  ],
+  "modifier_to_emitter_attachments": [
+    {
+      "attacher_id": 1,
+      "attachee_id": 1
+    },
+    {
+      "attacher_id": 2,
+      "attachee_id": 0
+    }
+  ]
+}

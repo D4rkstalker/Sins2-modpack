@@ -61,7 +61,9 @@
         {
             "min_target_speed": 500.0,
             "min_distance_to_target": 500.0
-        }
+        },
+        "attack_target_type_range_scalar": 3.0,
+        "ignore_target_engagement_mode": true
     },
     "ai_attack_target":
     {
@@ -127,31 +129,37 @@
     },
     "health":
     {
-        "release_time_after_death": 5.0,
+        "release_time_after_death": 10.3,
         "can_collide_duration_after_death": 0.1,
+        "durability": 50.0,
         "round_max_points_up_to_5": false,
         "levels": [
         {
-            "max_hull_points": 80.0,
-            "hull_point_restore_rate": 1.33,
+            "max_hull_points": 110.5,
+            "hull_point_restore_rate": 1.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 15.0,
-            "armor_point_restore_rate": 1.33,
+            "max_armor_points": 10.0,
+            "armor_point_restore_rate": 2.0,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
             "armor_strength": 5.0,
-            "max_shield_points": 3.0,
-            "shield_point_restore_rate": 1.33,
+            "max_shield_points": 4.0,
+            "shield_point_restore_rate": 0.0,
             "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
             "shield_point_restore_scalar_after_damage_taken": 0.0,
+            "shield_burst_restore":
+            {
+                "cooldown_duration": 20.0,
+                "restore_percentage": 0.5
+            },
             "experience_given_on_death": 7.5
         }]
     },
     "strikecraft":
     {
         "kind": "bomber",
-        "build_time": 40.0,
+        "build_time": 60.0,
         "squadron_size": 4,
         "launch_destination_formation_offset":
         {
@@ -162,8 +170,8 @@
     "target_filter_unit_type": "strikecraft",
     "tags": [
         "strikecraft"
-    ],    "virtual_supply_cost": 1,
-
+    ],
+    "virtual_supply_cost": 1,
     "skin_groups": [
     {
         "skins": [

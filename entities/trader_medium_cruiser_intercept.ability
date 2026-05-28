@@ -34,31 +34,15 @@
             "enabled_by_default_behavior": "always",
             "caster_constraint":
             {
-                "constraint_type": "composite_and",
-                "constraints": [
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
                 {
-                    "constraint_type": "has_enemy_units_in_gravity_well",
-					"gravity_well_reference_unit":
-					{
-						"unit_type": "current_spawner"
-					},
-					"target_filter_id": "intercept_target_filter"
+                    "unit_type": "current_spawner"
                 },
+                "unit_constraint":
                 {
-                    "constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "unit_passes_unit_constraint",
-						"unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"unit_constraint":
-						{
-							"constraint_type": "weapon_has_target"
-						}
-					}
-                }]
+                    "constraint_type": "weapon_has_target"
+                }
             }
         }
     },

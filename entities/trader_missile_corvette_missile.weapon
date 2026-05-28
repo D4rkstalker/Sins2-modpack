@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "name": "weapon_name.light_missile",
+    "name": "weapon_name.medium_missile",
     "pitch_speed": 80.0,
     "yaw_speed": 80.0,
     "pitch_firing_tolerance": 15.0,
@@ -13,23 +13,23 @@
     ],
     "weapon_type": "normal",
     "damage_affect_type": "hull_and_armor_and_shields",
-    "damage": 40.0,
+    "damage": 50.0,
     "penetration": 400.0,
     "tags": [
         "missile",
         "physical"
     ],
-    "acquire_target_logic": "order_target_or_best_target_in_range",
+    "acquire_target_logic": "order_target_only",
     "firing":
     {
         "firing_type": "spawn_torpedo",
         "torpedo_firing_definition":
         {
             "spawned_unit": "trader_missile_corvette_torpedo",
-            "duration": 13.5
+            "duration": 6.0
         }
     },
-    "burst_pattern": [0.0, 0.75],
+    "burst_pattern": [0.0],
     "effects":
     {
         "muzzle_picking_behavior": "sequential",

@@ -5,7 +5,7 @@
         "stacking_limit": "fixed_one",
         "stacking_limit_met_behavior": "restart_existing_buff"
     },
-	"active_duration": "duration_value",
+    "active_duration": "duration_value",
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
@@ -14,6 +14,15 @@
         "execution_interval_count_value": "fixed_one",
         "action_group":
         {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "target"
+                },
+                "target_filter_id": "distortion_field_target_filter"
+            },
             "actions": [
             {
                 "action_type": "use_unit_operators_on_single_unit",
@@ -23,42 +32,53 @@
                 },
                 "operators": [
                 {
-                    "constraint":
-                    {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "operand_destination"
-                        },
-                        "target_filter_id": "distortion_field_target_filter"
-                    },
                     "operator_type": "teleport",
                     "destination_position":
                     {
                         "position_type": "unit_space_offset_from_unit",
-						"unit":
-						{
-							"unit_type": "target"
-						},
-						"offset_position": [250.0, 0.0, 0.0],
-						"offset_rotation": [250.0, 0.0, 0.0, 250.0, 0.0, 0.0, 250.0, 0.0, 0.0]
+                        "unit":
+                        {
+                            "unit_type": "target"
+                        },
+                        "offset_position": [0.0, 0.0, 250.0],
+                        "offset_rotation": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                    }
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect": "distortion_field_sound"
                     }
                 }]
-            },
-            {
-                "action_type": "start_buff_effect",
-                "effect_definition":
-                {
-                    "binding": "unit_skin",
-                    "mesh_point": "center",
-                    "effect": "distortion_field_on_caster"
-                }
             }]
         }
     },
     {
         "first_action_delay_time_value": "teleport_delay_time_value",
-        "execution_interval_value": "fixed_one",
+        "execution_interval_count_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "ability.1",
+                    "effect": "distortion_field_channel"
+                }
+            },
+            {
+                "action_type": "start_brake_to_stop"
+            }]
+        }
+    },
+    {
+        "first_action_delay_time_value": "teleport_delay_time_value",
+        "execution_interval_value": "fixed_zero",
         "action_group":
         {
             "actions": [
@@ -88,57 +108,23 @@
     }],
     "trigger_event_actions": [
     {
-        "trigger_event_type": "on_buff_started",
-        "action_group":
-        {
-            "actions": [
-            {
-                "constraint":
-                {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
-                    {
-                        "unit_type": "current_spawner"
-                    },
-                    "unit_constraint":
-                    {
-                        "constraint_type": "can_ever_move"
-                    }
-                },
-                "action_type": "start_brake_to_stop"
-            }]
-        }
-    },
-    {
         "trigger_event_type": "on_buff_made_dead",
         "action_group":
         {
             "actions": [
             {
-                "constraint":
-                {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
-                    {
-                        "unit_type": "current_spawner"
-                    },
-                    "unit_constraint":
-                    {
-                        "constraint_type": "can_ever_move"
-                    }
-                },
                 "action_type": "stop_brake_to_stop"
             }]
         }
     }],
     "unit_mutations": [
         "disable_can_use_active_abilities",
-		"disable_engines"
-	],
+        "disable_engines"
+    ],
     "gui":
     {
         "hud_icon": "vasari_offensive_support_cruiser_distortion_field_hud_icon",
         "name": "vasari_offensive_support_cruiser_distortion_field_name",
-		"visibility_scope": "negative"
+        "visibility_scope": "negative"
     }
 }

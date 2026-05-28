@@ -1,0 +1,98 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 0,
+            "name": "signals back",
+            "x": [0.0, 0.0],
+            "y": [150.0, 150.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [-0.0, -0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "signals back",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [1.50, 1.50],
+                "color": "ffff8080",
+                "fade_in_time": [1.0, 1.0],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [300.0, 300.0],
+                    "height": [300.0, 300.0],
+                    "rotation": [3.141593, 3.141593],
+                    "texture_0": "arrow",
+                    "texture_animation_first_frame": "random",
+                    "texture_animation_next_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 0,
+            "name": "grow soundwaves",
+            "type": "size",
+            "width_change_rate": [50.0, 50.0],
+            "height_change_rate": [50.0, 50.0]
+        },
+        {
+            "id": 2,
+            "name": "(new) LinearInflate-1",
+            "type": "size",
+            "width_change_rate": [-100.0, -100.0],
+            "height_change_rate": [-100.0, -100.0]
+        },
+        {
+            "id": 3,
+            "name": "(new) LinearForceToPoint-2",
+            "type": "push",
+            "force": {
+                "type": "random",
+                "range": [80.0, 80.0]
+            },
+            "op": "to_point_in_effect_space",
+            "point": [0.0, -600.0, 0.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 0,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 2,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 0
+        }
+    ]
+}

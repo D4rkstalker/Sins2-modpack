@@ -1,0 +1,106 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_zero",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "psionic_dynamo_stack_count_value",
+                    "comparison_type": "greater_than",
+                    "value_b": "fixed_zero"
+                },
+                {
+                    "constraint_type": "value_comparison",
+                    "value_a": "psionic_dynamo_stacks_expiry_time_value",
+                    "comparison_type": "less_than",
+                    "value_b": "common_simulation_time_value"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_zero"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_ability_executed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stack_count",
+                "math_operators": [
+                {
+                    "operator_type": "add",
+                    "operand_value": "fixed_one"
+                },
+                {
+                    "operator_type": "min",
+                    "operand_value": "psionic_dynamo_max_stack_count_value"
+                }]
+            },
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "stacks_expiry_time",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "common_simulation_time_value"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "psionic_dynamo_stack_duration_value"
+                }]
+            }]
+        }
+    }],
+    "unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "psionic_dynamo_spell_power_bonus_modifier"
+    },
+    {
+        "buff_unit_modifier_id": "psionic_dynamo_cooldown_bonus_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_psionic_dynamo_unit_item_hud_icon",
+        "name": "advent_psionic_dynamo_unit_item_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "psionic_dynamo_spell_power_bonus_modifier",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "psionic_dynamo_cooldown_bonus_modifier",
+                "is_resolved_value": true
+            }]
+        }]
+    }
+}

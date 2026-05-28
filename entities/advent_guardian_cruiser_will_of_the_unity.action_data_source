@@ -5,19 +5,42 @@
         "target_filter_id": "will_of_the_unity_auto_cast_target_filter",
         "target_filter":
         {
-            "unit_definitions": [
-                "advent_battle_capital_ship",
-                "advent_battle_psionic_capital_ship",
-				"advent_carrier_capital_ship",
-                "advent_colony_capital_ship",
-				"advent_planet_psionic_capital_ship",
-				"advent_loyalist_titan",
-				"dlc2_advent_loyalist_super_capital_ship",
-				"dlc2_advent_rebel_super_capital_ship",
-				"advent_rebel_titan",
-				"advent_starbase",
-				"advent_heavy_cruiser",
-				"advent_harassment_battle_capital_ship"
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_guardian_cruiser_will_of_the_unity",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "will_of_the_unity_psi_power_item_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan",
+                "starbase",
+                "cruiser"
             ],
             "ownerships": [
                 "friendly"
@@ -33,7 +56,8 @@
                 }
             },
             {
-                "constraint_type": "weapon_has_target"
+                "constraint_type": "has_mutation",
+                "mutation": "has_psi_power_scaling"
             }]
         }
     },
@@ -41,23 +65,42 @@
         "target_filter_id": "will_of_the_unity_target_filter",
         "target_filter":
         {
-            "unit_definitions": [
-                "advent_battle_capital_ship",
-                "advent_battle_psionic_capital_ship",
-				"advent_carrier_capital_ship",
-                "advent_colony_capital_ship",
-				"advent_planet_psionic_capital_ship",
-				"advent_loyalist_titan",
-				"dlc2_advent_loyalist_super_capital_ship",
-				"dlc2_advent_rebel_super_capital_ship",
-				"advent_rebel_titan",
-				"advent_starbase",
-				"advent_heavy_cruiser",
-				"advent_harassment_battle_capital_ship"
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
             ],
             "ownerships": [
                 "friendly"
-            ]
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_ability"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "will_of_the_unity_psi_power_item_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "titan",
+                "starbase",
+                "cruiser"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_mutation",
+                "mutation": "has_psi_power_scaling"
+            }]
         }
     }],
     "action_values": [

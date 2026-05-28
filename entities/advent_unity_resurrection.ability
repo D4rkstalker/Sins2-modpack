@@ -27,7 +27,38 @@
         "targeting_type": "unit_targeted",
         "targeting_ui": "pick_gravity_well",
         "target_filters": [
-            "resurrection_planet_target_filter"]
+            "resurrection_planet_target_filter"
+        ],
+        "ai_only_auto_cast":
+        {
+            "type": "pick_planet_anywhere",
+            "target_definitions": [
+            {
+                "target_filter": "resurrection_ai_auto_cast_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_resurrectable_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "dead_units_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "unit_types_to_resurrect": [
+                        "corvette",
+                        "cruiser",
+                        "frigate"
+                    ],
+                    "min_supply_value": "resurrection_ai_auto_cast_supply_value"
+                }
+            }]
+        }
     },
     "gui":
     {

@@ -3,6 +3,87 @@
     "race": "trader",
     "fleet": "trader_fleet",
     "fleet_name_group": "fleet",
+    "unit_build_groups": [
+    {
+        "id": "corvette",
+        "name": "unit_build_group_name.corvette",
+        "column_count": 2
+    },
+    {
+        "id": "frigate",
+        "name": "unit_build_group_name.frigate",
+        "column_count": 3
+    },
+    {
+        "id": "cruiser",
+        "name": "unit_build_group_name.cruiser",
+        "column_count": 3
+    },
+    {
+        "id": "capital_ship",
+        "name": "unit_build_group_name.capital_ship",
+        "column_count": 3
+    },
+    {
+        "id": "super_capital_ship",
+        "name": "unit_build_group_name.super_capital_ship",
+        "column_count": 1
+    },
+    {
+        "id": "titan",
+        "name": "unit_build_group_name.titan",
+        "column_count": 1
+    }],
+    "ship_component_build_groups": [
+    {
+        "id": "consumable",
+        "name": "ship_component_build_group_name_consumable",
+        "column_count": 2
+    },
+    {
+        "id": "offense",
+        "name": "ship_component_build_group_name_offense",
+        "column_count": 4
+    },
+    {
+        "id": "defense",
+        "name": "ship_component_build_group_name_defense",
+        "column_count": 4
+    },
+    {
+        "id": "utility",
+        "name": "ship_component_build_group_name_utility",
+        "column_count": 4
+    }],
+    "unit_names": [
+    {
+        "group_name": "capital_ship",
+        "localized_text":
+        {
+            "id_prefix": "capital_ship_name.trader"
+        }
+    },
+    {
+        "group_name": "fleet",
+        "localized_text":
+        {
+            "id_prefix": "fleet_name.trader"
+        }
+    },
+    {
+        "group_name": "starbase",
+        "localized_text":
+        {
+            "id_prefix": "starbase_name.trader"
+        }
+    },
+    {
+        "group_name": "titan",
+        "localized_text":
+        {
+            "id_prefix": "titan_name.trader"
+        }
+    }],
     "sounds":
     {
         "user_interface_sounds":
@@ -832,6 +913,7 @@
         "trader_light_frigate",
         "trader_antifighter_frigate",
         "trader_siege_frigate",
+        "trader_colony_frigate",
         "trader_heavy_cruiser",
         "trader_long_range_cruiser",
         "trader_carrier_cruiser",
@@ -839,7 +921,7 @@
     ],
     "structure_builder":
     {
-        "ship": "trader_constructor_ship",
+        "ship": "trader_constructor_ship_npc",
         "special_operation_unit_kind": "structure_builder"
     },
     "structures": [
@@ -853,11 +935,12 @@
     "ship_components": [],
     "npc":
     {
+	"can_survey_planets": false,
         "visuals": [
         {
             "name": "npc_player.grost_scrappers_union.name",
             "description": "npc_player.grost_scrappers_union.description",
-            "portrait": "miner_0",
+            "portrait": "npc_grost_0",
             "icon": "faction_9",
             "color_group": "npc_grost_scrappers_union",
             "reputation_panel": "grost_scrappers_union_panel"
@@ -879,6 +962,7 @@
                 "attacking": "pranast_npc_attacking_0"
             }
         },
+	"ai_difficulty": "hard",
         "ai_params":
         {
             "will_fleet_colonize": false,
@@ -896,9 +980,40 @@
             "roam": [125, 250, 375, 500],
             "defend": [312, 625, 875, 1250]
         },
+        "npc_tags": [
+            "grost"
+        ],
         "start_allied_to_playable_players": true,
         "start_allied_to_other_npc_players": true,
         "start_allied_to_militia_npc_players": false,
+        "bounty_market":
+        {
+            "market_weight": 3,
+            "bounty_cut": 0.4,
+            "metal_credit_value": 3.0,
+            "crystal_credit_value": 3.0,
+            "exotic_credit_values": [
+            {
+                "exotic_name": "offense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "defense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "utility",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "economic",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "ultimate",
+                "credit_value": 1500
+            }]
+        },
         "auctions": [
         {
             "weight": 1.0,
@@ -925,21 +1040,20 @@
             "bid_duration": 75.0,
             "rewards": [
                 "",
-                "grost_shield_bestowal",
-                "grost_shield_bestowal",
-                "grost_shield_bestowal"
-            ]
-        },
+                "grost_microphasing_aura",
+                "grost_microphasing_aura",
+                "grost_microphasing_aura"]
+        },        
         {
             "weight": 0.5,
             "bid_duration": 75.0,
             "rewards": [
                 "",
-                "grost_microphasing_aura",
-                "grost_microphasing_aura",
-                "grost_microphasing_aura"]
-        },        
-		{
+                "",
+                "grost_buy_corsev",
+                "grost_buy_corsev"]
+        },
+        {
             "weight": 0.1,
             "bid_duration": 300.0,
             "rewards": [
@@ -948,7 +1062,7 @@
                 "",
                 "ion_field_generator_planet_artifact"]
         },     
-		{
+        {
             "weight": 0.1,
             "bid_duration": 300.0,
             "rewards": [
@@ -1011,29 +1125,30 @@
         },						
         "simple_can_ever_be_colonized_planet_types": [
             "asteroid",
-			"crystalline",
+            "barren",
+            "city",
+            "crystalline",
             "desert",
-			"desert_home",
+            "desert_home",
             "ferrous",
-			"ferrous_home",
-			"ice_asteroid",
+            "ferrous_home",
+            "gas_giant",
+            "greenhouse",
+            "hive_asteroid",
             "ice",
+            "ice_asteroid",
+            "ice_moon",
+            "irradiated",
+            "magnetic",
             "moon",
             "oceanic",
-			"pirate_base",
-			"swamp",
+            "pirate_base",
+            "ship_graveyard",
+            "swamp",
             "terran",
-			"terran_home",
+            "terran_home",
             "volcanic",
-			"ship_graveyard",
-			"greenhouse",
-			"barren",
-			"city",
-			"magnetic",
-			"ice_moon",
-			"volcanic_moon",
-			"gas_giant",
-			"hive_asteroid"
+            "volcanic_moon"
         ],
         "simple_planet_level": 10,
         "simple_planet_tracks":
@@ -1079,19 +1194,19 @@
             "reward_between_gravity_well_range": 10.0,
             "rewards": [
             {
-                "reward": "grost_scrap_for_parts",
+                "reward": "grost_scavenger_barge",
                 "required_reputation_level": 0,
                 "influence_point_cost": 1,
                 "cooldown_duration": 60
             },
             {
-                "reward": "grost_scavenger_barge",
+                "reward": "grost_elite_scavengers",
                 "required_reputation_level": 1,
                 "influence_point_cost": 2,
                 "cooldown_duration": 300
             },
             {
-                "reward": "grost_elite_scavengers",
+                "reward": "grost_salvage_operations",
                 "required_reputation_level": 2,
                 "influence_point_cost": 4,
                 "cooldown_duration": 360
@@ -1106,22 +1221,46 @@
             {
                 "influence_point_cost": 1,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.02,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 2,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.04,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 4,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.06,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 6,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.08,
+                        "value_behavior": "scalar"
+                    }
+		}
             }]
         }
     }

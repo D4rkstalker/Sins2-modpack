@@ -1,0 +1,66 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "unity_protectorate_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "unity_protectorate_max_shield_points_scalar_value",
+        "action_value":
+        {
+            "values": [0.15]
+        }
+    },
+    {
+        "action_value_id": "unity_protectorate_spell_power_bonus_value",
+        "action_value":
+        {
+            "values": [50.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "advent_unity_protectorate_max_armor_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "unity_protectorate_max_shield_points_scalar_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_protectorate_max_shields_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "unity_protectorate_max_shield_points_scalar_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_protectorate_spell_power_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "spell_power",
+            "value_behavior": "additive",
+            "value_id": "unity_protectorate_spell_power_bonus_value"
+        }
+    }]
+}

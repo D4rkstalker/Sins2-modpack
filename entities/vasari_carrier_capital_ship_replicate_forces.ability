@@ -85,7 +85,10 @@
             },
             "target_definitions": [
             {
-                "target_filter": "replicate_forces_auto_cast_target_filter"
+                "target_filter": "replicate_forces_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "replicate_forces_auto_cast_low_priority_target_filter"
             }]
         }
     },
@@ -110,7 +113,15 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.copy_count",
                 "value_id": "replicate_forces_clone_count_value",
-				"value_color": "positive"
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "replicate_clone_armor_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "replicate_clone_hull_modifier"
             },
             {
                 "rendering_type": "single_value",

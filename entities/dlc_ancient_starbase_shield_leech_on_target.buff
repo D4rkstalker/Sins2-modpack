@@ -18,33 +18,33 @@
             {
                 "constraint":
                 {
-					"constraint_type": "composite_or",
-					"constraints": [
-					{
-						"constraint_type": "distance_between_units_comparison",
-						"unit_a":
-						{
-							"unit_type": "current_spawner"
-						},
-						"unit_b":
-						{
-							"unit_type": "previous_spawner"
-						},
-						"comparison_type": "greater_than",
-						"compare_value": "shield_leech_radius_value"
-					},
-					{
-						"constraint_type": "unit_passes_unit_constraint",
-						"unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"unit_constraint":
-						{
-							"constraint_type": "has_missing_shields",
-							"percentage_missing_threshold": 1.0
-						}
-					}]
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "distance_between_units_comparison",
+                        "unit_a":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_b":
+                        {
+                            "unit_type": "previous_spawner"
+                        },
+                        "comparison_type": "greater_than",
+                        "compare_value": "shield_leech_radius_value"
+                    },
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_missing_shields",
+                            "percentage_missing_threshold": 1.0
+                        }
+                    }]
                 },
                 "action_type": "make_buff_dead"
             }]
@@ -70,7 +70,7 @@
                     "damage_value": "shield_leech_damage_rate_value",
                     "penetration_value": "shield_leech_armor_penetration_value"
                 }]
-			},
+            },
             {
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
@@ -106,7 +106,7 @@
                     }
                 }
             },
-			{
+            {
                 "action_type": "change_buff_memory_float_value",
 				"buff": "parent_buff",
                 "float_variable": "total_shield_regen",
@@ -133,7 +133,7 @@
         "action_group":
         {
             "actions": [
-			{
+            {
                 "action_type": "change_buff_memory_float_value",
 				"buff": "parent_buff",
                 "float_variable": "total_shield_regen",
@@ -143,8 +143,8 @@
                     "operand_value": "shield_leech_damage_rate_value"
                 }]
             }]
-		}
-	}],
+        }
+    }],
     "gui":
     {
         "hud_icon": "dlc_ancient_starbase_shield_leech_unit_item_hud_icon",

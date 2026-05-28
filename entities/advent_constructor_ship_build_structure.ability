@@ -1,0 +1,54 @@
+{
+    "version": 0,
+    "action_data_source": "advent_constructor_ship_build_structure",
+    "use_world_position_for_move_destination": true,
+    "active_actions":
+    {
+        "stop_use_type": "on_spawned_buff_removed",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_constructor_ship_build_structure_on_self"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "constructor_ship_target"
+        ],
+        "range": "build_structure_range",
+        "move_alignment":
+        {
+            "type": "yaw",
+            "angle": 0.0,
+            "allow_opposite_angle": false
+        },
+        "firing_angle": 10.0,
+        "watched_buff": "advent_constructor_ship_build_structure_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_constructor_ship_build_structure_ability_hud_icon",
+        "tooltip_picture": "advent_constructor_ship_build_structure_ability_tooltip_picture",
+        "name": "advent_constructor_ship_build_structure_ability_name",
+        "description": "advent_constructor_ship_build_structure_ability_description",
+        "action": "toggle_structures_window",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "build_structure_range"
+            }
+        }
+    }
+}

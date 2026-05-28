@@ -12,9 +12,7 @@
                 "corvette",
                 "cruiser",
                 "frigate",
-                "strikecraft",
-				"torpedo",
-				"super_capital_ship",
+                "super_capital_ship",
                 "titan"
 			],
             "ownerships": [
@@ -25,14 +23,18 @@
             "constraints": [
             {
                 "constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "has_ability"
-				},
-				{
-					"constraint_type": "has_weapon",
-					"weapon_type": "normal"
-				}]
+                "constraints": [
+                {
+                	"constraint_type": "has_ability"
+                },
+                {
+                	"constraint_type": "has_mutation",
+                	"mutation": "item_has_active_ability"
+                },
+                {
+                	"constraint_type": "has_weapon",
+                	"weapon_type": "normal"
+                }]
             }]
         }
     }],

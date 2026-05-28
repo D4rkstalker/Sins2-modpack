@@ -1,0 +1,103 @@
+{
+    "version": 0,
+    "action_data_source": "dlc2_trader_loyalist_super_hold_the_line",
+    "level_source": "internal_level",
+    "min_required_unit_levels": [0, 2, 4, 6, 8],
+    "active_actions":
+    {
+        "cooldown_time": "hold_the_line_cooldown_time_value",
+        "antimatter_cost": "hold_the_line_antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "dlc2_trader_loyalist_super_hold_the_line_on_spawner"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints":[
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
+                },
+                {
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "hold_the_line_auto_cast_target_filter",
+                    "radius_value": "hold_the_line_auto_cast_radius_value",
+                    "target_count_value": "hold_the_line_auto_cast_target_count_value"
+                }]
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "dlc2_trader_loyalist_super_hold_the_line_hud_icon",
+        "tooltip_picture": "dlc2_trader_loyalist_super_hold_the_line_tooltip_picture",
+        "name": "dlc2_trader_loyalist_super_hold_the_line_ability_name",
+        "description": "dlc2_trader_loyalist_super_hold_the_line_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "hold_the_line_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "hold_the_line_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "hold_the_line_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.ships",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "hold_the_line_damage_taken_ship_modifier"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.structures_and_starbases",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "hold_the_line_damage_taken_structure_modifier"
+            }]
+        }]
+    }
+}

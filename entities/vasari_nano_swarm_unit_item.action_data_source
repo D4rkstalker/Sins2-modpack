@@ -16,7 +16,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -25,7 +26,11 @@
         {
             "unit_types": [
                 "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
                 "starbase",
+                "structure",
                 "super_capital_ship",
                 "titan"
             ],
@@ -41,9 +46,17 @@
                     "buff": "vasari_nano_swarm_unit_item",
                     "include_pending_buffs": true
                 }
+            },
+            {
+                "constraint_type": "is_always_a_threat"
             }]
         }
     }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "charge_restore_time"]
+    },
     "action_values": [
     {
         "action_value_id": "nano_swarm_cooldown_time_value",
@@ -70,21 +83,65 @@
         "action_value_id": "nano_swarm_damage_rate_value",
         "action_value":
         {
-            "values": [40.0]
-        }
-    },
-    {
-        "action_value_id": "nano_swarm_armor_pen_value",
-        "action_value":
-        {
-            "values": [500.0]
+            "values": [30.0]
         }
     },
     {
         "action_value_id": "nano_swarm_execution_count_value",
         "action_value":
         {
-            "values": [25.0]
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_charge_count_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_stack_limit_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_charge_cooldown_value",
+        "action_value":
+        {
+            "values": [660.0]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_charge_cooldown_with_retrofit_value",
+        "action_value":
+        {
+            "values": [0.091]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_metal_cost_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_crystal_cost_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "nano_swarm_charge_restore_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "charge_restore_time",
+            "values": [1.0]
         }
     }],
     "effect_alias_bindings": [

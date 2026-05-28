@@ -1,0 +1,115 @@
+{
+    "version": 0,
+    "action_data_source": "trader_envoy_frigate_arbitrate_tariff",
+    "active_actions":
+    {
+        "cooldown_time": "arbitrate_tariff_cooldown_time_value",
+        "actions":
+        {
+            "constraint":
+            {
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "target_filter_id": "arbitrate_tariff_ally_target_filter"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_envoy_frigate_arbitrate_tariff_on_planet"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "center",
+                        "effect": "arbitrate_tariff_activate"
+                    }
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner",
+                    "redirection": "current_gravity_well_primary_fixture"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "trader_envoy_frigate_arbitrate_tariff_on_planet",
+                        "include_pending_buffs": true
+                    }
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_envoy_frigate_arbitrate_tariff_hud_icon",
+        "name": "trader_envoy_frigate_arbitrate_tariff_name",
+        "description": "trader_envoy_frigate_arbitrate_tariff_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "arbitrate_tariff_duration_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.envoy_on_allied_planet_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "arbitrate_tariff_commerce_track_credit_income_rate_per_population_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "arbitrate_tariff_mining_track_metal_income_rate_per_population_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "arbitrate_tariff_mining_track_crystal_income_rate_per_population_modifier"
+            }]
+        },
+        {
+            "header_text": "tooltip.unit_item_self_label",
+            "lines": [
+            {
+                "rendering_type": "buff_empire_modifier",
+                "empire_modifier_id": "arbitrate_tariff_influence_points_recharge_rate_modifier"
+            }]
+        }]
+    }
+}

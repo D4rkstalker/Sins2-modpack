@@ -1,0 +1,89 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+		"star",
+		"uncolonizable"
+            ],
+            "ownerships": [
+                "friendly",
+		"enemy",
+		"none"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "enhanced_tunneling_phase_jumping_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "titan",
+		"super_capital_ship",
+		"starbase"
+            ],
+            "ownerships": [
+                "self",
+		"ally",
+		"friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "enhanced_tunneling_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "titan",
+		"super_capital_ship",
+		"starbase"
+            ],
+            "ownerships": [
+                "self",
+		"ally",
+		"friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_hyperspace"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "hyperspace_speed_scalar",
+        "action_value":
+        {
+            "values": [0.48]
+        }
+    },
+    {
+        "action_value_id": "active_duration_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "enhanced_tunneling_hyperspace_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "hyperspace_speed_scalar"
+        }
+    }]
+}

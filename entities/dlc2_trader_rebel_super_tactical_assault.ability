@@ -9,54 +9,54 @@
         "antimatter_cost": "tactical_assault_antimatter_cost_value",
         "actions":
         {
-	        "constraint":
+            "constraint":
             {
-				"constraint_type": "unit_passes_unit_constraint",
-				"unit":
-				{
-					"unit_type": "current_spawner"
-				},
-				"unit_constraint":
-				{
-					"constraint_type": "composite_or",
-					"constraints": [
-					{
-						"constraint_type": "composite_and",
-						"constraints": [
-						{
-							"constraint_type": "composite_not",
-							"constraint":
-							{
-								"constraint_type": "has_buff",
-								"buff": "plasma_storm_fixture_bonus_on_target"
-							}
-						},
-						{
-							"constraint_type": "composite_or",
-							"constraints": [
-							{
-								"constraint_type": "has_mutation",
-								"mutation": "modular_missile_equipped"
-							},
-							{
-								"constraint_type": "has_mutation",
-								"mutation": "missile_turrets_equipped"
-							}]
-						}]
-					},
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "beam_turrets_equipped"
-					},
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "gauss_turrets_equipped"
-					},
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "modular_railgun_equipped"
-					}]
-				}
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "plasma_storm_fixture_bonus_on_target"
+                            }
+                        },
+                        {
+                            "constraint_type": "composite_or",
+                            "constraints": [
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "modular_missile_equipped"
+                            },
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "missile_turrets_equipped"
+                            }]
+                        }]
+                    },
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "beam_turrets_equipped"
+                    },
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "gauss_turrets_equipped"
+                    },
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "modular_railgun_equipped"
+                    }]
+                }
             },
             "actions": [
             {
@@ -90,8 +90,8 @@
                     },
                     "unit_constraint":
                     {
-						"constraint_type": "has_mutation",
-						"mutation": "beam_turrets_equipped"
+                        "constraint_type": "has_mutation",
+                        "mutation": "beam_turrets_equipped"
                     }
                 },
                 "action_type": "use_unit_operators_on_single_unit",
@@ -116,15 +116,15 @@
                     "unit_constraint":
                     {
                         "constraint_type": "composite_or",
-						"constraints": [
-						{
-							"constraint_type": "has_mutation",
-							"mutation": "modular_missile_equipped"
-						},
-						{
-							"constraint_type": "has_mutation",
-							"mutation": "missile_turrets_equipped"
-						}]
+                        "constraints": [
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "modular_missile_equipped"
+                        },
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "missile_turrets_equipped"
+                        }]
                     }
                 },
                 "action_type": "use_unit_operators_on_single_unit",
@@ -149,15 +149,15 @@
                     "unit_constraint":
                     {
                         "constraint_type": "composite_or",
-						"constraints": [
-						{
-							"constraint_type": "has_mutation",
-							"mutation": "modular_railgun_equipped"
-						},
-						{
-							"constraint_type": "has_mutation",
-							"mutation": "gauss_turrets_equipped"
-						}]
+                        "constraints": [
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "modular_railgun_equipped"
+                        },
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "gauss_turrets_equipped"
+                        }]
                     }
                 },
                 "action_type": "use_unit_operators_on_single_unit",
@@ -206,7 +206,7 @@
             }]
         },
         {
-            "header_text": "tooltip.ability.on_beam_weapons",
+            "header_text": "tooltip.ability.on_burst_weapons",
             "lines": [
             {
                 "rendering_type": "single_value",
@@ -244,9 +244,8 @@
             "header_text": "tooltip.ability.on_missile_weapons",
             "lines": [
             {
-                "rendering_type": "single_line",
-                "label_text": "tooltip.ability.single_line.enable_missile_retargeting",
-                "value_color": "positive"
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "tactical_assault_missile_weapon_damage_modifier"
             },
             {
                 "rendering_type": "buff_weapon_modifier",

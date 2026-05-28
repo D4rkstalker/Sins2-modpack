@@ -1,0 +1,91 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 0,
+        "name": "MainPortalSwirl",
+        "type": "point",
+        "emit_rate":
+        {
+            "primary_emit_rate": [12.0, 12.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [1.0, 1.5],
+            "color": "ff969696",
+            "initial_alpha": [0.0, 0.0],
+            "fade_in_time": [0.0, 0.0],
+            "fade_out_time": [0.0, 0.0],
+            "billboard":
+            {
+                "render_with_additive_blending": true,
+                "facing_type": "face_particle_direction",
+                "width": [35.0, 40.0],
+                "rotation": [0.0, 6.283185],
+                "rotation_speed": [-0.10472, -0.017453],
+                "initial_erosion_noise_offset_u": [0.0, 0.0],
+                "initial_erosion_noise_offset_v": [0.0, 0.0],
+                "texture_animation": "advent_portal_2x3",
+                "texture_animation_first_frame": "random",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "emissive_factor": 0.5
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [0.0, 0.0],
+        "angle_variance": [-0.20944, 0.20944]
+    }],
+    "modifiers": [
+    {
+        "id": 2,
+        "name": "Shrink",
+        "type": "float_property",
+        "property_type": "width_and_height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "in_sine",
+            "easing_values": [1.0, 0.0]
+        }
+    },
+    {
+        "id": 15,
+        "name": "AlphaIncrease",
+        "type": "alpha",
+        "change_rate": [0.5, 0.7]
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 0,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": [
+    {
+        "attacher_id": 15,
+        "attachee_id": 0
+    },
+    {
+        "attacher_id": 2,
+        "attachee_id": 0
+    }]
+}

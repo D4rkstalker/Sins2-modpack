@@ -2,29 +2,6 @@
     "version": 0,
     "target_filters": [
     {
-        "target_filter_id": "detonate_auto_cast_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "corvette",
-                "cruiser",
-                "frigate",
-                "structure",
-				"super_capital_ship",
-				"capital_ship",
-				"titan",
-				"starbase"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_always_a_threat"
-            }]
-        }
-    },
-    {
         "target_filter_id": "detonate_target_filter",
         "target_filter":
         {
@@ -33,14 +10,20 @@
                 "cruiser",
                 "frigate",
                 "structure",
-				"super_capital_ship",
-				"capital_ship",
-				"titan",
-				"starbase"
+                "super_capital_ship",
+                "capital_ship",
+                "titan",
+                "starbase",
+                "strikecraft",
+                "torpedo"
             ],
             "ownerships": [
                 "enemy"
-            ]
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_in_current_gravity_well"
+            }]
         }
     }],
     "action_values": [
@@ -55,14 +38,14 @@
         "action_value_id": "detonate_damage_radius",
         "action_value":
         {
-            "values": [3000.0]
+            "values": [1500.0]
         }
     },
     {
         "action_value_id": "detonate_damage_value",
         "action_value":
         {
-            "values": [700.0]
+            "values": [250.0]
         }
     },
     {

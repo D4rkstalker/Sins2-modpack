@@ -1,0 +1,190 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 37101.211976,
+        "min_camera_distance": 1022.543257,
+        "gui":
+        {
+            "hud_icon": "advent_temple_of_renewal_structure_hud_icon",
+            "hud_monochrome_icon": "advent_temple_of_renewal_structure_main_view_icon",
+            "hud_picture": "advent_temple_of_renewal_structure_hud_picture",
+            "tooltip_picture": "advent_temple_of_renewal_structure_tooltip_picture",
+            "name": "neutral_regen_structure_name",
+            "description": "neutral_regen_structure_description",
+			"show_description_in_unit_tooltip": true
+        },
+        "unit_mesh":
+        {
+            "mesh": "advent_temple_of_renewal_structure",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "structure",
+            "icon": "advent_temple_of_renewal_structure_main_view_icon",
+            "selected_icon": "advent_temple_of_renewal_structure_main_view_icon_selected",
+            "sub_selected_icon": "advent_temple_of_renewal_structure_main_view_icon_sub_selected",
+            "has_rotation": false
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 30,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_vapor_pushed_out_damage"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "advent_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "advent_damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "advent_vapor_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "advent_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "advent_damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "advent_damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+				"sound": "ambient_loop_scan_derelict",
+                "particle_effect": "scanning_derelict_loot",
+                "constraint": "is_loot_collection_active"
+            }],
+            "shield_effect": "advent_temple_of_renewal_structure",
+            "effect_alias_bindings": [
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_antimatter_activate",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_temple_of_renewal_recharge_antimatter_activate"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_antimatter_buff_large",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_temple_of_renewal_recharge_antimatter_on_large"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_antimatter_buff_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_temple_of_renewal_recharge_antimatter_on_medium"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_antimatter_buff_small",
+                "alias_binding":
+                {
+                    "particle_effect": "advent_temple_of_renewal_recharge_antimatter_on_small"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_shields_activate",
+                "alias_binding":
+                {
+                    "particle_effect": "temple_of_renewal_shield_regeneration"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_shields_buff_large",
+                "alias_binding":
+                {
+                    "particle_effect": "temple_of_renewal_shield_regeneration_on_large"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_shields_buff_medium",
+                "alias_binding":
+                {
+                    "particle_effect": "temple_of_renewal_shield_regeneration_on_medium"
+                }
+            },
+            {
+                "alias_name": "advent_temple_of_renewal_recharge_shields_buff_small",
+                "alias_binding":
+                {
+                    "particle_effect": "temple_of_renewal_shield_regeneration_on_small"
+                }
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_psi_temple_of_renewal"
+                    ],
+                    "scared": [
+                        "ui_onselection_psi_temple_of_renewal"]
+                }
+            }
+        },
+        "death_sequence_group": "advent_planetmodulesmall"
+    }]
+}

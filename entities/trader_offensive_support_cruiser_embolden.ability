@@ -41,48 +41,10 @@
             "enabled_by_default_behavior": "always",
             "target_definitions": [
             {
-                "target_filter": "embolden_auto_cast_high_priority_target_filter",
-                "target_constraint":
-                {
-					"constraint_type": "composite_or",
-					"constraints": [
-					{
-						"constraint_type": "value_comparison",
-						"value_a": "target_missing_shields_value",
-						"comparison_type": "greater_than_equal_to",
-						"value_b": "auto_cast_shields_threshold_value"
-					},
-					{
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "target"
-						},
-						"target_filter_id": "embolden_auto_cast_high_priority_recently_fired_target_filter"
-					}]
-                }
+                "target_filter": "embolden_auto_cast_high_priority_target_filter"
             },
             {
-                "target_filter": "embolden_auto_cast_low_priority_target_filter",
-                "target_constraint":
-                {
-					"constraint_type": "composite_or",
-					"constraints": [
-					{
-						"constraint_type": "value_comparison",
-						"value_a": "target_missing_shields_value",
-						"comparison_type": "greater_than_equal_to",
-						"value_b": "auto_cast_shields_threshold_value"
-					},
-					{
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "target"
-						},
-						"target_filter_id": "embolden_auto_cast_low_priority_recently_fired_target_filter"
-					}]
-                }
+                "target_filter": "embolden_auto_cast_low_priority_target_filter"
             }]
         }
     },

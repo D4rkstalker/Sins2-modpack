@@ -11,7 +11,7 @@
             ],
             "ownerships": [
                 "enemy"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "is_always_a_threat"
@@ -23,6 +23,14 @@
                     "constraint_type": "has_buff",
                     "buff": "advent_planet_psionic_capital_ship_reverie",
                     "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.9
                 }
             }]
         }
@@ -38,7 +46,7 @@
             ],
             "ownerships": [
                 "enemy"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "is_always_a_threat"
@@ -50,6 +58,23 @@
                     "constraint_type": "has_buff",
                     "buff": "advent_planet_psionic_capital_ship_reverie",
                     "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_subjugator_cruiser_suppression",
+                    "include_pending_buffs": true
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.9
                 }
             }]
         }
@@ -65,7 +90,8 @@
                 "structure"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     }],
     "action_values": [
@@ -73,7 +99,7 @@
         "action_value_id": "reverie_antimatter_cost_value",
         "action_value":
         {
-            "values": [90.0, 78.75, 67.5, 56.25, 45.0]
+            "values": [57.0, 63.0, 69.0, 75.0, 81.0]
         }
     },
     {

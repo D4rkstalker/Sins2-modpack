@@ -15,7 +15,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -28,7 +29,7 @@
     "structure":
     {
         "slot_type": "civilian",
-        "slots_required": 1,
+        "slots_required": 3,
         "roles": [
             "exotic_factory"
         ],
@@ -93,6 +94,23 @@
         ],
         "build_kind": "structure",
         "build_radius": 1309.502197
+    },
+    "traffic_port":
+    {
+        "max_traffic_ship_count": 2,
+        "traffic_ship_construction_time": 120.0,
+        "traffic_ship": "trader_refinery_ship",
+        "allowed_destination_units": 
+        [
+            "trader_exotic_factory_structure", 
+            "trader_crystal_extractor_structure", 
+            "trader_metal_extractor_structure",
+            "trader_capturable_crystal_extractor_structure",
+            "trader_capturable_metal_extractor_structure"
+        ],
+        "special_operation_unit_kind": "traffic_ship",
+        "create_traffic_ship_offset": [0.0, 0.0, 1500.0],
+        "force_stay_in_gravity_well": true
     },
     "target_filter_unit_type": "structure",
     "tags": [

@@ -18,6 +18,91 @@
     "unit_mutations": [
         "disable_can_have_shields_bypassed"
     ],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint":
+            {
+            	"constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "research_prerequisites_are_met",
+                    "player":
+                    {
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "player_type": "unit_owner"
+                    },
+                    "prerequisites": [
+                        ["advent_rebel_psi_backlash"]
+                    ]
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "trigger_event_source"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "psi_backlash_damage_value",
+                    "penetration_value": "psi_backlash_penetration_value",
+                    "can_damage_be_propagated": false
+                }]
+            },
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "unit_position",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_source"
+                    }
+                },
+                "position_operators": [
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "center",
+                        "effect_by_size":
+                        {
+                            "small_unit": "backlash_on_target_small",
+                            "medium_unit": "backlash_on_target_medium",
+                            "large_unit": "backlash_on_target_large"
+                        }
+                    },
+                    "effect_destination_unit":
+                    {
+                        "unit_type": "trigger_event_source"
+                    },
+                    "effect_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "trigger_event_source"
+                        }
+                    }
+                }]
+            }]
+        }
+    }],
     "gui":
     {
         "name": "advent_shield_boost_unit_item_name",
@@ -35,11 +120,30 @@
                 "rendering_type": "buff_unit_modifier",
                 "unit_modifier_id": "shield_burst_bonus_value",
                 "is_resolved_value": true
-            },
+            }]
+        },
+        {
+            "is_visible_constraint": 
             {
-                "rendering_type": "single_line",
-                "label_text": "unit_mutation.disable_can_have_shields_bypassed",
-                "value_color": "positive"
+            	"constraint_type": "research_prerequisites_are_met",
+            	"player":
+            	{
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+            	"player_type": "unit_owner"
+            	},
+            	"prerequisites": [["advent_rebel_psi_backlash"]]
+	    },
+            "header_text": "tooltip.ability.psi_backlash",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "psi_backlash_damage_value",
+                "value_color": "negative",
+                "is_resolved_value": true
             }]
         }]
     }

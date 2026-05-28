@@ -1,0 +1,156 @@
+{
+    "version": 0,
+    "action_data_source": "trader_retrofit_bay_repair",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["trader_unlock_retrofit_bay_repair_ability"]
+        ],
+        [
+            ["trader_retrofit_bay_repair_rate_0"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "cooldown_time_value",
+        "antimatter_cost": "antimatter_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "repair_target_filter"
+                },
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "range_value": "range_value",
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_retrofit_bay_repair"
+                },
+                {
+                    "operator_type": "play_weapon_effects",
+                    "effect_alias_binding": "unit_skin",
+                    "mesh_point": "ability.0",
+                    "effects":
+                    {
+                        "beam_effect": "trader_retrofit_bay_repair_beam"
+                    },
+                    "beam_duration": "beam_duration_value"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "repair_target_filter"
+        ],
+        "range": "range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "repair_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            },
+            {
+                "target_filter": "repair_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            },
+            {
+                "target_filter": "repair_auto_cast_lower_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_corvette_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_corvette_threshold_value"
+                    }]
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_retrofit_bay_repair_ability_hud_icon",
+        "tooltip_icon": "trader_retrofit_bay_repair_ability_hud_icon",
+        "name": "trader_retrofit_bay_repair_ability_name",
+        "description": "trader_retrofit_bay_repair_ability_description",
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "repair_rate_value",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "execution_interval_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

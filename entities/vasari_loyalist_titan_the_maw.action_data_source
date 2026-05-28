@@ -9,72 +9,32 @@
             "unit_types": [
                 "corvette",
                 "cruiser",
-                "capital_ship",
-                "frigate",
-                "strikecraft",
-                "torpedo"
+                "frigate"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
         "target_filter_id": "the_maw_attract_debris_target_filter",
         "target_filter":
         {
-            "unit_types": [
-                "debris"
+            "unit_definitions": [
+                "advent_generic_large_debris",
+                "trader_generic_large_debris",
+                "generic_large_debris",
+                "vasari_generic_large_debris",
+                "advent_generic_small_debris",
+                "trader_generic_small_debris",
+                "generic_small_debris",
+                "vasari_generic_small_debris"
             ],
             "ownerships": [
                 "enemy",
-				"friendly",
-				"none"
-			],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "composite_or",
-					"constraints": [
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "advent_generic_large_debris"
-					},
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "trader_generic_large_debris"
-					},
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "generic_large_debris"
-					},
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "vasari_generic_large_debris"
-					}]
-				},
-				{
-					"constraint_type": "composite_or",
-					"constraints": [
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "advent_generic_small_debris"
-					},
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "trader_generic_small_debris"
-					},
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "generic_small_debris"
-					},
-					{
-						"constraint_type": "has_definition",
-						"unit_definition": "vasari_generic_small_debris"
-					}]
-				}]
-            }]
+                "friendly",
+                "none"
+            ]
         }
     },
     {
@@ -82,12 +42,12 @@
         "target_filter":
         {
             "unit_types": [
-                "capital_ship",
-                "cruiser"
+                "cruiser",
+                "frigate"
             ],
             "ownerships": [
                 "enemy"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "is_always_a_threat"
@@ -121,10 +81,24 @@
     },
     "action_values": [
     {
+        "action_value_id": "auto_cast_radius_value",
+        "action_value":
+        {
+            "values": [3000.0, 3200.0, 3400.0, 3600.0, 3800.0]
+        }
+    },
+    {
+        "action_value_id": "auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+        }
+    },
+    {
         "action_value_id": "the_maw_antimatter_cost_value",
         "action_value":
         {
-            "values": [90.0, 90.0, 90.0, 90.0, 90.0]
+            "values": [77.0, 84.0, 91.0, 98.0, 105.0]
         }
     },
     {
@@ -166,14 +140,14 @@
         "action_value_id": "the_maw_attraction_radius_value",
         "action_value":
         {
-            "values": [4200.0, 4800.0, 5400.0, 6000.0, 6600.0]
+            "values": [4200.0, 4400.0, 4600.0, 4800.0, 5000.0]
         }
     },
     {
         "action_value_id": "the_maw_attraction_radius_value_targeting",
         "action_value":
         {
-            "values": [4200.0, 4800.0, 5400.0, 6000.0, 6600.0]
+            "values": [7600.0, 7800.0, 8000.0, 8200.0, 8400.0]
         }
     },
     {
@@ -187,7 +161,7 @@
         "action_value_id": "the_maw_attract_duration_value",
         "action_value":
         {
-            "values": [20.0, 22.0, 24.0, 26.0, 28.0]
+            "values": [20.0, 20.0, 20.0, 20.0, 20.0]
         }
     },
     {
@@ -215,7 +189,7 @@
         "action_value_id": "the_maw_max_supply_consumed_value",
         "action_value":
         {
-            "values": [200.0, 400.0, 600.0, 800.0, 1000.0]
+            "values": [120.0, 240.0, 360.0, 480.0, 600.0]
         }
     },
     {

@@ -3,6 +3,66 @@
     "race": "trader",
     "fleet": "trader_fleet",
     "fleet_name_group": "fleet",
+    "unit_build_groups": [
+    {
+        "id": "corvette",
+        "name": "unit_build_group_name.corvette",
+        "column_count": 2
+    },
+    {
+        "id": "frigate",
+        "name": "unit_build_group_name.frigate",
+        "column_count": 3
+    },
+    {
+        "id": "cruiser",
+        "name": "unit_build_group_name.cruiser",
+        "column_count": 3
+    },
+    {
+        "id": "capital_ship",
+        "name": "unit_build_group_name.capital_ship",
+        "column_count": 3
+    },
+    {
+        "id": "super_capital_ship",
+        "name": "unit_build_group_name.super_capital_ship",
+        "column_count": 1
+    },
+    {
+        "id": "titan",
+        "name": "unit_build_group_name.titan",
+        "column_count": 1
+    }],
+    "unit_names": [
+    {
+        "group_name": "capital_ship",
+        "localized_text":
+        {
+            "id_prefix": "capital_ship_name.trader"
+        }
+    },
+    {
+        "group_name": "fleet",
+        "localized_text":
+        {
+            "id_prefix": "fleet_name.trader"
+        }
+    },
+    {
+        "group_name": "starbase",
+        "localized_text":
+        {
+            "id_prefix": "starbase_name.trader"
+        }
+    },
+    {
+        "group_name": "titan",
+        "localized_text":
+        {
+            "id_prefix": "titan_name.trader"
+        }
+    }],
     "sounds":
     {
         "user_interface_sounds":
@@ -709,6 +769,11 @@
     "planet_bombing_recovery_cooldown": 30.0,
     "colonize_starting_health_percent": 1,
     "colonize_starting_shield_percent": 1,
+    "asteroid_extraction_rates":
+    {
+        "metal": 0.48,
+        "crystal": 0.48
+    },
     "home_planet":
     {
         "random_fixture_filling": "random_ferrous_or_crystalline_planet",
@@ -724,7 +789,7 @@
             {
                 "max_civilian_structure_slots":
                 {
-                    "additive": 4.0
+                    "additive": 15.0
                 },
                 "max_military_structure_slots":
                 {
@@ -749,8 +814,12 @@
             "count": [5, 8]
         },
         {
-            "unit": "trader_starbase_n",
-            "count": [1, 1]
+            "unit": "trader_exotic_factory_structure",
+            "count": [3, 3]
+        },
+        {
+            "unit": "danoba_population_structure",
+            "count": [2, 2]
         }]
     },
     "starting_units_in_formations": [
@@ -795,13 +864,7 @@
         }]
     }],
     "unit_limits":
-    {
-        "global": [
-        {
-            "tag": "starbase",
-            "unit_limit": 1
-        }]
-    },
+    {},
     "buildable_units": [
         "trader_light_frigate",
 		"trader_antifighter_frigate",
@@ -809,18 +872,31 @@
     ],
     "structure_builder":
     {
-        "ship": "trader_constructor_ship",
+        "ship": "trader_constructor_ship_npc",
         "special_operation_unit_kind": "structure_builder"
     },
     "structures": [
         "trader_autocannon_defense_structure",
         "trader_gauss_defense_structure",
-		"trader_retrofit_bay_structure",
-		"trader_metal_extractor_structure",
-		"trader_crystal_extractor_structure",
+        "trader_retrofit_bay_structure",
+        "trader_metal_extractor_structure",
+        "trader_crystal_extractor_structure",
         "trader_frigate_factory_structure",
-		"trader_capital_ship_factory_structure",
-	"trader_starbase_n"
+        "trader_capital_ship_factory_structure"
+    ],
+    "allowed_traffic_ports": [
+        "danoba_population_structure",
+        "vasari_exotic_factory_structure",
+        "advent_exotic_factory_structure",
+        "trader_exotic_factory_structure",
+        "vasari_crystal_extractor_structure",
+        "vasari_metal_extractor_structure",
+        "advent_crystal_extractor_structure",
+        "advent_metal_extractor_structure",
+        "trader_crystal_extractor_structure",
+        "trader_metal_extractor_structure",
+        "trader_capturable_crystal_extractor_structure",
+        "trader_capturable_metal_extractor_structure"
     ],
     "trade":
     {
@@ -833,7 +909,7 @@
         "trade_ship_death_assets":
         {
             "metal": 50,
-			"crystal": 50
+            "crystal": 50
         },
         "trade_ship_escorts": [
         {
@@ -851,11 +927,12 @@
     },
     "npc":
     {
+	"can_survey_planets": false,
         "visuals": [
         {
             "name": "npc_player.danoba_free_miners.name",
             "description": "npc_player.danoba_free_miners.description",
-            "portrait": "miner_0",
+            "portrait": "npc_danoba_0",
             "icon": "faction_11",
             "color_group": "npc_danoba_free_miners",
             "reputation_panel": "danoba_free_miners_panel"
@@ -877,6 +954,7 @@
                 "attacking": "pranast_npc_attacking_0"
             }
         },
+	"ai_difficulty": "hard",
         "ai_params":
         {
             "will_fleet_colonize": false,
@@ -894,9 +972,40 @@
             "roam": [0, 0, 0, 0],
             "defend": [75, 150, 225, 300]
         },
+        "npc_tags": [
+            "danoba"
+        ],
         "start_allied_to_playable_players": true,
         "start_allied_to_other_npc_players": true,
         "start_allied_to_militia_npc_players": true,
+        "bounty_market":
+        {
+            "market_weight": 1,
+            "bounty_cut": 0.4,
+            "metal_credit_value": 3.0,
+            "crystal_credit_value": 3.0,
+            "exotic_credit_values": [
+            {
+                "exotic_name": "offense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "defense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "utility",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "economic",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "ultimate",
+                "credit_value": 1500
+            }]
+        },
         "auctions": [
         {
             "weight": 1.0,
@@ -964,15 +1073,6 @@
                 "",
                 "",
                 "micromanaging_drones_planet_artifact"]
-        },
-        {
-            "weight": 0.1,
-            "bid_duration": 300.0,
-            "rewards": [
-                "",
-                "",
-                "",
-                "resilient_metaloids_ship_artifact"]
         }],
         "crystal_market":
         {
@@ -1028,29 +1128,30 @@
         },						
         "simple_can_ever_be_colonized_planet_types": [
             "asteroid",
-			"crystalline",
+            "barren",
+            "city",
+            "crystalline",
             "desert",
-			"desert_home",
+            "desert_home",
             "ferrous",
-			"ferrous_home",
-			"ice_asteroid",
+            "ferrous_home",
+            "gas_giant",
+            "greenhouse",
+            "hive_asteroid",
             "ice",
+            "ice_asteroid",
+            "ice_moon",
+            "irradiated",
+            "magnetic",
             "moon",
             "oceanic",
-			"pirate_base",
-			"swamp",
+            "pirate_base",
+            "ship_graveyard",
+            "swamp",
             "terran",
-			"terran_home",
+            "terran_home",
             "volcanic",
-			"ship_graveyard",
-			"greenhouse",
-			"barren",
-			"city",
-			"magnetic",
-			"ice_moon",
-			"volcanic_moon",
-			"gas_giant",
-			"hive_asteroid"
+            "volcanic_moon"
         ],
         "simple_planet_level": 10,
         "simple_planet_tracks":
@@ -1064,7 +1165,8 @@
             "logistics":
             {
                 "max_civilian_structure_slots": 6,
-                "structure_builder_count": 4
+                "structure_builder_count": 4,
+		"max_planet_component_slots": 2
             },
             "commerce":
             {
@@ -1098,7 +1200,7 @@
                 "reward": "danoba_hire_miners",
                 "required_reputation_level": 0,
                 "influence_point_cost": 2,
-                "cooldown_duration": 180
+                "cooldown_duration": 300
             },
             {
                 "reward": "danoba_orbital_refinement",

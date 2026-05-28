@@ -9,7 +9,7 @@
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
     {
-        "execution_interval_value": "fixed_one",
+        "execution_interval_value": "fixed_three",
         "action_group":
         {
             "actions": [
@@ -27,12 +27,38 @@
                 {
                     "constraint":
                     {
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "operand_destination"
-						},
-						"target_filter_id": "player_buffs_is_ai_targets"
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_planet_upgrades"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_is_ai_planet_upgrades"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_constructors_item_builders"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_is_ai_constructors_item_builders"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_targets"
                     },
                     "operator_type": "apply_buff",
                     "buff": "player_buffs_is_ai_on_target"
@@ -40,15 +66,94 @@
                 {
                     "constraint":
                     {
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "operand_destination"
-						},
-						"target_filter_id": "player_buffs_is_ai_unity_targets"
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_population_structure"
                     },
                     "operator_type": "apply_buff",
-                    "buff": "advent_unity_follower_on_target"
+                    "buff": "player_buffs_is_ai_on_population_structure"
+                }]
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fleet_unit_execution_interval",
+        "first_action_delay_time_value": "fleet_unit_execution2_interval",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_fleet_add_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_is_ai_on_non_fleet_unit"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_fleet_starbase_add_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_is_ai_on_non_fleet_unit"
+                }]
+            }]
+        }
+    },
+    {
+        "execution_interval_value": "fleet_unit_execution2_interval",
+        "first_action_delay_time_value": "fleet_unit_execution3_interval",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_owned_by_player",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "player_buffs_is_ai_readd_targets"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "player_buffs_is_ai_on_fleet2_unit"
                 }]
             }]
         }

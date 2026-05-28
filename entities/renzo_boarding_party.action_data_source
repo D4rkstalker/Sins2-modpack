@@ -9,7 +9,7 @@
                 "capital_ship",
                 "cruiser",
                 "frigate"
-			],
+            ],
             "ownerships": [
                 "enemy"
             ],
@@ -18,16 +18,16 @@
                 "constraint_type": "composite_or",
                 "constraints": [
                 {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_mutation",
+                        "mutation": "invulnerable"
+                    }
                 },
                 {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
+                    "constraint_type": "has_mutation",
+                    "mutation": "suppress_invulnerable"
                 }]
             },
             {
@@ -35,9 +35,18 @@
                 "constraint":
                 {
                     "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
+                    "mutation": "cannot_be_captured_or_cloned"
                 }
-			}]
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "special_operation_unit",
+                    "include_pending_buffs": true
+                }
+            }]
         }
     },
     {
@@ -46,31 +55,31 @@
         {
             "unit_types": [
                 "capital_ship"
-			],
+            ],
             "ownerships": [
                 "self"
             ],
             "constraints": [
             {
                 "constraint_type": "has_definition",
-				"unit_definition": "trader_transport_capital_ship"
+                "unit_definition": "trader_transport_capital_ship"
             },
             {
                 "constraint_type": "composite_and",
                 "constraints": [
                 {
                     "constraint_type": "has_buff",
-					"buff": "secret_1"
+                    "buff": "secret_1"
                 },
                 {
                     "constraint_type": "has_buff",
-					"buff": "secret_2"
+                    "buff": "secret_2"
                 },
                 {
                     "constraint_type": "has_buff",
-					"buff": "secret_3"
+                    "buff": "secret_3"
                 }]
-			}]
+            }]
         }
     },
     {
@@ -79,40 +88,16 @@
         {
             "unit_types": [
                 "capital_ship"
-			],
+            ],
             "ownerships": [
                 "enemy"
             ],
             "constraints": [
             {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            },
-			{
-				"constraint_type": "has_missing_hull",
-				"percentage_missing_threshold": 0.9,
-				"include_crippled_hull_points": true
-			},
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
-                }
-			}]
+                "constraint_type": "has_missing_hull",
+                "percentage_missing_threshold": 0.9,
+                "include_crippled_hull_points": true
+            }]
         }
     }],
     "action_values": [
@@ -120,7 +105,7 @@
         "action_value_id": "boarding_party_hull_restore_value",
         "action_value":
         {
-			"transform_type": "per_max_hull_points",
+            "transform_type": "per_max_hull_points",
             "transform_unit":
             {
                 "unit_type": "current_spawner"
@@ -132,7 +117,7 @@
         "action_value_id": "boarding_party_armor_restore_value",
         "action_value":
         {
-			"transform_type": "per_max_armor_points",
+            "transform_type": "per_max_armor_points",
             "transform_unit":
             {
                 "unit_type": "current_spawner"
@@ -144,7 +129,7 @@
         "action_value_id": "boarding_party_shield_restore_value",
         "action_value":
         {
-			"transform_type": "per_max_shield_points",
+            "transform_type": "per_max_shield_points",
             "transform_unit":
             {
                 "unit_type": "current_spawner"
@@ -196,12 +181,27 @@
     }],
     "effect_alias_bindings": [
     {
+        "alias_name": "trader_transport_capital_ship_scout_boarded",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_BoardingParty_Boarded_Small"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_BoardingParty_Damage_Small"
+        }
+    },
+    {
         "alias_name": "trader_transport_capital_ship_scout_muzzle",
         "alias_binding":
         {
             "particle_effect": "tec_missile_frigate_missile_muzzle",
             "sounds": [
-                "trader_transport_capital_ship_scout_launch"]
+                "trader_transport_capital_ship_scout_launch"
+            ]
         }
     },
     {

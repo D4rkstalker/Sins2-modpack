@@ -1,21 +1,97 @@
 {
     "version": 0,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "commerce_track_count",
+            "mining_track_count"
+        ]
+    },
     "action_values": [
     {
-        "action_value_id": "max_population_points_value",
+        "action_value_id": "population_growth_rate_tooltip_value",
         "action_value":
         {
-            "values": [-10000.0]
+            "values": [-0.4]
+        }
+    },
+    {
+        "action_value_id": "commerce_track_level_count",
+        "action_value":
+        {
+            "transform_type": "per_planet_current_commerce_track_level",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "mining_track_level_count",
+        "action_value":
+        {
+            "transform_type": "per_planet_current_mining_track_level",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "demons_accord_credit_income_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "commerce_track_count",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "demons_accord_metal_income_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "mining_track_count",
+            "values": [0.4]
+        }
+    },
+    {
+        "action_value_id": "demons_accord_crystal_income_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "mining_track_count",
+            "values": [0.4]
         }
     }],
     "buff_planet_modifiers": [
     {
-		"buff_planet_modifier_id": "max_population_points_modifier",
-		"buff_planet_modifier":
-		{
-			"modifier_type": "max_population_points",
-			"value_behavior": "scalar",
-			"value_id": "max_population_points_value"
-		}
+        "buff_planet_modifier_id": "demons_accord_credit_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "commerce_track_credit_income_rate",
+            "value_behavior": "additive",
+            "value_id": "demons_accord_credit_income_rate_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "demons_accord_metal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "demons_accord_metal_income_rate_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "demons_accord_crystal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_crystal_income_rate",
+            "value_behavior": "additive",
+            "value_id": "demons_accord_crystal_income_rate_value"
+        }
     }]
 }

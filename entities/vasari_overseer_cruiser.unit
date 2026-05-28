@@ -54,27 +54,22 @@
     },
     "ai":
     {
-        "attack_target_type_groups_to_ignore": [
-            "torpedo_strikecraft"
+        "behaviors": [
+            "auto_follow_unit_attacking_threat"
         ],
-        "auto_follow_target_priority": 4.0,
-        "pursuit":
-        {
-			"min_target_speed": 300.0,						  
-            "min_distance_to_target": 4500.0
-        },
-        "attack_target_type_range_scalar": 2.0
+        "attack_target_type_groups_to_ignore": [
+            "torpedo_strikecraft"]
     },
     "ai_attack_target":
     {
-        "attack_priority": 50.0,
+        "attack_priority": 49.0,
         "is_always_a_threat": true,
-        "attack_target_type": "flak"
+        "attack_target_type": "support"
     },
     "player_ai":
     {
-        "max_empire_owned_count_percentage": 0.01,
-        "max_count_to_fleet_supply_ratio": 1
+        "max_empire_owned_count_percentage": 0.025,
+        "max_count_to_fleet_supply_ratio": 250
     },
     "user_interface":
     {
@@ -84,34 +79,9 @@
         "has_sub_selection_grouping": true,
         "selection_group_unit_type": "combat_ship",
         "can_move": true,
-         "can_attack": true,
-       "can_show_distance_to_plane_line": true,
+        "can_show_distance_to_plane_line": true,
         "can_rotate": true
     },
-    "weapons":
-    {
-        "weapons": [
-        {
-            "weapon": "vasari_pd_beam",
-            "mesh_point": "ability.0",
-            "weapon_position": [0, 0, 0],
-            "non_turret_muzzle_positions": [[0, 0, 0]],
-            "forward": [-0.0, -0.0, 1.0],
-            "up": [-0.0, 1.0, -0.0],
-            "yaw_arc":
-            {
-                "min_angle": -180.0,
-                "max_angle": 180.0
-            },
-            "pitch_arc":
-            {
-                "min_angle": -180.0,
-                "max_angle": 180.0
-            }
-        }],
-        "max_range_weapon_index": 0
-    },
-
     "formation":
     {
         "leader_priority": 1,
@@ -138,7 +108,7 @@
     {
         "release_time_after_death": 60.0,
         "can_collide_duration_after_death": 3.95,
-        "durability": 250.0,
+        "durability": 270.0,
         "can_ever_be_resurrected": true,
         "levels": [
         {
@@ -151,7 +121,7 @@
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
             "armor_strength": 72.0,
-            "max_shield_points": 1080.0,
+            "max_shield_points": 915.0,
             "shield_point_restore_rate": 4.0,
             "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
             "shield_point_restore_scalar_after_damage_taken": 0.0,
@@ -194,13 +164,13 @@
     "tags": [
         "cruiser"
     ],
+    "is_envoy": true,
     "abilities": [
     {
         "abilities": [
             "vasari_overseer_cruiser_intimidating_presence",
             "vasari_overseer_cruiser_phase_lane_detection",
-			"vasari_overseer_cruiser_phasic_trap",
-            "vasari_overseer_cruiser_antimatter_recharge"
+			"vasari_overseer_cruiser_phasic_trap"
         ]
     }],
     "ship_roles": [

@@ -57,7 +57,6 @@
         "weapons": [
         {
             "weapon": "trader_hangar_defense_structure_point_defense_beam",
-            "min_required_stage_index": 1,
             "mesh_point": "child.pdturret_mount_0",
             "weapon_position": [-145.254425, 153.469299, -193.572693],
             "forward": [0.0, -0.0, -1.0],
@@ -75,7 +74,6 @@
         },
         {
             "weapon": "trader_hangar_defense_structure_point_defense_beam",
-            "min_required_stage_index": 1,
             "mesh_point": "child.pdturret_mount_1",
             "weapon_position": [145.418365, 153.469299, -193.572693],
             "forward": [0.0, -0.0, -1.0],
@@ -93,7 +91,6 @@
         },
         {
             "weapon": "trader_hangar_defense_structure_point_defense_beam",
-            "min_required_stage_index": 1,
             "mesh_point": "child.pdturret_mount_2",
             "weapon_position": [157.386032, -45.320164, 17.099461],
             "forward": [-0.0, -0.0, 1.0],
@@ -111,7 +108,6 @@
         },
         {
             "weapon": "trader_hangar_defense_structure_point_defense_beam",
-            "min_required_stage_index": 1,
             "mesh_point": "child.pdturret_mount_3",
             "weapon_position": [-157.559692, -45.320164, 17.099508],
             "forward": [-0.0, -0.0, 1.0],
@@ -190,7 +186,8 @@
         "base_max_squadron_capacity": 4,
         "strikecraft_kinds": [
             "interceptor",
-            "bomber"
+            "bomber",
+	    "mem_custom_strikecraft1"
         ],
         "launch_destination_formation": "hangar_defense_structure_strikecraft",
         "launch_destination_formation_offset":
@@ -230,30 +227,16 @@
     },
     "culture_provider":
     {},
-    "stages":
-    {
-        "stages": [
-        {
-            "requirements":
-            {
-                "requirements_type": "none"
-            }
-        },
-        {
-            "requirements":
-            {
-                "requirements_type": "research_prerequisites",
-                "prerequisites": [
-                    ["trader_unlock_hangar_defense_point_defense_autocannon_weapon"]
-                ]
-            }
-        }]
-    },
     "target_filter_unit_type": "structure",
     "tags": [
         "structure"
     ],
     "virtual_supply_cost": 10,
+    "abilities": [
+    {
+        "abilities": [
+            "trader_hangar_defense_enhanced_production"]
+    }],
     "skin_groups": [
     {
         "skins": [

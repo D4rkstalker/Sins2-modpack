@@ -1,0 +1,63 @@
+{
+    "version": 0,
+    "action_data_source": "advent_long_range_cruiser_dampen",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["advent_unlock_long_range_cruiser_dampen"]
+        ]
+    ],
+    "passive_actions":
+    {
+        "persistant_buff": "advent_long_range_cruiser_dampen_on_self"
+    },
+    "gui":
+    {
+        "hud_icon": "advent_ability_dampen_hud_icon",
+        "tooltip_picture": "advent_ability_dampen_tooltip_picture",
+        "name": "ability.advent_long_range_cruiser_dampen_name",
+        "description": "ability.advent_long_range_cruiser_dampen_description",
+        "tooltip_line_groups": [
+        {
+	    "header_text": "tooltip.dampen_low",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.max_shield_points",
+                "value_id": "dampen_shield_low_modifier_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.armor_strength",
+                "value_id": "dampen_armor_low_modifier_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+	    "header_text": "tooltip.dampen_high",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.max_shield_points",
+                "value_id": "dampen_shield_high_modifier_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.armor_strength",
+                "value_id": "dampen_armor_high_modifier_value",
+                "value_color": "negative"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "dampen_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

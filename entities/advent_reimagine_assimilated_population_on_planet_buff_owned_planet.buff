@@ -1,6 +1,6 @@
 {
     "version": 0,
-	"make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
     "stacking_limit":
     {
         "stacking_limit": "fixed_one",
@@ -8,12 +8,38 @@
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
-	"make_dead_on_parent_buff_made_dead": true,
+    "make_dead_on_parent_buff_made_dead": true,
     "planet_modifiers": [
     {
-        "buff_planet_modifier_id": "assimilated_population_development_speed_modifier"
+        "buff_planet_modifier_id": "assimilated_population_population_growth_rate_modifier"
     },
     {
-        "buff_planet_modifier_id": "assimilated_population_development_cost_modifier"
-    }]
+        "buff_planet_modifier_id": "assimilated_population_neutral_population_assimilation_rate_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "assimilated_population_enemy_population_assimilation_rate_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_reimagine_assimilated_population_research_subject_hud_icon",
+        "name": "advent_reimagine_assimilated_population_research_subject_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "assimilated_population_population_growth_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "assimilated_population_neutral_population_assimilation_rate_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "assimilated_population_enemy_population_assimilation_rate_modifier"
+            }]
+        }]
+	}
 }

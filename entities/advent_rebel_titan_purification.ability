@@ -89,7 +89,16 @@
                 },
                 "unit_constraint":
                 {
-                    "constraint_type": "has_missing_shields"
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "has_missing_shields",
+                        "percentage_missing_threshold": 0.5
+                    },
+                    {
+                        "constraint_type": "has_missing_armor",
+                        "percentage_missing_threshold": 0.25
+                    }]
                 }
             },
             "target_definitions": [

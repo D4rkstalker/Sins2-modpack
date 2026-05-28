@@ -1,0 +1,1402 @@
+{
+    "asset_value_modifier_stages": [1000.0, 5000.0, 10000.0, 25000.0],
+    "asset_value_diminished_value_per_stage": [100.0, 200.0, 500.0, 1000.0, 2500.0],
+    "number_of_allies_modifier_table": [-5, -10, -15, -25, -50, -100, -250, -500, -1000],
+    "trust_modifier_stages": [25.0, 250.0, 500.0, 750.0, 1000.0],
+    "trust_diminished_value_per_stage": [1.0, 2.0, 5.0, 10.0, 25.0, 50.0],
+    "hatred_modifier_stages": [25.0, 250.0, 500.0, 750.0, 1000.0],
+    "hatred_diminished_value_per_stage": [1.0, 2.0, 5.0, 10.0, 25.0, 50.0],
+    "minutes_before_allowed_to_seek_protection": [25.0, 40.0],
+    "balance_allowed_to_gift_under_seek_protection": [0.5, 0.75],
+    "passive_hate_per_factional_victory_obtained": 90.0,
+    "seconds_per_trust_growth_passive": 75.0,
+    "seconds_per_hate_growth_passive": 75.0,
+    "alliance_lock_divisor": 3.0,
+    "minutes_allowed_for_trade_offer_cooldown": [10.0, 25.0],
+    "intelligence_purchase_spool_up_time_in_seconds": 10.0,
+    "intelligence_purchase_cooldown_duration_in_seconds": 60.0,
+    "minutes_allowed_for_reattempt_alliance_building": [15.0, 25.0],
+    "fallback_intelligence_cost": 5,
+    "alliance_stage_modifiers": [
+        {
+            "alliance_type":"cease_fire",
+            "acceptance_modifier": -5,
+            "trust_growth_under_agreement": 0.2
+        },
+        {
+            "alliance_type":"share_vision",
+            "acceptance_modifier": -25,
+            "trust_growth_under_agreement": 0.3
+        },
+        {
+            "alliance_type":"synergy",
+            "acceptance_modifier": -50,
+            "trust_growth_under_agreement": 0.5
+        }
+    ],
+    "behavior_definition":
+    {
+        "aggressive":
+        {
+            "base_deal_acceptance": [0.1, 0.2],
+            "max_patience": 3,
+            "patience_regen_in_seconds": 300.0,
+            "taunt_interval_range": [1200.0, 2400.0],
+            "min_trust_for_cease_fire_offer": 50,
+            "cease_fire_declined_cooldown_seconds": 600,
+            "cease_fire_chance": 0.2,
+            "taunt_chance": 0.6,
+            "taunt_hatred_threshold": 50.0,
+            "hatred_growth_per_enemy_culture_dominated_gravity_well": 0.1,
+            "gift_trade_value_to_trust_conversion_rate": 0.01,
+            "gift_trust_gain_stages": [20.0, 30.0, 50.0, 100.0],
+            "gift_trust_gain_diminished_value_per_stage": [5.0, 10.0, 30.0, 50.0, 100.0],
+            "demand_acceptance_penalty": -500.0
+        },
+        "defensive":
+        {
+            "base_deal_acceptance": [0.15, 0.3],
+            "max_patience": 5,
+            "patience_regen_in_seconds": 300.0,
+            "taunt_interval_range": [1500.0, 2700.0],
+            "min_trust_for_cease_fire_offer": 40,
+            "cease_fire_declined_cooldown_seconds": 600,
+            "cease_fire_chance": 0.45,
+            "taunt_chance": 0.4,
+            "taunt_hatred_threshold": 75.0,
+            "hatred_growth_per_enemy_culture_dominated_gravity_well": 0.2,
+            "gift_trade_value_to_trust_conversion_rate": 0.01,
+            "gift_trust_gain_stages": [20.0, 30.0, 50.0, 100.0],
+            "gift_trust_gain_diminished_value_per_stage": [5.0, 10.0, 30.0, 50.0, 100.0],
+            "demand_acceptance_penalty": -500.0
+        }
+    },
+    "difficulty_definition":
+    {
+        "easy": {
+            "trust_gain_per_rival_killed_unit": 0.05,
+            "trust_gain_on_deal_acceptance": 5.0,
+            "trust_loss_per_owned_killed_unit": 0.01,
+            "trust_loss_per_owned_planet_bombed": 1.0,
+            "hatred_gain_per_owned_killed_unit": 0.05, 
+            "hatred_gain_per_owned_planet_bombed": 10.0,
+            "trust_loss_per_broken_alliance": 100.0,
+            "observer_trust_loss_on_broken_alliance": 20.0,
+            "weakest_military_time_in_minutes_before_protection": 10.0,
+            "weakest_military_protection_offer_chance": 0.05
+        },
+        "medium": {
+            "trust_gain_per_rival_killed_unit": 0.05,
+            "trust_gain_on_deal_acceptance": 5.0,
+            "trust_loss_per_owned_killed_unit": 0.01,
+            "trust_loss_per_owned_planet_bombed": 1.0,
+            "hatred_gain_per_owned_killed_unit": 0.05, 
+            "hatred_gain_per_owned_planet_bombed": 10.0,
+            "trust_loss_per_broken_alliance": 100.0,
+            "observer_trust_loss_on_broken_alliance": 20.0,
+            "weakest_military_time_in_minutes_before_protection": 10.0,
+            "weakest_military_protection_offer_chance": 0.05
+        },
+        "hard": {
+            "trust_gain_per_rival_killed_unit": 0.05,
+            "trust_gain_on_deal_acceptance": 5.0,
+            "trust_loss_per_owned_killed_unit": 0.01,
+            "trust_loss_per_owned_planet_bombed": 1.0,
+            "hatred_gain_per_owned_killed_unit": 0.05, 
+            "hatred_gain_per_owned_planet_bombed": 10.0,
+            "trust_loss_per_broken_alliance": 100.0,
+            "observer_trust_loss_on_broken_alliance": 20.0,
+            "weakest_military_time_in_minutes_before_protection": 10.0,
+            "weakest_military_protection_offer_chance": 0.05
+        },
+        "unfair": {
+            "trust_gain_per_rival_killed_unit": 0.05,
+            "trust_gain_on_deal_acceptance": 5.0,
+            "trust_loss_per_owned_killed_unit": 0.01,
+            "trust_loss_per_owned_planet_bombed": 1.0,
+            "hatred_gain_per_owned_killed_unit": 0.05, 
+            "hatred_gain_per_owned_planet_bombed": 10.0,
+            "trust_loss_per_broken_alliance": 100.0,
+            "observer_trust_loss_on_broken_alliance": 20.0,
+            "weakest_military_time_in_minutes_before_protection": 10.0,
+            "weakest_military_protection_offer_chance": 0.05
+        },
+        "nightmare": {
+            "trust_gain_per_rival_killed_unit": 0.05,
+            "trust_gain_on_deal_acceptance": 5.0,
+            "trust_loss_per_owned_killed_unit": 0.01,
+            "trust_loss_per_owned_planet_bombed": 1.0,
+            "hatred_gain_per_owned_killed_unit": 0.05, 
+            "hatred_gain_per_owned_planet_bombed": 10.0,
+            "trust_loss_per_broken_alliance": 100.0,
+            "observer_trust_loss_on_broken_alliance": 20.0,
+            "weakest_military_time_in_minutes_before_protection": 10.0,
+            "weakest_military_protection_offer_chance": 0.05
+        },
+        "impossible": {
+            "trust_gain_per_rival_killed_unit": 0.05,
+            "trust_gain_on_deal_acceptance": 5.0,
+            "trust_loss_per_owned_killed_unit": 0.01,
+            "trust_loss_per_owned_planet_bombed": 1.0,
+            "hatred_gain_per_owned_killed_unit": 0.05, 
+            "hatred_gain_per_owned_planet_bombed": 10.0,
+            "trust_loss_per_broken_alliance": 100.0,
+            "observer_trust_loss_on_broken_alliance": 20.0,
+            "weakest_military_time_in_minutes_before_protection": 10.0,
+            "weakest_military_protection_offer_chance": 0.05
+        }
+    },
+    "faction_definitions": [
+        {
+            "this_faction": "trader_loyalist_rrr",
+            "min_trust_for_trade_offers": 20.0,
+            "chance_to_make_trade_offer": 0.2,
+            "influence_valuation_stages": [2.0, 5.0, 9.0, 15.0],
+            "influence_valuation_diminishing_returns": [0.033, 0.04, 0.05, 0.065, 0.09],
+            "intelligence_costs": {
+                "cease_fire": 2,
+                "share_vision": 1,
+                "synergy": 1
+            },
+            "no_alliance_intelligence_cost": 3,
+            "modifiers": [
+                {
+                    "modified_faction": "trader_loyalist_rrr",
+                    "faction_diplomacy_modifier": [5.0, 5.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "trader_rebel_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "advent_rebel_rrr",
+                    "faction_diplomacy_modifier": [-5.0, 5.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-10.0, -5.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "vasari_rebel_rrr",
+                    "faction_diplomacy_modifier": [-5.0, 5.0],
+                    "base_hatred": 0.0
+                }
+            ],
+            "faction_trade_values": {
+                "credits": 1,
+                "metal": 1.5,
+                "crystal": 1.5
+            },
+            "exotic_valuations": 
+            [
+                {
+                    "exotic_name": "offense",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "defense",
+                    "exotic_value": 1500
+                },
+                {
+                    "exotic_name": "utility",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "economic",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "ultimate",
+                    "exotic_value": 2500
+                },
+                {
+                    "exotic_name": "research",
+                    "exotic_value": 5000
+                }
+            ],
+            "planet_valuations":
+            [
+                {
+                    "planet_name": "asteroid",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "ice_asteroid",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "hive_asteroid",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "barren",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "city",
+                    "planet_value": 3000
+                },
+                {
+                    "planet_name": "crystalline",
+                    "planet_value": 1200
+                },
+                {
+                    "planet_name": "desert",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "desert_home",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "ferrous",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "ferrous_home",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "gas_giant",
+                    "planet_value": 1600
+                },
+                {
+                    "planet_name": "ice",
+                    "planet_value": 900
+                },
+                {
+                    "planet_name": "irradiated",
+                    "planet_value": 1800
+                },
+                {
+                    "planet_name": "magnetic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "ice_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "volcanic_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "oceanic",
+                    "planet_value": 1400
+                },
+                {
+                    "planet_name": "ship_graveyard",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "swamp",
+                    "planet_value": 700
+                },
+                {
+                    "planet_name": "terran",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "terran_home",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "volcanic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "pirate_base",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "greenhouse",
+                    "planet_value": 2000
+                }
+            ]
+        },
+        {
+            "this_faction": "trader_rebel_rrr",
+            "min_trust_for_trade_offers": 20.0,
+            "chance_to_make_trade_offer": 0.2,
+            "influence_valuation_stages": [2.0, 5.0, 9.0, 15.0],
+            "influence_valuation_diminishing_returns": [0.033, 0.04, 0.05, 0.065, 0.09],
+            "intelligence_costs": {
+                "cease_fire": 2,
+                "share_vision": 1,
+                "synergy": 1
+            },
+            "no_alliance_intelligence_cost": 3,
+            "modifiers": [
+                {
+                    "modified_faction": "trader_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "trader_rebel_rrr",
+                    "faction_diplomacy_modifier": [10.0, 15.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-60.0, -40.0],
+                    "base_hatred": 10.0
+                },
+                {
+                    "modified_faction": "advent_rebel_rrr",
+                    "faction_diplomacy_modifier": [-60.0, -40.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "vasari_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-60.0, -40.0],
+                    "base_hatred": 10.0
+                },
+                {
+                    "modified_faction": "vasari_rebel_rrr",
+                    "faction_diplomacy_modifier": [-60.0, -40.0],
+                    "base_hatred": 5.0
+                }
+            ],
+            "faction_trade_values": {
+                "credits": 1,
+                "metal": 1.5,
+                "crystal": 1.5
+            },
+            "exotic_valuations": [
+                {
+                    "exotic_name": "offense",
+                    "exotic_value": 1500
+                },
+                {
+                    "exotic_name": "defense",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "utility",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "economic",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "ultimate",
+                    "exotic_value": 2500
+                },
+                {
+                    "exotic_name": "research",
+                    "exotic_value": 5000
+                }
+            ],
+            "planet_valuations":
+            [
+                {
+                    "planet_name": "asteroid",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "ice_asteroid",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "hive_asteroid",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "barren",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "city",
+                    "planet_value": 3000
+                },
+                {
+                    "planet_name": "crystalline",
+                    "planet_value": 1200
+                },
+                {
+                    "planet_name": "desert",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "desert_home",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "ferrous",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "ferrous_home",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "gas_giant",
+                    "planet_value": 1600
+                },
+                {
+                    "planet_name": "ice",
+                    "planet_value": 900
+                },
+                {
+                    "planet_name": "irradiated",
+                    "planet_value": 1800
+                },
+                {
+                    "planet_name": "magnetic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "ice_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "volcanic_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "oceanic",
+                    "planet_value": 1400
+                },
+                {
+                    "planet_name": "ship_graveyard",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "swamp",
+                    "planet_value": 700
+                },
+                {
+                    "planet_name": "terran",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "terran_home",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "volcanic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "pirate_base",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "greenhouse",
+                    "planet_value": 2000
+                }
+            ]
+        },
+        {
+            "this_faction": "advent_loyalist_rrr",
+            "min_trust_for_trade_offers": 20.0,
+            "chance_to_make_trade_offer": 0.2,
+            "influence_valuation_stages": [2.0, 5.0, 9.0, 15.0],
+            "influence_valuation_diminishing_returns": [0.033, 0.04, 0.05, 0.065, 0.09],
+            "intelligence_costs": {
+                "cease_fire": 2,
+                "share_vision": 1,
+                "synergy": 1
+            },
+            "no_alliance_intelligence_cost": 3,
+            "modifiers": [
+                {
+                    "modified_faction": "trader_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-40.0, -20.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "trader_rebel_rrr",
+                    "faction_diplomacy_modifier": [-60.0, -40.0],
+                    "base_hatred": 10.0
+                },
+                {
+                    "modified_faction": "advent_loyalist_rrr",
+                    "faction_diplomacy_modifier": [10.0, 15.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_rebel_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-10.0, 0.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_rebel_rrr",
+                    "faction_diplomacy_modifier": [-5.0, 5.0],
+                    "base_hatred": 0.0
+                }
+            ],
+            "faction_trade_values": {
+                "credits": 0.8,
+                "metal": 1.5,
+                "crystal": 2.0
+            },
+            "exotic_valuations": [
+                {
+                    "exotic_name": "offense",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "defense",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "utility",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "economic",
+                    "exotic_value": 1500
+                },
+                {
+                    "exotic_name": "ultimate",
+                    "exotic_value": 2500
+                },
+                {
+                    "exotic_name": "research",
+                    "exotic_value": 5000
+                }
+            ],
+            "planet_valuations":
+            [
+                {
+                    "planet_name": "asteroid",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "ice_asteroid",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "hive_asteroid",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "barren",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "city",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "crystalline",
+                    "planet_value": 1200
+                },
+                {
+                    "planet_name": "desert",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "desert_home",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "ferrous",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "ferrous_home",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "gas_giant",
+                    "planet_value": 1600
+                },
+                {
+                    "planet_name": "ice",
+                    "planet_value": 900
+                },
+                {
+                    "planet_name": "irradiated",
+                    "planet_value": 1800
+                },
+                {
+                    "planet_name": "magnetic",
+                    "planet_value": 3000
+                },
+                {
+                    "planet_name": "moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "ice_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "volcanic_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "oceanic",
+                    "planet_value": 1400
+                },
+                {
+                    "planet_name": "ship_graveyard",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "swamp",
+                    "planet_value": 700
+                },
+                {
+                    "planet_name": "terran",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "terran_home",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "volcanic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "pirate_base",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "greenhouse",
+                    "planet_value": 2000
+                }
+            ]
+        },
+        {
+            "this_faction": "advent_rebel_rrr",
+            "min_trust_for_trade_offers": 20.0,
+            "chance_to_make_trade_offer": 0.2,
+            "influence_valuation_stages": [2.0, 5.0, 9.0, 15.0],
+            "influence_valuation_diminishing_returns": [0.033, 0.04, 0.05, 0.065, 0.09],
+            "intelligence_costs": {
+                "cease_fire": 2,
+                "share_vision": 1,
+                "synergy": 1
+            },
+            "no_alliance_intelligence_cost": 3,
+            "modifiers": [
+                {
+                    "modified_faction": "trader_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-5.0, 5.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "trader_rebel_rrr",
+                    "faction_diplomacy_modifier": [-15.0, -5.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 10.0
+                },
+                {
+                    "modified_faction": "advent_rebel_rrr",
+                    "faction_diplomacy_modifier": [5.0, 10.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-10.0, 0.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_rebel_rrr",
+                    "faction_diplomacy_modifier": [0.0, 10.0],
+                    "base_hatred": 0.0
+                }
+            ],
+            "faction_trade_values": {
+                "credits": 0.8,
+                "metal": 1.5,
+                "crystal": 2.0
+            },
+            "exotic_valuations": [
+                {
+                    "exotic_name": "offense",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "defense",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "utility",
+                    "exotic_value": 1000
+                },
+                {
+                    "exotic_name": "economic",
+                    "exotic_value": 1500
+                },
+                {
+                    "exotic_name": "ultimate",
+                    "exotic_value": 2500
+                },
+                {
+                    "exotic_name": "research",
+                    "exotic_value": 5000
+                }
+            ],
+            "planet_valuations":
+            [
+                {
+                    "planet_name": "asteroid",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "ice_asteroid",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "hive_asteroid",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "barren",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "city",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "crystalline",
+                    "planet_value": 1200
+                },
+                {
+                    "planet_name": "desert",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "desert_home",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "ferrous",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "ferrous_home",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "gas_giant",
+                    "planet_value": 1600
+                },
+                {
+                    "planet_name": "ice",
+                    "planet_value": 900
+                },
+                {
+                    "planet_name": "irradiated",
+                    "planet_value": 1800
+                },
+                {
+                    "planet_name": "magnetic",
+                    "planet_value": 3000
+                },
+                {
+                    "planet_name": "moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "ice_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "volcanic_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "oceanic",
+                    "planet_value": 1400
+                },
+                {
+                    "planet_name": "ship_graveyard",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "swamp",
+                    "planet_value": 700
+                },
+                {
+                    "planet_name": "terran",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "terran_home",
+                    "planet_value": 2000
+                },
+                {
+                    "planet_name": "volcanic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "pirate_base",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "greenhouse",
+                    "planet_value": 2000
+                }
+            ]
+        },
+        {
+            "this_faction": "vasari_loyalist_rrr",
+            "min_trust_for_trade_offers": 20.0,
+            "chance_to_make_trade_offer": 0.2,
+            "influence_valuation_stages": [2.0, 5.0, 9.0, 15.0],
+            "influence_valuation_diminishing_returns": [0.033, 0.04, 0.05, 0.065, 0.09],
+            "intelligence_costs": {
+                "cease_fire": 2,
+                "share_vision": 1,
+                "synergy": 1
+            },
+            "no_alliance_intelligence_cost": 3,
+            "modifiers": [
+                {
+                    "modified_faction": "trader_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-10.0, -5.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "trader_rebel_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "advent_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-15.0, -5.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_rebel_rrr",
+                    "faction_diplomacy_modifier": [-5.0, 5.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_loyalist_rrr",
+                    "faction_diplomacy_modifier": [10.0, 15.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_rebel_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 0.0
+                }
+            ],
+            "faction_trade_values": {
+                "credits": 0.25,
+                "metal": 2.0,
+                "crystal": 1.5
+            },
+            "exotic_valuations": [
+                {
+                    "exotic_name": "offense",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "defense",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "utility",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "economic",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "ultimate",
+                    "exotic_value": 3000
+                },
+                {
+                    "exotic_name": "research",
+                    "exotic_value": 6000
+                }
+            ],
+            "planet_valuations":
+            [
+                {
+                    "planet_name": "asteroid",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "ice_asteroid",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "hive_asteroid",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "barren",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "city",
+                    "planet_value": 1750
+                },
+                {
+                    "planet_name": "crystalline",
+                    "planet_value": 1200
+                },
+                {
+                    "planet_name": "desert",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "desert_home",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "ferrous",
+                    "planet_value": 1750
+                },
+                {
+                    "planet_name": "ferrous_home",
+                    "planet_value": 1750
+                },
+                {
+                    "planet_name": "gas_giant",
+                    "planet_value": 1600
+                },
+                {
+                    "planet_name": "ice",
+                    "planet_value": 900
+                },
+                {
+                    "planet_name": "irradiated",
+                    "planet_value": 1800
+                },
+                {
+                    "planet_name": "magnetic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "ice_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "volcanic_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "oceanic",
+                    "planet_value": 1400
+                },
+                {
+                    "planet_name": "ship_graveyard",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "swamp",
+                    "planet_value": 700
+                },
+                {
+                    "planet_name": "terran",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "terran_home",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "volcanic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "pirate_base",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "greenhouse",
+                    "planet_value": 1500
+                }
+            ]
+        },
+        {
+            "this_faction": "vasari_rebel_rrr",
+            "min_trust_for_trade_offers": 20.0,
+            "chance_to_make_trade_offer": 0.2,
+            "influence_valuation_stages": [2.0, 5.0, 9.0, 15.0],
+            "influence_valuation_diminishing_returns": [0.033, 0.04, 0.05, 0.065, 0.09],
+            "intelligence_costs": {
+                "cease_fire": 2,
+                "share_vision": 1,
+                "synergy": 1
+            },
+            "no_alliance_intelligence_cost": 3,
+            "modifiers": [
+                {
+                    "modified_faction": "trader_loyalist_rrr",
+                    "faction_diplomacy_modifier": [0.0, 10.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "trader_rebel_rrr",
+                    "faction_diplomacy_modifier": [-5.0, 0.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_loyalist_rrr",
+                    "faction_diplomacy_modifier": [0.0, 10.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "advent_rebel_rrr",
+                    "faction_diplomacy_modifier": [0.0, 10.0],
+                    "base_hatred": 0.0
+                },
+                {
+                    "modified_faction": "vasari_loyalist_rrr",
+                    "faction_diplomacy_modifier": [-30.0, -20.0],
+                    "base_hatred": 5.0
+                },
+                {
+                    "modified_faction": "vasari_rebel_rrr",
+                    "faction_diplomacy_modifier": [5.0, 10.0],
+                    "base_hatred": 0.0
+                }
+            ],
+            "faction_trade_values": {
+                "credits": 0.75,
+                "metal": 2.0,
+                "crystal": 1.5
+            },
+            "exotic_valuations": [
+                {
+                    "exotic_name": "offense",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "defense",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "utility",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "economic",
+                    "exotic_value": 1800
+                },
+                {
+                    "exotic_name": "ultimate",
+                    "exotic_value": 3000
+                },
+                {
+                    "exotic_name": "research",
+                    "exotic_value": 6000
+                }
+            ],
+            "planet_valuations":
+            [
+                {
+                    "planet_name": "asteroid",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "ice_asteroid",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "hive_asteroid",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "barren",
+                    "planet_value": 450
+                },
+                {
+                    "planet_name": "city",
+                    "planet_value": 1750
+                },
+                {
+                    "planet_name": "crystalline",
+                    "planet_value": 1200
+                },
+                {
+                    "planet_name": "desert",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "desert_home",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "ferrous",
+                    "planet_value": 1750
+                },
+                {
+                    "planet_name": "ferrous_home",
+                    "planet_value": 1750
+                },
+                {
+                    "planet_name": "gas_giant",
+                    "planet_value": 1600
+                },
+                {
+                    "planet_name": "ice",
+                    "planet_value": 900
+                },
+                {
+                    "planet_name": "irradiated",
+                    "planet_value": 1800
+                },
+                {
+                    "planet_name": "magnetic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "ice_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "volcanic_moon",
+                    "planet_value": 800
+                },
+                {
+                    "planet_name": "oceanic",
+                    "planet_value": 1400
+                },
+                {
+                    "planet_name": "ship_graveyard",
+                    "planet_value": 600
+                },
+                {
+                    "planet_name": "swamp",
+                    "planet_value": 700
+                },
+                {
+                    "planet_name": "terran",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "terran_home",
+                    "planet_value": 1500
+                },
+                {
+                    "planet_name": "volcanic",
+                    "planet_value": 1000
+                },
+                {
+                    "planet_name": "pirate_base",
+                    "planet_value": 400
+                },
+                {
+                    "planet_name": "greenhouse",
+                    "planet_value": 1500
+                }
+            ]
+        }
+    ],
+    "race_definitions": [
+        {
+            "this_race": "trader",
+            "modifiers": [
+                {
+                    "modified_race": "trader",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "trader_rebel",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "advent",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "advent_rebel",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "vasari",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                },
+                {
+                    "modified_race": "vasari_rebel",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                }
+            ]
+        },
+        {
+            "this_race": "trader_rebel",
+            "modifiers": [
+                {
+                    "modified_race": "trader",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "trader_rebel",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "advent",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "advent_rebel",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "vasari",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                },
+                {
+                    "modified_race": "vasari_rebel",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                }
+            ]
+        },
+        {
+            "this_race": "advent",
+            "modifiers": [
+                {
+                    "modified_race": "trader",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                },
+                {
+                    "modified_race": "trader_rebel",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                },
+                {
+                    "modified_race": "advent",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "advent_rebel",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "vasari",
+                    "race_diplomacy_modifier": [-10.0, 0.0]
+                },
+                {
+                    "modified_race": "vasari_rebel",
+                    "race_diplomacy_modifier": [-10.0, 0.0]
+                }
+            ]
+        },
+        {
+            "this_race": "advent_rebel",
+            "modifiers": [
+                {
+                    "modified_race": "trader",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                },
+                {
+                    "modified_race": "trader_rebel",
+                    "race_diplomacy_modifier": [-20.0, -10.0]
+                },
+                {
+                    "modified_race": "advent",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "advent_rebel",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "vasari",
+                    "race_diplomacy_modifier": [-10.0, 0.0]
+                },
+                {
+                    "modified_race": "vasari_rebel",
+                    "race_diplomacy_modifier": [-10.0, 0.0]
+                }
+            ]
+        },
+        {
+            "this_race": "vasari",
+            "modifiers": [
+                {
+                    "modified_race": "trader",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "trader_rebel",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "advent",
+                    "race_diplomacy_modifier": [-5.0, 0.0]
+                },
+                {
+                    "modified_race": "advent_rebel",
+                    "race_diplomacy_modifier": [-5.0, 0.0]
+                },
+                {
+                    "modified_race": "vasari",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "vasari_rebel",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                }
+            ]
+        },
+        {
+            "this_race": "vasari_rebel",
+            "modifiers": [
+                {
+                    "modified_race": "trader",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "trader_rebel",
+                    "race_diplomacy_modifier": [-15.0, -10.0]
+                },
+                {
+                    "modified_race": "advent",
+                    "race_diplomacy_modifier": [-5.0, 0.0]
+                },
+                {
+                    "modified_race": "advent_rebel",
+                    "race_diplomacy_modifier": [-5.0, 0.0]
+                },
+                {
+                    "modified_race": "vasari",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                },
+                {
+                    "modified_race": "vasari_rebel",
+                    "race_diplomacy_modifier": [5.0, 15.0]
+                }
+            ]
+        }
+    ]
+}

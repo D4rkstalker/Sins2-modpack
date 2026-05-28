@@ -47,7 +47,7 @@
     },
     "ai_attack_target": {
         "attack_priority": 50.0,
-        "is_always_a_threat": true,
+        "is_always_a_threat": false,
         "attack_target_type": "capital"
     },
     "user_interface": {
@@ -76,12 +76,12 @@
                 "forward": [-1.0, -0.0, -0.0],
                 "up": [-0.0, 1.0, 0.0],
                 "yaw_arc": {
-                    "min_angle": -60.0,
-                    "max_angle": 120.0
+                    "min_angle": -180.0,
+                    "max_angle": 180.0
                 },
                 "pitch_arc": {
-                    "min_angle": -90.0,
-                    "max_angle": 90.0
+                    "min_angle": -180.0,
+                    "max_angle": 180.0
                 }
             },
             {
@@ -96,12 +96,12 @@
                 "forward": [1.0, 0.0, 0.0],
                 "up": [-0.0, 1.0, 0.0],
                 "yaw_arc": {
-                    "min_angle": -120.0,
-                    "max_angle": 60.0
+                    "min_angle": -180.0,
+                    "max_angle": 180.0
                 },
                 "pitch_arc": {
-                    "min_angle": -90.0,
-                    "max_angle": 90.0
+                    "min_angle": -180.0,
+                    "max_angle": 180.0
                 }
             },
             {
@@ -176,8 +176,8 @@
         }
     },
     "health": {
-        "release_time_after_death": 60.0,
-        "can_collide_duration_after_death": 6.0,
+        "release_time_after_death": 0.0,
+        "can_collide_duration_after_death": 0.0,
         "durability": 500.0,
         "can_ever_be_resurrected": false,
         "levels": [
@@ -1075,7 +1075,14 @@
         "attack_ship",
         "bomb_planet"
     ],
-	"virtual_supply_cost": 50,
+    "capturable_unit":
+    {
+        "type": "change_owner_on_capture",
+        "capture_points_total": 900,
+        "allow_surrender": false,
+        "is_recapturable": false
+    },
+	"virtual_supply_cost": 1,
     "skin_groups": [
         {
             "skins": [

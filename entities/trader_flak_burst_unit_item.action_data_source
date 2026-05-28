@@ -7,12 +7,11 @@
         "target_filter":
         {
             "unit_types": [
-                "strikecraft",
-				"corvette",
-				"frigate"
+                "strikecraft"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -23,7 +22,8 @@
                 "torpedo"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -36,23 +36,20 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "is_dead_soon"
-                }
-            }]
+            ]
         }
     }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "charge_restore_time"]
+    },
     "action_values": [
     {
         "action_value_id": "auto_cast_target_count",
         "action_value":
         {
-            "values": [20.0, 20.0, 20.0]
+            "values": [10.0, 10.0, 10.0]
         }
     },
     {
@@ -87,14 +84,14 @@
         "action_value_id": "flak_burst_damage",
         "action_value":
         {
-            "values": [35.0, 35.0, 35.0]
+            "values": [35.0, 40.0, 45.0]
         }
     },
     {
         "action_value_id": "flak_burst_damage_missile",
         "action_value":
         {
-            "values": [15.0, 15.0, 15.0]
+            "values": [15.0, 20.0, 25.0]
         }
     },
     {
@@ -102,6 +99,86 @@
         "action_value":
         {
             "values": [4000.0, 4000.0, 4000.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_charge_count_value",
+        "action_value":
+        {
+            "values": [2.0, 3.0, 5.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_stack_limit_value_level_one",
+        "action_value":
+        {
+            "values": [1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_stack_limit_value_level_two",
+        "action_value":
+        {
+            "values": [2.0, 2.0, 2.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_stack_limit_value_level_three",
+        "action_value":
+        {
+            "values": [4.0, 4.0, 4.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_charge_cooldown_value",
+        "action_value":
+        {
+            "values": [330.0, 330.0, 330.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_charge_cooldown_with_retrofit_value",
+        "action_value":
+        {
+            "values": [0.091, 0.091, 0.091]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_credit_cost_value",
+        "action_value":
+        {
+            "values": [125.0, 83.3, 50.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_metal_cost_value",
+        "action_value":
+        {
+            "values": [25.0, 16.65, 10.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_crystal_cost_value",
+        "action_value":
+        {
+            "values": [25.0, 16.65, 10.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_charge_restore_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "charge_restore_time",
+            "values": [1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "flak_burst_action_level_value",
+        "action_value":
+        {
+            "transform_type": "action_level",
+            "values": [1.0, 1.0, 1.0]
         }
     }],
     "effect_alias_bindings": [
@@ -111,7 +188,8 @@
         {
             "particle_effect": "flak_burst",
             "sounds": [
-                "effect_flakburst"]
+                "effect_flakburst"
+            ]
         }
     }]
 }

@@ -6,8 +6,8 @@
     },
     "skin_stages": [
     {
-        "is_main_view_icon_visible_camera_distance": 147953.397351,
-        "min_camera_distance": 2365.083771,
+        "is_main_view_icon_visible_camera_distance": 147936.649259,
+        "min_camera_distance": 2364.816047,
         "gui":
         {
             "hud_icon": "trader_starbase_hud_icon",
@@ -15,7 +15,7 @@
             "hud_picture": "trader_starbase_hud_picture",
             "tooltip_picture": "trader_starbase_tooltip_picture",
             "name": "trader_starbase_name",
-            "description": ""
+            "description": "trader_starbase_desc"
         },
         "unit_mesh":
         {
@@ -176,11 +176,23 @@
             "group": "starbase",
             "icon": "trader_starbase_main_view_icon",
             "selected_icon": "trader_starbase_main_view_icon_selected",
-            "sub_selected_icon": "trader_starbase_main_view_icon_sub_selected",
-            "has_rotation": false
+            "sub_selected_icon": "trader_starbase_main_view_icon_sub_selected"
         },
         "effects":
         {
+            "hyperspace_effects":
+            {
+                "charge_effect": "hyperspace_tech_titan_chargeup",
+                "charge_effect_between_stars": "hyperspace_tech_titan_chargeup_interstellar",
+                "charge_effect_destabilized": "hyperspace_tech_titan_chargeup_unstable",
+                "travel_effect": "hyperspace_tech_titan_travel",
+                "travel_effect_between_stars": "hyperspace_tech_titan_travel_interstellar",
+                "travel_effect_destabilized": "hyperspace_tech_titan_travel_unstable",
+                "exit_effect": "hyperspace_tech_titan_exit",
+                "charge_sound": "hyperspace_chargeup",
+                "enter_sound": "hyperspace_entry",
+                "exit_sound": "hyperspace_exit"
+            },
             "damage_effects":
             {
                 "max_damage_effect_count": 75,
@@ -196,7 +208,7 @@
                     "max_count": 5,
                     "weight": 10.0,
                     "hull_percentage_threshold": 0.99,
-                    "particle_effect": "tec_damage_plasma_sparks"
+                    "particle_effect": "damage_smoke_2"
                 },
                 {
                     "max_count": 10,
@@ -226,20 +238,20 @@
                     "sound": "ambient_loop_electrical_damage_01"
                 },
                 {
-                    "max_count": 25,
+                    "max_count": 10,
                     "weight": 10.0,
                     "hull_percentage_threshold": 0.99,
                     "particle_effect": "tec_damage_embers"
                 },
                 {
-                    "max_count": 15,
+                    "max_count": 25,
                     "weight": 25.0,
                     "hull_percentage_threshold": 0.75,
                     "particle_effect": "damage_fire",
                     "sound": "ambient_loop_firedamage"
                 },
                 {
-                    "max_count": 5,
+                    "max_count": 15,
                     "weight": 15.0,
                     "hull_percentage_threshold": 0.75,
                     "particle_effect": "damage_fire_pillar",
@@ -254,6 +266,8 @@
                 "constraint": "is_unit_factory_busy"
             }],
             "shield_effect": "trader_starbase",
+            "level_up_effect": "titan_levelup",
+            "level_up_sound": "capitalship_levelup",
             "effect_alias_bindings": [
             {
                 "alias_name": "trader_battle_capital_ship_light_autocannon_weapon_hit_hull",

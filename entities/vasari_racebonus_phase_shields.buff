@@ -1,0 +1,52 @@
+{
+    "version": 0,
+    "stacking_limit": {
+    "stacking_limit": "fixed_one",
+    "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "restart_other_stacked_buffs_when_started": false,
+    "stacking_ownership_type": "for_all_players",
+    "make_dead_on_current_spawner_made_dead": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_try_prevent_damage",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "random_chance",
+                    "chance_value": "vasari_phase_shields_chance_value"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "prevent_damage",
+                "damage_prevented_value": "vasari_phase_shields_prevented_value"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_phase_shields_hud_icon",
+        "name": "research_subject.vasari_phase_shields_name",
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "research_subject.vasari_phase_shields_header_name",
+                "value_id": "vasari_phase_shields_chance_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive"
+            }]
+        }]
+    }
+}

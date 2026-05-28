@@ -16,12 +16,12 @@
                 "operators": [
                 {
                     "operator_type": "repair_damage",
-					"affect_type": "hull_and_armor_only",
+                    "affect_type": "hull_and_armor_only",
                     "repair_value": "repair_beam_hull_restore_value"
                 },
                 {
                     "operator_type": "apply_buff",
-					"buff": "vasari_greater_nanite_frigate_repair_beam"
+                    "buff": "vasari_greater_nanite_frigate_repair_beam"
                 },
                 {
                     "operator_type": "play_weapon_effects",
@@ -45,14 +45,17 @@
             "enabled_by_default_behavior": "always",
             "target_definitions": [
             {
-                "target_filter": "repair_beam_auto_cast_target_filter"
+                "target_filter": "repair_beam_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "repair_beam_auto_cast_low_priority_target_filter"
             }]
         }
     },
     "gui":
     {
         "hud_icon": "vasari_support_nanite_frigate_repair_beam_hud_icon",
-        "name": "vasari_support_nanite_frigate_repair_beam_name",
+        "name": "vasari_greater_nanite_frigate_repair_beam_name",
         "description": "vasari_support_nanite_frigate_repair_beam_description",
         "targeting":
         {

@@ -1,0 +1,1699 @@
+{
+    "opening_duration": 0.5,
+    "closing_duration": 0.5,
+    "fade_function": "in_quad",
+    "move_function": "out_quad",
+    "container_window":
+    {
+        "layout":
+        {
+            "vertical_alignment": "top",
+            "horizontal_alignment": "center",
+            "width": 1438,
+            "height": 800,
+            "margins":
+            {
+                "top": 43
+            }
+        },
+        "background":
+        {
+            "components": [
+            {
+                "layout":
+                {
+                    "horizontal_alignment": "center",
+                    "vertical_alignment": "top",
+                    "width": 1358,
+                    "height": 500,
+                    "margins":
+                    {
+                        "top": 30
+                    }
+                },
+                "brush": "market_watermark",
+                "brush_render_style": "centered"
+            }]
+        },
+        "content_window":
+        {
+            "title_label":
+            {
+                "layout":
+                {
+                    "vertical_alignment": "top",
+                    "horizontal_alignment": "left",
+                    "width": 200,
+                    "height": 50,
+                    "margins":
+                    {
+                        "left": 86,
+                        "top": 74
+                    }
+                },
+                "style": "hud_title_with_text_glow",
+                "text": "hud_npc_markets_window.title"
+            },
+            "view_buttons_panel":
+            {
+                "layout":
+                {
+                    "horizontal_alignment": "center",
+                    "vertical_alignment": "top",
+                    "width": 760,
+                    "height": 50,
+                    "margins":
+                    {
+                        "top": 130
+                    }
+                },
+                "orientation": "horizontal",
+                "children_gap": 5,
+                "background_components": [
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "bottom",
+                        "width": 1070,
+                        "height": 5,
+                        "margins":
+                        {
+                            "bottom": 3
+                        }
+                    },
+                    "brush": "fade_line_horizontal",
+                    "brush_render_style": "stretched"
+                }],
+                "market_view_button":
+                {
+                    "layout":
+                    {
+                        "width": 250
+                    },
+                    "style": "front_end_dialogue_bar",
+                    "text": "hud_npc_assets_window.market_title",
+                    "tooltip":
+                    {
+                        "title_text": "hud_npc_assets_window.market_title",
+                        "description": "hud_npc_assets_window.market_description",
+                        "anchor_location_on_button": "bottom_left"
+                    }
+                },
+                "bounty_view_button":
+                {
+                    "layout":
+                    {
+                        "width": 250
+                    },
+                    "style": "front_end_dialogue_bar",
+                    "text": "hud_npc_assets_window.bounty_title",
+                    "tooltip":
+                    {
+                        "title_text": "hud_npc_assets_window.bounty_title",
+                        "description": "hud_npc_assets_window.bounty_description",
+                        "anchor_location_on_button": "bottom_left"
+                    }
+                },
+                "raids_view_button":
+                {
+                    "layout":
+                    {
+                        "width": 250
+                    },
+                    "style": "front_end_dialogue_bar",
+                    "text": "hud_npc_assets_window.raids_title",
+                    "tooltip":
+                    {
+                        "title_text": "hud_npc_assets_window.raids_title",
+                        "description": "hud_npc_assets_window.raids_description",
+                        "anchor_location_on_button": "bottom_left"
+                    }
+                }
+            },
+            "market_windows_panel":
+            {
+                "layout":
+                {
+                    "margins":
+                    {
+                        "top": 240
+                    }
+                },
+                "horizontal_gap_width": 50,
+                "vertical_gap_width": 50,
+                "market_window_shared_definition":
+                {
+                    "size": [560, 190],
+                    "portrait_window":
+                    {
+                        "missing_market_panel": "unknown_npc_panel",
+                        "has_lost_overlay":
+                        {
+                            "layout":
+                            {},
+                            "brush": "player_has_lost_overlay",
+                            "brush_render_style": "centered"
+                        },
+                        "status_window":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "center",
+                                "width": 44,
+                                "height": 182,
+                                "margins":
+                                {
+                                    "left": -19
+                                }
+                            },
+                            "friendly_indicator": "friendly_npc_indicator",
+                            "enemy_indicator": "enemy_npc_indicator",
+                            "locked_indicator": "enemy_npc_indicator"
+                        },
+                        "not_discovered_market_npc_player_description":
+                        {
+                            "text": "tooltip.not_discovered_market_npc_player_description",
+                            "color": "highlighted_value"
+                        },
+                        "no_market_npc_player_description":
+                        {
+                            "text": "tooltip.no_market_npc_player_description",
+                            "color": "warning_description"
+                        }
+                    },
+                    "asset_market_window":
+                    {
+                        "buy_price_window_layout":
+                        {
+                            "vertical_alignment": "bottom",
+                            "horizontal_alignment": "right",
+                            "width": 190,
+                            "height": 40,
+                            "margins":
+                            {
+                                "bottom": 91,
+                                "right": 220
+                            }
+                        },
+                        "sell_price_window_layout":
+                        {
+                            "vertical_alignment": "bottom",
+                            "horizontal_alignment": "right",
+                            "width": 190,
+                            "height": 40,
+                            "margins":
+                            {
+                                "bottom": 91,
+                                "right": 20
+                            }
+                        },
+                        "buy_button_layout":
+                        {
+                            "vertical_alignment": "bottom",
+                            "horizontal_alignment": "right",
+                            "width": 190,
+                            "height": 40,
+                            "margins":
+                            {
+                                "bottom": 45,
+                                "right": 220
+                            }
+                        },
+                        "sell_button_layout":
+                        {
+                            "vertical_alignment": "bottom",
+                            "horizontal_alignment": "right",
+                            "width": 190,
+                            "height": 40,
+                            "margins":
+                            {
+                                "bottom": 45,
+                                "right": 20
+                            }
+                        },
+                        "demand_window_layout":
+                        {
+                            "vertical_alignment": "top",
+                            "horizontal_alignment": "right",
+                            "width": 190,
+                            "height": 40,
+                            "margins":
+                            {
+                                "top": 10
+                            }
+                        },
+                        "price_window":
+                        {
+                            "background":
+                            {
+                                "brush": "dark_text_entry_underlay",
+                                "brush_render_style": "stretched",
+                                "outer_margins":
+                                {
+                                    "left": 4,
+                                    "right": 4,
+                                    "top": 4,
+                                    "bottom": 4
+                                }
+                            },            
+                            "asset_icons":
+                            {
+                                "credits": "credits_asset_icon",
+                                "metal": "metal_asset_icon",
+                                "crystal": "crystal_asset_icon"
+                            },
+                            "arrow_icon": "upgrade_arrow_tooltip_icon",
+                            "font": "ttsupermolotneue_condregular_16",
+                            "from_text_color": "default_label",
+                            "to_text_color": "default_label",
+                            "asset_icon_width": 35,
+                            "arrow_icon_width": 20
+                        },
+                        "buy_sell_small_batch_hint":
+                        {
+                            "text": "tooltip.buy_sell_small_batch_hint",
+                            "color": "input_mappings"
+                        },
+                        "buy_sell_large_batch_hint":
+                        {
+                            "text": "tooltip.buy_sell_large_batch_hint",
+                            "color": "input_mappings"
+                        }
+                    },
+                    "header_label_layout":
+                    {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "top",
+                        "width": 200,
+                        "height": 20,
+                        "margins":
+                        {
+                            "top": 20
+                        }
+                    },
+                    "not_detected_label_layout":
+                    {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "center",
+                        "width": 200,
+                        "height": 20
+                    },
+                    "does_not_exist_label_layout":
+                    {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "center",
+                        "width": 200,
+                        "height": 20
+                    }
+                },
+                "metal_market_window":
+                {
+                    "header_label":
+                    {
+                        "text": "npc_markets_window.metal_market_title",
+                        "style": "hud_npc_market_header"
+                    },
+                    "not_detected_label":
+                    {
+                        "text": "npc_markets_window.not_detected_label",
+                        "style": "hud_npc_market_not_detected"
+                    },
+                    "does_not_exist_label":
+                    {
+                        "text": "npc_markets_window.does_not_exist_label",
+                        "style": "hud_npc_market_does_not_exist"
+                    },
+                    "portrait_window":
+                    {
+                        "market_portrait": "metal_market_panel",
+                        "tooltip_title_icon": "metal_asset_icon",
+                        "tooltip_title_text": "tooltip.npc_metal_market_title",
+                        "tooltip_description":
+                        {
+                            "text": "tooltip.npc_metal_market_description",
+                            "color": "default_description"
+                        }
+                    },
+                    "metal_market_window":
+                    {
+                        "buy_button":
+                        {
+                            "style": "hud_market_buy_sell",
+                            "icon": "metal_asset_icon",
+                            "text": "metal_market_window_buy_button"
+                        },
+                        "sell_button":
+                        {
+                            "style": "hud_market_buy_sell",
+                            "icon": "metal_asset_icon",
+                            "text": "metal_market_window_sell_button"
+                        },
+                        "demand_window":
+                        {
+                            "background":
+                            {},
+                            "icon":
+                            {
+                                "layout":
+                                {},
+                                "style": "npc_market_demand"
+                            }
+                        }
+                    }
+                },
+                "crystal_market_window":
+                {
+                    "header_label":
+                    {
+                        "text": "npc_markets_window.crystal_market_title",
+                        "style": "hud_npc_market_header"
+                    },
+                    "not_detected_label":
+                    {
+                        "text": "npc_markets_window.not_detected_label",
+                        "style": "hud_npc_market_not_detected"
+                    },
+                    "does_not_exist_label":
+                    {
+                        "text": "npc_markets_window.does_not_exist_label",
+                        "style": "hud_npc_market_does_not_exist"
+                    },
+                    "portrait_window":
+                    {
+                        "market_portrait": "crystal_market_panel",
+                        "tooltip_title_icon": "crystal_asset_icon",
+                        "tooltip_title_text": "tooltip.npc_crystal_market_title",
+                        "tooltip_description":
+                        {
+                            "text": "tooltip.npc_crystal_market_description",
+                            "color": "default_description"
+                        }
+                    },
+                    "crystal_market_window":
+                    {
+                        "buy_button":
+                        {
+                            "style": "hud_market_buy_sell",
+                            "icon": "crystal_asset_icon",
+                            "text": "crystal_market_window_buy_button"
+                        },
+                        "sell_button":
+                        {
+                            "style": "hud_market_buy_sell",
+                            "icon": "crystal_asset_icon",
+                            "text": "crystal_market_window_sell_button"
+                        },
+                        "demand_window":
+                        {
+                            "background":
+                            {},
+                            "icon":
+                            {
+                                "layout":
+                                {},
+                                "style": "npc_market_demand"
+                            }
+                        }
+                    }
+                },
+                "exotic_market_window":
+                {
+                    "header_label":
+                    {
+                        "text": "npc_markets_window.exotic_market_title",
+                        "style": "hud_npc_market_header"
+                    },
+                    "not_detected_label":
+                    {
+                        "text": "npc_markets_window.not_detected_label",
+                        "style": "hud_npc_market_not_detected"
+                    },
+                    "does_not_exist_label":
+                    {
+                        "text": "npc_markets_window.does_not_exist_label",
+                        "style": "hud_npc_market_does_not_exist"
+                    },
+                    "portrait_window":
+                    {
+                        "market_portrait": "exotic_market_panel",
+                        "tooltip_title_icon": "exotic_market_icon",
+                        "tooltip_title_text": "tooltip.npc_exotic_market_title",
+                        "tooltip_description":
+                        {
+                            "text": "tooltip.npc_exotic_market_description",
+                            "color": "default_description"
+                        }
+                    },
+                    "exotic_market_window":
+                    {
+                        "sell_exotic_buttons_panel":
+                        {
+                            "layout":
+                            {
+                                "vertical_alignment": "bottom",
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": 90,
+                                    "bottom": 20
+                                }
+                            },
+                            "sell_buttons_grid":
+                            {
+                                "outer_margin": [0, 0],
+                                "element_spacing": [5, 5],
+                                "element_size": [85, 40]
+                            },
+                            "sell_button_shared_definition":
+                            {
+                                "style": "hud_dark_wide",
+                                "count_color_when_zero": "disabled_value",
+                                "count_color_when_not_zero": "neutral_value"
+                            }
+                        },
+                        "sell_exotic_price_labels_panel":
+                        {
+                            "layout":
+                            {
+                                "vertical_alignment": "bottom",
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": 90,
+                                    "bottom": 64
+                                }
+                            },
+                            "sell_price_labels_grid":
+                            {
+                                "outer_margin": [0, 0],
+                                "element_spacing": [5, 5],
+                                "element_size": [85, 40]
+                            },
+                            "sell_price_label_shared_definition":
+                            {
+                                "style": "hud_npc_market_sell_exotic_price",
+                                "credits_icon": "credits_asset_icon"
+                            }
+                        }
+                    }
+                }
+            },
+            "bounty_window":
+            {
+                "layout":
+                {
+                    "horizontal_alignment": "center",
+                    "vertical_alignment": "stretch",
+                    "width": 1100,
+                    "margins":
+                    {
+                        "top": 200,
+                        "bottom": 50
+                    }
+                },
+                "portrait_window":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 285,
+                        "height": 350,
+                        "margins":
+                        {
+                            "top": -4,
+                            "left": -30
+                        }
+                    },
+                    "portrait_background":
+                    {
+                        "layout":
+                        {
+                            "horizontal_alignment": "left",
+							"vertical_alignment": "top",
+							"width": 276,
+							"height": 342,
+                            "margins":
+                            {
+                                "top": 4,
+                                "bottom": 4,
+                                "left": -72,
+                                "right": 0
+                            }
+                        },
+                        "brush": "list_box_background",
+                        "brush_render_style": "stretched"
+                    },
+                    "portrait_margins":
+                    {
+                        "left": -154,
+                        "top": 0,
+                        "right": 0,
+                        "bottom": 0
+                    },
+                    "unknown_portrait": "unknown_npc_panel",
+                    "has_lost_overlay":
+                    {
+                        "layout":
+                        {},
+                        "brush": "player_has_lost_overlay",
+                        "brush_render_style": "centered"
+                    },
+                    "name_overlay_layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "bottom",
+                        "height": 40,
+						"width": 268,
+                        "margins":
+                        {
+                            "left": -68,
+							"bottom": 8,
+							"right": 10
+                        }
+                    },
+                    "name_overlay_background_color": "aa000000",
+                    "name_overlay_text_color": "default_label",
+                    "name_overlay_font": "ttsupermolotneue_condmed_14",
+                    "portrait_size": "large",
+                    "tooltip_title_icon": "credits_asset_icon",
+                    "tooltip_title_text": "tooltip.npc_bounty_market_title",
+                    "tooltip_description":
+                    {
+                        "text": "tooltip.npc_bounty_market_description",
+                        "color": "default_description"
+                    },
+                    "not_discovered_description":
+                    {
+                        "text": "tooltip.not_discovered_market_npc_player_description",
+                        "color": "highlighted_value"
+                    },
+                    "no_market_description":
+                    {
+                        "text": "tooltip.no_market_npc_player_description",
+                        "color": "warning_description"
+                    }
+                },
+                "office_holder_panel":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 276,
+                        "height": 40,
+                        "margins":
+                        {
+                            "top": 345,
+                            "left": -102
+                        }
+                    },
+                    "brush": "list_box_background",
+                    "brush_render_style": "stretched"
+                },
+                "office_holder_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 276,
+                        "height": 40,
+                        "margins":
+                        {
+                            "top": 345,
+                            "left": -102
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_bounty_window.office_holder"
+                },
+                "bounty_fee_panel":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 276,
+                        "height": 40,
+                        "margins":
+                        {
+                            "top": 385,
+                            "left": -102
+                        }
+                    },
+                    "brush": "list_box_background",
+                    "brush_render_style": "stretched"
+                },
+                "bounty_fee_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 276,
+                        "height": 30,
+                        "margins":
+                        {
+                            "top": 390,
+                            "left": -102
+                        }
+                    },
+                    "style": "hud_npc_market_header"
+                },
+                "bounty_fee_prefix_text": "hud_npc_bounty_window.bounty_fee_prefix",
+                "bounty_content_window":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "right",
+                        "vertical_alignment": "stretch",
+                        "width": 450,
+                        "margins":
+                        {
+                            "right": 30
+                        }
+                    },
+                    "top_bounties_window":
+                    {
+                        "layout":
+                        {
+                            "horizontal_alignment": "stretch",
+                            "vertical_alignment": "top",
+                            "height": 515
+                        },
+                        "column_header_panel":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 567,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": -442
+                                }
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "background":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "stretch",
+                                "width": 567,
+                                "margins":
+                                {
+                                    "top": 44,
+                                    "bottom": 4,
+                                    "left": -442
+                                }
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "cost_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 100,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": -430
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.cost_header"
+                        },
+                        "planet_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 200,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": -370
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.planet_header"
+                        },
+                        "owner_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 200,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": -195
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.owner_header"
+                        },
+                        "list_item_shared_definition":
+                        {
+                            "layout":
+                            {
+                                "vertical_alignment": "top",
+                                "height": 38
+                            },
+                            "name_font": "ttsupermolotneue_condregular_14",
+                            "amount_font": "ttsupermolotneue_condregular_14",
+                            "credits_icon": "credits_asset_icon",
+                            "icon_size": 24,
+                            "spacing": 4,
+                            "planet_name_left_offset": 140,
+                            "owner_name_left_offset": 310
+                        },
+                        "list_box":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "stretch",
+                                "width": 582,
+                                "margins":
+                                {
+                                    "top": 51,
+                                    "bottom": 10,
+                                    "left": -435
+                                }
+                            },
+                            "style": "hud_empire_units"
+                        }
+                    },
+                    "bounty_chart_window":
+                    {
+                        "layout":
+                        {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "bottom",
+                            "height": 120,
+							"width": 430,
+                            "margins":
+                            {
+                                "left": 150,
+                                "bottom": 115
+                            }
+                        },
+                        "background":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 424,
+                                "height": 120,
+                                "margins":
+                                {
+                                    "left": 4,
+                                    "top": 3
+                                }
+                            },
+                            "brush": "simple_frame_trans_black",
+                            "brush_render_style": "stretched"
+                        },
+                        "line_content_layout":
+                        {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 404,
+                            "height": 80,
+                            "margins":
+                            {
+                                "left": 14,
+                                "top": 33
+                            }
+                        },
+                        "line_y_offset_per_player": -1,
+                        "header_panel":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "stretch",
+                                "vertical_alignment": "top",
+                                "height": 40,
+                                "margins":
+                                {
+                                    "top": -40
+                                }
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "stretch",
+                                "vertical_alignment": "top",
+                                "height": 40,
+                                "margins":
+                                {
+                                    "top": -40
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.bounty_feed_header"
+                        },
+                        "max_value_font": "ttsupermolotneue_condmed_12",
+                        "max_value_color": "uitextblue",
+                        "max_value_layout":
+                        {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 60,
+                            "height": 20,
+                            "margins":
+                            {
+                                "left": -16,
+                                "top": 8
+                            }
+                        },
+                        "anchor_line_color": "0190A3"
+                    },
+                    "bounty_controls_window":
+                    {
+                        "layout":
+                        {
+                            "horizontal_alignment": "stretch",
+                            "vertical_alignment": "bottom",
+                            "height": 350,
+                            "margins":
+                            {
+                                "left": 150,
+                                "bottom": 200
+                            }
+                        },
+                        "asset_header_panel":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 40
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "asset_background":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 51,
+                                "margins":
+                                {
+                                    "top": 42
+                                }
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "credits_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 140,
+                                "height": 40
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.credits_header"
+                        },
+                        "metal_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 140,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": 145
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.metal_header"
+                        },
+                        "crystal_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 140,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "left": 290
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.crystal_header"
+                        },
+                        "asset_buttons_panel":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 50,
+                                "margins":
+                                {
+                                    "top": 42
+                                }
+                            },
+                            "button_layout_grid":
+                            {
+                                "outer_margin": [6, 6],
+                                "element_spacing": [5, 3],
+                                "element_size": [136, 38]
+                            },
+                            "button":
+                            {
+                                "style": "hud_dark_wide",
+                                "credits_icon": "credits_asset_icon",
+                                "metal_icon": "metal_asset_icon",
+                                "crystal_icon": "crystal_asset_icon",
+                                "exotics_icon": "exotic_market_icon",
+                                "amount_color": "neutral_value",
+                                "amount_color_when_zero": "disabled_value",
+                                "tooltip_asset_amount_line_label": "tooltip.bounty_asset_amount_line_label",
+                                "tooltip_asset_amount_color": "neutral_value",
+                                "tooltip_asset_amount_color_when_zero": "disabled_value",
+                                "tooltip_available_assets_color": "unused_value",
+                                "tooltip_anchor_location_on_button": "bottom_center",
+                                "tooltip_anchor_location_on_tooltip": "top_center",
+                                "has_value_overlay":
+                                {
+                                    "layout": {},
+                                    "brush": "hud_button_overlay_frame_research_completed",
+                                    "brush_render_style": "stretched",
+                                    "outer_margins":
+                                    {
+                                        "left": 4,
+                                        "right": 4,
+                                        "top": 4,
+                                        "bottom": 4
+                                    }
+                                },
+                                "increase_decrease_small_batch_hint":
+                                {
+                                    "text": "tooltip.bounty_increase_decrease_small_batch_hint",
+                                    "color": "input_mappings"
+                                },
+                                "increase_decrease_large_batch_hint":
+                                {
+                                    "text": "tooltip.bounty_increase_decrease_large_batch_hint",
+                                    "color": "input_mappings"
+                                }
+                            }
+                        },
+                        "exotics_header_panel":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "top": 95
+                                }
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "exotics_header_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "top": 95
+                                }
+                            },
+                            "style": "hud_npc_market_header",
+                            "text": "hud_npc_bounty_window.exotics_header"
+                        },
+                        "exotics_container":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 65,
+                                "margins":
+                                {
+                                    "top": 137
+                                }
+                            },
+                            "background":
+                            {
+                                "brush": "list_box_item_background",
+                                "brush_render_style": "stretched"
+                            },
+                            "buttons_panel":
+                            {
+                                "layout":
+                                {
+                                    "margins":
+                                    {
+                                        "left": 9,
+                                        "right": 9,
+                                        "top": 9,
+                                        "bottom": 9
+                                    }
+                                },
+                                "button_layout_grid":
+                                {
+                                    "outer_margin": [0, 0],
+                                    "element_spacing": [3, 0],
+                                    "element_size": [80, 45]
+                                },
+                                "button":
+                                {
+                                    "style": "hud_dark_square",
+                                    "tooltip_anchor_location_on_button": "bottom_center",
+                                    "tooltip_anchor_location_on_tooltip": "top_center",
+                                    "text_color_when_zero": "disabled_value",
+                                    "text_color_when_not_zero": "neutral_value",
+                                    "amount_line":
+                                    {
+                                        "label_text": "tooltip.bounty_exotic_amount"
+                                    },
+                                    "has_value_overlay":
+                                    {
+                                        "brush": "hud_button_overlay_frame_research_completed",
+                                        "brush_render_style": "stretched",
+                                        "outer_margins":
+                                        {
+                                            "left": 4,
+                                            "right": 4,
+                                            "top": 4,
+                                            "bottom": 4
+                                        }
+                                    },
+                                    "count_text_layout":
+                                    {
+                                        "horizontal_alignment": "stretch",
+                                        "vertical_alignment": "bottom",
+                                        "height": 16,
+                                        "margins":
+                                        {
+                                            "left": 2,
+                                            "right": 7,
+                                            "bottom": 7
+                                        }
+                                    },
+                                    "count_text_alignment": "right"
+                                },
+                                "max_button_count": 6,
+                                "scroll_bar_layout":
+                                {
+                                    "horizontal_alignment": "stretch",
+                                    "vertical_alignment": "bottom",
+                                    "height": 8,
+                                    "margins":
+                                    {
+                                        "bottom": 0
+                                    }
+                                },
+                                "scroll_bar_style": "thin_horizontal_scroll_bar"
+                            }
+                        },
+                        "add_bounty_panel":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 65,
+                                "margins":
+                                {
+                                    "top": 206
+                                }
+                            },
+                            "brush": "list_box_background",
+                            "brush_render_style": "stretched"
+                        },
+                        "credit_equivalent_label":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 200,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "top": 218,
+                                    "left": 218
+                                }
+                            },
+                            "style": "hud_npc_market_sell_exotic_price"
+                        },
+                        "add_bounty_button":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 200,
+                                "height": 40,
+                                "margins":
+                                {
+                                    "top": 218,
+                                    "left": 10
+                                }
+                            },
+                            "style": "hud_dark_wide",
+                            "text": "hud_npc_bounty_window.add_bounty_button"
+                        },
+                        "bounty_details_window":
+                        {
+                            "layout":
+                            {
+                                "horizontal_alignment": "left",
+                                "vertical_alignment": "top",
+                                "width": 430,
+                                "height": 68,
+                                "margins":
+                                {
+                                    "top": 442
+                                }
+                            },
+                            "assets_background":
+                            {
+                                "layout":
+                                {
+                                    "horizontal_alignment": "stretch",
+                                    "vertical_alignment": "top",
+                                    "height": 32
+                                },
+                                "brush": "list_box_background",
+                                "brush_render_style": "stretched"
+                            },
+                            "exotics_background":
+                            {
+                                "layout":
+                                {
+                                    "horizontal_alignment": "stretch",
+                                    "vertical_alignment": "top",
+                                    "height": 32,
+                                    "margins":
+                                    {
+                                        "top": 36
+                                    }
+                                },
+                                "brush": "list_box_background",
+                                "brush_render_style": "stretched"
+                            },
+                            "font": "ttsupermolotneue_condregular_14",
+                            "credits_icon": "credits_asset_icon",
+                            "metal_icon": "metal_asset_icon",
+                            "crystal_icon": "crystal_asset_icon",
+                            "icon_size": 24,
+                            "row_height": 28,
+                            "spacing": 6,
+                            "left_margin": 10,
+                            "text_width": 50
+                        }
+                    }
+                },
+                "no_bounty_market_message_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "center",
+                        "width": 600,
+                        "height": 60
+                    },
+                    "style": "hud_empire_units_window_empty_message",
+                    "text": "hud_npc_bounty_window.no_bounty_market_message"
+                },
+                "bounty_market_not_discovered_message_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "center",
+                        "vertical_alignment": "center",
+                        "width": 600,
+                        "height": 60
+                    },
+                    "style": "hud_empire_units_window_empty_message",
+                    "text": "hud_npc_bounty_window.bounty_market_not_discovered_message"
+                }
+            },
+            "raids_window":
+            {
+                "layout":
+                {
+                    "horizontal_alignment": "center",
+                    "vertical_alignment": "stretch",
+                    "width": 800,
+                    "margins":
+                    {
+                        "top": 200,
+                        "bottom": 50
+                    }
+                },
+                "portrait_window":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 285,
+                        "height": 350,
+                        "margins":
+                        {
+                            "top": -4,
+                            "left": -180
+                        }
+                    },
+                    "portrait_background":
+                    {
+                        "layout":
+                        {
+                            "horizontal_alignment": "left",
+							"vertical_alignment": "top",
+							"width": 276,
+							"height": 342,
+                            "margins":
+                            {
+                                "top": 4,
+                                "bottom": 4,
+                                "left": -72,
+                                "right": 0
+                            }
+                        },
+                        "brush": "list_box_background",
+                        "brush_render_style": "stretched"
+                    },
+                    "portrait_margins":
+                    {
+                        "left": -154,
+                        "top": 0,
+                        "right": 0,
+                        "bottom": 0
+                    },
+                    "unknown_portrait": "unknown_npc_panel",
+                    "has_lost_overlay":
+                    {
+                        "layout":
+                        {},
+                        "brush": "player_has_lost_overlay",
+                        "brush_render_style": "centered"
+                    },
+                    "name_overlay_layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "bottom",
+                        "height": 40,
+						"width": 268,
+                        "margins":
+                        {
+                            "left": -68,
+							"bottom": 8,
+							"right": 10
+                        }
+                    },
+                    "name_overlay_background_color": "aa000000",
+                    "name_overlay_text_color": "default_label",
+                    "name_overlay_font": "ttsupermolotneue_condmed_14",
+                    "portrait_size": "large",
+                    "homeworld_panel": {
+                        "layout": {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 276,
+                            "height": 35,
+                            "margins": {
+                                "top": 350,
+                                "left": -72
+                            }
+                        },
+                        "brush": "list_box_background",
+                        "brush_render_style": "stretched"
+                    },
+                    "homeworld_label": {
+                        "layout": {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 266,
+                            "height": 35,
+                            "margins": {
+                                "top": 350,
+                                "left": -67
+                            }
+                        },
+                        "style": "hud_npc_market_portrait_label"
+                    },
+                    "total_bounty_panel": {
+                        "layout": {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 276,
+                            "height": 35,
+                            "margins": {
+                                "top": 388,
+                                "left": -72
+                            }
+                        },
+                        "brush": "list_box_background",
+                        "brush_render_style": "stretched"
+                    },
+                    "total_bounty_label": {
+                        "layout": {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 266,
+                            "height": 35,
+                            "margins": {
+                                "top": 388,
+                                "left": -67
+                            }
+                        },
+                        "style": "hud_npc_market_portrait_label"
+                    },
+                    "active_fleets_panel": {
+                        "layout": {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 276,
+                            "height": 35,
+                            "margins": {
+                                "top": 426,
+                                "left": -72
+                            }
+                        },
+                        "brush": "list_box_background",
+                        "brush_render_style": "stretched"
+                    },
+                    "active_fleets_label": {
+                        "layout": {
+                            "horizontal_alignment": "left",
+                            "vertical_alignment": "top",
+                            "width": 266,
+                            "height": 35,
+                            "margins": {
+                                "top": 426,
+                                "left": -67
+                            }
+                        },
+                        "style": "hud_npc_market_portrait_label"
+                    },
+                    "threat_level_display_layout": {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 276,
+                        "height": 74,
+                        "margins": {
+                            "top": 450,
+                            "left": -72
+                        }
+                    },
+                    "threat_level_text_layout": {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 276,
+                        "height": 30,
+                        "margins": {
+                            "top": 470,
+                            "left": -150
+                        }
+                    },
+                    "threat_level_low_brush": "threat_level_low",
+                    "threat_level_moderate_brush": "threat_level_moderate",
+                    "threat_level_medium_brush": "threat_level_medium",
+                    "threat_level_high_brush": "threat_level_high",
+                    "threat_level_extreme_brush": "threat_level_extreme",
+                    "threat_level_low_text": "hud_npc_raids_window.threat_level_low",
+                    "threat_level_moderate_text": "hud_npc_raids_window.threat_level_moderate",
+                    "threat_level_medium_text": "hud_npc_raids_window.threat_level_medium",
+                    "threat_level_high_text": "hud_npc_raids_window.threat_level_high",
+                    "threat_level_extreme_text": "hud_npc_raids_window.threat_level_extreme",
+                    "threat_level_font": "ttsupermolotneue_condmed_14",
+                    "homeworld_prefix_text": "hud_npc_raids_window.homeworld_prefix",
+                    "homeworld_unknown_text": "hud_npc_raids_window.homeworld_unknown",
+                    "total_bounty_prefix_text": "hud_npc_raids_window.total_bounty_prefix",
+                    "active_fleets_prefix_text": "hud_npc_raids_window.active_fleets_prefix"
+                },
+                "column_header_panel":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 1023,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 28
+                        }
+                    },
+                    "brush": "list_box_background",
+                    "brush_render_style": "stretched"
+                },
+                "background":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 1023,
+                        "height": 467,
+                        "margins":
+                        {
+                            "top": 44,
+                            "left": 28
+                        }
+                    },
+                    "brush": "list_box_background",
+                    "brush_render_style": "stretched"
+                },
+                "npc_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 200,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": -45
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.npc_header"
+                },
+                "planet_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 150,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 210
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.planet_header"
+                },
+                "owner_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 150,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 320
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.owner_header"
+                },
+                "supply_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 80,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 530
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.threat_level_header"
+                },
+                "raid_type_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 150,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 585
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.raid_type_header"
+                },
+                "state_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 100,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 750
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.state_header"
+                },
+                "time_header_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 80,
+                        "height": 40,
+                        "margins":
+                        {
+                            "left": 890
+                        }
+                    },
+                    "style": "hud_npc_market_header",
+                    "text": "hud_npc_raids_window.time_header"
+                },
+                "list_item_shared_definition":
+                {
+                    "layout":
+                    {
+                        "height": 23
+                    },
+                    "name_font": "ttsupermolotneue_condregular_14",
+                    "supply_font": "ttsupermolotneue_condregular_14",
+                    "state_awakening_text": "hud_npc_raids_window.state_awakening",
+                    "state_spawning_text": "hud_npc_raids_window.state_spawning",
+                    "state_active_text": "hud_npc_raids_window.state_active",
+                    "state_standard_cooldown_text": "hud_npc_raids_window.state_standard_cooldown",
+                    "state_returning_text": "hud_npc_raids_window.state_returning",
+                    "state_unknown_text": "hud_npc_raids_window.state_unknown",
+                    "raid_type_collect_bounty_text": "hud_npc_raids_window.raid_type_collect_bounty",
+                    "raid_type_claim_planet_text": "hud_npc_raids_window.raid_type_claim_planet",
+                    "raid_type_kill_population_text": "hud_npc_raids_window.raid_type_kill_population",
+                    "raid_type_destroy_infrastructure_text": "hud_npc_raids_window.raid_type_destroy_infrastructure",
+                    "raid_type_destroy_planet_text": "hud_npc_raids_window.raid_type_destroy_planet",
+                    "threat_level_low_text": "hud_npc_raids_window.threat_level_low",
+                    "threat_level_moderate_text": "hud_npc_raids_window.threat_level_moderate",
+                    "threat_level_medium_text": "hud_npc_raids_window.threat_level_medium",
+                    "threat_level_high_text": "hud_npc_raids_window.threat_level_high",
+                    "threat_level_extreme_text": "hud_npc_raids_window.threat_level_extreme",
+                    "threat_level_low_color": "threat_level_low",
+                    "threat_level_moderate_color": "threat_level_moderate",
+                    "threat_level_medium_color": "threat_level_medium",
+                    "threat_level_high_color": "threat_level_high",
+                    "threat_level_extreme_color": "threat_level_extreme",
+                    "state_awakening_color": "raid_state_awakening",
+                    "state_spawning_color": "raid_state_spawning",
+                    "state_active_color": "raid_state_active",
+                    "state_standard_cooldown_color": "raid_state_cooldown",
+                    "state_returning_color": "raid_state_returning",
+                    "state_unknown_color": "raid_state_unknown",
+                    "icon_size": 14,
+                    "spacing": 5,
+                    "npc_name_left_offset": 6,
+                    "planet_name_left_offset": 217,
+                    "owner_name_left_offset": 329,
+                    "threat_level_left_offset": 509,
+                    "raid_type_left_offset": 606,
+                    "state_left_offset": 746,
+                    "time_left_offset": 877
+                },
+                "raids_list_box":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "stretch",
+                        "width": 990,
+                        "margins":
+                        {
+                            "top": 51,
+                            "left": 36,
+                            "bottom": 60
+                        }
+                    },
+                    "style": "hud_empire_units"
+                },
+                "no_raids_message_label":
+                {
+                    "layout":
+                    {
+                        "horizontal_alignment": "left",
+                        "vertical_alignment": "top",
+                        "width": 600,
+                        "height": 60,
+                        "margins":
+                        {
+                            "left": 200,
+                            "top": 248
+                        }
+                    },
+                    "style": "hud_empire_units_window_empty_message",
+                    "text": "hud_npc_raids_window.no_raids_message"
+                }
+            }
+        }
+    }
+}

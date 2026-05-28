@@ -3,35 +3,19 @@
     "level_count": 3,
     "target_filters": [
     {
-        "target_filter_id": "avatar_auto_cast_high_priority_target_filter",
+        "target_filter_id": "avatar_ai_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
                 "self"
-			],
+            ],
             "constraints": [
             {
-                "constraint_type": "has_weapon",
-				"tag": "energy",
-				"weapon_type": "normal"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint": 
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "advent_unity_avatar_on_spawner",
-					"include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "weapon_has_target"
+                "constraint_type": "has_recently_fired_weapon"
             },
             {
                 "constraint_type": "has_recently_been_damaged"
@@ -39,64 +23,52 @@
         }
     },
     {
-        "target_filter_id": "avatar_prevent_target_filter",
-        "target_filter":
-        {
-            "unit_definitions": [
-                "advent_unity_follower"
-            ],
-            "ownerships": [
-                "self"
-			]
-        }
-    },
-    {
-        "target_filter_id": "avatar_prevent_timer_target_filter",
-        "target_filter":
-        {
-            "unit_definitions": [
-                "player_buffs_advent_loyalist"
-            ],
-            "ownerships": [
-                "self"
-			]
-        }
-    },
-    {
-        "target_filter_id": "avatar_auto_cast_low_priority_target_filter",
+        "target_filter_id": "avatar_ai_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-                "starbase",
-                "super_capital_ship"
+                "starbase"
             ],
             "ownerships": [
                 "self"
-			],
+            ],
             "constraints": [
             {
-                "constraint_type": "has_weapon",
-				"tag": "energy",
-				"weapon_type": "normal"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint": 
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "advent_unity_avatar_on_spawner",
-					"include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "weapon_has_target"
+                "constraint_type": "has_recently_fired_weapon"
             },
             {
                 "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.5
+            }]
+        }
+    },
+    {
+        "target_filter_id": "avatar_ai_auto_cast_radius_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_recently_fired_weapon"
+            },
+            {
+                "constraint_type": "has_weapon",
+                "tag": "energy"
             }]
         }
     },
@@ -107,12 +79,12 @@
             "unit_types": [
                 "capital_ship",
                 "starbase",
-                "titan",
-                "super_capital_ship"
+                "super_capital_ship",
+                "titan"
             ],
             "ownerships": [
                 "self"
-			]
+            ]
         }
     },
     {
@@ -134,9 +106,7 @@
             ],
             "constraints": [
             {
-                "constraint_type": "has_weapon",
-				"tag": "energy",
-				"weapon_type": "normal"
+                "constraint_type": "has_weapon"
             }]
         }
     }],
@@ -163,31 +133,31 @@
         }
     },
     {
-        "action_value_id": "avatar_auto_cast_target_value",
-        "action_value":
-        {
-            "values": [5.0, 5.0, 5.0]
-        }
-    },
-    {
         "action_value_id": "avatar_radius_value",
         "action_value":
         {
-            "values": [5000.0, 6500.0, 8000.0]
+            "values": [6250.0, 8125.0, 10000.0]
+        }
+    },
+    {
+        "action_value_id": "avatar_auto_cast_target_count_value",
+        "action_value":
+        {
+            "values": [10.0, 10.0, 10.0]
         }
     },
     {
         "action_value_id": "avatar_energy_weapon_damage_bonus_value",
         "action_value":
         {
-            "values": [0.1, 0.2, 0.3]
+            "values": [0.125, 0.25, 0.375]
         }
     },
     {
         "action_value_id": "avatar_spell_power_bonus_value",
         "action_value":
         {
-            "values": [50.0, 75.0, 100.0]
+            "values": [62.5, 93.75, 125.0]
         }
     }],
     "buff_unit_modifiers": [

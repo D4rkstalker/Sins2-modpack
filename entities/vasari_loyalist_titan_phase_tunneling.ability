@@ -29,10 +29,10 @@
                         {
                             "constraint_type": "composite_not",
                             "constraint":
-							{
-								"constraint_type": "has_buff",
-								"buff": "trader_shield_generator_structure_on_gravity_well"
-							}
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "trader_shield_generator_structure_on_gravity_well"
+                            }
                         }]
                     }
                 },
@@ -95,7 +95,40 @@
             "angle": 0.0,
             "allow_opposite_angle": false
         },
-        "firing_angle": 3.0
+        "firing_angle": 3.0,
+        "ai_only_auto_cast":
+        {
+            "type": "pick_planet_within_gravity_well_distance",
+            "target_definitions": [
+            {
+                "target_filter": "phase_tunneling_auto_cast_homeworld_priority_planet_target_filter"
+            },
+            {
+                "target_filter": "phase_tunneling_auto_cast_high_priority_planet_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "phase_tunneling_auto_cast_high_priority_enemies_target_filter"
+                }
+            },
+            {
+                "target_filter": "phase_tunneling_auto_cast_low_priority_planet_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "has_enemy_units_in_gravity_well",
+                    "gravity_well_reference_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "phase_tunneling_auto_cast_low_priority_enemies_target_filter"
+                }
+            }],
+            "gravity_well_distance_range": "range_value"
+        }
     },
     "gui":
     {

@@ -34,23 +34,44 @@
     }],
     "trigger_event_actions": [
     {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "above",
+                    "effect_by_size":
+                    {
+                        "small_unit": "trader_transport_capital_ship_scout_damage",
+                        "medium_unit": "trader_transport_capital_ship_scout_damage",
+                        "large_unit": "trader_transport_capital_ship_scout_damage"
+                    }
+                }
+            }]
+        }
+    },
+    {
         "trigger_event_type": "on_current_spawner_try_make_dead",
         "action_group":
         {
             "constraint":
             {
-				"constraint_type": "unit_passes_target_filter",
-				"unit":
-				{
-					"unit_type": "current_spawner"
-				},
-				"target_filter_id": "boarding_party_capture_target_filter"
+                "constraint_type": "unit_passes_target_filter",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "target_filter_id": "boarding_party_capture_target_filter"
             },
             "actions": [
             {
                 "action_type": "abort_make_dead"
-			},
-			{
+            },
+            {
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
                 {
@@ -66,6 +87,15 @@
                         {
                             "unit_type": "first_spawner"
                         }
+                    }
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "above",
+                        "effect": "trader_transport_capital_ship_scout_boarded"
                     }
                 },
                 {
@@ -85,12 +115,12 @@
                 },
                 {
                     "operator_type": "apply_buff",
-					"buff": "trader_transport_capital_ship_boarding_party_is_boarded"
+                    "buff": "trader_transport_capital_ship_boarding_party_is_boarded"
                 }]
-			},
+            },
             {
                 "action_type": "make_buff_dead"
-			}]
+            }]
         }
     }],
     "gui":

@@ -8,6 +8,7 @@
         "terran_home_planet",
 		"greenhouse_planet"
     ],
+	"scuttle_duration": 90,
     "random_planet_bonuses": [
 		"modern_society_planet_bonus",
 		"metal_miners_planet_bonus",
@@ -43,10 +44,10 @@
         "tooltip_icon": "asteroid_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 10,
+            "starting_population": [0, 8],
             "population_maximum": 40,
-            "growth_rate": 0.03,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.015,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -56,43 +57,22 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.10
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.3
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.10
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "offense",
-                        "count": [1, 1]
-                    }					
-				],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.20
+                    "chance": 0.2
                 },
                 {
-                    "exotic_type": "defense",
-                    "chance": 0.6
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.20
+                    "exotic_type": "economic",
+                    "chance": 0.2
                 }]
             }
-        }
-		]
+        }]
     },
     {
         "name": "ice_asteroid",
@@ -100,18 +80,21 @@
         "tooltip_icon": "ice_crystal_asteroid_tooltip_icon",
         "population":
         {
-            "starting_population": 20,
+            "starting_population": [0, 10],
             "population_maximum": 50,
-            "growth_rate": 0.03,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.015,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [
-				],
+                "guaranteed_counts": [],
                 "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
                 {
                     "exotic_type": "defense",
                     "chance": 0.1
@@ -122,35 +105,10 @@
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.1
+                    "chance": 0.3
                 }]
             }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "utility",
-                        "count": [1, 1]
-                    }					
-				],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.2
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.6
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.2
-                }]
-            }
-        }
-		]
+        }]
     },
     {
         "name": "hive_asteroid",
@@ -159,77 +117,39 @@
         "can_have_planet_elevators": false,
         "population":
         {
-            "starting_population": 120,
-            "population_maximum": 180,
-            "growth_rate": 0.03,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 24],
+            "population_maximum": 120,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }					
-				],
+                "guaranteed_counts": [],
                 "bonus_exotic_chances": [
                 {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                },
+                {
                     "exotic_type": "utility",
-                    "chance": 0.15
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "ultimate",
-                    "chance": 0.05
+                    "chance": 0.2
                 }]
             }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }					
-				],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.3
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.1
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    },					
-                    {
-                        "exotic_type": "ultimate",
-                        "count": [1, 1]
-                    }					
-				],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.5
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.5
-                }]
-            }
-        }
-		]
+        }]
     },
 	{
         "name": "barren",
@@ -237,10 +157,10 @@
         "tooltip_icon": "planet_barren_tooltip_icon",
         "population":
         {
-            "starting_population": 80,
-            "population_maximum": 185,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 25],
+            "population_maximum": 125,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -250,19 +170,10 @@
                     {
                         "exotic_type": "defense",
                         "count": [1, 1]
-                    }					
-				],
+                    }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.1
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.3
-                },
-                {
-                    "exotic_type": "economic",
                     "chance": 0.1
                 }]
             }
@@ -272,26 +183,21 @@
             {
                 "guaranteed_counts": [
                     {
-                        "exotic_type": "offense",
-                        "count": [1, 1]
-                    },
-                    {
                         "exotic_type": "defense",
                         "count": [1, 1]
-                    }					
-					],
+                    }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.2
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "defense",
                     "chance": 0.1
                 },
                 {
-                    "exotic_type": "economic",
-                    "chance": 0.2
+                    "exotic_type": "utility",
+                    "chance": 0.3
                 }]
             }
         }]
@@ -302,53 +208,16 @@
         "tooltip_icon": "tec_city_planet_tooltip_icon",
         "population":
         {
-            "starting_population": 500,
-            "population_maximum": 1500,
-            "growth_rate": 0.075,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 200],
+            "population_maximum": 1000,
+            "growth_rate": 0.05,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "defense",
-                        "count": [1, 1]
-                    }					
-				],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.05
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "utility",
-                        "count": [1, 1]
-                    }					
-				],
+                "guaranteed_counts": [],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
@@ -364,31 +233,26 @@
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.15
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "ultimate",
-                    "chance": 0.05
+                    "chance": 0.1
                 }]
             }
         },
         {
             "exotics":
             {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }					
-				],
+                "guaranteed_counts": [],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.15
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.15
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "utility",
@@ -396,11 +260,11 @@
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.2
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "ultimate",
-                    "chance": 0.05
+                    "chance": 0.1
                 }]
             }
         },
@@ -409,7 +273,19 @@
             {
                 "guaranteed_counts": [
                 {
-                    "exotic_type": "ultimate",
+                    "exotic_type": "offense",
+                    "count": [1, 1]
+                },
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                },
+                {
+                    "exotic_type": "utility",
+                    "count": [1, 1]
+                },
+                {
+                    "exotic_type": "economic",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
@@ -423,11 +299,11 @@
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.4
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.4
+                    "chance": 0.5
                 },
                 {
                     "exotic_type": "ultimate",
@@ -442,10 +318,10 @@
         "tooltip_icon": "crystalline_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 100,
-            "population_maximum": 200,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 42],
+            "population_maximum": 210,
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -458,16 +334,12 @@
                 }],
                 "bonus_exotic_chances": [
                 {
+                    "exotic_type": "offense",
+                    "chance": 0.5
+                },
+                {
                     "exotic_type": "utility",
-                    "chance": 0.3
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.05
+                    "chance": 0.5
                 }]
             }
         },
@@ -475,68 +347,41 @@
             "exotics":
             {
                 "guaranteed_counts": [
+                {
+                    "exotic_type": "offense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.6
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.6
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "offense",
+                    "count": [1, 1]
+                },
                 {
                     "exotic_type": "utility",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
                 {
-                    "exotic_type": "utility",
-                    "chance": 0.45
+                    "exotic_type": "offense",
+                    "chance": 0.7
                 },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.25
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.05
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
                 {
                     "exotic_type": "utility",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.65
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.05
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "utility",
-                    "count": [2, 2]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "ultimate",
-                    "chance": 0.35
+                    "chance": 0.7
                 }]
             }
         }]
@@ -547,58 +392,12 @@
         "tooltip_icon": "desert_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population":300,
-            "population_maximum": 400,
-            "growth_rate": 0.06,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 70],
+            "population_maximum": 350,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.45
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.05
-                }]
-            }
-        },
         {
             "exotics":
             {
@@ -614,15 +413,100 @@
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.25
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.25
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.05
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.1
                 }]
             }
         },
@@ -641,46 +525,19 @@
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.15
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.15
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.05
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [2, 2]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.55
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.05
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "ultimate",
-                    "chance": 0.05
+                    "chance": 0.2
                 }]
             }
         }]
@@ -691,10 +548,10 @@
         "tooltip_icon": "ferrous_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 120,
+            "starting_population": [0, 48],
             "population_maximum": 240,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -707,16 +564,31 @@
                 }],
                 "bonus_exotic_chances": [
                 {
-                    "exotic_type": "offense",
-                    "chance": 0.1
+                    "exotic_type": "defense",
+                    "chance": 0.2
                 },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
                 {
                     "exotic_type": "defense",
-                    "chance": 0.3
+                    "chance": 0.5
                 },
                 {
-                    "exotic_type": "utility",
-                    "chance": 0.1
+                    "exotic_type": "economic",
+                    "chance": 0.5
                 }]
             }
         },
@@ -727,42 +599,19 @@
                 {
                     "exotic_type": "defense",
                     "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.15
                 },
                 {
-                    "exotic_type": "defense",
-                    "chance": 0.45
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.15
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "defense",
+                    "exotic_type": "economic",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
                 {
-                    "exotic_type": "offense",
-                    "chance": 0.35
-                },
-                {
                     "exotic_type": "defense",
-                    "chance": 0.05
+                    "chance": 0.6
                 },
                 {
-                    "exotic_type": "utility",
-                    "chance": 0.35
+                    "exotic_type": "economic",
+                    "chance": 0.6
                 }]
             }
         }]
@@ -773,28 +622,44 @@
         "tooltip_icon": "gas_giant_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 0,
-            "population_maximum": 0,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 0],
+            "population_maximum": 600,
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [],
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
+                    "exotic_type": "economic",
+                    "chance": 0.08
+                },
+                {
                     "exotic_type": "ultimate",
-                    "chance": 0.1
+                    "chance": 0.02
                 }]
             }
         },
         {
             "exotics":
             {
-                "guaranteed_counts": [],
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                },
                 {
                     "exotic_type": "ultimate",
                     "chance": 0.2
@@ -804,22 +669,19 @@
         {
             "exotics":
             {
-                "guaranteed_counts": [],
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
-                    "exotic_type": "ultimate",
-                    "chance": 0.3
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [],
-                "bonus_exotic_chances": [
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                },
                 {
                     "exotic_type": "ultimate",
-                    "chance": 0.4
+                    "chance": 0.5
                 }]
             }
         },
@@ -828,13 +690,40 @@
             {
                 "guaranteed_counts": [
                 {
-                    "exotic_type": "ultimate",
+                    "exotic_type": "economic",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
                 {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                },
+                {
                     "exotic_type": "ultimate",
-                    "chance": 0.5
+                    "chance": 0.9
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "count": [2, 2]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.4
                 }]
             }
         }]
@@ -845,10 +734,10 @@
         "tooltip_icon": "ice_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 50,
-            "population_maximum": 145,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 20],
+            "population_maximum": 100,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -861,12 +750,8 @@
                     }],
                 "bonus_exotic_chances": [
                 {
-                    "exotic_type": "defense",
-                    "chance": 0.2
-                },
-                {
                     "exotic_type": "utility",
-                    "chance": 0.3
+                    "chance": 0.1
                 }]
             }
         },
@@ -881,11 +766,15 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "defense",
-                    "chance": 0.4
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "utility",
                     "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.3
                 }]
             }
         }]
@@ -896,10 +785,10 @@
         "tooltip_icon": "irradiated_planet_tooltip_icon",
         "population":
         {
-            "starting_population": 25,
-            "population_maximum": 90,
-            "growth_rate": 0.04,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 16],
+            "population_maximum": 80,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -907,7 +796,7 @@
             {
                 "guaranteed_counts": [
                     {
-                        "exotic_type": "defense",
+                        "exotic_type": "offense",
                         "count": [1, 1]
                     }],
                 "bonus_exotic_chances": [
@@ -920,7 +809,11 @@
                     "chance": 0.3
                 },
                 {
-                    "exotic_type": "economic",
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "ultimate",
                     "chance": 0.1
                 }]
             }
@@ -930,21 +823,79 @@
             {
                 "guaranteed_counts": [
                     {
-                        "exotic_type": "defense",
+                        "exotic_type": "offense",
                         "count": [1, 1]
                     }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.2
-                },
-                {
-                    "exotic_type": "defense",
                     "chance": 0.1
                 },
                 {
-                    "exotic_type": "economic",
-                    "chance": 0.2
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                    {
+                        "exotic_type": "offense",
+                        "count": [1, 1]
+                    }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.5
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.5
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                    {
+                        "exotic_type": "ultimate",
+                        "count": [1, 1]
+                    }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.6
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.6
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.1
                 }]
             }
         }]
@@ -955,10 +906,10 @@
         "tooltip_icon": "magnetic_planet_tooltip_icon",
         "population":
         {
-            "starting_population": 100,
+            "starting_population": [0, 50],
             "population_maximum": 250,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -966,7 +917,7 @@
             {
                 "guaranteed_counts": [
                 {
-                    "exotic_type": "offense",
+                    "exotic_type": "utility",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
@@ -981,6 +932,10 @@
                 {
                     "exotic_type": "utility",
                     "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.3
                 }]
             }
         },
@@ -995,38 +950,73 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.45
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.15
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "offense",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "defense",
                     "chance": 0.05
                 },
                 {
+                    "exotic_type": "defense",
+                    "chance": 0.2
+                },
+                {
                     "exotic_type": "utility",
-                    "chance": 0.35
+                    "chance": 0.05
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "utility",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.5
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.5
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "offense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.6
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.6
                 }]
             }
         }]
@@ -1037,35 +1027,20 @@
         "tooltip_icon": "moon_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 40,
+            "starting_population": [0, 18],
             "population_maximum": 90,
-            "growth_rate": 0.04,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.1
-                },
+                "guaranteed_counts": [
                 {
                     "exotic_type": "defense",
-                    "chance": 0.3
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.1
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [],
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
@@ -1073,15 +1048,14 @@
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.6
+                    "chance": 0.1
                 },
                 {
-                    "exotic_type": "economic",
+                    "exotic_type": "utility",
                     "chance": 0.2
                 }]
             }
-        }
-		]
+        }]
     },
     {
         "name": "ice_moon",
@@ -1089,17 +1063,21 @@
         "tooltip_icon": "ice_moon_tooltip_icon",
         "population":
         {
-            "starting_population": 30,
+            "starting_population": [0, 14],
             "population_maximum": 70,
-            "growth_rate": 0.04,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "can_have_planet_elevators": false,
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [],
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "utility",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "defense",
@@ -1107,26 +1085,14 @@
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.3
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.4
+                    "chance": 0.1
                 },
                 {
-                    "exotic_type": "utility",
-                    "chance": 0.6
+                    "exotic_type": "economic",
+                    "chance": 0.2
                 }]
             }
-        }
-		]
+        }]
     },
     {
         "name": "volcanic_moon",
@@ -1134,44 +1100,36 @@
         "tooltip_icon": "volcanic_moon_tooltip_icon",
         "population":
         {
-            "starting_population": 15,
-            "population_maximum": 55,
-            "growth_rate": 0.04,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 12],
+            "population_maximum": 60,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "can_have_planet_elevators": false,
         "surveying_track_levels": [
         {
             "exotics":
             {
-                "guaranteed_counts": [],
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "offense",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.3
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "defense",
                     "chance": 0.2
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.6
                 },
                 {
-                    "exotic_type": "defense",
-                    "chance": 0.4
+                    "exotic_type": "economic",
+                    "chance": 0.2
                 }]
             }
-        }
-		]
+        }]
     },
     {
         "name": "oceanic",
@@ -1179,10 +1137,10 @@
         "tooltip_icon": "oceanic_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 350,
-            "population_maximum": 425,
-            "growth_rate": 0.06,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 60],
+            "population_maximum": 300,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -1190,90 +1148,142 @@
             {
                 "guaranteed_counts": [
                 {
-                    "exotic_type": "economic",
+                    "exotic_type": "utility",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.3
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "utility",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.4
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.5
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.5
+                }]
+            }
+        }]
+    },
+    {
+        "name": "ship_graveyard_home",
+        "localized_name": "planet_type_name.ship_graveyard",
+        "tooltip_icon": "ship_graveyard_tooltip_icon",
+        "population":
+        {
+            "starting_population": [0, 15],
+            "population_maximum": 75,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
                 {
                     "exotic_type": "defense",
                     "chance": 0.3
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.1
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.1
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.45
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.15
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.35
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [2, 2]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.35
+                    "chance": 0.3
                 }]
             }
         }]
@@ -1284,10 +1294,10 @@
         "tooltip_icon": "ship_graveyard_tooltip_icon",
         "population":
         {
-            "starting_population": 35,
+            "starting_population": [0, 15],
             "population_maximum": 75,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -1304,66 +1314,15 @@
                     "chance": 0.3
                 },
                 {
-                    "exotic_type": "economic",
-                    "chance": 0.3
-                },
-                {
                     "exotic_type": "utility",
                     "chance": 0.3
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.6
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.6
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.6
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.6
+                    "chance": 0.3
                 }]
             }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "ultimate",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.9
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.9
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.9
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.9
-                }]
-            }
-        }
-		]
+        }]
     },
     {
         "name": "swamp",
@@ -1371,10 +1330,10 @@
         "tooltip_icon": "swamp_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 200,
-            "population_maximum": 350,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 40],
+            "population_maximum": 200,
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -1387,62 +1346,31 @@
                 }],
                 "bonus_exotic_chances": [
                 {
-                    "exotic_type": "offense",
+                    "exotic_type": "economic",
                     "chance": 0.1
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.1
-                },
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
                 {
                     "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
                     "chance": 0.3
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.15
                 },
                 {
-                    "exotic_type": "defense",
-                    "chance": 0.15
+                    "exotic_type": "utility",
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.45
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.05
+                    "chance": 0.1
                 }]
             }
         }]
@@ -1453,10 +1381,10 @@
         "tooltip_icon": "terran_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 550,
-            "population_maximum": 700,
-            "growth_rate": 0.06,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 100],
+            "population_maximum": 500,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -1470,15 +1398,15 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.1
-                },
-                {
-                    "exotic_type": "defense",
                     "chance": 0.2
                 },
                 {
-                    "exotic_type": "utility",
+                    "exotic_type": "defense",
                     "chance": 0.1
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "economic",
@@ -1491,25 +1419,25 @@
             {
                 "guaranteed_counts": [
                 {
-                    "exotic_type": "economic",
+                    "exotic_type": "defense",
                     "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "defense",
                     "chance": 0.3
                 },
                 {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
                     "exotic_type": "utility",
-                    "chance": 0.15
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.15
+                    "chance": 0.1
                 }]
             }
         },
@@ -1517,6 +1445,10 @@
             "exotics":
             {
                 "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                },
                 {
                     "exotic_type": "economic",
                     "count": [1, 1]
@@ -1524,46 +1456,19 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.2
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.15
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.2
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.2
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [2, 2]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.2
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.2
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.2
+                    "chance": 0.1
                 }]
             }
         }]
@@ -1574,10 +1479,10 @@
         "tooltip_icon": "volcanic_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 30,
-            "population_maximum": 120,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 18],
+            "population_maximum": 90,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
@@ -1591,11 +1496,7 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.3
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.2
+                    "chance": 0.1
                 }]
             }
         },
@@ -1614,7 +1515,11 @@
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.4
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.3
                 }]
             }
         }]
@@ -1625,12 +1530,23 @@
         "tooltip_icon": "pirate_base_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 25,
-            "population_maximum": 50,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [0, 16],
+            "population_maximum": 80,
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "offense",
+                    "count": [3, 3]
+                }],
+                "bonus_exotic_chances": []
+            }
+        },
         {
             "exotics":
             {
@@ -1639,19 +1555,7 @@
                     "exotic_type": "economic",
                     "count": [5, 5]
                 }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.1
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.3
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.1
-                }]
+                "bonus_exotic_chances": []
             }
         }]
     },
@@ -1661,32 +1565,47 @@
         "tooltip_icon": "greenhouse_planet_0_tooltip_icon",
         "population":
         {
-            "starting_population": 70,
+            "starting_population": [0, 30],
             "population_maximum": 150,
-            "growth_rate": 0.025,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.02,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
                 "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "utility",
-                    "chance": 0.1
+                    "chance": 0.2
                 },
                 {
+                    "exotic_type": "economic",
+                    "chance": 0.2
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
                     "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "utility",
                     "chance": 0.3
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.1
+                    "chance": 0.3
                 }]
             }
         },
@@ -1694,45 +1613,18 @@
             "exotics":
             {
                 "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "utility",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.45
+                    "chance": 0.7
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.15
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.35
+                    "chance": 0.7
                 }]
             }
         }]
@@ -1741,61 +1633,15 @@
         "name": "desert_home",
         "localized_name": "planet_type_name.desert_home",
         "tooltip_icon": "desert_planet_0_tooltip_icon",
-		"can_have_artifacts": false,
+        "can_have_artifacts": false,
         "population":
         {
-            "starting_population": 300,
-            "population_maximum": 400,
-            "growth_rate": 0.06,
-            "growth_rate_if_above_max_population": -0.1
+            "starting_population": [35, 53],
+            "population_maximum": 350,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.45
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [1, 1]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.05
-                }]
-            }
-        },
         {
             "exotics":
             {
@@ -1811,15 +1657,100 @@
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.25
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.25
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.05
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.3
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0.4
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
+                },
+                {
+                    "exotic_type": "ultimate",
+                    "chance": 0.1
                 }]
             }
         },
@@ -1838,46 +1769,19 @@
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.15
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.15
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.05
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [2, 2]
-                }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.55
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.05
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "ultimate",
-                    "chance": 0.05
+                    "chance": 0.2
                 }]
             }
         }]
@@ -1886,35 +1790,31 @@
         "name": "ferrous_home",
         "localized_name": "planet_type_name.ferrous_home",
         "tooltip_icon": "ferrous_planet_0_tooltip_icon",
-		"can_have_artifacts": false,
+        "can_have_artifacts": false,
         "population":
         {
-            "starting_population": 120,
+            "starting_population": [24, 36],
             "population_maximum": 240,
-            "growth_rate": 0.05,
-            "growth_rate_if_above_max_population": -0.1
+            "growth_rate": 0.025,
+            "growth_rate_if_above_max_population": -1.0
         },
         "surveying_track_levels": [
         {
             "exotics":
             {
                 "guaranteed_counts": [
-                    {
-                        "exotic_type": "defense",
-                        "count": [1, 1]
-                    }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.1
-                },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.3
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.4
                 },
                 {
-                    "exotic_type": "utility",
-                    "chance": 0.1
+                    "exotic_type": "economic",
+                    "chance": 0.4
                 }]
             }
         },
@@ -1922,22 +1822,82 @@
             "exotics":
             {
                 "guaranteed_counts": [
-                    {
-                        "exotic_type": "defense",
-                        "count": [1, 1]
-                    }],
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.5
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.5
+                }]
+            }
+        },
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "defense",
+                    "count": [1, 1]
+                },
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "defense",
+                    "chance": 0.6
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.6
+                }]
+            }
+        }]
+    },
+    {
+        "name": "terran_home",
+        "localized_name": "planet_type_name.terran_home",
+        "tooltip_icon": "terran_planet_0_tooltip_icon",
+        "can_have_artifacts": false,
+        "population":
+        {
+            "starting_population": [50, 75],
+            "population_maximum": 500,
+            "growth_rate": 0.03,
+            "growth_rate_if_above_max_population": -1.0
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [
+                {
+                    "exotic_type": "economic",
+                    "count": [1, 1]
+                }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.15
+                    "chance": 0.2
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.45
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.15
+                    "chance": 0.2
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0.1
                 }]
             }
         },
@@ -1952,83 +1912,19 @@
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.35
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.05
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.35
-                }]
-            }
-        }]
-    },
-    {
-        "name": "terran_home",
-        "localized_name": "planet_type_name.terran_home",
-        "tooltip_icon": "terran_planet_0_tooltip_icon",
-		"can_have_artifacts": false,
-        "population":
-        {
-            "starting_population": 550,
-            "population_maximum": 700,
-            "growth_rate": 0.06,
-            "growth_rate_if_above_max_population": -0.1
-        },
-        "surveying_track_levels": [
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.1
-                },
-                {
-                    "exotic_type": "defense",
-                    "chance": 0.2
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.1
-                },
-                {
-                    "exotic_type": "economic",
-                    "chance": 0.1
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "defense",
                     "chance": 0.3
                 },
                 {
+                    "exotic_type": "defense",
+                    "chance": 0.1
+                },
+                {
                     "exotic_type": "utility",
-                    "chance": 0.15
+                    "chance": 0.3
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.15
+                    "chance": 0.1
                 }]
             }
         },
@@ -2036,55 +1932,32 @@
             "exotics":
             {
                 "guaranteed_counts": [
-                    {
-                        "exotic_type": "economic",
-                        "count": [1, 1]
-                    }],
-                "bonus_exotic_chances": [
-                {
-                    "exotic_type": "offense",
-                    "chance": 0.2
-                },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.15
-                },
-                {
-                    "exotic_type": "utility",
-                    "chance": 0.2
+                    "count": [1, 1]
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.2
-                }]
-            }
-        },
-        {
-            "exotics":
-            {
-                "guaranteed_counts": [
-                {
-                    "exotic_type": "economic",
-                    "count": [2, 2]
+                    "count": [1, 1]
                 }],
                 "bonus_exotic_chances": [
                 {
                     "exotic_type": "offense",
-                    "chance": 0.2
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "defense",
-                    "chance": 0.15
+                    "chance": 0.1
                 },
                 {
                     "exotic_type": "utility",
-                    "chance": 0.2
+                    "chance": 0.4
                 },
                 {
                     "exotic_type": "economic",
-                    "chance": 0.2
+                    "chance": 0.1
                 }]
             }
         }]
-	}]
+    }]
 }

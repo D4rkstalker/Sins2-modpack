@@ -1,0 +1,112 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "designate_target_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "designate_target_auto_cast_low_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "designate_target_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "designate_target_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    },
+    {
+        "action_value_id": "designate_target_cooldown_time_value",
+        "action_value":
+        {
+            "values": [75.0]
+        }
+    },
+    {
+        "action_value_id": "designate_target_execution_count_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "designate_target_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "designate_target_range_value",
+        "action_value":
+        {
+            "values": [9000.0]
+        }
+    },
+    {
+        "action_value_id": "designate_target_damage_taken_bonus_value",
+        "action_value":
+        {
+            "values": [0.4]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "designate_target_damage_taken_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "designate_target_damage_taken_bonus_value"
+        }
+    }]
+}

@@ -5,22 +5,38 @@
         "target_filter_id": "magnetic_cloud_fixture_bonus_target_filter",
         "target_filter":
         {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "strikecraft",
+                "structure",
+                "super_capital_ship",
+                "titan",
+                "torpedo"
+            ],
             "ownerships": [
                 "enemy",
                 "friendly",
                 "none"
             ],
             "constraints": [
-			{
-				"constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "can_ever_move"
-				},
-				{
-					"constraint_type": "has_ability"
-				}]
-			}]
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "can_ever_move"
+                },
+                {
+                    "constraint_type": "has_ability"
+                },
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "item_has_active_ability"
+                }]
+            }]
         }
     }],
     "action_values": [

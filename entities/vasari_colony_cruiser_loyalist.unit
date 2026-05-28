@@ -54,18 +54,25 @@
     },
     "ai":
     {
+        "attack_target_type_groups": [
+            "light_corvette"
+        ],
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft"
         ],
+        "attack_target_type_groups_matching_weapon": "vasari_colony_cruiser_medium_pulse",
         "pursuit":
         {
-            "min_distance_to_target": 3000.0
-        }
+            "min_target_speed": 100.0,
+            "min_distance_to_target": 4000.0
+        },
+        "attack_target_type_range_scalar": 2.0
     },
     "ai_attack_target":
     {
         "attack_priority": 49.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "support"
     },
     "user_interface":
     {
@@ -112,26 +119,6 @@
             "pitch_arc":
             {
                 "min_angle": -70.0,
-                "max_angle": 5.0
-            }
-        },
-        {
-            "weapon": "colony_ship_capture_bait",
-            "required_research_prerequisites": [
-                ["vasari_unlock_colony_cruiser_capture_extractor_ability"]
-            ],
-            "mesh_point": "center",
-            "weapon_position": [0.0, 0.0, 0.0],
-            "forward": [0.0, 0.0, 1.0],
-            "up": [0.0, 1.0, -0.0],
-            "yaw_arc":
-            {
-                "min_angle": -5.0,
-                "max_angle": 5.0
-            },
-            "pitch_arc":
-            {
-                "min_angle": -5.0,
                 "max_angle": 5.0
             }
         }],
@@ -219,8 +206,7 @@
     "abilities": [
     {
         "abilities": [
-            "vasari_colony_cruiser_colonize_loyalist",
-			"vasari_colony_frigate_capture_object"]
+            "vasari_colony_cruiser_colonize_loyalist"]
     }],
     "ship_roles": [
         "colonize"

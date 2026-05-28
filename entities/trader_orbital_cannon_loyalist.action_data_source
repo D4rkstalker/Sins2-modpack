@@ -15,10 +15,10 @@
             {
                 "constraint_type": "composite_not",
                 "constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "destroyed_planet"
-				}
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "destroyed_planet"
+                }
             }]
         }
     },
@@ -36,10 +36,10 @@
             {
                 "constraint_type": "composite_not",
                 "constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "trader_shield_generator_structure_on_gravity_well"
-				}
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_shield_generator_structure_on_gravity_well"
+                }
             },
             {
                 "constraint_type": "is_home_planet"
@@ -67,10 +67,10 @@
             {
                 "constraint_type": "composite_not",
                 "constraint":
-				{
-					"constraint_type": "has_buff",
-					"buff": "trader_shield_generator_structure_on_gravity_well"
-				}
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "trader_shield_generator_structure_on_gravity_well"
+                }
             },
             {
                 "constraint_type": "composite_not",
@@ -79,7 +79,11 @@
                     "constraint_type": "has_planet_type",
                     "planet_types": [
                         "asteroid",
-                        "moon"]
+                        "ice_asteroid",
+                        "moon",
+                        "ice_moon",
+                        "volcanic_moon"
+                    ]
                 }
             }]
         }
@@ -148,7 +152,7 @@
         "action_value_id": "range_value",
         "action_value":
         {
-            "values": [15.0]
+            "values": [30.0]
         }
     },
     {
@@ -225,8 +229,17 @@
             "sounds": [
                 "explosion_cannonshelltech"]
         }
+    },    
+	{
+        "alias_name": "trader_orbital_cannon_impact_planet_cracker_warhead",
+        "alias_binding":
+        {
+            "particle_effect": "planet_cracker_warhead_explosion",
+            "sounds": [
+                "effect_planet_cracker_warhead"]
+        }
     }],
-	"buff_unit_modifiers": [
+    "buff_unit_modifiers": [
     {
         "buff_unit_modifier_id": "trader_orbital_cannon_angular_speed_modifier",
         "buff_unit_modifier":
@@ -235,15 +248,15 @@
             "value_behavior": "additive",
             "value_id": "trader_orbital_cannon_angular_speed_value"
         }
-	}],
+    }],
     "buff_planet_modifiers": [
     {
-		"buff_planet_modifier_id": "max_population_points_modifier",
-		"buff_planet_modifier":
-		{
-			"modifier_type": "max_population_points",
-			"value_behavior": "scalar",
-			"value_id": "max_population_points_value"
-		}
-	}]
+        "buff_planet_modifier_id": "max_population_points_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "max_population_points",
+            "value_behavior": "scalar",
+            "value_id": "max_population_points_value"
+        }
+    }]
 }

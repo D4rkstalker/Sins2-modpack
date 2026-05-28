@@ -1,0 +1,50 @@
+{
+    "version": 0,
+    "make_dead_on_parent_buff_made_dead": false,
+    "active_duration": "heavy_antimatter_drain_duration_value",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_five",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": false,
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "remove_antimatter",
+                    "antimatter_remove_value": "heavy_antimatter_drain_value"
+                }]
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "advent_battle_capital_ship_detonate_antimatter_ability_hud_icon",
+        "name": "ability.heavy_antimatter_drain_name",
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.current_antimatter_remove",
+                "value_id": "heavy_antimatter_drain_tooltip_value",
+                "value_float_format": "percentage_one_decimal_place_with_sign",
+                "value_suffix": "per_second",
+                "value_color": "negative"
+            }]
+        }]
+    }
+}

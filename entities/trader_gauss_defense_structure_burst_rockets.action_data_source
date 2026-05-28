@@ -1,0 +1,153 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "trader_gauss_defense_structure_burst_rockets_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+				"corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_gauss_defense_structure_burst_rockets_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "burst_rockets_cooldown_time_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_damage_value",
+        "action_value":
+        {
+            "values": [40.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_penetration_value",
+        "action_value":
+        {
+            "values": [450.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_execution_count_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_max_target_count_value",
+        "action_value":
+        {
+            "values": [4.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_execution_interval_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_radius_value",
+        "action_value":
+        {
+            "values": [6750.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_torpedo_lifetime_value",
+        "action_value":
+        {
+            "values": [45.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_torpedo_speed_value",
+        "action_value":
+        {
+            "values": [1750.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_torpedo_hull_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_torpedo_armor_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_torpedo_armor_strength_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "burst_rockets_torpedo_steering_distance_radius_scalar_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    }],
+    "buff_actions": [
+    {
+        "action_id": "try_make_buff_dead_if_no_child_buffs",
+        "action":
+        {
+            "constraint":
+            {
+                "constraint_type": "value_comparison",
+                "value_a": "common_child_buff_count_value",
+                "comparison_type": "less_than_equal_to",
+                "value_b": "fixed_zero"
+            },
+            "action_type": "make_buff_dead"
+        }
+    }]
+}

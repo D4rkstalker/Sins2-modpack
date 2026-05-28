@@ -4,9 +4,30 @@
     "level_source": "unit_item",
     "active_actions":
     {
+        "credits_cost": "flak_burst_credit_cost_value",
+        "metal_cost": "flak_burst_metal_cost_value",
+        "crystal_cost": "flak_burst_crystal_cost_value",
         "cooldown_time": "cooldown_time",
+        "max_charge_count": "flak_burst_charge_count_value",
         "actions":
         {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "trader_flak_burst_unit_item_charge_cooldown"
+                    }
+                }
+            },
             "actions": [
             {
                 "action_type": "use_unit_operators_on_single_unit",
@@ -18,6 +39,137 @@
                 {
                     "operator_type": "apply_buff",
                     "buff": "trader_flak_burst_unit_item"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "value_comparison",
+                            "value_a": "flak_burst_action_level_value",
+                            "comparison_type": "greater_than",
+                            "value_b": "fixed_one"
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "unit_passes_unit_constraint",
+                                "unit":
+                                {
+                                    "unit_type": "current_spawner"
+                                },
+                                "unit_constraint":
+                                {
+                                    "constraint_type": "has_buff",
+                                    "buff": "trader_flak_burst_unit_item_charge_count"
+                                }
+                            }
+                        },
+                        {
+                            "constraint_type": "composite_not",
+                            "constraint":
+                            {
+                                "constraint_type": "unit_passes_unit_constraint",
+                                "unit":
+                                {
+                                    "unit_type": "current_spawner"
+                                },
+                                "unit_constraint":
+                                {
+                                    "constraint_type": "has_buff",
+                                    "buff": "trader_flak_burst_unit_item_charge_count_level_two"
+                                }
+                            }
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_flak_burst_unit_item_charge_count_level_three"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "composite_and",
+                            "constraints": [
+                            {
+                                "constraint_type": "value_comparison",
+                                "value_a": "flak_burst_action_level_value",
+                                "comparison_type": "equal_to",
+                                "value_b": "fixed_one"
+                            },
+                            {
+                                "constraint_type": "composite_not",
+                                "constraint":
+                                {
+                                    "constraint_type": "unit_passes_unit_constraint",
+                                    "unit":
+                                    {
+                                        "unit_type": "current_spawner"
+                                    },
+                                    "unit_constraint":
+                                    {
+                                        "constraint_type": "has_buff",
+                                        "buff": "trader_flak_burst_unit_item_charge_count"
+                                    }
+                                }
+                            }]
+                        },
+                        {
+                            "constraint_type": "composite_and",
+                            "constraints": [
+                            {
+                                "constraint_type": "value_comparison",
+                                "value_a": "flak_burst_action_level_value",
+                                "comparison_type": "greater_than",
+                                "value_b": "fixed_one"
+                            },
+                            {
+                                "constraint_type": "unit_passes_unit_constraint",
+                                "unit":
+                                {
+                                    "unit_type": "current_spawner"
+                                },
+                                "unit_constraint":
+                                {
+                                    "constraint_type": "has_buff",
+                                    "buff": "trader_flak_burst_unit_item_charge_count_level_two"
+                                }
+                            }]
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_flak_burst_unit_item_charge_count_level_two"
+                },
+                {	
+                    "constraint":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                        {
+                            "constraint_type": "value_comparison",
+                            "value_a": "flak_burst_action_level_value",
+                            "comparison_type": "equal_to",
+                            "value_b": "fixed_zero"
+                        },
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "trader_flak_burst_unit_item_charge_count"
+                            }
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_flak_burst_unit_item_charge_count"
                 }]
             }]
         },
@@ -57,41 +209,72 @@
                 "value_suffix": "seconds"
             }]
 		},
-		{
-			"header_text": "flak_burst_damage_to_strikecraft_tooltip_sub_header_label",
-			"lines": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.item_stack_count",
+                "value_id": "flak_burst_charge_count_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "burst_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.credits_price_label",
+                "value_id": "flak_burst_credit_cost_value",
+                "visibility": "upgrade_only"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.metal_price_label",
+                "value_id": "flak_burst_metal_cost_value",
+                "visibility": "upgrade_only"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.crystal_price_label",
+                "value_id": "flak_burst_crystal_cost_value",
+                "visibility": "upgrade_only"
+            }]
+        },
+        {
+            "header_text": "flak_burst_damage_to_strikecraft_tooltip_sub_header_label",
+            "lines": [
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.damage_rate",
                 "value_id": "flak_burst_damage",
                 "value_suffix": "per_second",
-				"value_color": "negative"
+                "value_color": "negative"
             },
             {
-				"visible_if_value_zero": true,
+                "visible_if_value_zero": true,
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
                 "value_id": "fixed_zero",
-				"value_color": "negative"
+                "value_color": "negative"
             }]
 			
-		},
-		{
-			"header_text": "flak_burst_damage_to_missiles_tooltip_sub_header_label",
-			"lines": [
+        },
+        {
+            "header_text": "flak_burst_damage_to_missiles_tooltip_sub_header_label",
+            "lines": [
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.damage_rate",
                 "value_id": "flak_burst_damage_missile",
                 "value_suffix": "per_second",
-				"value_color": "negative"
+                "value_color": "negative"
             },
             {
-				"visible_if_value_zero": true,
+                "visible_if_value_zero": true,
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
                 "value_id": "fixed_zero",
-				"value_color": "negative"
+                "value_color": "negative"
             }]
         }]
     }

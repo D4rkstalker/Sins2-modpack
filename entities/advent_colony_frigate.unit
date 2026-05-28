@@ -60,7 +60,8 @@
     "ai_attack_target":
     {
         "attack_priority": 49.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "support"
     },
     "user_interface":
     {
@@ -73,31 +74,6 @@
         "can_show_distance_to_plane_line": true,
         "can_rotate": true
     },
-    "weapons":
-    {
-        "weapons": [
-        {
-            "weapon": "colony_ship_capture_bait",
-            "required_research_prerequisites": [
-                ["advent_unlock_colony_frigate_capture_extractor_ability"]
-            ],
-            "mesh_point": "center",
-            "weapon_position": [0.0, 0.0, 0.0],
-            "forward": [0.0, 0.0, 1.0],
-            "up": [0.0, 1.0, -0.0],
-            "yaw_arc":
-            {
-                "min_angle": -5.0,
-                "max_angle": 5.0
-            },
-            "pitch_arc":
-            {
-                "min_angle": -5.0,
-                "max_angle": 5.0
-            }
-        }],
-		"max_range_weapon_index": 0
-	},
     "formation":
     {
         "leader_priority": 0,
@@ -108,6 +84,16 @@
                 "rank": 3,
                 "group": 0
             }
+        }
+    },
+    "spawn_debris":
+    {
+        "spawn_debris_time": 1.95,
+        "generic_group_name": "advent",
+        "generic_counts":
+        {
+            "small_debris": [8, 9],
+            "large_debris": [1, 1]
         }
     },
     "health":
@@ -159,8 +145,7 @@
     "abilities": [
     {
         "abilities": [
-            "advent_colony_frigate_colonize",
-			"advent_colony_frigate_capture_object"]
+            "advent_colony_frigate_colonize"]
     }],
     "ship_roles": [
         "colonize"

@@ -12,23 +12,24 @@
                 "frigate",
                 "starbase",
                 "structure",
-				"super_capital_ship",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
-                "enemy"],
+                "enemy"
+            ],
             "constraints": [
             {
                 "constraint_type": "has_shields"
             },
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "has_missing_shields",
-					"percentage_missing_threshold": 1.0
-				}
-			}]
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 1.0
+                }
+            }]
         }
     },
     {
@@ -42,23 +43,24 @@
                 "frigate",
                 "starbase",
                 "structure",
-				"super_capital_ship",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
-                "enemy"],
+                "enemy"
+            ],
             "constraints": [
             {
                 "constraint_type": "has_shields"
             },
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "has_missing_shields",
-					"percentage_missing_threshold": 1.0
-				}
-			},
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 1.0
+                }
+            },
             {
                 "constraint_type": "is_always_a_threat"
             }]
@@ -90,7 +92,7 @@
         "action_value_id": "shield_leech_cooldown_time_value",
         "action_value":
         {
-            "values": [120.0]
+            "values": [240.0]
         }
     },
     {
@@ -104,7 +106,7 @@
         "action_value_id": "shield_leech_execution_count_value",
         "action_value":
         {
-            "values": [40.0]
+            "values": [30.0]
         }
     },
     {
@@ -130,39 +132,39 @@
         }
     }],
     "effect_alias_bindings": [
+    {
+        "alias_name": "dlc_ancient_starbase_shield_leech_activate",
+        "alias_binding":
         {
-            "alias_name": "dlc_ancient_starbase_shield_leech_activate",
-            "alias_binding":
-            {
-                "particle_effect": "shield_leech_activate"
-            }
-        },
+            "particle_effect": "shield_leech_activate"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_shield_leech_on_spawner",
+        "alias_binding":
         {
-            "alias_name": "dlc_ancient_starbase_shield_leech_on_spawner",
-            "alias_binding":
-            {
-                "particle_effect": "shield_leech"
-            }
-        },
+            "particle_effect": "shield_leech"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_shield_leech_on_target_large",
+        "alias_binding":
         {
-            "alias_name": "dlc_ancient_starbase_shield_leech_on_target_large",
-            "alias_binding":
-            {
-                "particle_effect": "shield_leech_on_large"
-            }
-        },
+            "particle_effect": "shield_leech_on_large"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_shield_leech_on_target_medium",
+        "alias_binding":
         {
-            "alias_name": "dlc_ancient_starbase_shield_leech_on_target_medium",
-            "alias_binding":
-            {
-                "particle_effect": "shield_leech_on_medium"
-            }
-        },
+            "particle_effect": "shield_leech_on_medium"
+        }
+    },
+    {
+        "alias_name": "dlc_ancient_starbase_shield_leech_on_target_small",
+        "alias_binding":
         {
-            "alias_name": "dlc_ancient_starbase_shield_leech_on_target_small",
-            "alias_binding":
-            {
-                "particle_effect": "shield_leech_on_small"
-            }
-        }]
+            "particle_effect": "shield_leech_on_small"
+        }
+    }]
 }

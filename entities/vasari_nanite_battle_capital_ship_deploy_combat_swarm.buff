@@ -1,8 +1,8 @@
 {
     "version": 0,
     "make_current_spawner_dead_on_buff_made_dead": true,
-	"make_dead_when_no_child_buffs_exist": true,
-	"make_dead_when_no_child_buffs_exist_delay_time": "fixed_one",
+    "make_dead_when_no_child_buffs_exist": true,
+    "make_dead_when_no_child_buffs_exist_delay_time": "fixed_one",
     "stacking_limit":
     {
         "stacking_limit": "fixed_one",
@@ -27,11 +27,30 @@
                     "operator_type": "apply_buff",
                     "buff": "vasari_nanite_battle_capital_ship_deploy_combat_swarm_on_spawner"
                 }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "change_owner_player",
+                    "new_owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "first_spawner"
+                        }
+                    }
+                }]
             }]
         }
     }],
     "unit_mutations": [
         "cannot_be_captured_or_cloned",
-		"disable_can_hyperspace"
+        "disable_can_hyperspace"
     ]
 }

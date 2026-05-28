@@ -9,35 +9,35 @@
         "antimatter_cost": "colonize_antimatter_cost_value",
         "actions":
         {
-			"constraint":
-			{
-				"constraint_type": "unit_passes_unit_constraint",
-				"unit":
-				{
-					"unit_type": "current_spawner"
-				},
-				"unit_constraint":
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_buff",
-						"buff": "anundi_collective_dissonance_on_ships",
-						"include_pending_buffs": true
-					}
-				}
-			},
+            "constraint":
+            {
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "anundi_collective_dissonance_on_ships",
+                        "include_pending_buffs": true
+                    }
+                }
+            },
             "actions": [
             {
                 "constraint":
-				{
-					"constraint_type": "unit_passes_target_filter",
-					"unit":
-					{
-						"unit_type": "target"
-					},
-					"target_filter_id": "uniforms_colonizable_planets"
-				},
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "target_filter_id": "uniforms_colonizable_planets"
+                },
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
                 {
@@ -62,6 +62,15 @@
                     {
                         "projectile_travel_effect": "advent_colony_capital_ship_colonize_travel",
                         "projectile_travel_easing_function": "in_out_cubic"
+                    }
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "unit_skin",
+                        "mesh_point": "above",
+                        "effect": "generic_colonized_effect"
                     }
                 }]
             }]
@@ -100,8 +109,14 @@
             "lines": [
             {
                 "rendering_type": "single_value",
+                "label_text": "tooltip.ability.free_logistics_track_level",
+                "value_id": "colonize_logistics_level_count_value",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
                 "label_text": "tooltip.ability.free_focus_track_level_advent",
-                "value_id": "colonize_level_count_value",
+                "value_id": "colonize_focus_level_count_value",
                 "value_color": "positive"
             }]
         }]

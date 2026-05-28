@@ -1,0 +1,107 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "execution_interval_value",
+        "execution_interval_value": "execution_interval_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "neutral_exotic_factory_offense_exotic",
+                            "weight": 24.0
+                        },
+                        {
+                            "unit": "neutral_exotic_factory_defense_exotic",
+                            "weight": 24.0
+                        },
+	                    {
+                            "unit": "neutral_exotic_factory_utility_exotic",
+                            "weight": 24.0
+                        },
+                        {
+                            "unit": "neutral_exotic_factory_economic_exotic",
+                            "weight": 24.0
+                        },
+                        {
+                            "unit": "neutral_exotic_factory_ultimate_exotic",
+                            "weight": 4.0
+                        }]
+                    },
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "fixed_zero",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "fixed_one",
+                    "constrain_available_supply_to_owner_player": false,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        }
+    },
+    {
+        "first_action_delay_time_value": "execution_interval_value_delay",
+        "execution_interval_value": "execution_interval_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "neutral_exotic_factory_units_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "neutral_exotic_factory_structure_on_unit"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_player_ownership_changed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

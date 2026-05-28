@@ -36,14 +36,38 @@
             "enabled_by_default_behavior": "always",
             "caster_constraint":
             {
-                "constraint_type": "has_valid_targets_in_radius",
-                "radius_origin_unit":
+                "constraint_type": "composite_and",
+                "constraints": [
                 {
-                    "unit_type": "current_spawner"
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "shield_leech_auto_cast_target_filter",
+                    "radius_value": "shield_leech_radius_value",
+                    "target_count_value": "shield_leech_auto_cast_target_count_value"
                 },
-                "target_filter_id": "shield_leech_auto_cast_target_filter",
-                "radius_value": "shield_leech_radius_value",
-                "target_count_value": "shield_leech_auto_cast_target_count_value"
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "weapon_has_target",
+                            "weapon_type": "normal"
+                        },
+                        {
+                            "constraint_type": "has_missing_shields",
+                            "percentage_missing_threshold": 0.75
+                        }]
+                    }
+                }]
             }
         }
     },

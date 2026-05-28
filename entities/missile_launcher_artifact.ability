@@ -1,0 +1,43 @@
+{
+    "version": 0,
+    "action_data_source": "missile_launcher_artifact",
+    "level_source": "unit_item",
+    "passive_actions":
+    {
+        "persistant_buff": "missile_launcher_artifact_on_self"
+    },
+    "gui":
+    {
+        "tooltip_line_groups": [
+        {
+            "header_text": "flak_burst_damage_to_missiles_tooltip_sub_header_label",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_to_armor_and_hull",
+                "value_id": "missile_launcher_artifact_armor_damage_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_to_hull",
+                "value_id": "missile_launcher_artifact_hull_damage_value",
+                "value_float_format": "percentage_one_decimal_place",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "max_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "max_accel_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "max_angular_modifier"
+            }]
+        }]
+    }
+}

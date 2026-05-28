@@ -1,0 +1,107 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "dampen_low_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+		"frigate",
+		"cruiser",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "dampen_high_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+		"capital_ship",
+		"super_capital_ship",
+		"titan",
+		"starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "dampen_armor_low_modifier_value",
+        "action_value":
+        {
+            "values": [-10.0]
+        }
+    },
+    {
+        "action_value_id": "dampen_armor_high_modifier_value",
+        "action_value":
+        {
+            "values": [-20.0]
+        }
+    },
+    {
+        "action_value_id": "dampen_shield_low_modifier_value",
+        "action_value":
+        {
+            "values": [-150.0]
+        }
+    },
+    {
+        "action_value_id": "dampen_shield_high_modifier_value",
+        "action_value":
+        {
+            "values": [-300.0]
+        }
+    },
+    {
+        "action_value_id": "dampen_duration_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "dampen_armor_low_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "dampen_armor_low_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "dampen_armor_high_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_strength",
+            "value_behavior": "additive",
+            "value_id": "dampen_armor_high_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "dampen_shield_low_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "dampen_shield_low_modifier_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "dampen_shield_high_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "additive",
+            "value_id": "dampen_shield_high_modifier_value"
+        }
+    }]
+}

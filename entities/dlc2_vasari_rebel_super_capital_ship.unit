@@ -8,7 +8,28 @@
             "center": [-6.1e-05, 38.670868, 221.278717],
             "extents": [987.232422, 560.015137, 1183.00647]
         },
-        "collision_rank": 3
+        "collision_rank": 3,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, -50.0, 700.0],
+            "radius": 275.0
+        },
+        {
+            "center": [0.0, 0.0, -150.0],
+            "radius": 550.0
+        },
+        {
+            "center": [650.0, -100.0, -650.0],
+            "radius": 200.0
+        },
+        {
+            "center": [-650.0, -100.0, -650.0],
+            "radius": 200.0
+        },
+        {
+            "center": [0.0, -75.0, 1150.0],
+            "radius": 150.0
+        }]
     },
     "physics":
     {
@@ -61,7 +82,7 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft_corvette"
         ],
-        "attack_target_type_groups_matching_weapon": "vasari_battle_capital_ship_beam",
+        "attack_target_type_groups_matching_weapon": "dlc2_vasari_rebel_super_capital_ship_beam",
         "auto_follow_target_priority": 5.0,
         "pursuit":
         {
@@ -74,7 +95,7 @@
     {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
-        "attack_target_type": "capital"
+        "attack_target_type": "supercapital"
     },
     "user_interface":
     {
@@ -811,26 +832,26 @@
                     "types": [
                         "offense"
                     ],
-                    "counts": [1, 2]
+                    "counts": [0, 1]
                 },
                 {
                     "types": [
                         "utility"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 },
                 {
                     "types": [
                         "economic"
                     ],
-                    "counts": [1, 2]
+                    "counts": [0, 1]
                 }],
                 "weight": 1.0
             }],
             "assets":
             {
-                "metal": [348.0, 1044.0],
-                "crystal": [270.0, 810.0]
+                "metal": [348, 1044],
+                "crystal": [270, 810]
             }
         }
     },
@@ -1671,15 +1692,15 @@
         "exotic_price": [
         {
             "exotic_type": "offense",
-            "count": 2
+            "count": 1
         },
         {
             "exotic_type": "utility",
-            "count": 3
+            "count": 2
         },
         {
             "exotic_type": "economic",
-            "count": 2
+            "count": 1
         }],
         "prerequisites": [
             ["dlc2_vasari_unlock_rebel_super_capital_ship"]
@@ -1740,7 +1761,7 @@
             "dlc2_vasari_rebel_super_capital_ship_phasic_comms_net",
             "vasari_beam_boost",
             "vasari_engine_boost",
-            "vasari_wave_boost"
+            "vasari_rebel_wave_boost"
         ],
         "weight": 10.0
     },
@@ -1751,15 +1772,28 @@
             "vasari_beam_boost",
             "vasari_engine_boost",
             "vasari_self_repairing_armor",
-            "vasari_wave_boost"
+            "vasari_rebel_wave_boost"
         ],
         "weight": 10.0
-    }],
+    },
+    {
+        "build_group": [
+                "vasari_experience_boost"
+        ],
+        "weight": 8.0
+    },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
+            ]
+        }],
     "target_filter_unit_type": "super_capital_ship",
     "tags": [
         "super_capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 10,
     "abilities": [
     {
         "abilities": [

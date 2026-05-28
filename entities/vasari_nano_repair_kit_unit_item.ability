@@ -1,0 +1,126 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_nano_repair_kit_unit_item",
+    "level_source": "unit_item",
+    "active_actions":
+    {
+        "metal_cost": "nano_repair_kit_metal_cost_value",
+        "crystal_cost": "nano_repair_kit_crystal_cost_value",
+        "cooldown_time": "nano_repair_kit_cooldown_time_value",
+        "max_charge_count": "nano_repair_kit_charge_count_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nano_repair_kit_unit_item"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nano_repair_kit_unit_item_charge_count"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "nano_repair_kit_target_filter"
+        ],
+        "range": "nano_repair_kit_range_value",
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "target_definitions": [
+            {
+                "target_filter": "nano_repair_kit_auto_cast_high_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            },
+            {
+                "target_filter": "nano_repair_kit_auto_cast_low_priority_target_filter",
+                "target_constraint":
+                {
+                    "constraint_type": "composite_or",
+                    "constraints": [
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_armor_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_armor_threshold_value"
+                    },
+                    {
+                        "constraint_type": "value_comparison",
+                        "value_a": "target_missing_hull_value",
+                        "comparison_type": "greater_than_equal_to",
+                        "value_b": "auto_cast_hull_threshold_value"
+                    }]
+                }
+            }]
+        }
+    },
+    "gui":
+    {
+        "targeting":
+        {
+            "targeting_type": "range",
+            "values":
+            {
+                "range": "nano_repair_kit_range_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.item_stack_count",
+                "value_id": "nano_repair_kit_charge_count_value"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "nano_repair_kit_execution_count_value",
+                "value_suffix": "seconds"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_and_armor_restore_rate",
+                "value_id": "nano_repair_kit_hull_restore_rate_value",
+                "value_color": "positive",
+                "value_suffix": "per_second"
+            }]
+        }]
+    }
+}

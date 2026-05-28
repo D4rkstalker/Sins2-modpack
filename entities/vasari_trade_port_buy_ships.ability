@@ -1,0 +1,120 @@
+{
+    "version": 0,
+    "action_data_source": "vasari_trade_port_buy_ships",
+    "level_source": "research_prerequisites_per_level",
+    "level_prerequisites": [
+        [
+            ["vasari_rebel_trade_port"]
+        ],
+        [
+            ["vasari_rebel_credit_bonus"]
+        ]
+    ],
+    "active_actions":
+    {
+        "cooldown_time": "vasari_trade_port_buy_ships_cooldown_time_value",
+        "credits_cost": "vasari_trade_port_buy_ships_credits_cost_value",
+        "required_available_supply": "vasari_trade_port_buy_ships_available_supply_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "spawn_units",
+                    "units":
+                    {
+                        "random_units": [
+                        {
+                            "unit": "vasari_advent_light_frigate",
+                            "weight": 1.0
+                        },
+                        {
+                            "unit": "vasari_trader_light_frigate_loyalist",
+                            "weight": 1.0
+                        }]
+                    },
+                    "in_hyperspace": true,
+                    "arrival_delay_value": "vasari_trade_port_buy_ships_arrival_delay_value",
+                    "owner_player":
+                    {
+                        "player_type": "unit_owner",
+                        "owned_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "available_supply_value": "vasari_trade_port_buy_ships_available_supply_value",
+                    "constrain_available_supply_to_owner_player": true,
+                    "check_research_prerequisites": false
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "never",
+            "caster_constraint":
+            {
+                "constraint_type": "player_has_available_supply",
+                "minimum_available_supply": "vasari_trade_port_buy_ships_auto_cast_available_supply_value",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                }
+            }
+        },
+        "ai_only_auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint":
+            {
+                "constraint_type": "player_has_available_supply",
+                "minimum_available_supply": "vasari_trade_port_buy_ships_auto_cast_available_supply_value",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    }
+                }
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_light_frigate_hud_icon",
+        "name": "ability.vasari_trade_port_buy_ships_name",
+        "description": "ability.vasari_trade_port_buy_ships_description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.spawned_supply",
+                "value_id": "vasari_trade_port_buy_ships_available_supply_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.spawned_ships_list_header",
+            "lines": [
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_advent_light_frigate"
+            },
+            {
+                "rendering_type": "unit_icon_and_name",
+                "unit": "vasari_trader_light_frigate_loyalist"
+            }]
+        }]
+    }
+}

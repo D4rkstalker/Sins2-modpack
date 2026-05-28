@@ -1,7 +1,7 @@
 {
     "version": 0,
     "item_type": "planet_component",
-    "build_group_id": "utility",
+    "build_group_id": "defense",
     "hud_icon": "vasari_exodus_xeno_embassy_unit_item_hud_icon",
     "tooltip_picture": "vasari_exodus_xeno_embassy_unit_item_tooltip_picture",
     "name": "vasari_exodus_xeno_embassy_unit_item_name",
@@ -13,44 +13,60 @@
         "crystal": 360.0
     },
     "exotic_price": [
-        {
-			"exotic_type": "economic",
-			"count": 1
-        }],
+    {
+        "exotic_type": "defense",
+        "count": 1
+    }],
     "max_count_on_unit": 1,
     "planet_type_groups": [
     {
         "planet_types": [
-			"city",
-			"desert",
-			"desert_home",
-			"greenhouse",
-			"oceanic",
-			"swamp",
-			"terran",
-			"terran_home"
+            "barren",
+            "city",
+            "crystalline",
+            "desert",
+            "desert_home",
+            "ferrous",
+            "ferrous_home",
+            "hive_asteroid",
+            "ice",
+            "ice_moon",
+            "irradiated",
+            "gas_giant",
+            "greenhouse",
+            "magnetic",
+            "moon",
+            "oceanic",
+            "swamp",
+            "terran",
+            "terran_home",
+            "volcanic",
+            "volcanic_moon"
         ],
         "build_prerequisites": [
-			["vasari_unlock_exodus_xeno_embassy_unit_item"]
+            ["vasari_unlock_exodus_xeno_embassy_unit_item"]
         ]
     }],
+    "is_planet_garrison": true,
+    "planet_garrison_hud_icons":
+    {
+        "hold": "vasari_exodus_xeno_embassy_unit_item_hud_icon",
+        "roam_defensive": "vasari_exodus_xeno_embassy_unit_item_hud_icon",
+        "roam_offensive": "vasari_exodus_xeno_embassy_unit_item_hud_icon"
+    },
     "player_modifiers":
     {
         "empire_modifiers": [
         {
-			"value_behavior": "scalar",
-			"modifier_type": "influence_points_recharge_rate",
-			"value": 0.12
+            "value_behavior": "scalar",
+            "modifier_type": "influence_points_recharge_rate",
+            "value": 0.1
+        },
+        {
+            "modifier_type": "metal_income_rate",
+            "value_behavior": "additive",
+            "value": -0.5
         }]
     },
-    "planet_modifiers": [
-    {
-        "modifier_type": "max_influence_points",
-        "value_behavior": "additive",
-        "values": [2.0]
-    }],
-    "npc_range_origin":
-    {
-        "between_gravity_well_range": 12.0
-    }
+    "ability": "planet_defense_item"
 }

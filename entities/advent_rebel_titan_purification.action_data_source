@@ -12,7 +12,17 @@
                 "frigate"
             ],
             "ownerships": [
-                "self"]
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_missing_shields",
+                    "percentage_missing_threshold": 0.75
+                }
+            }]
         }
     },
     {
@@ -25,7 +35,25 @@
                 "frigate"
             ],
             "ownerships": [
-                "self"]
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "laesinda_spawn_illusions_on_clones"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_reanimation_unit_item_on_buff_agent"
+                }
+            }]
         }
     }],
     "action_values": [
@@ -33,7 +61,7 @@
         "action_value_id": "purification_antimatter_cost_value",
         "action_value":
         {
-            "values": [80.0, 80.0, 80.0, 80.0, 80.0]
+            "values": [68.0, 75.0, 82.0, 89.0, 96.0]
         }
     },
     {

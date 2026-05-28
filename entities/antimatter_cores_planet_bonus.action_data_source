@@ -1,0 +1,56 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "antimatter_cores_planet_bonus_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "strikecraft",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_weapon",
+                "weapon_type": "normal"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_cores_planet_bonus_buff_damage_scalar",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "antimatter_cores_planet_bonus_buff_duration",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "antimatter_cores_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "antimatter_cores_planet_bonus_buff_damage_scalar"
+        }
+    }]
+}

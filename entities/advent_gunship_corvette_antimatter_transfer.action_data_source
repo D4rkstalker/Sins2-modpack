@@ -1,0 +1,108 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "antimatter_transfer_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_missing_antimatter"
+            },
+            {
+                "constraint_type": "not_self"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "antimatter_transfer_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_missing_antimatter",
+                "amount_missing_threshold": 75.0
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_gunship_corvette"
+                }
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_gunship_corvette_loyalist"
+                }
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "antimatter_transfer_antimatter_cost_value",
+        "action_value":
+        {
+            "values": [25.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_transfer_beam_duration_value",
+        "action_value":
+        {
+            "values": [0.65]
+        }
+    },
+    {
+        "action_value_id": "antimatter_transfer_cooldown_time_value",
+        "action_value":
+        {
+            "values": [5.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_transfer_range_value",
+        "action_value":
+        {
+            "values": [7500.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_transfer_antimatter_restore_value",
+        "action_value":
+        {
+            "values": [20.0]
+        }
+    }]
+}

@@ -1,0 +1,187 @@
+{
+    "version": 0,
+    "make_current_spawner_dead_on_buff_made_dead": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_definition",
+                        "unit_definition": "neutral_exotic_factory_offense_exotic"
+                    }
+                },
+                "action_type": "give_exotics",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "previous_spawner"
+                    }
+                },
+                "exotics":
+                {
+                    "exotics_source_type": "explicit_amount",
+                    "exotic_amounts": [
+                    {
+                        "exotic_type": "offense",
+                        "count_value": "fixed_one"
+                    }]
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_definition",
+                        "unit_definition": "neutral_exotic_factory_defense_exotic"
+                    }
+                },
+                "action_type": "give_exotics",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "previous_spawner"
+                    }
+                },
+                "exotics":
+                {
+                    "exotics_source_type": "explicit_amount",
+                    "exotic_amounts": [
+                    {
+                        "exotic_type": "defense",
+                        "count_value": "fixed_one"
+                    }]
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_definition",
+                        "unit_definition": "neutral_exotic_factory_utility_exotic"
+                    }
+                },
+                "action_type": "give_exotics",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "previous_spawner"
+                    }
+                },
+                "exotics":
+                {
+                    "exotics_source_type": "explicit_amount",
+                    "exotic_amounts": [
+                    {
+                        "exotic_type": "utility",
+                        "count_value": "fixed_one"
+                    }]
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_definition",
+                        "unit_definition": "neutral_exotic_factory_economic_exotic"
+                    }
+                },
+                "action_type": "give_exotics",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "previous_spawner"
+                    }
+                },
+                "exotics":
+                {
+                    "exotics_source_type": "explicit_amount",
+                    "exotic_amounts": [
+                    {
+                        "exotic_type": "economic",
+                        "count_value": "fixed_one"
+                    }]
+                }
+            },
+            {
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_definition",
+                        "unit_definition": "neutral_exotic_factory_ultimate_exotic"
+                    }
+                },
+                "action_type": "give_exotics",
+                "player":
+                {
+                    "player_type": "unit_owner",
+                    "owned_unit":
+                    {
+                        "unit_type": "previous_spawner"
+                    }
+                },
+                "exotics":
+                {
+                    "exotics_source_type": "explicit_amount",
+                    "exotic_amounts": [
+                    {
+                        "exotic_type": "ultimate",
+                        "count_value": "fixed_one"
+                    }]
+                }
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }]
+}

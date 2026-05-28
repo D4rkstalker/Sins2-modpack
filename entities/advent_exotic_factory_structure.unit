@@ -15,7 +15,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -28,7 +29,7 @@
     "structure":
     {
         "slot_type": "civilian",
-        "slots_required": 1,
+        "slots_required": 3,
         "roles": [
             "exotic_factory"
         ],
@@ -83,6 +84,26 @@
             "experience_given_on_death": 75.0
         }]
     },
+    "traffic_port":
+    {
+        "max_traffic_ship_count": 2,
+        "traffic_ship_construction_time": 120.0,
+        "traffic_ship": "advent_refinery_ship",
+        "allowed_destination_units": 
+        [
+            "advent_exotic_factory_structure",
+            "advent_exotic_factory_structure_loyalist",
+            "advent_crystal_extractor_structure", 
+            "advent_crystal_extractor_structure_loyalist", 
+            "advent_metal_extractor_structure", 
+            "advent_metal_extractor_structure_loyalist",
+            "trader_capturable_crystal_extractor_structure",
+            "trader_capturable_metal_extractor_structure"
+        ],
+        "special_operation_unit_kind": "traffic_ship",
+        "create_traffic_ship_offset": [0.0, 0.0, 1500.0],
+        "force_stay_in_gravity_well": true
+    },
     "exotic_factory":
     {},
     "passive_income":
@@ -92,9 +113,9 @@
         "build_time": 100.0,
         "price":
         {
-            "credits": 1000.0,
-            "metal": 350.0,
-            "crystal": 425.0
+            "credits": 1200.0,
+            "metal": 400.0,
+            "crystal": 300.0
         },
         "prerequisites": [
             ["advent_unlock_exotic_factory_structure"]

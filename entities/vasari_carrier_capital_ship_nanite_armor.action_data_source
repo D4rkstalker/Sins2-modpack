@@ -17,12 +17,6 @@
             ],
             "constraints": [
             {
-                "constraint_type": "not_self"
-            },
-            {
-                "constraint_type": "has_recently_been_damaged"
-            },
-            {
                 "constraint_type": "has_missing_armor",
                 "percentage_missing_threshold": 0.6
             },
@@ -51,12 +45,6 @@
             ],
             "constraints": [
             {
-                "constraint_type": "not_self"
-            },
-            {
-                "constraint_type": "has_recently_been_damaged"
-            },
-            {
                 "constraint_type": "has_missing_armor",
                 "percentage_missing_threshold": 0.6
             },
@@ -68,6 +56,26 @@
                     "buff": "vasari_carrier_capital_ship_nanite_armor",
                     "include_pending_buffs": true
                 }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "nanite_armor_auto_cast_high_priority_damaged_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_missing_armor",
+                "percentage_missing_threshold": 0.96
             }]
         }
     },
@@ -90,6 +98,18 @@
             "constraints": [
             {
                 "constraint_type": "not_self"
+            },
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "vasari_carrier_capital_ship_nanite_armor_recently_healed",
+                    "include_pending_buffs": true
+                }
             }]
         }
     }],
@@ -108,14 +128,14 @@
             {
                 "unit_type": "target"
             },
-            "values": [0.12, 0.24, 0.36, 0.48, 0.6]
+            "values": [0.2, 0.28, 0.36, 0.42, 0.5]
         }
     },
     {
         "action_value_id": "nanite_armor_antimatter_cost_value",
         "action_value":
         {
-            "values": [90.0, 78.75, 67.5, 56.25, 45.0]
+            "values": [57.0, 63.0, 69.0, 75.0, 81.0]
         }
     },
     {
@@ -156,6 +176,13 @@
         }
     },
     {
+        "action_value_id": "nanite_armor_recently_healed_duration_value",
+        "action_value":
+        {
+            "values": [2.0, 2.0, 2.0, 2.0, 2.0]
+        }
+    },
+    {
         "action_value_id": "nanite_armor_execution_interval_count_value",
         "action_value":
         {
@@ -166,7 +193,7 @@
         "action_value_id": "nanite_armor_execution_interval_value",
         "action_value":
         {
-            "values": [3.0, 6.0, 9.0, 12.0, 15.0]
+            "values": [6.0, 6.0, 7.0, 7.0, 8.0]
         }
     },
     {
@@ -174,6 +201,13 @@
         "action_value":
         {
             "values": [12.0, 18.0, 24.0, 30.0, 36.0]
+        }
+    },
+    {
+        "action_value_id": "nanite_armor_per_interval_armor_tooltip_value",
+        "action_value":
+        {
+            "values": [-12.0, -18.0, -24.0, -30.0, -36.0]
         }
     },
     {

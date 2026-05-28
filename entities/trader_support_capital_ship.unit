@@ -105,8 +105,8 @@
             },
             "pitch_arc":
             {
-                "min_angle": -75.0,
-                "max_angle": 5.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -342,7 +342,7 @@
             "assets":
             {
                 "credits": [250, 750],
-                "metal": [85, 225],
+                "metal": [85, 255],
                 "crystal": [60, 180]
             }
         }
@@ -1316,6 +1316,12 @@
             ]
         },
         {
+            "weight": 8.0,
+            "build_group": [
+                "trader_tactical_analyst"
+            ]
+        },
+        {
             "weight": 5.0,
             "build_group": [
                 "trader_missile_armor",
@@ -1355,6 +1361,7 @@
         "capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 5,
     "abilities": [
     {
         "abilities": [
@@ -1363,6 +1370,16 @@
             "trader_support_capital_ship_magnetic_singularity",
             "trader_support_capital_ship_overcharge"
         ]
+    },
+    {
+        "abilities": [
+            "trader_support_capital_ship_energy_transfer",
+            "trader_support_capital_ship_emp_charge",
+            "trader_support_capital_ship_magnetic_singularity",
+            "trader_support_capital_ship_overcharge",
+			"special_operation_unit"
+        ],
+		"required_special_operation_unit_kind": "naibor_xeno_raid"
     }],
     "ship_roles": [
         "attack_ship",

@@ -3,15 +3,11 @@
     "level_count": 5,
     "target_filters": [
     {
-        "target_filter_id": "detonate_antimatter_auto_cast_target_filter",
+        "target_filter_id": "detonate_antimatter_high_priority_auto_cast_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
                 "super_capital_ship",
                 "titan"
             ],
@@ -20,7 +16,43 @@
             ],
             "constraints": [
             {
-                "constraint_type": "has_antimatter"
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_battle_capital_ship_detonate_antimatter",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
+    },
+    {
+        "target_filter_id": "detonate_antimatter_low_priority_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "frigate",
+                "structure"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_battle_capital_ship_detonate_antimatter",
+                    "include_pending_buffs": true
+                }
             }]
         }
     },
@@ -32,7 +64,6 @@
                 "capital_ship",
                 "cruiser",
                 "frigate",
-                "starbase",
                 "structure",
                 "super_capital_ship",
                 "titan"
@@ -51,7 +82,7 @@
         "action_value_id": "detonate_antimatter_antimatter_cost_value",
         "action_value":
         {
-            "values": [60.0, 60.0, 60.0, 60.0, 60.0]
+            "values": [51.0, 56.0, 61.0, 66.0, 71.0]
         }
     },
     {
@@ -73,12 +104,24 @@
         "action_value":
         {
             "transform_type": "per_trigger_event_antimatter",
-            "values": [1.0, 2.0, 3.0, 4.0, 5.0],
+            "values": [3.0, 3.5, 4.0, 4.5, 5.0],
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [0.05, 0.05, 0.05, 0.05, 0.05]
+                "ratio_values": [0.025, 0.025, 0.025, 0.025, 0.025]
             }
+        }
+    },
+    {
+        "action_value_id": "target_current_antimatter_value",
+        "action_value":
+        {
+            "transform_type": "per_current_antimatter",
+            "transform_unit":
+            {
+                "unit_type": "target"
+            },
+            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
         }
     },
     {

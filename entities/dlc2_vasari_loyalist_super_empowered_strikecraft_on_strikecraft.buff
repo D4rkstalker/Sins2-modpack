@@ -8,6 +8,17 @@
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
+    "unit_modifiers": [
+        {
+            "buff_unit_modifier_id": "empowered_strike_craft_bonus_accel_value"
+        },
+        {
+            "buff_unit_modifier_id": "empowered_strike_craft_bonus_speed_value"
+        },
+        {
+            "buff_unit_modifier_id": "empowered_strike_craft_bonus_turn_value"
+        }
+    ],
     "trigger_event_actions": [
     {
         "trigger_event_type": "on_unit_damaged_by_current_spawner",
@@ -18,13 +29,9 @@
                 "constraint_type": "composite_and",
                 "constraints": [
                 {
-                    "constraint_type": "damage_has_damage_source",
-                    "damage_source": "weapon"
+                    "constraint_type": "damage_has_weapon_tag",
+                    "weapon_tag": "beam"
                 },
-                {
-					"constraint_type": "damage_has_weapon_tag",
-					"weapon_tag": "beam"
-			    },
                 {
                     "constraint_type": "random_chance",
                     "chance_value": "empowered_strike_craft_chance_value"
@@ -71,20 +78,35 @@
         "visibility_scope": "positive",
         "tooltip_line_groups": [
         {
-			"is_visible_constraint": 
-			{
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "empowered_strike_craft_bonus_accel_value"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "empowered_strike_craft_bonus_speed_value"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "empowered_strike_craft_bonus_turn_value"
+            }]
+        },
+        {
+            "is_visible_constraint": 
+            {
                 "constraint_type": "unit_passes_unit_constraint",
                 "unit": 
-				{
-					"unit_type": "current_spawner"
-				},
-				"unit_constraint": 
-				{
-					"constraint_type": "has_definition",
-					"unit_definition": "vasari_interceptor_strikecraft"
-				}
-			},
-			"header_text": "tooltip.ability.fighters_attack_effect",
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint": 
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_interceptor_strikecraft"
+                }
+            },
+            "header_text": "tooltip.ability.fighters_attack_effect",
             "lines": [
             {
                 "rendering_type": "single_value",
@@ -101,20 +123,20 @@
             }]
         },
         {
-			"is_visible_constraint": 
-			{
+            "is_visible_constraint": 
+            {
                 "constraint_type": "unit_passes_unit_constraint",
                 "unit": 
-				{
-					"unit_type": "current_spawner"
-				},
-				"unit_constraint": 
-				{
-					"constraint_type": "has_definition",
-					"unit_definition": "vasari_bomber_strikecraft_loyalist"
-				}
-			},
-			"header_text": "tooltip.ability.bombers_attack_effect",
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint": 
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "vasari_bomber_strikecraft_loyalist"
+                }
+            },
+            "header_text": "tooltip.ability.bombers_attack_effect",
             "lines": [
             {
                 "rendering_type": "single_value",

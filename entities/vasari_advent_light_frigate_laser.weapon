@@ -1,0 +1,77 @@
+{
+    "version": 0,
+    "name": "weapon_name.medium_laser",
+    "pitch_speed": 2.0,
+    "yaw_speed": 2.0,
+    "pitch_firing_tolerance": 3.0,
+    "yaw_firing_tolerance": 3.0,
+    "range": 4000.0,
+    "cooldown_duration": 2.0,
+    "uniforms_target_filter_id": "common_weapon",
+    "attack_target_type_groups": [
+        "flak",
+        "light",
+        "antiarmor_lrm",
+        "carrier_support",
+        "capital_supercapital_heavy",
+        "defense",
+        "corvette"
+    ],
+    "weapon_type": "normal",
+    "damage_affect_type": "hull_and_armor_and_shields",
+    "damage": 17.0,
+    "penetration": 250.0,
+    "tags": [
+        "laser",
+        "energy"
+    ],
+    "modifiers": [
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value": 0.12,
+        "prerequisites": [
+            ["vasari_upgrade_beam_weapons_0"]
+        ]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value": 0.12,
+        "prerequisites": [
+            ["vasari_upgrade_beam_weapons_1"]
+        ]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value": 0.12,
+        "prerequisites": [
+            ["vasari_upgrade_beam_weapons_2"]
+        ]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "value": 0.12,
+        "prerequisites": [
+            ["vasari_upgrade_beam_weapons_3"]
+        ]
+    }],
+    "acquire_target_logic": "order_target_or_best_target_in_range",
+    "target_acquired_duration_required_to_fire": 0.5,
+    "firing":
+    {
+        "firing_type": "projectile",
+        "travel_speed": 4500.0
+    },
+    "effects":
+    {
+        "burst_pattern": [0.0, 0.2, 0.4, 0.6, 0.8],
+        "muzzle_effect": "advent_light_frigate_laser_weapon_muzzle",
+        "projectile_travel_effect": "advent_light_frigate_laser_weapon_projectile_travel",
+        "hit_hull_effect": "advent_light_frigate_laser_weapon_hit_hull",
+        "hit_shield_effect": "advent_light_frigate_laser_weapon_hit_shield",
+        "hit_shield_impact_radius_t": 0.311667
+    }
+}

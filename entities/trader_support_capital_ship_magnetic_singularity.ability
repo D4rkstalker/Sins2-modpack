@@ -1,7 +1,6 @@
 {
     "version": 0,
     "action_data_source": "trader_support_capital_ship_magnetic_singularity",
-    "is_ultimate_ability": true,
     "level_source": "internal_level",
     "min_required_unit_levels": [0, 2, 4, 6, 8],
     "active_actions":
@@ -60,21 +59,9 @@
         {
             "lines": [
             {
-                "visibility": "upgrade_only",
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.radius",
                 "value_id": "radius_value"
-            }]
-		},
-        {
-            "header_text": "tooltip.vasari_colony_capital_ship_subspace_rupture_ability_without_gravity_warhead_header",
-            "lines": [
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.linear_speed_normal",
-                "value_id": "non_empowered_slow_value",
-                "value_float_format": "percentage_with_sign",
-				"value_color": "negative"
             },
             {
                 "rendering_type": "single_value",
@@ -83,21 +70,26 @@
                 "value_suffix": "seconds"
             }]
         },
-		{
+        {
+            "header_text": "tooltip.vasari_colony_capital_ship_subspace_rupture_ability_without_gravity_warhead_header",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "unit_modifier.max_linear_speed",
+                "value_id": "non_empowered_slow_value",
+                "value_float_format": "percentage_with_sign",
+                "value_color": "negative"
+            }]
+        },
+        {
             "header_text": "tooltip.trader_support_capital_ship_overcharge_tooltip_lines_sub_header_label",
             "lines": [
             {
                 "rendering_type": "single_value",
-                "label_text": "tooltip.ability.linear_speed_empowered",
+                "label_text": "unit_modifier.max_linear_speed",
                 "value_id": "empowered_slow_value",
                 "value_float_format": "percentage_with_sign",
-				"value_color": "negative"
-            },
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.duration",
-                "value_id": "duration_value",
-                "value_suffix": "seconds"
+                "value_color": "negative"
             }]
         }]
     }

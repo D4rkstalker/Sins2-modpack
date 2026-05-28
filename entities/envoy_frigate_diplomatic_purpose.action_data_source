@@ -1,0 +1,96 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "diplomatic_purpose_ally_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "ally",
+                "friendly"
+            ]
+        }
+    }],
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "influence_point_regen"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "diplomatic_purpose_influence_points_recharge_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "influence_point_regen",
+            "values": [0.001]
+        }
+    },
+    {
+        "action_value_id": "diplomatic_purpose_max_influence_points_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "influence_point_regen",
+            "values": [0.04]
+        }
+    },
+    {
+        "action_value_id": "diplomatic_purpose_execution_interval_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "diplomatic_purpose_cooldown_time_value",
+        "action_value":
+        {
+            "values": [90.0]
+        }
+    },
+    {
+        "action_value_id": "diplomatic_purpose_duration_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "diplomatic_purpose_max_stacks_count_value",
+        "action_value":
+        {
+            "values": [100.0]
+        }
+    }],
+    "buff_empire_modifiers": [
+    {
+        "buff_empire_modifier_id": "diplomatic_purpose_influence_points_recharge_rate_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "influence_points_recharge_rate",
+            "value_behavior": "scalar",
+            "value_id": "diplomatic_purpose_influence_points_recharge_rate_value"
+        }
+    },
+    {
+        "buff_empire_modifier_id": "diplomatic_purpose_max_influence_points_modifier",
+        "buff_empire_modifier":
+        {
+            "modifier_type": "max_influence_points",
+            "value_behavior": "additive",
+            "value_id": "diplomatic_purpose_max_influence_points_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "diplomatic_purpose_activate",
+        "alias_binding":
+        {
+            "particle_effect": "DiplomaticImmunity"
+        }
+    }]
+}

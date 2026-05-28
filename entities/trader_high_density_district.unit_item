@@ -7,26 +7,52 @@
     "tooltip_picture": "trader_high_density_district_unit_item_tooltip_picture",
     "name": "trader_high_density_district_unit_item_name",
     "description": "trader_high_density_district_unit_item_description",
-    "build_time": 60.0,
+    "build_time": 150.0,
     "price":
     {
-        "credits": 750.0,
-        "metal": 200.0,
-        "crystal": 100.0
+        "credits": 1500.0,
+        "metal": 250.0,
+        "crystal": 50.0
     },
     "max_count_on_unit": 1,
+    "required_planet_level": 5,
     "planet_type_groups": [
     {
         "planet_types": [
-			"city",
-			"terran",
-			"terran_home"
+            "barren",
+            "city",
+            "crystalline",
+            "desert",
+            "desert_home",
+            "ferrous",
+            "ferrous_home",
+            "ice",
+            "ice_moon",
+            "irradiated",
+            "greenhouse",
+            "magnetic",
+            "moon",
+            "oceanic",
+            "swamp",
+            "terran",
+            "terran_home",
+            "volcanic",
+            "volcanic_moon"
+        ],
+        "build_prerequisites": [
+            ["trader_unlock_high_density_district_unit_item"]
         ]
     }],
+    "other_item_requirements":
+    {
+        "mutually_exclusive_items": [
+            "trader_commercial_district",
+            "trader_industrial_complex"]
+    },
     "planet_modifiers": [
     {
         "modifier_type": "max_population_points",
-        "value_behavior": "additive",
-        "values": [100.0]
+        "value_behavior": "scalar",
+        "values": [0.2]
     }]
 }

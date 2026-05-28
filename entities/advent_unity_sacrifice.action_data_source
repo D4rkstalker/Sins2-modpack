@@ -31,18 +31,6 @@
             ],
             "constraints": [
             {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-                    "constraint_type": "is_in_dominant_culture",
-                    "dominant_culture_player_relationship": "self"
-                },
-                {
-                    "constraint_type": "is_in_dominant_culture",
-                    "dominant_culture_player_relationship": "ally"
-                }]
-            },
-            {
                 "constraint_type": "has_allied_population_amount",
                 "percentage_of_current_pop": 0.1,
                 "real_population_number": 50
@@ -65,7 +53,7 @@
             ],
             "ownerships": [
                 "enemy"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "is_bombing_planet"
@@ -117,7 +105,8 @@
             ],
             "ownerships": [
                 "friendly",
-                "enemy"]
+                "enemy"
+            ]
         }
     }],
     "action_values": [
@@ -136,17 +125,24 @@
         }
     },
     {
-        "action_value_id": "sacrifice_range_distance",
-        "action_value":
-        {
-            "values": [100000.0, 100000.0, 100000.0]
-        }
-    },
-    {
         "action_value_id": "sacrifice_population_culled_value",
         "action_value":
         {
             "values": [1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "action_value_id": "researech_sacrifice_population_culled_value",
+        "action_value":
+        {
+            "values": [0.5, 0.5, 0.5]
+        }
+    },
+    {
+        "action_value_id": "sacrifice_bombing_population_damage_taken_value",
+        "action_value":
+        {
+            "values": [-1000000.0, -1000000.0, -1000000.0]
         }
     },
     {
@@ -158,7 +154,7 @@
             {
                 "unit_type": "previous_spawner"
             },
-            "values": [10.0, 15.0, 20.0]
+            "values": [12.5, 18.75, 25.0]
         }
     },
     {
@@ -188,6 +184,16 @@
         "alias_binding":
         {
             "particle_effect": "wail_of_the_sacrificed_large"
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "sacrifice_bombing_population_damage_taken_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "bombing_population_damage_taken",
+            "value_behavior": "scalar",
+            "value_id": "sacrifice_bombing_population_damage_taken_value"
         }
     }]
 }

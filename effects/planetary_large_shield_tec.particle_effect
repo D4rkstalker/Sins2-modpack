@@ -68,7 +68,7 @@
             "name": "WrappingAround",
             "type": "sphere",
             "emit_rate": {
-                "primary_emit_rate": [25.0, 25.0]
+                "primary_emit_rate": [15.0, 15.0]
             },
             "particle": {
                 "type": "billboard",
@@ -93,7 +93,7 @@
                     "texture_animation_first_frame": "random",
                     "uber_constants": {
                         "basic_constants": {
-                            "emissive_factor": 1.50,
+                            "depth_fade_opacity": 5.0,
                             "depth_fade_distance": 100.0,
                             "alpha_ramp_growth_delay": 1.0,
                             "alpha_ramp_max_alpha_scalar": 3.0
@@ -106,7 +106,8 @@
                             },
                             "noise_constants_1": {
                                 "u_pan_speed": -0.01350,
-                                "v_pan_speed": 0.0070
+                                "v_pan_speed": 0.0070,
+                                "global_scale": 4.0
                             },
                             "erosion_softness": 0.50
                         },
@@ -126,9 +127,9 @@
                 "mesh": {}
             },
             "use_surface": true,
-            "radius_x": [7900.0, 7900.0],
-            "radius_y": [7900.0, 7900.0],
-            "radius_z": [7900.0, 7900.0],
+            "radius_x": [8000.0, 8000.0],
+            "radius_y": [8000.0, 8000.0],
+            "radius_z": [8000.0, 8000.0],
             "radial_velocity": [0.0, 10.0],
             "azimuthal_tangential_velocity": [0.0, 0.0],
             "polar_tangential_velocity": [0.0, 0.0],
@@ -293,6 +294,10 @@
         }
     ],
     "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 0
+        },
         {
             "attacher_id": 3,
             "attachee_id": 0

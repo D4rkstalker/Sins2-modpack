@@ -15,7 +15,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "civilian"
     },
     "user_interface":
     {
@@ -28,7 +29,7 @@
     "structure":
     {
         "slot_type": "civilian",
-        "slots_required": 1,
+        "slots_required": 3,
         "roles": [
             "exotic_factory"
         ],
@@ -55,6 +56,24 @@
             "small_debris": [14, 18],
             "large_debris": [3, 5]
         }
+    },
+    "traffic_port":
+    {
+        "max_traffic_ship_count": 2,
+        "traffic_ship_construction_time": 120.0,
+        "traffic_ship": "vasari_refinery_ship",
+        "allowed_destination_units": 
+        [
+            "vasari_closed_cycle_refinery_traffic_port",
+            "vasari_exotic_factory_structure", 
+            "vasari_crystal_extractor_structure", 
+            "vasari_metal_extractor_structure",
+            "trader_capturable_crystal_extractor_structure",
+            "trader_capturable_metal_extractor_structure"
+        ],
+        "special_operation_unit_kind": "traffic_ship",
+        "create_traffic_ship_offset": [0.0, 0.0, 1500.0],
+        "force_stay_in_gravity_well": true
     },
     "health":
     {
@@ -85,7 +104,7 @@
         "price":
         {
             "metal": 600.0,
-            "crystal": 360.0
+            "crystal": 300.0
         },
         "prerequisites": [
             ["vasari_unlock_exotic_factory_structure"]

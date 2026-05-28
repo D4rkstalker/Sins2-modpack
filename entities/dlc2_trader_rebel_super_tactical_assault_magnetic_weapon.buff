@@ -21,27 +21,27 @@
         "action_group":
         {
             "constraint":            
-			{
-				"constraint_type": "composite_and",
-				"constraints": [
-				{
-					"constraint_type": "damage_has_damage_source",
-					"damage_source": "weapon"
-				},
-				{
-					"constraint_type": "composite_or",
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_damage_source",
+                    "damage_source": "weapon"
+                },
+                {
+                    "constraint_type": "composite_or",
                     "constraints": [
-				    {
-					    "constraint_type": "damage_has_weapon_tag",
-					    "weapon_tag": "gauss"
-				    },
-				    {
-					    "constraint_type": "damage_has_weapon_tag",
-					    "weapon_tag": "rail_gun"
-				    }]
-				},
-				{
-					"constraint_type": "unit_passes_unit_constraint",
+                    {
+                        "constraint_type": "damage_has_weapon_tag",
+                        "weapon_tag": "gauss"
+                    },
+                    {
+                        "constraint_type": "damage_has_weapon_tag",
+                        "weapon_tag": "rail_gun"
+                    }]
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
                     "unit":
                     {
                         "unit_type": "trigger_event_destination"
@@ -50,8 +50,8 @@
                     {
                         "constraint_type": "has_shields"
                     }
-				}]
-			},
+                }]
+            },
             "actions": [
             {
                 "action_type": "use_unit_operators_on_single_unit",
@@ -59,7 +59,7 @@
                 {
                     "unit_type": "trigger_event_destination"
                 },
-				"operators": [
+                    "operators": [
                 {
                     "operator_type": "apply_damage",
                     "damage_source": "weapon",

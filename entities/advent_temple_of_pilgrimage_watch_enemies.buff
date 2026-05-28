@@ -25,19 +25,19 @@
                         "redirection": "current_gravity_well_primary_fixture"
                     },
                     "target_filter_id": "temple_of_pilgrimage_colonize_target_filter"
-				},
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_enemy_units_in_gravity_well",
-						"gravity_well_reference_unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"target_filter_id": "temple_of_pilgrimage_enemy_target_filter"
-					}
-				}]
+                },
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_enemy_units_in_gravity_well",
+                        "gravity_well_reference_unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "target_filter_id": "temple_of_pilgrimage_enemy_target_filter"
+                    }
+                }]
             },
             "actions": [
             {
@@ -58,6 +58,15 @@
                 {
                     "operator_type": "apply_buff",
                     "buff": "advent_temple_of_pilgrimage_recently_colonized"
+                },
+                {
+                    "operator_type": "play_point_effect",
+                    "effect_definition":
+                    {
+                        "binding": "action_data_source",
+                        "mesh_point": "above",
+                        "effect": "generic_colonized_effect"
+                    }
                 }]
             }]
         }

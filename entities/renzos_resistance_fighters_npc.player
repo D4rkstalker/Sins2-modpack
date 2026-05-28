@@ -3,6 +3,66 @@
     "race": "trader",
     "fleet": "trader_fleet",
     "fleet_name_group": "fleet",
+    "unit_build_groups": [
+    {
+        "id": "corvette",
+        "name": "unit_build_group_name.corvette",
+        "column_count": 2
+    },
+    {
+        "id": "frigate",
+        "name": "unit_build_group_name.frigate",
+        "column_count": 3
+    },
+    {
+        "id": "cruiser",
+        "name": "unit_build_group_name.cruiser",
+        "column_count": 3
+    },
+    {
+        "id": "capital_ship",
+        "name": "unit_build_group_name.capital_ship",
+        "column_count": 3
+    },
+    {
+        "id": "super_capital_ship",
+        "name": "unit_build_group_name.super_capital_ship",
+        "column_count": 1
+    },
+    {
+        "id": "titan",
+        "name": "unit_build_group_name.titan",
+        "column_count": 1
+    }],
+    "unit_names": [
+    {
+        "group_name": "capital_ship",
+        "localized_text":
+        {
+            "id_prefix": "capital_ship_name.trader"
+        }
+    },
+    {
+        "group_name": "fleet",
+        "localized_text":
+        {
+            "id_prefix": "fleet_name.trader"
+        }
+    },
+    {
+        "group_name": "starbase",
+        "localized_text":
+        {
+            "id_prefix": "starbase_name.trader"
+        }
+    },
+    {
+        "group_name": "titan",
+        "localized_text":
+        {
+            "id_prefix": "titan_name.trader"
+        }
+    }],
     "sounds":
     {
         "user_interface_sounds":
@@ -742,8 +802,8 @@
     {
         "required_units": [
         {
-            "unit": "trader_minefield_structure",
-            "count": [15, 15]
+            "unit": "trader_minefield_structure_buildable",
+            "count": [150, 150]
         },
         {
             "unit": "trader_starbase_n",
@@ -754,7 +814,7 @@
     {
         "required_units": [
         {
-            "unit": "trader_heavy_cruiser",
+            "unit": "trader_medium_cruiser",
             "count": [3, 5]
         },
         {
@@ -769,7 +829,7 @@
     {
         "required_units": [
         {
-            "unit": "trader_heavy_cruiser",
+            "unit": "trader_medium_cruiser",
             "count": [3, 5]
         },
         {
@@ -784,7 +844,7 @@
     {
         "required_units": [
         {
-            "unit": "trader_heavy_cruiser",
+            "unit": "trader_medium_cruiser",
             "count": [3, 5]
         },
         {
@@ -813,34 +873,42 @@
         {
             "tag": "starbase",
             "unit_limit": 1
+        }],
+	"planet": [
+        {
+            "tag": "mem_utility",
+            "unit_limit": 150
         }]
     },
     "buildable_units": [
         "trader_light_frigate",
         "trader_antifighter_frigate",
         "trader_siege_frigate",
-        "trader_heavy_cruiser",
+        "trader_colony_frigate",
+        "trader_medium_cruiser",
         "trader_long_range_cruiser"
     ],
     "structure_builder":
     {
-        "ship": "trader_constructor_ship",
+        "ship": "trader_constructor_ship_npc",
         "special_operation_unit_kind": "structure_builder"
     },
     "structures": [
         "trader_capital_ship_factory_structure",
         "trader_frigate_factory_structure",
         "trader_autocannon_defense_structure",
+	"trader_minefield_structure_buildable",
 	"trader_starbase_n"
     ],
     "ship_components": [],
     "npc":
     {
+	"can_survey_planets": false,
         "visuals": [
         {
             "name": "npc_player.renzos_resistance_fighters.name",
             "description": "npc_player.renzos_resistance_fighters.description",
-            "portrait": "miner_0",
+            "portrait": "npc_renzo_0",
             "icon": "faction_2",
             "color_group": "npc_renzos_resistance_fighters",
             "reputation_panel": "renzos_resistance_fighters_panel"
@@ -862,6 +930,7 @@
                 "attacking": "pranast_npc_attacking_0"
             }
         },
+	"ai_difficulty": "hard",
         "ai_params":
         {
             "will_fleet_colonize": false,
@@ -879,9 +948,40 @@
             "roam": [125, 250, 375, 500],
             "defend": [312, 625, 875, 1250]
         },
+        "npc_tags": [
+            "renzo"
+        ],
         "start_allied_to_playable_players": true,
         "start_allied_to_other_npc_players": true,
         "start_allied_to_militia_npc_players": false,
+        "bounty_market":
+        {
+            "market_weight": 11,
+            "bounty_cut": 0.3,
+            "metal_credit_value": 3.0,
+            "crystal_credit_value": 3.0,
+            "exotic_credit_values": [
+            {
+                "exotic_name": "offense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "defense",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "utility",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "economic",
+                "credit_value": 750
+            },
+            {
+                "exotic_name": "ultimate",
+                "credit_value": 1500
+            }]
+        },
         "auctions": [
         {
             "weight": 1.0,
@@ -901,16 +1001,6 @@
                 "offense_exotic_stockpile_1",
                 "offense_exotic_stockpile_2",
                 "offense_exotic_stockpile_3"
-            ]
-        },
-        {
-            "weight": 0.5,
-            "bid_duration": 75.0,
-            "rewards": [
-                "",
-                "",
-                "renzo_boarding_party",
-                "renzo_boarding_party"
             ]
         },
         {
@@ -994,30 +1084,30 @@
         },						
         "simple_can_ever_be_colonized_planet_types": [
             "asteroid",
-			"crystalline",
+            "barren",
+            "city",
+            "crystalline",
             "desert",
-			"desert_home",
+            "desert_home",
             "ferrous",
-			"ferrous_home",
-			"ice_asteroid",
+            "ferrous_home",
+            "gas_giant",
+            "greenhouse",
+            "hive_asteroid",
             "ice",
+            "ice_asteroid",
+            "ice_moon",
+            "irradiated",
+            "magnetic",
             "moon",
             "oceanic",
-			"pirate_base",
-			"swamp",
+            "pirate_base",
+            "ship_graveyard",
+            "swamp",
             "terran",
-			"terran_home",
+            "terran_home",
             "volcanic",
-			"ship_graveyard",
-			"greenhouse",
-			"barren",
-			"city",
-			"magnetic",
-			"ice_moon",
-			"volcanic_moon",
-			"gas_giant",
-			"hive_asteroid",
-			"irradiated"
+            "volcanic_moon"
         ],
         "simple_planet_level": 10,
         "simple_planet_tracks":
@@ -1031,7 +1121,8 @@
             "logistics":
             {
                 "max_civilian_structure_slots": 6,
-                "structure_builder_count": 2
+                "structure_builder_count": 2,
+				"max_planet_component_slots": 1
             },
             "commerce":
             {
@@ -1057,19 +1148,19 @@
             "reward_between_gravity_well_range": 10.0,
             "rewards": [
             {
-                "reward": "renzo_booby_trap",
+                "reward": "renzo_deploy_trader_minefield_structure",
                 "required_reputation_level": 0,
                 "influence_point_cost": 1,
                 "cooldown_duration": 180
             },
             {
-                "reward": "renzo_deploy_trader_minefield_structure",
+                "reward": "renzo_dirty_bomb",
                 "required_reputation_level": 1,
                 "influence_point_cost": 2,
                 "cooldown_duration": 240
             },
             {
-                "reward": "renzo_dirty_bomb",
+                "reward": "renzo_boarding_party",
                 "required_reputation_level": 2,
                 "influence_point_cost": 4,
                 "cooldown_duration": 360
@@ -1084,22 +1175,46 @@
             {
                 "influence_point_cost": 1,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.02,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 2,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.04,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 4,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.06,
+                        "value_behavior": "scalar"
+                    }
+		}
             },
             {
                 "influence_point_cost": 6,
                 "npc_modifiers":
-                {}
+                {
+                    "reputation_ability_cooldown_duration":
+                    {
+                        "value": -0.08,
+                        "value_behavior": "scalar"
+                    }
+		}
             }]
         }
     }

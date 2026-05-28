@@ -16,14 +16,80 @@
                 "titan"
             ],
             "ownerships": [
-                "friendly"]
+                "friendly"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "essence_reservoir_small_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "frigate"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "exemptions": [
+                "is_dead"
+            ]
+        }
+    },
+	{
+        "target_filter_id": "essence_reservoir_medium_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser",
+                "structure"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "exemptions": [
+                "is_dead"
+            ]
+        }
+    },
+	{
+        "target_filter_id": "essence_reservoir_large_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "exemptions": [
+                "is_dead"
+            ]
+        }
+    },
+	{
+        "target_filter_id": "essence_reservoir_huge_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "exemptions": [
+                "is_dead"
+            ]
         }
     }],
     "per_buff_memory_declaration":
     {
         "float_variable_ids": [
             "stack_count",
-            "stacks_expiry_time"]
+            "stacks_expiry_time"
+        ]
     },
     "action_values": [
     {
@@ -31,6 +97,27 @@
         "action_value":
         {
             "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_medium_stack_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_large_stack_value",
+        "action_value":
+        {
+            "values": [10.0]
+        }
+    },
+    {
+        "action_value_id": "essence_reservoir_huge_stack_value",
+        "action_value":
+        {
+            "values": [50.0]
         }
     },
     {
@@ -53,7 +140,7 @@
         "action_value_id": "essence_reservoir_stack_duration_value",
         "action_value":
         {
-            "values": [90.0]
+            "values": [180.0]
         }
     },
     {
@@ -73,6 +160,15 @@
             "memory_float_variable_id": "stack_count",
             "values": [1.0]
         }
+    },
+    {
+        "action_value_id": "essence_reservoir_antimatter_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [2.5]
+        }
     }],
     "buff_unit_modifiers": [
     {
@@ -82,6 +178,15 @@
             "modifier_type": "spell_power",
             "value_behavior": "additive",
             "value_id": "essence_reservoir_spell_power_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "essence_reservoir_antimatter_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_antimatter",
+            "value_behavior": "additive",
+            "value_id": "essence_reservoir_antimatter_bonus_value"
         }
     }],
     "effect_alias_bindings": [

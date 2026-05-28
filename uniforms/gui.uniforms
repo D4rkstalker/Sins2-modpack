@@ -38,6 +38,7 @@
             "experience_gained_from_loot_collection": "unit_modifier.experience_gained_from_loot_collection",
             "experience_given_on_death": "unit_modifier.experience_given_on_death",
             "max_squadron_capacity": "unit_modifier.max_squadron_capacity",
+            "max_squadron_capacity_per_kind": "unit_modifier.max_squadron_capacity_per_kind",
             "strikecraft_build_time": "unit_modifier.strikecraft_build_time",
             "credit_income_rate": "unit_modifier.credit_income_rate",
             "metal_income_rate": "unit_modifier.metal_income_rate",
@@ -58,7 +59,8 @@
             "trade_export_metal_points": "unit_modifier.trade_export_metal_points",
             "trade_export_crystal_points": "unit_modifier.trade_export_crystal_points",
             "loot_collection_duration": "unit_modifier.loot_collection_duration",
-            "phase_resonance_bonus_duration": "empire_modifier.phase_resonance_bonus_duration"
+            "phase_resonance_bonus_duration": "empire_modifier.phase_resonance_bonus_duration",
+            "unit_capture_points": "unit_modifier.capture_point_modifier"
         },
         "planet_modifier_names":
         {
@@ -155,7 +157,8 @@
         },
         "exotic_factory_modifier_names":
         {
-            "build_time": "exotic_factory_modifier.build_time"
+            "build_time": "exotic_factory_modifier.build_time",
+            "max_concurrent_builds": "exotic_factory_modifier.max_concurrent_builds"
         },
         "strikecraft_modifier_names":
         {
@@ -170,7 +173,8 @@
             "sell_exotic_credits_received": "npc_modifier.sell_exotic_credits_received",
             "send_raid_supply": "npc_modifier.send_raid_supply",
             "auction_bid_bonus_influence_points": "npc_modifier.auction_bid_bonus_influence_points",
-            "reputation_ability_cooldown_duration": "npc_modifier.reputation_ability_cooldown_duration"
+            "reputation_ability_cooldown_duration": "npc_modifier.reputation_ability_cooldown_duration",
+            "npc_bounty_fee": "npc_modifier.npc_bounty_fee"
         },
         "empire_modifier_names":
         {
@@ -195,7 +199,12 @@
             "influence_points_recharge_rate": "empire_modifier.influence_points_recharge_rate",
             "unity_points": "unit_modifier.unity_points",
             "unity_max_mana_points": "empire_modifier.unity_max_mana_points",
-            "unity_mana_restore_rate": "empire_modifier.unity_mana_restore_rate"
+            "unity_mana_restore_rate": "empire_modifier.unity_mana_restore_rate",
+            "diplomatic_bonus": "empire_modifier.diplomatic_bonus",
+            "player_intelligence_purchase_influence_point_cost": "empire_modifier.player_intelligence_purchase_influence_point_cost",
+            "player_intelligence_purchase_spool_up_time": "empire_modifier.player_intelligence_purchase_spool_up_time",
+            "player_intelligence_purchase_cooldown_duration": "empire_modifier.player_intelligence_purchase_cooldown_duration",
+            "npc_bounty_collection_share":"empire_modifier.npc_bounty_collection_share"
         }
     },
     "hud_unit_icon":
@@ -329,7 +338,13 @@
                 "low": "crippled_hull_points",
                 "medium": "crippled_hull_points",
                 "high": "crippled_hull_points"
-            },            
+            },
+            "surrendered_hull_points":
+            {
+                "low": "surrendered_hull_points",
+                "medium": "surrendered_hull_points",
+                "high": "surrendered_hull_points"
+            },          
             "armor_points":
             {
                 "low": "armor_points",
@@ -516,6 +531,12 @@
             "research_subject_already_completed": "query_status.research_subject_already_completed",
             "research_subject_not_researching": "query_status.research_subject_not_researching",
             "research_subject_required_allied_player_race_missing": "query_status.research_subject_required_allied_player_race_missing",
+            "research_subject_mutually_exclusive_research_completed": "query_status.research_subject_mutually_exclusive_research_completed",
+            "research_subject_required_owned_unit_types_missing": "query_status.research_subject_required_owned_unit_types_missing",
+            "research_subject_required_owned_planet_types_missing": "query_status.research_subject_required_owned_planet_types_missing",
+            "research_subject_required_owned_unit_item_types_missing": "query_status.research_subject_required_owned_unit_item_types_missing",
+            "research_subject_required_owned_structure_types_missing": "query_status.research_subject_required_owned_structure_types_missing",
+            "research_subject_required_npc_reputation_level_not_met": "query_status.research_subject_required_npc_reputation_level_not_met",
             "carrier_slot_index_is_invalid": "query_status.carrier_slot_index_is_invalid",
             "carrier_slot_is_already_empty": "query_status.carrier_slot_is_already_empty",
             "colonization_is_disabled": "query_status.colonization_is_disabled",
@@ -546,11 +567,14 @@
             "alliance_offer_player_lost": "query_status.alliance_offer_player_lost",
             "alliance_offer_has_unowned_planet": "query_status.alliance_offer_has_unowned_planet",
             "alliance_offer_has_unconfirmed_planet": "query_status.alliance_offer_has_unconfirmed_planet",
+            "alliance_offer_player_cannot_commit_item": "query_status.alliance_offer_player_cannot_commit_item",
+            "alliance_offer_player_cannot_receive_item": "query_status.alliance_offer_player_cannot_recieve_item",
             "alliance_offer_version_mismatch": "query_status.alliance_offer_version_mismatch",
             "alliance_offer_expired": "query_status.alliance_offer_expired",
             "alliance_offer_planet_not_a_planet": "query_status.alliance_offer_planet_not_a_planet",
             "alliance_offer_planet_never_detected": "query_status.alliance_offer_planet_never_detected",
             "alliance_offer_planet_not_owned_by_player": "query_status.alliance_offer_planet_not_owned_by_player",
+            "alliance_offer_ai_player_is_out_of_patience": "query_status.ai_player_is_out_of_patience",
             "npc_market_is_dead": "query_status.npc_market_is_dead",
             "npc_market_requires_alliance": "query_status.npc_market_requires_alliance",
             "npc_market_does_not_match_exclusive_player": "query_status.npc_market_does_not_match_exclusive_player",
@@ -572,7 +596,9 @@
             "player_ai_directive_requires_synergy_alliance": "query_status.player_ai_directive_requires_synergy_alliance",
             "player_ai_directive_already_exists": "query_status.player_ai_directive_already_exists",
             "player_ai_directive_is_owned_by_another_player": "query_status.player_ai_directive_is_owned_by_another_player",
-            "player_ai_directive_cannot_reach_target": "query_status.player_ai_directive_cannot_reach_target"
+            "player_ai_directive_cannot_reach_target": "query_status.player_ai_directive_cannot_reach_target",
+            "bounty_target_is_not_planet": "query_status.bounty_target_is_not_planet",
+            "bounty_target_is_unowned": "query_status.bounty_target_is_unowned"
         },
         "icons":
         {
@@ -648,6 +674,10 @@
     {
         "name": "planet_health",
         "icon": "planet_health_points_tooltip_icon"
+    },
+    {
+        "name": "intelligence",
+        "icon": "purchase_intelligence_action_icon"
     }],
     "target_filter_unit_type_names":
     {

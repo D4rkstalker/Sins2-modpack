@@ -24,31 +24,48 @@
                 "radius_value": "salvage_operations_radius",
                 "operators": [
                 {
-					"constraint":
-					{
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "operand_destination"
-						},
-						"target_filter_id": "salvage_operations_target_filter"
-					},
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "salvage_operations_target_filter"
+                    },
                     "operator_type": "apply_buff",
                     "buff": "grost_salvage_operations_on_target"
                 },
                 {
-					"constraint":
-					{
-						"constraint_type": "unit_passes_target_filter",
-						"unit":
-						{
-							"unit_type": "operand_destination"
-						},
-						"target_filter_id": "salvage_operations_boarded_target_filter"
-					},
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "salvage_operations_boarded_target_filter"
+                    },
                     "operator_type": "apply_buff",
                     "buff": "trader_transport_capital_ship_salvage_operations_on_boarded_target"
                 }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect": "trader_transport_capital_ship_salvage_operations_self"
+                }
             }]
         }
     }],

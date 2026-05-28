@@ -1,0 +1,84 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "allied_units_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self",
+                "ally"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "enemy_units_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [5600.0]
+        }
+    },
+    {
+        "action_value_id": "regen_rate_value",
+        "action_value":
+        {
+            "values": [15.0]
+        }
+    },
+    {
+        "action_value_id": "antimatter_regen_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "regen_rate_reduced_value",
+        "action_value":
+        {
+            "values": [1.5]
+        }
+    },
+    {
+        "action_value_id": "antimatter_regen_reduced_value",
+        "action_value":
+        {
+            "values": [0.1]
+        }
+    }]
+}

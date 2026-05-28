@@ -1,0 +1,76 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "advent_titan_psi_aura_hud_icon",
+    "tooltip_picture": "advent_titan_psi_aura_tooltip_picture",
+    "name": "unit_item.advent_loyalist_spirit_of_vengeance_name",
+    "description": "unit_item.advent_loyalist_spirit_of_vengeance_description",
+    "build_time": 30.0,
+    "price":
+    {
+        "credits": 600.0,
+        "metal": 125.0,
+        "crystal": 200.0
+    },
+    "exotic_price": [
+    {
+        "exotic_type": "offense",
+        "count": 1
+    },
+    {
+        "exotic_type": "utility",
+        "count": 1
+    }],
+    "required_unit_tags": [
+        "capital_ship",
+        "super_capital_ship",
+        "titan"
+    ],
+    "owner_constraint":
+    {
+        "constraint_type": "has_weapon",
+        "weapon_tag": "holy_fire"
+    },
+    "max_count_on_unit": 1,
+    "build_group_id": "offense",
+    "build_prerequisites": [
+        ["advent_loyalist_titan_psi_aura"]
+    ],
+    "unit_mutations": [
+        "has_psi_power_scaling"
+    ],
+    "weapon_modifiers": [
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "values": [4.0],
+        "tags": [
+            "holy_fire"
+        ]
+    },
+    {
+        "modifier_type": "cooldown_duration",
+        "value_behavior": "scalar",
+        "values": [1.0],
+        "tags": [
+            "holy_fire"
+        ]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "values": [-1.0],
+        "tags": [
+            "laser", "plasma"
+        ]
+    },
+    {
+        "modifier_type": "damage",
+        "value_behavior": "scalar",
+        "values": [1.0],
+        "tags": [
+            "point_defense"
+        ]
+    }],
+    "ability": "advent_loyalist_spirit_of_vengeance"
+}

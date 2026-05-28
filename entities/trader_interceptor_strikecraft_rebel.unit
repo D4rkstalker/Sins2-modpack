@@ -43,7 +43,7 @@
             "type": "strafe_and_pull_away",
             "use_weapon_cooldown": true,
             "weapon_cooldown_percent_to_start_strafe": 0.8,
-            "pull_away_angle_range": 45.0
+            "pull_away_angle_range": 15.0
         }
     },
     "ai":
@@ -57,9 +57,10 @@
         "pursuit":
         {
             "min_target_speed": 500.0,
-            "min_distance_to_target": 1000.0
+            "min_distance_to_target": 500.0
         },
-        "attack_target_type_range_scalar": 3.0
+        "attack_target_type_range_scalar": 3.0,
+        "ignore_target_engagement_mode": true
     },
     "ai_attack_target":
     {
@@ -95,13 +96,13 @@
             "up": [0.0, 1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -5.0,
-                "max_angle": 5.0
+                "min_angle": -10.0,
+                "max_angle": 10.0
             },
             "pitch_arc":
             {
-                "min_angle": -5.0,
-                "max_angle": 5.0
+                "min_angle": -10.0,
+                "max_angle": 10.0
             }
         }],
         "max_range_weapon_index": 0
@@ -120,28 +121,28 @@
     },
     "health":
     {
-        "release_time_after_death": 5.0,
+        "release_time_after_death": 10.3,
         "can_collide_duration_after_death": 0.1,
         "round_max_points_up_to_5": false,
         "levels": [
         {
-            "max_hull_points": 30.0,
+            "max_hull_points": 37.5,
             "hull_point_restore_rate": 1.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 36.0,
+            "max_armor_points": 75.0,
             "armor_point_restore_rate": 1.5,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
             "armor_strength": 25.0,
-            "experience_given_on_death": 4.2
+            "experience_given_on_death": 5.25
         }]
     },
     "strikecraft":
     {
         "kind": "interceptor",
-        "build_time": 40.0,
-        "squadron_size": 5,
+        "build_time": 45.0,
+        "squadron_size": 4,
         "launch_destination_formation_offset":
         {
             "rank": 0,

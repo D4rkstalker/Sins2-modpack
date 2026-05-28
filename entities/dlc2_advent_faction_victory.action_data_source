@@ -30,18 +30,14 @@
                 "none"
             ],
             "constraints": [
-			{
-				"constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "has_minimum_population_amount",
-					"real_minimum_population": 0.000001
-				},
-				{
-					"constraint_type": "has_definition",
-					"unit_definition": "gas_giant_planet"
-				}]
-			}]
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_mutation",
+                    "mutation": "disable_can_be_colonized"
+                }
+            }]
         }
     },
     {

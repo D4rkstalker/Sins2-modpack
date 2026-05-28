@@ -8,7 +8,32 @@
             "center": [0.393204, 0.642395, 6.12323],
             "extents": [279.199219, 279.626862, 1625.919434]
         },
-        "collision_rank": 3
+        "collision_rank": 3,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 0.0, 1400.0],
+            "radius": 225.0
+        },
+        {
+            "center": [0.0, 0.0, 850.0],
+            "radius": 225.0
+        },
+        {
+            "center": [0.0, 0.0, 200.0],
+            "radius": 350.0
+        },
+        {
+            "center": [0.0, 0.0, -500.0],
+            "radius": 350.0
+        },
+        {
+            "center": [0.0, 0.0, -1000.0],
+            "radius": 200.0
+        },
+        {
+            "center": [0.0, 0.0, -1450.0],
+            "radius": 150.0
+        }]
     },
     "physics":
     {
@@ -843,13 +868,13 @@
             "up": [0.0, 1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -887,13 +912,13 @@
             "up": [-0.0, 1.0, 0.0],
             "yaw_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -931,13 +956,13 @@
             "up": [0.0, -1.0, -0.0],
             "yaw_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -975,13 +1000,13 @@
             "up": [-0.0, -1.0, 0.0],
             "yaw_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             },
             "pitch_arc":
             {
-                "min_angle": -90.0,
-                "max_angle": 90.0
+                "min_angle": -180.0,
+                "max_angle": 180.0
             }
         },
         {
@@ -1943,7 +1968,8 @@
         "base_max_squadron_capacity": 0,
         "strikecraft_kinds": [
             "interceptor",
-            "bomber"
+            "bomber",
+            "mem_custom_strikecraft1"
         ],
         "launch_destination_formation": "titan_strikecraft",
         "launch_destination_formation_offset":
@@ -1992,14 +2018,7 @@
         {
             "weight": 8.0,
             "build_group": [
-                "trader_missile_guidance_computer"
-            ]
-        },
-        {
-            "weight": 8.0,
-            "build_group": [
                 "trader_rebel_titan_hull_plating_0",
-                "trader_rebel_titan_hull_plating_1",
                 "trader_heavy_armor"
             ]
         },
@@ -2007,6 +2026,12 @@
             "weight": 8.0,
             "build_group": [
                 "trader_rebel_titan_hangar"
+            ]
+        },
+        {
+            "weight": 8.0,
+            "build_group": [
+                "trader_tactical_analyst"
             ]
         },
         {
@@ -2036,6 +2061,18 @@
         {
             "weight": 3.0,
             "build_group": [
+                "trader_rebel_titan_unlock_rail_gun_weapon"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
+            ]
+        },
+        {
+            "weight": 3.0,
+            "build_group": [
                 "trader_antimatter_engine"
             ]
         },
@@ -2053,6 +2090,7 @@
         "titan"
     ],
     "is_loot_collector": true,
+    "capture_points": 15,
     "abilities": [
     {
         "abilities": [
@@ -2088,7 +2126,8 @@
         "mesh_alias_name": "trader_rebel_titan_component_armor_1",
         "mesh_point": "child.component_armor_1",
         "is_weapon_effects_destination": true,
-        "required_unit_item": "trader_rebel_titan_hull_plating_1"
+        "required_unit_item": "trader_rebel_titan_hull_plating_0",
+        "required_unit_item_level": 1
     },
     {
         "mesh_alias_name": "trader_rebel_titan_component_missile_launchers",

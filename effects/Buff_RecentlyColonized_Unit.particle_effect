@@ -1,0 +1,64 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Icon",
+            "x": [0.0, 0.0],
+            "y": [1200.0, 1200.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0],
+            "start_delay": [0.50, 0.50]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 2,
+            "name": "Icon",
+            "ignore_external_rotation": true,
+            "type": "point",
+            "emit_duration": [27.0, 27.0],
+            "emit_max_particle_count": [1.0, 1.0],
+            "emit_rate": {
+                "primary_emit_rate": [0.010, 0.010]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [9.0, 9.0],
+                "external_color": "primary",
+                "color": "ffffffff",
+                "initial_alpha": [0.750, 0.750],
+                "fade_in_time": [3.0, 3.0],
+                "fade_out_time": [3.0, 3.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [4500.0, 4500.0],
+                    "height": [4500.0, 4500.0],
+                    "texture_0": "player_icon_unowned_large",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0,
+                            "alpha_ramp_max_alpha_scalar": 0.20
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [],
+    "max_effect_radius_scalar": 1.0
+}

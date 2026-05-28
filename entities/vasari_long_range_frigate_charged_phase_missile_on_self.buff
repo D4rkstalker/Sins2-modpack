@@ -1,0 +1,74 @@
+{
+    "version": 0,
+    "make_dead_on_all_finite_time_actions_done": true,
+    "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "time_actions": [
+    {
+        "first_action_delay_time_value": "charged_phase_missile_charge_value",
+        "execution_interval_value": "charged_phase_missile_interval_value",
+        "execution_interval_count_value": "charged_phase_missile_torpedo_count_value",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position":
+                {
+                    "position_type": "ability_position",
+                    "ability":
+                    {
+                        "ability_type": "source_ability"
+                    },
+                    "ability_position_picking_type": "next_sequential"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_torpedo",
+                    "torpedo_to_create": "vasari_charged_phase_missile_medium",
+                    "torpedo_forward":
+                    {
+                        "direction_type": "operand_position_forward"
+                    },
+                    "torpedo_source_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "torpedo_enable_steering_distance_as_radius_scalar_value": "charged_phase_missile_torpedo_steering_distance_radius_scalar_value",
+                    "torpedo_target_unit":
+                    {
+                        "unit_type": "target"
+                    },
+                    "damage_affect_type": "hull_and_armor_and_shields",
+                    "damage_value": "charged_phase_missile_damage_value",
+                    "penetration_value": "charged_phase_missile_armor_penetration_value",
+                    "bypass_shields_chance_value": "charged_phase_missile_bypass_shields_chance_value",
+                    "duration_value": "charged_phase_missile_torpedo_lifetime_value"
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "charged_phase_missile_chargeup",
+                        "medium_unit": "charged_phase_missile_chargeup",
+                        "large_unit": "charged_phase_missile_chargeup"
+                    }
+                }
+            }]
+        }
+    }]
+}

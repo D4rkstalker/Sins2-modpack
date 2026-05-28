@@ -30,7 +30,7 @@
             "constraints": [
             {
                 "constraint_type": "has_missing_hull",
-				"percentage_missing_threshold": 0.25
+                "percentage_missing_threshold": 0.25
             },
             {
                 "constraint_type": "has_recently_been_damaged"
@@ -50,12 +50,13 @@
                 "frigate",
                 "starbase",
                 "structure",
-				"corvette",
-				"super_capital_ship",
+                "corvette",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -64,14 +65,14 @@
         {
             "unit_types": [
                 "capital_ship"
-			],
+            ],
             "ownerships": [
                 "self"
             ],
             "constraints": [
             {
                 "constraint_type": "has_definition",
-				"unit_definition": "trader_transport_capital_ship"
+                "unit_definition": "trader_transport_capital_ship"
             }]
         }
     }],
@@ -110,6 +111,13 @@
         }
     },
     {
+        "action_value_id": "boarding_party_travel_speed_value",
+        "action_value":
+        {
+            "values": [1000.0]
+        }
+    },
+    {
         "action_value_id": "demolition_team_range_value",
         "action_value":
         {
@@ -128,6 +136,59 @@
         "action_value":
         {
             "values": [80.0]
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage_large",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Damage_Titan"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage_medium",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Damage_Capship"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_damage_small",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Damage_Frigate"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_target",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Target"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_hit",
+        "alias_binding":
+        {
+            "particle_effect": "Ability_DemolitionTeams_Hit"
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_muzzle",
+        "alias_binding":
+        {
+            "particle_effect": "tec_missile_frigate_missile_muzzle",
+            "sounds": [
+                "trader_transport_capital_ship_scout_launch"
+            ]
+        }
+    },
+    {
+        "alias_name": "trader_transport_capital_ship_scout_travel",
+        "alias_binding":
+        {
+            "particle_effect": "tec_transport_capital_ship_scout"
         }
     }]
 }

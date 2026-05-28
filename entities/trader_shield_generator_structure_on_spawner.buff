@@ -9,7 +9,7 @@
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
     {
-		"execution_interval_value": "fixed_one",
+        "execution_interval_value": "fixed_one",
         "action_group":
         {
             "actions": [
@@ -18,7 +18,7 @@
                 "destination_unit":
                 {
                     "unit_type": "current_spawner",
-					"redirection": "current_gravity_well_primary_fixture"
+                    "redirection": "current_gravity_well_primary_fixture"
                 },
                 "operators": [
                 {
@@ -34,7 +34,68 @@
                     "operator_type": "apply_buff",
                     "buff": "trader_shield_generator_structure_on_gravity_well"
                 }]
+            },
+            {
+                "action_type": "use_unit_operators_on_gravity_wells",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "max_jump_distance_value": "fixed_one",
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_and",
+                        "constraints": [
+                        {
+                            "constraint_type": "unit_passes_target_filter",
+                            "unit":
+                            {
+                                "unit_type": "operand_destination",
+                                "redirection": "current_gravity_well_primary_fixture"
+                            },
+                            "target_filter_id": "trader_shield_generator_target_filter"
+                        },
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "operand_source"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_buff",
+                                "buff": "focusing_lens_planet_artifact_ability_on_cannon"
+                            }
+                        }]
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "trader_shield_generator_structure_on_gravity_well",
+                    "destination_unit":
+                    {
+                        "unit_type": "operand_destination",
+                        "redirection": "current_gravity_well_primary_fixture"
+                    }
+                }]
             }]
-		}
-	}]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect": "planet_shield_effect_self"
+                }
+            }]
+        }
+    }]
 }

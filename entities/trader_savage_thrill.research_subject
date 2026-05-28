@@ -4,7 +4,7 @@
     "tier": 2,
     "field": "military_armament",
     "field_coord": [5, 7],
-    "research_time": 360.0,
+    "research_time": 270.0,
     "price":
     {
         "credits": 1250.0,
@@ -26,6 +26,15 @@
             {
                 "constraint_type": "has_weapon",
                 "weapon_type": "planet_bombing"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "laesinda_spawn_illusions_on_clones",
+                    "include_pending_buffs": true
+                }
             }]
         },
         "action_data_source": "trader_savage_thrill_research_subject",

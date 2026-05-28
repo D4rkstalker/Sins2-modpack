@@ -51,7 +51,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "support"
     },
     "user_interface":
     {
@@ -113,21 +114,10 @@
             "max_armor_points": 615.0,
             "armor_point_restore_rate": 2.25,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
-								   
-											 
             "armor_point_restore_scalar_after_damage_taken": 0.0,
             "armor_strength": 48.0,
-			 
-										  
-										  
-			  
             "experience_given_on_death": 2.0
         }]
-    },
-    "antimatter":
-    {
-        "max_antimatter": 1.0,
-        "antimatter_restore_rate": 1.0
     },
     "build":
     {
@@ -140,15 +130,10 @@
         "build_kind": "frigate",
         "build_group_id": "frigate"
     },
-    "unit_modifiers": [
+    "ship_component_shop":
     {
-        "modifier_type": "max_antimatter",
-        "value_behavior": "additive",
-        "value": 49.0,
-        "prerequisites": [
-            ["vasari_unlock_exotic_factory_structure"]
-        ]
-    }],
+        "required_mutation": "modular_launch_bay_equipped"
+    },
     "target_filter_unit_type": "frigate",
     "tags": [
         "frigate"
@@ -157,7 +142,8 @@
     {
         "abilities": [
             "vasari_constructor_ship_build_structure",
-			"vasari_constructor_ship_deconstruct_structure"]
+			"vasari_constructor_ship_deconstruct_structure",
+		"vasari_deploy_pop_structure"]
     }],
     "build_structure_ability": "vasari_constructor_ship_build_structure",
     "skin_groups": [

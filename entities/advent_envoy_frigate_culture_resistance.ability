@@ -1,12 +1,6 @@
 {
     "version": 0,
     "action_data_source": "advent_envoy_frigate_culture_resistance",
-    "level_source": "research_prerequisites_per_level",
-    "level_prerequisites": [
-        [
-            ["advent_unlock_envoy_frigate_culture_resistance_ability"]
-        ]
-    ],
     "active_actions":
     {
         "cooldown_time": "culture_resistance_cooldown_time_value",
@@ -27,6 +21,39 @@
                     "buff": "advent_envoy_frigate_culture_resistance"
                 }]
             }]
+        },
+        "auto_cast":
+        {
+            "caster_constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                    	"unit_type": "current_spawner",
+                    	"redirection": "current_gravity_well_primary_fixture"
+                    },
+                    "target_filter_id": "culture_resistance_auto_cast_target_filter"
+                },
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                    	"unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                    	"constraint_type": "composite_not",
+                    	"constraint":
+                    	{
+                            "constraint_type": "has_buff",
+                            "buff": "advent_envoy_frigate_culture_resistance"
+                    	}
+                    }
+                }]
+            }
         },
         "watched_buff": "advent_envoy_frigate_culture_resistance"
     },

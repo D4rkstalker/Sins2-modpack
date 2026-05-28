@@ -13,7 +13,7 @@
     "physics":
     {
         "can_move_angular": true,
-        "max_angular_speed": 1.25,
+        "max_angular_speed": 7.5,
         "death_angular_speed_range": [3.0, 5.0]
     },
     "ai":
@@ -24,7 +24,8 @@
     "ai_attack_target":
     {
         "attack_priority": 25.0,
-        "is_always_a_threat": false
+        "is_always_a_threat": false,
+        "attack_target_type": "defense"
     },
     "player_ai":
     {
@@ -45,7 +46,7 @@
     "structure":
     {
         "slot_type": "military",
-        "slots_required": 3,
+        "slots_required": 10,
         "roles": [
             "super_weapon"
         ],
@@ -121,7 +122,7 @@
         "durability": 750.0,
         "levels": [
         {
-            "max_hull_points": 5200.0,
+            "max_hull_points": 6500.0,
             "hull_point_restore_rate": 6.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
@@ -137,8 +138,8 @@
             "shield_point_restore_scalar_after_damage_taken": 0.0,
             "shield_burst_restore":
             {
-                "cooldown_duration": 20.0,
-                "restore_percentage": 1.0
+                "cooldown_duration": 25.0,
+                "restore_percentage": 0.75
             },
             "experience_given_on_death": 250.0
         }]
@@ -187,20 +188,6 @@
             "advent_deliverance_engine_rebel"
         ],
         "required_player": "advent_rebel_rrr"
-    },
-    {
-        "abilities": [
-            "advent_deliverance_engine_culture_spread_loyalist",
-            "advent_deliverance_engine_loyalist"
-        ],
-        "required_player": "advent_loyalist"
-    },
-    {
-        "abilities": [
-            "advent_deliverance_engine_culture_spread_rebel",
-            "advent_deliverance_engine_rebel"
-        ],
-        "required_player": "advent_rebel"
     }],
     "skin_groups": [
     {

@@ -8,7 +8,28 @@
             "center": [0.0, -194.246887, -90.401382],
             "extents": [316.268463, 933.877502, 421.624329]
         },
-        "collision_rank": 2
+        "collision_rank": 2,
+        "missile_aim_zones": [
+        {
+            "center": [0.0, 600.0, -25.0],
+            "radius": 200.0
+        },
+        {
+            "center": [0.0, 200.0, 50.0],
+            "radius": 300.0
+        },
+        {
+            "center": [0.0, -250.0, 75.0],
+            "radius": 125.0
+        },
+        {
+            "center": [0.0, -500.0, 50.0],
+            "radius": 100.0
+        },
+        {
+            "center": [0.0, -825.0, -75.0],
+            "radius": 150.0
+        }]
     },
     "physics":
     {
@@ -62,7 +83,7 @@
         "attack_target_type_groups_to_ignore": [
             "torpedo_strikecraft_corvette"
         ],
-        "attack_target_type_groups_matching_weapon": "advent_battle_capital_ship_beam",
+        "attack_target_type_groups_matching_weapon": "dlc2_advent_rebel_super_capital_ship_beam",
         "auto_follow_target_priority": 5.0,
         "pursuit":
         {
@@ -75,7 +96,7 @@
     {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
-        "attack_target_type": "capital"
+        "attack_target_type": "supercapital"
     },
     "user_interface":
     {
@@ -885,19 +906,19 @@
                     "types": [
                         "defense"
                     ],
-                    "counts": [2, 3]
+                    "counts": [1, 2]
                 },
                 {
                     "types": [
                         "utility"
                     ],
-                    "counts": [1, 2]
+                    "counts": [0, 1]
                 },
                 {
                     "types": [
                         "economic"
                     ],
-                    "counts": [1, 2]
+                    "counts": [0, 1]
                 }],
                 "weight": 1.0
             }],
@@ -1789,15 +1810,15 @@
         "exotic_price": [
         {
             "exotic_type": "defense",
-            "count": 3
+            "count": 2
         },
         {
             "exotic_type": "utility",
-            "count": 2
+            "count": 1
         },
         {
             "exotic_type": "economic",
-            "count": 2
+            "count": 1
         }],
         "prerequisites": [
             ["dlc2_advent_unlock_rebel_super_capital_ship"]
@@ -1845,7 +1866,8 @@
             "advent_missile_boost",
             "advent_harmony_circuit",
             "advent_psionic_dynamo",
-            "advent_votary_siphon"
+            "advent_reanimation",
+	    "advent_shield_boost"
         ],
         "weight": 15.0
     },
@@ -1856,6 +1878,7 @@
             "advent_shield_boost",
             "advent_structural_forcefields",
             "advent_focus_shields",
+            "advent_reanimation",
             "advent_psionic_dynamo"
         ],
         "weight": 15.0
@@ -1867,10 +1890,17 @@
             "advent_focus_antimatter",
             "advent_harmony_circuit",
             "advent_psionic_dynamo",
-            "advent_reanimation"
+            "advent_reanimation",
+	    "advent_shield_boost"
         ],
         "weight": 15.0
-    }],
+    },
+        {
+            "weight": 3.0,
+            "build_group": [
+                "arankul_intelligent_nanites"
+            ]
+        }],
     "culture_provider":
     {},
     "target_filter_unit_type": "super_capital_ship",
@@ -1878,6 +1908,7 @@
         "super_capital_ship"
     ],
     "is_loot_collector": true,
+    "capture_points": 10,
     "abilities": [
     {
         "abilities": [

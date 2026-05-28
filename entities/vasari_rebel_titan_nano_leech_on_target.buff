@@ -59,6 +59,34 @@
                     "antimatter_remove_value": "nano_leech_antimatter_remove_rate_value"
                 }]
             },
+                        {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "research_prerequisites_are_met",
+                        "prerequisites": [["vasari_rebel_titan_nano_emitters_no_item"]],
+                        "player":
+                        {
+                            "player_type": "unit_owner",
+                            "owned_unit":
+                            {
+                                "unit_type": "previous_spawner"
+                            }
+                        }
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_only",
+                    "damage_value": "nano_leech_damage_percent_rate_value",
+                    "penetration_value": "nano_leech_armor_penetration_value"
+                }]
+            },
             {
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
@@ -118,7 +146,7 @@
                     }
                 }
             },
-			{
+            {
                 "action_type": "change_buff_memory_float_value",
 				"buff": "parent_buff",
                 "float_variable": "total_hull_regen",
@@ -128,7 +156,7 @@
                     "operand_value": "nano_leech_hull_restore_rate_value"
                 }]
             },
-			{
+            {
                 "constraint":
                 {
                     "constraint_type": "unit_passes_unit_constraint",
@@ -167,7 +195,7 @@
         "action_group":
         {
             "actions": [
-			{
+            {
                 "action_type": "change_buff_memory_float_value",
 				"buff": "parent_buff",
                 "float_variable": "total_hull_regen",
@@ -177,7 +205,7 @@
                     "operand_value": "nano_leech_hull_restore_rate_value"
                 }]
             },
-			{
+            {
                 "constraint":
                 {
                     "constraint_type": "unit_passes_unit_constraint",
@@ -224,12 +252,13 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
                 "value_id": "nano_leech_armor_penetration_value",
-				"value_color": "negative"
+                "value_color": "negative"
             },
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.antimatter_removed",
                 "value_id": "nano_leech_antimatter_remove_rate_value",
+                "value_float_format": "one_decimal_place_with_sign",
                 "value_color": "negative",
                 "value_suffix": "per_second"
             }]

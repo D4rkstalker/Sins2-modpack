@@ -16,10 +16,14 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_fully_built"
+                "constraint_type": "not_self"
             },
             {
-                "constraint_type": "not_self"
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.1
             },
             {
                 "constraint_type": "composite_not",
@@ -29,54 +33,6 @@
                     "buff": "trader_offensive_support_cruiser_embolden",
                     "include_pending_buffs": true
                 }
-            },
-			{
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-                    "constraint_type": "has_shields"
-                },
-                {
-                    "constraint_type": "has_weapon"
-                }]
-			}]
-        }
-    },
-    {
-        "target_filter_id": "embolden_auto_cast_high_priority_recently_fired_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "capital_ship",
-                "super_capital_ship",
-                "starbase",
-                "titan"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_recently_fired_weapon"
-            }]
-        }
-    },
-    {
-        "target_filter_id": "embolden_auto_cast_low_priority_recently_fired_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "corvette",
-                "cruiser",
-                "frigate",
-                "structure"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_recently_fired_weapon"
             }]
         }
     },
@@ -95,10 +51,14 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_fully_built"
+                "constraint_type": "not_self"
             },
             {
-                "constraint_type": "not_self"
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.1
             },
             {
                 "constraint_type": "composite_not",
@@ -108,17 +68,7 @@
                     "buff": "trader_offensive_support_cruiser_embolden",
                     "include_pending_buffs": true
                 }
-            },
-			{
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-                    "constraint_type": "has_shields"
-                },
-                {
-                    "constraint_type": "has_weapon"
-                }]
-			}]
+            }]
         }
     },
     {
@@ -127,12 +77,12 @@
         {
             "unit_types": [
                 "capital_ship",
-                "super_capital_ship",
                 "corvette",
                 "cruiser",
                 "frigate",
                 "starbase",
                 "structure",
+                "super_capital_ship",
                 "titan"
             ],
             "ownerships": [
@@ -140,12 +90,9 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_fully_built"
-            },
-            {
                 "constraint_type": "not_self"
             },
-			{
+            {
                 "constraint_type": "composite_or",
                 "constraints": [
                 {
@@ -154,7 +101,7 @@
                 {
                     "constraint_type": "has_weapon"
                 }]
-			}]
+            }]
         }
     }],
     "action_values": [
@@ -163,13 +110,6 @@
         "action_value":
         {
             "values": [50.0]
-        }
-    },
-    {
-        "action_value_id": "auto_cast_shields_threshold_value",
-        "action_value":
-        {
-            "values": [75.0]
         }
     },
     {
@@ -205,18 +145,6 @@
         "action_value":
         {
             "values": [4000.0]
-        }
-    },
-    {
-        "action_value_id": "target_missing_shields_value",
-        "action_value":
-        {
-            "transform_type": "per_missing_shield_points",
-            "transform_unit":
-            {
-                "unit_type": "target"
-            },
-            "values": [1.0]
         }
     }],
     "buff_weapon_modifiers": [

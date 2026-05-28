@@ -7,21 +7,17 @@
     "research_time": 695.0,
     "price":
     {
-        "credits": 5000.0,
-        "metal": 1875.0,
-        "crystal": 1875.0
+        "credits": 4000.0,
+        "metal": 1500.0,
+        "crystal": 1500.0
     },
     "prerequisites": [["trader_twin_fortresses"]],
-    "buff_providers": [
+    "unit_modifiers": [
     {
-        "scope": "all_owned_units",
-        "all_owned_units_target_filter":
-        {
-            "unit_types": ["structure", "starbase"],
-            "ownerships": ["self"]
-        },
-        "action_data_source": "trader_loyalist_shield_burst_restore",
-        "buff": "trader_loyalist_shield_burst_restore"
+        "modifier_type": "shield_burst_restore_cooldown_duration",
+        "value_behavior": "scalar",
+        "value": -0.25,
+	"tags": ["structure", "starbase"]
     }],
     "bonus_unit_limits":
     {

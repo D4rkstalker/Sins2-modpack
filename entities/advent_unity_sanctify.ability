@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_sanctify",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [2, 4, 6],
+    "active_actions":
+    {
+        "cooldown_time": "sanctify_cooldown_time_value",
+        "unity_mana_cost": "sanctify_unity_mana_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_sanctify_on_planet"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "targeting_ui": "pick_gravity_well",
+        "target_filters": [
+            "sanctify_target_filter"
+        ],
+        "ai_only_auto_cast":
+        {
+            "type": "pick_planet_anywhere",
+            "target_definitions": [
+            {
+                "target_filter": "sanctify_ai_auto_cast_high_priority_target_filter"
+            },
+            {
+                "target_filter": "sanctify_ai_auto_cast_low_priority_target_filter"
+            }]
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_sanctify_ability_hud_icon",
+        "tooltip_picture": "advent_unity_sanctify_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_sanctify_ability_tooltip_picture",
+        "name": "advent_unity_sanctify_ability_name",
+        "description": "advent_unity_sanctify_ability_description",
+        "tooltip_line_groups": [
+        {
+            "header_text": "advent_unity_requires_dominant_culture_header",
+            "lines": []
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.invulnerable",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.planet_health_restore_rate",
+                "value_id": "sanctify_planet_health_restore_amount_value",
+                "value_float_format": "percentage",
+                "value_suffix": "per_second",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "sanctify_execution_count_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

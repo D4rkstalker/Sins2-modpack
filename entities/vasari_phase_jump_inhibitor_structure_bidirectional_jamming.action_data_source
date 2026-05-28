@@ -1,0 +1,73 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_lane_detector_auto_cast_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+                "super_capital_ship",
+                "starbase"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "phase_lane_detector_enemy_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+                "super_capital_ship",
+                "starbase",
+                "cruiser",
+                "frigate",
+                "corvette"
+            ],
+            "ownerships": [
+                "enemy"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "duration",
+        "action_value":
+        {
+            "values": [45.0]
+        }
+    },
+    {
+        "action_value_id": "cooldown_time",
+        "action_value":
+        {
+            "values": [240.0]
+        }
+    },
+    {
+        "action_value_id": "bidirectional_jamming_hyperspace_speed_value",
+        "action_value":
+        {
+            "values": [-0.6]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "bidirectional_jamming_hyperspace_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hyperspace_speed",
+            "value_behavior": "scalar",
+            "value_id": "bidirectional_jamming_hyperspace_speed_value"
+        }
+    }]
+}

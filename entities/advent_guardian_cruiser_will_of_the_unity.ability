@@ -17,12 +17,24 @@
             {
                 "constraint":
                 {
-                    "constraint_type": "unit_passes_target_filter",
-                    "unit":
+                    "constraint_type": "composite_or",
+                    "constraints": [
                     {
-                        "unit_type": "target"
+                    	"constraint_type": "unit_passes_target_filter",
+                    	"unit":
+                    	{
+                    		"unit_type": "target"
+                    	},
+                    	"target_filter_id": "will_of_the_unity_target_filter"
                     },
-                    "target_filter_id": "will_of_the_unity_target_filter"
+                    {
+                    	"constraint_type": "unit_passes_target_filter",
+                    	"unit":
+                    	{
+                    		"unit_type": "target"
+                    	},
+                    	"target_filter_id": "will_of_the_unity_psi_power_item_target_filter"
+                    }]
                 },
                 "action_type": "use_unit_operators_on_single_unit",
                 "destination_unit":
@@ -39,7 +51,8 @@
         },
         "targeting_type": "unit_targeted",
         "target_filters": [
-            "will_of_the_unity_target_filter"
+            "will_of_the_unity_target_filter",
+            "will_of_the_unity_psi_power_item_target_filter"
         ],
         "range": "will_of_the_unity_range_value",
         "auto_cast":
@@ -48,6 +61,9 @@
             "target_definitions": [
             {
                 "target_filter": "will_of_the_unity_auto_cast_target_filter"
+            },
+            {
+                "target_filter": "will_of_the_unity_psi_power_item_auto_cast_target_filter"
             }]
         }
     },

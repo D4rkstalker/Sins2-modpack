@@ -22,13 +22,51 @@
                 "constraint_type": "can_ever_move"
             }]
         }
+    },
+    {
+        "target_filter_id": "trader_garrison_buff_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "cruiser",
+                "frigate"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_buff",
+                "buff": "special_operation_unit"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "trader_garrison_planet_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
     }],
     "action_values": [
     {
         "action_value_id": "trader_loyalist_homeworld_home_guard_command_unit_item_damage_taken_scalar",
         "action_value":
         {
-            "values": [-0.2, -0.2, -0.2, -0.2]
+            "values": [-0.2, -0.25, -0.3, -0.35]
+        }
+    },
+    {
+        "action_value_id": "trader_loyalist_homeworld_home_guard_command_unit_item_on_target_gravity_well_duration",
+        "action_value":
+        {
+            "values": [3.1, 3.1, 3.1, 3.1]
         }
     },
     {
@@ -36,6 +74,23 @@
         "action_value":
         {
             "values": [2.0, 2.0, 2.0, 2.0]
+        }
+    },
+    {
+        "action_value_id": "trader_garrison_buff_scalar",
+        "action_value":
+        {
+            "values": [0.0, 0.5, 1.0, 1.5]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "trader_garrison_buff_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
         }
     }],
     "buff_unit_modifiers": [
@@ -46,6 +101,33 @@
             "modifier_type": "damage_taken",
             "value_behavior": "scalar",
             "value_id": "trader_loyalist_homeworld_home_guard_command_unit_item_damage_taken_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "trader_garrison_buff_hull_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_hull_points",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "trader_garrison_buff_armor_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_armor_points",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "trader_garrison_buff_shield_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_shield_points",
+            "value_behavior": "scalar",
+            "value_id": "trader_garrison_buff_scalar"
         }
     }],
     "buff_actions": [

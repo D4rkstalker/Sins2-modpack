@@ -1,0 +1,37 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "flak_burst_stack_limit_value_level_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_stacking_limit_met",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_flak_burst_unit_item_charge_cooldown"
+                }]
+            },
+            {
+                "action_type": "make_buff_dead"
+            }]
+        }
+    }],
+    "unit_mutations": [
+        "trader_flak_burst_count_level"
+    ]
+}

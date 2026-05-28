@@ -66,7 +66,8 @@
     "ai_attack_target":
     {
         "attack_priority": 50.0,
-        "is_always_a_threat": true
+        "is_always_a_threat": true,
+        "attack_target_type": "siege"
     },
     "player_ai":
     {
@@ -181,18 +182,18 @@
     },
     "build":
     {
-        "build_time": 40.0,
+        "build_time": 50.0,
         "price":
         {
-            "credits": 500.0,
-            "metal": 60.0,
-            "crystal": 100.0
+            "credits": 600.0,
+            "metal": 75.0,
+            "crystal": 125.0
         },
         "prerequisites": [
             ["trader_unlock_siege_frigate"]
         ],
         "build_kind": "frigate",
-        "supply_cost": 6,
+        "supply_cost": 8,
         "build_group_id": "frigate"
     },
     "unit_modifiers": [
@@ -216,6 +217,22 @@
     "tags": [
         "frigate"
     ],
+    "abilities": [
+    {
+        "abilities": []
+    },
+    {
+        "abilities": [
+            "trader_siege_frigate_the_final_word"
+        ],
+        "required_player": "trader_rebel_rrr"
+	},
+    {
+        "abilities": [
+			"special_operation_unit"
+        ],
+        "required_special_operation_unit_kind": "insurgent"
+	}],
     "ship_roles": [
         "bomb_planet",
         "attack_ship"

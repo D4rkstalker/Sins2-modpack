@@ -14,8 +14,8 @@
     {
         "can_move_linear": true,
         "max_linear_speed": 1000.0,
-        "time_to_max_linear_speed": 2.0,
-        "arrival_tolerance_spatial_radius_scalar": 1.0,
+        "time_to_max_linear_speed": 2.5,
+        "arrival_tolerance_spatial_radius_scalar": 1.5,
         "death_linear_speed_range": [0.75, 1.25],
         "can_move_angular": true,
         "max_angular_speed": 100.0,
@@ -197,11 +197,11 @@
         "can_ever_be_resurrected": true,
         "levels": [
         {
-            "max_hull_points": 300.0,
+            "max_hull_points": 325.0,
             "hull_point_restore_rate": 1.0,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 325.0,
+            "max_armor_points": 400.0,
             "armor_point_restore_rate": 1.5,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
             "armor_point_restore_scalar_after_damage_taken": 0.0,
@@ -222,9 +222,9 @@
         "build_time": 20.0,
         "price":
         {
-            "credits": 245.0,
+            "credits": 215.0,
             "metal": 25.0,
-            "crystal": 55.0
+            "crystal": 40.0
         },
         "prerequisites": [
             ["trader_unlock_missile_corvette"]
@@ -237,7 +237,7 @@
     {
         "modifier_type": "max_shield_points",
         "value_behavior": "additive",
-        "value": 250.0,
+        "value": 300.0,
         "prerequisites": [
             ["trader_shields_corvette"]
         ]
@@ -254,6 +254,22 @@
     "tags": [
         "corvette"
     ],
+    "abilities": [
+    {
+        "abilities": []
+    },
+    {
+        "abilities": [
+			"special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "garrison"
+    },
+    {
+        "abilities": [
+			"special_operation_unit"
+		],
+		"required_special_operation_unit_kind": "insurgent"
+    }],
     "ship_roles": [
         "attack_ship"
     ],

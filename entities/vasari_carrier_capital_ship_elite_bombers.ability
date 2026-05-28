@@ -12,7 +12,15 @@
         "hud_icon": "vasari_carrier_capital_ship_elite_bombers_ability_hud_icon",
         "tooltip_picture": "vasari_carrier_capital_ship_elite_bombers_ability_tooltip_picture",
         "name": "vasari_carrier_capital_ship_elite_bombers_ability_name",
-        "description": "vasari_carrier_capital_ship_elite_bombers_ability_description",
+        "description": "ability.vasari_carrier_capital_ship_elite_strikecraft_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "microphasing_aura_radius"
+            }
+        },
         "tooltip_line_groups": [
         {
             "lines": [
@@ -27,6 +35,54 @@
             {
                 "rendering_type": "buff_unit_modifier",
                 "unit_modifier_id": "elite_bombers_hull_regen_modifier"
+            }]
+        },
+        {
+	    "header_text": "npc_reward.grost_microphasing_aura.name",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "microphasing_aura_radius"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.execution_chance",
+                "value_id": "microphasing_aura_chance_value",
+                "value_float_format": "percentage"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.execution_interval",
+                "value_id": "microphasing_aura_execution_interval_value",
+                "value_suffix": "seconds"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.execution_header",
+            "lines": [
+            {
+                "rendering_type": "single_line",
+                "label_text": "unit_mutation.invulnerable",
+                "value_color": "positive"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "microphasing_aura_max_linear_speed_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "microphasing_aura_max_linear_acceleration_modifier"
+            },
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "microphasing_aura_max_angular_speed_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "fixed_one",
+                "value_suffix": "seconds"
             }]
         }]
     }

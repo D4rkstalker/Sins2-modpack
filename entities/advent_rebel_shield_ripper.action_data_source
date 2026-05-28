@@ -1,0 +1,49 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "shield_ripper_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "strikecraft",
+                "corvette",
+                "frigate",
+                "cruiser",
+                "capital_ship",
+                "structure",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "has_shields"
+                },
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_missing_shields",
+                        "percentage_missing_threshold": 0.99
+                    }
+                }]
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "shield_ripper_bonus_value",
+        "action_value":
+        {
+            "transform_type": "per_raw_damage_dealt",
+            "values": [1.0]
+        }
+    }]
+}

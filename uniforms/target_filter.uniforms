@@ -1,23 +1,4 @@
 {
-    "torpedo_target_filter":
-    {
-        "unit_types": [
-            "capital_ship",
-            "corvette",
-            "cruiser",
-            "frigate",
-            "starbase",
-            "structure",
-            "super_capital_ship",
-            "titan"
-        ],
-        "ownerships": [
-            "enemy"
-        ],
-        "constraints": [],
-        "exemptions": [
-            "is_dead"]
-    },
     "overwrite_common_target_filters": true,
     "common_target_filters": [
     {
@@ -36,24 +17,7 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+            ]
         }
     },
     {
@@ -71,24 +35,7 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+            ]
         }
     },
     {
@@ -108,24 +55,7 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+            ]
         }
     },
     {
@@ -138,24 +68,7 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+            ]
         }
     },
     {
@@ -176,24 +89,7 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+            ]
         }
     },
     {
@@ -206,24 +102,7 @@
             ],
             "ownerships": [
                 "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+            ]
         }
     },
     {
@@ -356,6 +235,7 @@
             ],
             "ownerships": [
                 "self",
+                "ally",
 				"none"
             ]
         }
@@ -406,23 +286,8 @@
             "constraints": [
             {
                 "constraint_type": "is_in_current_gravity_well"
-			},
-            {
-                "constraint_type": "composite_or",
-                "constraints": [
-                {
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_mutation",
-						"mutation": "invulnerable"
-					}
-                },
-                {
-					"constraint_type": "has_mutation",
-					"mutation": "suppress_invulnerable"
-                }]
-            }]
+	    }],
+	    "respect_can_be_targeted_permissions": false
         }
     },
 	{
@@ -438,8 +303,9 @@
             "constraints": [
             {
                 "constraint_type": "has_mutation",
-				"mutation": "can_be_captured"
-			}]
+		"mutation": "can_be_captured"
+	    }],
+	    "respect_can_be_targeted_permissions": false
         }
     },
     {
@@ -447,11 +313,11 @@
         "target_filter":
         {
             "unit_types": [
+                "titan",
+		"super_capital_ship",
                 "capital_ship",
                 "starbase",
-                "structure",
-				"super_capital_ship",
-                "titan"
+                "structure"
             ],
             "ownerships": [
                 "enemy"
@@ -537,6 +403,28 @@
 			{
                 "constraint_type": "has_buff",
                 "buff": "player_buffs_is_ai_on_target"
+			}]
+        }
+    },
+    {
+        "target_filter_id": "uniforms_send_envoy",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet"
+            ],
+            "ownerships": [
+                "self",
+		"ally"
+            ],
+            "constraints": [
+			{
+				"constraint_type": "composite_not",
+				"constraint":
+				{
+					"constraint_type": "has_buff",
+					"buff": "skaransul_send_envoy_on_planet"
+				}
 			}]
         }
     }],

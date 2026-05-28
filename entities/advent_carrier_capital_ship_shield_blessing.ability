@@ -22,6 +22,27 @@
                     "operator_type": "apply_buff",
                     "buff": "advent_carrier_capital_ship_shield_blessing_on_spawner"
                 }]
+            },
+            {
+                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                "gravity_well_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_target_filter",
+                        "unit":
+                        {
+                            "unit_type": "operand_destination"
+                        },
+                        "target_filter_id": "shield_blessing_auto_cast_target_filter"
+                    },
+                    "operator_type": "apply_buff",
+                    "buff": "advent_carrier_capital_ship_shield_blessing_check"
+                }]
             }]
         },
         "auto_cast":
@@ -29,34 +50,28 @@
             "enabled_by_default_behavior": "always",
             "caster_constraint":
             {
-				"constraint_type": "composite_and",
-				"constraints": [
-				{
-					"constraint_type": "unit_passes_unit_constraint",
-					"unit":
-					{
-						"unit_type": "current_spawner"
-					},
-					"unit_constraint":
-					{
-						"constraint_type": "weapon_has_target"
-					}
-				},
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_valid_targets_in_radius",
-						"radius_origin_unit":
-						{
-							"unit_type": "current_spawner",
-							"redirection": "current_gravity_well_primary_fixture"
-						},
-						"radius_value": "shield_blessing_auto_cast_radius_value",
-						"target_count_value": "fixed_one",
-						"target_filter_id": "shield_blessing_auto_cast_target_filter"
-					}
-				}]
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "unit_constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "weapon_has_target"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "has_buff",
+                            "buff": "advent_carrier_capital_ship_shield_blessing_check",
+                            "include_pending_buffs": true
+                        }
+                    }]
+                }
             }
         }
     },

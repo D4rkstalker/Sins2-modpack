@@ -17,7 +17,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     }],
     "action_values": [
@@ -40,6 +41,13 @@
         "action_value":
         {
             "values": [40.0, 40.0, 40.0, 40.0, 40.0]
+        }
+    },
+    {
+        "action_value_id": "tactical_assault_missile_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "values": [0.15, 0.2, 0.25, 0.3, 0.5]
         }
     },
     {
@@ -80,6 +88,17 @@
         }
     }],
     "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "tactical_assault_missile_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "tactical_assault_missile_weapon_damage_bonus_value",
+            "tags": [
+                "missile"]
+        }
+    },
     {
         "buff_weapon_modifier_id": "tactical_assault_missile_weapon_cooldown_duration_modifier",
         "buff_weapon_modifier":

@@ -1,0 +1,68 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "singularity_gravity_slingshot_star_bonus_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "structure",
+                "starbase",
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "strikecraft",
+                "torpedo",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "can_ever_move"
+            }],
+            "exemptions": [
+                "is_dead"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "singularity_gravity_slingshot_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "singularity_gravity_slingshot_angular_speed_bonus_value",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "singularity_gravity_slingshot_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "singularity_gravity_slingshot_angular_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "singularity_gravity_slingshot_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "singularity_gravity_slingshot_linear_speed_bonus_value"
+        }
+    }]
+}

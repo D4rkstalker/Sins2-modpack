@@ -1,0 +1,73 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "ability_targets",
+        "target_filter":
+        {
+            "unit_types": [
+                "planet",
+                "uncolonizable",
+                "star"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly",
+                "none"
+            ]
+        }
+    },
+    {
+        "target_filter_id": "armistice_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "strikecraft",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy",
+                "friendly"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "armistice_duration_value",
+        "action_value":
+        {
+            "values": [60.0]
+        }
+    },
+    {
+        "action_value_id": "armistice_lockout_duration_value",
+        "action_value":
+        {
+            "values": [960.0]
+        }
+    },
+    {
+        "action_value_id": "armistice_antimatter_regeneration_scalar",
+        "action_value":
+        {
+            "values": [-1000000.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "armistice_antimatter_regeneration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "antimatter_restore_rate",
+            "value_behavior": "scalar",
+            "value_id": "armistice_antimatter_regeneration_scalar"
+        }
+    }]
+}

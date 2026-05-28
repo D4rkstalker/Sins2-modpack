@@ -4,7 +4,10 @@
     "level_source": "unit_item",
     "active_actions":
     {
+        "metal_cost": "nano_swarm_metal_cost_value",
+        "crystal_cost": "nano_swarm_crystal_cost_value",
         "cooldown_time": "nano_swarm_cooldown_time_value",
+        "max_charge_count": "nano_swarm_charge_count_value",
         "actions":
         {
             "actions": [
@@ -18,6 +21,18 @@
                 {
                     "operator_type": "apply_buff",
                     "buff": "vasari_nano_swarm_unit_item"
+                }]
+            },
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "vasari_nano_swarm_unit_item_charge_count"
                 }]
             }]
         },
@@ -45,6 +60,14 @@
             }
         },
         "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.item_stack_count",
+                "value_id": "nano_swarm_charge_count_value"
+            }]
+        },
         {
             "lines": [
             {

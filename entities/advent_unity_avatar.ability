@@ -1,0 +1,78 @@
+{
+    "version": 0,
+    "action_data_source": "advent_unity_avatar",
+    "level_source": "unity_ability_level",
+    "total_required_unity_points": [2, 4, 6],
+    "active_actions":
+    {
+        "cooldown_time": "avatar_cooldown_time_value",
+        "unity_mana_cost": "avatar_unity_mana_cost_value",
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "target"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "advent_unity_avatar_on_spawner"
+                }]
+            }]
+        },
+        "targeting_type": "unit_targeted",
+        "target_filters": [
+            "avatar_target_filter"
+        ]
+    },
+    "gui":
+    {
+        "hud_icon": "advent_unity_avatar_ability_hud_icon",
+        "tooltip_picture": "advent_unity_avatar_ability_tooltip_picture",
+        "unity_window_picture": "advent_unity_avatar_ability_tooltip_picture",
+        "name": "advent_unity_avatar_ability_name",
+        "description": "advent_unity_avatar_ability_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "avatar_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "header_text": "advent_unity_avatar_on_target_header",
+            "lines": [
+            {
+                "rendering_type": "buff_unit_modifier",
+                "unit_modifier_id": "avatar_spell_power_modifier"
+            }]
+        },
+        {
+            "header_text": "advent_unity_avatar_on_aura_header",
+            "lines": [
+            {
+                "rendering_type": "buff_weapon_modifier",
+                "weapon_modifier_id": "avatar_energy_weapon_damage_modifier"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "avatar_radius_value"
+            }]
+        },
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.duration",
+                "value_id": "avatar_duration_value",
+                "value_suffix": "seconds"
+            }]
+        }]
+    }
+}

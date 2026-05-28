@@ -17,7 +17,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     },
     {
@@ -31,42 +32,34 @@
             ],
             "ownerships": [
                 "enemy"
-			],
-			"constraints": [
+            ],
+            "constraints": [
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
                     "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
+                    "mutation": "cannot_be_captured_or_cloned"
                 }
-			}]
-        }
-    },
-    {
-        "target_filter_id": "advent_deliverance_engine_loyalist_auto_cast_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "corvette",
-                "cruiser",
-                "frigate"
-            ],
-            "ownerships": [
-                "enemy"
-			],
-			"constraints": [
-            {
-                "constraint_type": "is_always_a_threat"
             },
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
-                    "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
+                    "constraint_type": "has_buff",
+                    "buff": "npc_home_protection_on_ship",
+                    "include_pending_buffs": true
                 }
-			}]
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "npc_home_protection_on_ship",
+                    "include_pending_buffs": true
+                }
+            }]
         }
     }],
     "action_values": [
@@ -88,7 +81,7 @@
         "action_value_id": "cooldown_time_value",
         "action_value":
         {
-            "values": [300.0, 180.0]
+            "values": [300.0, 240.0]
         }
     },
     {
@@ -96,20 +89,6 @@
         "action_value":
         {
             "values": [1500.0, 1500.0]
-        }
-    },
-    {
-        "action_value_id": "deliverance_engine_auto_cast_radius_value",
-        "action_value":
-        {
-            "values": [20000000.0, 20000000.0]
-        }
-    },
-    {
-        "action_value_id": "deliverance_engine_auto_cast_target_value",
-        "action_value":
-        {
-            "values": [20.0, 20.0]
         }
     },
     {
@@ -123,7 +102,7 @@
         "action_value_id": "range_value",
         "action_value":
         {
-            "values": [15.0, 15.0]
+            "values": [30.0, 30.0]
         }
     },
     {
@@ -142,14 +121,14 @@
         "action_value_id": "random_chance_value",
         "action_value":
         {
-            "values": [0.15, 0.15]
+            "values": [0.1, 0.125]
         }
     },
     {
         "action_value_id": "weapon_cooldown_duration",
         "action_value":
         {
-            "values": [0.35, 0.35]
+            "values": [0.35, 0.5]
         }
     }],
     "buff_weapon_modifiers": [

@@ -13,7 +13,20 @@
             ],
             "ownerships": [
                 "enemy"
-            ]
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_advent_rebel_super_judgement",
+                    "include_pending_buffs": true
+                }
+            }]
         }
     },
     {
@@ -29,7 +42,19 @@
             ],
             "constraints": [
             {
+                "constraint_type": "is_always_a_threat"
+            },
+            {
                 "constraint_type": "has_ability"
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_advent_rebel_super_judgement",
+                    "include_pending_buffs": true
+                }
             }]
         }
     },
@@ -48,7 +73,8 @@
                 "titan"
             ],
             "ownerships": [
-                "enemy"]
+                "enemy"
+            ]
         }
     }],
     "action_values": [
@@ -84,12 +110,12 @@
         "action_value_id": "judgement_hull_damage_value",
         "action_value":
         {
-            "transform_type": "per_max_hull_points",
+            "transform_type": "per_current_hull_points",
             "transform_unit":
             {
                 "unit_type": "target"
             },
-            "values": [0.03, 0.03, 0.03, 0.03, 0.03]
+            "values": [0.0025, 0.005, 0.0075, 0.01, 0.0125]
         }
     },
     {

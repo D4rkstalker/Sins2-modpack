@@ -11,17 +11,19 @@
                 "frigate"
             ],
             "ownerships": [
+		"ally",
+		"self",
                 "enemy"
             ],
-			"constraints": [
+            "constraints": [
             {
                 "constraint_type": "composite_not",
                 "constraint":
                 {
                     "constraint_type": "has_mutation",
-					"mutation": "cannot_be_captured_or_cloned"
+                    "mutation": "cannot_be_captured_or_cloned"
                 }
-			}]
+            }]
         }
     }],
     "action_values": [
@@ -40,7 +42,7 @@
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [1.0]
+                "ratio_values": [0.5]
             }
         }
     },
@@ -48,11 +50,11 @@
         "action_value_id": "reanimation_chance_bonus_value",
         "action_value":
         {
-            "values": [0.15],
+            "values": [0.1],
             "ratio":
             {
                 "ratio_type": "per_spell_power",
-                "ratio_values": [0.0001]
+                "ratio_values": [0.0003]
             }
         }
     }]

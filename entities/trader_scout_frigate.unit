@@ -144,7 +144,7 @@
     },
     "spawn_debris":
     {
-        "spawn_debris_time": 1.0,
+        "spawn_debris_time": 1.95,
         "generic_group_name": "trader",
         "generic_counts":
         {
@@ -162,10 +162,10 @@
             "max_hull_points": 450.0,
             "hull_point_restore_rate": 1.5,
             "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
-            "max_armor_points": 250.0,
+            "max_armor_points": 575.0,
             "armor_point_restore_rate": 2.25,
             "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
-            "armor_strength": 25.0,
+            "armor_strength": 40.0,
             "shield_point_restore_rate": 3.0,
             "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
             "shield_burst_restore":
@@ -181,17 +181,19 @@
         "build_time": 15.0,
         "price":
         {
-            "credits": 200.0
+            "credits": 200.0,
+			"metal": 35.0
         },
         "build_kind": "frigate",
-        "supply_cost": 3,
+        "supply_cost": 4,
+		"auto_cast_instead_of_rally_when_built": true,
         "build_group_id": "frigate"
     },
     "unit_modifiers": [
     {
         "modifier_type": "max_shield_points",
         "value_behavior": "additive",
-        "value": 200.0,
+        "value": 400.0,
         "prerequisites": [
             ["trader_shields_frigate"]
         ]
@@ -205,8 +207,7 @@
     {
         "abilities": [
             "trader_scout_corvette_scout",
-            "trader_scout_corvette_unstoppable_phase_jump",
-			"trader_scout_corvette_decloak_mine"
+            "trader_scout_corvette_unstoppable_phase_jump"
         ]
     }],
     "ship_roles": [

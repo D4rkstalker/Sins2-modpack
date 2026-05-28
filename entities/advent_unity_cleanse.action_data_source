@@ -3,7 +3,46 @@
     "level_count": 3,
     "target_filters": [
     {
-        "target_filter_id": "cleanse_auto_cast_target_filter",
+        "target_filter_id": "cleanse_ai_auto_cast_high_priority_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "cruiser"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_guardian_cruiser"
+                },
+                {
+                    "constraint_type": "has_definition",
+                    "unit_definition": "advent_defense_cruiser"
+                }]
+            },
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "advent_guardian_cruiser_shield_projection_on_spawner"
+                },
+                {
+                    "constraint_type": "has_recently_fired_weapon"
+                }]
+            },
+            {
+                "constraint_type": "has_shields"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "cleanse_ai_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -14,54 +53,36 @@
             ],
             "ownerships": [
                 "self"
-			],
+            ],
             "constraints": [
             {
-                "constraint_type": "composite_not",
-                "constraint": 
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "player_buffs_phase_space_invulnerable_on_target_phase_jump",
-					"include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "weapon_has_target"
-            },
-            {
-                "constraint_type": "has_missing_shields",
-				"percentage_missing_threshold": 0.40
-            },
-            {
-                "constraint_type": "has_recently_been_damaged"
+                "constraint_type": "has_recently_fired_weapon"
             }]
         }
     },
     {
-        "target_filter_id": "cleanse_radius_auto_cast_target_filter",
+        "target_filter_id": "cleanse_ai_auto_cast_radius_target_filter",
         "target_filter":
         {
             "unit_types": [
                 "capital_ship",
-                "corvette",
                 "cruiser",
-                "frigate",
                 "starbase",
                 "structure",
                 "titan"
             ],
             "ownerships": [
                 "friendly"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "has_missing_shields",
-				"percentage_missing_threshold": 0.40
+                "percentage_missing_threshold": 0.5
             }]
         }
     },
     {
-        "target_filter_id": "cleanse_radius_auto_cast_override_target_filter",
+        "target_filter_id": "cleanse_ai_auto_cast_radius_override_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -72,36 +93,12 @@
             ],
             "ownerships": [
                 "self"
-			],
+            ],
             "constraints": [
             {
                 "constraint_type": "has_missing_armor",
-				"percentage_missing_threshold": 0.40
+                "percentage_missing_threshold": 0.5
             }]
-        }
-    },
-    {
-        "target_filter_id": "cleanse_prevent_target_filter",
-        "target_filter":
-        {
-            "unit_definitions": [
-                "advent_unity_follower"
-            ],
-            "ownerships": [
-                "self"
-			]
-        }
-    },
-    {
-        "target_filter_id": "cleanse_prevent_timer_target_filter",
-        "target_filter":
-        {
-            "unit_definitions": [
-                "player_buffs_advent_rebel"
-            ],
-            "ownerships": [
-                "self"
-			]
         }
     },
     {
@@ -118,17 +115,7 @@
             ],
             "ownerships": [
                 "self"
-			],
-            "constraints": [
-            {
-                "constraint_type": "composite_not",
-                "constraint": 
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "player_buffs_phase_space_invulnerable_on_target_phase_jump",
-					"include_pending_buffs": true
-                }
-            }]
+            ]
         }
     },
     {
@@ -146,7 +133,8 @@
                 "titan"
             ],
             "ownerships": [
-                "friendly"]
+                "friendly"
+            ]
         }
     }],
     "action_values": [
@@ -168,14 +156,14 @@
         "action_value_id": "cleanse_radius_value",
         "action_value":
         {
-            "values": [5000.0, 6500.0, 8000.0]
+            "values": [6250.0, 8125.0, 10000.0]
         }
     },
     {
-        "action_value_id": "cleanse_auto_cast_target_value",
+        "action_value_id": "cleanse_ai_auto_cast_target_count_value",
         "action_value":
         {
-            "values": [5.0, 5.0, 5.0]
+            "values": [1.0, 1.0, 1.0]
         }
     },
     {
@@ -187,7 +175,7 @@
             {
                 "unit_type": "target"
             },
-            "values": [0.6, 0.75, 0.9]
+            "values": [0.75, 0.9375, 1.125]
         }
     },
     {
@@ -199,7 +187,7 @@
             {
                 "unit_type": "target"
             },
-            "values": [0.3, 0.45, 0.6]
+            "values": [0.375, 0.5625, 0.75]
         }
     },
     {
@@ -211,7 +199,7 @@
             {
                 "unit_type": "target"
             },
-            "values": [0.3, 0.45, 0.6]
+            "values": [0.375, 0.5625, 0.75]
         }
     }],
     "effect_alias_bindings": [

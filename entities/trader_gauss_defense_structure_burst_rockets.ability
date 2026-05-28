@@ -1,0 +1,184 @@
+{
+    "version": 0,
+    "action_data_source": "trader_gauss_defense_structure_burst_rockets",
+    "active_actions":
+    {
+        "cooldown_time": "burst_rockets_cooldown_time_value",
+        "actions":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "has_buff",
+                        "buff": "plasma_storm_fixture_bonus_on_target"
+                    }
+                }
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_buff",
+                    "buff": "trader_gauss_defense_structure_burst_rockets_on_self"
+                }]
+            }]
+        },
+        "auto_cast":
+        {
+            "enabled_by_default_behavior": "always",
+            "caster_constraint": 
+            {
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "radius_value": "burst_rockets_radius_value",
+                "target_count_value": "fixed_one",
+                "target_filter_id": "trader_gauss_defense_structure_burst_rockets_auto_cast_target_filter"
+            }
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_gauss_defense_structure_burst_rockets_ability_hud_icon",
+        "name": "trader_gauss_defense_structure_burst_rockets_name",
+        "description": "trader_gauss_defense_structure_burst_rockets_description",
+        "targeting":
+        {
+            "targeting_type": "radius",
+            "values":
+            {
+                "radius": "burst_rockets_radius_value"
+            }
+        },
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_volleys",
+                "value_id": "burst_rockets_execution_count_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.salvo_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_count_per_target_in_radius",
+                "value_id": "fixed_one"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.radius",
+                "value_id": "burst_rockets_radius_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.max_targets",
+                "value_id": "burst_rockets_max_target_count_value"
+            }]
+        },
+        {
+            "header_text": "tooltip.ability.missile_properties",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.damage",
+                "value_id": "burst_rockets_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "visible_if_value_zero": true,
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.armor_penetration",
+                "value_id": "burst_rockets_penetration_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_speed",
+                "value_id": "burst_rockets_torpedo_speed_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_hull",
+                "value_id": "burst_rockets_torpedo_hull_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor",
+                "value_id": "burst_rockets_torpedo_armor_value"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.missile_armor_strength",
+                "value_id": "burst_rockets_torpedo_armor_strength_value"
+            }]
+        }]
+    },
+    "ability_positions": [
+    {
+        "position": [140.741, 99.1385, 14.4207]
+    },
+    {
+        "position": [-140.741, 99.1385, 14.4207]
+    },
+    {
+        "position": [157.615, 69.9131, 14.4207]
+    },
+    {
+        "position": [-157.615, 69.9131, 14.4207]
+    },
+    {
+        "position": [138.765, 91.6411, 14.4207]
+    },
+    {
+        "position": [-138.765, 91.6411, 14.4207]
+    },
+    {
+        "position": [155.639, 62.4157, 14.4207]
+    },
+    {
+        "position": [-155.639, 62.4157, 14.4207]
+    },
+    {
+        "position": [143.494, 94.371, 14.4207]
+    },
+    {
+        "position": [-143.494, 94.371, 14.4207]
+    },
+    {
+        "position": [160.367, 65.1457, 14.4207]
+    },
+    {
+        "position": [-160.367, 65.1457, 14.4207]
+    },
+    {
+        "position": [136.013, 96.4085, 14.4207]
+    },
+    {
+        "position": [-136.013, 96.4085, 14.4207]
+    },
+    {
+        "position": [152.886, 67.1831, 14.4207]
+    },
+    {
+        "position": [-152.886, 67.1831, 14.4207]
+    }]
+}

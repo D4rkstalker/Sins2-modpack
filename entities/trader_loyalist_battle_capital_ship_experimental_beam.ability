@@ -62,201 +62,48 @@
         },
         "tooltip_line_groups": [
         {
-			"is_visible_constraint": 
-			{
-				"constraint_type": "composite_not",
-				"constraint":
-				{
-					"constraint_type": "research_prerequisites_are_met",
-					"player":
-					{
-						"owned_unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"player_type": "unit_owner"
-					},
-					"prerequisites": [
-						["trader_beam_weapon_damage_0"]
-					]
-				}
-			},
             "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.charge_delay",
+                "value_id": "beam_charge_value",
+                "value_suffix": "seconds",
+                "value_float_format": "one_decimal_place"
+            },
             {
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.damage_rate",
                 "value_id": "damage_rate_value",
                 "value_suffix": "per_second",
-				"value_float_format": "two_decimal_place",
-				"value_color": "negative"
-            },
-            {
-                "visible_if_value_zero": true,
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.armor_penetration",
-                "value_id": "penetration_value",
-				"value_color": "negative"
+                "value_color": "negative"
             },
             {
                 "rendering_type": "single_value",
-                "label_text": "tooltip.ability.duration",
-                "value_id": "execution_interval_count_value",
-                "value_suffix": "seconds"
-            }]
-		},
-		{
-			"is_visible_constraint": 
-			{
-				"constraint_type": "composite_and",
-				"constraints": [
-				{
-					"constraint_type": "research_prerequisites_are_met",
-					"player":
-					{
-						"owned_unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"player_type": "unit_owner"
-					},
-					"prerequisites": [
-						["trader_beam_weapon_damage_0"]
-					]
-				},
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "research_prerequisites_are_met",
-						"player":
-						{
-							"owned_unit":
-							{
-								"unit_type": "current_spawner"
-							},
-							"player_type": "unit_owner"
-						},
-						"prerequisites": [
-							["trader_beam_weapon_damage_1"]
-						]
-					}
-				}]
-			},
-			"lines": [
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.damage_rate",
+                "label_text": "tooltip.ability.per_beam_research",
                 "value_id": "damage_rate_value_research_one_value",
-				"value_float_format": "two_decimal_place",
-                "value_suffix": "per_second",
-				"value_color": "negative"
-            },
-            {
-                "visible_if_value_zero": true,
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.armor_penetration",
-                "value_id": "penetration_value",
-				"value_color": "negative"
+                "value_color": "negative",
+                "value_suffix": "per_second"
             },
             {
                 "rendering_type": "single_value",
-                "label_text": "tooltip.ability.duration",
-                "value_id": "execution_interval_count_value",
-                "value_suffix": "seconds"
-            }]
-		},
-		{
-			"is_visible_constraint": 
-			{
-				"constraint_type": "composite_and",
-				"constraints": [
-				{
-					"constraint_type": "research_prerequisites_are_met",
-					"player":
-					{
-						"owned_unit":
-						{
-							"unit_type": "current_spawner"
-						},
-						"player_type": "unit_owner"
-					},
-					"prerequisites": [
-						["trader_beam_weapon_damage_1"]
-					]
-				},
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "research_prerequisites_are_met",
-						"player":
-						{
-							"owned_unit":
-							{
-								"unit_type": "current_spawner"
-							},
-							"player_type": "unit_owner"
-						},
-						"prerequisites": [
-							["trader_refined_emitters"]
-						]
-					}
-				}]
-			},
-			"lines": [
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.damage_rate",
+                "label_text": "tooltip.ability.per_beam_research_2",
                 "value_id": "damage_rate_value_research_two_value",
-				"value_float_format": "two_decimal_place",
-                "value_suffix": "per_second",
-				"value_color": "negative"
-            },
-            {
-                "visible_if_value_zero": true,
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.armor_penetration",
-                "value_id": "penetration_value",
-				"value_color": "negative"
+                "value_color": "negative",
+                "value_suffix": "per_second"
             },
             {
                 "rendering_type": "single_value",
-                "label_text": "tooltip.ability.duration",
-                "value_id": "execution_interval_count_value",
-                "value_suffix": "seconds"
-            }]
-        },
-		{
-			"is_visible_constraint": 
-			{
-				"constraint_type": "research_prerequisites_are_met",
-				"player":
-				{
-					"owned_unit":
-					{
-						"unit_type": "current_spawner"
-					},
-					"player_type": "unit_owner"
-				},
-				"prerequisites": [
-					["trader_refined_emitters"]
-				]
-			},
-			"lines": [
-            {
-                "rendering_type": "single_value",
-                "label_text": "tooltip.ability.damage_rate",
+                "label_text": "tooltip.ability.per_beam_research_3",
                 "value_id": "damage_rate_value_research_three_value",
-				"value_float_format": "two_decimal_place",
-                "value_suffix": "per_second",
-				"value_color": "negative"
+                "value_color": "negative",
+                "value_suffix": "per_second"
             },
             {
                 "visible_if_value_zero": true,
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
                 "value_id": "penetration_value",
-				"value_color": "negative"
+                "value_color": "negative"
             },
             {
                 "rendering_type": "single_value",

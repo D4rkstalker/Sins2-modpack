@@ -1,0 +1,83 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "active_duration": "effect_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "unit_mutations": [
+        "disable_can_passively_regenerate_antimatter",
+        "disable_can_passively_regenerate_hull",
+        "disable_can_passively_regenerate_armor",
+        "disable_can_passively_regenerate_shields"
+    ],
+    "time_actions": [
+    {
+        "execution_interval_value": "fixed_one",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit":
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_value": "damage_value",
+                    "penetration_value": "pierce_value",
+                    "damage_affect_type": "hull_only",
+                    "damage_source": "ability",
+                    "can_damage_be_propagated": false
+                }]
+            }]
+        }
+    }],
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "start_buff_effect",
+                "effect_definition":
+                {
+                    "binding": "action_data_source",
+                    "mesh_point": "center",
+                    "effect_by_size":
+                    {
+                        "small_unit": "cannon_attack_burn_small",
+                        "medium_unit": "cannon_attack_burn_medium",
+                        "large_unit": "cannon_attack_burn_large"
+                    }
+                }
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_orbital_cannon_structure_range_research_subject_hud_icon",
+        "name": "unit_item.trader_orbital_cannon_attack_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.ability.hull_damage",
+                "value_id": "damage_value",
+                "value_color": "negative",
+                "value_suffix": "per_second",
+                "value_float_format": "percentage_one_decimal_place"
+            }]
+        }]
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "concentration_aura_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "starbase",
+                "structure",
+                "frigate",
+                "cruiser",
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_carrier"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "concentration_aura_radius",
+        "action_value":
+        {
+            "values": [8000.0]
+        }
+    },
+    {
+        "action_value_id": "concentration_aura_damage_scalar",
+        "action_value":
+        {
+            "values": [0.2]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "concentration_aura_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "concentration_aura_damage_scalar"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "concentration_aura_effect",
+        "alias_binding":
+        {
+            "particle_effect": "Buff_BattleMeditationSelf"
+        }
+    }]
+}

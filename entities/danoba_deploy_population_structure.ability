@@ -1,0 +1,64 @@
+{
+    "version": 0,
+    "action_data_source": "danoba_deploy_population_structure",
+    "active_actions":
+    {
+        "actions":
+        {
+            "actions": [
+            {
+                "action_type": "use_position_operators_on_single_position",
+                "position": 
+                {
+                    "position_type": "target_position"
+                },
+                "position_operators": [
+                {
+                    "operator_type": "create_unit",
+                    "unit_to_create": "danoba_population_structure",
+                    "buff_on_created_unit": "danoba_deploy_population_structure",
+                    "special_operation_unit_kind": "danoba_deploy_population_structure",
+                    "unit_forward":
+                    {
+                        "direction_type": "unit_forward",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        }
+                    },
+                    "is_self_building": true
+                }]
+            }]
+        },
+        "targeting_type": "position_targeted",
+        "spawned_unit":
+        {
+            "unit": "danoba_population_structure",
+            "special_operation_unit_kind": "danoba_deploy_population_structure",
+            "max_count_in_gravity_well": "fixed_one",
+            "gravity_well_primary_planet_target_filter": "owned_planet"
+        }
+    },
+    "gui":
+    {
+        "hud_icon": "trader_population_structure_hud_icon",
+        "name": "npc_reward.danoba_hire_miners.name",
+        "description": "npc_reward.danoba_hire_miners.description",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "max_population_points_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "mining_track_metal_income_rate_per_population_modifier"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "mining_track_crystal_income_rate_per_population_modifier"
+            }]
+        }]
+    }
+}

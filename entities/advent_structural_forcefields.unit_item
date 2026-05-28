@@ -1,0 +1,42 @@
+{
+    "version": 0,
+    "item_type": "ship_component",
+    "hud_icon": "advent_structural_forcefields_unit_item_hud_icon",
+    "tooltip_picture": "advent_structural_forcefields_unit_item_tooltip_picture",
+    "name": "advent_structural_forcefields_unit_item_name",
+    "description": "advent_structural_forcefields_unit_item_description",
+    "build_time": 30.0,
+    "price":
+    {
+        "credits": 600,
+        "metal": 125.0,
+        "crystal": 200.0
+    },
+    "required_unit_tags": [
+        "capital_ship",
+        "super_capital_ship",
+        "titan"
+    ],
+    "build_prerequisites": [
+        ["advent_unlock_structural_forcefields_unit_item"]
+    ],
+    "max_count_on_unit": 1,
+    "build_group_id": "defense",
+    "ability": "advent_structural_forcefields",
+    "unit_modifiers": [
+    {
+        "modifier_type": "max_hull_points",
+        "value_behavior": "scalar",
+        "values": [0.3]
+    },
+    {
+        "modifier_type": "hull_point_restore_rate",
+        "value_behavior": "scalar",
+        "values": [0.25]
+    },
+    {
+        "modifier_type": "hull_point_restore_scalar_after_damage_taken",
+        "value_behavior": "additive",
+        "values": [0.25]
+    }]
+}

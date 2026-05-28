@@ -1,0 +1,109 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "intercept_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "corvette",
+                "frigate"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "intercept_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "intercept_cooldown_time_value",
+        "action_value":
+        {
+            "values": [150.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_duration_value",
+        "action_value":
+        {
+            "values": [30.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_max_linear_speed_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_max_linear_acceleration_bonus_value",
+        "action_value":
+        {
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "intercept_tracking_bonus_value",
+        "action_value":
+        {
+            "values": [2.0]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "intercept_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "intercept_max_linear_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "intercept_max_linear_acceleration_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_acceleration",
+            "value_behavior": "scalar",
+            "value_id": "intercept_max_linear_acceleration_bonus_value"
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "intercept_tracking_speed_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "tracking_speed",
+            "value_behavior": "scalar",
+            "value_id": "intercept_tracking_bonus_value"
+        }
+    }]
+}

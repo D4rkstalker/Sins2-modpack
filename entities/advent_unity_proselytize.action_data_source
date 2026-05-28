@@ -3,7 +3,7 @@
     "level_count": 3,
     "target_filters": [
     {
-        "target_filter_id": "proselytize_auto_cast_high_priority_target_filter",
+        "target_filter_id": "proselytize_ai_auto_cast_high_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -12,31 +12,31 @@
             "ownerships": [
                 "self"
             ],
-			"constraints": [
-			{
-				"constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "is_in_dominant_culture",
-						"dominant_culture_player_relationship": "self"
-					}
-				},
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_allied_population_amount",
-						"percentage_of_current_pop": 0.5
-					}
-				}]
+            "constraints": [
+            {
+                "constraint_type": "composite_or",
+                "constraints": [
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "is_in_dominant_culture",
+                        "dominant_culture_player_relationship": "self"
+                    }
+                },
+                {
+                    "constraint_type": "composite_not",
+                    "constraint":
+                    {
+                        "constraint_type": "has_allied_population_amount",
+                        "percentage_of_current_pop": 0.5
+                    }
+                }]
             }]
         }
     },
     {
-        "target_filter_id": "proselytize_auto_cast_low_priority_target_filter",
+        "target_filter_id": "proselytize_ai_auto_cast_low_priority_target_filter",
         "target_filter":
         {
             "unit_types": [
@@ -45,31 +45,19 @@
             "ownerships": [
                 "enemy"
             ],
-			"constraints": [
-			{	
-				"constraint_type": "composite_or",
-				"constraints": [
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "is_in_dominant_culture",
-						"dominant_culture_player_relationship": "self"
-					}
-				},
-				{
-					"constraint_type": "composite_not",
-					"constraint":
-					{
-						"constraint_type": "has_allied_population_amount",
-						"percentage_of_current_pop": 0.5
-					}
-				}]
-			},
-			{
+            "constraints": [
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_in_dominant_culture",
+                    "dominant_culture_player_relationship": "self"
+                }
+            },
+            {
                 "constraint_type": "has_adjacent_planet_with_ownership",
-                "max_jump_distance": 3,
-				"targeter_relationship_type": "self"
+                "max_jump_distance": 2,
+                "targeter_relationship_type": "self"
             }]
         }
     },
@@ -85,8 +73,8 @@
                 "friendly",
                 "none"
             ],
-			"constraints": [
-			{
+            "constraints": [
+            {
                 "constraint_type": "is_colonizable_planet",
                 "ignore_current_ownership": true
             }]
@@ -130,24 +118,17 @@
         }
     },
     {
-        "action_value_id": "proselytize_range_value",
-        "action_value":
-        {
-            "values": [100000.0, 100000.0, 100000.0]
-        }
-    },
-    {
         "action_value_id": "proselytize_culture_rate_value",
         "action_value":
         {
-            "values": [0.03, 0.04, 0.05]
+            "values": [0.0375, 0.05, 0.0625]
         }
     },
     {
         "action_value_id": "proselytize_assimilation_rate_bonus_value",
         "action_value":
         {
-            "values": [0.3, 0.4, 0.5]
+            "values": [0.375, 0.5, 0.625]
         }
     }],
     "buff_unit_modifiers": [
