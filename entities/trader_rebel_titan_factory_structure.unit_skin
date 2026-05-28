@@ -1,0 +1,142 @@
+{
+    "version": 0,
+    "skin_stages": [
+    {
+        "is_main_view_icon_visible_camera_distance": 120575.837908,
+        "min_camera_distance": 2616.553865,
+        "gui":
+        {
+            "hud_icon": "trader_titan_factory_structure_hud_icon",
+            "hud_monochrome_icon": "trader_titan_factory_structure_main_view_icon",
+            "hud_picture": "trader_titan_factory_structure_hud_picture",
+            "tooltip_picture": "trader_titan_factory_structure_tooltip_picture",
+            "name": "trader_rebel_titan_factory_structure_name",
+            "description": "trader_rebel_titan_factory_structure_description"
+        },
+        "unit_mesh":
+        {
+            "mesh": "trader_titan_factory_structure",
+            "shader": "ship",
+            "is_shadow_blocker": true
+        },
+        "main_view_icon":
+        {
+            "group": "structure",
+            "icon": "trader_titan_factory_structure_main_view_icon",
+            "selected_icon": "trader_titan_factory_structure_main_view_icon_selected",
+            "sub_selected_icon": "trader_titan_factory_structure_main_view_icon_sub_selected",
+            "has_rotation": false
+        },
+        "effects":
+        {
+            "damage_effects":
+            {
+                "max_damage_effect_count": 40,
+                "damage_effects": [
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "damage_air_decompression",
+                    "sound": "ambient_loop_airdecompression"
+                },
+                {
+                    "max_count": 5,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.5,
+                    "particle_effect": "tec_damage_plasma_sparks"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_1"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_2"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.45,
+                    "particle_effect": "damage_smoke_3"
+                },
+                {
+                    "max_count": 3,
+                    "weight": 3.0,
+                    "hull_percentage_threshold": 0.42,
+                    "particle_effect": "tec_damage_escaping_gas",
+                    "sound": "ambient_loop_tech_escaping_gas"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity",
+                    "sound": "ambient_loop_electrical_damage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.4,
+                    "particle_effect": "damage_electricity_2",
+                    "sound": "ambient_loop_electrical_damage_01"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 4.0,
+                    "hull_percentage_threshold": 0.38,
+                    "particle_effect": "tec_damage_embers"
+                },
+                {
+                    "max_count": 7,
+                    "weight": 6.0,
+                    "hull_percentage_threshold": 0.35,
+                    "particle_effect": "damage_fire",
+                    "sound": "ambient_loop_firedamage"
+                },
+                {
+                    "max_count": 2,
+                    "weight": 2.0,
+                    "hull_percentage_threshold": 0.3,
+                    "particle_effect": "damage_fire_pillar",
+                    "sound": "ambient_loop_firepillar_damage"
+                }]
+            },
+            "flair_effects": [
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "tec_damage_structure",
+                "constraint": "is_crippled"
+            },
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "tec_titan_factory_welder_idle",
+                "constraint": "is_unit_factory_idle"
+            },
+            {
+                "mesh_point_name": "center",
+                "particle_effect": "tec_titan_factory_welder",
+                "constraint": "is_unit_factory_busy"
+            }]
+        },
+        "sounds":
+        {
+            "dialogue":
+            {
+                "selected":
+                {
+                    "neutral": [
+                        "ui_onselection_tech_titan_factory"
+                    ],
+                    "scared": [
+                        "ui_onselection_tech_titan_factory"]
+                }
+            }
+        },
+        "death_sequence_group": "titanfactory"
+    }]
+}
