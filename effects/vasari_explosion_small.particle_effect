@@ -9,8 +9,7 @@
             "z": [0.0, 0.0],
             "yaw": [0.0, 0.0],
             "pitch": [0.0, 0.0],
-            "roll": [0.0, 0.0],
-            "start_delay": [0.20, 0.20]
+            "roll": [0.0, 0.0]
         },
         {
             "id": 1,
@@ -21,17 +20,6 @@
             "yaw": [0.0, 0.0],
             "pitch": [0.0, 0.0],
             "roll": [0.0, 0.0]
-        },
-        {
-            "id": 16,
-            "name": "AfterLight",
-            "x": [0.0, 0.0],
-            "y": [0.0, 0.0],
-            "z": [0.0, 0.0],
-            "yaw": [0.0, 0.0],
-            "pitch": [0.0, 0.0],
-            "roll": [0.0, 0.0],
-            "start_delay": [0.40, 0.40]
         }
     ],
     "emitters": [
@@ -46,13 +34,13 @@
             "particle": {
                 "type": "billboard",
                 "render_layer": 0,
-                "max_duration": [0.80, 0.80],
+                "max_duration": [0.50, 0.50],
                 "color": "fff0ffff",
                 "fade_in_time": [1.0, 1.0],
                 "fade_out_time": [1.0, 1.0],
                 "billboard": {
                     "shader_type": "uber_multiply_color",
-                    "width": [700.0, 700.0],
+                    "width": [400.0, 400.0],
                     "rotation": [0.0, 6.283185],
                     "refraction_texture": "refraction_circle",
                     "refraction_mask_texture": "heat_refraction_falloff",
@@ -60,8 +48,8 @@
                     "initial_erosion_noise_offset_v": [0.0, 0.0],
                     "uber_constants": {
                         "refraction_constants": {
-                            "u_strength": 0.01250,
-                            "v_strength": 0.01250
+                            "u_strength": 0.0250,
+                            "v_strength": 0.0250
                         }
                     }
                 },
@@ -132,14 +120,14 @@
             "name": "Clouds",
             "type": "point",
             "emit_start_delay": [0.50, 0.50],
-            "emit_duration": [0.40, 0.40],
+            "emit_duration": [2.0, 2.0],
             "emit_rate": {
-                "primary_emit_rate": [15.0, 15.0]
+                "primary_emit_rate": [60.0, 60.0]
             },
             "particle": {
                 "type": "billboard",
                 "render_layer": 0,
-                "max_duration": [0.50, 1.0],
+                "max_duration": [2.0, 3.0],
                 "color": "ffe0e0e0",
                 "fade_in_time": [1.0, 1.0],
                 "fade_out_time": [1.0, 1.0],
@@ -147,7 +135,7 @@
                     "render_with_additive_blending": true,
                     "shader_type": "uber_multiply_color",
                     "facing_type": "face_camera_by_rotating_on_particle_direction",
-                    "width": [300.0, 300.0],
+                    "width": [400.0, 400.0],
                     "gradient_texture": "t_gradient_75",
                     "distortion_texture": "t_uvdist_003",
                     "erosion_texture": "smoke_noise",
@@ -189,67 +177,77 @@
             "id": 7,
             "name": "Light",
             "type": "point",
-            "emit_start_delay": [0.50, 0.50],
-            "emit_max_particle_count": [1.0, 1.0],
+            "emit_max_particle_count": [3.0, 3.0],
             "emit_rate": {
-                "primary_emit_rate": [100.0, 100.0]
+                "primary_emit_rate": [15.0, 15.0]
             },
             "particle": {
                 "type": "billboard",
                 "render_layer": 1,
                 "max_duration": [0.50, 0.50],
-                "color": "ffacffac",
+                "color": "ffffffc0",
+                "fade_in_time": [0.0, 0.0],
                 "fade_out_time": [0.50, 0.50],
                 "billboard": {
                     "render_with_additive_blending": true,
-                    "width": [150.0, 150.0],
+                    "shader_type": "uber_add_color",
+                    "width": [50.0, 100.0],
                     "rotation": [0.0, 6.283185],
-                    "texture_0": "power_surge",
-                    "initial_erosion_noise_offset_u": [0.0, 0.0],
-                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "rotation_speed": [-0.087266, 0.087266],
+                    "texture_0": "vasari_blast",
+                    "erosion_texture": "smoke_noise",
                     "uber_constants": {
                         "basic_constants": {
-                            "emissive_factor": 2.0,
+                            "depth_fade_opacity": 100.0,
                             "depth_fade_distance": 100.0,
-                            "alpha_ramp_steepness": 1.0
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 3.0,
+                            "alpha_ramp_max_alpha_scalar": 3.0
                         }
                     }
                 },
-                "mesh": {}
+                "mesh": {},
+                "light": {
+                    "type": "point_finite",
+                    "color": "ff96ff00",
+                    "intensity": 500.0,
+                    "surface_radius": 0.0
+                }
             },
-            "forward_velocity": [3.0, 6.0],
+            "forward_velocity": [0.0, 0.0],
             "angle_variance": [0.0, 3.141593]
         },
         {
             "id": 8,
             "name": "PlasmaSparking",
+            "is_visible": false,
             "type": "point",
-            "emit_start_delay": [0.250, 0.250],
-            "emit_duration": [0.40, 0.40],
+            "emit_duration": [0.350, 0.350],
+            "emit_max_particle_count": [5.0, 5.0],
             "emit_rate": {
-                "primary_emit_rate": [12.0, 12.0]
+                "primary_emit_rate": [35.0, 35.0]
             },
             "particle": {
                 "type": "billboard",
                 "render_layer": 0,
-                "max_duration": [0.50, 1.0],
+                "max_duration": [1.50, 3.0],
                 "color": "ffffffff",
                 "fade_in_time": [0.0, 0.0],
                 "fade_out_time": [0.0, 0.0],
                 "billboard": {
                     "render_with_additive_blending": true,
                     "shader_type": "uber_multiply_color",
-                    "width": [90.0, 180.0],
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "width": [100.0, 250.0],
+                    "rotation": [0.0, 6.283185],
                     "gradient_texture": "t_gradient_death_fire",
-                    "distortion_texture": "t_uvdist_003",
-                    "erosion_texture": "t_noise_001",
-                    "initial_erosion_noise_offset_u": [0.0, 1.0],
-                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "distortion_texture": "t_uvdist_001",
+                    "erosion_texture": "t_noise_010",
                     "texture_animation": "cloud_2x2",
                     "texture_animation_first_frame": "random",
                     "uber_constants": {
                         "basic_constants": {
-                            "emissive_factor": 2.0,
+                            "emissive_factor": 1.250,
                             "depth_fade_distance": 100.0
                         },
                         "erosion_constants": {
@@ -274,42 +272,41 @@
                 },
                 "mesh": {}
             },
-            "forward_velocity": [0.0, 0.0]
+            "forward_velocity": [45.0, 100.0]
         },
         {
             "id": 9,
             "name": "PlasmaBlastOut",
             "type": "point",
-            "emit_max_particle_count": [5.0, 5.0],
+            "emit_max_particle_count": [10.0, 10.0],
             "emit_rate": {
-                "primary_emit_rate": [1000.0, 1000.0]
+                "primary_emit_rate": [25.0, 25.0]
             },
             "particle": {
                 "type": "billboard",
                 "render_layer": 0,
-                "max_duration": [0.50, 1.0],
+                "max_duration": [2.0, 3.0],
                 "color": "ffffc0c0",
                 "fade_in_time": [0.0, 0.0],
                 "fade_out_time": [1.0, 1.0],
                 "billboard": {
                     "render_with_additive_blending": true,
                     "shader_type": "uber_multiply_color",
-                    "facing_type": "face_camera_by_rotating_on_particle_direction",
-                    "width": [250.0, 350.0],
+                    "width": [100.0, 250.0],
                     "rotation": [0.0, 6.283185],
-                    "rotation_speed": [-0.157080, 0.157080],
+                    "rotation_speed": [-0.087266, 0.087266],
                     "gradient_texture": "t_gradient_death_fire",
                     "distortion_texture": "t_uvdist_003",
-                    "erosion_texture": "t_noise_001",
+                    "erosion_texture": "lightning_pattern",
                     "initial_erosion_noise_offset_u": [0.0, 1.0],
                     "initial_erosion_noise_offset_v": [0.0, 1.0],
-                    "texture_animation": "cloud_2x2",
+                    "texture_animation": "flame_cloud",
                     "texture_animation_first_frame": "random",
                     "uber_constants": {
                         "basic_constants": {
-                            "emissive_factor": 2.0,
-                            "depth_fade_opacity": 2.0,
+                            "depth_fade_opacity": 10.0,
                             "depth_fade_distance": 100.0,
+                            "alpha_ramp_steepness": 1.0,
                             "alpha_ramp_growth_delay": 1.0
                         },
                         "erosion_constants": {
@@ -322,7 +319,7 @@
                                 "u_pan_speed": -0.050,
                                 "v_pan_speed": 0.050
                             },
-                            "erosion_softness": 0.70
+                            "erosion_softness": 0.750
                         },
                         "distortion_constants": {
                             "noise_constants_0": {
@@ -336,11 +333,13 @@
                 },
                 "mesh": {}
             },
-            "forward_velocity": [0.0, 0.0]
+            "forward_velocity": [15.0, 75.0],
+            "angle_variance": [0.0, 0.436332]
         },
         {
             "id": 11,
             "name": "BurstofThings",
+            "is_visible": false,
             "type": "point",
             "emit_max_particle_count": [90.0, 90.0],
             "emit_rate": {
@@ -430,6 +429,7 @@
         {
             "id": 17,
             "name": "HalfRing",
+            "is_visible": false,
             "type": "point",
             "emit_max_particle_count": [3.0, 3.0],
             "emit_rate": {
@@ -552,7 +552,7 @@
             "property_value": {
                 "type": "ease",
                 "range": [0.0, 0.0],
-                "easing_function": "linear",
+                "easing_function": "in_sine",
                 "easing_values": [0.0, 1.0]
             }
         },
@@ -595,6 +595,7 @@
             "id": 15,
             "name": "LightGrow",
             "type": "float_property",
+            "particle_time_duration": [0.750, 0.750],
             "property_type": "width_and_height_scale",
             "property_value": {
                 "type": "ease",
@@ -602,13 +603,29 @@
                 "easing_function": "out_quart",
                 "easing_values": [0.10, 1.0]
             }
+        },
+        {
+            "id": 3001,
+            "name": "Color",
+            "type": "color",
+            "change_duration_context": "particle_time_elapsed",
+            "change_duration": [1.0, 1.0],
+            "begin_color": "ffffffc0",
+            "end_color": "ff80ff80"
+        },
+        {
+            "id": 3002,
+            "name": "Drag2",
+            "type": "drag",
+            "coefficient_generator": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 0.10]
+            }
         }
     ],
     "emitter_to_node_attachments": [
-        {
-            "attacher_id": 3,
-            "attachee_id": 1
-        },
         {
             "attacher_id": 7,
             "attachee_id": 1
@@ -618,12 +635,12 @@
             "attachee_id": 1
         },
         {
-            "attacher_id": 9,
-            "attachee_id": 16
+            "attacher_id": 17,
+            "attachee_id": 1
         },
         {
-            "attacher_id": 420,
-            "attachee_id": 1000
+            "attacher_id": 9,
+            "attachee_id": 1
         }
     ],
     "modifier_to_emitter_attachments": [
@@ -710,7 +727,18 @@
         {
             "attacher_id": 6,
             "attachee_id": 17
+        },
+        {
+            "attacher_id": 3001,
+            "attachee_id": 7
+        },
+        {
+            "attacher_id": 3002,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 6,
+            "attachee_id": 7
         }
-    ],
-    "max_effect_radius_scalar": 1.0
+    ]
 }
