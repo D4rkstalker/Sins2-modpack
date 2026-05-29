@@ -1,0 +1,124 @@
+{
+    "version": 2,
+    "nodes": [
+    {
+        "id": 1,
+        "name": "Root",
+        "x": [0.0, 0.0],
+        "y": [0.0, 0.0],
+        "z": [0.0, 0.0],
+        "yaw": [0.0, 0.0],
+        "pitch": [0.0, 0.0],
+        "roll": [0.0, 0.0]
+    }],
+    "emitters": [
+    {
+        "id": 0,
+        "name": "Dust",
+        "type": "point",
+        "emit_rate":
+        {
+            "primary_emit_rate": [6.0, 6.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [2.0, 3.0],
+            "color": "ffb45ab4",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "shader_type": "uber_add_color",
+                "facing_type": "face_camera_by_rotating_on_particle_direction",
+                "width": [20.0, 50.0],
+                "gradient_texture": "advent_heavy",
+                "erosion_texture": "advent_beam_dots_pattern",
+                "initial_erosion_noise_offset_u": [0.0, 1.0],
+                "initial_erosion_noise_offset_v": [0.0, 0.0],
+                "texture_animation": "hull_cloud",
+                "texture_animation_first_frame": "random",
+                "uber_constants":
+                {
+                    "basic_constants":
+                    {
+                        "depth_fade_opacity": 3.0
+                    },
+                    "erosion_constants":
+                    {
+                        "noise_constants_0":
+                        {
+                            "v_pan_speed": 0.5,
+                            "u_scale": 7.0,
+                            "v_scale": 0.5
+                        },
+                        "noise_constants_1":
+                        {
+                            "v_pan_speed": 0.5,
+                            "u_scale": 7.0,
+                            "v_scale": 0.5
+                        }
+                    }
+                }
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [0.0, 30.0]
+    },
+    {
+        "id": 3,
+        "name": "Red",
+        "type": "point",
+        "emit_rate":
+        {
+            "behavior": "increase",
+            "primary_emit_rate": [100.0, 200.0],
+            "primary_time": [30.0, 30.0]
+        },
+        "particle":
+        {
+            "type": "billboard",
+            "render_layer": 0,
+            "max_duration": [1.0, 1.0],
+            "color": "ffff0000",
+            "fade_in_time": [1.0, 1.0],
+            "fade_out_time": [1.0, 1.0],
+            "billboard":
+            {
+                "width": [20.0, 50.0],
+                "initial_erosion_noise_offset_u": [0.0, 0.0],
+                "initial_erosion_noise_offset_v": [0.0, 0.0]
+            },
+            "mesh":
+            {}
+        },
+        "forward_velocity": [0.0, 15.0]
+    }],
+    "modifiers": [
+    {
+        "id": 2,
+        "name": "Grow",
+        "type": "float_property",
+        "property_type": "width_and_height_scale",
+        "property_value":
+        {
+            "type": "ease",
+            "range": [0.0, 0.0],
+            "easing_function": "out_sine",
+            "easing_values": [0.0, 1.0]
+        }
+    }],
+    "emitter_to_node_attachments": [
+    {
+        "attacher_id": 0,
+        "attachee_id": 1
+    }],
+    "modifier_to_emitter_attachments": [
+    {
+        "attacher_id": 2,
+        "attachee_id": 0
+    }],
+    "max_effect_radius_scalar": 1.0
+}

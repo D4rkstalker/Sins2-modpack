@@ -1,0 +1,168 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 103,
+            "name": "Lens",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [1.0, 1.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 105,
+            "name": "Core",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [-3.0, -3.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Flame",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "external_color": "primary",
+                "color": "ff404040",
+                "fade_in_time": [0.30, 0.30],
+                "fade_out_time": [0.40, 0.40],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [4.50, 4.50],
+                    "height": [50.0, 50.0],
+                    "texture_0": "advent_trail",
+                    "gradient_texture": "advent_light",
+                    "distortion_texture": "fire_uv",
+                    "erosion_texture": "advent_travel_pattern",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "initial_distortion_scalar": [0.050, 0.050],
+                    "random_flip_texture_vertical_chance": 1.0,
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 5.0,
+                            "depth_fade_distance": 12.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": -0.350,
+                                "u_scale": 0.50,
+                                "global_scale": 2.0
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": -0.50,
+                                "u_scale": 0.30,
+                                "global_scale": 0.70
+                            },
+                            "erosion_softness": 0.50
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": -0.50
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": -0.20
+                            },
+                            "u_strength": 3.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        },
+        {
+            "id": 102,
+            "name": "Lens",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [1.0, 1.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.0, 2.0],
+                "external_color": "primary",
+                "color": "ff404040",
+                "fade_in_time": [0.30, 0.30],
+                "fade_out_time": [0.40, 0.40],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_only_gradient",
+                    "width": [3.0, 3.0],
+                    "texture_0": "t_softglow2",
+                    "gradient_texture": "advent_light",
+                    "distortion_texture": "fire_uv",
+                    "erosion_texture": "advent_travel_pattern",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "initial_distortion_scalar": [0.050, 0.050],
+                    "random_flip_texture_vertical_chance": 1.0,
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 5.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0,
+                            "alpha_ramp_max_alpha_scalar": 15.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": -0.30,
+                                "u_scale": 0.50,
+                                "global_scale": 2.0
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": -0.250,
+                                "u_scale": 0.30,
+                                "global_scale": 0.70
+                            }
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": -0.50
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": -0.20
+                            },
+                            "u_strength": 3.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 102,
+            "attachee_id": 103
+        },
+        {
+            "attacher_id": 0,
+            "attachee_id": 105
+        }
+    ],
+    "modifier_to_emitter_attachments": [],
+    "max_effect_radius_scalar": 2.0
+}

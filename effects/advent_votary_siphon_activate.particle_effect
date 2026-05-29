@@ -1,0 +1,155 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [1.570796, 1.570796],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 8,
+            "name": "BuffBrightCenter",
+            "type": "point",
+            "emit_max_particle_count": [10.0, 10.0],
+            "emit_rate": {
+                "primary_emit_rate": [1800.0, 1800.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [2.10, 2.650],
+                "color": "ff400040",
+                "initial_alpha": [100.0, 100.0],
+                "fade_in_time": [0.250, 0.250],
+                "fade_out_time": [1.0, 1.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "shader_type": "uber_add_color",
+                    "facing_type": "face_particle_direction",
+                    "width": [2000.0, 2000.0],
+                    "rotation": [0.0, 6.283185],
+                    "texture_0": "a_ring_clr",
+                    "gradient_texture": "advent_revenge_from_beyond_gradient",
+                    "distortion_texture": "phantom_faces_uv_seamless",
+                    "erosion_texture": "phantoms_seamless",
+                    "initial_erosion_noise_offset_u": [0.0, 1.0],
+                    "initial_erosion_noise_offset_v": [0.0, 1.0],
+                    "initial_distortion_scalar": [0.10, 0.10],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "depth_fade_opacity": 2.0,
+                            "depth_fade_distance": 22.0,
+                            "alpha_ramp_steepness": 1.0,
+                            "alpha_ramp_growth_delay": 1.0,
+                            "alpha_ramp_max_alpha_scalar": 2.0
+                        },
+                        "erosion_constants": {
+                            "noise_constants_0": {
+                                "u_pan_speed": 0.040,
+                                "v_pan_speed": 0.10
+                            },
+                            "noise_constants_1": {
+                                "u_pan_speed": -0.10,
+                                "v_pan_speed": 0.30,
+                                "global_scale": 0.50
+                            },
+                            "erosion_test": 0.50,
+                            "erosion_softness": 3.0
+                        },
+                        "distortion_constants": {
+                            "noise_constants_0": {
+                                "v_pan_speed": 0.30,
+                                "global_scale": 0.30
+                            },
+                            "noise_constants_1": {
+                                "v_pan_speed": 0.20,
+                                "global_scale": 0.070
+                            }
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 0.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 3,
+            "name": "Disto",
+            "type": "float_property",
+            "property_type": "distortion_scalar",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 0.10]
+            }
+        },
+        {
+            "id": 4,
+            "name": "Ero",
+            "type": "float_property",
+            "property_type": "erosion_test_base",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_quint",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 5,
+            "name": "GrowWidth",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.40, 1.350]
+            }
+        },
+        {
+            "id": 9,
+            "name": "AlphaBlast",
+            "type": "alpha",
+            "change_rate": [-25.0, -25.0],
+            "destination_alpha": [0.0, 0.0]
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 8,
+            "attachee_id": 1
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 5,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 3,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 9,
+            "attachee_id": 8
+        },
+        {
+            "attacher_id": 4,
+            "attachee_id": 8
+        }
+    ],
+    "max_effect_radius_scalar": 1.0
+}

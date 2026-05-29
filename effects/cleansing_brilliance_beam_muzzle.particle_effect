@@ -1,0 +1,324 @@
+{
+    "version": 2,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Root",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [0.0, 0.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 4,
+            "name": "HeavyBurst",
+            "x": [0.0, 0.0],
+            "y": [-2.0, -2.0],
+            "z": [-3.0, -3.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 7,
+            "name": "TinyBeam1",
+            "x": [-40.0, -40.0],
+            "y": [50.0, 50.0],
+            "z": [-40.0, -40.0],
+            "yaw": [-0.331613, -0.331613],
+            "pitch": [-0.436332, -0.436332],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 10,
+            "name": "TinyBeam2",
+            "x": [40.0, 40.0],
+            "y": [50.0, 50.0],
+            "z": [-40.0, -40.0],
+            "yaw": [0.331613, 0.331613],
+            "pitch": [-0.436332, -0.436332],
+            "roll": [0.0, 0.0]
+        },
+        {
+            "id": 12,
+            "name": "ConnectPoint",
+            "x": [0.0, 0.0],
+            "y": [0.0, 0.0],
+            "z": [55.0, 55.0],
+            "yaw": [0.0, 0.0],
+            "pitch": [0.0, 0.0],
+            "roll": [0.0, 0.0]
+        }
+    ],
+    "emitters": [
+        {
+            "id": 0,
+            "name": "Light",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [50.0, 50.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "color": "ffffffff",
+                "fade_in_time": [0.250, 0.250],
+                "fade_out_time": [0.250, 0.250],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [45.0, 70.0],
+                    "height": [100.0, 250.0],
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "texture_animation": "cleansing_brilliance_muzzle_2x2",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 2.0,
+                            "alpha_ramp_curvature": 0.50,
+                            "alpha_ramp_steepness": 0.10,
+                            "alpha_ramp_growth_delay": 0.10,
+                            "alpha_ramp_max_alpha_scalar": 0.80
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [5.0, 5.0],
+            "angle_variance": [0.0, 0.157080]
+        },
+        {
+            "id": 3,
+            "name": "Heavy",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [8.0, 8.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.60, 0.60],
+                "color": "ffffffff",
+                "fade_in_time": [0.50, 0.50],
+                "fade_out_time": [0.0, 0.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [37.0, 75.0],
+                    "height": [400.0, 400.0],
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "texture_animation": "cleansing_brilliance_muzzle_heavy_2x2",
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.70,
+                            "alpha_ramp_curvature": 0.50,
+                            "alpha_ramp_steepness": 0.10,
+                            "alpha_ramp_growth_delay": 0.10,
+                            "alpha_ramp_max_alpha_scalar": 0.80
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [5.0, 5.0]
+        },
+        {
+            "id": 8,
+            "name": "TinyBeam",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.10, 0.10],
+                "color": "ffe0e0e0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.0, 0.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [8.0, 12.0],
+                    "height": [1000.0, 1000.0],
+                    "texture_0": "cleansing_brilliance_tiny_beam",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.40,
+                            "alpha_ramp_curvature": 0.50,
+                            "alpha_ramp_steepness": 0.10,
+                            "alpha_ramp_growth_delay": 0.10,
+                            "alpha_ramp_max_alpha_scalar": 0.80
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [5.0, 5.0]
+        },
+        {
+            "id": 9,
+            "name": "TinyBeam2",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.10, 0.10],
+                "color": "ffe0e0e0",
+                "fade_in_time": [0.0, 0.0],
+                "fade_out_time": [0.0, 0.0],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "facing_type": "face_camera_by_rotating_on_particle_direction",
+                    "anchor": "bottom",
+                    "width": [8.0, 12.0],
+                    "height": [1000.0, 1000.0],
+                    "texture_0": "cleansing_brilliance_tiny_beam",
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "random_flip_texture_horizontal_chance": 0.50,
+                    "texture_animation_first_frame": "random",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.40,
+                            "alpha_ramp_curvature": 0.50,
+                            "alpha_ramp_steepness": 0.10,
+                            "alpha_ramp_growth_delay": 0.10,
+                            "alpha_ramp_max_alpha_scalar": 0.80
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [5.0, 5.0]
+        },
+        {
+            "id": 11,
+            "name": "Dots",
+            "type": "point",
+            "emit_rate": {
+                "primary_emit_rate": [15.0, 15.0]
+            },
+            "particle": {
+                "type": "billboard",
+                "render_layer": 0,
+                "max_duration": [0.50, 0.50],
+                "color": "fff0ffff",
+                "fade_in_time": [0.50, 0.50],
+                "fade_out_time": [0.50, 0.50],
+                "billboard": {
+                    "render_with_additive_blending": true,
+                    "width": [70.0, 110.0],
+                    "rotation": [0.0, 6.283185],
+                    "initial_erosion_noise_offset_u": [0.0, 0.0],
+                    "initial_erosion_noise_offset_v": [0.0, 0.0],
+                    "texture_animation": "cleansing_brilliance_dots_2x2",
+                    "uber_constants": {
+                        "basic_constants": {
+                            "emissive_factor": 0.50,
+                            "depth_fade_distance": 1000.0
+                        }
+                    }
+                },
+                "mesh": {}
+            },
+            "forward_velocity": [0.0, 12.0]
+        }
+    ],
+    "modifiers": [
+        {
+            "id": 2,
+            "name": "Grow",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "out_sine",
+                "easing_values": [0.50, 1.0]
+            }
+        },
+        {
+            "id": 5,
+            "name": "ShrinkWidth",
+            "type": "float_property",
+            "property_type": "width_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "in_expo",
+                "easing_values": [1.0, 0.0]
+            }
+        },
+        {
+            "id": 6,
+            "name": "GrowHeight",
+            "type": "float_property",
+            "property_type": "height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.0, 1.0]
+            }
+        },
+        {
+            "id": 13,
+            "name": "GrowDots",
+            "type": "float_property",
+            "property_type": "width_and_height_scale",
+            "property_value": {
+                "type": "ease",
+                "range": [0.0, 0.0],
+                "easing_function": "linear",
+                "easing_values": [0.50, 1.0]
+            }
+        }
+    ],
+    "emitter_to_node_attachments": [
+        {
+            "attacher_id": 3,
+            "attachee_id": 4
+        },
+        {
+            "attacher_id": 0,
+            "attachee_id": 4
+        }
+    ],
+    "modifier_to_emitter_attachments": [
+        {
+            "attacher_id": 2,
+            "attachee_id": 0
+        },
+        {
+            "attacher_id": 5,
+            "attachee_id": 3
+        },
+        {
+            "attacher_id": 6,
+            "attachee_id": 3
+        },
+        {
+            "attacher_id": 13,
+            "attachee_id": 11
+        }
+    ]
+}
