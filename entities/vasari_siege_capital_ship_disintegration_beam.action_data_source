@@ -17,7 +17,15 @@
             ],
             "constraints": [
             {
-                "constraint_type": "is_always_a_threat"
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_dead_soon"
+                }
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.95
             }]
         }
     },
@@ -26,16 +34,24 @@
         "target_filter":
         {
             "unit_types": [
-                "cruiser",
-                "frigate",
-                "structure"
+                "capital_ship",
+                "super_capital_ship",
+                "titan"
             ],
             "ownerships": [
                 "enemy"
             ],
             "constraints": [
             {
-                "constraint_type": "is_always_a_threat"
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "is_dead_soon"
+                }
+            },
+            {
+                "constraint_type": "has_missing_shields",
+                "percentage_missing_threshold": 0.95
             }]
         }
     },
@@ -114,7 +130,7 @@
         "action_value_id": "disintegration_beam_hull_penetration_value",
         "action_value":
         {
-            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
+            "values": [1500.0, 1500.0, 1500.0, 1500.0, 1500.0]
         }
     },
     {

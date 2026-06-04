@@ -37,15 +37,29 @@
             "enabled_by_default_behavior": "always",
             "caster_constraint":
             {
-                "constraint_type": "unit_passes_unit_constraint",
-                "unit":
+                "constraint_type": "composite_and",
+                "constraints":[
                 {
-                    "unit_type": "current_spawner"
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint":
+                    {
+                        "constraint_type": "weapon_has_target"
+                    }
                 },
-                "unit_constraint":
                 {
-                    "constraint_type": "has_recently_fired_weapon"
-                }
+                    "constraint_type": "has_valid_targets_in_radius",
+                    "radius_origin_unit":
+                    {
+                        "unit_type": "current_spawner"
+                    },
+                    "target_filter_id": "power_surge_auto_cast_high_priority_target_filter",
+                    "radius_value": "power_surge_radius_value",
+                    "target_count_value": "power_surge_auto_cast_target_count_value"
+                }]
             }
         }
     },

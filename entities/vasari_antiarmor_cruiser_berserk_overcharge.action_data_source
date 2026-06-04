@@ -1,0 +1,107 @@
+{
+    "version": 0,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "last_stack_changed_time",
+            "stack_count",
+            "time_since_last_stack"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "berserk_overcharge_last_stack_changed_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "last_stack_changed_time",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "berserk_overcharge_max_stack_count",
+        "action_value":
+        {
+            "values": [180.0]
+        }
+    },
+    {
+        "action_value_id": "berserk_overcharge_stack_duration_value",
+        "action_value":
+        {
+            "values": [3.0]
+        }
+    },
+    {
+        "action_value_id": "berserk_overcharge_time_since_last_stack_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "time_since_last_stack",
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "berserk_overcharge_weapon_damage_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.006]
+        }
+    },
+    {
+        "action_value_id": "berserk_overcharge_linear_speed_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.006]
+        }
+    },
+    {
+        "action_value_id": "berserk_overcharge_angular_speed_bonus_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "stack_count",
+            "values": [0.006]
+        }
+    }],
+    "buff_weapon_modifiers": [
+    {
+        "buff_weapon_modifier_id": "berserk_overcharge_weapon_damage_modifier",
+        "buff_weapon_modifier":
+        {
+            "modifier_type": "damage",
+            "value_behavior": "scalar",
+            "value_id": "berserk_overcharge_weapon_damage_bonus_value"
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "berserk_overcharge_max_linear_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_linear_speed",
+            "value_behavior": "scalar",
+            "value_id": "berserk_overcharge_linear_speed_bonus_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "berserk_overcharge_max_angular_speed_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "max_angular_speed",
+            "value_behavior": "scalar",
+            "value_id": "berserk_overcharge_angular_speed_bonus_value"
+        }
+    }],
+    "effect_alias_bindings": [
+    {
+        "alias_name": "berserker_buff",
+        "alias_binding":
+        {
+            "particle_effect": "berserker_overload"
+        }
+    }]
+}

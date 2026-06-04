@@ -1,12 +1,34 @@
 {
     "version": 0,
     "level_count": 5,
+    "target_filters": [
+    {
+        "target_filter_id": "phase_escape_ship_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            }]
+        }
+    }],
     "action_values": [
     {
         "action_value_id": "phase_escape_antimatter_cost_value",
         "action_value":
         {
-            "values": [120.0, 126.0, 132.0, 138.0, 150.0]
+            "values": [120.0, 110.0, 100.0, 90.0, 80.0]
         }
     },
     {
@@ -20,7 +42,7 @@
         "action_value_id": "phase_escape_duration_value",
         "action_value":
         {
-            "values": [30.0, 30.0, 30.0, 30.0, 30.0]
+            "values": [30.0, 35.0, 40.0, 45.0, 50.0]
         }
     },
     {
@@ -38,6 +60,13 @@
         }
     },
     {
+        "action_value_id": "phase_escape_radius_value",
+        "action_value":
+        {
+            "values": [12000.0, 14000.0, 16000.0, 18000.0, 20000.0]
+        }
+    },
+   {
         "action_value_id": "phase_escape_angular_speed_bonus_value",
         "action_value":
         {
