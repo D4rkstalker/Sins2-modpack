@@ -34,46 +34,16 @@
         },
         "auto_cast":
         {
-            "enabled_by_default_behavior": "never",
             "caster_constraint":
             {
-                "constraint_type": "composite_and",
-                "constraints": [
+                "constraint_type": "has_valid_targets_in_radius",
+                "radius_origin_unit":
                 {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
-                    {
-                        "unit_type": "current_spawner"
-                    },
-                    "unit_constraint":
-                    {
-                        "constraint_type": "has_missing_shields",
-                        "percentage_missing_threshold": 0.75
-                    }
+                    "unit_type": "current_spawner"
                 },
-                {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
-                    {
-                        "unit_type": "current_spawner"
-                    },
-                    "unit_constraint":
-                    {
-                        "constraint_type": "has_missing_armor",
-                        "percentage_missing_threshold": 0.75
-                    }
-                },
-                {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
-                    {
-                        "unit_type": "current_spawner"
-                    },
-                    "unit_constraint":
-                    {
-                        "constraint_type": "has_recently_been_damaged"
-                    }
-                }]
+                "target_filter_id": "phase_escape_auto_cast_target_filter",
+                "radius_value": "phase_escape_radius_value",
+                "target_count_value": "fixed_one"
             }
         }
     },

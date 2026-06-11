@@ -22,7 +22,43 @@
                 "constraint_type": "is_fully_built"
             }]
         }
+    },
+    {
+        "target_filter_id": "phase_escape_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "friendly"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_fully_built"
+            },
+            {
+                "constraint_type": "has_recently_been_damaged"
+            },
+            {
+                "constraint_type": "has_missing_hull",
+                "percentage_missing_threshold": 0.75
+            },
+            {
+                "constraint_type": "composite_not",
+                "constraint":
+                {
+                    "constraint_type": "has_buff",
+                    "buff": "dlc2_vasari_loyalist_super_phase_escape_spawner",
+                    "include_pending_buffs": true
+                }
+            }]
+        }
     }],
+
     "action_values": [
     {
         "action_value_id": "phase_escape_antimatter_cost_value",
