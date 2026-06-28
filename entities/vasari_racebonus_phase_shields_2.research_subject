@@ -1,0 +1,47 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 4,
+    "field": "military_vasari_repeatables",
+    "field_coord": [9, 0],
+    "research_time": 1560.0,
+    "price":
+    {
+        "credits": 0.0,
+        "metal": 2520.0,
+        "crystal": 2520.0
+    },
+    "prerequisites": [
+        ["vasari_racebonus_phase_shields"]
+    ],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": [
+                "corvette",
+		"cruiser",
+                "frigate",
+                "strikecraft"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        },
+        "action_data_source": "vasari_racebonus_phase_shields_2",
+        "buff": "vasari_racebonus_phase_shields"
+    }],
+    "name": "research_subject.vasari_phase_shields_name",
+    "name_uppercase": "research_subject.vasari_phase_shields_name_upper",
+    "description": "research_subject.vasari_phase_shields_description",
+    "hud_icon": "vasari_phase_shields_hud_icon",
+    "tooltip_picture": "vasari_phase_shields_tooltip_picture",
+    "arbitary_research_line":
+    {
+        "before_after_heading": "research_subject.vasari_phase_shields_header_name",
+        "before_number": 0.075,
+        "after_number": 0.15,
+        "float_format": "percentage_one_decimal_place"
+    }
+}

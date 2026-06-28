@@ -8,7 +8,17 @@
     "description": "vasari_exodus_debris_reclamation_center_unit_item_desc",
     "max_count_on_unit": 1,
     "is_finite": true,
-    "add_back_finite_item_to_player_inventory": false,
+    "add_back_finite_item_to_player_inventory": true,
+    "item_level_count": 3,
+    "item_level_source": "research_prerequisites_per_level",
+    "item_level_prerequisites": [
+        [
+            ["vasari_unlock_debris_reclamation_center_unit_item"]
+        ],
+        [
+            ["vasari_upgrade_fabricator_cruiser_debris_reclamation_ability"]
+        ]
+    ],
     "planet_type_groups": [
     {
         "planet_types": [
@@ -43,7 +53,7 @@
     {
         "modifier_type": "max_garrison_supply",
         "value_behavior": "additive",
-        "values": [30.0]
+        "values": [30.0,40,50]
     }],
     "ability": "vasari_exodus_debris_reclamation_center",
     "item_ai_valuation": 600.0

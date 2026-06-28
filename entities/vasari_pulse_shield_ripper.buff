@@ -1,0 +1,60 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_augment_pending_damage_as_source",
+        "action_group":
+        {
+            "constraint":
+            {
+                "constraint_type": "composite_and",
+                "constraints": [
+                {
+                    "constraint_type": "damage_has_weapon_tag",
+                    "weapon_tag": "pulse"
+                },
+                {
+                    "constraint_type": "unit_passes_target_filter",
+                    "unit":
+                    {
+                        "unit_type": "trigger_event_destination"
+                    },
+                    "target_filter_id": "shield_ripper_target_filter"
+                }]
+            },
+            "actions": [
+            {
+                "action_type": "augment_damage",
+                "bonus_damage_value": "shield_ripper_bonus_value"
+            }]
+        }
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_upgrade_pulse_weapons_3_research_subject_hud_icon",
+        "name": "research_subject.vasari_shield_rippers_name",
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "positive",
+        "tooltip_line_groups": [
+        {
+            "header_text": "tooltip.ability.bonus_shield_damage",
+            "lines": [
+            {
+                "rendering_type": "single_value",
+                "label_text": "weapon_tag_name.pulse",
+                "value_color": "positive",
+                "value_id": "shield_ripper_bonus_value",
+                "value_float_format": "percentage"
+            }
+            ]
+        }]
+    }
+}
