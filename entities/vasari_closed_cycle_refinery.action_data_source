@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "per_buff_memory_declaration":
+    {
+        "float_variable_ids": [
+            "track_count"]
+    },
+    "action_values": [
+    {
+        "action_value_id": "mining_track_level_count",
+        "action_value":
+        {
+            "transform_type": "per_planet_current_mining_track_level",
+            "transform_unit":
+            {
+                "unit_type": "current_spawner"
+            },
+            "values": [1.0]
+        }
+    },
+    {
+        "action_value_id": "fissile_plant_metal_income_rate_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "track_count",
+            "values": [0.1]
+        }
+    },
+    {
+        "action_value_id": "fissile_plant_factory_exotic_build_time_value",
+        "action_value":
+        {
+            "transform_type": "current_buff_memory_value",
+            "memory_float_variable_id": "track_count",
+            "values": [-0.1]
+        }
+    }],
+    "buff_planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "fissile_plant_metal_income_rate_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "mining_track_metal_income_rate_per_population",
+            "value_behavior": "scalar",
+            "value_id": "fissile_plant_metal_income_rate_value"
+        }
+    },
+    {
+        "buff_planet_modifier_id": "fissile_plant_factory_exotic_build_time_modifier",
+        "buff_planet_modifier":
+        {
+            "modifier_type": "factory_exotic_build_time",
+            "value_behavior": "scalar",
+            "value_id": "fissile_plant_factory_exotic_build_time_value"
+        }
+    }]
+}

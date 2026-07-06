@@ -6,7 +6,8 @@
         "desert_home_planet",
         "ferrous_home_planet",
         "terran_home_planet",
-		"greenhouse_planet"
+		"greenhouse_planet",
+        "shattered_planet"
     ],
 	"scuttle_duration": 90,
     "random_planet_bonuses": [
@@ -38,6 +39,42 @@
     "artifacts": [],
 	"overwrite_planet_types": true,
 	"planet_types": [
+    {
+        "name": "shattered",
+        "localized_name": "planet_type_name.shattered",
+        "tooltip_icon": "shattered_planet_tooltip_icon.png",
+        "population":
+        {
+            "starting_population": [0, 0],
+            "population_maximum": 1,
+            "growth_rate": 0.0,
+            "growth_rate_if_above_max_population": -1.0
+        },
+        "surveying_track_levels": [
+        {
+            "exotics":
+            {
+                "guaranteed_counts": [],
+                "bonus_exotic_chances": [
+                {
+                    "exotic_type": "offense",
+                    "chance": 0
+                },
+                {
+                    "exotic_type": "defense",
+                    "chance": 0
+                },
+                {
+                    "exotic_type": "utility",
+                    "chance": 0
+                },
+                {
+                    "exotic_type": "economic",
+                    "chance": 0
+                }]
+            }
+        }]
+    },
     {
         "name": "asteroid",
         "localized_name": "planet_type_name.asteroid",

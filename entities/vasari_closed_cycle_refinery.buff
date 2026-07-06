@@ -1,0 +1,80 @@
+{
+    "version": 0,
+    "make_dead_on_source_ability_released": true,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_buff_started",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "track_count",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_zero"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "mining_track_level_count"
+                }]
+            }]
+        }
+    },
+    {
+        "trigger_event_type": "on_current_spawner_planet_track_completed",
+        "action_group":
+        {
+            "actions": [
+            {
+                "action_type": "change_buff_memory_float_value",
+                "float_variable": "track_count",
+                "math_operators": [
+                {
+                    "operator_type": "assign",
+                    "operand_value": "fixed_zero"
+                },
+                {
+                    "operator_type": "add",
+                    "operand_value": "mining_track_level_count"
+                }]
+            }]
+        }
+    }],
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "fissile_plant_metal_income_rate_modifier"
+    },
+    {
+        "buff_planet_modifier_id": "fissile_plant_factory_exotic_build_time_modifier"
+    }],
+    "gui":
+    {
+        "hud_icon": "trader_fissile_plant_unit_item_hud_icon",
+        "name": "trader_fissile_plant_unit_item_name",
+        "visibility_scope": "positive",
+        "is_visible_within_unit_tooltip": true,
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "fissile_plant_metal_income_rate_modifier",
+                "is_resolved_value": true
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "fissile_plant_factory_exotic_build_time_modifier",
+                "is_resolved_value": true
+            }]
+        }]
+    }
+}

@@ -1493,7 +1493,14 @@
         "vasari_cloning_vats",
         "vasari_closed_cycle_refinery",
         "vasari_compliance_inducer",
-        "vasari_industrial_nanoforge"
+        "vasari_industrial_nanoforge",
+        "vasari_surface_magnetic_planet_research_lab",
+		"vasari_metal_smelting_plant",
+		"vasari_ice_processor",
+		"vasari_fissile_plant",
+		"vasari_ferric_mining_rig",
+		"vasari_archaeology_center"
+
     ],
     "faction_planet_components": [
         "vasari_debris_reclamation_center",
@@ -1519,6 +1526,91 @@
     ],
     "first_capital_ship_item": "vasari_nano_repair_kit",
     "planet_types": [
+        {
+            "planet_type": "shattered",
+            "colonization_research_prerequisites": [
+                ["vasari_unlock_stripped_to_the_core_unit_item"]
+            ],
+            "can_ever_be_colonized": true,
+            "tracks":
+            {
+                "defense": [
+                {
+                    "max_military_structure_slots": 0,
+                    "max_health_points": 250,
+                    "health_points_restore_rate": 2.0,
+                    "max_shield_points": 0,
+                    "shield_points_restore_rate": 0.0,
+                    "planet_shield_burst_restore":
+                    {
+                        "cooldown_duration": 30.0,
+                        "restore_percentage": 1.0
+                    }
+                },
+                {
+                    "max_military_structure_slots": 5,
+                    "max_health_points": 750.0,
+                    "health_points_restore_rate": 4.0,
+                    "max_shield_points": 0,
+                    "shield_points_restore_rate": 0.0,
+                    "planet_shield_burst_restore":
+                    {
+                        "cooldown_duration": 30.0,
+                        "restore_percentage": 1.0
+                    }
+                },
+                {
+                    "max_military_structure_slots": 15,
+                    "max_health_points": 1500.0,
+                    "health_points_restore_rate": 6.0,
+                    "max_shield_points": 0,
+                    "shield_points_restore_rate": 0.0,
+                    "planet_shield_burst_restore":
+                    {
+                        "cooldown_duration": 30.0,
+                        "restore_percentage": 1.0
+                    }
+                }],
+                "logistics": [
+                {
+                    "max_planet_component_slots": 2,
+                    "max_civilian_structure_slots": 0,
+                    "structure_builder_count": 1
+                },
+                {
+                    "max_planet_component_slots": 2,
+                    "max_civilian_structure_slots": 3,
+                    "structure_builder_count": 2,
+                    "max_health_points": 250
+                },
+                {
+                    "max_planet_component_slots": 2,
+                    "max_civilian_structure_slots": 5,
+                    "structure_builder_count": 3,
+                    "max_health_points": 500
+                }],
+                "commerce": [
+                {}],
+                "mining": [
+                {}
+                
+                ],
+                "research": [
+                {}],
+                "focus": [
+                {}]
+            },
+            "maintenance_cost_rates": [],
+            "trade_capacity_levels": [
+            {
+                "import_points": 3,
+                "export_points":
+                {
+                    "metal": 1,
+                    "crystal": 1
+                }
+            }]
+        },
         {
             "planet_type": "asteroid",
             "can_ever_be_colonized": true,
@@ -2077,6 +2169,20 @@
                         "metal_income_rate_per_population": 0.0018,
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.0015,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0036,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.003,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0054,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0045,
                         "max_health_points": 250
                     }
                 ],
@@ -4022,6 +4128,20 @@
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.0015,
                         "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0036,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.003,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0054,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0045,
+                        "max_health_points": 250
                     }
                 ],
                 "research": [
@@ -4166,6 +4286,13 @@
                         "metal_income_rate_per_population": 0.0036,
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.003,
+                        "max_health_points": 500
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0054,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0045,
                         "max_health_points": 500
                     }
                 ],
@@ -4320,6 +4447,13 @@
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.003,
                         "max_health_points": 500
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0054,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0045,
+                        "max_health_points": 500
                     }
                 ],
                 "research": [
@@ -4463,6 +4597,13 @@
                         "metal_income_rate_per_population": 0.0036,
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.003,
+                        "max_health_points": 500
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0054,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0045,
                         "max_health_points": 500
                     }
                 ],
@@ -4722,6 +4863,13 @@
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.0036,
                         "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0072,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0072,
+                        "max_health_points": 250
                     }
                 ],
                 "research": [
@@ -4801,6 +4949,34 @@
                         "metal_income_rate_per_population": 0.0036,
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.0036,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0072,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0072,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0108,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0108,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0144,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0144,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.018,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.018,
                         "max_health_points": 250
                     }
                 ],
@@ -4899,6 +5075,34 @@
                         "metal_income_rate_per_population": 0.0036,
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.0036,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0072,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0072,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0108,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0108,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.0144,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0144,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.018,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.018,
                         "max_health_points": 250
                     }
                 ],
@@ -5035,6 +5239,20 @@
                         "metal_income_rate_per_population": 0.003,
                         "crystal_income_rate": 0.0,
                         "crystal_income_rate_per_population": 0.0024,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.006,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0048,
+                        "max_health_points": 250
+                    },
+                    {
+                        "metal_income_rate": 0.0,
+                        "metal_income_rate_per_population": 0.009,
+                        "crystal_income_rate": 0.0,
+                        "crystal_income_rate_per_population": 0.0072,
                         "max_health_points": 250
                     }
                 ],

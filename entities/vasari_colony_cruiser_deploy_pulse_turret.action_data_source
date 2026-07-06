@@ -1,0 +1,53 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "deploy_pulse_turret_auto_cast_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_always_a_threat"
+            }]
+        }
+    },
+    {
+        "target_filter_id": "deploy_pulse_turret_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "titan",
+                "super_capital_ship",
+                "cruiser"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "radius_value",
+        "action_value":
+        {
+            "values": [500.0]
+        }
+    },
+    {
+        "action_value_id": "range_value",
+        "action_value":
+        {
+            "values": [2000.0]
+        }
+    }]
+}
