@@ -5511,6 +5511,9 @@
             },
             {
                 "build_kind": "frigate"
+            },
+            {
+                "build_kind": "cruiser"
             }
         ],
         "factory_build_time_scalar": 2.75,
@@ -5527,10 +5530,34 @@
                 {
                     "unit": "vasari_anticorvette_corvette",
                     "weight": 20.0
+                },
+                {
+                    "unit": "vasari_long_range_frigate",
+                    "weight": 20.0
+                },
+                {
+                    "unit": "vasari_antifighter_frigate",
+                    "weight": 5.0
+                },
+                {
+                    "unit": "vasari_heavy_cruiser",
+                    "weight": 20.0
+                },
+                {
+                    "unit": "vasari_carrier_cruiser",
+                    "weight": 10.0
+                },
+                {
+                    "unit": "vasari_overseer_cruiser",
+                    "weight": 1.0
+                },
+                {
+                    "unit": "vasari_antiarmor_cruiser",
+                    "weight": 10.0
                 }
             ]
         },
-        "base_max_supply": 0
+        "base_max_supply": 100
     },
     "phase_resonance": {
         "levels": [
@@ -5542,7 +5569,12 @@
                             {
                                 "modifier_type": "hyperspace_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.18
+                                "value": 0.03
+                            },
+                            {
+                                "modifier_type": "max_linear_speed",
+                                "value_behavior": "scalar",
+                                "value": 0.03
                             },
                             {
                                 "modifier_type": "max_linear_acceleration",
@@ -5552,7 +5584,71 @@
                             {
                                 "modifier_type": "max_angular_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.03
+                                "value": 0.15
+                            }
+                        ]
+                    },
+                    "combat": {
+                        "weapon_modifiers": [
+                            {
+                                "value_behavior": "scalar",
+                                "modifier_type": "cooldown_duration",
+                                "value": -0.03
+                            },
+                            {
+                                "value_behavior": "additive",
+                                "modifier_type": "bypass_shields_chance",
+                                "value": 0.15,
+                                "tags": [
+                                    "phasemissile"]
+                            }
+                        ]
+                    },
+                    "utility": {
+                        "unit_modifiers": [
+                        {
+                            "modifier_type": "ability_antimatter_cost",
+                            "value_behavior": "scalar",
+                            "value": -0.15
+                        },
+                        {
+                            "modifier_type": "ability_cooldown_duration",
+                            "value_behavior": "scalar",
+                            "value": -0.03
+                        },
+                        {
+                            "modifier_type": "antimatter_restore_rate",
+                            "value_behavior": "scalar",
+                            "value": 0.015
+                        }
+                    ]
+                    }
+                }
+            },
+            {
+                "point_cost": 6,
+                "tracks": {
+                    "movement": {
+                        "unit_modifiers": [
+                            {
+                                "modifier_type": "hyperspace_speed",
+                                "value_behavior": "scalar",
+                                "value": 0.06
+                            },
+                            {
+                                "modifier_type": "max_linear_speed",
+                                "value_behavior": "scalar",
+                                "value": 0.06
+                            },
+                            {
+                                "modifier_type": "max_linear_acceleration",
+                                "value_behavior": "scalar",
+                                "value": 0.06
+                            },
+                            {
+                                "modifier_type": "max_angular_speed",
+                                "value_behavior": "scalar",
+                                "value": 0.24
                             }
                         ]
                     },
@@ -5562,105 +5658,82 @@
                                 "value_behavior": "scalar",
                                 "modifier_type": "cooldown_duration",
                                 "value": -0.06
+                            },
+                            {
+                                "value_behavior": "additive",
+                                "modifier_type": "bypass_shields_chance",
+                                "value": 0.24,
+                                "tags": [
+                                    "phasemissile"]
                             }
                         ]
                     },
                     "utility": {
                         "unit_modifiers": [
-                            {
-                                "modifier_type": "ability_antimatter_cost",
-                                "value_behavior": "scalar",
-                                "value": -0.18
-                            }
-                        ]
+                        {
+                            "modifier_type": "ability_antimatter_cost",
+                            "value_behavior": "scalar",
+                            "value": -0.24
+                        },
+                        {
+                            "modifier_type": "ability_cooldown_duration",
+                            "value_behavior": "scalar",
+                            "value": -0.12
+                        },
+                        {
+                            "modifier_type": "antimatter_restore_rate",
+                            "value_behavior": "scalar",
+                            "value": 0.06
+                        }
+                    ]
                     }
                 }
             },
             {
-                "point_cost": 4,
+                "point_cost": 12,
                 "tracks": {
                     "movement": {
                         "unit_modifiers": [
                             {
                                 "modifier_type": "hyperspace_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.27
-                            },
-                            {
-                                "modifier_type": "max_linear_acceleration",
-                                "value_behavior": "scalar",
-                                "value": 0.06
-                            },
-                            {
-                                "modifier_type": "max_angular_speed",
-                                "value_behavior": "scalar",
-                                "value": 0.06
-                            }
-                        ]
-                    },
-                    "combat": {
-                        "weapon_modifiers": [
-                            {
-                                "value_behavior": "scalar",
-                                "modifier_type": "cooldown_duration",
-                                "value": -0.12
-                            }
-                        ]
-                    },
-                    "utility": {
-                        "unit_modifiers": [
-                            {
-                                "modifier_type": "ability_antimatter_cost",
-                                "value_behavior": "scalar",
-                                "value": -0.27
-                            },
-                            {
-                                "modifier_type": "ability_cooldown_duration",
-                                "value_behavior": "scalar",
-                                "value": -0.18
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "point_cost": 8,
-                "tracks": {
-                    "movement": {
-                        "unit_modifiers": [
-                            {
-                                "modifier_type": "hyperspace_speed",
-                                "value_behavior": "scalar",
-                                "value": 0.36
+                                "value": 0.14
                             },
                             {
                                 "modifier_type": "max_linear_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.09
+                                "value": 0.14
                             },
                             {
                                 "modifier_type": "max_linear_acceleration",
                                 "value_behavior": "scalar",
-                                "value": 0.09
+                                "value": 0.14
                             },
                             {
                                 "modifier_type": "max_angular_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.09
+                                "value": 0.32
                             }
                         ]
                     },
                     "combat": {
                         "weapon_modifiers": [
                             {
+                                "value_behavior": "additive",
+                                "modifier_type": "bypass_shields_chance",
+                                "value": 0.32,
+                                "tags": [
+                                    "phasemissile"]
+                            },
+                           {
                                 "value_behavior": "scalar",
                                 "modifier_type": "cooldown_duration",
-                                "value": -0.18
+                                "value": -0.14
                             },
                             {
                                 "value_behavior": "scalar",
                                 "modifier_type": "damage",
-                                "value": 0.075
+                                "value": 0.07
                             }
                         ]
                     },
@@ -5669,41 +5742,46 @@
                             {
                                 "modifier_type": "ability_antimatter_cost",
                                 "value_behavior": "scalar",
-                                "value": -0.36
+                                "value": -0.32
                             },
                             {
                                 "modifier_type": "ability_cooldown_duration",
                                 "value_behavior": "scalar",
-                                "value": -0.36
+                                "value": -0.28
+                            },
+                            {
+                                "modifier_type": "antimatter_restore_rate",
+                                "value_behavior": "scalar",
+                                "value": 0.14
                             }
                         ]
                     }
                 }
             },
             {
-                "point_cost": 16,
+                "point_cost": 20,
                 "tracks": {
                     "movement": {
                         "unit_modifiers": [
                             {
                                 "modifier_type": "hyperspace_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.45
+                                "value": 0.24
                             },
                             {
                                 "modifier_type": "max_linear_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.18
+                                "value": 0.24
                             },
                             {
                                 "modifier_type": "max_linear_acceleration",
                                 "value_behavior": "scalar",
-                                "value": 0.12
+                                "value": 0.24
                             },
                             {
                                 "modifier_type": "max_angular_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.12
+                                "value": 0.42
                             }
                         ]
                     },
@@ -5717,12 +5795,12 @@
                             {
                                 "value_behavior": "scalar",
                                 "modifier_type": "damage",
-                                "value": 0.15
+                                "value": 0.12
                             },
                             {
                                 "value_behavior": "additive",
                                 "modifier_type": "bypass_shields_chance",
-                                "value": 0.09,
+                                "value": 0.42,
                                 "tags": [
                                     "phasemissile"
                                 ]
@@ -5734,41 +5812,46 @@
                             {
                                 "modifier_type": "ability_antimatter_cost",
                                 "value_behavior": "scalar",
-                                "value": -0.45
+                                "value": -0.42
                             },
                             {
                                 "modifier_type": "ability_cooldown_duration",
                                 "value_behavior": "scalar",
-                                "value": -0.54
+                                "value": -0.48
+                            },
+                            {
+                                "modifier_type": "antimatter_restore_rate",
+                                "value_behavior": "scalar",
+                                "value": 0.24
                             }
                         ]
                     }
                 }
             },
             {
-                "point_cost": 24,
+                "point_cost": 30,
                 "tracks": {
                     "movement": {
                         "unit_modifiers": [
                             {
                                 "modifier_type": "hyperspace_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.54
+                                "value": 0.36
                             },
                             {
                                 "modifier_type": "max_linear_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.27
+                                "value": 0.36
                             },
                             {
                                 "modifier_type": "max_linear_acceleration",
                                 "value_behavior": "scalar",
-                                "value": 0.15
+                                "value": 0.36
                             },
                             {
                                 "modifier_type": "max_angular_speed",
                                 "value_behavior": "scalar",
-                                "value": 0.15
+                                "value": 0.54
                             }
                         ]
                     },
@@ -5777,17 +5860,17 @@
                             {
                                 "value_behavior": "scalar",
                                 "modifier_type": "cooldown_duration",
-                                "value": -0.3
+                                "value": -0.36
                             },
                             {
                                 "value_behavior": "scalar",
                                 "modifier_type": "damage",
-                                "value": 0.225
+                                "value": 0.18
                             },
                             {
                                 "value_behavior": "additive",
                                 "modifier_type": "bypass_shields_chance",
-                                "value": 0.18,
+                                "value": 0.54,
                                 "tags": [
                                     "phasemissile"
                                 ]
@@ -5805,6 +5888,11 @@
                                 "modifier_type": "ability_cooldown_duration",
                                 "value_behavior": "scalar",
                                 "value": -0.72
+                            },
+                            {
+                                "modifier_type": "antimatter_restore_rate",
+                                "value_behavior": "scalar",
+                                "value": 0.36
                             }
                         ]
                     }
