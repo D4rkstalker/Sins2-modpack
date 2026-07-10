@@ -27,6 +27,27 @@
         "value_behavior": "additive",
         "value": 0.15
     }],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "corvette",
+                "cruiser",
+                "frigate",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"]
+        },
+        "action_data_source": "vasari_upgrade_shields_with_advent",
+        "buff": "vasari_upgrade_shields_with_advent"
+    }],
     "prerequisites": [["shields_battle_regen_tier_0_v"]],
     "name": "research_subject.shield_battle_regen_name",
     "name_uppercase": "research_subject.shield_battle_regen_name_upper",

@@ -1,0 +1,38 @@
+{
+    "version": 0,
+    "active_duration": "decay_duration",
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "restart_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "planet_modifiers": [
+    {
+        "buff_planet_modifier_id": "structure_build_time"
+    },
+    {
+        "buff_planet_modifier_id": "track_build_time"
+    }],
+    "gui":
+    {
+        "hud_icon": "vasari_shock_and_awe_hud_icon",
+        "name": "vasari_shock_and_awe_buff_name",
+        "is_expire_time_suppressed": true,
+        "is_visible_within_unit_tooltip": true,
+        "visibility_scope": "negative",
+        "tooltip_line_groups": [
+        {
+            "lines": [
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "structure_build_time"
+            },
+            {
+                "rendering_type": "buff_planet_modifier",
+                "planet_modifier_id": "track_build_time"
+            }]
+        }]
+    }
+}
