@@ -2,6 +2,28 @@
     "version": 0,
     "target_filters": [
     {
+        "target_filter_id": "enemy_factory",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "structure",
+                "super_capital_ship",
+                "cruiser",
+                "titan"
+            ],
+            "ownerships": [
+                "enemy"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_unit_factory",
+                "must_be_functional": true
+            }]
+        }
+    },
+    {
         "target_filter_id": "enemy_planet",
         "target_filter":
         {
@@ -28,7 +50,7 @@
         }
     },
     {
-        "action_value_id": "mass_production_ship_build_time_bonus_value",
+        "action_value_id": "ship_build_time_scalar",
         "action_value":
         {
             "values": [0.48]
@@ -43,12 +65,12 @@
     }],
     "buff_unit_factory_modifiers": [
     {
-        "buff_unit_factory_modifier_id": "mass_production_factory_build_time_modifier",
+        "buff_unit_factory_modifier_id": "ship_build_time",
         "buff_unit_factory_modifier":
         {
             "modifier_type": "build_time",
             "value_behavior": "scalar",
-            "value_id": "mass_production_ship_build_time_bonus_value"
+            "value_id": "ship_build_time_scalar"
         }
     }],
     "buff_planet_modifiers": [

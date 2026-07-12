@@ -1,27 +1,38 @@
 {
     "version": 0,
-    "spatial":
-    {
+    "spatial": {
         "radius": 69.598213,
-        "box":
-        {
-            "center": [-0.010709, -2.576257, 2.53631],
-            "extents": [27.535446, 24.293541, 65.558075]
+        "box": {
+            "center": [
+                -0.010709,
+                -2.576257,
+                2.53631
+            ],
+            "extents": [
+                27.535446,
+                24.293541,
+                65.558075
+            ]
         },
         "collision_rank": 1
     },
-    "physics":
-    {
+    "physics": {
         "can_move_linear": true,
         "max_linear_speed": 1200.0,
         "time_to_max_linear_speed": 5.0,
         "arrival_tolerance_spatial_radius_scalar": 1.5,
-        "death_linear_speed_range": [0.75, 1.25],
+        "death_linear_speed_range": [
+            0.75,
+            1.25
+        ],
         "can_move_angular": true,
         "max_angular_speed": 24.0,
         "time_to_max_angular_speed": 1.2,
         "max_bank_angle": 35.0,
-        "death_angular_speed_range": [5.0, 10.0],
+        "death_angular_speed_range": [
+            5.0,
+            10.0
+        ],
         "linear_acceleration_angle": 90.0,
         "can_strafe_linear": true,
         "strafe_max_linear_speed": 240.0,
@@ -32,8 +43,7 @@
         "strafe_speed_start_angle": 10.0,
         "strafe_max_start_turning_angle": 170.0
     },
-    "hyperspace":
-    {
+    "hyperspace": {
         "speed": 215000.0,
         "speed_between_stars": 752500.0,
         "charge_time": 8.0,
@@ -41,19 +51,19 @@
         "min_charge_angle": 10.0,
         "max_charge_angle": 45.0
     },
-    "move":
-    {
+    "move": {
         "follow_distance": 409.239655
     },
-    "attack":
-    {
-        "attack_pattern":
-        {
-            "type": "stop_and_fire"
+    "attack": {
+        "attack_pattern": {
+            "type": "circle_strafe",
+            "angle_range_off_gravity_well_plane": [
+                -45.0,
+                45.0
+            ]
         }
     },
-    "ai":
-    {
+    "ai": {
         "attack_target_type_groups": [
             "flak",
             "light",
@@ -68,24 +78,20 @@
         ],
         "attack_target_type_groups_matching_weapon": "vasari_light_frigate_pulse",
         "auto_follow_target_priority": 5.0,
-        "pursuit":
-        {
+        "pursuit": {
             "min_target_speed": 100.0,
             "min_distance_to_target": 3000.0
         }
     },
-    "ai_attack_target":
-    {
+    "ai_attack_target": {
         "attack_priority": 50.0,
         "is_always_a_threat": true,
         "attack_target_type": "light"
     },
-    "player_ai":
-    {
+    "player_ai": {
         "attack_ship_weight_scalar": 0.1
-    },    
-    "user_interface":
-    {
+    },
+    "user_interface": {
         "pip_type": "frigate",
         "can_ever_be_selected": true,
         "selection_priority": 300,
@@ -96,86 +102,95 @@
         "can_show_distance_to_plane_line": true,
         "can_rotate": true
     },
-    "weapons":
-    {
+    "weapons": {
         "weapons": [
-        {
-            "weapon": "vasari_light_frigate_pulse",
-            "mesh_point": "weapon.0",
-            "weapon_position": [-7e-06, -10.843185, 57.352352],
-            "non_turret_muzzle_positions": [
-                [-7e-06, -10.843185, 57.352352]
-            ],
-            "forward": [-0.0, 0.0, 1.0],
-            "up": [0.0, 1.0, -0.0],
-            "yaw_arc":
             {
-                "min_angle": -15.0,
-                "max_angle": 15.0
-            },
-            "pitch_arc":
-            {
-                "min_angle": -5.0,
-                "max_angle": 5.0
+                "weapon": "vasari_light_frigate_pulse",
+                "mesh_point": "weapon.0",
+                "weapon_position": [
+                    -7e-06,
+                    -10.843185,
+                    57.352352
+                ],
+                "non_turret_muzzle_positions": [
+                    [
+                        -7e-06,
+                        -10.843185,
+                        57.352352
+                    ]
+                ],
+                "forward": [
+                    -0.0,
+                    0.0,
+                    1.0
+                ],
+                "up": [
+                    0.0,
+                    1.0,
+                    -0.0
+                ],
+                "yaw_arc": {
+                    "min_angle": -15.0,
+                    "max_angle": 15.0
+                },
+                "pitch_arc": {
+                    "min_angle": -5.0,
+                    "max_angle": 5.0
+                }
             }
-        }],
+        ],
         "max_range_weapon_index": 0
     },
-    "formation":
-    {
+    "formation": {
         "leader_priority": 0,
-        "offsets_per_formation_type":
-        {
-            "ships_and_structures":
-            {
+        "offsets_per_formation_type": {
+            "ships_and_structures": {
                 "rank": 1,
                 "group": 0
             }
         }
     },
-    "spawn_debris":
-    {
+    "spawn_debris": {
         "spawn_debris_time": 1.0,
         "generic_group_name": "vasari",
-        "generic_counts":
-        {
-            "small_debris": [3, 4]
+        "generic_counts": {
+            "small_debris": [
+                3,
+                4
+            ]
         }
     },
-    "health":
-    {
+    "health": {
         "release_time_after_death": 60.0,
         "can_collide_duration_after_death": 0.8,
         "durability": 180.0,
         "can_ever_be_resurrected": true,
         "levels": [
-        {
-            "max_hull_points": 940.0,
-            "hull_point_restore_rate": 1.5,
-            "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
-            "hull_point_restore_scalar_after_damage_taken": 0.0,
-            "max_armor_points": 630.0,
-            "armor_point_restore_rate": 2.25,
-            "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
-            "armor_point_restore_scalar_after_damage_taken": 0.0,
-            "armor_strength": 48.0,
-            "max_shield_points": 720.0,
-            "shield_point_restore_rate": 3.0,
-            "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
-            "shield_point_restore_scalar_after_damage_taken": 0.0,
-            "shield_burst_restore":
             {
-                "cooldown_duration": 30.0,
-                "restore_percentage": 0.5
-            },
-            "experience_given_on_death": 49.0
-        }]
+                "max_hull_points": 940.0,
+                "hull_point_restore_rate": 1.5,
+                "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
+                "hull_point_restore_scalar_after_damage_taken": 0.0,
+                "max_armor_points": 630.0,
+                "armor_point_restore_rate": 2.25,
+                "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
+                "armor_point_restore_scalar_after_damage_taken": 0.0,
+                "armor_strength": 48.0,
+                "max_shield_points": 720.0,
+                "shield_point_restore_rate": 3.0,
+                "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
+                "shield_point_restore_scalar_after_damage_taken": 0.0,
+                "shield_burst_restore": {
+                    "cooldown_duration": 30.0,
+                    "restore_percentage": 0.5
+                },
+                "experience_given_on_death": 49.0
+            }
+        ]
     },
-    "build":
-    {
+    "build": {
         "build_time": 25.0,
-        "price":
-        {
+        "price": {
             "metal": 135.0,
             "crystal": 15.0
         },
@@ -188,35 +203,38 @@
         "frigate"
     ],
     "abilities": [
-    {
-        "abilities": []
-    },
-    {
-        "abilities": [
-            "special_operation_unit"
-        ],
-		"required_special_operation_unit_kind": "dark_fleet"
-    },
-    {
-        "abilities": [
-			"special_operation_unit"
-		],
-		"required_special_operation_unit_kind": "garrison"
-    },
-    {
-        "abilities": [
-            "special_operation_unit"
-        ],
-		"required_special_operation_unit_kind": "arankul_raid"
-    }],
+        {
+            "abilities": []
+        },
+        {
+            "abilities": [
+                "special_operation_unit"
+            ],
+            "required_special_operation_unit_kind": "dark_fleet"
+        },
+        {
+            "abilities": [
+                "special_operation_unit"
+            ],
+            "required_special_operation_unit_kind": "garrison"
+        },
+        {
+            "abilities": [
+                "special_operation_unit"
+            ],
+            "required_special_operation_unit_kind": "arankul_raid"
+        }
+    ],
     "ship_roles": [
         "attack_ship"
     ],
     "skin_groups": [
-    {
-        "skins": [
-            "vasari_light_frigate"]
-    }],
+        {
+            "skins": [
+                "vasari_light_frigate"
+            ]
+        }
+    ],
     "can_join_fleet": true,
     "action_effect_size": "small_unit"
 }

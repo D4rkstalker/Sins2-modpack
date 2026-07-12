@@ -3,8 +3,16 @@
     "spatial": {
         "radius": 42.200001,
         "box": {
-            "center": [-0.0, 0.0, 0.0],
-            "extents": [42.00610, 42.15580, 42.00610]
+            "center": [
+                -0.0,
+                0.0,
+                0.0
+            ],
+            "extents": [
+                42.0061,
+                42.1558,
+                42.0061
+            ]
         },
         "collision_rank": 1
     },
@@ -12,13 +20,19 @@
         "can_move_linear": true,
         "max_linear_speed": 960.0,
         "time_to_max_linear_speed": 4.0,
-        "arrival_tolerance_spatial_radius_scalar": 0.250,
-        "death_linear_speed_range": [0.750, 1.250],
+        "arrival_tolerance_spatial_radius_scalar": 0.25,
+        "death_linear_speed_range": [
+            0.75,
+            1.25
+        ],
         "can_move_angular": true,
         "max_angular_speed": 42.0,
         "time_to_max_angular_speed": 3.0,
         "max_bank_angle": 35.0,
-        "death_angular_speed_range": [5.0, 10.0],
+        "death_angular_speed_range": [
+            5.0,
+            10.0
+        ],
         "linear_acceleration_angle": 90.0,
         "can_strafe_linear": true,
         "strafe_max_linear_speed": 240.0,
@@ -42,7 +56,11 @@
     },
     "attack": {
         "attack_pattern": {
-            "type": "stop_and_fire"
+            "type": "circle_strafe",
+            "angle_range_off_gravity_well_plane": [
+                -45.0,
+                45.0
+            ]
         }
     },
     "ai": {
@@ -80,12 +98,28 @@
             {
                 "weapon": "vasari_greater_nanite_frigate_pulse",
                 "mesh_point": "weapon.0",
-                "weapon_position": [-0.0, 0.000001, 9.809126],
-                "non_turret_muzzle_positions": [
-                    [-0.0, 0.000001, 9.809126]
+                "weapon_position": [
+                    -0.0,
+                    1e-06,
+                    9.809126
                 ],
-                "forward": [-0.0, 0.0, 1.0],
-                "up": [-0.0, 1.0, -0.0],
+                "non_turret_muzzle_positions": [
+                    [
+                        -0.0,
+                        1e-06,
+                        9.809126
+                    ]
+                ],
+                "forward": [
+                    -0.0,
+                    0.0,
+                    1.0
+                ],
+                "up": [
+                    -0.0,
+                    1.0,
+                    -0.0
+                ],
                 "yaw_arc": {
                     "min_angle": -5.0,
                     "max_angle": 5.0
@@ -98,12 +132,28 @@
             {
                 "weapon": "vasari_greater_nanite_frigate_beam",
                 "mesh_point": "weapon.0",
-                "weapon_position": [-0.0, 0.000001, 9.809126],
-                "non_turret_muzzle_positions": [
-                    [-0.0, 0.000001, 9.809126]
+                "weapon_position": [
+                    -0.0,
+                    1e-06,
+                    9.809126
                 ],
-                "forward": [-0.0, 0.0, 1.0],
-                "up": [-0.0, 1.0, -0.0],
+                "non_turret_muzzle_positions": [
+                    [
+                        -0.0,
+                        1e-06,
+                        9.809126
+                    ]
+                ],
+                "forward": [
+                    -0.0,
+                    0.0,
+                    1.0
+                ],
+                "up": [
+                    -0.0,
+                    1.0,
+                    -0.0
+                ],
                 "yaw_arc": {
                     "min_angle": -5.0,
                     "max_angle": 5.0
@@ -129,20 +179,23 @@
         "spawn_debris_time": 1.0,
         "generic_group_name": "vasari",
         "generic_counts": {
-            "small_debris": [3, 4]
+            "small_debris": [
+                3,
+                4
+            ]
         }
     },
     "health": {
         "release_time_after_death": 60.0,
-        "can_collide_duration_after_death": 0.80,
+        "can_collide_duration_after_death": 0.8,
         "durability": 200.0,
         "levels": [
             {
                 "max_hull_points": 1150.0,
-                "hull_point_restore_rate": 2.250,
+                "hull_point_restore_rate": 2.25,
                 "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
                 "max_armor_points": 565.0,
-                "armor_point_restore_rate": 1.80,
+                "armor_point_restore_rate": 1.8,
                 "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
                 "armor_strength": 72.0,
                 "max_shield_points": 745.0,
@@ -150,7 +203,7 @@
                 "shield_point_restore_cooldown_duration_after_damage_taken": 20.0,
                 "shield_burst_restore": {
                     "cooldown_duration": 25.0,
-                    "restore_percentage": 0.50
+                    "restore_percentage": 0.5
                 },
                 "experience_given_on_death": 102.0
             }
