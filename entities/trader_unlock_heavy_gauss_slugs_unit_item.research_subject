@@ -3,16 +3,36 @@
     "domain": "military",
     "tier": 3,
     "field": "military_armament",
-    "field_coord": [7, 2],
+    "field_coord": [
+        7,
+        2
+    ],
     "research_time": 420.0,
-    "price":
-    {
+    "price": {
         "credits": 1750.0,
         "metal": 325.0,
         "crystal": 550.0
     },
     "prerequisites": [
-        ["trader_improve_gauss_defense_range"]
+        [
+            "trader_improve_gauss_defense_range"
+        ]
+    ],
+    "buff_providers": [
+        {
+            "scope": "all_owned_units",
+            "all_owned_units_target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "super_capital_ship"
+                ],
+                "ownerships": [
+                    "self"
+                ]
+            },
+            "action_data_source": "trader_unlock_heavy_gauss_slugs_unit_item",
+            "buff": "trader_unlock_heavy_gauss_slugs_unit_item"
+        }
     ],
     "weapon_modifiers": [
     {

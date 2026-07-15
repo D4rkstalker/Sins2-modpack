@@ -3,16 +3,36 @@
     "domain": "military",
     "tier": 3,
     "field": "military_protection",
-    "field_coord": [7, 0],
+    "field_coord": [
+        7,
+        0
+    ],
     "research_time": 420.0,
-    "price":
-    {
+    "price": {
         "credits": 1150.0,
         "metal": 450.0,
         "crystal": 950.0
     },
     "prerequisites": [
-        ["advent_upgrade_missile_weapon_damage_2"]
+        [
+            "advent_upgrade_missile_weapon_damage_2"
+        ]
+    ],
+    "buff_providers": [
+        {
+            "scope": "all_owned_units",
+            "all_owned_units_target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "super_capital_ship"
+                ],
+                "ownerships": [
+                    "self"
+                ]
+            },
+            "action_data_source": "advent_unlock_missile_boost_unit_item",
+            "buff": "advent_unlock_missile_boost_unit_item"
+        }
     ],
     "name": "advent_unlock_missile_boost_unit_item_research_subject_name",
     "name_uppercase": "advent_unlock_missile_boost_unit_item_research_subject_name_uppercase",

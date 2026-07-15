@@ -1,0 +1,41 @@
+{
+    "version": 0,
+    "domain": "military",
+    "tier": 2,
+    "field": "military_energy",
+    "field_coord": [
+        4,
+        2
+    ],
+    "research_time": 225.0,
+    "price": {
+        "credits": 800.0,
+        "metal": 250.0,
+        "crystal": 600.0
+    },
+    "prerequisites": [
+        [
+            "advent_unlock_shield_burst_restore"
+        ]
+    ],
+    "buff_providers": [
+        {
+            "scope": "all_owned_units",
+            "all_owned_units_target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "super_capital_ship"
+                ],
+                "ownerships": [
+                    "self"
+                ]
+            },
+            "action_data_source": "advent_unlock_synchronous_shield_unit_item",
+            "buff": "advent_unlock_synchronous_shield_unit_item"
+        }
+    ],
+    "name": "advent_unlock_synchronous_shield_unit_item_research_subject_name",
+    "name_uppercase": "advent_unlock_synchronous_shield_unit_item_research_subject_name_uppercase",
+    "hud_icon": "advent_shield_boost_unit_item_hud_icon",
+    "tooltip_picture": "advent_shield_boost_unit_item_tooltip_picture"
+}
