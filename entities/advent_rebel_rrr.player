@@ -523,7 +523,7 @@
         "advent_culture_center_structure",
         "advent_exotic_factory_structure",
         "advent_population_structure",
-        "advent_unity_structure_rebel",
+        "advent_unity_structure",
         "advent_rebel_titan_factory_structure",
         "advent_laser_defense_structure",
         "advent_temple_of_renewal_structure",
@@ -6304,11 +6304,11 @@
         "allegiance_decay_minimum_percentage": 0.01,
         "decay_rates": [
         {
-            "decay_rate": 0.02
+            "decay_rate": 0.01
         }],
         "propagation_rates": [
         {
-            "propagation_rate_scalar": -2.0
+            "propagation_rate_scalar": -1.5
         }],
         "enemy_weapon_modifiers": [
         {
@@ -6469,6 +6469,17 @@
             }]
         }],
         "friendly_planet_modifiers": [
+        {
+            "modifier_type": "max_allied_population_factor",
+            "value_behavior": "scalar",
+            "values": [
+            {
+                "value": 0.1,
+                "prerequisites": [
+                    ["advent_culture_disruption_planets"]
+                ]
+            }]
+        },
         {
             "modifier_type": "mining_track_crystal_income_rate",
             "value_behavior": "additive",
