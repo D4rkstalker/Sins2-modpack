@@ -3,37 +3,40 @@
     "domain": "military",
     "tier": 3,
     "field": "military_armament",
-    "field_coord": [6, 5],
+    "field_coord": [
+        6,
+        5
+    ],
     "research_time": 360.0,
-    "price":
-    {
+    "price": {
         "credits": 1700.0,
         "metal": 300.0,
         "crystal": 500.0
     },
     "buff_providers": [
-    {
-        "scope": "all_owned_units",
-        "all_owned_units_target_filter":
         {
-            "unit_types": [
-                "capital_ship",
-                "starbase",
-		"super_capital_ship",
-		"titan"
-            ],
-            "ownerships": [
-                "self"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_weapon",
-                "tag": "missile"
-            }]
-        },
-        "action_data_source": "trader_rebel_missile_weapon_targeting",
-        "buff": "trader_rebel_missile_weapon_targeting"
-    }],
+            "scope": "all_owned_units",
+            "all_owned_units_target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "starbase",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "self"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "has_weapon",
+                        "tag": "missile"
+                    }
+                ]
+            },
+            "action_data_source": "trader_rebel_missile_weapon_targeting",
+            "buff": "trader_rebel_missile_weapon_targeting"
+        }
+    ],
     "name": "trader_unlock_missile_guidance_computer_unit_item_research_subject_name",
     "name_uppercase": "trader_unlock_missile_guidance_computer_unit_item_research_subject_name_uppercase",
     "description": "research_subject.trader_unlock_missile_guidance",

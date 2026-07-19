@@ -2,119 +2,110 @@
     "version": 0,
     "make_dead_on_source_ability_released": true,
     "make_dead_on_current_spawner_ownership_changed_from_buff_ownership": true,
-    "stacking_limit":
-    {
+    "stacking_limit": {
         "stacking_limit": "fixed_one",
         "stacking_limit_met_behavior": "preserve_existing_buff"
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
     "time_actions": [
-    {
-        "execution_interval_value": "fixed_one",
-        "action_group":
         {
-            "actions": [
-            {
-                "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
-                "gravity_well_origin_unit":
-                {
-                    "unit_type": "current_spawner"
-                },
-                "operators": [
-                {
-                    "constraint":
+            "execution_interval_value": "fixed_one",
+            "action_group": {
+                "actions": [
                     {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "operand_destination"
+                        "action_type": "use_unit_operators_on_units_in_gravity_well_of_unit",
+                        "gravity_well_origin_unit": {
+                            "unit_type": "current_spawner"
                         },
-                        "target_filter_id": "phase_jamming_target_filter"
-                    },
-                    "operator_type": "apply_buff",
-                    "buff": "vasari_overseer_phase_jamming_on_target"
-                }]
-            }]
-        }
-    }],
-    "trigger_event_actions": [
-    {
-        "trigger_event_type": "on_buff_started",
-        "action_group":
-        {
-            "constraint":
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "unit_comparison",
-                    "unit_a":
-                    {
-                        "unit_type": "current_spawner",
-                        "redirection": "current_gravity_well"
-                    },
-                    "unit_b":
-                    {
-                        "unit_type": "none"
+                        "operators": [
+                            {
+                                "constraint": {
+                                    "constraint_type": "unit_passes_target_filter",
+                                    "unit": {
+                                        "unit_type": "operand_destination"
+                                    },
+                                    "target_filter_id": "phase_jamming_target_filter"
+                                },
+                                "operator_type": "apply_buff",
+                                "buff": "vasari_overseer_phase_jamming_on_target"
+                            }
+                        ]
                     }
-                }
-            },
-            "actions": [
-            {
-                "action_type": "use_unit_operators_on_single_unit",
-                "destination_unit":
-                {
-                    "unit_type": "current_spawner",
-                    "redirection": "current_gravity_well"
-                },
-                "operators": [
-                {
-                    "operator_type": "apply_buff",
-                    "buff": "vasari_overseer_cruiser_phase_lane_detection_on_gravity_well"
-                }]
-            }]
+                ]
+            }
         }
-    },
-    {
-        "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
-        "action_group":
+    ],
+    "trigger_event_actions": [
         {
-            "actions": [
-            {
-                "action_type": "make_buff_dead",
-                "buff": "all_child_buffs"
-            },
-            {
-                "constraint":
-                {
+            "trigger_event_type": "on_buff_started",
+            "action_group": {
+                "constraint": {
                     "constraint_type": "composite_not",
-                    "constraint":
-                    {
+                    "constraint": {
                         "constraint_type": "unit_comparison",
-                        "unit_a":
-                        {
+                        "unit_a": {
                             "unit_type": "current_spawner",
                             "redirection": "current_gravity_well"
                         },
-                        "unit_b":
-                        {
+                        "unit_b": {
                             "unit_type": "none"
                         }
                     }
                 },
-                "action_type": "use_unit_operators_on_single_unit",
-                "destination_unit":
-                {
-                    "unit_type": "current_spawner",
-                    "redirection": "current_gravity_well"
-                },
-                "operators": [
-                {
-                    "operator_type": "apply_buff",
-                    "buff": "vasari_overseer_cruiser_phase_lane_detection_on_gravity_well"
-                }]
-            }]
+                "actions": [
+                    {
+                        "action_type": "use_unit_operators_on_single_unit",
+                        "destination_unit": {
+                            "unit_type": "current_spawner",
+                            "redirection": "current_gravity_well"
+                        },
+                        "operators": [
+                            {
+                                "operator_type": "apply_buff",
+                                "buff": "vasari_overseer_cruiser_phase_lane_detection_on_gravity_well"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "trigger_event_type": "on_current_spawner_current_gravity_well_changed",
+            "action_group": {
+                "actions": [
+                    {
+                        "action_type": "make_buff_dead",
+                        "buff": "all_child_buffs"
+                    },
+                    {
+                        "constraint": {
+                            "constraint_type": "composite_not",
+                            "constraint": {
+                                "constraint_type": "unit_comparison",
+                                "unit_a": {
+                                    "unit_type": "current_spawner",
+                                    "redirection": "current_gravity_well"
+                                },
+                                "unit_b": {
+                                    "unit_type": "none"
+                                }
+                            }
+                        },
+                        "action_type": "use_unit_operators_on_single_unit",
+                        "destination_unit": {
+                            "unit_type": "current_spawner",
+                            "redirection": "current_gravity_well"
+                        },
+                        "operators": [
+                            {
+                                "operator_type": "apply_buff",
+                                "buff": "vasari_overseer_cruiser_phase_lane_detection_on_gravity_well"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
-    }]
+    ]
 }

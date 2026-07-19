@@ -3,58 +3,64 @@
     "domain": "military",
     "tier": 3,
     "field": "military_trader_rebel_repeatables",
-    "field_coord": [7, 0],
+    "field_coord": [
+        7,
+        0
+    ],
     "research_time": 672.5,
-    "price":
-    {
+    "price": {
         "credits": 3600.0,
         "metal": 1350.0,
         "crystal": 1350.0
     },
     "unit_modifiers": [
-    {
-        "modifier_type": "experience_gained_from_unit_death",
-        "value_behavior": "scalar",
-        "value": 1.0
-    }],
+        {
+            "modifier_type": "experience_gained_from_unit_death",
+            "value_behavior": "scalar",
+            "value": 1.0
+        }
+    ],
     "planet_modifiers": [
-    {
-        "modifier_type": "culture_resistance_rate",
-        "value_behavior": "scalar",
-        "value": 0.33
-    }],
+        {
+            "modifier_type": "culture_resistance_rate",
+            "value_behavior": "scalar",
+            "value": 0.33
+        }
+    ],
     "buff_providers": [
-    {
-        "scope": "all_owned_units",
-        "all_owned_units_target_filter":
         {
-            "ownerships": [
-                "self"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_experience"
-            }]
-        },
-        "action_data_source": "trader_rebel_passive_experience",
-        "buff": "trader_rebel_passive_experience",
-        "tooltip_sub_header_label": "tooltip.advent_passive_experience_rate_sub_header",
-        "tooltip_lines": [
-        {
-            "rendering_type": "single_value",
-            "label_text": "tooltip.advent_passive_experience_rate_without_culture",
-            "value_id": "experience_rate_per_minute_without_culture",
-            "value_color": "positive",
-            "value_suffix": "per_minute"
-        },
-        {
-            "rendering_type": "single_value",
-            "label_text": "tooltip.advent_passive_experience_rate_with_culture",
-            "value_id": "experience_rate_per_minute_with_culture",
-            "value_color": "positive",
-            "value_suffix": "per_minute"
-        }]
-    }],
+            "scope": "all_owned_units",
+            "all_owned_units_target_filter": {
+                "ownerships": [
+                    "self"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "has_experience"
+                    }
+                ]
+            },
+            "action_data_source": "trader_rebel_passive_experience",
+            "buff": "trader_rebel_passive_experience",
+            "tooltip_sub_header_label": "tooltip.advent_passive_experience_rate_sub_header",
+            "tooltip_lines": [
+                {
+                    "rendering_type": "single_value",
+                    "label_text": "tooltip.advent_passive_experience_rate_without_culture",
+                    "value_id": "experience_rate_per_minute_without_culture",
+                    "value_color": "positive",
+                    "value_suffix": "per_minute"
+                },
+                {
+                    "rendering_type": "single_value",
+                    "label_text": "tooltip.advent_passive_experience_rate_with_culture",
+                    "value_id": "experience_rate_per_minute_with_culture",
+                    "value_color": "positive",
+                    "value_suffix": "per_minute"
+                }
+            ]
+        }
+    ],
     "name": "research_subject.trader_rebel_passive_exp_name",
     "name_uppercase": "research_subject.trader_rebel_passive_exp_name_upper",
     "description": "research_subject.trader_rebel_passive_exp_description",

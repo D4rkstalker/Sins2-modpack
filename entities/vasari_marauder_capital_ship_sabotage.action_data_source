@@ -2,197 +2,242 @@
     "version": 0,
     "level_count": 5,
     "target_filters": [
-    {
-        "target_filter_id": "sabotage_auto_cast_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "starbase",
-                "structure",
-                "capital_ship",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
+            "target_filter_id": "sabotage_auto_cast_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "starbase",
+                    "structure",
+                    "capital_ship",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
                 "constraints": [
-                {
-                    "constraint_type": "has_weapon"
-                },
-                {
-                    "constraint_type": "is_unit_factory",
-                    "must_be_functional": true
-                }]
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "vasari_marauder_capital_ship_sabotage_on_factory",
-                    "include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "vasari_marauder_capital_ship_sabotage_on_defense",
-                    "include_pending_buffs": true
-                }
-            }]
-        }
-    },
-    {
-        "target_filter_id": "sabotage_defense_target_filter",
-        "target_filter":
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                            {
+                                "constraint_type": "has_weapon"
+                            },
+                            {
+                                "constraint_type": "is_unit_factory",
+                                "must_be_functional": true
+                            }
+                        ]
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "vasari_marauder_capital_ship_sabotage_on_factory",
+                            "include_pending_buffs": true
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "vasari_marauder_capital_ship_sabotage_on_defense",
+                            "include_pending_buffs": true
+                        }
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "starbase",
-                "structure",
-                "corvette",
-                "frigate",
-                "cruiser",
-                "capital_ship",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_weapon"
-            }]
-        }
-    },
-    {
-        "target_filter_id": "sabotage_factory_target_filter",
-        "target_filter":
+            "target_filter_id": "sabotage_defense_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "starbase",
+                    "structure",
+                    "corvette",
+                    "frigate",
+                    "cruiser",
+                    "capital_ship",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "has_weapon"
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "starbase",
-                "structure"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_unit_factory",
-                "must_be_functional": true
-            }]
-        }
-    },
-    {
-        "target_filter_id": "sabotage_planet_target_filter",
-        "target_filter":
+            "target_filter_id": "sabotage_factory_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "starbase",
+                    "structure"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_unit_factory",
+                        "must_be_functional": true
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "planet"
-            ],
-            "ownerships": [
-                "enemy"
-            ]
+            "target_filter_id": "sabotage_planet_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "planet"
+                ],
+                "ownerships": [
+                    "enemy"
+                ]
+            }
         }
-    }],
+    ],
     "action_values": [
-    {
-        "action_value_id": "sabotage_antimatter_cost_value",
-        "action_value":
         {
-            "values": [64.0, 70.0, 76.0, 82.0, 88.0]
-        }
-    },
-    {
-        "action_value_id": "sabotage_cooldown_time_value",
-        "action_value":
+            "action_value_id": "sabotage_antimatter_cost_value",
+            "action_value": {
+                "values": [
+                    64.0,
+                    70.0,
+                    76.0,
+                    82.0,
+                    88.0
+                ]
+            }
+        },
         {
-            "values": [90.0, 78.75, 67.5, 56.25, 45.0]
-        }
-    },
-    {
-        "action_value_id": "sabotage_duration_value",
-        "action_value":
+            "action_value_id": "sabotage_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    90.0,
+                    78.75,
+                    67.5,
+                    56.25,
+                    45.0
+                ]
+            }
+        },
         {
-            "values": [48.0, 60.0, 72.0, 84.0, 96.0]
-        }
-    },
-    {
-        "action_value_id": "sabotage_factory_build_time_modifier_value",
-        "action_value":
+            "action_value_id": "sabotage_duration_value",
+            "action_value": {
+                "values": [
+                    48.0,
+                    60.0,
+                    72.0,
+                    84.0,
+                    96.0
+                ]
+            }
+        },
         {
-            "values": [0.24, 0.48, 0.72, 0.96, 1.2]
-        }
-    },
-    {
-        "action_value_id": "sabotage_radius_value",
-        "action_value":
+            "action_value_id": "sabotage_factory_build_time_modifier_value",
+            "action_value": {
+                "values": [
+                    0.24,
+                    0.48,
+                    0.72,
+                    0.96,
+                    1.2
+                ]
+            }
+        },
         {
-            "values": [3000.0, 3600.0, 4200.0, 4800.0, 5400.0]
-        }
-    },
-    {
-        "action_value_id": "sabotage_range_value",
-        "action_value":
+            "action_value_id": "sabotage_radius_value",
+            "action_value": {
+                "values": [
+                    3000.0,
+                    3600.0,
+                    4200.0,
+                    4800.0,
+                    5400.0
+                ]
+            }
+        },
         {
-            "values": [9000.0, 9000.0, 9000.0, 9000.0, 9000.0]
-        }
-    },
-    {
-        "action_value_id": "sabotage_structure_build_time_modifier_value",
-        "action_value":
+            "action_value_id": "sabotage_range_value",
+            "action_value": {
+                "values": [
+                    9000.0,
+                    9000.0,
+                    9000.0,
+                    9000.0,
+                    9000.0
+                ]
+            }
+        },
         {
-            "values": [0.24, 0.48, 0.72, 0.96, 1.2]
-        }
-    },
-    {
-        "action_value_id": "sabotage_travel_speed_value",
-        "action_value":
+            "action_value_id": "sabotage_structure_build_time_modifier_value",
+            "action_value": {
+                "values": [
+                    0.24,
+                    0.48,
+                    0.72,
+                    0.96,
+                    1.2
+                ]
+            }
+        },
         {
-            "values": [4000.0, 4000.0, 4000.0, 4000.0, 4000.0]
-        }
-    },
-    {
-        "action_value_id": "sabotage_weapon_cooldown_duration_modifier_value",
-        "action_value":
+            "action_value_id": "sabotage_travel_speed_value",
+            "action_value": {
+                "values": [
+                    4000.0,
+                    4000.0,
+                    4000.0,
+                    4000.0,
+                    4000.0
+                ]
+            }
+        },
         {
-            "values": [0.12, 0.24, 0.36, 0.48, 0.6]
+            "action_value_id": "sabotage_weapon_cooldown_duration_modifier_value",
+            "action_value": {
+                "values": [
+                    0.12,
+                    0.24,
+                    0.36,
+                    0.48,
+                    0.6
+                ]
+            }
         }
-    }],
+    ],
     "buff_planet_modifiers": [
-    {
-        "buff_planet_modifier_id": "sabotage_structure_build_time_modifier",
-        "buff_planet_modifier":
         {
-            "modifier_type": "structure_build_time",
-            "value_behavior": "scalar",
-            "value_id": "sabotage_structure_build_time_modifier_value"
+            "buff_planet_modifier_id": "sabotage_structure_build_time_modifier",
+            "buff_planet_modifier": {
+                "modifier_type": "structure_build_time",
+                "value_behavior": "scalar",
+                "value_id": "sabotage_structure_build_time_modifier_value"
+            }
         }
-    }],
+    ],
     "buff_weapon_modifiers": [
-    {
-        "buff_weapon_modifier_id": "cooldown_duration",
-        "buff_weapon_modifier":
         {
-            "modifier_type": "cooldown_duration",
-            "value_behavior": "scalar",
-            "value_id": "sabotage_weapon_cooldown_duration_modifier_value"
+            "buff_weapon_modifier_id": "cooldown_duration",
+            "buff_weapon_modifier": {
+                "modifier_type": "cooldown_duration",
+                "value_behavior": "scalar",
+                "value_id": "sabotage_weapon_cooldown_duration_modifier_value"
+            }
         }
-    }],
+    ],
     "buff_unit_factory_modifiers": [
-    {
-        "buff_unit_factory_modifier_id": "sabotage_factory_build_time_modifier",
-        "buff_unit_factory_modifier":
         {
-            "modifier_type": "build_time",
-            "value_behavior": "scalar",
-            "value_id": "sabotage_factory_build_time_modifier_value"
+            "buff_unit_factory_modifier_id": "sabotage_factory_build_time_modifier",
+            "buff_unit_factory_modifier": {
+                "modifier_type": "build_time",
+                "value_behavior": "scalar",
+                "value_id": "sabotage_factory_build_time_modifier_value"
+            }
         }
-    }]
+    ]
 }

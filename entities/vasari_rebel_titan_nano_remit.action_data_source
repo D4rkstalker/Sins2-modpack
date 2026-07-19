@@ -2,148 +2,201 @@
     "version": 0,
     "level_count": 5,
     "target_filters": [
-    {
-        "target_filter_id": "nano_remit_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "not_self"
-            }]
-        }
-    },
-    {
-        "target_filter_id": "nano_remit_auto_cast_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "not_self"
-            },
-            {
-                "constraint_type": "composite_or",
+            "target_filter_id": "nano_remit_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
                 "constraints": [
-                {
-                    "constraint_type": "has_missing_hull",
-                    "include_crippled_hull_points": true
-                },
-                {
-                    "constraint_type": "has_missing_antimatter"
-                }]
-            }]
+                    {
+                        "constraint_type": "is_fully_built"
+                    },
+                    {
+                        "constraint_type": "not_self"
+                    }
+                ]
+            }
+        },
+        {
+            "target_filter_id": "nano_remit_auto_cast_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_fully_built"
+                    },
+                    {
+                        "constraint_type": "not_self"
+                    },
+                    {
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                            {
+                                "constraint_type": "has_missing_hull",
+                                "include_crippled_hull_points": true
+                            },
+                            {
+                                "constraint_type": "has_missing_antimatter"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
-    }],
+    ],
     "action_values": [
-    {
-        "action_value_id": "nano_remit_antimatter_cost_value",
-        "action_value":
         {
-            "values": [51.0, 56.0, 61.0, 66.0, 71.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_antimatter_restore_value",
-        "action_value":
+            "action_value_id": "nano_remit_antimatter_cost_value",
+            "action_value": {
+                "values": [
+                    51.0,
+                    56.0,
+                    61.0,
+                    66.0,
+                    71.0
+                ]
+            }
+        },
         {
-            "values": [60.0, 90.0, 120.0, 150.0, 180.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_cooldown_time_value",
-        "action_value":
+            "action_value_id": "nano_remit_antimatter_restore_value",
+            "action_value": {
+                "values": [
+                    60.0,
+                    90.0,
+                    120.0,
+                    150.0,
+                    180.0
+                ]
+            }
+        },
         {
-            "values": [48.0, 43.5, 39.0, 34.5, 30.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_hull_cost_value",
-        "action_value":
+            "action_value_id": "nano_remit_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    48.0,
+                    43.5,
+                    39.0,
+                    34.5,
+                    30.0
+                ]
+            }
+        },
         {
-            "values": [360.0, 480.0, 600.0, 720.0, 840.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_hull_restore_value",
-        "action_value":
+            "action_value_id": "nano_remit_hull_cost_value",
+            "action_value": {
+                "values": [
+                    360.0,
+                    480.0,
+                    600.0,
+                    720.0,
+                    840.0
+                ]
+            }
+        },
         {
-            "values": [360.0, 480.0, 600.0, 720.0, 840.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_radius_value",
-        "action_value":
+            "action_value_id": "nano_remit_hull_restore_value",
+            "action_value": {
+                "values": [
+                    360.0,
+                    480.0,
+                    600.0,
+                    720.0,
+                    840.0
+                ]
+            }
+        },
         {
-            "values": [7000.0, 7500.0, 8000.0, 7500.0, 7800.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_improved_radius_value",
-        "action_value":
+            "action_value_id": "nano_remit_radius_value",
+            "action_value": {
+                "values": [
+                    7000.0,
+                    7500.0,
+                    8000.0,
+                    7500.0,
+                    7800.0
+                ]
+            }
+        },
         {
-            "values": [13500.0, 14500.0, 15500.0, 16500.0, 17500.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_buff_regen_value",
-        "action_value":
+            "action_value_id": "nano_remit_improved_radius_value",
+            "action_value": {
+                "values": [
+                    13500.0,
+                    14500.0,
+                    15500.0,
+                    16500.0,
+                    17500.0
+                ]
+            }
+        },
         {
-            "values": [0.15, 0.3, 0.45, 0.6, 0.75]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_buff_regen_duration_value",
-        "action_value":
+            "action_value_id": "nano_remit_buff_regen_value",
+            "action_value": {
+                "values": [
+                    0.15,
+                    0.3,
+                    0.45,
+                    0.6,
+                    0.75
+                ]
+            }
+        },
         {
-            "values": [12.0, 14.0, 16.0, 18.0, 20.0]
-        }
-    },
-    {
-        "action_value_id": "nano_remit_auto_cast_target_count_value",
-        "action_value":
+            "action_value_id": "nano_remit_buff_regen_duration_value",
+            "action_value": {
+                "values": [
+                    12.0,
+                    14.0,
+                    16.0,
+                    18.0,
+                    20.0
+                ]
+            }
+        },
         {
-            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+            "action_value_id": "nano_remit_auto_cast_target_count_value",
+            "action_value": {
+                "values": [
+                    10.0,
+                    10.0,
+                    10.0,
+                    10.0,
+                    10.0
+                ]
+            }
         }
-    }],
+    ],
     "buff_unit_modifiers": [
-    {
-        "buff_unit_modifier_id": "nano_remit_buff_regen_modifier",
-        "buff_unit_modifier":
         {
-            "modifier_type": "hull_point_restore_scalar_after_damage_taken",
-            "value_behavior": "additive",
-            "value_id": "nano_remit_buff_regen_value"
+            "buff_unit_modifier_id": "nano_remit_buff_regen_modifier",
+            "buff_unit_modifier": {
+                "modifier_type": "hull_point_restore_scalar_after_damage_taken",
+                "value_behavior": "additive",
+                "value_id": "nano_remit_buff_regen_value"
+            }
         }
-    }]
+    ]
 }

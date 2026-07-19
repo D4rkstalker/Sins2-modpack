@@ -2,203 +2,238 @@
     "version": 0,
     "level_count": 5,
     "target_filters": [
-    {
-        "target_filter_id": "replicate_forces_auto_cast_high_priority_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "cruiser"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_weapon",
-                "weapon_type": "normal"
-            },
-            {
-                "constraint_type": "is_always_a_threat"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_definition",
-                    "unit_definition": "vasari_overseer_cruiser"
-                }
-            }]
-        }
-    },
-    {
-        "target_filter_id": "replicate_forces_auto_cast_low_priority_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "cruiser"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "has_weapon",
-                "weapon_type": "normal"
-            },
-            {
-                "constraint_type": "is_always_a_threat"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_definition",
-                    "unit_definition": "vasari_overseer_cruiser"
-                }
-            }]
-
-        }
-    },
-    {
-        "target_filter_id": "replicate_forces_target_filter",
-        "target_filter":
-        {
-            "unit_types": [
-                "cruiser",
-                "frigate"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_or",
+            "target_filter_id": "replicate_forces_auto_cast_high_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "cruiser"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
                 "constraints": [
-                {
-                    "constraint_type": "composite_not",
-                    "constraint":
                     {
-                        "constraint_type": "has_mutation",
-                        "mutation": "cannot_be_captured_or_cloned"
+                        "constraint_type": "has_weapon",
+                        "weapon_type": "normal"
+                    },
+                    {
+                        "constraint_type": "is_always_a_threat"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_definition",
+                            "unit_definition": "vasari_overseer_cruiser"
+                        }
                     }
-                },
-                {
-                    "constraint_type": "composite_and",
-                    "constraints": [
+                ]
+            }
+        },
+        {
+            "target_filter_id": "replicate_forces_auto_cast_low_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "cruiser"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
+                "constraints": [
                     {
-                        "constraint_type": "has_buff",
-                        "buff": "skaransul_indomitable_spirit_on_target"
+                        "constraint_type": "has_weapon",
+                        "weapon_type": "normal"
+                    },
+                    {
+                        "constraint_type": "is_always_a_threat"
                     },
                     {
                         "constraint_type": "composite_not",
-                        "constraint":
-                        {
+                        "constraint": {
                             "constraint_type": "has_definition",
-                            "unit_definition": "vasari_greater_nanite_frigate"
+                            "unit_definition": "vasari_overseer_cruiser"
                         }
-                    },
+                    }
+                ]
+            }
+        },
+        {
+            "target_filter_id": "replicate_forces_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "cruiser",
+                    "frigate"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
+                "constraints": [
                     {
-                        "constraint_type": "composite_not",
-                        "constraint":
-                        {
-                            "constraint_type": "has_definition",
-                            "unit_definition": "vasari_support_nanite_frigate"
-                        }
-                    },
-                    {
-                        "constraint_type": "composite_not",
-                        "constraint":
-                        {
-                            "constraint_type": "has_definition",
-                            "unit_definition": "vasari_combat_nanite_frigate"
-                        }
-                    },
-                    {
-                        "constraint_type": "composite_not",
-                        "constraint":
-                        {
-                            "constraint_type": "has_definition",
-                            "unit_definition": "vasari_assault_nanite_frigate"
-                        }
-                    }]
-                }]
-            }]
+                        "constraint_type": "composite_or",
+                        "constraints": [
+                            {
+                                "constraint_type": "composite_not",
+                                "constraint": {
+                                    "constraint_type": "has_mutation",
+                                    "mutation": "cannot_be_captured_or_cloned"
+                                }
+                            },
+                            {
+                                "constraint_type": "composite_and",
+                                "constraints": [
+                                    {
+                                        "constraint_type": "has_buff",
+                                        "buff": "skaransul_indomitable_spirit_on_target"
+                                    },
+                                    {
+                                        "constraint_type": "composite_not",
+                                        "constraint": {
+                                            "constraint_type": "has_definition",
+                                            "unit_definition": "vasari_greater_nanite_frigate"
+                                        }
+                                    },
+                                    {
+                                        "constraint_type": "composite_not",
+                                        "constraint": {
+                                            "constraint_type": "has_definition",
+                                            "unit_definition": "vasari_support_nanite_frigate"
+                                        }
+                                    },
+                                    {
+                                        "constraint_type": "composite_not",
+                                        "constraint": {
+                                            "constraint_type": "has_definition",
+                                            "unit_definition": "vasari_combat_nanite_frigate"
+                                        }
+                                    },
+                                    {
+                                        "constraint_type": "composite_not",
+                                        "constraint": {
+                                            "constraint_type": "has_definition",
+                                            "unit_definition": "vasari_assault_nanite_frigate"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         }
-    }],
+    ],
     "action_values": [
-    {
-        "action_value_id": "replicate_forces_antimatter_cost_value",
-        "action_value":
         {
-            "values": [85.0, 93.0, 101.0, 109.0, 117.0]
-        }
-    },
-    {
-        "action_value_id": "replicate_forces_clone_count_value",
-        "action_value":
+            "action_value_id": "replicate_forces_antimatter_cost_value",
+            "action_value": {
+                "values": [
+                    85.0,
+                    93.0,
+                    101.0,
+                    109.0,
+                    117.0
+                ]
+            }
+        },
         {
-            "values": [3.0, 4.0, 5.0, 5.0, 6.0]
-        }
-    },
-    {
-        "action_value_id": "replicate_forces_cooldown_time_value",
-        "action_value":
+            "action_value_id": "replicate_forces_clone_count_value",
+            "action_value": {
+                "values": [
+                    3.0,
+                    4.0,
+                    5.0,
+                    5.0,
+                    6.0
+                ]
+            }
+        },
         {
-            "values": [180.0, 170.0, 160.0, 155.0, 150.0]
-        }
-    },
-    {
-        "action_value_id": "replicate_forces_duration_value",
-        "action_value":
+            "action_value_id": "replicate_forces_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    180.0,
+                    170.0,
+                    160.0,
+                    155.0,
+                    150.0
+                ]
+            }
+        },
         {
-            "values": [180.0, 210.0, 240.0, 255.0, 270.0]
-        }
-    },
-    {
-        "action_value_id": "replicate_forces_range_value",
-        "action_value":
+            "action_value_id": "replicate_forces_duration_value",
+            "action_value": {
+                "values": [
+                    180.0,
+                    210.0,
+                    240.0,
+                    255.0,
+                    270.0
+                ]
+            }
+        },
         {
-            "values": [6000.0, 6000.0, 6000.0, 6000.0, 6000.0]
-        }
-    },
-    {
-        "action_value_id": "replicate_forces_spawn_range_value",
-        "action_value":
+            "action_value_id": "replicate_forces_range_value",
+            "action_value": {
+                "values": [
+                    6000.0,
+                    6000.0,
+                    6000.0,
+                    6000.0,
+                    6000.0
+                ]
+            }
+        },
         {
-            "values": [120.0, 120.0, 120.0, 120.0, 120.0]
-        }
-    },
-    {
-        "action_value_id": "replicate_clone_armor_modifier_value",
-        "action_value":
+            "action_value_id": "replicate_forces_spawn_range_value",
+            "action_value": {
+                "values": [
+                    120.0,
+                    120.0,
+                    120.0,
+                    120.0,
+                    120.0
+                ]
+            }
+        },
         {
-            "values": [0.1, 0.2, 0.3, 0.35, 0.4]
-        }
-    },
-    {
-        "action_value_id": "replicate_clone_hull_modifier_value",
-        "action_value":
+            "action_value_id": "replicate_clone_armor_modifier_value",
+            "action_value": {
+                "values": [
+                    0.1,
+                    0.2,
+                    0.3,
+                    0.35,
+                    0.4
+                ]
+            }
+        },
         {
-            "values": [0.1, 0.2, 0.3, 0.35, 0.4]
+            "action_value_id": "replicate_clone_hull_modifier_value",
+            "action_value": {
+                "values": [
+                    0.1,
+                    0.2,
+                    0.3,
+                    0.35,
+                    0.4
+                ]
+            }
         }
-    }],
+    ],
     "buff_unit_modifiers": [
-    {
-        "buff_unit_modifier_id": "replicate_clone_armor_modifier",
-        "buff_unit_modifier":
         {
-            "modifier_type": "max_armor_points",
-            "value_behavior": "scalar",
-            "value_id": "replicate_clone_armor_modifier_value"
-        }
-    },
-    {
-        "buff_unit_modifier_id": "replicate_clone_hull_modifier",
-        "buff_unit_modifier":
+            "buff_unit_modifier_id": "replicate_clone_armor_modifier",
+            "buff_unit_modifier": {
+                "modifier_type": "max_armor_points",
+                "value_behavior": "scalar",
+                "value_id": "replicate_clone_armor_modifier_value"
+            }
+        },
         {
-            "modifier_type": "max_hull_points",
-            "value_behavior": "scalar",
-            "value_id": "replicate_clone_hull_modifier_value"
+            "buff_unit_modifier_id": "replicate_clone_hull_modifier",
+            "buff_unit_modifier": {
+                "modifier_type": "max_hull_points",
+                "value_behavior": "scalar",
+                "value_id": "replicate_clone_hull_modifier_value"
+            }
         }
-    }]
+    ]
 }

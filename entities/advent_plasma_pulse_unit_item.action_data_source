@@ -1,228 +1,240 @@
 {
     "version": 0,
     "target_filters": [
-    {
-        "target_filter_id": "plasma_pulse_auto_cast_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_always_a_threat"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "advent_plasma_pulse_unit_item_on_target",
-                    "include_pending_buffs": true
-                }
-            }]
-        }
-    },
-    {
-        "target_filter_id": "plasma_pulse_target_filter",
-        "target_filter":
+            "target_filter_id": "plasma_pulse_auto_cast_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_always_a_threat"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "advent_plasma_pulse_unit_item_on_target",
+                            "include_pending_buffs": true
+                        }
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ]
+            "target_filter_id": "plasma_pulse_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ]
+            }
         }
-    }],
-    "per_buff_memory_declaration":
-    {
+    ],
+    "per_buff_memory_declaration": {
         "float_variable_ids": [
-            "charge_restore_time"]
+            "charge_restore_time"
+        ]
     },
     "action_values": [
-    {
-        "action_value_id": "cooldown_time",
-        "action_value":
         {
-            "values": [120.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_auto_cast_target_count_value",
-        "action_value":
+            "action_value_id": "cooldown_time",
+            "action_value": {
+                "values": [
+                    120.0
+                ]
+            }
+        },
         {
-            "values": [5.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_radius_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_auto_cast_target_count_value",
+            "action_value": {
+                "values": [
+                    5.0
+                ]
+            }
+        },
         {
-            "values": [4500.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_damage_rate_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_radius_value",
+            "action_value": {
+                "values": [
+                    4500.0
+                ]
+            }
+        },
         {
-            "values": [25.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_penetration_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_damage_rate_value",
+            "action_value": {
+                "values": [
+                    25.0
+                ]
+            }
+        },
         {
-            "values": [750.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_duration_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_penetration_value",
+            "action_value": {
+                "values": [
+                    750.0
+                ]
+            }
+        },
         {
-            "values": [20.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_charge_count_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_duration_value",
+            "action_value": {
+                "values": [
+                    20.0
+                ]
+            }
+        },
         {
-            "values": [2.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_stack_limit_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_charge_count_value",
+            "action_value": {
+                "values": [
+                    2.0
+                ]
+            }
+        },
         {
-            "values": [1.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_charge_cooldown_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_stack_limit_value",
+            "action_value": {
+                "values": [
+                    1.0
+                ]
+            }
+        },
         {
-            "values": [440.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_charge_cooldown_with_retrofit_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_charge_cooldown_value",
+            "action_value": {
+                "values": [
+                    440.0
+                ]
+            }
+        },
         {
-            "values": [0.091]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_credit_cost_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_charge_cooldown_with_retrofit_value",
+            "action_value": {
+                "values": [
+                    0.091
+                ]
+            }
+        },
         {
-            "values": [62.5]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_metal_cost_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_credit_cost_value",
+            "action_value": {
+                "values": [
+                    62.5
+                ]
+            }
+        },
         {
-            "values": [18.75]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_crystal_cost_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_metal_cost_value",
+            "action_value": {
+                "values": [
+                    18.75
+                ]
+            }
+        },
         {
-            "values": [6.25]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_charge_restore_time_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_crystal_cost_value",
+            "action_value": {
+                "values": [
+                    6.25
+                ]
+            }
+        },
         {
-            "transform_type": "current_buff_memory_value",
-            "memory_float_variable_id": "charge_restore_time",
-            "values": [1.0]
-        }
-    },
-    {
-        "action_value_id": "plasma_pulse_cooldown_duration_value",
-        "action_value":
+            "action_value_id": "plasma_pulse_charge_restore_time_value",
+            "action_value": {
+                "transform_type": "current_buff_memory_value",
+                "memory_float_variable_id": "charge_restore_time",
+                "values": [
+                    1.0
+                ]
+            }
+        },
         {
-            "values": [0.1]
+            "action_value_id": "plasma_pulse_cooldown_duration_value",
+            "action_value": {
+                "values": [
+                    0.1
+                ]
+            }
         }
-    }],
+    ],
     "buff_weapon_modifiers": [
-    {
-        "buff_weapon_modifier_id": "cooldown_duration",
-        "buff_weapon_modifier":
         {
-            "modifier_type": "cooldown_duration",
-            "value_behavior": "scalar",
-            "value_id": "plasma_pulse_cooldown_duration_value",
-            "tags": [
-                "plasma"]
-        }
-    },
-    {
-        "buff_weapon_modifier_id": "planet_bombing_cooldown_duration",
-        "buff_weapon_modifier":
+            "buff_weapon_modifier_id": "cooldown_duration",
+            "buff_weapon_modifier": {
+                "modifier_type": "cooldown_duration",
+                "value_behavior": "scalar",
+                "value_id": "plasma_pulse_cooldown_duration_value",
+                "tags": [
+                    "plasma"
+                ]
+            }
+        },
         {
-			"weapon_type": "planet_bombing",
-            "modifier_type": "cooldown_duration",
-            "value_behavior": "scalar",
-            "value_id": "plasma_pulse_cooldown_duration_value",
-            "tags": [
-                "plasma"]
+            "buff_weapon_modifier_id": "planet_bombing_cooldown_duration",
+            "buff_weapon_modifier": {
+                "weapon_type": "planet_bombing",
+                "modifier_type": "cooldown_duration",
+                "value_behavior": "scalar",
+                "value_id": "plasma_pulse_cooldown_duration_value",
+                "tags": [
+                    "plasma"
+                ]
+            }
         }
-    }],
+    ],
     "effect_alias_bindings": [
-    {
-        "alias_name": "advent_plasma_pulse_unit_item_detonate",
-        "alias_binding":
         {
-            "particle_effect": "plasma_nova_generator_activate"
-        }
-    },
-    {
-        "alias_name": "advent_plasma_pulse_unit_item_duration",
-        "alias_binding":
+            "alias_name": "advent_plasma_pulse_unit_item_detonate",
+            "alias_binding": {
+                "particle_effect": "plasma_nova_generator_activate"
+            }
+        },
         {
-            "particle_effect": "plasma_nova_generator"
-        }
-    },
-    {
-        "alias_name": "advent_plasma_pulse_unit_item_on_target_large",
-        "alias_binding":
+            "alias_name": "advent_plasma_pulse_unit_item_duration",
+            "alias_binding": {
+                "particle_effect": "plasma_nova_generator"
+            }
+        },
         {
-            "particle_effect": "advent_plasma_nova_generator_on_large"
-        }
-    },
-    {
-        "alias_name": "advent_plasma_pulse_unit_item_on_target_medium",
-        "alias_binding":
+            "alias_name": "advent_plasma_pulse_unit_item_on_target_large",
+            "alias_binding": {
+                "particle_effect": "advent_plasma_nova_generator_on_large"
+            }
+        },
         {
-            "particle_effect": "advent_plasma_nova_generator_on_medium"
-        }
-    },
-    {
-        "alias_name": "advent_plasma_pulse_unit_item_on_target_small",
-        "alias_binding":
+            "alias_name": "advent_plasma_pulse_unit_item_on_target_medium",
+            "alias_binding": {
+                "particle_effect": "advent_plasma_nova_generator_on_medium"
+            }
+        },
         {
-            "particle_effect": "advent_plasma_nova_generator_on_small"
+            "alias_name": "advent_plasma_pulse_unit_item_on_target_small",
+            "alias_binding": {
+                "particle_effect": "advent_plasma_nova_generator_on_small"
+            }
         }
-    }]
+    ]
 }

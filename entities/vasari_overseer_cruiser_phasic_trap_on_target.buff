@@ -1,78 +1,70 @@
 {
     "version": 0,
     "make_dead_on_parent_buff_made_dead": true,
-    "stacking_limit":
-    {
+    "stacking_limit": {
         "stacking_limit": "fixed_one",
         "stacking_limit_met_behavior": "preserve_existing_buff"
     },
     "stacking_ownership_type": "for_all_players",
     "restart_other_stacked_buffs_when_started": true,
     "trigger_event_actions": [
-    {
-        "trigger_event_type": "on_buff_started",
-        "action_group":
         {
-            "constraint":
-            {
-                "constraint_type": "unit_passes_unit_constraint",
-                "unit":
-                {
-                    "unit_type": "current_spawner"
-                },
-                "unit_constraint":
-                {
-                    "constraint_type": "can_ever_move"
-                }
-            },
-            "actions": [
-            {
-                "action_type": "start_brake_to_stop"
-            }]
-        }
-    },
-    {
-        "trigger_event_type": "on_buff_made_dead",
-        "action_group":
-        {
-            "constraint":
-            {
-                "constraint_type": "unit_passes_unit_constraint",
-                "unit":
-                {
-                    "unit_type": "current_spawner"
-                },
-                "unit_constraint":
-                {
-                    "constraint_type": "can_ever_move"
-                }
-            },
-            "actions": [
-            {
-                "action_type": "stop_brake_to_stop"
-            },
-            {
-                "action_type": "use_unit_operators_on_single_unit",
-                "destination_unit":
-                {
-                    "unit_type": "current_spawner"
-                },
-                "operators": [
-                {
-                    "constraint":
-                    {
-                        "constraint_type": "unit_passes_target_filter",
-                        "unit":
-                        {
-                            "unit_type": "operand_destination"
-                        },
-                        "target_filter_id": "phasic_trap_torpedo_target_filter"
+            "trigger_event_type": "on_buff_started",
+            "action_group": {
+                "constraint": {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit": {
+                        "unit_type": "current_spawner"
                     },
-                    "operator_type": "make_dead"
-                }]
-            }]
+                    "unit_constraint": {
+                        "constraint_type": "can_ever_move"
+                    }
+                },
+                "actions": [
+                    {
+                        "action_type": "start_brake_to_stop"
+                    }
+                ]
+            }
+        },
+        {
+            "trigger_event_type": "on_buff_made_dead",
+            "action_group": {
+                "constraint": {
+                    "constraint_type": "unit_passes_unit_constraint",
+                    "unit": {
+                        "unit_type": "current_spawner"
+                    },
+                    "unit_constraint": {
+                        "constraint_type": "can_ever_move"
+                    }
+                },
+                "actions": [
+                    {
+                        "action_type": "stop_brake_to_stop"
+                    },
+                    {
+                        "action_type": "use_unit_operators_on_single_unit",
+                        "destination_unit": {
+                            "unit_type": "current_spawner"
+                        },
+                        "operators": [
+                            {
+                                "constraint": {
+                                    "constraint_type": "unit_passes_target_filter",
+                                    "unit": {
+                                        "unit_type": "operand_destination"
+                                    },
+                                    "target_filter_id": "phasic_trap_torpedo_target_filter"
+                                },
+                                "operator_type": "make_dead"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
-    }],
+    ],
     "unit_mutations": [
         "disable_can_hyperspace",
         "disable_engines",
@@ -84,8 +76,7 @@
         "disable_can_use_weapons",
         "disable_can_update_unit_production"
     ],
-    "gui":
-    {
+    "gui": {
         "hud_icon": "vasari_overseer_cruiser_phasic_trap_ability_hud_icon",
         "name": "vasari_overseer_cruiser_phasic_trap_ability_name",
         "is_visible_within_unit_tooltip": true,

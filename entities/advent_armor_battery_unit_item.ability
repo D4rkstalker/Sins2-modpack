@@ -34,37 +34,16 @@
             "enabled_by_default_behavior": "always",
             "caster_constraint":
             {
-                "constraint_type": "composite_and",
-                "constraints": [
+                "constraint_type": "unit_passes_unit_constraint",
+                "unit":
                 {
-                    "constraint_type": "unit_passes_unit_constraint",
-                    "unit":
-                    {
-                        "unit_type": "current_spawner"
-                    },
-                    "unit_constraint":
-                    {
-                        "constraint_type": "has_missing_armor",
-                        "amount_missing_threshold": 1500.0
-                    }
+                    "unit_type": "current_spawner"
                 },
+                "unit_constraint":
                 {
-                    "constraint_type": "composite_not",
-                    "constraint":
-                    {
-                        "constraint_type": "unit_passes_unit_constraint",
-                        "unit":
-                        {
-                            "unit_type": "current_spawner"
-                        },
-                        "unit_constraint":
-                        {
-                            "constraint_type": "has_buff",
-                            "buff": "advent_armor_battery_unit_item",
-                            "include_pending_buffs": true
-                        }
-                    }
-                }]
+                    "constraint_type": "has_missing_armor",
+                    "amount_missing_threshold": 1500.0
+                }
             }
         }
     },

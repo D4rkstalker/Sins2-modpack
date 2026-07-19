@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "target_filters": [
+    {
+        "target_filter_id": "learning_machine_artifact_target_filter",
+        "target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "starbase",
+                "super_capital_ship",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "has_experience"
+            }]
+        }
+    }],
+    "action_values": [
+    {
+        "action_value_id": "level_gain_amount_value_id",
+        "action_value":
+        {
+            "values": [0.25]
+        }
+    },
+    {
+        "action_value_id": "level_gain_2_amount_value_id",
+        "action_value":
+        {
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "experience_gain_self_amount_value_id",
+        "action_value":
+        {
+            "transform_type": "per_unit_level",
+            "transform_unit":
+            {
+                "unit_type": "operand_source"
+            },
+            "values": [0.5]
+        }
+    },
+    {
+        "action_value_id": "experience_gain_others_amount_value_id",
+        "action_value":
+        {
+            "transform_type": "per_unit_level",
+            "transform_unit":
+            {
+                "unit_type": "operand_source"
+            },
+            "values": [0.25]
+        }
+    }],
+    "buff_unit_modifiers": [
+    {
+        "buff_unit_modifier_id": "experience_gained_from_unit_death_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "experience_gained_from_unit_death",
+            "value_behavior": "scalar",
+            "value_id": "level_gain_amount_value_id"
+        }
+    }]
+}

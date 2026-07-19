@@ -1,87 +1,124 @@
 {
     "version": 0,
     "level_count": 5,
-     "target_filters": [
-    {
-        "target_filter_id": "power_surge_auto_cast_high_priority_target_filter",
-        "target_filter":
+    "action_values": [
         {
-            "unit_types": [
-                "capital_ship",
-                "starbase",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_always_a_threat"
-            }]
-        }
-    }],
-   "action_values": [
-    {
-        "action_value_id": "power_surge_antimatter_cost_value",
-        "action_value":
+            "action_value_id": "power_surge_antimatter_cost_value",
+            "action_value": {
+                "values": [
+                    60.0,
+                    82.5,
+                    105.0,
+                    127.5,
+                    150.0
+                ]
+            }
+        },
         {
-            "values": [60.0, 82.5, 105.0, 127.5, 150.0]
-        }
-    },
-    {
-        "action_value_id": "power_surge_cooldown_time_value",
-        "action_value":
+            "action_value_id": "power_surge_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    30.0,
+                    52.5,
+                    75.0,
+                    97.5,
+                    120.0
+                ]
+            }
+        },
         {
-            "values": [30.0, 52.5, 75.0, 97.5, 120.0]
-        }
-    },
-    {
-        "action_value_id": "power_surge_execution_count_value",
-        "action_value":
+            "action_value_id": "power_surge_execution_count_value",
+            "action_value": {
+                "values": [
+                    24.0,
+                    48.0,
+                    72.0,
+                    96.0,
+                    120.0
+                ]
+            }
+        },
         {
-            "values": [24.0, 48.0, 72.0, 96.0, 120.0]
-        }
-    },
-    {
-        "action_value_id": "power_surge_shield_restore_rate_bonus_value",
-        "action_value":
+            "action_value_id": "power_surge_shield_restore_rate_bonus_value",
+            "action_value": {
+                "values": [
+                    12.0,
+                    24.0,
+                    36.0,
+                    48.0,
+                    60.0
+                ]
+            }
+        },
         {
-            "values": [12.0, 24.0, 36.0, 48.0, 60.0]
-        }
-    },
-    {
-        "action_value_id": "power_surge_auto_cast_target_count_value",
-        "action_value":
+            "action_value_id": "power_surge_auto_cast_target_count_value",
+            "action_value": {
+                "values": [
+                    10.0,
+                    10.0,
+                    10.0,
+                    10.0,
+                    10.0
+                ]
+            }
+        },
         {
-            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
-        }
-    },
-    {
-        "action_value_id": "power_surge_radius_value",
-        "action_value":
+            "action_value_id": "power_surge_radius_value",
+            "action_value": {
+                "values": [
+                    6600.0,
+                    6600.0,
+                    6600.0,
+                    6600.0,
+                    6600.0
+                ]
+            }
+        },
         {
-            "values": [6600.0, 6600.0, 6600.0, 6600.0, 6600.0]
+            "action_value_id": "power_surge_weapon_cooldown_duration_bonus_value",
+            "action_value": {
+                "values": [
+                    -0.24,
+                    -0.48,
+                    -0.72,
+                    -0.96,
+                    -1.2
+                ]
+            }
         }
-    },
-   {
-        "action_value_id": "power_surge_weapon_cooldown_duration_bonus_value",
-        "action_value":
-        {
-            "values": [-0.24, -0.48, -0.72, -0.96, -1.2]
-        }
-    }],
+    ],
     "buff_weapon_modifiers": [
-    {
-        "buff_weapon_modifier_id": "cooldown_duration",
-        "buff_weapon_modifier":
         {
-            "modifier_type": "cooldown_duration",
-            "value_behavior": "scalar",
-            "value_id": "power_surge_weapon_cooldown_duration_bonus_value",
-            "tags": [
-                "energy"
-            ]
+            "buff_weapon_modifier_id": "cooldown_duration",
+            "buff_weapon_modifier": {
+                "modifier_type": "cooldown_duration",
+                "value_behavior": "scalar",
+                "value_id": "power_surge_weapon_cooldown_duration_bonus_value",
+                "tags": [
+                    "energy"
+                ]
+            }
         }
-    }]
+    ],
+    "target_filters": [
+        {
+            "target_filter_id": "power_surge_auto_cast_high_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "starbase",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_always_a_threat"
+                    }
+                ]
+            }
+        }
+    ]
 }

@@ -1,106 +1,109 @@
 {
     "version": 0,
     "target_filters": [
-    {
-        "target_filter_id": "domination_auto_cast_high_priority_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "frigate"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_always_a_threat"
-            }]
-        }
-    },
-    {
-        "target_filter_id": "domination_auto_cast_low_priority_target_filter",
-        "target_filter":
+            "target_filter_id": "domination_auto_cast_high_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "frigate"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_always_a_threat"
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "corvette",
-                "frigate"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_always_a_threat"
-            }]
-        }
-    },
-    {
-        "target_filter_id": "domination_target_filter",
-        "target_filter":
+            "target_filter_id": "domination_auto_cast_low_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "corvette",
+                    "frigate"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_always_a_threat"
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "corvette",
-                "frigate"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_mutation",
-                    "mutation": "cannot_be_captured_or_cloned"
-                }
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "advent_battle_psionic_capital_ship_domination_prevent",
-                    "include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "special_operation_unit",
-                    "include_pending_buffs": true
-                }
-            }]
+            "target_filter_id": "domination_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "corvette",
+                    "frigate"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_mutation",
+                            "mutation": "cannot_be_captured_or_cloned"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "advent_battle_psionic_capital_ship_domination_prevent",
+                            "include_pending_buffs": true
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "special_operation_unit",
+                            "include_pending_buffs": true
+                        }
+                    }
+                ]
+            }
         }
-    }],
+    ],
     "action_values": [
-    {
-        "action_value_id": "domination_antimatter_cost_value",
-        "action_value":
         {
-            "values": [100.0]
-        }
-    },
-    {
-        "action_value_id": "domination_cooldown_time_value",
-        "action_value":
+            "action_value_id": "domination_antimatter_cost_value",
+            "action_value": {
+                "values": [
+                    100.0
+                ]
+            }
+        },
         {
-            "values": [90.0]
-        }
-    },
-    {
-        "action_value_id": "domination_max_charge_count_value",
-        "action_value":
+            "action_value_id": "domination_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    90.0
+                ]
+            }
+        },
         {
-            "values": [2.0]
-        }
-    },
-    {
-        "action_value_id": "domination_range_value",
-        "action_value":
+            "action_value_id": "domination_max_charge_count_value",
+            "action_value": {
+                "values": [
+                    2.0
+                ]
+            }
+        },
         {
-            "values": [9000.0]
+            "action_value_id": "domination_range_value",
+            "action_value": {
+                "values": [
+                    9000.0
+                ]
+            }
         }
-    }]
+    ]
 }

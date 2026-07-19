@@ -4,70 +4,63 @@
     "level_source": "research_prerequisites_per_level",
     "level_prerequisites": [
         [
-            ["vasari_unlock_missile_defense_disruptor_nanites_ability"]
+            [
+                "vasari_unlock_missile_defense_disruptor_nanites_ability"
+            ]
         ]
     ],
-    "active_actions":
-    {
-        "actions":
-        {
+    "active_actions": {
+        "actions": {
             "actions": [
-            {
-                "action_type": "use_position_operators_on_single_position",
-                "position":
                 {
-                    "position_type": "target_position"
-                },
-                "position_operators": [
-                {
-                    "operator_type": "create_unit",
-                    "unit_to_create": "vasari_missile_defense_structure",
-                    "unit_forward":
-                    {
-                        "direction_type": "unit_forward",
-                        "unit":
-                        {
-                            "unit_type": "current_spawner"
-                        }
+                    "action_type": "use_position_operators_on_single_position",
+                    "position": {
+                        "position_type": "target_position"
                     },
-                    "is_self_building": true
-                }]
-            }]
+                    "position_operators": [
+                        {
+                            "operator_type": "create_unit",
+                            "unit_to_create": "vasari_missile_defense_structure",
+                            "unit_forward": {
+                                "direction_type": "unit_forward",
+                                "unit": {
+                                    "unit_type": "current_spawner"
+                                }
+                            },
+                            "is_self_building": true
+                        }
+                    ]
+                }
+            ]
         },
         "targeting_type": "position_targeted",
         "range": "range_value",
-        "spawned_unit":
-        {
+        "spawned_unit": {
             "unit": "vasari_missile_defense_structure"
         },
-        "auto_cast":
-        {
-            "caster_constraint":
-            {
+        "auto_cast": {
+            "caster_constraint": {
                 "constraint_type": "unit_passes_target_filter",
-                "unit":
-                {
+                "unit": {
                     "unit_type": "current_spawner",
                     "redirection": "current_gravity_well_primary_fixture"
                 },
                 "target_filter_id": "deploy_missile_turret_auto_cast_target_filter"
             },
             "target_definitions": [
-            {
-                "target_filter": "deploy_missile_turret_target_filter"
-            }]
+                {
+                    "target_filter": "deploy_missile_turret_target_filter"
+                }
+            ]
         }
     },
-    "gui":
-    {
+    "gui": {
         "hud_icon": "vasari_missile_defense_structure_hud_icon",
         "name": "vasari_deploy_starbase_unit_item_name",
         "description": "vasari_deploy_starbase_unit_item_description",
-        "targeting":
-        {
+        "targeting": {
             "targeting_type": "range_and_radius",
-            "values":
-            {
+            "values": {
                 "range": "range_value"
             }
         }

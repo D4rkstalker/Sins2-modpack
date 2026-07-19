@@ -52,38 +52,6 @@
                 }]
             }]
         }
-    },
-    {
-        "trigger_event_type": "on_current_spawner_spawned_torpedo",
-        "action_group":
-        {
-            "constraint":
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "unit_passes_target_filter",
-                    "unit":
-                    {
-                        "unit_type": "trigger_event_destination"
-                    },
-                    "target_filter_id": "ice_field_fixture_bonus_torpedo_exclude_target_filter"
-                }
-            },
-            "actions": [
-            {
-                "action_type": "use_unit_operators_on_single_unit",
-                "destination_unit":
-                {
-                    "unit_type": "trigger_event_destination"
-                },
-                "operators": [
-                {
-                    "operator_type": "apply_buff",
-                    "buff": "ice_field_fixture_bonus_on_torpedo"
-                }]
-            }]
-        }
     }],
     "gui":
     {

@@ -378,14 +378,14 @@
         "vasari_siege_capital_ship_loyalist",
         "vasari_nanite_battle_capital_ship",
         "vasari_rebel_titan_rrr",
-        "vasari_loyalist_titan",
+        "vasari_loyalist_titan_rrr",
         "vasari_antifighter_frigate",
         "dlc2_vasari_rebel_super_capital_ship",
-        "dlc2_vasari_loyalist_super_capital_ship"
+        "dlc2_vasari_loyalist_super_capital_ship_rrr"
     ],
     "faction_buildable_units": [
-        "vasari_loyalist_titan",
-        "dlc2_vasari_loyalist_super_capital_ship"
+        "vasari_loyalist_titan_rrr",
+        "dlc2_vasari_loyalist_super_capital_ship_rrr"
     ],
     "buildable_strikecraft": [
         "vasari_interceptor_strikecraft",
@@ -1356,9 +1356,7 @@
             "vasari_upgrade_beam_weapons_4",
             "vasari_upgrade_pulse_weapons_4",
             "vasari_rebel_quantum_beam",
-
             "vasari_upgrade_beam_boost_unit_item"
-
         ],
         "faction_research_subjects": [
             "start_vasari_exodus_bonus_civ",
@@ -1513,12 +1511,11 @@
         "vasari_compliance_inducer",
         "vasari_industrial_nanoforge",
         "vasari_surface_magnetic_planet_research_lab",
-		"vasari_metal_smelting_plant",
-		"vasari_ice_processor",
-		"vasari_fissile_plant",
-		"vasari_ferric_mining_rig",
-		"vasari_archaeology_center"
-
+        "vasari_metal_smelting_plant",
+        "vasari_ice_processor",
+        "vasari_fissile_plant",
+        "vasari_ferric_mining_rig",
+        "vasari_archaeology_center"
     ],
     "faction_planet_components": [
         "vasari_debris_reclamation_center",
@@ -1547,87 +1544,89 @@
         {
             "planet_type": "shattered",
             "colonization_research_prerequisites": [
-                ["vasari_unlock_stripped_to_the_core_unit_item"]
+                [
+                    "vasari_unlock_stripped_to_the_core_unit_item"
+                ]
             ],
             "can_ever_be_colonized": true,
-            "tracks":
-            {
+            "tracks": {
                 "defense": [
-                {
-                    "max_military_structure_slots": 0,
-                    "max_health_points": 250,
-                    "health_points_restore_rate": 2.0,
-                    "max_shield_points": 0,
-                    "shield_points_restore_rate": 0.0,
-                    "planet_shield_burst_restore":
                     {
-                        "cooldown_duration": 30.0,
-                        "restore_percentage": 1.0
-                    }
-                },
-                {
-                    "max_military_structure_slots": 5,
-                    "max_health_points": 750.0,
-                    "health_points_restore_rate": 4.0,
-                    "max_shield_points": 0,
-                    "shield_points_restore_rate": 0.0,
-                    "planet_shield_burst_restore":
+                        "max_military_structure_slots": 0,
+                        "max_health_points": 250,
+                        "health_points_restore_rate": 2.0,
+                        "max_shield_points": 0,
+                        "shield_points_restore_rate": 0.0,
+                        "planet_shield_burst_restore": {
+                            "cooldown_duration": 30.0,
+                            "restore_percentage": 1.0
+                        }
+                    },
                     {
-                        "cooldown_duration": 30.0,
-                        "restore_percentage": 1.0
-                    }
-                },
-                {
-                    "max_military_structure_slots": 15,
-                    "max_health_points": 1500.0,
-                    "health_points_restore_rate": 6.0,
-                    "max_shield_points": 0,
-                    "shield_points_restore_rate": 0.0,
-                    "planet_shield_burst_restore":
+                        "max_military_structure_slots": 5,
+                        "max_health_points": 750.0,
+                        "health_points_restore_rate": 4.0,
+                        "max_shield_points": 0,
+                        "shield_points_restore_rate": 0.0,
+                        "planet_shield_burst_restore": {
+                            "cooldown_duration": 30.0,
+                            "restore_percentage": 1.0
+                        }
+                    },
                     {
-                        "cooldown_duration": 30.0,
-                        "restore_percentage": 1.0
+                        "max_military_structure_slots": 15,
+                        "max_health_points": 1500.0,
+                        "health_points_restore_rate": 6.0,
+                        "max_shield_points": 0,
+                        "shield_points_restore_rate": 0.0,
+                        "planet_shield_burst_restore": {
+                            "cooldown_duration": 30.0,
+                            "restore_percentage": 1.0
+                        }
                     }
-                }],
+                ],
                 "logistics": [
-                {
-                    "max_planet_component_slots": 2,
-                    "max_civilian_structure_slots": 0,
-                    "structure_builder_count": 1
-                },
-                {
-                    "max_planet_component_slots": 2,
-                    "max_civilian_structure_slots": 3,
-                    "structure_builder_count": 2,
-                    "max_health_points": 250
-                },
-                {
-                    "max_planet_component_slots": 2,
-                    "max_civilian_structure_slots": 5,
-                    "structure_builder_count": 3,
-                    "max_health_points": 500
-                }],
+                    {
+                        "max_planet_component_slots": 2,
+                        "max_civilian_structure_slots": 0,
+                        "structure_builder_count": 1
+                    },
+                    {
+                        "max_planet_component_slots": 2,
+                        "max_civilian_structure_slots": 3,
+                        "structure_builder_count": 2,
+                        "max_health_points": 250
+                    },
+                    {
+                        "max_planet_component_slots": 2,
+                        "max_civilian_structure_slots": 5,
+                        "structure_builder_count": 3,
+                        "max_health_points": 500
+                    }
+                ],
                 "commerce": [
-                {}],
+                    {}
+                ],
                 "mining": [
-                {}
-                
+                    {}
                 ],
                 "research": [
-                {}],
+                    {}
+                ],
                 "focus": [
-                {}]
+                    {}
+                ]
             },
             "maintenance_cost_rates": [],
             "trade_capacity_levels": [
-            {
-                "import_points": 3,
-                "export_points":
                 {
-                    "metal": 1,
-                    "crystal": 1
+                    "import_points": 3,
+                    "export_points": {
+                        "metal": 1,
+                        "crystal": 1
+                    }
                 }
-            }]
+            ]
         },
         {
             "planet_type": "asteroid",
@@ -5618,28 +5617,29 @@
                                 "modifier_type": "bypass_shields_chance",
                                 "value": 0.15,
                                 "tags": [
-                                    "phasemissile"]
+                                    "phasemissile"
+                                ]
                             }
                         ]
                     },
                     "utility": {
                         "unit_modifiers": [
-                        {
-                            "modifier_type": "ability_antimatter_cost",
-                            "value_behavior": "scalar",
-                            "value": -0.15
-                        },
-                        {
-                            "modifier_type": "ability_cooldown_duration",
-                            "value_behavior": "scalar",
-                            "value": -0.03
-                        },
-                        {
-                            "modifier_type": "antimatter_restore_rate",
-                            "value_behavior": "scalar",
-                            "value": 0.015
-                        }
-                    ]
+                            {
+                                "modifier_type": "ability_antimatter_cost",
+                                "value_behavior": "scalar",
+                                "value": -0.15
+                            },
+                            {
+                                "modifier_type": "ability_cooldown_duration",
+                                "value_behavior": "scalar",
+                                "value": -0.03
+                            },
+                            {
+                                "modifier_type": "antimatter_restore_rate",
+                                "value_behavior": "scalar",
+                                "value": 0.015
+                            }
+                        ]
                     }
                 }
             },
@@ -5682,28 +5682,29 @@
                                 "modifier_type": "bypass_shields_chance",
                                 "value": 0.24,
                                 "tags": [
-                                    "phasemissile"]
+                                    "phasemissile"
+                                ]
                             }
                         ]
                     },
                     "utility": {
                         "unit_modifiers": [
-                        {
-                            "modifier_type": "ability_antimatter_cost",
-                            "value_behavior": "scalar",
-                            "value": -0.24
-                        },
-                        {
-                            "modifier_type": "ability_cooldown_duration",
-                            "value_behavior": "scalar",
-                            "value": -0.12
-                        },
-                        {
-                            "modifier_type": "antimatter_restore_rate",
-                            "value_behavior": "scalar",
-                            "value": 0.06
-                        }
-                    ]
+                            {
+                                "modifier_type": "ability_antimatter_cost",
+                                "value_behavior": "scalar",
+                                "value": -0.24
+                            },
+                            {
+                                "modifier_type": "ability_cooldown_duration",
+                                "value_behavior": "scalar",
+                                "value": -0.12
+                            },
+                            {
+                                "modifier_type": "antimatter_restore_rate",
+                                "value_behavior": "scalar",
+                                "value": 0.06
+                            }
+                        ]
                     }
                 }
             },
@@ -5741,9 +5742,10 @@
                                 "modifier_type": "bypass_shields_chance",
                                 "value": 0.32,
                                 "tags": [
-                                    "phasemissile"]
+                                    "phasemissile"
+                                ]
                             },
-                           {
+                            {
                                 "value_behavior": "scalar",
                                 "modifier_type": "cooldown_duration",
                                 "value": -0.14
@@ -6845,7 +6847,7 @@
         "victory_countdown_in_seconds": 900,
         "objective_unit_item": "dlc2_vasari_faction_victory",
         "hyperspace_on_victory": true,
-        "objective_item_buildable_unit": "dlc2_vasari_loyalist_super_capital_ship",
+        "objective_item_buildable_unit": "dlc2_vasari_loyalist_super_capital_ship_rrr",
         "gui_definition": {
             "item_prefix": "tooltip.vasari_factional_victory_lead",
             "optional_tooltip_line": "tooltip.vasari_optional_tooltip_line",

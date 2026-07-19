@@ -2,169 +2,238 @@
     "version": 0,
     "level_count": 5,
     "target_filters": [
-    {
-        "target_filter_id": "nano_leech_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ]
-        }
-    },
-    {
-        "target_filter_id": "nano_leech_auto_cast_target_filter",
-        "target_filter":
+            "target_filter_id": "nano_leech_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "vasari_rebel_titan_nano_leech_on_target",
-                    "include_pending_buffs": true
-                }
-            },
-            {
-                "constraint_type": "is_always_a_threat"
-            }]
-        }
-    }],
-    "per_buff_memory_declaration":
-    {
-        "float_variable_ids": [
-            "total_hull_regen",
-            "total_antimatter_regen"]
-    },
-    "action_values": [
-    {
-        "action_value_id": "nano_leech_total_hull_regen_value",
-        "action_value":
-        {
-            "transform_type": "current_buff_memory_value",
-            "memory_float_variable_id": "total_hull_regen",
-            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_total_antimatter_regen_value",
-        "action_value":
-        {
-            "transform_type": "current_buff_memory_value",
-            "memory_float_variable_id": "total_antimatter_regen",
-            "values": [1.0, 1.0, 1.0, 1.0, 1.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_antimatter_cost_value",
-        "action_value":
-        {
-            "values": [115.0, 127.0, 139.0, 151.0, 163.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_antimatter_remove_rate_value",
-        "action_value":
-        {
-            "values": [3.0, 6.0, 9.0, 12.0, 15.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_antimatter_restore_rate_value",
-        "action_value":
-        {
-            "values": [1.0, 2.0, 3.0, 4.0, 5.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_armor_penetration_value",
-        "action_value":
-        {
-            "values": [500.0, 500.0, 500.0, 500.0, 500.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_cooldown_time_value",
-        "action_value":
-        {
-            "values": [60.0, 56.25, 52.5, 48.75, 45.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_damage_rate_value",
-        "action_value":
-        {
-            "values": [12.0, 18.0, 24.0, 30.0, 36.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_damage_percent_rate_value",
-        "action_value":
-        {
-            "transform_type": "per_current_hull_points",
-            "values": [0.005, 0.01, 0.015, 0.02, 0.025],
-            "transform_unit":
-            {
-                "unit_type": "current_spawner"
+            "target_filter_id": "nano_leech_auto_cast_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "vasari_rebel_titan_nano_leech_on_target",
+                            "include_pending_buffs": true
+                        }
+                    },
+                    {
+                        "constraint_type": "is_always_a_threat"
+                    }
+                ]
             }
         }
+    ],
+    "per_buff_memory_declaration": {
+        "float_variable_ids": [
+            "total_hull_regen",
+            "total_antimatter_regen"
+        ]
     },
-    {
-        "action_value_id": "nano_leech_execution_count_value",
-        "action_value":
+    "action_values": [
         {
-            "values": [24.0, 36.0, 48.0, 60.0, 72.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_hull_restore_rate_value",
-        "action_value":
+            "action_value_id": "nano_leech_total_hull_regen_value",
+            "action_value": {
+                "transform_type": "current_buff_memory_value",
+                "memory_float_variable_id": "total_hull_regen",
+                "values": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
         {
-            "values": [1.0, 2.0, 3.0, 4.0, 5.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_radius_value",
-        "action_value":
+            "action_value_id": "nano_leech_total_antimatter_regen_value",
+            "action_value": {
+                "transform_type": "current_buff_memory_value",
+                "memory_float_variable_id": "total_antimatter_regen",
+                "values": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        },
         {
-            "values": [7000.0, 7500.0, 8000.0, 8500.0, 9000.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_improved_radius_value",
-        "action_value":
+            "action_value_id": "nano_leech_antimatter_cost_value",
+            "action_value": {
+                "values": [
+                    115.0,
+                    127.0,
+                    139.0,
+                    151.0,
+                    163.0
+                ]
+            }
+        },
         {
-            "values": [13500.0, 14500.0, 15500.0, 16500.0, 17500.0]
-        }
-    },
-    {
-        "action_value_id": "nano_leech_auto_cast_target_count_value",
-        "action_value":
+            "action_value_id": "nano_leech_antimatter_remove_rate_value",
+            "action_value": {
+                "values": [
+                    3.0,
+                    6.0,
+                    9.0,
+                    12.0,
+                    15.0
+                ]
+            }
+        },
         {
-            "values": [10.0, 10.0, 10.0, 10.0, 10.0]
+            "action_value_id": "nano_leech_antimatter_restore_rate_value",
+            "action_value": {
+                "values": [
+                    1.0,
+                    2.0,
+                    3.0,
+                    4.0,
+                    5.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_armor_penetration_value",
+            "action_value": {
+                "values": [
+                    500.0,
+                    500.0,
+                    500.0,
+                    500.0,
+                    500.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    60.0,
+                    56.25,
+                    52.5,
+                    48.75,
+                    45.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_damage_rate_value",
+            "action_value": {
+                "values": [
+                    12.0,
+                    18.0,
+                    24.0,
+                    30.0,
+                    36.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_damage_percent_rate_value",
+            "action_value": {
+                "transform_type": "per_current_hull_points",
+                "values": [
+                    0.005,
+                    0.01,
+                    0.015,
+                    0.02,
+                    0.025
+                ],
+                "transform_unit": {
+                    "unit_type": "current_spawner"
+                }
+            }
+        },
+        {
+            "action_value_id": "nano_leech_execution_count_value",
+            "action_value": {
+                "values": [
+                    24.0,
+                    36.0,
+                    48.0,
+                    60.0,
+                    72.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_hull_restore_rate_value",
+            "action_value": {
+                "values": [
+                    1.0,
+                    2.0,
+                    3.0,
+                    4.0,
+                    5.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_radius_value",
+            "action_value": {
+                "values": [
+                    7000.0,
+                    7500.0,
+                    8000.0,
+                    8500.0,
+                    9000.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_improved_radius_value",
+            "action_value": {
+                "values": [
+                    13500.0,
+                    14500.0,
+                    15500.0,
+                    16500.0,
+                    17500.0
+                ]
+            }
+        },
+        {
+            "action_value_id": "nano_leech_auto_cast_target_count_value",
+            "action_value": {
+                "values": [
+                    10.0,
+                    10.0,
+                    10.0,
+                    10.0,
+                    10.0
+                ]
+            }
         }
-    }]
+    ]
 }

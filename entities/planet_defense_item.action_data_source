@@ -1,40 +1,42 @@
 {
     "version": 0,
-    "per_buff_memory_declaration":
-    {
+    "per_buff_memory_declaration": {
         "float_variable_ids": [
-            "track_count"]
+            "track_count"
+        ]
     },
     "action_values": [
-    {
-        "action_value_id": "defense_track_level_count",
-        "action_value":
         {
-            "transform_type": "per_planet_current_defense_track_level",
-            "transform_unit":
-            {
-                "unit_type": "current_spawner"
-            },
-            "values": [1.0]
-        }
-    },
-    {
-        "action_value_id": "garrison_supply_value",
-        "action_value":
+            "action_value_id": "defense_track_level_count",
+            "action_value": {
+                "transform_type": "per_planet_current_defense_track_level",
+                "transform_unit": {
+                    "unit_type": "current_spawner"
+                },
+                "values": [
+                    1.0
+                ]
+            }
+        },
         {
-            "transform_type": "current_buff_memory_value",
-            "memory_float_variable_id": "track_count",
-            "values": [40.0]
+            "action_value_id": "garrison_supply_value",
+            "action_value": {
+                "transform_type": "current_buff_memory_value",
+                "memory_float_variable_id": "track_count",
+                "values": [
+                    40.0
+                ]
+            }
         }
-    }],
+    ],
     "buff_planet_modifiers": [
-    {
-        "buff_planet_modifier_id": "garrison_supply_value_modifier",
-        "buff_planet_modifier":
         {
-            "modifier_type": "max_garrison_supply",
-            "value_behavior": "additive",
-            "value_id": "garrison_supply_value"
+            "buff_planet_modifier_id": "garrison_supply_value_modifier",
+            "buff_planet_modifier": {
+                "modifier_type": "max_garrison_supply",
+                "value_behavior": "additive",
+                "value_id": "garrison_supply_value"
+            }
         }
-    }]
+    ]
 }

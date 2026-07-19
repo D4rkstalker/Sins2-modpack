@@ -3,15 +3,26 @@
     "spatial": {
         "radius": 2224.586426,
         "box": {
-            "center": [-0.000031, -163.315536, 155.842285],
-            "extents": [737.165283, 592.803467, 2067.545166]
+            "center": [
+                -3.1e-05,
+                -163.315536,
+                155.842285
+            ],
+            "extents": [
+                737.165283,
+                592.803467,
+                2067.545166
+            ]
         },
         "can_be_displaced_on_collision": false
     },
     "physics": {
         "can_move_angular": true,
         "max_angular_speed": 1.25,
-        "death_angular_speed_range": [3.0, 5.0]
+        "death_angular_speed_range": [
+            3.0,
+            5.0
+        ]
     },
     "ai": {
         "attack_target_type_groups_to_ignore": [
@@ -59,42 +70,63 @@
         "spawn_debris_time": 6.65,
         "generic_group_name": "vasari",
         "generic_counts": {
-            "small_debris": [14, 18],
-            "large_debris": [3, 5]
+            "small_debris": [
+                14,
+                18
+            ],
+            "large_debris": [
+                3,
+                5
+            ]
         },
-        "spawn_loot":
-        {
+        "spawn_loot": {
             "loot_unit": "ship_loot_vasari",
             "loot_name": "vasari_kostura_cannon_loot_name",
             "loot_level": 1,
             "experience_given": 500.0,
             "exotics": [
-            {
-                "bundles": [
                 {
-                    "types": [
-                        "utility"
+                    "bundles": [
+                        {
+                            "types": [
+                                "utility"
+                            ],
+                            "counts": [
+                                1,
+                                2
+                            ]
+                        },
+                        {
+                            "types": [
+                                "offense"
+                            ],
+                            "counts": [
+                                1,
+                                1
+                            ]
+                        },
+                        {
+                            "types": [
+                                "ultimate"
+                            ],
+                            "counts": [
+                                1,
+                                1
+                            ]
+                        }
                     ],
-                    "counts": [1, 2]
-                },
-                {
-                    "types": [
-                        "offense"
-                    ],
-                    "counts": [1, 1]
-                },
-                {
-                    "types": [
-                        "ultimate"
-                    ],
-                    "counts": [1, 1]
-                }],
-                "weight": 1.0
-            }],
-            "assets":
-            {
-                "metal": [360.0, 1080.0],
-                "crystal": [480.0, 1440.0]
+                    "weight": 1.0
+                }
+            ],
+            "assets": {
+                "metal": [
+                    360.0,
+                    1080.0
+                ],
+                "crystal": [
+                    480.0,
+                    1440.0
+                ]
             }
         }
     },
@@ -109,7 +141,7 @@
                 "hull_point_restore_cooldown_duration_after_damage_taken": 60.0,
                 "hull_crippled_percentage": 1.0,
                 "max_armor_points": 1500.0,
-                "armor_point_restore_rate": 4.80,
+                "armor_point_restore_rate": 4.8,
                 "armor_point_restore_cooldown_duration_after_damage_taken": 60.0,
                 "armor_strength": 100.0,
                 "experience_given_on_death": 250.0
@@ -117,9 +149,6 @@
         ]
     },
     "build": {
-        "prerequisites": [
-            ["vasari_unlock_deploy_starbase_unit_item"]
-        ],
         "build_time": 150.0,
         "price": {
             "metal": 3600.0,
@@ -140,7 +169,12 @@
             }
         ],
         "build_kind": "structure",
-        "build_radius": 2195.029785
+        "build_radius": 2195.029785,
+        "prerequisites": [
+            [
+                "vasari_unlock_deploy_starbase_unit_item"
+            ]
+        ]
     },
     "culture_provider": {},
     "target_filter_unit_type": "structure",
@@ -150,19 +184,20 @@
     ],
     "virtual_supply_cost": 100,
     "abilities": [
-    {
-        "abilities": [
-			"vasari_phase_gate_structure_spawn_phase_lane",
-            "vasari_kostura_cannon_ability"
-        ]
-    },
-    {
-        "abilities": [
-			"vasari_phase_gate_structure_spawn_phase_lane",
-            "vasari_kostura_cannon_ability"
-        ],
-		"required_player": "korvaska_war_profiteers_npc"
-    }],
+        {
+            "abilities": [
+                "vasari_phase_gate_structure_spawn_phase_lane",
+                "vasari_kostura_cannon_ability"
+            ]
+        },
+        {
+            "abilities": [
+                "vasari_phase_gate_structure_spawn_phase_lane",
+                "vasari_kostura_cannon_ability"
+            ],
+            "required_player": "korvaska_war_profiteers_npc"
+        }
+    ],
     "skin_groups": [
         {
             "skins": [

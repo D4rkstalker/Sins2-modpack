@@ -1,0 +1,40 @@
+{
+    "version": 0,
+    "stacking_limit":
+    {
+        "stacking_limit": "fixed_one",
+        "stacking_limit_met_behavior": "preserve_existing_buff"
+    },
+    "stacking_ownership_type": "for_all_players",
+    "restart_other_stacked_buffs_when_started": true,
+    "trigger_event_actions": [
+    {
+        "trigger_event_type": "on_current_spawner_damaged",
+        "action_group":
+        {
+            "constraint": 
+            {
+                "constraint_type": "damage_has_damage_source",
+                "damage_source": "ability"
+            },
+            "actions": [
+            {
+                "action_type": "use_unit_operators_on_single_unit",
+                "destination_unit": 
+                {
+                    "unit_type": "current_spawner"
+                },
+                "operators": [
+                {
+                    "operator_type": "apply_damage",
+                    "damage_value": "ability_damage_taken_value",
+                    "damage_source": "weapon",
+                    "penetration_value": "pierce_value",
+                    "damage_affect_type": "armor_only",
+                    "can_damage_be_propagated": false
+                    
+                }]
+            }]
+        }
+    }]
+}

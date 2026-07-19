@@ -1,0 +1,43 @@
+{
+    "version": 0,
+    "domain": "civilian",
+    "tier": 1,
+    "field": "civilian_advent_repeatables",
+    "field_coord": [3, 0],
+    "research_time": 582.5,
+    "price":
+    {
+        "credits": 2000.0,
+        "metal": 750.0,
+        "crystal": 750.0
+    },
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "ownerships": [
+                "self"
+            ],
+            "constraints": [
+            {
+                "constraint_type": "is_structure_with_slot_type",
+                "slot_type": "civilian"
+            }]
+        },
+        "action_data_source": "advent_loyalist_karmic_retribution",
+        "buff": "advent_loyalist_karmic_retribution_on_self",
+        "tooltip_lines": [
+        {
+            "rendering_type": "single_value",
+            "label_text": "tooltip.ability.spawned_supply",
+            "value_id": "available_supply_value",
+            "value_color": "positive"
+	}]
+    }],
+    "name": "advent_trade_ship_karmic_retribution_research_subject_name",
+    "name_uppercase": "advent_trade_ship_karmic_retribution_research_subject_name_uppercase",
+    "description": "advent_trade_ship_karmic_retribution_research_subject_description",
+    "tooltip_picture": "karmic_retribution_tooltip_picture",
+    "hud_icon": "karmic_retribution_hud_icon"
+}

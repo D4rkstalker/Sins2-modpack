@@ -2,71 +2,77 @@
     "version": 0,
     "level_count": 3,
     "target_filters": [
-    {
-        "target_filter_id": "phase_jamming_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "enemy"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "can_ever_hyperspace"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "trader_starbase_phase_jamming_on_target"
-                }
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "advent_starbase_phase_jamming_on_target"
-                }
-            }]
+            "target_filter_id": "phase_jamming_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "enemy"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_fully_built"
+                    },
+                    {
+                        "constraint_type": "can_ever_hyperspace"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "trader_starbase_phase_jamming_on_target"
+                        }
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "advent_starbase_phase_jamming_on_target"
+                        }
+                    }
+                ]
+            }
         }
-    }],
+    ],
     "action_values": [
-    {
-        "action_value_id": "phase_jamming_hyperspace_charge_time_value",
-        "action_value":
         {
-            "values": [0.0,0.0,3.0]
-        }
-    },
-    {
-        "action_value_id": "phase_lane_detection_phase_lane_distance",
-        "action_value":
+            "action_value_id": "phase_jamming_hyperspace_charge_time_value",
+            "action_value": {
+                "values": [
+                    0.0,
+                    0.0,
+                    3.0
+                ]
+            }
+        },
         {
-            "values": [1.0, 2.0,2.0]
+            "action_value_id": "phase_lane_detection_phase_lane_distance",
+            "action_value": {
+                "values": [
+                    1.0,
+                    2.0,
+                    2.0
+                ]
+            }
         }
-    }],
+    ],
     "buff_unit_modifiers": [
-    {
-        "buff_unit_modifier_id": "phase_jamming_hyperspace_charge_time_modifier",
-        "buff_unit_modifier":
         {
-            "modifier_type": "hyperspace_charge_time",
-            "value_behavior": "scalar",
-            "value_id": "phase_jamming_hyperspace_charge_time_value"
+            "buff_unit_modifier_id": "phase_jamming_hyperspace_charge_time_modifier",
+            "buff_unit_modifier": {
+                "modifier_type": "hyperspace_charge_time",
+                "value_behavior": "scalar",
+                "value_id": "phase_jamming_hyperspace_charge_time_value"
+            }
         }
-    }]
+    ]
 }

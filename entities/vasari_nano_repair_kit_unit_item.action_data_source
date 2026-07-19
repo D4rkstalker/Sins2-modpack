@@ -1,235 +1,246 @@
 {
     "version": 0,
     "target_filters": [
-    {
-        "target_filter_id": "nano_repair_kit_target_filter",
-        "target_filter":
         {
-            "unit_types": [
-                "capital_ship",
-                "corvette",
-                "cruiser",
-                "frigate",
-                "starbase",
-                "structure",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_fully_built"
-            }]
-        }
-    },
-    {
-        "target_filter_id": "nano_repair_kit_auto_cast_high_priority_target_filter",
-        "target_filter":
+            "target_filter_id": "nano_repair_kit_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "corvette",
+                    "cruiser",
+                    "frigate",
+                    "starbase",
+                    "structure",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_fully_built"
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "capital_ship",
-                "starbase",
-                "super_capital_ship",
-                "titan"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "vasari_nano_repair_kit_unit_item",
-                    "include_pending_buffs": true
-                }
-            }]
-        }
-    },
-    {
-        "target_filter_id": "nano_repair_kit_auto_cast_low_priority_target_filter",
-        "target_filter":
+            "target_filter_id": "nano_repair_kit_auto_cast_high_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "capital_ship",
+                    "starbase",
+                    "super_capital_ship",
+                    "titan"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_fully_built"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "vasari_nano_repair_kit_unit_item",
+                            "include_pending_buffs": true
+                        }
+                    }
+                ]
+            }
+        },
         {
-            "unit_types": [
-                "cruiser",
-                "structure"
-            ],
-            "ownerships": [
-                "friendly"
-            ],
-            "constraints": [
-            {
-                "constraint_type": "is_fully_built"
-            },
-            {
-                "constraint_type": "composite_not",
-                "constraint":
-                {
-                    "constraint_type": "has_buff",
-                    "buff": "vasari_nano_repair_kit_unit_item",
-                    "include_pending_buffs": true
-                }
-            }]
+            "target_filter_id": "nano_repair_kit_auto_cast_low_priority_target_filter",
+            "target_filter": {
+                "unit_types": [
+                    "cruiser",
+                    "structure"
+                ],
+                "ownerships": [
+                    "friendly"
+                ],
+                "constraints": [
+                    {
+                        "constraint_type": "is_fully_built"
+                    },
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint": {
+                            "constraint_type": "has_buff",
+                            "buff": "vasari_nano_repair_kit_unit_item",
+                            "include_pending_buffs": true
+                        }
+                    }
+                ]
+            }
         }
-    }],
-    "per_buff_memory_declaration":
-    {
+    ],
+    "per_buff_memory_declaration": {
         "float_variable_ids": [
-            "charge_restore_time"]
+            "charge_restore_time"
+        ]
     },
     "action_values": [
-    {
-        "action_value_id": "nano_repair_kit_cooldown_time_value",
-        "action_value":
         {
-            "values": [30.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_range_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_cooldown_time_value",
+            "action_value": {
+                "values": [
+                    30.0
+                ]
+            }
+        },
         {
-            "values": [6000.0]
-        }
-    },
-    {
-        "action_value_id": "auto_cast_armor_threshold_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_range_value",
+            "action_value": {
+                "values": [
+                    6000.0
+                ]
+            }
+        },
         {
-            "values": [450.0]
-        }
-    },
-    {
-        "action_value_id": "auto_cast_hull_threshold_value",
-        "action_value":
+            "action_value_id": "auto_cast_armor_threshold_value",
+            "action_value": {
+                "values": [
+                    450.0
+                ]
+            }
+        },
         {
-            "values": [450.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_hull_restore_rate_value",
-        "action_value":
+            "action_value_id": "auto_cast_hull_threshold_value",
+            "action_value": {
+                "values": [
+                    450.0
+                ]
+            }
+        },
         {
-            "values": [12.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_execution_count_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_hull_restore_rate_value",
+            "action_value": {
+                "values": [
+                    12.0
+                ]
+            }
+        },
         {
-            "values": [36.0]
-        }
-    },
-    {
-        "action_value_id": "target_missing_armor_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_execution_count_value",
+            "action_value": {
+                "values": [
+                    36.0
+                ]
+            }
+        },
         {
-            "transform_type": "per_missing_armor_points",
-            "transform_unit":
-            {
-                "unit_type": "target"
-            },
-            "values": [1.0]
-        }
-    },
-    {
-        "action_value_id": "target_missing_hull_value",
-        "action_value":
+            "action_value_id": "target_missing_armor_value",
+            "action_value": {
+                "transform_type": "per_missing_armor_points",
+                "transform_unit": {
+                    "unit_type": "target"
+                },
+                "values": [
+                    1.0
+                ]
+            }
+        },
         {
-            "transform_type": "per_missing_hull_points",
-            "transform_unit":
-            {
-                "unit_type": "target"
-            },
-            "values": [1.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_charge_count_value",
-        "action_value":
+            "action_value_id": "target_missing_hull_value",
+            "action_value": {
+                "transform_type": "per_missing_hull_points",
+                "transform_unit": {
+                    "unit_type": "target"
+                },
+                "values": [
+                    1.0
+                ]
+            }
+        },
         {
-            "values": [6.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_stack_limit_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_charge_count_value",
+            "action_value": {
+                "values": [
+                    6.0
+                ]
+            }
+        },
         {
-            "values": [5.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_charge_cooldown_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_stack_limit_value",
+            "action_value": {
+                "values": [
+                    5.0
+                ]
+            }
+        },
         {
-            "values": [660.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_charge_cooldown_with_retrofit_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_charge_cooldown_value",
+            "action_value": {
+                "values": [
+                    660.0
+                ]
+            }
+        },
         {
-            "values": [0.091]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_metal_cost_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_charge_cooldown_with_retrofit_value",
+            "action_value": {
+                "values": [
+                    0.091
+                ]
+            }
+        },
         {
-            "values": [10.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_crystal_cost_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_metal_cost_value",
+            "action_value": {
+                "values": [
+                    10.0
+                ]
+            }
+        },
         {
-            "values": [15.0]
-        }
-    },
-    {
-        "action_value_id": "nano_repair_kit_charge_restore_time_value",
-        "action_value":
+            "action_value_id": "nano_repair_kit_crystal_cost_value",
+            "action_value": {
+                "values": [
+                    15.0
+                ]
+            }
+        },
         {
-            "transform_type": "current_buff_memory_value",
-            "memory_float_variable_id": "charge_restore_time",
-            "values": [1.0]
+            "action_value_id": "nano_repair_kit_charge_restore_time_value",
+            "action_value": {
+                "transform_type": "current_buff_memory_value",
+                "memory_float_variable_id": "charge_restore_time",
+                "values": [
+                    1.0
+                ]
+            }
         }
-    }],
+    ],
     "effect_alias_bindings": [
-    {
-        "alias_name": "vasari_nano_repair_kit_unit_item_on_target_large",
-        "alias_binding":
         {
-            "particle_effect": "nanite_repair_large",
-            "sounds": [
-                "vasari_nano_repair_kit_unit_item_buff"
-            ]
-        }
-    },
-    {
-        "alias_name": "vasari_nano_repair_kit_unit_item_on_target_medium",
-        "alias_binding":
+            "alias_name": "vasari_nano_repair_kit_unit_item_on_target_large",
+            "alias_binding": {
+                "particle_effect": "nanite_repair_large",
+                "sounds": [
+                    "vasari_nano_repair_kit_unit_item_buff"
+                ]
+            }
+        },
         {
-            "particle_effect": "nanite_repair_medium",
-            "sounds": [
-                "vasari_nano_repair_kit_unit_item_buff"
-            ]
-        }
-    },
-    {
-        "alias_name": "vasari_nano_repair_kit_unit_item_on_target_small",
-        "alias_binding":
+            "alias_name": "vasari_nano_repair_kit_unit_item_on_target_medium",
+            "alias_binding": {
+                "particle_effect": "nanite_repair_medium",
+                "sounds": [
+                    "vasari_nano_repair_kit_unit_item_buff"
+                ]
+            }
+        },
         {
-            "particle_effect": "nanite_repair_small",
-            "sounds": [
-                "vasari_nano_repair_kit_unit_item_buff"
-            ]
+            "alias_name": "vasari_nano_repair_kit_unit_item_on_target_small",
+            "alias_binding": {
+                "particle_effect": "nanite_repair_small",
+                "sounds": [
+                    "vasari_nano_repair_kit_unit_item_buff"
+                ]
+            }
         }
-    }]
+    ]
 }

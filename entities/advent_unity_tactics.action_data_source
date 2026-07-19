@@ -25,10 +25,10 @@
         }
     },
     {
-        "action_value_id": "advent_unity_tactics_damage_taken_value",
+        "action_value_id": "advent_unity_tactics_regen_value",
         "action_value":
         {
-            "values": [-0.1]
+            "values": [0.3]
         }
     },
     {
@@ -40,12 +40,30 @@
     }],
     "buff_unit_modifiers": [
     {
-        "buff_unit_modifier_id": "advent_unity_tactics_damage_taken_modifier",
+        "buff_unit_modifier_id": "advent_unity_tactics_shield_regen_modifier",
         "buff_unit_modifier":
         {
-            "modifier_type": "damage_taken",
-            "value_behavior": "scalar",
-            "value_id": "advent_unity_tactics_damage_taken_value"
+            "modifier_type": "shield_point_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "advent_unity_tactics_regen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_tactics_armor_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "armor_point_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "advent_unity_tactics_regen_value"
+        }
+    },
+    {
+        "buff_unit_modifier_id": "advent_unity_tactics_hull_regen_modifier",
+        "buff_unit_modifier":
+        {
+            "modifier_type": "hull_point_restore_rate",
+            "value_behavior": "additive",
+            "value_id": "advent_unity_tactics_regen_value"
         }
     },
     {

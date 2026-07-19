@@ -48,8 +48,52 @@
                     },
                     "operator_type": "apply_damage",
                     "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_only",
+                    "damage_value": "piercing_shot_improved_armor_hull_damage_value",
+                    "penetration_value": "piercing_shot_penetration_value"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "unit_passes_unit_constraint",
+                        "unit":
+                        {
+                            "unit_type": "current_spawner"
+                        },
+                        "unit_constraint":
+                        {
+                            "constraint_type": "has_mutation",
+                            "mutation": "improved_piercing_shot"
+                        }
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
                     "damage_affect_type": "hull_and_armor_and_shields",
                     "damage_value": "piercing_shot_improved_damage_value",
+                    "penetration_value": "piercing_shot_penetration_value"
+                },
+                {
+                    "constraint":
+                    {
+                        "constraint_type": "composite_not",
+                        "constraint":
+                        {
+                            "constraint_type": "unit_passes_unit_constraint",
+                            "unit":
+                            {
+                                "unit_type": "current_spawner"
+                            },
+                            "unit_constraint":
+                            {
+                                "constraint_type": "has_mutation",
+                                "mutation": "improved_piercing_shot"
+                            }
+                        }
+                    },
+                    "operator_type": "apply_damage",
+                    "damage_source": "ability",
+                    "damage_affect_type": "hull_and_armor_only",
+                    "damage_value": "piercing_shot_normal_armor_hull_damage_value",
                     "penetration_value": "piercing_shot_penetration_value"
                 },
                 {
@@ -138,6 +182,12 @@
                 "value_color": "negative"
             },
             {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_to_armor_and_hull",
+                "value_id": "piercing_shot_normal_armor_hull_damage_value",
+                "value_color": "negative"
+            },
+            {
                 "visible_if_value_zero": true,
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.armor_penetration",
@@ -152,6 +202,12 @@
                 "rendering_type": "single_value",
                 "label_text": "tooltip.ability.damage",
                 "value_id": "piercing_shot_improved_damage_value",
+                "value_color": "negative"
+            },
+            {
+                "rendering_type": "single_value",
+                "label_text": "tooltip.damage_to_armor_and_hull",
+                "value_id": "piercing_shot_improved_armor_hull_damage_value",
                 "value_color": "negative"
             },
             {

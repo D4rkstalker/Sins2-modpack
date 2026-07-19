@@ -39,6 +39,25 @@
         "value": -0.1,
         "tags": ["plasma", "beam", "holy_fire"]
     }],
+    "buff_providers": [
+    {
+        "scope": "all_owned_units",
+        "all_owned_units_target_filter":
+        {
+            "unit_types": [
+                "capital_ship",
+                "super_capital_ship",
+                "starbase",
+                "structure",
+                "titan"
+            ],
+            "ownerships": [
+                "self"
+            ]
+        },
+        "action_data_source": "advent_loyalist_ability_taken_scalar",
+        "buff": "advent_loyalist_ability_taken_scalar"
+    }],
     "name": "research_subject.start_advent_wrath_name",
     "name_uppercase": "research_subject.start_advent_wrath_name_upper",
     "description": "research_subject.start_advent_wrath_mil_description",
