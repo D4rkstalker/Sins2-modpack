@@ -11,9 +11,18 @@
         {
             "trigger_event_type": "on_unit_damaged_by_current_spawner",
             "action_group": {
-                "constraint": {
-                    "constraint_type": "damage_has_damage_source",
-                    "damage_source": "weapon"
+                "constraint":
+                {
+                    "constraint_type": "composite_and",
+                    "constraints": [
+                    {
+                        "constraint_type": "damage_has_damage_source",
+                        "damage_source": "weapon"
+                    },
+                    {
+                        "constraint_type": "random_chance",
+                        "chance_value": "disruption_chance_value"
+                    }]
                 },
                 "actions": [
                     {

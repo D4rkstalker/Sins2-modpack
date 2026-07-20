@@ -3,6 +3,18 @@
     "level_count": 5,
     "action_values": [
         {
+            "action_value_id": "phase_escape_combat_repair_value",
+            "action_value": {
+                "values": [
+                    5.0,
+                    10.0,
+                    15.0,
+                    20.0,
+                    25.0
+                ]
+            }
+        },
+        {
             "action_value_id": "phase_escape_antimatter_cost_value",
             "action_value": {
                 "values": [
@@ -19,10 +31,10 @@
             "action_value": {
                 "values": [
                     120.0,
-                    114.0,
-                    108.0,
-                    102.0,
-                    90.0
+                    110.0,
+                    100.0,
+                    90.0,
+                    80.0
                 ]
             }
         },
@@ -31,10 +43,10 @@
             "action_value": {
                 "values": [
                     30.0,
-                    35.0,
-                    40.0,
-                    45.0,
-                    50.0
+                    30.0,
+                    30.0,
+                    30.0,
+                    30.0
                 ]
             }
         },
@@ -88,6 +100,14 @@
         }
     ],
     "buff_unit_modifiers": [
+        {
+            "buff_unit_modifier_id": "phase_escape_combat_repair_modifier",
+            "buff_unit_modifier": {
+                "modifier_type": "hull_point_restore_scalar_after_damage_taken",
+                "value_behavior": "scalar",
+                "value_id": "phase_escape_combat_repair_value"
+            }
+        },
         {
             "buff_unit_modifier_id": "phase_escape_linear_acceleration_modifier",
             "buff_unit_modifier": {
